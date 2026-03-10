@@ -1,0 +1,378 @@
+.header {
+  padding: 28px 24px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--text2);
+  letter-spacing: 0.06em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.count {
+  font-size: 11px;
+  color: var(--orange, #e06c2a);
+  letter-spacing: 0.10em;
+  border: 1px solid var(--orange, #e06c2a);
+  border-radius: 3px;
+  padding: 1px 7px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text2);
+  padding: 60px 24px;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+}
+
+/* ── Loading spinner ────────────────────────────────────────────────────────── */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loadingWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 60px 24px;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 2.5px solid var(--border);
+  border-top-color: var(--text2);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+.loadingText {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text2);
+  opacity: 0.7;
+}
+
+/* ── Carrossel ────────────────────────────────────────────────────────────── */
+
+.carouselWrap {
+  overflow: hidden;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Track: flex row, itens preenchem exatamente 6 colunas */
+.carouselTrack {
+  display: flex;
+  gap: 12px;
+}
+
+/* Cada item ocupa 1/6 do espaço disponível */
+.carouselItem {
+  flex: 0 0 calc((100% - 5 * 12px) / 6);
+  min-width: 0;
+  background: var(--bg3, #0a1420);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: zoom-in;
+  padding: 0;
+  transition: border-color 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+
+.carouselItem:hover { border-color: var(--border2); }
+
+.carouselImg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.carouselLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  font-size: 11px;
+  color: var(--text2);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Grid ─────────────────────────────────────────────────────────────────── */
+
+.gridSection {
+  padding: 0 24px 24px;
+}
+
+.gridHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.gridLabel {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text2);
+  flex-shrink: 0;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.filterGroup .filterBtn {
+  border: none;
+  border-radius: 0;
+}
+
+.filterGroup .filterBtn + .filterBtn {
+  border-left: 1px solid var(--border);
+}
+
+.filterBtn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.filterBtn:hover { color: var(--text); border-color: var(--border2); }
+
+.filterActive {
+  color: var(--orange, #e06c2a) !important;
+  border-color: var(--orange, #e06c2a) !important;
+  background: rgba(224, 108, 42, 0.08);
+}
+
+.filterSelect {
+  background: var(--bg3, #0a1420);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.filterSelect:hover { border-color: var(--border2); }
+.filterSelect:focus { border-color: var(--orange, #e06c2a); color: var(--text); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+/* ── Card do grid ─────────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--bg3, #0a1420);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px 8px;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.avatarInitial {
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardUserInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.cardUsername {
+  font-size: 12px;
+  color: var(--text);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardDate {
+  font-size: 10px;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+}
+
+.cardImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+  transition: opacity 0.15s;
+}
+
+.cardImg:hover { opacity: 0.85; }
+
+.cardFooter {
+  padding: 8px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cardNick {
+  font-size: 13px;
+  color: var(--text);
+  letter-spacing: 0.08em;
+}
+
+.cardClan {
+  font-size: 11px;
+  color: var(--text2);
+  letter-spacing: 0.06em;
+}
+
+/* ── Preview modal ────────────────────────────────────────────────────────── */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewModal {
+  background: #0d1a2a;
+  border: 1px solid var(--border2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85);
+  border-radius: 8px;
+  max-width: 90vw;
+}
+
+.previewImg {
+  display: block;
+  width: 780px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--border2);
+}
+
+.previewMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.previewUser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.previewInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.previewNick {
+  font-size: 14px;
+  color: var(--text);
+  letter-spacing: 0.08em;
+}
+
+.previewUsername {
+  font-size: 11px;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+}
+
+.closeBtn {
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+.closeBtn:hover { color: var(--text); border-color: var(--orange); }

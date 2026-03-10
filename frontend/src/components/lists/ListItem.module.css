@@ -1,0 +1,71 @@
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  height: 100px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.listItem::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: transparent;
+  transition: background 0.15s;
+  border-radius: 6px 0 0 6px;
+}
+
+.listItem:hover {
+  background: var(--hover);
+  border-color: var(--border2);
+}
+
+.listItem:hover::before {
+  background: var(--border2);
+}
+
+.selected {
+  border-color: var(--selected-border);
+  background: rgba(255,69,0,0.08);
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+.selected::before {
+  background: var(--orange);
+}
+
+.selected .itemName {
+  color: #fff;
+}
+
+.itemName {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  line-height: 1.3;
+  white-space: nowrap;
+  z-index: 1;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+.itemThumb {
+  object-fit: contain;
+  flex-shrink: 0;
+  image-rendering: auto;
+  width: 46px;
+  height: 46px;
+}
+
+.thumb_marcas    { width: 92px;  height: 92px; margin-right: 12px; }
+.thumb_insignias { width: 92px;  height: 92px; margin-right: 12px; }
+.thumb_fitas     { width: auto; max-width: calc(100% - 24px); height: 62px; object-fit: contain; margin-right: 12px; }

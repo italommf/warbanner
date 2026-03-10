@@ -1,0 +1,250 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 48px;
+  background: linear-gradient(180deg, #08111e 0%, #060d17 100%);
+  border-top: 1px solid var(--border);
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.devLabel {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--text2);
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.devInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.devSocials {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.socialLink {
+  color: rgba(255, 255, 255, 0.35);
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.socialLink:hover {
+  color: rgba(255, 255, 255, 0.85);
+  transform: scale(1.15);
+}
+
+.devCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #0a1420;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  padding: 2px;
+  padding-left: 16px;
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.6);
+}
+
+.devBadge {
+  display: block;
+  height: auto;
+  width: auto;
+  max-height: 56px;
+  object-fit: contain;
+  border-radius: 6px 6px 0 0;
+}
+
+.saveBtn {
+  background: linear-gradient(180deg, var(--orange2) 0%, var(--orange) 100%);
+  border: 1px solid #cc3300;
+  color: #fff;
+  font-family: var(--font);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  margin-left: auto;
+  border-radius: 4px;
+}
+
+.saveBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.4s;
+}
+
+.saveBtn:hover {
+  background: linear-gradient(180deg, #ff8844 0%, #ff6611 100%);
+}
+
+.saveBtn:hover::before {
+  left: 100%;
+}
+
+.saved {
+  background: linear-gradient(180deg, #5cb85c 0%, #3d8b3d 100%);
+  border-color: #2d6b2d;
+}
+
+.saveBtnLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Locked save button ───────────────────────────────────────────────────── */
+
+.lockedWrapper {
+  position: relative;
+  margin-left: auto;
+}
+
+.lockedWrapper:hover .lockTooltip {
+  opacity: 1;
+  pointer-events: none;
+}
+
+.saveBtnLocked {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  font-family: var(--font);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: default;
+  user-select: none;
+}
+
+.lockTooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  background: #0d1a2a;
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+/* ── Toast "Salvo com sucesso" ────────────────────────────────────────────── */
+
+.toast {
+  position: fixed;
+  bottom: 64px;
+  right: 24px;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #0d1a2a;
+  border: 1px solid #2d6b2d;
+  border-radius: 6px;
+  padding: 12px 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  min-width: 260px;
+  max-width: 340px;
+}
+
+.toastIcon {
+  flex-shrink: 0;
+}
+
+.toastBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.toastText {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: #5cb85c;
+}
+
+.toastSub {
+  font-size: 11px;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+}
+
+.toastLink {
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+.toastLink:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.toastClose {
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.toastClose:hover {
+  color: var(--text);
+}

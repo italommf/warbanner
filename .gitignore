@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+.env
+venv/
+env/
+
+# Django
+*.sqlite3
+db.sqlite3
+media/
+debug_outputs/
+staticfiles/
+
+# Node/Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+.vite/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Uploads
+backend/imagens/uploads_ocr/
+
+# Gemini
+.gemini/
+
+# Media files (videos, images, audio)
+*.mp4
+*.webm
+*.avi
+*.mov
+*.mkv
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
+*.ico
+*.svg
+*.mp3
+*.wav
+*.ogg
+*.flac
+
+# Temp/debug scripts
+tmp_*.py
+test_*.py

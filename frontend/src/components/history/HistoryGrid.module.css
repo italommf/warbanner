@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  padding: 24px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text2);
+  padding: 60px 24px;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+}

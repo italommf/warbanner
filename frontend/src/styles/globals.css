@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Warface';
+  src: url('/fonts/warfaceregularenglish.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:              #0a0f1a;
+  --bg2:             #0d1520;
+  --bg3:             #111c2a;
+  --border:          #1e3048;
+  --border2:         #243a54;
+  --hover:           #162234;
+  --selected-border: #ff4500;
+  --selected-glow:   rgba(255, 69, 0, 0.35);
+  --text:            #c8d4e0;
+  --text2:           #7a95ab;
+  --red:             #e8332a;
+  --orange:          #ff5500;
+  --orange2:         #ff7733;
+  --gold:            #c8960a;
+  --font:            'Warface', 'Arial Narrow', Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(14,30,54,0.6) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(10,20,40,0.4) 0%, transparent 50%),
+    linear-gradient(180deg, #080d15 0%, #0a0f1a 40%, #0c1422 100%);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a5878; }

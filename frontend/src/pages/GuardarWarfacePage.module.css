@@ -1,0 +1,1861 @@
+/* ── Cabecalho ─────────────────────────────────────────────────────────────── */
+
+.header {
+  padding: 20px 28px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── Alert dentro do Warface ───────────────────────────────────────────────── */
+
+.warfaceAlert {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 28px;
+  background: rgba(232, 51, 42, 0.04);
+  border-bottom: 1px solid rgba(232, 51, 42, 0.15);
+}
+
+.warningBadge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--red, #e8332a);
+  border: 1px solid var(--red, #e8332a);
+  border-radius: 3px;
+  padding: 2px 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.warfaceAlertText {
+  font-size: 11px;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.guardarAlertBtn {
+  flex-shrink: 0;
+  margin-left: auto;
+  background: rgba(255, 85, 0, 0.10);
+  border: 1px solid var(--orange, #ff5500);
+  border-radius: 4px;
+  color: var(--orange, #ff5500);
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.guardarAlertBtn:hover {
+  background: rgba(255, 85, 0, 0.20);
+}
+
+/* ── Abas nivel 1 (jogos) ──────────────────────────────────────────────────── */
+
+.gameTabBar {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+
+.gameTab {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  padding: 14px 36px 13px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.gameTab:hover {
+  color: var(--text);
+}
+
+.gameTabActive {
+  color: var(--text);
+}
+
+.gameTabUnderline {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--orange, #ff5500);
+  border-radius: 2px 2px 0 0;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.gameTabUnderlineActive {
+  opacity: 1;
+}
+
+/* ── Sub-secao (nivel 2) ───────────────────────────────────────────────────── */
+
+.gameTabContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.subSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.tabAnimWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.subTabBar {
+  display: flex;
+  gap: 0;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8, 13, 21, 0.3);
+}
+
+.subTab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 10px 16px 9px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -1px;
+}
+
+.subTab:hover {
+  color: var(--text);
+}
+
+.subTabActive {
+  color: var(--orange, #ff5500);
+  border-bottom-color: var(--orange, #ff5500);
+}
+
+/* ── Conteudo da aba ───────────────────────────────────────────────────────── */
+
+.tabContent {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.guardarLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
+}
+
+.guardarLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.guardarRight {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: var(--text);
+  margin: 0 0 5px;
+}
+
+.sectionDesc {
+  font-size: 12px;
+  color: var(--text2);
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  max-width: 560px;
+  margin: 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.statValue {
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  color: var(--orange, #ff5500);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  color: var(--text2);
+}
+
+/* ── Zona de drop ──────────────────────────────────────────────────────────── */
+
+.dropZone {
+  border: 1.5px dashed var(--border2);
+  border-radius: 8px;
+  background: rgba(14, 25, 40, 0.4);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  outline: none;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.dropZone:hover,
+.dropZone:focus-visible {
+  background: rgba(14, 25, 40, 0.65);
+  border-color: var(--text2);
+}
+
+.dropZoneDragging {
+  border-color: var(--orange, #ff5500) !important;
+  background: rgba(255, 85, 0, 0.06) !important;
+}
+
+.dropZoneCompact {
+  min-height: 110px;
+}
+
+.dropZoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 24px;
+  pointer-events: none;
+}
+
+.dropZoneIcon {
+  color: var(--orange);
+  opacity: 0.8;
+  transition: all 0.2s;
+}
+
+.dropZone:hover .dropZoneIcon,
+.dropZone:focus-visible .dropZoneIcon {
+  color: var(--text2);
+}
+
+.dropZoneTitle {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin: 0;
+}
+
+.dropZoneHint {
+  font-size: 12px;
+  color: var(--text2);
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.dropZoneSub {
+  font-size: 10px;
+  color: var(--border2);
+  letter-spacing: 0.08em;
+  margin: 4px 0 0;
+}
+
+/* ── Preview ───────────────────────────────────────────────────────────────── */
+
+.previewSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.previewSection .previewGrid {
+  padding-right: 4px;
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.previewCount {
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  color: var(--text2);
+}
+
+.previewActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clearBtn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.clearBtn:hover {
+  color: var(--red, #e8332a);
+  border-color: var(--red, #e8332a);
+}
+
+.processWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.processBtn {
+  background: rgba(255, 85, 0, 0.08);
+  border: 1px solid var(--orange, #ff5500);
+  border-radius: 4px;
+  color: var(--orange, #ff5500);
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  padding: 5px 14px;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.processBadge {
+  position: absolute;
+  top: -8px;
+  right: -6px;
+  font-size: 8px;
+  letter-spacing: 0.10em;
+  color: var(--gold, #c8960a);
+  border: 1px solid var(--gold, #c8960a);
+  border-radius: 3px;
+  padding: 1px 5px;
+  background: var(--bg);
+  white-space: nowrap;
+}
+
+/* ── Grid de imagens ───────────────────────────────────────────────────────── */
+
+.previewGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* ── Card de imagem ────────────────────────────────────────────────────────── */
+
+.imageCard {
+  background: var(--bg3, #111c2a);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s;
+}
+
+.imageCard:hover {
+  border-color: var(--border2);
+}
+
+.imageCardThumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--bg2);
+  overflow: hidden;
+}
+
+.imageCardImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.15s;
+}
+
+.imageCardThumb:hover .imageCardImg {
+  opacity: 0.75;
+}
+
+.imageCardRemove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(10, 15, 26, 0.85);
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.imageCardThumb:hover .imageCardRemove {
+  opacity: 1;
+}
+
+.imageCardRemove:hover {
+  color: var(--red, #e8332a);
+  border-color: var(--red, #e8332a);
+}
+
+.imageCardMeta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+}
+
+.imageCardIcon {
+  color: var(--text2);
+  flex-shrink: 0;
+  display: flex;
+}
+
+.imageCardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.imageCardName {
+  font-size: 11px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.imageCardSize {
+  font-size: 10px;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+}
+
+/* ── Instrucoes ────────────────────────────────────────────────────────────── */
+
+.instructions {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px 24px;
+  background: rgba(14, 25, 40, 0.3);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.instructionsTitle {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--text2);
+  margin: 0 0 12px;
+}
+
+.instructionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.instructionsList li {
+  font-size: 12px;
+  color: var(--text2);
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+
+.totalUploads {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.totalUploads strong {
+  color: var(--orange);
+}
+
+.loadingStats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.instructionsList li strong {
+  color: var(--orange, #ff5500);
+}
+
+.videoSeparator {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+  opacity: 0.5;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.videoIframe {
+  display: block;
+  border: none;
+}
+
+/* ── Minha Conta ───────────────────────────────────────────────────────────── */
+
+.accountCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(14, 25, 40, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.accountAvatar {
+  flex-shrink: 0;
+}
+
+.accountAvatarImg {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.accountAvatarInitial {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accountInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.accountUsername {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+.accountSub {
+  font-size: 11px;
+  color: var(--text2);
+  letter-spacing: 0.06em;
+}
+
+.accountFields {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fieldRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 18px;
+  border-bottom: 1px solid var(--border);
+  gap: 16px;
+}
+
+.fieldRow:last-child {
+  border-bottom: none;
+}
+
+.fieldLabel {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text2);
+  flex-shrink: 0;
+}
+
+.fieldValue {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-align: right;
+}
+
+/* ── Perfil (colunas PVP / PVE) ────────────────────────────────────────────── */
+
+.profileColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.statColumn {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(14, 25, 40, 0.40);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.statColumnTitle {
+  padding: 10px 18px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--orange, #ff5500);
+  border-bottom: 1px solid var(--border);
+  background: rgba(14, 25, 40, 0.30);
+  text-align: center;
+}
+
+.statColumnBody {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.statLeft {
+  flex: 1.2;
+  /* Slightly more space for the grid */
+  padding: 12px;
+  border-right: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 12px;
+  align-content: center;
+  justify-items: center;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.metricItemFull {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+
+.statRight {
+  flex: 1;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.bigStatRow {
+  display: flex;
+  gap: 22px;
+}
+
+.bigStat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bigStatCentered {
+  text-align: center;
+}
+
+.bestRankDisplay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.bestRankRp {
+  font-size: 18px;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.bestRankRpUnit {
+  font-size: 14px;
+  color: var(--gold, #c8960a);
+  letter-spacing: 0.06em;
+}
+
+.bestRankName {
+  font-size: 11px;
+  color: var(--gold, #c8960a);
+  letter-spacing: 0.12em;
+}
+
+.bigStatSingle {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bigStatLabel {
+  font-size: 10px;
+  color: var(--text2);
+  letter-spacing: 0.06em;
+}
+
+.bigStatValue {
+  font-size: 18px;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.bigStatValueLg {
+  font-size: 20px;
+}
+
+.missionBlock {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.missionRow {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.missionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.missionDiffLabel {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.missionValue {
+  font-size: 18px;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+/* ── Donut ──────────────────────────────────────────────────────────────────── */
+
+.donutWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donutSvg {
+  display: block;
+}
+
+.donutCenter {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.donutHours {
+  font-size: 16px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.donutLabel {
+  font-size: 9px;
+  color: var(--text2);
+  letter-spacing: 0.08em;
+}
+
+/* ── Tabela de classes ──────────────────────────────────────────────────────── */
+
+.classTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.classTable th {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text2);
+  text-align: center;
+  padding: 0 4px 6px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.classTable th:first-child {
+  text-align: left;
+  padding-left: 0;
+}
+
+.classTable td {
+  font-size: 11px;
+  color: var(--text);
+  text-align: center;
+  padding: 4px 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.classTable td:first-child {
+  text-align: left;
+  padding-left: 0;
+}
+
+.classTable tr:last-child td {
+  border-bottom: none;
+}
+
+.statColumnEmpty {
+  font-size: 10px;
+  color: var(--text2);
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 8px 16px 10px;
+  border-top: 1px solid var(--border);
+  background: rgba(255, 85, 0, 0.025);
+  line-height: 1.5;
+}
+
+/* ── Stats row (Minha Conta) ───────────────────────────────────────────────── */
+
+.statsRow {
+  display: flex;
+  gap: 12px;
+}
+
+.statBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 10px;
+  background: rgba(14, 25, 40, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.statBoxValue {
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  line-height: 1;
+}
+
+.statBoxValueDone {
+  color: #4caf82;
+}
+
+.statBoxValueActive {
+  color: var(--orange, #ff5500);
+}
+
+.statBoxLabel {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--text2);
+}
+
+/* ── Data section (Minha Conta) ────────────────────────────────────────────── */
+
+.dataSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dataSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(14, 25, 40, 0.4);
+}
+
+.dataSectionTitle {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--text2);
+}
+
+.dataSectionCount {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--orange, #ff5500);
+}
+
+/* ── Empty state ───────────────────────────────────────────────────────────── */
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: var(--border2);
+  margin-bottom: 4px;
+}
+
+.emptyTitle {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin: 0;
+}
+
+.emptyDesc {
+  font-size: 12px;
+  color: var(--text2);
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  max-width: 340px;
+  margin: 0;
+}
+
+.emptyDesc strong {
+  color: var(--text);
+}
+
+.emptyAction {
+  margin-top: 4px;
+  background: rgba(255, 85, 0, 0.10);
+  border: 1px solid var(--orange, #ff5500);
+  border-radius: 4px;
+  color: var(--orange, #ff5500);
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 7px 18px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.emptyAction:hover {
+  background: rgba(255, 85, 0, 0.20);
+}
+
+/* ── Challenge list ────────────────────────────────────────────────────────── */
+
+.challengeList {
+  display: flex;
+  flex-direction: column;
+}
+
+.challengeRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.challengeRow:last-child {
+  border-bottom: none;
+}
+
+.challengeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.challengeName {
+  font-size: 12px;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.challengeCategory {
+  font-size: 10px;
+  color: var(--text2);
+  letter-spacing: 0.08em;
+}
+
+.challengeProgress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.progressBar {
+  width: 100px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--orange, #ff5500);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.progressFillDone {
+  background: #4caf82;
+}
+
+.progressLabel {
+  font-size: 10px;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.completedBadge {
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  color: #4caf82;
+  border: 1px solid #4caf82;
+  border-radius: 3px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+}
+
+/* ── Em breve ──────────────────────────────────────────────────────────────── */
+
+.comingSoonBox {
+  border: 1px dashed var(--border2);
+  border-radius: 6px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(14, 25, 40, 0.25);
+  margin-top: 4px;
+}
+
+.comingSoonLabel {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--gold, #c8960a);
+}
+
+.comingSoonText {
+  font-size: 12px;
+  color: var(--text2);
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Conquistas favoritas ──────────────────────────────────────────────────── */
+
+.achievSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievTitle {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--text2);
+  margin: 0;
+}
+
+.achievGrid {
+  display: grid;
+  /* marcas e insígnias: 1fr cada; fitas: 2fr cada (paisagem) */
+  grid-template-columns: 1fr 1fr 1fr 1fr 2fr 2fr;
+  grid-auto-rows: 72px;
+  gap: 6px;
+}
+
+/* slot base */
+.achievSlot {
+  position: relative;
+  background: rgba(14, 25, 40, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.achievSlot:hover {
+  border-color: var(--border2);
+  background: rgba(14, 25, 40, 0.75);
+}
+
+.achievImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 6px;
+}
+
+.achievEmpty {
+  font-size: 18px;
+  color: var(--border2);
+  line-height: 1;
+  pointer-events: none;
+  transition: color 0.15s;
+}
+
+.achievSlot:hover .achievEmpty {
+  color: var(--text2);
+}
+
+/* ── Picker de conquistas ─────────────────────────────────────────────────── */
+
+.achPickerOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achPickerCard {
+  background: #0a131f;
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  width: 480px;
+  max-width: calc(100vw - 32px);
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.achPickerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.achPickerTitle {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--text);
+}
+
+.achPickerClose {
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.achPickerClose:hover {
+  color: var(--text);
+}
+
+.achPickerGrid {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  overflow-y: auto;
+}
+
+/* marcas e insígnias: grade quadrada */
+.achPickerGrid_marca,
+.achPickerGrid_insignia {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* fitas: 2 por linha (são mais largas) */
+.achPickerGrid_fita {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.achPickerItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.achPickerItem:hover {
+  border-color: var(--orange);
+  background: rgba(255, 85, 0, 0.06);
+}
+
+.achPickerGrid_marca .achPickerItem,
+.achPickerGrid_insignia .achPickerItem {
+  aspect-ratio: 1;
+}
+
+.achPickerGrid_fita .achPickerItem {
+  aspect-ratio: 4 / 1;
+}
+
+.achPickerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Rank Tracker ────────────────────────────────────────────────────────── */
+
+.rankTracker {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 2px;
+}
+
+.rankTrackerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rankTrackerTitle {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text2);
+}
+
+.rankTrackerBadge {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #c9a227;
+}
+
+/*
+ * Wrap: overflow visible para que os números absolutos apareçam acima sem
+ * disparar scrollbar (overflow-x: hidden forçaria overflow-y para auto)
+ */
+.rankCarouselWrap {
+  overflow: visible;
+  padding-top: 20px;
+  /* espaço para os números acima dos losangos */
+  padding-bottom: 8px;
+}
+
+/*
+ * Carrossel: ocupa 100% da largura, itens distribuídos igualmente
+ * Linha de conexão via ::before no centro vertical dos losangos
+ */
+.rankCarousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* alinha centros verticais de todos os losangos */
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Linha horizontal passando pelo centro dos losangos (ponta a ponta) */
+.rankCarousel::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #2a3848;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Item individual ───────────────────────────────────────────────────────── */
+
+.rankItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  /* ocupa espaço igual entre os itens */
+  z-index: 1;
+}
+
+/* Número flutua acima do losango, fora do fluxo flex */
+.rankNum {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  /* acima do .rankDiamondOuter */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Outer wrap — define a área visual do losango (diagonal do quadrado rotado) */
+.rankDiamondOuter {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Losango: quadrado 44 × 44, rotado 45°, borda cinza */
+.rankDiamond {
+  width: 44px;
+  height: 44px;
+  transform: rotate(45deg);
+  border: 1.5px solid #2a3848;
+  background: rgba(8, 13, 21, 0.85);
+  flex-shrink: 0;
+  position: relative;
+}
+
+/*
+ * Imagem: contra-rotacionada, maior que o losango para "vazar" as pontas,
+ * centralizada no centro do losango
+ */
+.rankImg {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ── Rank atual (centro) — borda dourada animada, 25% maior ─────────────── */
+
+@keyframes goldGlow {
+
+  0%,
+  100% {
+    border-color: #c9a227;
+    box-shadow: 0 0 5px 1px rgba(201, 162, 39, 0.35);
+  }
+
+  50% {
+    border-color: #ddb93a;
+    box-shadow: 0 0 14px 4px rgba(201, 162, 39, 0.65);
+  }
+}
+
+.rankItemCurrent .rankNum {
+  color: #c9a227;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.rankItemCurrent .rankDiamondOuter {
+  width: 78px;
+  /* 62 × 1.25 */
+  height: 78px;
+}
+
+.rankItemCurrent .rankDiamond {
+  width: 55px;
+  /* 44 × 1.25 */
+  height: 55px;
+  border-color: #c9a227;
+  border-width: 2px;
+  animation: goldGlow 3s ease-in-out infinite;
+}
+
+.rankItemCurrent .rankImg {
+  width: 80px;
+  /* 64 × 1.25 */
+  height: 80px;
+}
+
+/* ── Ranks futuros (direita) — mesmo visual do vazio, imagem esmaecida ─────── */
+
+.rankItemFuture .rankDiamond {
+  border-color: #1e2d3d;
+  background: rgb(8, 13, 21);
+}
+
+.rankItemFuture .rankImg {
+  filter: grayscale(0.4) brightness(0.45);
+}
+
+.rankItemFuture .rankNum {
+  opacity: 0.35;
+}
+
+/* ── Slots fora dos limites (X) ───────────────────────────────────────────── */
+
+.rankItemEmpty .rankDiamond {
+  border-color: #1e2d3d;
+  background: rgb(8, 13, 21);
+}
+
+.rankEmptyX {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── Grupos de upload ─────────────────────────────────────────────────────── */
+
+.uploadGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: rgba(14, 25, 40, 0.3);
+  min-height: 0;
+}
+
+.profileGroupsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+
+.uploadGroupDesafios {
+  flex: 1;
+}
+
+.desafiosScrollArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.emptyDesafios {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-size: 13px;
+  color: var(--text2);
+  letter-spacing: 0.05em;
+  text-align: center;
+  background: rgba(14, 25, 40, 0.2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  border-style: dashed;
+  margin-top: 4px;
+}
+
+.uploadGroupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.uploadGroupTitle {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--text2);
+  margin: 0;
+}
+
+/* ── Slots de imagem de perfil (PvP / PvE) ─────────────────────────────────── */
+
+/* ── Slots de imagem de perfil (PvP / PvE) ─────────────────────────────────── */
+
+.profileSlot {
+  position: relative;
+  height: 90px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(14, 25, 40, 0.2);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.profileSlotDragging {
+  border-color: var(--orange) !important;
+  background: rgba(255, 85, 0, 0.08) !important;
+  box-shadow: 0 0 15px rgba(255, 85, 0, 0.1);
+}
+
+.profileDropSide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  cursor: pointer;
+  border-right: 1px dashed var(--border2);
+  transition: background 0.15s;
+}
+
+.profileDropSide:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.profileSlotIcon {
+  color: var(--orange);
+  opacity: 0.8;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.profileSlotInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profileSlotLabel {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.profileSlotHint {
+  font-size: 10px;
+  color: var(--text2);
+  opacity: 0.6;
+}
+
+.profilePreviewSide {
+  width: 140px;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.profilePreviewThumb {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.profilePreviewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profilePreviewRemove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  z-index: 5;
+}
+
+.profilePreviewRemove:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.profilePreviewEmpty {
+  font-size: 9px;
+  color: var(--text2);
+  opacity: 0.3;
+  letter-spacing: 0.1em;
+}
+
+/* ── Botão de envio (coluna direita) ──────────────────────────────────────── */
+
+.submitWrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+.submitBtn {
+  background: rgba(255, 85, 0, 0.08);
+  border: 1px solid var(--orange, #ff5500);
+  border-radius: 4px;
+  color: var(--orange, #ff5500);
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  padding: 8px 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submitBtnSuccess {
+  background: rgba(76, 175, 130, 0.1);
+  border-color: #4caf82 !important;
+  color: #4caf82 !important;
+  opacity: 1 !important;
+}
+
+/* ── Info de Processamento ────────────────────────────────────────────────── */
+
+.processingInfo {
+  background: rgba(255, 140, 0, 0.04);
+  border: 1px solid rgba(255, 140, 0, 0.15);
+  border-radius: 6px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.processingIcon {
+  color: var(--orange, #ff5500);
+  display: flex;
+  flex-shrink: 0;
+}
+
+.processingText {
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Meus Desafios tab ───────────────────────────────────────────────────── */
+
+.desafiosTab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 28px;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.desafiosNote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 14px;
+  background: rgba(255, 85, 0, 0.05);
+  border: 1px solid rgba(255, 85, 0, 0.15);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.desafiosNote span {
+  font-size: 11px;
+  color: var(--text2);
+  letter-spacing: 0.03em;
+}
+
+.desafiosNoteBtn {
+  flex-shrink: 0;
+  background: rgba(255, 85, 0, 0.10);
+  border: 1px solid var(--orange, #ff5500);
+  border-radius: 4px;
+  color: var(--orange, #ff5500);
+  font-family: var(--font);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 5px 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.desafiosNoteBtn:hover {
+  background: rgba(255, 85, 0, 0.20);
+}
+
+.desafiosLists {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  flex: 1;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.desafiosLists>* {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0 6px 6px;
+}

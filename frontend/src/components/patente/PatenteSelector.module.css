@@ -1,0 +1,131 @@
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.selector {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.current {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px 5px 8px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  cursor: pointer;
+  min-width: 220px;
+  transition: border-color 0.15s;
+  user-select: none;
+  border-radius: 6px;
+}
+
+.current:hover { border-color: var(--orange); }
+
+.currentImg {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.placeholder {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text2);
+  font-size: 18px;
+}
+
+.currentName {
+  flex: 1;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arrow {
+  font-size: 10px;
+  color: var(--text2);
+  display: inline-block;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 100;
+  --bg2: #0d1520;
+  --bg3: #111c2a;
+  --hover: #162234;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  display: grid;
+  grid-template-columns: repeat(10, 52px);
+  gap: 4px;
+  padding: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  border-radius: 6px;
+}
+
+.option {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  padding: 4px;
+  transition: all 0.12s;
+  position: relative;
+  border-radius: 4px;
+}
+
+.option:hover {
+  border-color: var(--border2);
+  background: var(--hover);
+}
+
+.option img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.optionSelected {
+  border-color: var(--selected-border);
+  box-shadow: 0 0 8px var(--selected-glow);
+}
+
+.option[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0a1525;
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-size: 11px;
+  white-space: nowrap;
+  padding: 3px 7px;
+  pointer-events: none;
+  z-index: 200;
+}
+

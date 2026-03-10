@@ -1,0 +1,406 @@
+.page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  background: rgba(8, 13, 21, 0.95);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 0.14em;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.logoWar {
+  color: #fff;
+}
+
+.logoFace {
+  color: var(--red);
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.tab {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  padding: 10px 0;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tabActive {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+/* ── Formulário ───────────────────────────────────────────────────────────── */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text2);
+}
+
+.input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.input:focus {
+  border-color: var(--orange);
+  background: rgba(255, 85, 0, 0.06);
+}
+
+.codeInput {
+  letter-spacing: 0.12em;
+  font-size: 13px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputWrapper .input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color 0.15s;
+}
+
+.eyeBtn:hover {
+  color: var(--text);
+}
+
+/* ── Botões ───────────────────────────────────────────────────────────────── */
+
+.submitBtn {
+  background: var(--red);
+  border: none;
+  color: #fff;
+  font-family: var(--font);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  padding: 10px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: opacity 0.15s, filter 0.15s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.linkBtn:hover {
+  color: var(--text);
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  padding: 0 0 16px;
+  transition: color 0.15s;
+}
+
+.backBtn:hover {
+  color: var(--text);
+}
+
+/* ── Discord ──────────────────────────────────────────────────────────────── */
+
+.discordBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #5865F2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 9px 0;
+  font-family: var(--font);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.discordBtn:hover {
+  filter: brightness(1.1);
+}
+
+/* ── Separador ────────────────────────────────────────────────────────────── */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.divider p {
+  font-size: 11px;
+  color: var(--text2);
+  margin: 0;
+}
+
+/* ── Erro ─────────────────────────────────────────────────────────────────── */
+
+.error {
+  font-size: 12px;
+  color: #ff5555;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── Recover sub ──────────────────────────────────────────────────────────── */
+
+.recoverSub {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin: 0 0 4px;
+}
+
+/* ── Recovery code display ────────────────────────────────────────────────── */
+
+.recoveryDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.recoveryTitle {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  margin: 0;
+}
+
+.recoverySub {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.codeBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  padding: 12px 14px;
+}
+
+.code {
+  flex: 1;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+  word-break: break-all;
+}
+
+.copyBtn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.copyBtn:hover {
+  color: var(--text);
+  border-color: var(--orange);
+}
+
+/* ── Seletor de rank ──────────────────────────────────────────────────────── */
+
+.rankDropdown {
+  position: relative;
+}
+
+.rankTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  text-align: left;
+}
+
+.rankTrigger:hover {
+  border-color: var(--orange);
+}
+
+.rankTriggerImg {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.rankTriggerPlaceholder {
+  color: rgba(255, 255, 255, 0.3);
+  flex: 1;
+}
+
+.rankCaret {
+  margin-left: auto;
+  font-size: 9px;
+  color: var(--text2);
+}
+
+.rankGrid {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 3px;
+  background: #0a131f;
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.rankItem {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 3px;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+}
+
+.rankItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.rankItemActive {
+  border-color: var(--orange) !important;
+  background: rgba(255, 120, 40, 0.12) !important;
+}
