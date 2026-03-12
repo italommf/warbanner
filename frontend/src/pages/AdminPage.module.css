@@ -134,8 +134,12 @@
 }
 
 .searchType {
-    width: 110px;
+    width: 85px;
     flex-shrink: 0;
+}
+
+.selectTrigger {
+    padding: 8px;
 }
 
 .searchInput:focus {
