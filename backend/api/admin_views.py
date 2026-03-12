@@ -411,3 +411,35 @@ def admin_migrations_list(request):
         })
         
     return Response(data)
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def remote_ocr_list(request):
+    """
+    Retorna imagens pendentes para processamento pelo agente Windows.
+    """
+    images = UploadedImage.objects.filter(status='pending').order_by('created_at')[:10]
+    data = []
+    for img in images:
+        data.append({
+            'id': img.id,
+            'url': request.build_absolute_uri(img.image.url),
+            'type': img.image_type
+        })
+    return Response(data)
+
+@api_view(['POST'])
+@permission_classes([IsAdminUser])
+def remote_ocr_submit(request, pk):
+    """
+    Recebe o resultado processado pelo agente Windows e atualiza os dados.
+    """
+    from image_processing.tasks import apply_ocr_updates
+    image_obj = get_object_or_404(UploadedImage, pk=pk)
+    result = request.data.get('result')
+    
+    if not result:
+        return Response({'error': 'Resultado JSON é obrigatório'}, status=status.HTTP_400_BAD_REQUEST)
+    
+    success = apply_ocr_updates(image_obj, result)
+    return Response({'success': success})
