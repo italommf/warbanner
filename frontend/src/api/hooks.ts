@@ -411,6 +411,11 @@ export interface AdminUserDetail extends AdminUser {
   my_marcas: string[]
   my_insignias: string[]
   my_fitas: string[]
+  warchaos_solicitou: boolean
+  warchaos_solicitou_at: string | null
+  warchaos_user: string | null
+  warchaos_nick: string | null
+  warchaos_migrado: boolean
 }
 
 export interface AdminUserImage {
@@ -537,6 +542,23 @@ export function useReprocessImage() {
       qc.invalidateQueries({ queryKey: ['admin-queue'] })
       qc.invalidateQueries({ queryKey: ['admin-global-stats'] })
     }
+  })
+}
+
+export interface AdminMigration {
+  user_id: number
+  username: string
+  email: string
+  warchaos_user: string
+  warchaos_nick: string
+  solicitou_at: string
+  migrado: boolean
+}
+
+export function useAdminMigrations() {
+  return useQuery<AdminMigration[]>({
+    queryKey: ['admin-migrations'],
+    queryFn: () => authFetch('/api/admin/migrations/').then((r) => r.json()),
   })
 }
 

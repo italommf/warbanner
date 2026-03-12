@@ -1,13 +1,13 @@
 import { useState, useMemo } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useAdminUsers, useAdminUserDetail, useAdminUserImages, useUpdateAdminUser, useAdminGlobalStats, usePatentes, useAdminQueue, useReprocessImage, useAdminUserHistory, useItems, useTickets, useTicketDetail, useReplyTicket, useUpdateTicketStatus, type TicketStatus } from '@/api/hooks'
+import { useAdminUsers, useAdminUserDetail, useAdminUserImages, useUpdateAdminUser, useAdminGlobalStats, usePatentes, useAdminQueue, useReprocessImage, useAdminUserHistory, useAdminMigrations, useItems, useTickets, useTicketDetail, useReplyTicket, useUpdateTicketStatus, type TicketStatus } from '@/api/hooks'
 import type { AdminLog, ItemsResponse } from '@/api/hooks'
 import styles from './AdminPage.module.css'
 import { useAuthStore } from '@/store/authStore'
 import { Navigate } from 'react-router'
 
-type AdminTab = 'geral' | 'pvp' | 'pve' | 'desafios' | 'imagens' | 'historico'
+type AdminTab = 'geral' | 'pvp' | 'pve' | 'desafios' | 'imagens' | 'historico' | 'warchaos'
 
 export function AdminPage() {
     const user = useAuthStore((s) => s.user)
@@ -15,7 +15,7 @@ export function AdminPage() {
     const [search, setSearch] = useState('')
     const [searchType, setSearchType] = useState<'all' | 'nick' | 'username' | 'email'>('all')
     const [activeTab, setActiveTab] = useState<AdminTab>('geral')
-    const [mainTab, setMainTab] = useState<'admin' | 'queue' | 'support'>('admin')
+    const [mainTab, setMainTab] = useState<'admin' | 'queue' | 'support' | 'migrations'>('admin')
 
     const { data: stats } = useAdminGlobalStats()
     const {
@@ -81,6 +81,13 @@ export function AdminPage() {
                     <div className={`${styles.gameTabUnderline} ${mainTab === 'queue' ? styles.gameTabUnderlineActive : ''}`} />
                 </button>
                 <button
+                    className={`${styles.gameTab} ${mainTab === 'migrations' ? styles.gameTabActive : ''}`}
+                    onClick={() => setMainTab('migrations')}
+                >
+                    MIGRAÇÕES WARCHAOS
+                    <div className={`${styles.gameTabUnderline} ${mainTab === 'migrations' ? styles.gameTabUnderlineActive : ''}`} />
+                </button>
+                <button
                     className={`${styles.gameTab} ${mainTab === 'support' ? styles.gameTabActive : ''}`}
                     onClick={() => setMainTab('support')}
                 >
@@ -120,7 +127,7 @@ export function AdminPage() {
                 </div>
             </div>
 
-            <div className={`${styles.content} ${(mainTab === 'queue' || mainTab === 'support') ? styles.contentFull : ''}`}>
+            <div className={`${styles.content} ${(mainTab === 'queue' || mainTab === 'support' || mainTab === 'migrations') ? styles.contentFull : ''}`}>
                 {mainTab === 'admin' ? (
                     <>
                         <div
@@ -188,6 +195,11 @@ export function AdminPage() {
                     </>
                 ) : mainTab === 'queue' ? (
                     <QueuePanel />
+                ) : mainTab === 'migrations' ? (
+                    <MigrationsPanel onSelectUser={(id) => {
+                        setMainTab('admin');
+                        setSelectedUserId(id);
+                    }} />
                 ) : (
                     <SupportPanel />
                 )}
@@ -308,6 +320,7 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                 <button className={`${styles.subTab} ${activeTab === 'pve' ? styles.subTabActive : ''}`} onClick={() => setActiveTab('pve')}>PVE STATS</button>
                 <button className={`${styles.subTab} ${activeTab === 'desafios' ? styles.subTabActive : ''}`} onClick={() => setActiveTab('desafios')}>DESAFIOS</button>
                 <button className={`${styles.subTab} ${activeTab === 'imagens' ? styles.subTabActive : ''}`} onClick={() => setActiveTab('imagens')}>IMAGENS ({images.length})</button>
+                <button className={`${styles.subTab} ${activeTab === 'warchaos' ? styles.subTabActive : ''}`} onClick={() => setActiveTab('warchaos')}>WARCHAOS</button>
                 <button className={`${styles.subTab} ${activeTab === 'historico' ? styles.subTabActive : ''}`} onClick={() => setActiveTab('historico')}>HISTÓRICO</button>
             </div>
 
@@ -544,6 +557,59 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                         {images.length === 0 && (
                             <p className={styles.noUser}>Usuário ainda não enviou capturas para processamento.</p>
                         )}
+                    </div>
+                )}
+
+                {activeTab === 'warchaos' && (
+                    <div className={styles.formGrid}>
+                        <div className={styles.field}>
+                            <label>SOLICITOU MIGRAÇÃO</label>
+                            <CustomSelect
+                                value={formData.warchaos_solicitou ? '1' : '0'}
+                                onChange={(val) => handleChange('warchaos_solicitou', val === '1')}
+                                options={[
+                                    { value: '1', label: 'Sim' },
+                                    { value: '0', label: 'Não' }
+                                ]}
+                            />
+                        </div>
+                        <div className={styles.field}>
+                            <label>DATA DA SOLICITAÇÃO</label>
+                            <input 
+                                className={styles.input} 
+                                value={formData.warchaos_solicitou_at ? new Date(formData.warchaos_solicitou_at).toLocaleString('pt-BR') : 'Não solicitado'} 
+                                readOnly 
+                            />
+                        </div>
+                        <div className={styles.field}>
+                            <label>USUÁRIO WARCHAOS</label>
+                            <input 
+                                className={styles.input} 
+                                value={formData.warchaos_user ?? ''} 
+                                onChange={e => handleChange('warchaos_user', e.target.value)} 
+                                placeholder="vazio"
+                            />
+                        </div>
+                        <div className={styles.field}>
+                            <label>NICK WARCHAOS</label>
+                            <input 
+                                className={styles.input} 
+                                value={formData.warchaos_nick ?? ''} 
+                                onChange={e => handleChange('warchaos_nick', e.target.value)} 
+                                placeholder="vazio"
+                            />
+                        </div>
+                        <div className={styles.field}>
+                            <label>MIGRADO PARA WARCHAOS</label>
+                            <CustomSelect
+                                value={formData.warchaos_migrado ? '1' : '0'}
+                                onChange={(val) => handleChange('warchaos_migrado', val === '1')}
+                                options={[
+                                    { value: '1', label: 'Sim (Concluído)' },
+                                    { value: '0', label: 'Não' }
+                                ]}
+                            />
+                        </div>
                     </div>
                 )}
 
@@ -1186,6 +1252,75 @@ function AdminTicketDetail({ ticketId, onClose }: { ticketId: number, onClose: (
                     <button onClick={handleReply} disabled={replying}>
                         {replying ? '...' : 'RESPONDER'}
                     </button>
+                </div>
+            )}
+        </div>
+    )
+}
+
+function MigrationsPanel({ onSelectUser }: { onSelectUser: (id: number) => void }) {
+    const { data: migrations = [], isLoading } = useAdminMigrations()
+
+    if (isLoading) return <div className={styles.noUser}>Carregando solicitações de migração...</div>
+
+    return (
+        <div className={styles.migrationsContainer}>
+            {migrations.length === 0 ? (
+                <div className={styles.noUser} style={{ padding: '60px' }}>
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.3">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <polyline points="16 11 18 13 22 9" />
+                    </svg>
+                    <p>Nenhuma solicitação de migração encontrada.</p>
+                </div>
+            ) : (
+                <div className={styles.historyContainer}>
+                    <table className={styles.historyTable}>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Usuário</th>
+                                <th>Email</th>
+                                <th>Usuário WarChaos</th>
+                                <th>Nick WarChaos</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {migrations.map((m: any) => (
+                                <tr key={m.user_id}>
+                                    <td>{new Date(m.solicitou_at).toLocaleString('pt-BR')}</td>
+                                    <td>
+                                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                            <span style={{ fontWeight: 600 }}>{m.username}</span>
+                                        </div>
+                                    </td>
+                                    <td>{m.email}</td>
+                                    <td><code className={styles.warchaosCode}>{m.warchaos_user}</code></td>
+                                    <td><code className={styles.warchaosCode}>{m.warchaos_nick}</code></td>
+                                    <td>
+                                        <span className={`${styles.statusLabel} ${m.migrado ? styles.statusDone : styles.statusPending}`}>
+                                            {m.migrado ? 'MIGRADO' : 'AGUARDANDO'}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button 
+                                            className={styles.viewUserBtn}
+                                            onClick={() => onSelectUser(m.user_id)}
+                                        >
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                                <circle cx="12" cy="12" r="3" />
+                                            </svg>
+                                            EDITAR PERFIL
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             )}
         </div>

@@ -2019,6 +2019,65 @@
   font-size: 0.85rem;
 }
 
+/* Migrations Panel */
+.migrationsContainer {
+  padding: 24px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.warchaosCode {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  background: rgba(255, 85, 0, 0.1);
+  color: var(--orange);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 85, 0, 0.2);
+}
+
+.statusLabel {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusDone {
+  background: rgba(76, 175, 130, 0.15);
+  color: #4caf82;
+  border: 1px solid rgba(76, 175, 130, 0.3);
+}
+
+.statusPending {
+  background: rgba(255, 166, 0, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(255, 166, 0, 0.3);
+}
+
+.viewUserBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.viewUserBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
 .resolveBtn, .unsolveBtn, .reopenBtn {
   font-size: 10px;
   font-weight: 800;

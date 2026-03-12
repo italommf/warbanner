@@ -16,7 +16,7 @@ class WarchaosMigrationSerializer(serializers.ModelSerializer):
     pvp_em = serializers.FloatField(read_only=True)
     pvp_taxa_vitoria = serializers.IntegerField(source='pvp_win_rate', read_only=True)
     pvp_partidas = serializers.IntegerField(source='pvp_matches', read_only=True)
-    pvp_horas = serializers.IntegerField(read_only=True)
+    pvp_horas = serializers.IntegerField(source='pvp_hours', read_only=True)
     pvp_melhor_rank_pontos = serializers.IntegerField(source='pvp_best_rank_rp', read_only=True)
     pvp_melhor_rank_nome = serializers.CharField(source='pvp_best_rank_name', read_only=True)
     
@@ -26,7 +26,7 @@ class WarchaosMigrationSerializer(serializers.ModelSerializer):
     pve_missao_facil = serializers.IntegerField(source='pve_mission_easy', read_only=True)
     pve_missao_normal = serializers.IntegerField(source='pve_mission_medium', read_only=True)
     pve_missao_dificil = serializers.IntegerField(source='pve_mission_hard', read_only=True)
-    pve_horas = serializers.IntegerField(read_only=True)
+    pve_horas = serializers.IntegerField(source='pve_hours', read_only=True)
     
     estatisticas_classes_pvp = serializers.JSONField(source='pvp_classes', read_only=True)
     estatisticas_classes_pve = serializers.JSONField(source='pve_classes', read_only=True)
@@ -110,24 +110,50 @@ def warchaos_migration_api(request):
 
     elif request.method == 'POST':
         # Update migration status
-        # Expected: { "usuario": "...", "email": "...", "migrado_para_warchaos": true }
-        usuario = request.data.get('usuario')
-        email = request.data.get('email')
+        # Expected: { "usuario_warchaos": "...", "nick_warchaos": "...", "migrado_para_warchaos": true }
+        usuario_wc = request.data.get('usuario_warchaos')
+        nick_wc = request.data.get('nick_warchaos')
         migrado = request.data.get('migrado_para_warchaos')
 
-        if not usuario or not email:
-            return Response({"error": "Usuário e Email são obrigatórios."}, status=status.HTTP_400_BAD_REQUEST)
+        if not usuario_wc:
+            return Response({
+                "error": "O campo 'usuario_warchaos' é obrigatório.",
+                "code": "MISSING_USUARIO_WARCHAOS"
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        if not nick_wc:
+            return Response({
+                "error": "O campo 'nick_warchaos' é obrigatório.",
+                "code": "MISSING_NICK_WARCHAOS"
+            }, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            user = User.objects.get(username=usuario, email=email)
-            profile = user.profile
-            if migrado is not None:
-                profile.warchaos_migrado = bool(migrado)
-                profile.save()
-                return Response({"message": f"Status de migração do usuário {usuario} atualizado para {profile.warchaos_migrado}."}, status=status.HTTP_200_OK)
-            return Response({"error": "Chave 'migrado_para_warchaos' ausente."}, status=status.HTTP_400_BAD_REQUEST)
-        except User.DoesNotExist:
-            return Response({"error": "Usuário não encontrado."}, status=status.HTTP_404_NOT_FOUND)
+            profile = UserProfile.objects.get(warchaos_user=usuario_wc, warchaos_nick=nick_wc)
+            
+            if migrado is None:
+                return Response({
+                    "error": "A chave 'migrado_para_warchaos' é obrigatória.",
+                    "code": "MISSING_MIGRADO_KEY"
+                }, status=status.HTTP_400_BAD_REQUEST)
+            
+            if not isinstance(migrado, bool):
+                return Response({
+                    "error": "O valor de 'migrado_para_warchaos' deve ser um booleano (true ou false).",
+                    "code": "INVALID_BOOLEAN_TYPE"
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            profile.warchaos_migrado = migrado
+            profile.save()
+            return Response({
+                "success": True,
+                "message": f"Status de migração do usuário {usuario_wc} ({nick_wc}) atualizado para {profile.warchaos_migrado}.",
+                "status_atual": profile.warchaos_migrado
+            }, status=status.HTTP_200_OK)
+        except UserProfile.DoesNotExist:
+            return Response({
+                "error": "Nenhuma solicitação de migração foi encontrada com este Usuário e Nick vinculados.",
+                "code": "MIGRATION_REQUEST_NOT_FOUND"
+            }, status=status.HTTP_404_NOT_FOUND)
 
 from django.utils import timezone
 

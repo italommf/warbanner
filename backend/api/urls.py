@@ -35,6 +35,7 @@ urlpatterns = [
     path("admin/users/<int:pk>/images/", admin_views.admin_user_images),
     path("admin/users/<int:pk>/banners/", admin_views.admin_user_banners),
     path("admin/users/<int:user_id>/reset-ocr/", admin_views.reset_ocr_data),
+    path("admin/migrations/", admin_views.admin_migrations_list),
 
     # Support
     path("support/tickets/", views.ticket_list_create),

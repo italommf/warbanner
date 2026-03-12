@@ -43,6 +43,12 @@ def _user_full_info(user: User) -> dict:
         'my_marcas': profile.my_marcas,
         'my_insignias': profile.my_insignias,
         'my_fitas': profile.my_fitas,
+        # Migração Warchaos
+        'warchaos_solicitou': profile.warchaos_solicitou,
+        'warchaos_solicitou_at': profile.warchaos_solicitou_at,
+        'warchaos_user': profile.warchaos_user,
+        'warchaos_nick': profile.warchaos_nick,
+        'warchaos_migrado': profile.warchaos_migrado,
     }
 
 from django.core.paginator import Paginator
@@ -167,7 +173,9 @@ def admin_user_detail(request, pk):
             'pvp_best_rank_rp': 'PvP Best RP', 'pvp_best_rank_name': 'PvP Best Rank', 'pvp_classes': 'PvP Classes',
             'pve_em': 'PvE K/D', 'pve_win_rate': 'PvE WinRate', 'pve_matches': 'PvE Matches', 'pve_mission_easy': 'PvE Easy',
             'pve_mission_medium': 'PvE Medium', 'pve_mission_hard': 'PvE Hard', 'pve_hours': 'PvE Hours', 'pve_classes': 'PvE Classes',
-            'my_marcas': 'Marcas', 'my_insignias': 'Insígnias', 'my_fitas': 'Fitas'
+            'my_marcas': 'Marcas', 'my_insignias': 'Insígnias', 'my_fitas': 'Fitas',
+            'warchaos_solicitou': 'Solicitou Migração', 'warchaos_user': 'Usuário Warchaos', 
+            'warchaos_nick': 'Nick Warchaos', 'warchaos_migrado': 'Migrado para Warchaos'
         }
         for f, label in p_fields.items():
             if f in request.data:
@@ -380,3 +388,26 @@ def reset_ocr_data(request, user_id):
         return Response({'error': 'Tipo inválido. Use: pvp, pve ou desafios'}, status=400)
 
     return Response({'success': True, 'type': reset_type, 'message': f'Dados de {reset_type.upper()} resetados.'})
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def admin_migrations_list(request):
+    """
+    Lista todos os usuários que solicitaram migração para o Warchaos.
+    """
+    users = User.objects.filter(profile__warchaos_solicitou=True).order_by('-profile__warchaos_solicitou_at')
+    
+    data = []
+    for u in users:
+        p = u.profile
+        data.append({
+            'user_id': u.id,
+            'username': u.username,
+            'email': u.email,
+            'warchaos_user': p.warchaos_user,
+            'warchaos_nick': p.warchaos_nick,
+            'solicitou_at': p.warchaos_solicitou_at,
+            'migrado': p.warchaos_migrado
+        })
+        
+    return Response(data)
