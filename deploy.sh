@@ -26,8 +26,9 @@ if ! docker compose version > /dev/null 2>&1; then
 fi
 
 # 3. Baixar modificações do Git
-echo -e "${BLUE}Puxando atualizações do Git...${NC}"
-git pull origin main
+echo -e "${BLUE}Sincronizando com o Git (Reset para origin/main)...${NC}"
+git fetch origin main
+git reset --hard origin/main
 
 # 4. Criar rede persistente se necessário (opcional no compose v2)
 # 5. Limpeza preventiva de espaço
