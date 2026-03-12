@@ -134,7 +134,8 @@
 }
 
 .searchType {
-    width: 85px;
+    width: auto;
+    min-width: 80px;
     flex-shrink: 0;
 }
 
@@ -418,7 +419,7 @@
 
 .customSelect {
     position: relative;
-    width: 140px;
+    width: auto;
 }
 
 .selectTrigger {
@@ -426,17 +427,16 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 6px;
     color: #fff;
-    padding: 0 12px;
-    font-size: 0.85rem;
+    padding: 0 10px;
+    font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
     outline: none;
     transition: all 0.2s;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 8px;
     height: 38px;
-    /* To match input height */
 }
 
 .selectTrigger:hover {
@@ -450,12 +450,11 @@
 }
 
 .caret {
-    margin-left: auto;
     width: 0;
     height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid rgba(255, 255, 255, 0.4);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid rgba(255, 255, 255, 0.4);
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
 }
