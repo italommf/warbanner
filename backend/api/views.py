@@ -150,12 +150,14 @@ def _user_info(user: User) -> dict:
 # ── Media ────────────────────────────────────────────────────────────────────
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def items(request):
     data = {cat: scan_category(cat) for cat in CATEGORIES}
     return Response(data)
 
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def music_list(request):
     folder = Path(settings.MUSIC_ROOT)
     if not folder.exists():
@@ -169,6 +171,7 @@ def music_list(request):
 
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def backgrounds(request):
     video_folder = Path(settings.MEDIA_ROOT) / 'site' / 'background' / 'video'
     if not video_folder.exists():
@@ -182,6 +185,7 @@ def backgrounds(request):
 
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def gifs(request):
     folder = Path(settings.MEDIA_ROOT) / 'site' / 'gif'
     if not folder.exists():
@@ -199,6 +203,7 @@ def gifs(request):
 PAGE_SIZE = 100
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def community_latest(request):
     """Retorna os 6 banners mais recentes para o carrossel."""
     banners = Banner.objects.select_related('user').order_by('-created_at')[:4]
@@ -206,6 +211,7 @@ def community_latest(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def community(request):
     page = max(1, int(request.query_params.get('page', 1)))
     sort = request.query_params.get('sort', 'newest')
