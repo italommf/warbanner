@@ -7,7 +7,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -274,6 +274,7 @@ def history_delete(request, pk):
 # ── Auth: register / login / recover / me ────────────────────────────────────
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def auth_register(request):
     username     = request.data.get('username', '').strip()
     email        = request.data.get('email', '').strip()
@@ -322,6 +323,7 @@ def auth_register(request):
 
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def auth_login(request):
     username = request.data.get('username', '').strip()
     password = request.data.get('password', '')
@@ -340,6 +342,7 @@ def auth_login(request):
 
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def auth_recover(request):
     email        = request.data.get('email', '').strip()
     code         = request.data.get('code', '').strip().upper()
@@ -414,6 +417,7 @@ def auth_change_password(request):
 # ── Discord OAuth2 ───────────────────────────────────────────────────────────
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def discord_auth_url(request):
     params = {
         'client_id':     settings.DISCORD_CLIENT_ID,
@@ -425,6 +429,8 @@ def discord_auth_url(request):
     return Response({'url': url})
 
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
 def discord_callback(request):
     """Browser redirect handler — not wrapped in @api_view to allow HttpResponseRedirect."""
     code = request.GET.get('code')

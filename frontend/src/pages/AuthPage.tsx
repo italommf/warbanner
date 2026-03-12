@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuthStore } from '@/store/authStore'
 import { useBannerStore } from '@/store/bannerStore'
-import { useLogin, useRegister, useRecover, useDiscordAuthUrl, usePatentes } from '@/api/hooks'
+import { useLogin, useRegister, useRecover, usePatentes } from '@/api/hooks'
 import type { AuthResponse } from '@/api/hooks'
 import { useRef, useEffect } from 'react'
 import styles from './AuthPage.module.css'
@@ -28,42 +28,16 @@ function EyeClosed() {
   )
 }
 
-// ── Ícone Discord ─────────────────────────────────────────────────────────────
-
-function DiscordIcon() {
-  return (
-    <svg width="18" height="14" viewBox="0 0 18 14" fill="currentColor">
-      <path d="M15.25 1.18A14.76 14.76 0 0 0 11.48 0c-.18.33-.38.77-.52 1.12a13.6 13.6 0 0 0-3.92 0C6.9.77 6.69.33 6.51 0A14.76 14.76 0 0 0 2.74 1.18C.39 4.8-.24 8.33.08 11.8a14.9 14.9 0 0 0 4.55 2.3c.37-.5.7-1.03.98-1.59a9.65 9.65 0 0 1-1.54-.74c.13-.09.26-.19.38-.28a10.57 10.57 0 0 0 9.08 0c.13.1.25.19.38.28-.49.29-1 .54-1.54.74.28.56.61 1.09.98 1.59a14.85 14.85 0 0 0 4.55-2.3c.37-3.93-.63-7.43-2.69-10.62ZM6.01 9.67c-.85 0-1.54-.78-1.54-1.74s.67-1.74 1.54-1.74c.86 0 1.56.78 1.54 1.74 0 .96-.68 1.74-1.54 1.74Zm5.98 0c-.85 0-1.54-.78-1.54-1.74s.67-1.74 1.54-1.74c.86 0 1.56.78 1.54 1.74 0 .96-.68 1.74-1.54 1.74Z" />
-    </svg>
-  )
-}
-
-// ── Botão Discord ─────────────────────────────────────────────────────────────
+// ── Botão Discord (Desativado) ────────────────────────────────────────────────
 
 function DiscordButton() {
-  const { data } = useDiscordAuthUrl()
-  return (
-    <a
-      href={data?.url ?? '#'}
-      className={styles.discordBtn}
-      onClick={(e) => { if (!data?.url) e.preventDefault() }}
-    >
-      <DiscordIcon />
-      Entrar com Discord
-    </a>
-  )
+  return null
 }
 
 // ── Separador ─────────────────────────────────────────────────────────────────
 
 function Divider() {
-  return (
-    <div className={styles.divider}>
-      <span />
-      <p>ou</p>
-      <span />
-    </div>
-  )
+  return null
 }
 
 // ── Tela: código de recuperação pós-registro ──────────────────────────────────
