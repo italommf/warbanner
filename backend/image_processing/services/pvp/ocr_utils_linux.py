@@ -1,6 +1,20 @@
 import pytesseract
 import cv2
 import numpy as np
+import os
+import platform
+
+# Se estiver no Windows, precisamos apontar para o executável do Tesseract caso ele exista
+if platform.system() == "Windows":
+    user_home = os.path.expanduser("~")
+    tesseract_paths = [
+        r"C:\Program Files\Tesseract-OCR\tesseract.exe",
+        os.path.join(user_home, "AppData", "Local", "Tesseract-OCR", "tesseract.exe")
+    ]
+    for path in tesseract_paths:
+        if os.path.exists(path):
+            pytesseract.pytesseract.tesseract_cmd = path
+            break
 
 def read_text_linux(img_np):
     """

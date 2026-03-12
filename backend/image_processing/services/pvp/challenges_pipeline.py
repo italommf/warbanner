@@ -41,43 +41,87 @@ def run_challenges_pipeline(image_path):
         
         # 3. Processar cada slot sequencialmente (um por vez)
         async def process_slots_sequentially():
+            import cv2
+            import pytesseract
             items = []
             for i, roi_def in enumerate(slots):
-                crop = crop_roi(img, roi_def)
+                crop_full = crop_roi(img, roi_def)
                 logger.info(f"      {C_CYAN}[OCR]{C_END} Lendo Slot {i+1}...")
                 
-                text = await WindowsOCR.recognize_async(crop)
+                # O ícone ocupa os primeiros ~30% do slot. 
+                # Vamos criar um crop secundário focado apenas no texto.
+                text_x_offset = int(crop_full.shape[1] * 0.32)
+                crop_text_only = crop_full[:, text_x_offset:]
                 
-                if text and len(text.strip()) > 1:
-                    raw_name = " ".join(text.split()).strip()
-                    logger.info(f"      {C_CYAN}leitura do ocr:{C_END} '{raw_name}'")
+                # Estratégia de múltiplas tentativas
+                found_match = None
+                # Técnicas: (imagem, nome, psm_mode)
+                techniques = [
+                    (crop_full, "Original", 6),
+                    (crop_text_only, "Corte de Texto", 7), # PSM 7: Single line
+                    (crop_text_only, "Otsu (Texto)", 7),
+                    (crop_text_only, "CLAHE (Texto)", 7),
+                    (crop_text_only, "Threshold Fixo (Texto)", 7)
+                ]
+                
+                for processed_img, tech_name, psm_mode in techniques:
+                    final_img = processed_img
                     
-                    # Tenta encontrar o desafio oficial
-                    match = find_best_challenge_match(raw_name)
+                    if "Otsu" in tech_name:
+                        gray = cv2.cvtColor(processed_img, cv2.COLOR_BGR2GRAY) if len(processed_img.shape) == 3 else processed_img
+                        _, final_img = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+                    elif "CLAHE" in tech_name:
+                        gray = cv2.cvtColor(processed_img, cv2.COLOR_BGR2GRAY) if len(processed_img.shape) == 3 else processed_img
+                        clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
+                        final_img = clahe.apply(gray)
+                    elif "Threshold Fixo" in tech_name:
+                        gray = cv2.cvtColor(processed_img, cv2.COLOR_BGR2GRAY) if len(processed_img.shape) == 3 else processed_img
+                        _, final_img = cv2.threshold(gray, 180, 255, cv2.THRESH_BINARY)
                     
-                    if match:
-                        is_exact = match['match_type'] == 'exact'
-                        display_name = match['official_name']
-                        similarity = match['similarity']
-                        
-                        logger.info(f"      {C_CYAN}desafio encontrado com o ocr:{C_END} {C_BOLD}{str(is_exact).lower()}{C_END}")
-                        if not is_exact:
-                            logger.info(f"      {C_CYAN}similaridade:{C_END} {C_YELLOW}{similarity}{C_END} (Match: '{display_name}')")
+                    # Tesseract Config customizada de acordo com a técnica
+                    custom_config = f'--oem 3 --psm {psm_mode}'
+                    
+                    # Chamada direta ao pytesseract com config específica
+                    try:
+                        # Se for Windows, o path já foi configurado no ocr_utils_linux
+                        text = pytesseract.image_to_string(final_img, lang='por+eng', config=custom_config)
+                    except:
+                        # Fallback para o wrapper se o pytesseract direto falhar por algum motivo
+                        text = await WindowsOCR.recognize_async(final_img)
+                    
+                    if text and len(text.strip()) > 1:
+                        raw_name = " ".join(text.split()).strip()
+                        if tech_name != "Original":
+                            logger.info(f"      {C_YELLOW}[Tentativa: {tech_name}]{C_END} leitura: '{raw_name}'")
                         else:
-                            logger.info(f"      {C_GREEN}√ Slot {i+1} (Match Exato):{C_END} {C_BOLD}{display_name}{C_END}")
-
-                        items.append({
-                            "id": match['filename'],
-                            "name": display_name,
-                            "category": match['category'],
-                            "score": 1.0,
-                            "slot": i + 1
-                        })
+                            logger.info(f"      {C_CYAN}leitura do ocr:{C_END} '{raw_name}'")
+                        
+                        match = find_best_challenge_match(raw_name)
+                        if match:
+                            found_match = match
+                            break # Encontrou!
+                
+                if found_match:
+                    is_exact = found_match['match_type'] == 'exact'
+                    display_name = found_match['official_name']
+                    similarity = found_match['similarity']
+                    
+                    logger.info(f"      {C_CYAN}desafio encontrado com o ocr:{C_END} {C_BOLD}{str(is_exact).lower()}{C_END}")
+                    if not is_exact:
+                        logger.info(f"      {C_CYAN}similaridade:{C_END} {C_YELLOW}{similarity}{C_END} (Match: '{display_name}')")
                     else:
-                        logger.info(f"      {C_CYAN}desafio encontrado com o ocr:{C_END} {C_RED}false{C_END}")
-                        logger.warning(f"      {C_YELLOW}[!] Slot {i+1} não mapeado.{C_END}")
+                        logger.info(f"      {C_GREEN}√ Slot {i+1} (Match Exato):{C_END} {C_BOLD}{display_name}{C_END}")
+
+                    items.append({
+                        "id": found_match['filename'],
+                        "name": display_name,
+                        "category": found_match['category'],
+                        "score": 1.0,
+                        "slot": i + 1
+                    })
                 else:
-                    logger.debug(f"      Slot {i+1}: Vazio.")
+                    logger.info(f"      {C_CYAN}desafio encontrado com o ocr:{C_END} {C_RED}false{C_END}")
+                    logger.warning(f"      {C_YELLOW}[!] Slot {i+1} não mapeado após {len(techniques)} tentativas.{C_END}")
             return items
 
         # Executa o bloco assíncrono sequencial
