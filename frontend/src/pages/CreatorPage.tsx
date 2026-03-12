@@ -4,10 +4,9 @@ import { PatenteSelector } from '@/components/patente/PatenteSelector'
 import { FilterBar, ColorFilterBar, SearchBar } from '@/components/filter/FilterBar'
 import { ListColumn } from '@/components/lists/ListColumn'
 import { useMarcas, useInsignias, useFitas, useItemsLoading } from '@/api/hooks'
-import type { Item } from '@/api/hooks'
 import { useBannerStore } from '@/store/bannerStore'
-import type { MainFilter, ArmasFilter, ColorFilter } from '@/store/bannerStore'
 import { VIDEO_EXT } from '@/App'
+
 import { applyFilters } from '@/utils/challenges'
 import styles from './CreatorPage.module.css'
 
