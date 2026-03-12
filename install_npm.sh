@@ -7,6 +7,24 @@ NC='\033[0m'
 
 echo -e "${BLUE}Iniciando instalação do Nginx Proxy Manager...${NC}"
 
+# 0. Verificar e instalar Docker se necessário
+if ! [ -x "$(command -v docker)" ]; then
+    echo -e "${BLUE}Docker não encontrado. Instalando...${NC}"
+    sudo apt-get update
+    sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt-get update
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+fi
+
+if ! docker compose version > /dev/null 2>&1; then
+    echo -e "${BLUE}Docker Compose não encontrado. Instalando plugin...${NC}"
+    sudo apt-get update
+    sudo apt-get install -y docker-compose-plugin
+fi
+
+
 # 1. Criar diretório para o NPM
 mkdir -p ~/nginx-proxy-manager
 cd ~/nginx-proxy-manager
