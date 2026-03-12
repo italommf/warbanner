@@ -305,7 +305,9 @@ function CommunityStatsTab() {
   const { data: stats, isLoading } = useCommunityStatistics()
 
   if (isLoading) return <div className={styles.loadingWrap}><div className={styles.spinner} /><span className={styles.loadingText}>SINCRONIZANDO ESTATÍSTICAS...</span></div>
-  if (!stats) return <p className={styles.empty}>Dados não disponíveis no momento.</p>
+  
+  const isDataReady = stats && stats.general && stats.pvp && stats.pve
+  if (!isDataReady) return <p className={styles.empty}>Dados não disponíveis no momento.</p>
 
   return (
     <div className={styles.statsContainer}>
