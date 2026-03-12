@@ -5,13 +5,10 @@ from pathlib import Path
 
 # Adiciona o diretório do backend ao sys.path para poder importar o processador
 BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(BASE_DIR))
 sys.path.append(str(BASE_DIR / 'processamento_nomes_desc_desafios'))
 
-try:
-    from processador_detalhado import obter_dataframes_completos
-except ImportError:
-    print("Erro: Não foi possível importar obter_dataframes_completos")
-    sys.exit(1)
+from processador_detalhado import obter_dataframes_completos
 
 def gerar_json():
     print("Iniciando geração do mapeamento de desafios...")

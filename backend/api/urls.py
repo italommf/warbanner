@@ -36,6 +36,10 @@ urlpatterns = [
     path("admin/users/<int:pk>/banners/", admin_views.admin_user_banners),
     path("admin/users/<int:user_id>/reset-ocr/", admin_views.reset_ocr_data),
     path("admin/migrations/", admin_views.admin_migrations_list),
+    
+    # Remote OCR
+    path("admin/ocr/pending/", admin_views.remote_ocr_list),
+    path("admin/ocr/submit/<int:pk>/", admin_views.remote_ocr_submit),
 
     # Support
     path("support/tickets/", views.ticket_list_create),
