@@ -234,6 +234,7 @@ function GuardarDadosTab() {
   const [pvpImage, setPvpImage] = useState<UploadedImage | null>(null)
   const [pveImage, setPveImage] = useState<UploadedImage | null>(null)
   const [isDragging, setIsDragging] = useState(false)
+  const [uploadProgress, setUploadProgress] = useState<{ current: number; total: number } | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const { data: userStats } = useUserStats()
@@ -284,33 +285,43 @@ function GuardarDadosTab() {
     const pveFiles = pveImage ? [pveImage.file] : []
     const desafioFiles = images.map(img => img.file)
 
-    if (isPending) return
-    if (pvpFiles.length === 0 && pveFiles.length === 0 && desafioFiles.length === 0) return
+    const totalImages = pvpFiles.length + pveFiles.length + desafioFiles.length
+    if (totalImages === 0) return
+
+    setUploadProgress({ current: 0, total: totalImages })
+    let completed = 0
 
     // Envia cada tipo sequencialmente (PVP → PVE → Desafios)
-    // Cada upload é independente: se um falhar, os outros continuam
     if (pvpFiles.length > 0) {
-      try { await uploadImages({ files: pvpFiles, type: 'pvp' }) }
-      catch (e) { console.error('Erro no upload PVP:', e) }
+      try {
+        await uploadImages({ files: pvpFiles, type: 'pvp' })
+        completed += pvpFiles.length
+        setUploadProgress({ current: completed, total: totalImages })
+      } catch (e) { console.error('Erro no upload PVP:', e) }
     }
+
     if (pveFiles.length > 0) {
-      try { await uploadImages({ files: pveFiles, type: 'pve' }) }
-      catch (e) { console.error('Erro no upload PVE:', e) }
+      try {
+        await uploadImages({ files: pveFiles, type: 'pve' })
+        completed += pveFiles.length
+        setUploadProgress({ current: completed, total: totalImages })
+      } catch (e) { console.error('Erro no upload PVE:', e) }
     }
 
     if (desafioFiles.length > 0) {
-      // Chunking: Envia em lotes de 10 imagens para evitar timeout e erro 413
-      const CHUNK_SIZE = 10
-      for (let i = 0; i < desafioFiles.length; i += CHUNK_SIZE) {
-        const chunk = desafioFiles.slice(i, i + CHUNK_SIZE)
+      // "Uma imagem por vez" conforme pedido pelo usuário para feedback granular
+      for (const file of desafioFiles) {
         try {
-          await uploadImages({ files: chunk, type: 'desafios' })
+          await uploadImages({ files: [file], type: 'desafios' })
+          completed += 1
+          setUploadProgress({ current: completed, total: totalImages })
         } catch (e) {
-          console.error(`Erro no upload do lote de Desafios ${Math.floor(i / CHUNK_SIZE) + 1}:`, e)
+          console.error(`Erro no upload da imagem ${file.name}:`, e)
         }
       }
     }
 
+    setUploadProgress(null)
     setImages([])
     setPvpImage(null)
     setPveImage(null)
@@ -479,7 +490,13 @@ function GuardarDadosTab() {
                   cursor: ((images.length === 0 && !pvpImage && !pveImage) || isPending) ? 'not-allowed' : 'pointer'
                 }}
               >
-                {isPending ? 'ENVIANDO...' : (isSuccess && images.length === 0 && !pvpImage && !pveImage) ? 'ENVIADO COM SUCESSO!' : 'ENVIAR IMAGENS PARA O PROCESSAMENTO'}
+                {uploadProgress ? (
+                  `ENVIANDO ${uploadProgress.current}/${uploadProgress.total}...`
+                ) : (isSuccess && images.length === 0 && !pvpImage && !pveImage) ? (
+                  'ENVIADO COM SUCESSO!'
+                ) : (
+                  'ENVIAR IMAGENS PARA O PROCESSAMENTO'
+                )}
               </button>
             </div>
           </div>
