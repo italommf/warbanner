@@ -1,0 +1,12 @@
+<Achievement active="1" id="6178" kind="kills" MS_side="0" amount="5000">
+	<UI name="@japan_badge_crown_kills" desc="@japan_badge_crown_kills_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="weapon" param="*crown*_shop" compare="match"/>
+		<Filter kind="mission_type" param="japaneasy"/>
+		<Filter kind="mission_type" param="japannormal"/>
+		<Filter kind="mission_type" param="japanhard"/>
+	</Filters>
+	<BannerImage image="challenge_badge_japan_05" type="badge" />
+</Achievement>

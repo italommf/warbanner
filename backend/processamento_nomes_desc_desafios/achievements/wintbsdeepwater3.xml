@@ -1,0 +1,8 @@
+<Achievement active="1" id="6163" kind="game_end" MS_side="0" amount="50" tags="tbs">
+	<UI name="@winTBSDeepwater3" desc="@winTBSDeepwater3_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="a8ee23a0-da5a-4a25-823f-23dcf98198c2"/>
+	</Filters>
+	<BannerImage image="challenge_mark_firstPlaceDeepWater3" type="mark" />
+</Achievement>

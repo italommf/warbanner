@@ -1,0 +1,9 @@
+<Achievement active="1" id="5076" kind="game_end" MS_side="0" amount="25" tags="tbs">
+	<UI name="@winTBSWaterfalling2" desc="@winTBSWaterfalling2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="da20dcc4-9672-4077-b877-1b04c6772b75"/>
+		<Filter kind="mission_uid" param="8fa3688a-75c9-44d8-ff92-90ac38c56b4c"/>
+	</Filters>
+	<BannerImage image="challenge_mark_winTBSWaterfalling2" type="mark" />
+</Achievement>

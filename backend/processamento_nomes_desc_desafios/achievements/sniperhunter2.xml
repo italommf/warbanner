@@ -1,0 +1,9 @@
+<Achievement active="1" id="452" kind="kills" MS_side="0" amount="1000">
+	<UI name="@sniperHunter2" desc="@sniperHunter2_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player_class" param="Recon"/>
+            <Filter kind="ai_archetype" param="Sniper"/>		
+	</Filters>
+	<BannerImage image="challenge_badge_86" type="badge" />
+</Achievement>	

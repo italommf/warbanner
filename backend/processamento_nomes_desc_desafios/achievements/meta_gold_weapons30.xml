@@ -1,0 +1,7 @@
+<Achievement active="0" id="6502" kind="achievement_awarded" MS_side="1" amount="30">
+	<UI name="@meta_gold_weapons30" desc="@meta_gold_weapons30_desc"/>
+	<Filters>
+		<Filter kind="tag" param="gold"/>
+	</Filters>
+	<BannerImage image="challenge_badge_king_03" type="badge" />
+</Achievement>

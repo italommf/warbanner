@@ -1,0 +1,8 @@
+<Achievement active="1" id="759" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@firstPlaceTDMShuttle1" desc="@firstPlaceTDMShuttle1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="8702f1ee-bac1-4bea-a92b-d5b76c5cd5af"/>
+	</Filters>
+	<BannerImage image="challenge_badge_shuttle_01" type="badge" />
+</Achievement>

@@ -1,0 +1,13 @@
+<Achievement active="1" id="447" kind="kills" MS_side="0" amount="5000">
+	<UI name="@pt21Kill" desc="@pt21Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt21_shop"/>
+		<Filter kind="weapon" param="pt21_gold01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_weapon10_37" type="mark"/>
+</Achievement>

@@ -1,0 +1,8 @@
+<Achievement active="1" id="2129" kind="game_end" MS_side="0" amount="25" tags="dst">
+	<UI name="@firstPlaceDSTTowers1" desc="@firstPlaceDSTTowers1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="d1f15bf2-1db4-42f4-b335-097a57b83ed4"/>
+	</Filters>
+	<BannerImage image="challenge_badge_towers_01" type="badge"/>
+</Achievement>		

@@ -1,0 +1,8 @@
+<Achievement active="1" id="13119" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@firstPlaceTDMSwarm1" desc="@firstPlaceTDMSwarm1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="dda8254d-616f-412c-aeba-7ca0c20b7655"/>
+	</Filters>
+	<BannerImage image="challenge_badge_tdm_swarm_01" type="badge" />
+</Achievement>		

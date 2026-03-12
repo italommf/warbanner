@@ -1,0 +1,8 @@
+<Achievement active="1" id="2145" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@winTDMCrossriver2" desc="@winTDMCrossriver2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="15144c77-4aaa-4d33-a88b-06eee80fd7f7"/>
+	</Filters>
+	<BannerImage image="challenge_mark_crossriver_02" type="mark" />
+</Achievement>		

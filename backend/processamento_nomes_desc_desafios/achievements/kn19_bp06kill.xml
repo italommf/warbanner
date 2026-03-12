@@ -1,0 +1,12 @@
+<Achievement active="1" id="7543" kind="kills" MS_side="0" amount="2500">
+	<UI name="@kn19_bp06Kill" desc="@kn19_bp06Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="kn19_bp06"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_bp06_18" type="stripe" />
+</Achievement>

@@ -1,0 +1,8 @@
+<Achievement active="1" id="2497" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@winTDMMotel2" desc="@winTDMMotel2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="71e863e1-e28c-489d-b145-866987fbe031"/>
+	</Filters>
+	<BannerImage image="challenge_mark_hotel_02" type="mark" />
+</Achievement>

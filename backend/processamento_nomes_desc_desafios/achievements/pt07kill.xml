@@ -1,0 +1,10 @@
+<Achievement active="1" id="270" kind="kills" MS_side="0" amount="5000">
+	<UI name="@pt07Kill" desc="@pt07Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt07_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_weapon10_31" type="mark"/>
+</Achievement>	

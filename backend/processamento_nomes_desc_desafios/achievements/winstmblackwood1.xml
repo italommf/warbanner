@@ -1,0 +1,8 @@
+<Achievement active="1" id="20312" kind="game_end" MS_side="0" amount="10" tags="stm">
+	<UI name="@winSTMBlackwood1" desc="@winSTMBlackwood1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="13357a80-1c3f-49f9-be88-3f95ef931246"/>
+	</Filters>
+	<BannerImage image="challenge_mark_blackstm_01" type="mark" />
+</Achievement>		

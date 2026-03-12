@@ -1,0 +1,9 @@
+<Achievement active="1" id="854" kind="kills" MS_side="0" amount="1000">
+	<UI name="@hnt_soldier_kills_01" desc="@hnt_soldier_kills_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="victory_condition" param="9"/>
+		<Filter kind="my_class" param="Rifleman"/>
+	</Filters>	
+	<BannerImage image="challenge_mark_hunt_03" type="mark" />
+</Achievement>

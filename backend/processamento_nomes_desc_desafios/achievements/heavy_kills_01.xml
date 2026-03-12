@@ -1,0 +1,10 @@
+<Achievement active="1" id="6565" kind="kills" MS_side="0" amount="100">
+	<UI name="@heavy_kills_01" desc="@heavy_kills_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="player_class" param="Rifleman"/>	
+		<Filter kind="my_class" param="Heavy"/>
+	</Filters>
+	<BannerImage image="challenge_mark_sed_kills_03" type="mark" />
+</Achievement>	

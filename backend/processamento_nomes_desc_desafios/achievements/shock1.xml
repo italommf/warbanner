@@ -1,0 +1,17 @@
+<Achievement active="1" id="122" kind="kills" MS_side="0" amount="10">
+	<UI name="@shock1" desc="@shock1_desc"/>
+	<Filters>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="weapon" param="df01"/>		
+		<Filter kind="weapon" param="df02"/>		
+		<Filter kind="weapon" param="df03"/>		
+		<Filter kind="weapon" param="df04"/>		
+		<Filter kind="weapon" param="df05"/>
+	</Filters>	
+	<BannerImage image="challenge_badge_37" type="badge" />
+	<Steam name="ACH_DEADLY_DEFIB" stat_name="STAT_DEADLY_DEFIB" />
+	<Epic name="ACH_DEADLY_DEFIB" stat_name="STAT_DEADLY_DEFIB" />
+</Achievement>	

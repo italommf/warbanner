@@ -1,0 +1,8 @@
+<Achievement active="1" id="5112" kind="game_end" MS_side="0" amount="50" tags="dmn">
+	<UI name="@firstPlaceDMNSirius2" desc="@firstPlaceDMNSirius2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="70e29d78-bb85-4014-8989-ffeb9074d2bc"/>
+	</Filters>
+	<BannerImage image="challenge_badge_firstPlaceDMNSirius2" type="badge" />
+</Achievement>

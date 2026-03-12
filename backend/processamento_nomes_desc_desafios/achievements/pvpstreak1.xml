@@ -1,0 +1,9 @@
+<Achievement active="0" id="60" kind="kills" MS_side="0" amount="20">
+	<UI name="@pvpStreak1" desc="@pvpStreak1_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>			
+		<Filter kind="without_death" param="1"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_37" type="mark" />		
+</Achievement>  

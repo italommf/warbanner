@@ -1,0 +1,7 @@
+<Achievement active="1" id="443" kind="repair" MS_side="0" amount="10000">
+	<UI name="@repairman1" desc="@repairman1_desc"/>
+	<Filters>
+		<Filter kind="target_self" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_19" type="mark" />
+</Achievement>

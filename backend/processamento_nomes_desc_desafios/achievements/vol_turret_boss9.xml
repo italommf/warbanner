@@ -1,0 +1,12 @@
+<Achievement active="1" id="10509" kind="kills" MS_side="0" amount="50">
+	<UI name="@vol_turret_boss9" desc="@vol_turret_boss9_desc"/>
+		<Filters>
+			<Filter kind="ai_archetype" param="Turret"/>
+			<Filter kind="player" param="0"/>
+			<Filter kind="weapon" param="rg01"/>
+			<Filter kind="mission_type" param="volcanoeasy"/>
+			<Filter kind="mission_type" param="volcanonormal"/>
+			<Filter kind="mission_type" param="volcanohard"/>
+		</Filters>
+	<BannerImage image="challenge_strip_vol_05" type="stripe" />
+</Achievement>

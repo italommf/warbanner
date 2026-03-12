@@ -1,0 +1,31 @@
+<Achievement active="1" id="8201" kind="kills" MS_side="0" amount="1000">
+	<UI name="@friday01_badge_01" desc="@friday01_badge_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="weapon" param="ar32_friday01_shop"/>
+		<Filter kind="weapon" param="ar37_friday01_shop"/>
+		<Filter kind="weapon" param="mg25_friday01_shop"/>
+		<Filter kind="weapon" param="smg46_friday01_shop"/>
+		<Filter kind="weapon" param="smg47_friday01_shop"/>
+		<Filter kind="weapon" param="smg53_friday01_shop"/>
+		<Filter kind="weapon" param="shg44_friday01_shop"/>
+		<Filter kind="weapon" param="shg50_friday01_shop"/>		
+		<Filter kind="weapon" param="shg54_friday01_shop"/>		
+		<Filter kind="weapon" param="sr44_friday01_shop"/>
+		<Filter kind="weapon" param="sr45_friday01_shop"/>
+		<Filter kind="weapon" param="sr48_friday01_shop"/>
+		<Filter kind="weapon" param="pt33_friday01_shop"/>
+		<Filter kind="weapon" param="pt38_friday01_shop"/>
+		<Filter kind="weapon" param="pt36_friday01_shop"/>
+		<Filter kind="weapon" param="kn13_friday01"/>
+		<Filter kind="weapon" param="kn21_friday01"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_friday_01" type="badge"/>
+</Achievement>
+
+

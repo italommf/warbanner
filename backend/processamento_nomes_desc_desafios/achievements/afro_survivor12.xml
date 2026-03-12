@@ -1,0 +1,11 @@
+<Achievement active="1" id="11012" kind="game_end" MS_side="0" amount="10">
+	<UI name="@afro_survivor12" desc="@afro_survivor12_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="anubiseasy"/>
+		<Filter kind="my_class" param="Recon"/>
+
+	</Filters>
+	<BannerImage image="challenge_badge_afro_04" type="badge" />
+</Achievement>

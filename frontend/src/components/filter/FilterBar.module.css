@@ -19,7 +19,9 @@
   border-radius: 6px;
 }
 
-.trigger:hover { border-color: var(--orange); }
+.trigger:hover {
+  border-color: var(--orange);
+}
 
 .triggerLabel {
   font-size: 11px;
@@ -128,6 +130,114 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   flex-shrink: 0;
+}
+
+/* Pesquisa */
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+
+.searchInput {
+  width: 100%;
+  height: 46px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  padding: 0 40px 0 14px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  transition: border-color 0.15s;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+.searchInput::placeholder {
+  color: var(--text2);
+  opacity: 0.5;
+}
+
+.clearButton {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text2);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+  font-size: 14px;
+}
+
+.clearButton:hover {
+  color: var(--orange);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--text2);
+  white-space: nowrap;
+  background: var(--bg3);
+  height: 46px;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border2);
+  transition: all 0.15s;
+}
+
+.checkboxLabel:hover {
+  border-color: var(--orange);
+  color: var(--text);
+}
+
+.checkbox {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  background: var(--bg2);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s;
+}
+
+.checkbox:checked {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 10px;
 }

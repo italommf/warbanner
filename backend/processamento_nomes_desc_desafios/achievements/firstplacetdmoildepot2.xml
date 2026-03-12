@@ -1,0 +1,11 @@
+<Achievement active="1" id="2054" kind="game_end" MS_side="0" amount="50" tags="tdm">
+	<UI name="@firstPlaceTDMOildepot2" desc="@firstPlaceTDMOildepot2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="1d71c946-7ffc-4045-8035-14eea4072e02"/>
+		<Filter kind="mission_uid" param="0575ee9b-db2a-4a8d-a376-c2ec4b021587"/>
+		<Filter kind="mission_uid" param="24578605-b482-4dcf-af0a-7a6968732602"/>
+		<Filter kind="mission_uid" param="836c6850-5976-4912-8e3e-81c4fe187ae1"/>
+	</Filters>
+	<BannerImage image="challenge_badge_oildepot_02" type="badge" />
+</Achievement>		

@@ -1,0 +1,22 @@
+<Achievement active="1" id="1070" kind="kills" MS_side="0" amount="1000">
+	<UI name="@ec_kill_01" desc="@ec_kill_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="weapon" param="ar12_ec01_shop"/>   
+		<Filter kind="weapon" param="smg33_ec01_shop"/>   
+		<Filter kind="weapon" param="shg37_ec01_shop"/>   
+		<Filter kind="weapon" param="sr33_ec01_shop"/>   	
+		<Filter kind="weapon" param="ar25_ec02_shop"/>   	
+		<Filter kind="weapon" param="shg08_ec02_shop"/>   	
+		<Filter kind="weapon" param="smg31_ec02_shop"/>   	
+		<Filter kind="weapon" param="sr09_ec02_shop"/>   	
+		<Filter kind="weapon" param="pt32_ec02_shop"/>   	
+		<Filter kind="weapon" param="kn17_ec02"/>   	
+	</Filters>
+	<BannerImage image="challenge_strip_euro2016" type="stripe"/>
+</Achievement>

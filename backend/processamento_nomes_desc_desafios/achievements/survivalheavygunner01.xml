@@ -1,0 +1,11 @@
+<Achievement active="1"  id="525" kind="kills" MS_side="0" amount="1">
+	<UI name="@survivalHeavyGunner01" desc="@survivalHeavyGunner01_desc"/>
+	<Filters>
+		<Filter kind="ai_archetype" param="HeavyGunner"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="survivalmission"/>
+	</Filters>	
+	<BannerImage image="challenge_mark_sm_01" type="mark" />
+	<Steam name="ACH_TOO_BIG_FOR_THE_ELEVATOR" stat_name="STAT_TOO_BIG_FOR_THE_ELEVATOR" />
+	<Epic name="ACH_TOO_BIG_FOR_THE_ELEVATOR" stat_name="STAT_TOO_BIG_FOR_THE_ELEVATOR" />
+</Achievement>	

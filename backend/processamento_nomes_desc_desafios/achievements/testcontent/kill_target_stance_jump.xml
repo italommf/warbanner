@@ -1,0 +1,26 @@
+<Achievement active="0" id="29" kind="kills" MS_side="0" amount="2">
+	<UI name="@kill_target_stance_jump" desc="@kill_target_stance_jump_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="target_in_jump" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>	
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="ai_archetype" param="Specop" />
+		<Filter kind="ai_archetype" param="Shotgunner" />
+		<Filter kind="ai_archetype" param="HeavyShotgunner" />
+		<Filter kind="ai_archetype" param="Assault" />
+		<Filter kind="ai_archetype" param="Melee" />
+		<Filter kind="ai_archetype" param="Sniper" />
+		<Filter kind="ai_archetype" param="ShieldBearer" />
+		<Filter kind="ai_archetype" param="SMGShieldBearer" />
+		<Filter kind="ai_archetype" param="Demoman" />
+		<Filter kind="ai_archetype" param="Cyborg" />
+		<Filter kind="ai_archetype" param="CyborgScreamer" />
+		<Filter kind="ai_archetype" param="CyborgBarrelman" />
+		<Filter kind="ai_archetype" param="CyborgTurtle" />
+		<Filter kind="ai_archetype" param="CyborgDestroyer" />
+	</Filters>		
+	<BannerImage image="test_item_icon" type="stripe" />
+</Achievement>

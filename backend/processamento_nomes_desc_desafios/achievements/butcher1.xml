@@ -1,0 +1,9 @@
+<Achievement active="1" id="426" kind="instant_award" MS_side="0" amount="50">
+	<UI name="@butcher1" desc="@butcher1_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="8"/>
+	</Filters>
+	<BannerImage image="challenge_mark_84" type="mark" />
+	<Steam name="ACH_MEATMAN" stat_name="STAT_MEATMAN" />
+	<Epic name="ACH_MEATMAN" stat_name="STAT_MEATMAN" />
+</Achievement>

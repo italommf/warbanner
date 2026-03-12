@@ -1,0 +1,8 @@
+<Achievement active="1" id="2533" kind="game_end" MS_side="0" amount="25" tags="stm">
+	<UI name="@winSTMHighhill2" desc="@winSTMHighhill2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="2a8cbd01-52ae-4783-bdd6-d2f858b4fd74"/>
+	</Filters>
+	<BannerImage image="challenge_mark_highhill_02" type="mark" />
+</Achievement>

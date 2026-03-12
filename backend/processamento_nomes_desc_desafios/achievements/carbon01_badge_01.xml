@@ -1,0 +1,29 @@
+<Achievement active="1" id="6281" kind="kills" MS_side="0" amount="5000">
+	<UI name="@carbon01_badge_01" desc="@carbon01_badge_01_desc"/>
+	<Filters>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+ 		<Filter kind="weapon" param="ar30_carbon01_shop"/>		
+		<Filter kind="weapon" param="ar26_carbon01_shop"/>	
+		<Filter kind="weapon" param="mg23_carbon01_shop"/>
+		<Filter kind="weapon" param="shg45_carbon01_shop"/>
+		<Filter kind="weapon" param="shg43_carbon01_shop"/>
+		<Filter kind="weapon" param="shg39_carbon01_shop"/>
+		<Filter kind="weapon" param="smg36_carbon01_shop"/>
+		<Filter kind="weapon" param="smg35_carbon01_shop"/>
+		<Filter kind="weapon" param="smg25_carbon01_shop"/>
+ 		<Filter kind="weapon" param="sr14_carbon01_shop"/>	
+		<Filter kind="weapon" param="sr44_carbon01_shop"/>
+		<Filter kind="weapon" param="sr37_carbon01_shop"/>
+		<Filter kind="weapon" param="pt37_carbon01_shop"/>
+ 		<Filter kind="weapon" param="pt23_carbon01_shop"/>	
+ 		<Filter kind="weapon" param="pt25_carbon01_shop"/>	
+ 		<Filter kind="weapon" param="kn18_carbon01"/>
+ 		<Filter kind="weapon" param="kn03_carbon01"/>	
+	</Filters> 
+	<BannerImage image="challenge_badge_carbon01" type="badge" />
+</Achievement>

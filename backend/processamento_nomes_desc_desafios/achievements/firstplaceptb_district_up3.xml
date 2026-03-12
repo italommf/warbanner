@@ -1,0 +1,8 @@
+<Achievement active="1" id="13075" kind="game_end" MS_side="0" amount="100" tags="ctf">
+	<UI name="@FirstPlacePTB_DISTRICT_UP3" desc="@FirstPlacePTB_DISTRICT_UP3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="a83872cc-e79b-4d7a-800b-7162384ef4a0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_FirstPlacePTB_DISTRICT_UP3" type="badge" />
+</Achievement>

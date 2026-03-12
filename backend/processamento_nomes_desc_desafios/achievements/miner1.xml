@@ -1,0 +1,11 @@
+<Achievement active="1" id="213" kind="kills" MS_side="0" amount="50">
+	<UI name="@miner1" desc="@miner1_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="1"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_29" type="stripe" />
+</Achievement>

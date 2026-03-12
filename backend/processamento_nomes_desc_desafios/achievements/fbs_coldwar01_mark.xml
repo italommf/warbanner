@@ -1,0 +1,4 @@
+<Achievement active="1" id="373132" kind="hidden" MS_side="1" amount="1">
+        <UI name="@fbs_coldwar01_badge" desc="@fbs_coldwar01_badge_desc"/>
+        <BannerImage image="challenge_badge_fbs_coldwar01" type="mark" />
+    </Achievement>

@@ -1,0 +1,12 @@
+<Achievement active="1" id="2472" kind="kills" MS_side="0" amount="2500">
+	<UI name="@ap_strip_03" desc="@ap_strip_03_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt21_set10_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_ap_09" type="stripe" />
+</Achievement>

@@ -1,0 +1,4 @@
+<Achievement active="0" id="30014" kind="money" MS_side="1" amount="10000" tags="ps4_achiev">
+	<UI name="@ps4_warbucks" desc="@ps4_warbucks_desc"/>
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

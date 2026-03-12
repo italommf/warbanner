@@ -1,0 +1,13 @@
+<Achievement active="1" id="258" kind="kills" MS_side="0" amount="5000" tags="weapons_S">
+	<UI name="@sr12Kill" desc="@sr12Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="sr12_shop"/>
+		<Filter kind="weapon" param="sr12_clr01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon10_30" type="stripe"/>
+</Achievement>

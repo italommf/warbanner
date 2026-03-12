@@ -1,0 +1,4 @@
+<Achievement active="1" id="1109" kind="hidden" MS_side="1" amount="1">
+        <UI name="@mc_referral_stripe" desc="@mc_referral_stripe_desc"/>
+        <BannerImage image="challenge_strip_mc_referral" type="stripe" />
+    </Achievement>

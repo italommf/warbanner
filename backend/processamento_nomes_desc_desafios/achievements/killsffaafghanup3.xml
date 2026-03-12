@@ -1,0 +1,8 @@
+<Achievement active="1" id="13102" kind="kills" MS_side="0" amount="1000">
+	<UI name="@killFFAAfghanUp2" desc="@killFFAAfghanUp2_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="mission_uid" param="79c67294-07ed-44d7-b4e2-780b7ef1890b"/>
+	</Filters>
+	<BannerImage image="challenge_mark_ffa_afghan_02" type="mark" />
+</Achievement>

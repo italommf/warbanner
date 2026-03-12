@@ -1,0 +1,9 @@
+<Achievement active="1" id="804" kind="kills" MS_side="0" amount="1000">
+	<UI name="@defendKill2" desc="@defendKill2_desc"/>
+	<Filters>
+		<Filter kind="killer_is_core_defender" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+	</Filters>		
+	<BannerImage image="challenge_badge_dm_02" type="badge" />
+</Achievement>	

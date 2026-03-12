@@ -1,0 +1,21 @@
+<Achievement active="0" id="60501" kind="kills" MS_side="0" amount="1500">
+	<UI name="@9may_mark_01_test" desc="@9may_mark_01_test_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="weapon" param="ar41_shop"/>
+		<Filter kind="weapon" param="smg47_shop"/>
+		<Filter kind="weapon" param="smg47_gold01_shop"/>
+		<Filter kind="weapon" param="shg31_shop"/>
+		<Filter kind="weapon" param="pt41_ww2_shop"/>
+		<Filter kind="weapon" param="ar42_shop"/>
+		<Filter kind="weapon" param="ar42_gold01_shop"/>
+		<Filter kind="mission_type" param="chernobyleasy"/>
+		<Filter kind="mission_type" param="chernobylnormal"/>
+		<Filter kind="mission_type" param="chernobylhard"/>
+		<Filter kind="mission_type" param="japaneasy"/>
+		<Filter kind="mission_type" param="japannormal"/>
+		<Filter kind="mission_type" param="japanhard"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="mark" />
+</Achievement>

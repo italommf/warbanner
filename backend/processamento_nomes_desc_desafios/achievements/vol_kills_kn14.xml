@@ -1,0 +1,12 @@
+<Achievement active="1" id="10514" kind="kills" MS_side="0" amount="500">
+	<UI name="@vol_kills_kn14" desc="@vol_kills_kn14_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="weapon_slot" param="knife"/>
+		<Filter kind="mission_type" param="volcanoeasy"/>
+		<Filter kind="mission_type" param="volcanonormal"/>
+		<Filter kind="mission_type" param="volcanohard"/>
+	</Filters>
+	<BannerImage image="challenge_strip_vol_07" type="stripe" />
+</Achievement>

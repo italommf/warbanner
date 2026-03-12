@@ -1,0 +1,10 @@
+<Achievement active="1" id="6376" kind="kills" MS_side="0" amount="5">
+	<UI name="@mars_badge_heavydroid" desc="@mars_badge_heavydroid_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_tag" param="heavydroid" compare="==" />
+		<Filter kind="mission_type" param="marshard"/>
+	</Filters>
+	<BannerImage image="challenge_badge_marsop_02" type="badge" />
+</Achievement>

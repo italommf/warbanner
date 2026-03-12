@@ -1,0 +1,7 @@
+<Achievement active="0" id="30038" kind="heal" MS_side="0" amount="10000" tags="ps4_achiev">
+	<UI name="@ps4_healer_10k" desc="@ps4_healer_10k_desc"/>
+	<Filters>
+		<Filter kind="target_self" param="0"/>
+	</Filters>
+		<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

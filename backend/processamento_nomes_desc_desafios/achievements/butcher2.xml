@@ -1,0 +1,7 @@
+<Achievement active="1" id="427" kind="instant_award" MS_side="0" amount="250">
+	<UI name="@butcher2" desc="@butcher2_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="8"/>
+	</Filters>
+	<BannerImage image="challenge_mark_85" type="mark" />
+</Achievement>	

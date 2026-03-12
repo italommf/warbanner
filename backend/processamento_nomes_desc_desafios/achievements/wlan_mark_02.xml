@@ -1,0 +1,5 @@
+<Achievement active="1" id="3063" kind="hidden" MS_side="1" amount="1">
+        <UI name="@wlan_mark_02" desc="@wlan_mark_02_desc"/>
+        <BannerImage image="challenge_mark_xxxx_wlan_02" type="mark" />
+</Achievement>
+

@@ -1,0 +1,14 @@
+<Achievement active="1" id="371002" kind="kills" MS_side="0" amount="300" tags="arena_so_meta">
+	<UI name="@arena_mark_headshot" desc="@arena_mark_headshot_desc"/>
+	<Filters>
+	<Filter kind="to_head" param="1"/>
+	<Filter kind="player" param="0"/>
+	<Filter kind="enemy" param="1"/>
+	<Filter kind="claymore" param="0"/>
+	<Filter kind="grenade" param="0"/> 
+	<Filter kind="kill_zone" param="0"/> 
+	<Filter kind="explosion" param="0"/> 
+	<Filter kind="mission_type" param="pve_arena"/>
+	</Filters>
+	<BannerImage image="challenge_mark_pve_arena_04" type="mark" />
+</Achievement>

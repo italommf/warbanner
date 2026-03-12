@@ -1,0 +1,4 @@
+<Achievement active="1" id="202" kind="climb_assist" MS_side="0" amount="1000">
+	<UI name="@assister3" desc="@assister3_desc"/>
+	<BannerImage image="challenge_strip_13" type="stripe" />
+</Achievement>

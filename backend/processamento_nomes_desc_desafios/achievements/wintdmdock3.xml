@@ -1,0 +1,9 @@
+<Achievement active="1" id="2495" kind="game_end" MS_side="0" amount="50" tags="tdm">
+	<UI name="@winTDMDock3" desc="@winTDMDock3_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="51a9ebbc-8519-4f5e-b83e-0e9911c6995c"/>
+		<Filter kind="mission_uid" param="615412f4-94de-48b5-b4d4-902b1d322de1"/>
+	</Filters>
+	<BannerImage image="challenge_mark_dock_03" type="mark" />
+</Achievement>

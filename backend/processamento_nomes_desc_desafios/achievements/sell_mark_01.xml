@@ -1,0 +1,4 @@
+<Achievement active="1" id="3048" kind="hidden" MS_side="1" amount="1">
+        <UI name="@sell_mark_01" desc="@sell_mark_01_desc"/>
+        <BannerImage image="challenge_mark_sell_01" type="mark" />
+    </Achievement>

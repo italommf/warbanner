@@ -1,0 +1,16 @@
+<Achievement active="1" id="6291" kind="kills" MS_side="0" amount="1">
+	<UI name="@kn20Kill5" desc="@kn20Kill5_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_tag" param="sed" compare="in" />
+		<Filter kind="ai_tag" param="sed_ft" compare="in" />
+		<Filter kind="ai_tag" param="sed_gl" compare="in" />
+		<Filter kind="weapon" param="kn20"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_magic" type="badge"/>
+</Achievement>

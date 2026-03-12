@@ -1,0 +1,4 @@
+<Achievement active="1" id="6184" kind="hidden" MS_side="1" amount="1">
+	<UI name="@japan_badge_collector" desc="@japan_badge_collector_desc"/>
+	<BannerImage image="challenge_badge_japan_07" type="badge" />
+</Achievement>

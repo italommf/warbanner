@@ -1,0 +1,12 @@
+<Achievement active="1" id="10503" kind="game_end" MS_side="0" amount="1" tags="king_pve">
+	<UI name="@vol_survivor3" desc="@vol_survivor3_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="hard"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="volcanohard"/>
+		<Filter kind="my_class" param="Rifleman"/>
+		<Filter kind="stages" compare=">=" param="13"/>
+	</Filters>
+	<BannerImage image="challenge_strip_vol_01" type="stripe" />
+</Achievement>

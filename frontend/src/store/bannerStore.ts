@@ -4,7 +4,7 @@ import type { RefObject } from 'react'
 export type Category = 'marcas' | 'insignias' | 'fitas'
 export type FilterCategory = 'marcas' | 'insignias' | 'fitas'
 export type MainFilter = 'todos' | 'armas' | 'pvp' | 'pve'
-export type ArmasFilter = 'todos' | '10k' | '5k' | '2.5k' | 'ouro'
+export type ArmasFilter = 'todos' | 'low' | '999' | '2500' | '5000' | '10000' | 'especiais' | 'crown' | 'dourada'
 export type ColorFilter = 'todos' | 'ouro' | 'prata' | 'bronze' | 'preto' | 'vermelho' | 'azul' | 'verde' | 'outro'
 
 interface CategoryState {
@@ -25,13 +25,13 @@ interface BannerStore {
   setNick: (v: string) => void
   setClan: (v: string) => void
 
-  marcas:    CategoryState
+  marcas: CategoryState
   insignias: CategoryState
-  fitas:     CategoryState
-  patentes:  { selected: string | null }
+  fitas: CategoryState
+  patentes: { selected: string | null }
 
-  setPage:       (cat: Category, page: number) => void
-  selectItem:    (cat: Category, filename: string | null) => void
+  setPage: (cat: Category, page: number) => void
+  selectItem: (cat: Category, filename: string | null) => void
   selectPatente: (filename: string | null) => void
 
   // Ref do canvas compartilhado com BottomBar para toDataURL
@@ -49,15 +49,19 @@ interface BannerStore {
   setNoFrame: (v: boolean) => void
 
   // Filtros
-  applyTo:     FilterCategory[]
-  mainFilter:  MainFilter
+  mainFilter: MainFilter
   armasFilter: ArmasFilter
   colorFilter: ColorFilter
-  toggleApplyTo:   (cat: FilterCategory) => void
-  setMainFilter:   (v: MainFilter) => void
-  setArmasFilter:  (v: ArmasFilter) => void
-  setColorFilter:  (v: ColorFilter) => void
+  setMainFilter: (v: MainFilter) => void
+  setArmasFilter: (v: ArmasFilter) => void
+  setColorFilter: (v: ColorFilter) => void
+
+  searchTerm: string
+  setSearchTerm: (v: string) => void
+  hideEmpty: boolean
+  setHideEmpty: (v: boolean) => void
 }
+
 
 export const useBannerStore = create<BannerStore>((set) => ({
   nick: '',
@@ -65,10 +69,10 @@ export const useBannerStore = create<BannerStore>((set) => ({
   setNick: (nick) => set({ nick }),
   setClan: (clan) => set({ clan }),
 
-  marcas:    { page: 0, selected: null },
+  marcas: { page: 0, selected: null },
   insignias: { page: 0, selected: null },
-  fitas:     { page: 0, selected: null },
-  patentes:  { selected: null },
+  fitas: { page: 0, selected: null },
+  patentes: { selected: null },
 
   setPage: (cat, page) =>
     set((s) => ({ [cat]: { ...s[cat], page } })),
@@ -101,22 +105,21 @@ export const useBannerStore = create<BannerStore>((set) => ({
   setNoFrame: (noFrame) => set({ noFrame }),
 
   // Filtros — padrão: aplica em todas as categorias, sem filtro ativo
-  applyTo:     ['marcas', 'insignias', 'fitas'],
-  mainFilter:  'todos',
+  mainFilter: 'todos',
   armasFilter: 'todos',
   colorFilter: 'todos',
 
-  toggleApplyTo: (cat) =>
-    set((s) => ({
-      applyTo: s.applyTo.includes(cat)
-        ? s.applyTo.filter((c) => c !== cat)
-        : [...s.applyTo, cat],
-    })),
-
   setMainFilter: (mainFilter) =>
+
     set({ mainFilter, armasFilter: 'todos' }),
 
   setArmasFilter: (armasFilter) => set({ armasFilter }),
 
   setColorFilter: (colorFilter) => set({ colorFilter }),
+
+  searchTerm: '',
+  setSearchTerm: (searchTerm) => set({ searchTerm }),
+
+  hideEmpty: true,
+  setHideEmpty: (hideEmpty) => set({ hideEmpty }),
 }))

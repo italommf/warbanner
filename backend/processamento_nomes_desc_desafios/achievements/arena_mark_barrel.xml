@@ -1,0 +1,10 @@
+<Achievement active="1" id="371003" kind="kills" MS_side="0" amount="100" tags="arena_so_meta">
+	<UI name="@arena_mark_barrel" desc="@arena_mark_barrel_desc"/>
+	<Filters>
+    <Filter kind="enemy" param="1"/>
+    <Filter kind="player" param="0"/>
+    <Filter kind="ai_tag" param="Barrelman" compare="==" />
+	<Filter kind="mission_type" param="pve_arena"/>
+	</Filters>
+	<BannerImage image="challenge_mark_pve_arena_02" type="mark" />
+</Achievement>

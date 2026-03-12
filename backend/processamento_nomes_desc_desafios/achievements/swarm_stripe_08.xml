@@ -1,0 +1,9 @@
+<Achievement active="1" id="10188" kind="game_end" MS_side="0" amount="15" tags="swarm_so_meta,king_pve">
+<UI name="@swarm_stripe_08" desc="@swarm_stripe_08_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="swarm"/>
+	</Filters>
+<BannerImage image="challenge_strip_swarm_08" type="stripe" />
+</Achievement>

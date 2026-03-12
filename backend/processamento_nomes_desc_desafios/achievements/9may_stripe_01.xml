@@ -1,0 +1,21 @@
+<Achievement active="1" id="12102" kind="damage_done" MS_side="0" amount="10000000">
+	<UI name="@9may_stripe_01" desc="@9may_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar41_shop"/>		
+		<Filter kind="weapon" param="smg47_shop"/>
+		<Filter kind="weapon" param="smg47_gold01_shop"/>
+		<Filter kind="weapon" param="shg31_shop"/>
+		<Filter kind="weapon" param="pt41_ww2_shop"/>
+		<Filter kind="weapon" param="sr41_shop"/>
+		<Filter kind="weapon" param="smg41_ww2_shop"/>	
+		<Filter kind="weapon" param="mg24_shop"/>
+		<Filter kind="weapon" param="mg24_gold01_shop"/>
+		<Filter kind="weapon" param="pt24_shop"/>
+		<Filter kind="weapon" param="ar42_shop"/>
+		<Filter kind="weapon" param="ar42_gold01_shop"/>
+		<Filter kind="weapon" param="sr53_gold01_shop"/>
+		<Filter kind="weapon" param="sr53_shop"/>
+	</Filters>
+	<BannerImage image="challenge_strip_9May" type="stripe" />
+</Achievement>

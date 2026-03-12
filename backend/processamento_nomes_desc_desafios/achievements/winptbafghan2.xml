@@ -1,0 +1,9 @@
+<Achievement active="1" id="2127" kind="game_end" MS_side="0" amount="25" tags="ptb">
+	<UI name="@winPTBAfghan2" desc="@winPTBAfghan2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="123bec5b-a1c2-4bab-b105-3b5b89bab014"/>
+		<Filter kind="mission_uid" param="8b7189c1-6c6e-413f-96b8-bb4b0abb2069"/>
+	</Filters>
+	<BannerImage image="challenge_mark_afghan_02" type="mark" />
+</Achievement>		

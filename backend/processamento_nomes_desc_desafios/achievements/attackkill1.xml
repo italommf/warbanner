@@ -1,0 +1,9 @@
+<Achievement active="1" id="806" kind="kills" MS_side="0" amount="500">
+	<UI name="@attackKill1" desc="@attackKill1_desc"/>
+	<Filters>
+		<Filter kind="killer_is_core_attacker" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_dm_01" type="mark" />
+</Achievement>

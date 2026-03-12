@@ -1,0 +1,4 @@
+<Achievement active="1" id="40126" kind="hidden" MS_side="1" amount="1">
+        <UI name="@valkyrie_00001_stripe" desc="@valkyrie_00001_stripe_desc"/>
+        <BannerImage image="challenge_strip_valkyrie_00001" type="stripe" />
+    </Achievement>

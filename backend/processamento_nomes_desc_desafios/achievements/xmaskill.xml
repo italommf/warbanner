@@ -1,0 +1,47 @@
+<Achievement active="1" id="396" kind="kills" MS_side="0" amount="1000">
+	<UI name="@xmasKill" desc="@xmasKill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+ 		<Filter kind="weapon" param="ar20_xmas_shop"/>
+		<Filter kind="weapon" param="pt01_xmas_shop"/>
+		<Filter kind="weapon" param="mg01_xmas_shop"/>
+ 		<Filter kind="weapon" param="pt07_xmas_shop"/>
+ 		<Filter kind="weapon" param="sr03_xmas_shop"/>
+		<Filter kind="weapon" param="sr04_xmas_shop"/>
+ 		<Filter kind="weapon" param="shg06_xmas_shop"/>
+		<Filter kind="weapon" param="shg11_xmas_shop"/>
+		<Filter kind="weapon" param="shg49_xmas_shop"/>
+ 		<Filter kind="weapon" param="smg03_xmas_shop"/>
+		<Filter kind="weapon" param="smg12_xmas_shop"/>			
+		<Filter kind="weapon" param="ar24_xmas03_shop"/>			
+		<Filter kind="weapon" param="shg43_xmas03_shop"/>			
+		<Filter kind="weapon" param="smg35_xmas03_shop"/>			
+		<Filter kind="weapon" param="sr35_xmas03_shop"/>			
+		<Filter kind="weapon" param="pt25_xmas03_shop"/>
+		<Filter kind="weapon" param="pt28_shop"/>
+		<Filter kind="weapon" param="ar31_xmas04_shop"/>
+		<Filter kind="weapon" param="shg41_xmas04_shop"/>
+		<Filter kind="weapon" param="smg42_xmas04_shop"/>
+		<Filter kind="weapon" param="sr43_xmas04_shop"/>
+		<Filter kind="weapon" param="pt34_xmas04_shop"/>
+		<Filter kind="weapon" param="kn18_xmas04"/>	
+        <Filter kind="weapon" param="kn18_xmas05"/>
+		<Filter kind="weapon" param="pt34_xmas05_shop"/>
+		<Filter kind="weapon" param="shg48_xmas05_shop"/>
+		<Filter kind="weapon" param="smg42_xmas05_shop"/>
+		<Filter kind="weapon" param="ar28_xmas05_shop"/>	
+		<Filter kind="weapon" param="sr43_xmas05_shop"/>
+		<Filter kind="weapon" param="sr49_xmas06_shop"/>
+		<Filter kind="weapon" param="smg48_xmas06_shop"/>
+		<Filter kind="weapon" param="ar38_xmas06_shop"/>
+		<Filter kind="weapon" param="shg53_xmas06_shop"/>
+		<Filter kind="weapon" param="pt39_xmas06_shop"/>
+		<Filter kind="weapon" param="kn22_xmas06"/>
+		<Filter kind="weapon" param="hmg03_xmas06"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_mark_ny" type="mark" />
+</Achievement>

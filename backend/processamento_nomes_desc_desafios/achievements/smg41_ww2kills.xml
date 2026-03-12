@@ -1,0 +1,12 @@
+<Achievement active="1" id="234" kind="kills" MS_side="0" amount="1000">
+	<UI name="@smg41_ww2Kills" desc="@smg41_ww2Kills_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg41_ww2_shop"/>
+		<Filter kind="weapon" param="sr41_shop"/>			
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="melee" param="0"/>			
+	</Filters> 
+	<BannerImage image="challenge_strip_ww2" type="stripe" />
+</Achievement>

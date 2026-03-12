@@ -1,0 +1,7 @@
+<Achievement active="0" id="6525" kind="achievement_awarded" MS_side="1" amount="35" tags="king_warface">
+	<UI name="@meta_king_pve" desc="@meta_king_pve_desc"/>
+	<Filters>
+		<Filter kind="tag" param="king_pve"/>
+	</Filters>
+	<BannerImage image="challenge_strip_king_02" type="stripe" />
+</Achievement>

@@ -1,0 +1,11 @@
+<Achievement active="1" id="371006" kind="game_end" MS_side="0" amount="1" tags="arena_so_meta">
+	<UI name="@arena_badge_survivalist" desc="@arena_badge_survivalist_desc"/>
+	<Filters>
+	<Filter kind="mission_result" param="win"/>
+	<Filter kind="victory_condition" param="3"/>
+	<Filter kind="mission_type" param="pve_arena"/>
+	<Filter kind="without_death" param="1"/>
+	<Filter kind="stages" compare=">=" param="19"/>
+	</Filters>
+	<BannerImage image="challenge_badge_pve_arena_03" type="badge" />
+</Achievement>

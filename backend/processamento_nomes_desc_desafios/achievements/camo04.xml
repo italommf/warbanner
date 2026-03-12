@@ -1,0 +1,15 @@
+<Achievement active="1" id="8400" kind="kills" MS_side="0" amount="1000">
+	<UI name="@camo04" desc="@camo04_desc"/>
+	<Filters>
+		<Filter kind="weapon" param="ar04_camo04_shop"/>
+		<Filter kind="weapon" param="shg12_camo04_shop"/>
+		<Filter kind="weapon" param="smg03_camo04_shop"/>
+		<Filter kind="weapon" param="sr22_camo04_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_camo04" type="stripe" />
+</Achievement>

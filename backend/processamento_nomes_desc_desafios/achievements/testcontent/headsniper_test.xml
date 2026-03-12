@@ -1,0 +1,15 @@
+<Achievement active="0" id="60516" kind="kills" MS_side="0" amount="100">
+	<UI name="@headSniper_test" desc="@headSniper_test_desc"/>
+	<Filters>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="melee" param="0"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="weapon" param="sr*_shop" compare="match"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="mark" />
+</Achievement>

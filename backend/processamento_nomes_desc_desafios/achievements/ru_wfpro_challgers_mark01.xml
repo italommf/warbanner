@@ -1,0 +1,4 @@
+<Achievement active="1" id="1375" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_wfpro_challgers_mark01" desc="@ru_wfpro_challgers_mark01_desc"/>
+        <BannerImage image="challenge_mark_pro_01" type="mark" />
+    </Achievement>

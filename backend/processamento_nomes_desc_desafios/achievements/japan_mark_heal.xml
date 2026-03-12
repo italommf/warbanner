@@ -1,0 +1,10 @@
+<Achievement active="1" id="6175" kind="heal" MS_side="0" amount="5000">
+	<UI name="@japan_mark_heal" desc="@japan_mark_heal_desc"/>
+	<Filters>
+		<Filter kind="target_self" param="0"/>
+		<Filter kind="mission_type" param="japaneasy"/>
+		<Filter kind="mission_type" param="japannormal"/>
+		<Filter kind="mission_type" param="japanhard"/>
+	</Filters>
+	<BannerImage image="challenge_mark_japan_01" type="mark" />
+</Achievement>

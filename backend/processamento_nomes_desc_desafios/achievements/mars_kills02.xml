@@ -1,0 +1,10 @@
+<Achievement active="1" id="6378" kind="game_end" MS_side="0" amount="10">
+	<UI name="@mars_kills02" desc="@mars_kills02_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="hard"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="marshard"/>
+	</Filters>
+	<BannerImage image="challenge_mark_marsop_04" type="mark" />
+</Achievement>

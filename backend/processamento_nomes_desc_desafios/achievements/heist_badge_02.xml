@@ -1,0 +1,8 @@
+<Achievement active="1" id="945" kind="repair" MS_side="0" amount="3000" tags="heist_so_meta">
+<UI name="@heist_badge_02" desc="@heist_badge_02_desc"/>
+	<Filters>
+		<Filter kind="target_self" param="0"/>
+		<Filter kind="mission_type" param="heist"/>
+	</Filters>
+<BannerImage image="challenge_badge_so_heist_02" type="badge" />
+</Achievement>

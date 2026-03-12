@@ -1,0 +1,7 @@
+<Achievement active="1" id="5002" kind="achievement_awarded" MS_side="1" amount="12">
+        <UI name="@ru_rmleague_mark_01" desc="@ru_rmleague_mark_01_desc"/>
+		<Filters>
+			<Filter kind="tag" param="rmleague_01_meta"/>
+		</Filters>
+        <BannerImage image="challenge_mark_rg" type="mark" />
+    </Achievement>

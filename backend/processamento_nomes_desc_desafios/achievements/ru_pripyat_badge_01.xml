@@ -1,0 +1,4 @@
+<Achievement active="1" id="5126" kind="hidden" MS_side="1" amount="1">
+	<UI name="@ru_pripyat_badge_01" desc="@ru_pripyat_badge_01_desc"/>
+	<BannerImage image="challenge_badge_LMSP_06" type="badge" />
+</Achievement>

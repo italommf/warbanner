@@ -1,0 +1,8 @@
+<Achievement active="1" id="5084" kind="game_end" MS_side="0" amount="10" tags="dmn">
+	<UI name="@winDMNSirius1" desc="@winDMNSirius1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="70e29d78-bb85-4014-8989-ffeb9074d2bc"/>
+	</Filters>
+	<BannerImage image="challenge_mark_firstPlaceDMNSirius1" type="mark" />
+</Achievement>

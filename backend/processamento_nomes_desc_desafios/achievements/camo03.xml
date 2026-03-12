@@ -1,0 +1,13 @@
+<Achievement active="1" id="8009" kind="kills" MS_side="0" amount="1000">
+	<UI name="@camo03" desc="@camo03_desc"/>
+	<Filters>
+		<Filter kind="weapon" param="ar06_camo03_shop"/>
+		<Filter kind="weapon" param="shg11_camo03_shop"/>
+		<Filter kind="weapon" param="smg01_camo03_shop"/>
+		<Filter kind="weapon" param="sr02_camo03_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_camo03" type="badge" />
+</Achievement>

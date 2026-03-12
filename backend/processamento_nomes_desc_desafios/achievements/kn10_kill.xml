@@ -1,0 +1,10 @@
+<Achievement active="1" id="498" kind="kills" MS_side="0" amount="5000">
+	<UI name="@kn10_Kill" desc="@kn10_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="weapon" param="kn10"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon10_49" type="stripe"/>
+</Achievement>

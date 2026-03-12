@@ -1,0 +1,9 @@
+<Achievement active="1" id="487" kind="game_end" MS_side="0" amount="10" tags="tdm">
+	<UI name="@winTDM_farm_hw" desc="@winTDM_farm_hw_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="400e7fee-3fda-11e4-baf7-d43d7e9be5ba"/>
+		<Filter kind="mission_uid" param="155193c2-0e54-46b3-8fc8-030016dfd185"/>
+	</Filters>
+	<BannerImage image="challenge_strip_hlw01" type="stripe" />
+</Achievement>	

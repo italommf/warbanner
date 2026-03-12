@@ -1,0 +1,4 @@
+<Achievement active="1" id="2215" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_facebook_02" desc="@ru_facebook_02_desc"/>
+        <BannerImage image="challenge_mark_fb" type="mark" />
+    </Achievement>

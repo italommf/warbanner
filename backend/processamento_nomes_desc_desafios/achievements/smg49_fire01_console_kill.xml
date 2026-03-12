@@ -1,0 +1,12 @@
+<Achievement active="1" id="373197" kind="kills" MS_side="0" amount="1500">
+	<UI name="@smg49_fire01_console_Kill" desc="@smg49_fire01_console_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg49_fire01_console_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_smg49_shadow01" type="stripe" />
+</Achievement>

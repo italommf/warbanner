@@ -1,0 +1,4 @@
+<Achievement active="1" id="8415" kind="hidden" MS_side="1" amount="1">
+	<UI name="@ru_collect_skull01" desc="@ru_collect_skull01_desc"/>
+	<BannerImage image="challenge_mark_skull" type="mark" />
+</Achievement>

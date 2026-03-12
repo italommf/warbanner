@@ -1,0 +1,12 @@
+<Achievement active="1" id="151001" kind="kills" MS_side="0" amount="2500">
+	<UI name="@ar23_set05_cartelKill" desc="@ar23_set05_cartelKill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar23_set05_cartel_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_set05_02" type="stripe" />
+</Achievement>

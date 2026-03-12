@@ -1,0 +1,7 @@
+<Achievement active="0" id="6506" kind="achievement_awarded" MS_side="1" amount="3" tags="king_pvp">
+	<UI name="@meta_dmn" desc="@meta_dmn_desc"/>
+	<Filters>
+		<Filter kind="tag" param="dmn"/>
+	</Filters>
+	<BannerImage image="challenge_mark_mpvp_08" type="mark" />
+</Achievement>

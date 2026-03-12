@@ -1,0 +1,4 @@
+<Achievement active="1" id="8412" kind="hidden" MS_side="1" amount="1">
+	<UI name="@ru_watcher_oc01" desc="@ru_watcher_oc1_desc"/>
+	<BannerImage image="challenge_mark_watcher" type="mark" />
+</Achievement>	

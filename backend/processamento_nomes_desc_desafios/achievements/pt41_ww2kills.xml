@@ -1,0 +1,13 @@
+<Achievement active="1" id="143" kind="kills" MS_side="0" amount="1000">
+	<UI name="@pt41_ww2Kills" desc="@pt41_ww2Kills_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="weapon" param="pt41_ww2_shop"/>
+		<Filter kind="weapon" param="pt24_shop"/>
+	</Filters>
+	<BannerImage image="challenge_badge_ww2" type="badge" />
+</Achievement>	

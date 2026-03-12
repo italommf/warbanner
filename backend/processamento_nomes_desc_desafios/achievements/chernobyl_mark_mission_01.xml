@@ -1,0 +1,10 @@
+<Achievement active="1" id="2639" kind="heal" MS_side="0" amount="5000">
+	<UI name="@chernobyl_mark_mission_01" desc="@chernobyl_mark_mission_01_desc"/>
+	<Filters>
+		<Filter kind="target_self" param="0"/>
+		<Filter kind="mission_type" param="chernobyleasy"/>
+		<Filter kind="mission_type" param="chernobylnormal"/>
+		<Filter kind="mission_type" param="chernobylhard"/>
+	</Filters>
+	<BannerImage image="challenge_mark_chernobil_01" type="mark" />
+</Achievement>

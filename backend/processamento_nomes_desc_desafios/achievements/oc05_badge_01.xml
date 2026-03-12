@@ -1,0 +1,19 @@
+<Achievement active="1" id="60085" kind="kills" MS_side="0" amount="1000">
+	<UI name="@oc05_badge_01" desc="@oc05_badge_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="weapon" param="ar39_oc05_shop"/>
+		<Filter kind="weapon" param="shg54_oc05_shop"/>
+		<Filter kind="weapon" param="smg49_oc05_shop"/>
+		<Filter kind="weapon" param="pt39_oc05_shop"/>
+		<Filter kind="weapon" param="kn21_oc05"/>
+		<Filter kind="weapon" param="hmg03_oc05_shop"/>
+		<Filter kind="weapon" param="sr48_oc05_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_oc05_01" type="badge"/>
+</Achievement>

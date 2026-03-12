@@ -1,0 +1,9 @@
+<Achievement active="1" id="2069" kind="game_end" MS_side="0" amount="25" tags="stm">
+	<UI name="@winSTMBlackgold2" desc="@winSTMBlackgold2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="517d8a3f-91f8-4566-81a2-b48a70e44014"/>
+		<Filter kind="mission_uid" param="3655f238-9c7b-46cd-b927-f2665b3929b3"/>
+	</Filters>
+	<BannerImage image="challenge_mark_blackgold_02" type="mark" />
+</Achievement>		

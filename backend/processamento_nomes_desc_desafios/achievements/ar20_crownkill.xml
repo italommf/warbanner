@@ -1,0 +1,13 @@
+<Achievement active="1" id="285" kind="kills" MS_side="0" amount="1000">
+	<UI name="@ar20_crownKill" desc="@ar20_crownKill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar19_shop"/>   
+		<Filter kind="weapon" param="ar20_crown_shop"/>   			
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>			 
+	</Filters> 
+	<BannerImage image="challenge_strip_84" type="stripe" />
+</Achievement>

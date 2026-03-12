@@ -1,0 +1,10 @@
+<Achievement active="1" id="13092" kind="kills" MS_side="0" amount="999" tags="gold">
+	<UI name="@kn13_gold01Kill" desc="@kn13_gold01Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+ 		<Filter kind="weapon" param="kn13_gold01"/>   
+	</Filters> 
+	<BannerImage image="challenge_strip_kn13_gold01" type="stripe" />
+</Achievement>

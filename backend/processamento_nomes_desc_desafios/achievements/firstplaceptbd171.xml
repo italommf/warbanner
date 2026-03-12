@@ -1,0 +1,8 @@
+<Achievement active="1" id="2059" kind="game_end" MS_side="0" amount="25" tags="ptb">
+	<UI name="@firstPlacePTBD171" desc="@firstPlacePTBD171_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="cdb2fe18-c99e-56b0-9e7f-ffc1d7733f53"/>
+	</Filters>
+	<BannerImage image="challenge_badge_d17_01" type="badge" />
+</Achievement>		

@@ -1,0 +1,15 @@
+<Achievement active="1" id="11019" kind="instant_award" MS_side="0" amount="25">
+	<UI name="@tbsHawkrockDoubleKill01" desc="@tbsHawkrockDoubleKill01_desc"/>
+	<Filters>
+		<!-- <Filter kind="mission_uid" param="791f8fd3-41de-4a94-a5d0-945b461f691e"/> -->
+		<!-- <Filter kind="mission_uid" param="7223f1d1a-64b1-40b2-b0e6-23df37a5dfbf"/> -->
+		<Filter kind="victory_condition" param="10"/>
+		<Filter kind="instant_award_id" param="17"/>
+ 		<Filter kind="enemy" param="1"/> 
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_strip_hawkrock_01" type="stripe" />
+</Achievement>

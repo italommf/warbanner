@@ -26,11 +26,21 @@ export async function buildBannerDataUrl(
 ): Promise<string> {
   const W = 520, H = 110
 
+  // Handle patent filename transformation if it's in 'patente_NN' format
+  let patFile = banner.patente
+  if (patFile && patFile.startsWith('patente_')) {
+    const idx = patFile.split('_')[1]
+    patFile = `Rank_${idx.padStart(2, '0')}.png`
+  } else if (patFile && !patFile.endsWith('.png')) {
+    // Fallback if it's just a number
+    patFile = `Rank_${patFile.padStart(2, '0')}.png`
+  }
+
   const [fitaImg, insigniaImg, marcaImg, patenteImg] = await Promise.all([
-    banner.fita ? loadImage(`/media/fitas/${banner.fita}`) : Promise.resolve(null),
-    banner.insignia ? loadImage(`/media/insignias/${banner.insignia}`) : Promise.resolve(null),
-    banner.marca ? loadImage(`/media/marcas/${banner.marca}`) : Promise.resolve(null),
-    banner.patente ? loadImage(`/media/site/patentes/${banner.patente}`) : Promise.resolve(null),
+    banner.fita ? loadImage(`/media/desafios/fitas/${banner.fita}`) : Promise.resolve(null),
+    banner.insignia ? loadImage(`/media/desafios/insignias/${banner.insignia}`) : Promise.resolve(null),
+    banner.marca ? loadImage(`/media/desafios/marcas/${banner.marca}`) : Promise.resolve(null),
+    patFile ? loadImage(`/media/site/patentes/${patFile}`) : Promise.resolve(null),
   ])
   await document.fonts.ready
 

@@ -1,0 +1,12 @@
+<Achievement active="1" id="277" kind="kills" MS_side="0" amount="5000" tags="weapons_E">
+	<UI name="@smg17Kill" desc="@smg17Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg17_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_weapon10_17" type="mark"/>
+</Achievement>

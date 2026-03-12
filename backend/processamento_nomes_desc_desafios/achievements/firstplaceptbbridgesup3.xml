@@ -1,0 +1,8 @@
+<Achievement active="1" id="5095" kind="game_end" MS_side="0" amount="100" tags="ptb">
+	<UI name="@firstPlacePTBBridgesup3" desc="@firstPlacePTBBridgesup3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="2412db5e-c19a-4fe8-ba99-cd28cdcce388"/>
+	</Filters>
+	<BannerImage image="challenge_badge_firstPlacePTBBridgesup3" type="badge" />
+</Achievement>

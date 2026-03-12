@@ -1,0 +1,11 @@
+<Achievement active="1" id="11008" kind="game_end" MS_side="0" amount="5">
+	<UI name="@afro_survivor8" desc="@afro_survivor8_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="anubisnormal"/>
+		<Filter kind="my_class" param="Recon"/>
+
+	</Filters>
+	<BannerImage image="challenge_mark_afro_04" type="mark" />
+</Achievement>

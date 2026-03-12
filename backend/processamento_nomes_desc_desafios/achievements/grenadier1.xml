@@ -1,0 +1,11 @@
+<Achievement active="1" id="129" kind="instant_award" MS_side="0" amount="10">
+	<UI name="@grenadier1" desc="@grenadier1_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="5"/>
+		<Filter kind="instant_award_id" param="6"/>
+		<Filter kind="instant_award_id" param="7"/>
+	</Filters>
+	<BannerImage image="challenge_badge_05" type="badge" />
+	<Steam name="ACH_FIRE_IN_THE_HOLE" stat_name="STAT_FIRE_IN_THE_HOLE" />
+	<Epic name="ACH_FIRE_IN_THE_HOLE" stat_name="STAT_FIRE_IN_THE_HOLE" />
+</Achievement>

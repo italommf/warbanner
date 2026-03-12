@@ -1,0 +1,10 @@
+<Achievement active="1" id="2147" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@firstPlaceTDMFarm1" desc="@firstPlaceTDMFarm1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="90c7e3c1-6432-4745-8abc-40cbccaa4d25"/>
+		<Filter kind="mission_uid" param="400e7fee-3fda-11e4-baf7-d43d7e9be5ba"/>
+		<Filter kind="mission_uid" param="30afabfd-032f-4ff3-a22e-8b889349aaa5"/>
+	</Filters>
+	<BannerImage image="challenge_badge_farm_01" type="badge"/>
+</Achievement>		

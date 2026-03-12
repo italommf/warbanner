@@ -1,0 +1,9 @@
+<Achievement active="1" id="3006" kind="game_end" MS_side="0" amount="100">
+	<UI name="@lms_1th_place_04" desc="@lms_1th_place_04_desc"/>
+	<Filters>
+	    <Filter kind="victory_condition" param="11"/>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>
+	<BannerImage image="challenge_badge_LMS_04" type="badge" />
+</Achievement>

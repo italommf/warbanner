@@ -1,0 +1,5 @@
+<Achievement active="1" id="20156" kind="hidden" MS_side="1" amount="1">
+        <UI name="@iraq_flag_01" desc="@iraq_flag_01_desc"/>
+        <BannerImage image="challenge_strip_nb_76" type="stripe" />
+    </Achievement>
+

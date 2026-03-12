@@ -1,0 +1,4 @@
+<Achievement active="1" id="300124" kind="hidden" MS_side="1" amount="1">
+        <UI name="@swarm_city_badge_05" desc="@swarm_city_badge_05_desc"/>
+        <BannerImage image="challenge_badge_swarm_city_05" type="badge" />
+</Achievement>

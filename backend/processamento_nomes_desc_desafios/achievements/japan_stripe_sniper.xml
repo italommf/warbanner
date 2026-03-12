@@ -1,0 +1,10 @@
+<Achievement active="1" id="6173" kind="kills" MS_side="0" amount="5000" tags="japan_so_class, king_pve">
+	<UI name="@japan_stripe_sniper" desc="@japan_stripe_sniper_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="japanhard"/>
+		<Filter kind="my_class" param="Recon"/>
+	</Filters>
+	<BannerImage image="challenge_strip_japan_04" type="stripe" />
+</Achievement>

@@ -1,0 +1,11 @@
+<Achievement active="1" id="2381" kind="kills" MS_side="0" amount="100">
+	<UI name="@ice_turret01" desc="@ice_turret01_desc"/>
+	<Filters>
+		<Filter kind="ai_archetype" param="Turret"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="icebreakereasy"/>
+		<Filter kind="mission_type" param="icebreakernormal"/>
+		<Filter kind="mission_type" param="icebreakerhard"/>
+	</Filters>
+	<BannerImage image="challenge_badge_ice_04" type="badge" />
+</Achievement>

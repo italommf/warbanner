@@ -2,33 +2,33 @@ import { useRef, useEffect } from 'react'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useBannerStore } from '../../store/bannerStore'
-import type { FilterCategory, MainFilter, ArmasFilter, ColorFilter } from '../../store/bannerStore'
+import type { MainFilter, ArmasFilter, ColorFilter } from '../../store/bannerStore'
 import styles from './FilterBar.module.css'
-
-const APPLY_TO_LABELS: Record<FilterCategory, string> = {
-  marcas:    'Marcas',
-  insignias: 'Insígnias',
-  fitas:     'Fitas',
-}
 
 const ARMAS_LABELS: Record<ArmasFilter, string> = {
   'todos': 'Todos',
-  '10k':   '10.000 elim.',
-  '5k':    '5.000 elim.',
-  '2.5k':  '2.500 elim.',
-  'ouro':  'Ouro',
+  'low': '< 999',
+  '999': '999 / 1.000',
+  '2500': '2.500',
+  '5000': '5.000',
+  '10000': 'Avançado (10.000)',
+  'especiais': 'Especiais',
+  'crown': 'Crown',
+  'dourada': 'Dourada',
 }
 
+
+
 const COLOR_OPTIONS: { value: ColorFilter; label: string; dot: string }[] = [
-  { value: 'todos',    label: 'Todas as cores', dot: 'transparent' },
-  { value: 'ouro',     label: 'Ouro',           dot: '#d4a017' },
-  { value: 'prata',    label: 'Prata',           dot: '#a0aab8' },
-  { value: 'bronze',   label: 'Bronze',          dot: '#8b5c2a' },
-  { value: 'preto',    label: 'Preto',           dot: '#444' },
-  { value: 'vermelho', label: 'Vermelho',        dot: '#c0392b' },
-  { value: 'azul',     label: 'Azul',            dot: '#2980b9' },
-  { value: 'verde',    label: 'Verde',           dot: '#27ae60' },
-  { value: 'outro',    label: 'Outro',           dot: '#666' },
+  { value: 'todos', label: 'Todas as cores', dot: 'transparent' },
+  { value: 'ouro', label: 'Ouro', dot: '#d4a017' },
+  { value: 'prata', label: 'Prata', dot: '#a0aab8' },
+  { value: 'bronze', label: 'Bronze', dot: '#8b5c2a' },
+  { value: 'preto', label: 'Preto', dot: '#444' },
+  { value: 'vermelho', label: 'Vermelho', dot: '#c0392b' },
+  { value: 'azul', label: 'Azul', dot: '#2980b9' },
+  { value: 'verde', label: 'Verde', dot: '#27ae60' },
+  { value: 'outro', label: 'Outro', dot: '#666' },
 ]
 
 function getFilterLabel(main: MainFilter, armas: ArmasFilter): string {
@@ -41,11 +41,9 @@ export function FilterBar() {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
-  const applyTo     = useBannerStore((s) => s.applyTo)
-  const mainFilter  = useBannerStore((s) => s.mainFilter)
+  const mainFilter = useBannerStore((s) => s.mainFilter)
   const armasFilter = useBannerStore((s) => s.armasFilter)
-  const toggleApplyTo  = useBannerStore((s) => s.toggleApplyTo)
-  const setMainFilter  = useBannerStore((s) => s.setMainFilter)
+  const setMainFilter = useBannerStore((s) => s.setMainFilter)
   const setArmasFilter = useBannerStore((s) => s.setArmasFilter)
 
   useEffect(() => {
@@ -78,25 +76,8 @@ export function FilterBar() {
             transition={{ duration: 0.15 }}
             style={{ transformOrigin: 'top' }}
           >
-            {/* Aplicar filtro em */}
-            <div className={styles.section}>
-              <span className={styles.sectionLabel}>Aplicar filtro em</span>
-              <div className={styles.chips}>
-                {(Object.keys(APPLY_TO_LABELS) as FilterCategory[]).map((cat) => (
-                  <button
-                    key={cat}
-                    className={`${styles.chip} ${applyTo.includes(cat) ? styles.chipActive : ''}`}
-                    onClick={() => toggleApplyTo(cat)}
-                  >
-                    {APPLY_TO_LABELS[cat]}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className={styles.divider} />
-
             {/* Filtro principal */}
+
             <div className={styles.section}>
               <span className={styles.sectionLabel}>Categoria</span>
               <div className={styles.chips}>
@@ -117,9 +98,9 @@ export function FilterBar() {
               <>
                 <div className={styles.divider} />
                 <div className={styles.section}>
-                  <span className={styles.sectionLabel}>Armas</span>
+                  <span className={styles.sectionLabel}>Eliminações</span>
                   <div className={styles.chips}>
-                    {(Object.keys(ARMAS_LABELS) as ArmasFilter[]).map((f) => (
+                    {(['todos', 'low', '999', '2500', '5000', '10000'] as ArmasFilter[]).map((f) => (
                       <button
                         key={f}
                         className={`${styles.chip} ${armasFilter === f ? styles.chipActive : ''}`}
@@ -130,8 +111,25 @@ export function FilterBar() {
                     ))}
                   </div>
                 </div>
+
+                <div className={styles.section} style={{ marginTop: '8px' }}>
+                  <span className={styles.sectionLabel}>Outros</span>
+                  <div className={styles.chips}>
+                    {(['especiais', 'crown', 'dourada'] as ArmasFilter[]).map((f) => (
+                      <button
+                        key={f}
+                        className={`${styles.chip} ${armasFilter === f ? styles.chipActive : ''}`}
+                        onClick={() => setArmasFilter(f)}
+                      >
+                        {ARMAS_LABELS[f]}
+                      </button>
+                    ))}
+                  </div>
+
+                </div>
               </>
             )}
+
           </motion.div>
         )}
       </AnimatePresence>
@@ -143,7 +141,7 @@ export function ColorFilterBar() {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
-  const colorFilter    = useBannerStore((s) => s.colorFilter)
+  const colorFilter = useBannerStore((s) => s.colorFilter)
   const setColorFilter = useBannerStore((s) => s.setColorFilter)
 
   useEffect(() => {
@@ -206,3 +204,44 @@ export function ColorFilterBar() {
     </div>
   )
 }
+
+export function SearchBar() {
+  const searchTerm = useBannerStore((s) => s.searchTerm)
+  const setSearchTerm = useBannerStore((s) => s.setSearchTerm)
+  const hideEmpty = useBannerStore((s) => s.hideEmpty)
+  const setHideEmpty = useBannerStore((s) => s.setHideEmpty)
+
+  return (
+    <div className={styles.searchContainer}>
+      <div className={styles.searchWrapper}>
+        <input
+          type="text"
+          className={styles.searchInput}
+          placeholder="Pesquisar desafio por nome ou descrição..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        {searchTerm && (
+          <button
+            className={styles.clearButton}
+            onClick={() => setSearchTerm('')}
+            title="Limpar pesquisa"
+          >
+            ✕
+          </button>
+        )}
+      </div>
+
+      <label className={styles.checkboxLabel}>
+        <input
+          type="checkbox"
+          checked={hideEmpty}
+          onChange={(e) => setHideEmpty(e.target.checked)}
+          className={styles.checkbox}
+        />
+        <span>Ocultar sem descrição</span>
+      </label>
+    </div>
+  )
+}
+

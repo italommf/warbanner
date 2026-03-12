@@ -1,0 +1,5 @@
+<Achievement active="1" id="13032" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_bc_stripe_01" desc="@ru_bc_stripe_01_desc"/>
+        <BannerImage image="challenge_stripe_bc_01" type="stripe" />
+    </Achievement>
+

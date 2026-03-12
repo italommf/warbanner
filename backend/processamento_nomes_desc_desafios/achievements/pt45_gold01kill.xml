@@ -1,0 +1,12 @@
+<Achievement active="1" id="373142" kind="kills" MS_side="0" amount="999">
+	<UI name="@pt45_gold01_Kill" desc="@pt45_Kill_gold01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt45_gold01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_pt45_gold01" type="stripe"/>
+</Achievement>

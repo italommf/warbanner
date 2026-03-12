@@ -1,0 +1,10 @@
+<Achievement active="1" id="274" kind="kills" MS_side="0" amount="5000" tags="weapons_M">
+	<UI name="@shg22Kill" desc="@shg22Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="shg22_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_weapon10_16" type="badge"/>
+</Achievement>

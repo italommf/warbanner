@@ -1,0 +1,8 @@
+<Achievement active="0" id="31" kind="kills" MS_side="0" amount="10">
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon_skin" param="sr30_camo06skin_shop"/>
+	</Filters>
+	<UI name="@test_weapon_skins" desc="@test_weapon_skins_desc"/>
+	<BannerImage image="test_item_icon" type="stripe" />
+</Achievement>

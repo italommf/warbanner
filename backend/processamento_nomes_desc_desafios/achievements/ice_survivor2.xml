@@ -1,0 +1,10 @@
+<Achievement active="1" id="2371" kind="game_end" MS_side="0" amount="1">
+	<UI name="@ice_survivor2" desc="@ice_survivor2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="normal"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="icebreakernormal"/>
+	</Filters>
+	<BannerImage image="challenge_badge_ice_02" type="badge" />
+</Achievement>

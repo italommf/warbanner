@@ -1,0 +1,10 @@
+<Achievement active="1" id="1078" kind="kills" MS_side="0" amount="100" tags="heist_so_meta,king_pve">
+<UI name="@heist_mark_08" desc="@heist_mark_08_desc"/>
+	<Filters>
+		<Filter kind="by_flowgraph" param="1"/>
+		<Filter kind="enemy" param="0"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+	</Filters>
+<BannerImage image="challenge_mark_so_heist_08" type="mark" />
+</Achievement>

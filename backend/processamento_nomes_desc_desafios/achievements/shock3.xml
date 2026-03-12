@@ -1,0 +1,15 @@
+<Achievement active="1" id="121" kind="kills" MS_side="0" amount="500">
+	<UI name="@shock3" desc="@shock3_desc"/>
+	<Filters>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="weapon" param="df01"/>		
+		<Filter kind="weapon" param="df02"/>		
+		<Filter kind="weapon" param="df03"/>		
+		<Filter kind="weapon" param="df04"/>		
+		<Filter kind="weapon" param="df05"/>
+	</Filters>	
+	<BannerImage image="challenge_badge_39" type="badge" />
+</Achievement>

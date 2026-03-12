@@ -1,0 +1,9 @@
+<Achievement active="1" id="902" kind="game_end" MS_side="0" amount="1" tags="king_pve">
+	<UI name="@rw_compmarathon3" desc="@rw_compmarathon3_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_type" param="campaignsections"/>
+		<Filter kind="my_class" param="Engineer"/>
+	</Filters>
+	<BannerImage image="challenge_strip_rw_03" type="stripe" />
+</Achievement>

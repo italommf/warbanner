@@ -1,0 +1,9 @@
+<Achievement active="1" id="8014" kind="kills" MS_side="0" amount="1">
+	<Filters>
+	    <Filter kind="weapon" param="ar03_test_locked_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+	</Filters>
+	<UI name="@opencup_09" desc="@opencup_09_desc"/>
+	<BannerImage image="challenge_mark_opencup_01" type="mark" />
+</Achievement>

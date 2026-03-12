@@ -1,0 +1,17 @@
+<Achievement active="1" id="10040" kind="kills" MS_side="0" amount="10000">
+	<UI name="@heist01_stripe_01" desc="@heist01_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="hmg03_heist01_shop"/>
+		<Filter kind="weapon" param="mg27_heist01_shop"/>
+		<Filter kind="weapon" param="shg44_heist01_shop"/>
+		<Filter kind="weapon" param="smg45_heist01_shop"/>			
+		<Filter kind="weapon" param="sr42_heist01_shop"/>
+		<Filter kind="weapon" param="sr52_heist01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_heist01" type="stripe"/>
+</Achievement>

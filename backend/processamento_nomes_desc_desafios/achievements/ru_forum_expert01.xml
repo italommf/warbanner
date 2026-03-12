@@ -1,0 +1,4 @@
+<Achievement active="1" id="8407" kind="hidden" MS_side="1" amount="1">
+	<UI name="@forum_expert01" desc="@forum_expert01_desc"/>
+	<BannerImage image="challenge_mark_znatok" type="mark" />
+</Achievement>	

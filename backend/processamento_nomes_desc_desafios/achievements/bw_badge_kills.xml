@@ -1,0 +1,9 @@
+<Achievement active="1" id="372016" kind="kills" MS_side="0" amount="1000" tags="bw_so_meta">
+<UI name="@bw_badge_kills" desc="@bw_badge_kills_desc"/>
+<Filters>
+<Filter kind="enemy" param="1"/>
+<Filter kind="player" param="0"/>
+<Filter kind="mission_type" param="blackwood"/>
+</Filters>
+<BannerImage image="challenge_badge_raid_04" type="badge" />
+</Achievement>

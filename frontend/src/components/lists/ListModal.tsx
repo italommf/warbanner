@@ -3,26 +3,28 @@ import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useBannerStore } from '@/store/bannerStore'
 import type { Category } from '@/store/bannerStore'
+import type { Item } from '@/api/hooks'
+import { formatAmount } from '@/utils/format'
 import styles from './ListModal.module.css'
 
-const PAGE_SIZE = 500
+const PAGE_SIZE = 100
 
 const LABELS: Record<Category, string> = {
-  marcas:    'Marcas',
+  marcas: 'Marcas',
   insignias: 'Insígnias',
-  fitas:     'Fitas',
+  fitas: 'Fitas',
 }
 
 interface Props {
-  category:          Category
-  items:             { name: string; filename: string; url: string }[]
-  onClose:           () => void
-  onSelect?:         (item: { name: string; filename: string; url: string }) => void
+  category: Category
+  items: Item[]
+  onClose: () => void
+  onSelect?: (item: Item) => void
   selectedFilename?: string | null
 }
 
 export function ListModal({ category, items, onClose, onSelect, selectedFilename }: Props) {
-  const state      = useBannerStore((s) => s[category])
+  const state = useBannerStore((s) => s[category])
   const selectItem = useBannerStore((s) => s.selectItem)
 
   const effectiveSelected = selectedFilename !== undefined ? selectedFilename : state.selected
@@ -89,7 +91,7 @@ export function ListModal({ category, items, onClose, onSelect, selectedFilename
               <div
                 key={item.filename}
                 className={`${styles.cell} ${effectiveSelected === item.filename ? styles.selected : ''}`}
-                title={item.name}
+                title={`${item.name}${item.description ? `\n\n${item.description}` : ''}${item.amount ? `\nObjetivo: ${formatAmount(item.amount)}` : ''}`}
                 onClick={() => {
                   if (onSelect) { onSelect(item); onClose() }
                   else { selectItem(category, item.filename); onClose() }

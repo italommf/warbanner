@@ -1,0 +1,8 @@
+<Achievement active="1" id="2552" kind="game_end" MS_side="0" amount="100" tags="stm">
+	<UI name="@firstPlaceSTMHighhill3" desc="@firstPlaceSTMHighhill3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="2a8cbd01-52ae-4783-bdd6-d2f858b4fd74"/>
+	</Filters>
+	<BannerImage image="challenge_badge_highhill_03" type="badge"/>
+</Achievement>		

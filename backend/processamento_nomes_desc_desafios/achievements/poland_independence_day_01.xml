@@ -1,0 +1,16 @@
+<Achievement active="1"  id="10103" kind="kills" MS_side="0" amount="1918">
+	<Filters>
+		<Filter kind="weapon" param="ar08_shop"/>
+		<Filter kind="weapon" param="ar08_bundle_shop"/>
+		<Filter kind="weapon" param="pt14_shop"/>
+		<Filter kind="weapon" param="pt22_shop"/>
+		<Filter kind="weapon" param="smg09_shop"/>
+		<Filter kind="weapon" param="ar26_shop"/>
+		<Filter kind="weapon" param="ar26_anubis_shop"/>
+		<Filter kind="weapon" param="ar26_bundle_shop"/>
+		<Filter kind="weapon" param="smg37_shop"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<UI name="@poland_independence_day_01" desc="@poland_independence_day_01_desc"/>
+	<BannerImage image="challenge_mark_nb_05" type="mark" />
+</Achievement>	

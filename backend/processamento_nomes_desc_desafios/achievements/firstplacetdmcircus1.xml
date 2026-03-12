@@ -1,0 +1,8 @@
+<Achievement active="1" id="5043" kind="game_end" MS_side="0" amount="1" tags="tdm">
+	<UI name="@firstPlaceTDMCircus1" desc="@firstPlaceTDMCircus1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="836c6850-5976-4912-8e3e-81c4fe187ae1"/>
+	</Filters>
+	<BannerImage image="challenge_badge_circus01_01" type="badge" />
+</Achievement>		

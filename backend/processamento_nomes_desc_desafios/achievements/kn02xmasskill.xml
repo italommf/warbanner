@@ -1,0 +1,12 @@
+<Achievement active="1" id="273" kind="kills" MS_side="0" amount="500">
+	<UI name="@kn02xmassKill" desc="@kn02xmassKill_desc"/>
+	<Filters>
+ 		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>		
+		<Filter kind="weapon" param="kn02_xmas"/>
+	</Filters>
+	<BannerImage image="challenge_badge_ny" type="badge" />
+</Achievement>

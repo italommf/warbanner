@@ -1,0 +1,9 @@
+<Achievement active="1" id="11017" kind="game_end" MS_side="0" amount="25" tags="tbs">
+	<UI name="@tbsHawkrockFirstPlace02" desc="@tbsHawkrockFirstPlace02_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="791f8fd3-41de-4a94-a5d0-945b461f691e"/>
+		<Filter kind="mission_uid" param="223f1d1a-64b1-40b2-b0e6-23df37a5dfbf"/>
+	</Filters>
+	<BannerImage image="challenge_mark_hawkrock_02" type="mark" />
+</Achievement>		

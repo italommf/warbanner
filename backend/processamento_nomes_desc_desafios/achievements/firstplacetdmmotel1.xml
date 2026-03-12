@@ -1,0 +1,8 @@
+<Achievement active="1" id="2541" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@firstPlaceTDMMotel1" desc="@firstPlaceTDMMotel1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="71e863e1-e28c-489d-b145-866987fbe031"/>
+	</Filters>
+	<BannerImage image="challenge_badge_hotel_01" type="badge"/>
+</Achievement>		

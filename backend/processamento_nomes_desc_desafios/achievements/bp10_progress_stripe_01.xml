@@ -1,0 +1,4 @@
+<Achievement active="1" id="7101" kind="hidden" MS_side="1" amount="1">
+	<UI name="@bp10_progress_stripe_01" desc="@bp10_progress_stripe_01_desc"/>
+	<BannerImage image="challenge_strip_bp10_01" type="stripe" />
+</Achievement>

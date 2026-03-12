@@ -1,0 +1,10 @@
+<Achievement active="1" id="6180" kind="kills" MS_side="0" amount="20">
+	<UI name="@japan_mark_sed_01" desc="@japan_mark_sed_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_tag" param="sed_gl" compare="in" />
+		<Filter kind="mission_type" param="japanhard"/>
+	</Filters>
+	<BannerImage image="challenge_mark_japan_03" type="mark" />
+</Achievement>

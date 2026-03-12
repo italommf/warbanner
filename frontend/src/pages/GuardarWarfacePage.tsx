@@ -1,14 +1,16 @@
-import { useState, useRef, useCallback, useEffect } from 'react'
+import { useState, useRef, useCallback, useEffect, useMemo } from 'react'
 import type { DragEvent, ChangeEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Navigate } from 'react-router'
 import { useAuthStore } from '@/store/authStore'
 import { useBannerStore } from '@/store/bannerStore'
 import { VIDEO_EXT } from '@/App'
-import { useMarcas, useInsignias, useFitas, usePatentes, useItemsLoading, useUploadImages, useUserStats } from '@/api/hooks'
+import { useMarcas, useInsignias, useFitas, usePatentes, useItemsLoading, useUploadImages, useUserStats, useTickets, useCreateTicket, useReplyTicket, useTicketDetail, useRequestWarchaosMigration } from '@/api/hooks'
 import type { Item } from '@/api/hooks'
 import { ListModal } from '@/components/lists/ListModal'
 import { ListColumn } from '@/components/lists/ListColumn'
+import { FilterBar, ColorFilterBar, SearchBar } from '@/components/filter/FilterBar'
+import { applyFilters } from '@/utils/challenges'
 import type { Category } from '@/store/bannerStore'
 import styles from './GuardarWarfacePage.module.css'
 
@@ -60,7 +62,7 @@ function ImageIcon() {
 // ── Tipos ─────────────────────────────────────────────────────────────────────
 
 type GameTab = 'warface' | 'warchaos'
-type WarfaceTab = 'guardar' | 'perfil' | 'desafios'
+type WarfaceTab = 'guardar' | 'perfil' | 'desafios' | 'chamados'
 
 interface UploadedImage {
   id: string
@@ -238,7 +240,7 @@ function GuardarDadosTab() {
 
   useEffect(() => () => { images.forEach((i) => URL.revokeObjectURL(i.preview)) }, [])
 
-  const { mutate: uploadImages, isPending, isSuccess, reset: resetUpload } = useUploadImages()
+  const { mutateAsync: uploadImages, isPending, isSuccess, reset: resetUpload } = useUploadImages()
 
   const processFiles = useCallback((files: FileList | File[]) => {
     resetUpload() // Reseta o estado de sucesso ao adicionar novos arquivos
@@ -277,31 +279,32 @@ function GuardarDadosTab() {
     setPveImage(img)
   }
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     const pvpFiles = pvpImage ? [pvpImage.file] : []
     const pveFiles = pveImage ? [pveImage.file] : []
     const desafioFiles = images.map(img => img.file)
 
     if (isPending) return
+    if (pvpFiles.length === 0 && pveFiles.length === 0 && desafioFiles.length === 0) return
 
-    // Upload PvP
+    // Envia cada tipo sequencialmente (PVP → PVE → Desafios)
+    // Cada upload é independente: se um falhar, os outros continuam
     if (pvpFiles.length > 0) {
-      uploadImages({ files: pvpFiles, type: 'pvp' })
+      try { await uploadImages({ files: pvpFiles, type: 'pvp' }) }
+      catch (e) { console.error('Erro no upload PVP:', e) }
     }
-    // Upload PvE
     if (pveFiles.length > 0) {
-      uploadImages({ files: pveFiles, type: 'pve' })
+      try { await uploadImages({ files: pveFiles, type: 'pve' }) }
+      catch (e) { console.error('Erro no upload PVE:', e) }
     }
-    // Upload Desafios
     if (desafioFiles.length > 0) {
-      uploadImages({ files: desafioFiles, type: 'desafios' })
+      try { await uploadImages({ files: desafioFiles, type: 'desafios' }) }
+      catch (e) { console.error('Erro no upload Desafios:', e) }
     }
 
-    if (pvpFiles.length > 0 || pveFiles.length > 0 || desafioFiles.length > 0) {
-      setImages([])
-      setPvpImage(null)
-      setPveImage(null)
-    }
+    setImages([])
+    setPvpImage(null)
+    setPveImage(null)
   }
 
   function handleRemove(id: string) {
@@ -565,7 +568,7 @@ function StatColumn({ title, stats, mode }: { title: string; stats: ModeStats; m
           <div className={styles.metricItem}>
             <span className={styles.bigStatLabel}>Índice de vitórias</span>
             <span className={styles.bigStatValue}>
-              {stats.winRate === null ? '—' : `${stats.winRate.toFixed(2)}%`}
+              {stats.winRate === null ? '—' : `${Math.floor(stats.winRate)}%`}
             </span>
           </div>
           <div className={styles.metricItem}>
@@ -632,7 +635,7 @@ function StatColumn({ title, stats, mode }: { title: string; stats: ModeStats; m
                 <tr key={cls.name}>
                   <td style={{ color: cls.color }}>{cls.name}</td>
                   <td>{cls.em === null ? '—' : cls.em.toFixed(1)}</td>
-                  <td>{cls.winRate === null ? '—' : `${cls.winRate.toFixed(1)}%`}</td>
+                  <td>{cls.winRate === null ? '—' : `${Math.floor(cls.winRate)}%`}</td>
                   <td>{cls.hours ? `${cls.hours}h` : '—'}</td>
                 </tr>
               ))}
@@ -661,10 +664,11 @@ function buildSlots(): AchSlot[] {
   return Array.from({ length: ROWS }, () => ROW_PATTERN.map((type) => ({ type, item: null }))).flat()
 }
 
-function loadSlots(): AchSlot[] {
+function loadSlots(userId: number): AchSlot[] {
   const base = buildSlots()
+  if (!userId) return base
   try {
-    const raw = localStorage.getItem(FAV_STORAGE_KEY)
+    const raw = localStorage.getItem(`${FAV_STORAGE_KEY}_${userId}`)
     if (!raw) return base
     const saved: (Item | null)[] = JSON.parse(raw)
     return base.map((slot, i) => ({ ...slot, item: saved[i] ?? null }))
@@ -679,21 +683,29 @@ const ACH_CATEGORY: Record<AchSlotType, Category> = {
   fita: 'fitas',
 }
 
-function FavoriteAchievements() {
+function FavoriteAchievements({ userStats }: { userStats: any }) {
+  const user = useAuthStore((s) => s.user)
+  const userId = user?.id || 0
+  
   const marcas = useMarcas()
   const insignias = useInsignias()
   const fitas = useFitas()
-  const [slots, setSlots] = useState<AchSlot[]>(loadSlots)
+  
+  const [slots, setSlots] = useState<AchSlot[]>(() => loadSlots(userId))
   const [pickerOpen, setPickerOpen] = useState<number | null>(null)
 
   useEffect(() => {
-    localStorage.setItem(FAV_STORAGE_KEY, JSON.stringify(slots.map((s) => s.item)))
-  }, [slots])
+    if (userId) {
+      localStorage.setItem(`${FAV_STORAGE_KEY}_${userId}`, JSON.stringify(slots.map((s) => s.item)))
+    }
+  }, [slots, userId])
 
   function getItems(type: AchSlotType): Item[] {
-    if (type === 'marca') return marcas
-    if (type === 'insignia') return insignias
-    return fitas
+    const category = ACH_CATEGORY[type]
+    const owned = userStats.stats?.[`my_${category}`] || []
+    const ownedSet = new Set(owned)
+    const all = type === 'marca' ? marcas : type === 'insignia' ? insignias : fitas
+    return all.filter(item => ownedSet.has(item.filename))
   }
 
   function selectItem(idx: number, item: Item) {
@@ -867,7 +879,7 @@ function PerfilTab() {
         <StatColumn title="PVE" stats={pveStats} mode="pve" />
       </div>
       <RankTracker userRankIdx={userStats.stats.game_rank_idx || 0} />
-      <FavoriteAchievements />
+      <FavoriteAchievements userStats={userStats} />
     </div>
   )
 }
@@ -875,38 +887,550 @@ function PerfilTab() {
 // ── Aba: Meus Desafios ────────────────────────────────────────────────────────
 
 function MeusDesafiosTab({ onGoToGuardar: _ }: { onGoToGuardar: () => void }) {
+  const { data: userStats } = useUserStats()
+  const rawMarcas = useMarcas()
+  const rawInsignias = useInsignias()
+  const rawFitas = useFitas()
   const isLoading = useItemsLoading()
+
+  const mainFilter = useBannerStore((s) => s.mainFilter)
+  const armasFilter = useBannerStore((s) => s.armasFilter)
+  const colorFilter = useBannerStore((s) => s.colorFilter)
+  const searchTerm = useBannerStore((s) => s.searchTerm)
+  const hideEmpty = useBannerStore((s) => s.hideEmpty)
+
+  // Filtrar as listas globais baseadas no que o usuário possui no perfil
+  const myMarcasRaw = useMemo(() => {
+    if (!userStats?.stats?.my_marcas || !rawMarcas.length) return []
+    const ownedSet = new Set(userStats.stats.my_marcas)
+    return rawMarcas.filter(item => ownedSet.has(item.filename))
+  }, [rawMarcas, userStats])
+
+  const myInsigniasRaw = useMemo(() => {
+    if (!userStats?.stats?.my_insignias || !rawInsignias.length) return []
+    const ownedSet = new Set(userStats.stats.my_insignias)
+    return rawInsignias.filter(item => ownedSet.has(item.filename))
+  }, [rawInsignias, userStats])
+
+  const myFitasRaw = useMemo(() => {
+    if (!userStats?.stats?.my_fitas || !rawFitas.length) return []
+    const ownedSet = new Set(userStats.stats.my_fitas)
+    return rawFitas.filter(item => ownedSet.has(item.filename))
+  }, [rawFitas, userStats])
+
+  // Aplicar filtros de busca/categoria/cor
+  const myMarcas = useMemo(() => applyFilters(myMarcasRaw, 'marcas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
+    [myMarcasRaw, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+
+  const myInsignias = useMemo(() => applyFilters(myInsigniasRaw, 'insignias', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
+    [myInsigniasRaw, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+
+  const myFitas = useMemo(() => applyFilters(myFitasRaw, 'fitas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
+    [myFitasRaw, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+
   return (
     <div className={styles.desafiosTab}>
       <div className={styles.desafiosNote}>
         <span>As conquistas abaixo serão preenchidas após processar suas capturas de tela.</span>
       </div>
+
+      <div className={styles.desafiosToolbar}>
+        <FilterBar />
+        <ColorFilterBar />
+        <SearchBar />
+      </div>
+
       <div className={styles.desafiosLists}>
-        <ListColumn category="marcas" items={[]} columnIndex={0} isLoading={isLoading} />
-        <ListColumn category="insignias" items={[]} columnIndex={1} isLoading={isLoading} />
-        <ListColumn category="fitas" items={[]} columnIndex={2} isLoading={isLoading} />
+        <ListColumn category="marcas" items={myMarcas} columnIndex={0} isLoading={isLoading} />
+        <ListColumn category="insignias" items={myInsignias} columnIndex={1} isLoading={isLoading} />
+        <ListColumn category="fitas" items={myFitas} columnIndex={2} isLoading={isLoading} />
       </div>
     </div>
   )
 }
 
-// ── Aba: Warchaos (placeholder) ───────────────────────────────────────────────
+// ── Aba: Meus Chamados ────────────────────────────────────────────────────────
 
-function WarchaosTab() {
+function TicketCard({ ticket, active, onClick }: { ticket: any, active: boolean, onClick: () => void }) {
+  return (
+    <div 
+      className={`${styles.ticketSmallCard} ${active ? styles.ticketCardActive : ''}`}
+      onClick={onClick}
+    >
+      <div className={styles.ticketCardHeader}>
+        <span className={styles.ticketId}>#{ticket.id}</span>
+        <span className={`${styles.statusDot} ${styles['status-' + ticket.status]}`}>
+          {ticket.status === 'waiting' && '🕒'}
+          {ticket.status === 'in_progress' && '⚙️'}
+          {ticket.status === 'resolved' && '✓'}
+          {ticket.status === 'unsolved' && '✕'}
+        </span>
+      </div>
+      <div className={styles.ticketSubject}>{ticket.name}</div>
+      <div className={styles.ticketDate}>{new Date(ticket.created_at).toLocaleDateString()}</div>
+      {ticket.unread_count > 0 && (
+        <span className={styles.unreadBadge}>{ticket.unread_count}</span>
+      )}
+    </div>
+  )
+}
+
+function MyTicketsTab() {
+  const { data: tickets = [], isLoading } = useTickets()
+  const { mutate: createTicket, isPending: creating } = useCreateTicket()
+  const [isOpeningModal, setIsOpeningModal] = useState(false)
+  const [selectedTicketId, setSelectedId] = useState<number | null>(null)
+  const { data: detail } = useTicketDetail(selectedTicketId)
+  const { mutate: reply, isPending: replying } = useReplyTicket()
+
+  const [name, setName] = useState('')
+  const [category, setCategory] = useState('revisao_pvp')
+  const [msg, setMsg] = useState('')
+  const [replyMsg, setReplyMsg] = useState('')
+
+  const hasActiveTicket = useMemo(() => {
+    return tickets.some(t => t.status === 'waiting' || t.status === 'in_progress')
+  }, [tickets])
+
+  const groupedTickets = useMemo(() => {
+    return {
+      in_progress: tickets.filter(t => t.status === 'in_progress'),
+      waiting: tickets.filter(t => t.status === 'waiting'),
+      closed: tickets.filter(t => t.status === 'resolved' || t.status === 'unsolved')
+    }
+  }, [tickets])
+
+  const handleOpenTicket = () => {
+    if (!name.trim() || !msg.trim()) return
+    createTicket({ name, category, message: msg }, {
+      onSuccess: () => {
+        setIsOpeningModal(false)
+        setName('')
+        setCategory('revisao_pvp')
+        setMsg('')
+      },
+      onError: (err: any) => {
+        alert(err.message || 'Erro ao abrir chamado')
+      }
+    })
+  }
+
+  const handleReply = () => {
+    if (!selectedTicketId || !replyMsg.trim()) return
+    reply({ id: selectedTicketId, message: replyMsg }, {
+      onSuccess: () => setReplyMsg('')
+    })
+  }
+
+  if (isLoading) return <div className={styles.noUser}>Carregando chamados...</div>
+
   return (
     <div className={styles.tabContent}>
       <div className={styles.sectionHeader}>
-        <div>
-          <h3 className={styles.sectionTitle}>WARCHAOS</h3>
-          <p className={styles.sectionDesc}>Salve seus dados do Warchaos antes do encerramento.</p>
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
+          <div>
+            <h3 className={styles.sectionTitle}>MEUS CHAMADOS</h3>
+            <p className={styles.sectionDesc}>Confira aqui suas solicitações de suporte e fale com os administradores.</p>
+          </div>
+          <button 
+            className={`${styles.guardarAlertBtn} ${hasActiveTicket ? styles.btnDisabled : ''}`} 
+            onClick={() => !hasActiveTicket && setIsOpeningModal(true)}
+            disabled={hasActiveTicket}
+            style={hasActiveTicket ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
+            title={hasActiveTicket ? "Você já possui um chamado ativo" : ""}
+          >
+            {hasActiveTicket ? 'CHAMADO ATIVO' : 'ABRIR CHAMADO'}
+          </button>
         </div>
       </div>
-      <div className={styles.comingSoonBox} style={{ marginTop: 0 }}>
-        <span className={styles.comingSoonLabel}>EM BREVE</span>
-        <p className={styles.comingSoonText}>
-          Suporte ao Warchaos esta sendo preparado. Em breve voce podera importar
-          capturas de tela da sua conta neste jogo tambem.
-        </p>
+
+      <div className={styles.ticketsGrid}>
+        <div className={styles.ticketsSideList}>
+          {tickets.length === 0 ? (
+            <p className={styles.noItemsMsg}>Você ainda não abriu nenhum chamado.</p>
+          ) : (
+            <>
+              {groupedTickets.in_progress.length > 0 && (
+                <div className={styles.ticketGroup}>
+                  <div className={styles.groupHeader}>EM ATENDIMENTO</div>
+                  {groupedTickets.in_progress.map(t => (
+                    <TicketCard key={t.id} ticket={t} active={selectedTicketId === t.id} onClick={() => setSelectedId(t.id)} />
+                  ))}
+                </div>
+              )}
+
+              {groupedTickets.waiting.length > 0 && (
+                <div className={styles.ticketGroup}>
+                  <div className={styles.groupHeader}>AGUARDANDO</div>
+                  {groupedTickets.waiting.map(t => (
+                    <TicketCard key={t.id} ticket={t} active={selectedTicketId === t.id} onClick={() => setSelectedId(t.id)} />
+                  ))}
+                </div>
+              )}
+
+              {groupedTickets.closed.length > 0 && (
+                <div className={styles.ticketGroup}>
+                  <div className={styles.groupHeader}>HISTÓRICO / FECHADOS</div>
+                  {groupedTickets.closed.map(t => (
+                    <TicketCard key={t.id} ticket={t} active={selectedTicketId === t.id} onClick={() => setSelectedId(t.id)} />
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+        </div>
+
+        <div className={styles.ticketDetailView}>
+          {selectedTicketId ? (
+            detail && (
+              <div className={styles.ticketConversa}>
+                <div className={styles.conversaHeader}>
+                  <div>
+                    <h4>{detail.name}</h4>
+                    <span style={{ fontSize: '10px', color: 'var(--orange)', fontWeight: 800 }}>
+                      {({
+                        revisao_pvp: 'REVISÃO PVP',
+                        revisao_pve: 'REVISÃO PVE',
+                        conquistas: 'CONQUISTAS',
+                        migracao: 'MIGRAÇÃO WARCHAOS',
+                        bug: 'REPORTAR BUG',
+                        sugestao: 'SUGERIR MELHORIA'
+                      } as any)[detail.category] || detail.category.toUpperCase()}
+                    </span>
+                  </div>
+                  <span className={`${styles.statusBadge} ${styles['status-' + detail.status]}`}>
+                    {detail.status === 'waiting' && 'AGUARDANDO'}
+                    {detail.status === 'in_progress' && 'EM ATENDIMENTO'}
+                    {detail.status === 'resolved' && 'RESOLVIDO'}
+                    {detail.status === 'unsolved' && 'SEM SOLUÇÃO'}
+                  </span>
+                </div>
+                <div className={styles.conversaBody}>
+                  <div className={styles.msgBubble}>
+                    <div className={styles.msgNick}>{detail.username} (Você)</div>
+                    <div className={styles.msgContent}>{detail.message}</div>
+                    <div className={styles.msgTime}>{new Date(detail.created_at).toLocaleString()}</div>
+                  </div>
+                  {detail.responses?.map(r => (
+                    <div key={r.id} className={`${styles.msgBubble} ${r.is_staff_response ? styles.staffMsg : ''}`}>
+                      <div className={styles.msgNick}>{r.is_staff_response ? 'ADMINISTRAÇÃO' : (r.user + ' (Você)')}</div>
+                      <div className={styles.msgContent}>{r.message}</div>
+                      <div className={styles.msgTime}>{new Date(r.created_at).toLocaleString()}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className={styles.conversaFooter}>
+                  {detail.status !== 'resolved' && detail.status !== 'unsolved' ? (
+                    <div className={styles.conversaInput}>
+                      <textarea 
+                        placeholder="Responda aqui..." 
+                        value={replyMsg}
+                        onChange={e => setReplyMsg(e.target.value)}
+                      />
+                      <button onClick={handleReply} disabled={replying}>ENVIAR</button>
+                    </div>
+                  ) : (
+                    <div className={styles.closureNotice}>
+                      <div className={styles.closureText}>
+                        <span>Ticket Encerrado por</span>
+                        <div className={styles.staffBadgeWrapper}>
+                          <span className={`${styles.roleTag} ${styles['role-' + detail.assigned_to_role]}`}>
+                            {detail.assigned_to_role === 'admin' ? 'ADMIN' : 'MOD'}
+                          </span>
+                          <span className={styles.staffName}>
+                            {detail.assigned_to_nick || detail.assigned_to || 'Administração'}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )
+          ) : (
+            <div className={styles.emptyDetail}>
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              <p>Selecione um chamado ao lado para ver a conversa</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {isOpeningModal && (
+        <div className={styles.ticketModalOverlay}>
+          <div className={styles.ticketModal}>
+            <div className={styles.modalHeader}>
+              <h3>ABRIR NOVO CHAMADO</h3>
+              <button className={styles.closeBtn} onClick={() => setIsOpeningModal(false)}>✕</button>
+            </div>
+            <div className={styles.modalBody}>
+              <div className={styles.modalField}>
+                <label>Nome do Chamado</label>
+                <input value={name} onChange={e => setName(e.target.value)} placeholder="Ex: Problema com importação" />
+              </div>
+              <div className={styles.modalField}>
+                <label>Tipo do Chamado</label>
+                <select 
+                  value={category} 
+                  onChange={e => setCategory(e.target.value)}
+                  style={{ width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', padding: '10px', borderRadius: '6px' }}
+                >
+                  <option value="revisao_pvp">Revisão de dados PVP</option>
+                  <option value="revisao_pve">Revisão de dados PVE</option>
+                  <option value="conquistas">Minhas conquistas</option>
+                  <option value="migracao">Migração parcial para o Warchaos</option>
+                  <option value="bug">Reportar Bug</option>
+                  <option value="sugestao">Sugerir melhorias</option>
+                </select>
+              </div>
+              <div className={styles.modalField}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <label>Solicitação</label>
+                  <span style={{ fontSize: '10px', opacity: 0.5, color: msg.length > 1000 ? 'var(--orange)' : 'inherit' }}>
+                    {msg.length}/1000
+                  </span>
+                </div>
+                <textarea 
+                  value={msg} 
+                  onChange={e => setMsg(e.target.value)} 
+                  placeholder="Descreva sua solicitação detalhadamente..."
+                  maxLength={1000}
+                />
+              </div>
+            </div>
+            <div className={styles.modalFooter}>
+              <button className={styles.cancelBtn} onClick={() => setIsOpeningModal(false)}>CANCELAR</button>
+              <button className={styles.confirmBtn} onClick={handleOpenTicket} disabled={creating || msg.length > 1000 || !name.trim()}>
+                ABRIR CHAMADO
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+
+
+function WarchaosTab() {
+  const user = useAuthStore((s) => s.user)
+  const [showModal, setShowModal] = useState(false)
+  const [hasAccount, setHasAccount] = useState(false)
+  
+  // States for migration modal
+  const [wcUser, setWcUser] = useState('')
+  const [wcNick, setWcNick] = useState('')
+
+  const { mutate: requestMigration, isPending } = useRequestWarchaosMigration()
+
+  const handleConfirmMigration = () => {
+    if (!wcUser.trim() || !wcNick.trim()) return
+    requestMigration({ warchaos_user: wcUser, warchaos_nick: wcNick })
+    setShowModal(false)
+  }
+
+  return (
+    <div className={`${styles.tabContent} ${styles.tabContentCentered}`}>
+      <AnimatePresence>
+        {showModal && (
+          <motion.div 
+            className={styles.ticketModalOverlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div 
+              className={styles.ticketModal}
+              initial={{ scale: 0.95, opacity: 0, y: 16 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 16 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className={styles.modalHeader}>
+                <h3>SOLICITAR MIGRAÇÃO</h3>
+                <button className={styles.closeBtn} onClick={() => setShowModal(false)}>✕</button>
+              </div>
+
+              <div className={styles.modalBody} style={{ gap: '12px' }}>
+                <p className={styles.migrationModalText}>
+                  Preencha abaixo com os dados da sua conta <strong>destino</strong> no WarChaos.
+                </p>
+
+                <div className={styles.modalForm}>
+                  <div className={styles.modalInputGroup}>
+                    <label>Seu USUÁRIO (login) no WarChaos</label>
+                    <input 
+                      className={styles.modalInput} 
+                      value={wcUser} 
+                      onChange={e => setWcUser(e.target.value)}
+                      placeholder="Somente o seu usuário (NUNCA informe sua senha)"
+                    />
+                    <span style={{ fontSize: '10px', color: 'var(--orange)', fontWeight: 600 }}>IMPORTANTE: Nunca informe sua senha para ninguém!</span>
+                  </div>
+
+                  <div className={styles.modalInputGroup}>
+                    <label>Seu NICK (apelido) no WarChaos</label>
+                    <input 
+                      className={styles.modalInput} 
+                      value={wcNick} 
+                      onChange={e => setWcNick(e.target.value)}
+                      placeholder="Seu nome dentro de jogo no WarChaos"
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.migrationWarning}>
+                  <span className={styles.migrationWarningHeader}>Importante</span>
+                  <span className={styles.migrationWarningText}>
+                    A migração contempla exclusivamente os <strong>desafios</strong> catalogados no WarBanner. Certifique-se de que os dados acima estão corretos, pois após o envio eles não podem ser mudados.
+                  </span>
+                </div>
+
+                <p className={styles.migrationModalText} style={{ fontWeight: 600, textAlign: 'center' }}>
+                  Confirmar solicitação para a conta acima?
+                </p>
+              </div>
+
+              <div className={styles.modalFooter}>
+                <button className={styles.cancelBtn} onClick={() => setShowModal(false)}>
+                  CANCELAR
+                </button>
+                <button 
+                  className={styles.migrationModalBtn} 
+                  onClick={handleConfirmMigration} 
+                  disabled={isPending || !wcUser.trim() || !wcNick.trim()}
+                >
+                  {isPending ? 'PROCESSANDO...' : 'CONFIRMAR DADOS'}
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className={styles.warchaosContainer}>
+        <div className={styles.warchaosInfo}>
+          <h2 style={{ fontSize: '24px', fontWeight: 900, color: 'var(--orange)', letterSpacing: '0.05em' }}>
+            O servidor privado de Warface feito pela comunidade!
+          </h2>
+          
+          <div style={{ fontSize: '12px', color: 'var(--text2)', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <p>
+              O <strong>WarChaos</strong> é um <u>servidor privado</u>* de Warface feito pela comunidade, mantido pela comunidade e para a comunidade. Lá são mantidas vivas as memórias do game lançado em 2013 pelos próprios jogadores. Com o <a href="https://pc.wfclutch.com/pt/news/1239331.html" target="_blank" rel="noreferrer" style={{ color: 'var(--orange)', textDecoration: 'underline' }}>encerramento dos servidores oficiais</a> do Warface Clutch, o WarChaos surge como a principal alternativa para manter viva a nossa paixão.
+            </p>
+            <p>
+              Com competitivo ativo, eventos regulares, streams constantes e apoio total de youtubers, o WarChaos é hoje o maior servidor privado do Warface em atividade.
+            </p>
+          </div>
+
+          <div className={styles.warchaosFeatures}>
+            <div className={styles.featureItem}><span className={styles.featureBullet}>•</span> Mecânicas inteiramente novas como o sistema de prestígio e Mercado de Armas Contrabandeadas no site.</div>
+            <div className={styles.featureItem}><span className={styles.featureBullet}>•</span> Cash facilitado e com preço muito abaixo</div>
+            <div className={styles.featureItem}><span className={styles.featureBullet}>•</span> Skins remasterizadas e itens exclusivos</div>
+            <div className={styles.featureItem}><span className={styles.featureBullet}>•</span> Rotação rápida da loja e itens antes indisponíveis</div>
+            <div className={styles.featureItem}><span className={styles.featureBullet}>•</span> Comunicação direta com Devs e Suporte ativo</div>
+            <div className={styles.featureItem}><span className={styles.featureBullet}>•</span> Eventos aumentados e suporte da comunidade</div>
+          </div>
+
+          <p style={{ fontSize: '11px', color: 'var(--text2)', opacity: 0.8, lineHeight: '1.5' }}>
+            Junte-se já a comunidade do WarChaos e venha fazer parte da fagulha que manterá o Warface vivo. Ao solicitar a migração aqui, seus dados extraídos serão enviados para validação pela equipe do WarChaos.
+          </p>
+
+          <div className={styles.warchaosLinks}>
+            <a href="https://wf.warchaos.com.br/" target="_blank" rel="noreferrer" className={`${styles.warchaosLink} ${styles.linkSite}`}>
+              <img src="https://www.google.com/s2/favicons?sz=32&domain=wf.warchaos.com.br" alt="" style={{ width: '16px', height: '16px' }} />
+              SITE DO WARCHAOS
+            </a>
+            <a href="https://discord.gg/warchaos" target="_blank" rel="noreferrer" className={`${styles.warchaosLink} ${styles.linkDiscord}`}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037 19.736 19.736 0 0 0-4.885 1.515.069.069 0 0 0-.032.027C.533 9.048-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.862-1.295 1.192-1.996a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.125-.094.252-.192.37-.29a.074.074 0 0 1 .077-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .077.01c.12.098.246.196.372.29a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.874.894.077.077 0 0 0-.041.107c.33.701.73 1.366 1.192 1.996a.077.077 0 0 0 .084.028 19.836 19.836 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+              DISCORD DO WARCHAOS
+            </a>
+            <a href="https://wf.warchaos.com.br/account/register?ref=1bc32fd6d8b0" target="_blank" rel="noreferrer" className={`${styles.warchaosLink} ${styles.linkRegister}`}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="16" y1="11" x2="22" y2="11"/>
+              </svg>
+              CRIAR CONTA NO WARCHAOS*
+            </a>
+          </div>
+
+          <div style={{ fontSize: '9px', color: 'var(--text2)', opacity: 0.5, marginTop: '12px', fontStyle: 'italic', display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left', width: '100%' }}>
+            <p>
+              * Ao criar sua conta através do botão acima, você estará usando o link de afiliado do desenvolvedor deste site.
+            </p>
+            <p>
+              * O WarChaos é um servidor privado criado inteiramente pela comunidade de Warface, não possuindo relação alguma com o Warface oficial da MyGames. 
+              A migração através deste site não garante que a totalidade dos seus dados serão migrados, tratando-se de um projeto independente da comunidade 
+              sem vínculos oficiais com a Crytek, My.Games ou Warface Clutch.
+            </p>
+          </div>
+
+          {!user?.warchaos_migrado && !user?.warchaos_solicitou && (
+            <div style={{ padding: '8px 0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <p style={{ fontSize: '11px', color: 'var(--text2)', fontWeight: 600, opacity: 0.8 }}>
+                Já criou sua conta no WarChaos? Solicite a migração dos dados para o servidor privado 
+                e mantenha viva a sua conta pós encerramento dos servidores oficiais do Warface.
+              </p>
+              
+              <label className={styles.modalCheckbox}>
+                <input type="checkbox" checked={hasAccount} onChange={e => setHasAccount(e.target.checked)} />
+                <span>Já tenho conta no WarChaos e quero solicitar migração</span>
+              </label>
+            </div>
+          )}
+
+          <div className={styles.warchaosBtnWrapper}>
+            {user?.warchaos_migrado ? (
+              <div className={`${styles.warchaosStatus} ${styles.statusDone}`}>
+                <span>✅</span> DADOS MIGRADOS
+              </div>
+            ) : user?.warchaos_solicitou ? (
+              <div className={`${styles.warchaosStatus} ${styles.statusWaiting}`} style={{ flexDirection: 'column', gap: '4px', padding: '12px 20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span>⏳</span> AGUARDANDO MIGRAÇÃO DOS DADOS
+                </div>
+                {user.warchaos_solicitou_at && (
+                  <span style={{ fontSize: '10px', opacity: 0.7, fontWeight: 500 }}>
+                    Solicitada dia {new Date(user.warchaos_solicitou_at).toLocaleDateString('pt-BR')} para {user.warchaos_nick} ({user.warchaos_user})
+                  </span>
+                )}
+              </div>
+            ) : (
+              <button 
+                className={styles.warchaosBtn} 
+                onClick={() => setShowModal(true)}
+                disabled={isPending || !hasAccount}
+              >
+                {isPending ? (
+                  'SOLICITANDO...'
+                ) : (
+                  <>
+                    SOLICITAR MIGRAÇÃO PARA O WARCHAOS
+                    {!hasAccount && (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '8px' }}>
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                      </svg>
+                    )}
+                  </>
+                )}
+              </button>
+            )}
+          </div>
+        </div>
+
+        <div className={styles.warchaosVideo}>
+           <iframe 
+              src="https://www.youtube.com/embed/7etfQUoVza4" 
+              title="WarChaos" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+           />
+        </div>
       </div>
     </div>
   )
@@ -917,21 +1441,36 @@ function WarchaosTab() {
 const WARFACE_TABS: { id: WarfaceTab; label: string }[] = [
   { id: 'perfil', label: 'PERFIL' },
   { id: 'desafios', label: 'MEUS DESAFIOS' },
+  { id: 'chamados', label: 'MEUS CHAMADOS' },
 ]
 
-function WarfaceSection() {
-  const [activeTab, setActiveTab] = useState<WarfaceTab>('perfil')
+interface WarfaceSectionProps {
+  activeTab: WarfaceTab
+  setActiveTab: (t: WarfaceTab) => void
+}
+
+function WarfaceSection({ activeTab, setActiveTab }: WarfaceSectionProps) {
+  const daysLeft = useMemo(() => {
+    const closingDate = new Date('2026-05-27T03:00:00Z')
+    const now = new Date()
+    const diff = closingDate.getTime() - now.getTime()
+    return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)))
+  }, [])
 
   return (
     <div className={styles.subSection}>
       <div className={styles.warfaceAlert}>
-        <span className={styles.warningBadge}>ENCERRAMENTO DOS SERVIDORES</span>
+        <span className={styles.warningBadge}>
+          {daysLeft > 0 ? "Encerramento do Warface" : "Central de Suporte do WarBanner"}
+        </span>
         <p className={styles.warfaceAlertText}>
-          Os servidores estao encerrando. Preserve suas conquistas importando
-          capturas de tela da sua conta — seus dados ficarao salvos aqui para sempre.
+          {daysLeft > 0 
+            ? `O servidor do Warface (MYGAMES) será encerrado em ${daysLeft} dias. Preserve seus dados aqui.`
+            : 'Os servidores oficiais foram encerrados. Esta é a Central de Suporte do WarBanner.'
+          }
         </p>
-        <button className={styles.guardarAlertBtn} onClick={() => setActiveTab('guardar')}>
-          GUARDAR MEUS DADOS
+        <button className={styles.guardarAlertBtn} onClick={() => setActiveTab(daysLeft > 0 ? 'guardar' : 'chamados')}>
+          {daysLeft > 0 ? 'GUARDAR MEUS DADOS' : 'ABRIR CHAMADO'}
         </button>
       </div>
 
@@ -959,6 +1498,7 @@ function WarfaceSection() {
           {activeTab === 'guardar' && <GuardarDadosTab />}
           {activeTab === 'perfil' && <PerfilTab />}
           {activeTab === 'desafios' && <MeusDesafiosTab onGoToGuardar={() => setActiveTab('guardar')} />}
+          {activeTab === 'chamados' && <MyTicketsTab />}
         </motion.div>
       </AnimatePresence>
     </div>
@@ -977,6 +1517,7 @@ export function GuardarWarfacePage() {
   const panelBg = usePanelBg()
 
   const [gameTab, setGameTab] = useState<GameTab>('warface')
+  const [activeTab, setActiveTab] = useState<WarfaceTab>('perfil')
 
   if (!user) return <Navigate to="/login" replace />
 
@@ -1003,7 +1544,7 @@ export function GuardarWarfacePage() {
       </div>
 
       {/* Conteudo do jogo selecionado */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <motion.div
           key={gameTab}
           className={styles.gameTabContent}
@@ -1012,8 +1553,12 @@ export function GuardarWarfacePage() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.12 }}
         >
-          {gameTab === 'warface' && <WarfaceSection />}
-          {gameTab === 'warchaos' && <WarchaosTab />}
+          {gameTab === 'warface' && (
+            <WarfaceSection activeTab={activeTab} setActiveTab={setActiveTab} />
+          )}
+          {gameTab === 'warchaos' && (
+            <WarchaosTab />
+          )}
         </motion.div>
       </AnimatePresence>
     </motion.main>

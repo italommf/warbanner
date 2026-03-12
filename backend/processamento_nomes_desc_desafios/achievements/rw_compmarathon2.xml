@@ -1,0 +1,9 @@
+<Achievement active="1" id="903" kind="game_end" MS_side="0" amount="1" tags="king_pve">
+	<UI name="@rw_compmarathon2" desc="@rw_compmarathon2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_type" param="campaignsections"/>
+		<Filter kind="my_class" param="Medic"/>
+	</Filters>
+	<BannerImage image="challenge_strip_rw_02" type="stripe" />
+</Achievement>

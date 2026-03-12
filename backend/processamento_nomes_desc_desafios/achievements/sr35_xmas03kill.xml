@@ -1,0 +1,12 @@
+<Achievement active="1" id="2659" kind="kills" MS_side="0" amount="2500">
+	<UI name="@sr35_xmas03Kill" desc="@sr35_xmas03Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="sr35_xmas03_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_xmas03_04" type="stripe"/>
+</Achievement>

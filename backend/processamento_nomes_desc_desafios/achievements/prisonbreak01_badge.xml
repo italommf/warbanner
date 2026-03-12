@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<Achievement active="1" id="373174" kind="hidden" MS_side="1" amount="1">
+	<UI name="@prisonbreak01_badge" desc="@prisonbreak01_badge_desc"/>
+	<BannerImage image="challenge_badge_prisonbreak01" type="badge"/>
+</Achievement>

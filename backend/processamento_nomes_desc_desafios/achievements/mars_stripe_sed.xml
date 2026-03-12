@@ -1,0 +1,11 @@
+<Achievement active="1" id="6374" kind="kills" MS_side="0" amount="5">
+	<UI name="@mars_stripe_sed" desc="@mars_stripe_sed_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_tag" param="sed_gl" compare="==" />
+		<Filter kind="ai_tag" param="sed_ft" compare="==" />
+		<Filter kind="mission_type" param="marshard"/>
+	</Filters>
+	<BannerImage image="challenge_strip_marsop_09" type="stripe" />
+</Achievement>

@@ -1,0 +1,9 @@
+<Achievement active="1" id="920" kind="game_end" MS_side="0" amount="1">
+	<UI name="@winRW2Sniper" desc="@winRW2Sniper_desc"/>
+	<Filters>
+		<Filter kind="mission_type" param="campaignsection2"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="my_class" param="Recon"/>
+	</Filters>
+	<BannerImage image="challenge_mark_rw_10" type="mark" />
+</Achievement>

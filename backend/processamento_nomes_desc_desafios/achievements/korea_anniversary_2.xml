@@ -1,0 +1,9 @@
+<Achievement active="1" id="7002" kind="kills" MS_side="0" amount="200">
+	<Filters>
+		<Filter kind="weapon" param="shg05_kra01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="in_special_move" param="slide"/>
+	</Filters>
+	<UI name="@korea_anniversary_2" desc="@korea_anniversary_2_desc"/>
+	<BannerImage image="challenge_badge_kra_01" type="badge" />
+</Achievement>

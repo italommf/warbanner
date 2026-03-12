@@ -1,0 +1,12 @@
+<Achievement active="1" id="373209" kind="kills" MS_side="0" amount="1500">
+	<UI name="@ar02_winter01_console_Kill" desc="@ar02_winter01_console_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar02_winter01_console_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_ar02_shadow01" type="stripe" />
+</Achievement>

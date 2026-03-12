@@ -1,0 +1,6 @@
+<Achievement active="1" id="404" kind="resurrects_done" MS_side="0" amount="100">
+	<UI name="@ressurector1" desc="@ressurector1_desc"/>		
+	<Filter kind="player" param="1"/>
+	<Filter kind="enemy" param="0"/>
+	<BannerImage image="challenge_badge_43" type="badge" />
+</Achievement>

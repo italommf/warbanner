@@ -1,0 +1,16 @@
+﻿--------------------------------------------------
+Categoria    | Total Pasta | Com XML    | Sem XML   
+--------------------------------------------------
+marcas       | 1334        | 926        | 408       
+insignias    | 1159        | 744        | 415       
+fitas        | 3053        | 1677       | 1376      
+--------------------------------------------------
+TOTAL        | 5546        | 3347       | 2199      
+--------------------------------------------------
+
+Verificando caso especÝfico: 9may_stripe_01
+  Imagem no XML: challenge_strip_9May
+  Nome Traduzido: ContribuiþÒo decisiva
+  DescriþÒo: Cause 10.000.000 de dano a inimigos usando qualquer arma da 2¬ Guerra Mundial.
+  Quantidade: 10000000
+  Arquivo XML de origem: 9may_stripe_01.xml

@@ -1,0 +1,10 @@
+<Achievement active="1" id="305" kind="kills" MS_side="0" amount="10000">
+	<UI name="@fg02Kill25" desc="@fg02Kill25_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="grenade" param="1"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_weapon25_45" type="mark"/>
+</Achievement>

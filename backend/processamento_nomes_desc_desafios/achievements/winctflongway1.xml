@@ -1,0 +1,8 @@
+<Achievement active="1" id="5072" kind="game_end" MS_side="0" amount="10" tags="ctf">
+	<UI name="@winCTFLongway1" desc="@winCTFLongway1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="7684fdcf-f6aa-431e-9616-608eccd3a847"/>
+	</Filters>
+	<BannerImage image="challenge_mark_firstPlaceCTFLongway1" type="mark" />
+</Achievement>

@@ -1,0 +1,11 @@
+<Achievement active="1" id="465" kind="kills" MS_side="0" amount="5000" tags="weapons_M">
+	<UI name="@shg28Kill" desc="@shg28Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="weapon" param="shg28_shop"/>
+		<Filter kind="weapon" param="shg28_bundle_shop"/>
+	</Filters>
+	<BannerImage image="challenge_badge_weapon10_19" type="badge"/>
+</Achievement>

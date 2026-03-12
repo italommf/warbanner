@@ -2,16 +2,18 @@ import { useRef, useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { useBannerStore } from '@/store/bannerStore'
 import type { Category } from '@/store/bannerStore'
+import type { Item } from '@/api/hooks'
+
 import { ListItem } from './ListItem'
 import { ListModal } from './ListModal'
 import styles from './ListColumn.module.css'
 
-const PAGE_SIZE = 500
+const PAGE_SIZE = 100
 
 const LABELS: Record<Category, string> = {
-  marcas:    'Marcas',
+  marcas: 'Marcas',
   insignias: 'Insígnias',
-  fitas:     'Fitas',
+  fitas: 'Fitas',
 }
 
 const SKELETON_COUNT = 14
@@ -30,14 +32,15 @@ function SkeletonList() {
 }
 
 interface Props {
-  category:    Category
-  items:       { name: string; filename: string; url: string }[]
+  category: Category
+  items: Item[]
   columnIndex: number
-  isLoading?:  boolean
+  isLoading?: boolean
 }
 
+
 export function ListColumn({ category, items, columnIndex, isLoading = false }: Props) {
-  const state      = useBannerStore((s) => s[category])
+  const state = useBannerStore((s) => s[category])
   const selectItem = useBannerStore((s) => s.selectItem)
 
   const [modalOpen, setModalOpen] = useState(false)

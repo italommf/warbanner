@@ -4,7 +4,7 @@ import type { AuthUser } from '@/store/authStore'
 
 // ── Auth fetch helper ───────────────────────────────────────────────────────
 
-function authFetch(url: string, options: RequestInit = {}): Promise<Response> {
+export function authFetch(url: string, options: RequestInit = {}): Promise<Response> {
   const token = useAuthStore.getState().accessToken
   const headers: Record<string, string> = {
     ...(options.headers as Record<string, string> ?? {}),
@@ -20,7 +20,10 @@ export interface Item {
   filename: string
   url: string
   color?: string
+  description?: string
+  amount?: string
 }
+
 
 export interface ItemsResponse {
   marcas: Item[]
@@ -149,11 +152,11 @@ export function useCommunityLatest() {
   })
 }
 
-export function useCommunity() {
+export function useCommunity(sort = 'newest', group = '') {
   return useInfiniteQuery<CommunityPage>({
-    queryKey: ['community'],
+    queryKey: ['community', sort, group],
     queryFn: ({ pageParam }) =>
-      fetch(`/api/community/?page=${pageParam}`).then((r) => r.json()),
+      fetch(`/api/community/?page=${pageParam}&sort=${sort}&group=${group}`).then((r) => r.json()),
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) =>
       lastPage.has_more ? allPages.length + 1 : undefined,
@@ -359,6 +362,9 @@ export interface UserStats {
     pve_hours: number
     pvp_classes: any[]
     pve_classes: any[]
+    my_marcas: string[]
+    my_insignias: string[]
+    my_fitas: string[]
   }
 }
 
@@ -367,5 +373,372 @@ export function useUserStats() {
     queryKey: ['userStats'],
     queryFn: () => authFetch('/api/processar/upload/stats/').then((r) => r.json()),
     refetchInterval: 5000,
+  })
+}
+
+// ── Admin Hooks ─────────────────────────────────────────────────────────────
+
+export interface AdminUser {
+  id: number
+  username: string
+  email: string
+  game_nick: string
+  role: string
+  is_staff: boolean
+  date_joined: string
+}
+
+export interface AdminUserDetail extends AdminUser {
+  is_active: boolean
+  game_clan: string
+  game_rank: string
+  game_rank_idx: number
+  pvp_em: number
+  pvp_win_rate: number
+  pvp_matches: number
+  pvp_hours: number
+  pvp_best_rank_rp: number
+  pvp_best_rank_name: string
+  pvp_classes: any[]
+  pve_em: number
+  pve_win_rate: number
+  pve_matches: number
+  pve_mission_easy: number
+  pve_mission_medium: number
+  pve_mission_hard: number
+  pve_hours: number
+  pve_classes: any[]
+  my_marcas: string[]
+  my_insignias: string[]
+  my_fitas: string[]
+}
+
+export interface AdminUserImage {
+  id: number
+  image: string
+  status: string
+  image_type: string
+  created_at: string
+}
+
+export interface AdminUsersResponse {
+  users: AdminUser[]
+  has_more: boolean
+  total: number
+}
+
+export function useAdminUsers(search = '', type = 'all') {
+  return useInfiniteQuery<AdminUsersResponse>({
+    queryKey: ['admin-users', search, type],
+    queryFn: ({ pageParam }) =>
+      authFetch(`/api/admin/users/?search=${search}&type=${type}&page=${pageParam}`).then((r) => r.json()),
+    initialPageParam: 1,
+    getNextPageParam: (lastPage, allPages) =>
+      lastPage.has_more ? allPages.length + 1 : undefined,
+  })
+}
+
+export function useAdminUserDetail(userId: number | null) {
+  return useQuery<AdminUserDetail>({
+    queryKey: ['admin-user', userId],
+    queryFn: () => authFetch(`/api/admin/users/${userId}/`).then((r) => r.json()),
+    enabled: userId !== null,
+  })
+}
+
+export interface AdminLog {
+  id: number
+  actor: string
+  field_name: string
+  old_value: string
+  new_value: string
+  created_at: string
+}
+
+export function useAdminUserHistory(userId: number | null) {
+  return useQuery<AdminLog[]>({
+    queryKey: ['admin-user-history', userId],
+    queryFn: () => authFetch(`/api/admin/users/${userId}/history/`).then((r) => r.json()),
+    enabled: userId !== null,
+  })
+}
+
+export function useUpdateAdminUser() {
+  const qc = useQueryClient()
+  return useMutation<AdminUserDetail, Error, { id: number; data: any }>({
+    mutationFn: ({ id, data }) =>
+      authFetch(`/api/admin/users/${id}/`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      }).then((r) => r.json()),
+    onSuccess: (data) => {
+      qc.invalidateQueries({ queryKey: ['admin-users'] })
+      qc.invalidateQueries({ queryKey: ['admin-user', data.id] })
+    },
+  })
+}
+
+export function useAdminUserImages(userId: number | null) {
+  return useQuery<AdminUserImage[]>({
+    queryKey: ['admin-user-images', userId],
+    queryFn: () => authFetch(`/api/admin/users/${userId}/images/`).then((r) => r.json()),
+    enabled: userId !== null,
+  })
+}
+
+export interface AdminGlobalStats {
+  total_users: number
+  total_admins: number
+  total_mods: number
+  total_images: number
+  pending: number
+  failed: number
+  done: number
+}
+
+export function useAdminGlobalStats() {
+  return useQuery<AdminGlobalStats>({
+    queryKey: ['admin-global-stats'],
+    queryFn: () => authFetch('/api/admin/stats/').then((r) => r.json()),
+    refetchInterval: 10000,
+  })
+}
+
+export interface QueueImage {
+  id: number
+  image: string
+  image_type: string
+  status: string
+  created_at: string
+  error: string | null
+}
+
+export interface QueueUser {
+  id: number
+  username: string
+  game_nick: string | null
+  images: QueueImage[]
+}
+
+export function useAdminQueue() {
+  return useQuery<QueueUser[]>({
+    queryKey: ['admin-queue'],
+    queryFn: () => authFetch('/api/admin/queue/').then((r) => r.json()),
+    refetchInterval: 5000, // Tempo real (5s)
+  })
+}
+
+export function useReprocessImage() {
+  const qc = useQueryClient()
+  return useMutation({
+    mutationFn: (id: number) => authFetch(`/api/admin/reprocess/${id}/`, { method: 'POST' }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['admin-queue'] })
+      qc.invalidateQueries({ queryKey: ['admin-global-stats'] })
+    }
+  })
+}
+
+// ── Support System Hooks ────────────────────────────────────────────────────
+
+export type TicketStatus = 'waiting' | 'in_progress' | 'resolved' | 'unsolved'
+export type TicketCategory = 'revisao_pvp' | 'revisao_pve' | 'conquistas' | 'migracao' | 'bug' | 'sugestao'
+
+export interface TicketResponse {
+  id: number
+  user: string
+  message: string
+  is_staff_response: boolean
+  created_at: string
+}
+
+export interface SupportTicket {
+  id: number
+  name: string
+  category: TicketCategory
+  message?: string
+  status: TicketStatus
+  assigned_to: string | null
+  assigned_to_nick?: string | null
+  assigned_to_role?: string | null
+  created_at: string
+  updated_at: string
+  username: string
+  unread_count?: number
+  responses?: TicketResponse[]
+}
+
+export function useTickets() {
+  const token = useAuthStore((s) => s.accessToken)
+  return useQuery<SupportTicket[]>({
+    queryKey: ['tickets', !!token],
+    queryFn: () => authFetch('/api/support/tickets/').then((r) => r.json()),
+    enabled: !!token,
+    staleTime: 30_000,
+  })
+}
+
+export function useTicketDetail(id: number | null) {
+  return useQuery<SupportTicket>({
+    queryKey: ['ticket', id],
+    queryFn: () => authFetch(`/api/support/tickets/${id}/`).then((r) => r.json()),
+    enabled: id !== null,
+    staleTime: 10_000,
+  })
+}
+
+export function useCreateTicket() {
+  const qc = useQueryClient()
+  return useMutation<any, Error, { name: string; category: string; message: string }>({
+    mutationFn: (payload) =>
+      authFetch('/api/support/tickets/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }).then(async (r) => {
+        const body = await r.json()
+        if (!r.ok) throw new Error(body.error || 'Erro ao abrir chamado')
+        return body
+      }),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['tickets'] }),
+  })
+}
+
+export function useReplyTicket() {
+  const qc = useQueryClient()
+  return useMutation<any, Error, { id: number; message: string }>({
+    mutationFn: ({ id, message }) =>
+      authFetch(`/api/support/tickets/${id}/`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message }),
+      }).then(async (r) => {
+        const body = await r.json()
+        if (!r.ok) throw new Error(body.error || 'Erro ao responder')
+        return body
+      }),
+    onSuccess: (_, { id }) => {
+      qc.invalidateQueries({ queryKey: ['ticket', id] })
+      qc.invalidateQueries({ queryKey: ['tickets'] })
+    }
+  })
+}
+
+export function useUpdateTicketStatus() {
+  const qc = useQueryClient()
+  return useMutation<any, Error, { id: number; status: string }>({
+    mutationFn: ({ id, status }) =>
+      authFetch(`/api/support/tickets/${id}/`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      }).then(async (r) => {
+        const body = await r.json()
+        if (!r.ok) throw new Error(body.error || 'Erro ao atualizar status')
+        return body
+      }),
+    onSuccess: (_, { id }) => {
+      qc.invalidateQueries({ queryKey: ['ticket', id] })
+      qc.invalidateQueries({ queryKey: ['tickets'] })
+    }
+  })
+}
+
+export interface RankingItem {
+  username: string
+  nick: string
+  avatar: string | null
+  rank_idx: number
+  value: number
+}
+
+export interface RankingData {
+  top5: RankingItem[]
+  user: RankingItem & { rank: number }
+}
+
+export interface CommunityStatistics {
+  general: {
+    player_count: number
+    total_pvp_matches: number
+    total_pve_matches: number
+    total_pve_easy: number
+    total_pve_normal: number
+    total_pve_hard: number
+    total_hours: number
+  }
+  pvp: {
+    ranking_kd: RankingData
+    ranking_matches: RankingData
+    ranking_hours: RankingData
+    ranking_rank: RankingData
+    community_avgs: {
+      kd: number
+      matches: number
+      hours: number
+      rank: number
+    }
+    user_stats: {
+      kd: number
+      matches: number
+      hours: number
+      rank: number
+    }
+  }
+  pve: {
+    ranking_total: RankingData
+    ranking_easy: RankingData
+    ranking_normal: RankingData
+    ranking_hard: RankingData
+    community_avgs: {
+      total: number
+      hours: number
+      easy: number
+      normal: number
+      hard: number
+    }
+    user_stats: {
+      total: number
+      hours: number
+      easy: number
+      normal: number
+      hard: number
+    }
+  }
+}
+
+export function useCommunityStatistics() {
+  return useQuery<CommunityStatistics>({
+    queryKey: ['community', 'statistics'],
+    queryFn: () => authFetch('/api/community/statistics/').then((r) => r.json()),
+  })
+}
+export function useRequestWarchaosMigration() {
+  const updateUser = useAuthStore((s) => s.updateUser)
+  const user = useAuthStore((s) => s.user)
+
+  return useMutation({
+    mutationFn: (payload: { warchaos_user: string; warchaos_nick: string }) => 
+      authFetch('/api/warchaos/request/', { 
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(async (r) => {
+        const data = await r.json()
+        if (!r.ok) throw new Error(data.error || 'Erro ao solicitar migração')
+        return data
+      }),
+    onSuccess: (_, variables) => {
+      if (user) {
+        updateUser({ 
+          ...user, 
+          warchaos_solicitou: true,
+          warchaos_solicitou_at: new Date().toISOString(),
+          warchaos_user: variables.warchaos_user,
+          warchaos_nick: variables.warchaos_nick
+        })
+      }
+    }
   })
 }

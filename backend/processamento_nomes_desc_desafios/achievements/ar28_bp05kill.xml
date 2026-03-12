@@ -1,0 +1,12 @@
+<Achievement active="1" id="6206" kind="kills" MS_side="0" amount="2500">
+	<UI name="@ar28_bp05Kill" desc="@ar28_bp05Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar28_bp05_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_bp05_03" type="stripe" />
+</Achievement>

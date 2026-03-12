@@ -1,0 +1,8 @@
+<Achievement active="1" id="706" kind="game_end" MS_side="0" amount="10" tags="dst">
+	<UI name="@winDSTLighthouse1" desc="@winDSTLighthouse1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="ea0cbac2-5891-4d37-bb42-09e790730b34"/>
+	</Filters>
+	<BannerImage image="challenge_mark_lhouse_01" type="mark" />
+</Achievement>		

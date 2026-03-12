@@ -1,0 +1,9 @@
+<Achievement active="1" id="2125" kind="game_end" MS_side="0" amount="100" tags="ptb">
+	<UI name="@firstPlacePTBAfghan3" desc="@firstPlacePTBAfghan3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="123bec5b-a1c2-4bab-b105-3b5b89bab014"/>
+		<Filter kind="mission_uid" param="8b7189c1-6c6e-413f-96b8-bb4b0abb2069"/>
+	</Filters>
+	<BannerImage image="challenge_badge_afghan_03" type="badge"/>
+</Achievement>		

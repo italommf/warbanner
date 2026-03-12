@@ -1,0 +1,23 @@
+<Achievement active="1" id="8109" kind="kills" MS_side="0" amount="10000">
+	<UI name="@black03_stripe_01" desc="@black03_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar29_black03_shop"/>
+		<Filter kind="weapon" param="ar35_black03_shop"/>
+		<Filter kind="weapon" param="shg50_black03_shop"/>
+		<Filter kind="weapon" param="shg51_black03_shop"/>			
+		<Filter kind="weapon" param="shg52_black03_shop"/>
+		<Filter kind="weapon" param="smg43_black03_shop"/>
+		<Filter kind="weapon" param="smg44_black03_shop"/>				
+		<Filter kind="weapon" param="smg45_black03_shop"/>
+		<Filter kind="weapon" param="sr46_black03_shop"/>
+		<Filter kind="weapon" param="sr48_black03_shop"/>
+		<Filter kind="weapon" param="pt38_black03_shop"/>
+		<Filter kind="weapon" param="kn18_black03"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_black03_01" type="stripe"/>
+</Achievement>

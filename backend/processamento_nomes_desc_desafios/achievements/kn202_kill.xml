@@ -1,0 +1,12 @@
+<Achievement active="1" id="40060" kind="kills" MS_side="0" amount="2500">
+	<UI name="@kn202_Kill" desc="@kn202_Kill_desc"/>
+		<Filters>
+			<Filter kind="enemy" param="1"/>
+			<Filter kind="weapon" param="kn202"/>
+			<Filter kind="claymore" param="0"/>
+			<Filter kind="grenade" param="0"/>
+			<Filter kind="kill_zone" param="0"/>
+			<Filter kind="explosion" param="0"/>
+		</Filters>
+		<BannerImage image="challenge_strip_kn202" type="stripe"/>
+</Achievement>

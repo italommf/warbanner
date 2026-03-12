@@ -1,0 +1,9 @@
+<Achievement active="1" id="915" kind="game_end" MS_side="0" amount="1">
+	<UI name="@winRW1Engineer" desc="@winRW1Engineer_desc"/>
+	<Filters>
+		<Filter kind="mission_type" param="campaignsection1"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="my_class" param="Engineer"/>
+	</Filters>
+	<BannerImage image="challenge_mark_rw_05" type="mark" />
+</Achievement>

@@ -1,0 +1,9 @@
+<Achievement active="1" id="6062" kind="kills" MS_side="0" amount="100">
+	<UI name="@lmsp_kills_02" desc="@lmsp_kills_02_desc"/>
+	<Filters>
+	    <Filter kind="victory_condition" param="11"/>
+		<Filter kind="mission_uid" param="e246660c-52cb-4a56-8d25-c0f040d03793"/>
+ 		<Filter kind="enemy" param="1"/> 
+	</Filters>
+	<BannerImage image="challenge_badge_LMSP_02" type="badge" />
+</Achievement>

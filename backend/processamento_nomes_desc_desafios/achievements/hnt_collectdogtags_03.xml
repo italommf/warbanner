@@ -1,0 +1,7 @@
+<Achievement active="1" id="852" kind="dogtags_pickup" MS_side="0" amount="2500">
+	<UI name="@hnt_collectDogtags_03" desc="@hnt_collectDogtags_03_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="9"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_hunt_01" type="stripe" />
+</Achievement>

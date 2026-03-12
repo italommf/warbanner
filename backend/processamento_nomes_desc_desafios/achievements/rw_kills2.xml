@@ -1,0 +1,11 @@
+<Achievement active="1" id="911" kind="kills" MS_side="0" amount="2500">
+	<UI name="@rw_kills2" desc="@rw_kills2_desc"/>
+	<Filters>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="campaignsection1"/>
+		<Filter kind="mission_type" param="campaignsection2"/>
+		<Filter kind="mission_type" param="campaignsection3"/>
+		<Filter kind="mission_type" param="campaignsections"/>
+	</Filters>	
+	<BannerImage image="challenge_badge_rw_08" type="badge" />
+</Achievement>	

@@ -1,0 +1,8 @@
+<Achievement active="1" id="2350" kind="dogtags_pickup" MS_side="0" amount="100">
+	<UI name="@hnt_winter_dog_03" desc="@hnt_winter_dog_03_desc"/>
+	<Filters>
+		<Filter kind="mission_uid" param="d34538bc-f603-4f39-afe5-db27000564cd"/>
+		<Filter kind="mission_uid" param="bee96351-e973-4222-a145-5a68a6773bba"/>
+	</Filters>	
+	<BannerImage image="challenge_mark_winter_03" type="mark"/>
+</Achievement>

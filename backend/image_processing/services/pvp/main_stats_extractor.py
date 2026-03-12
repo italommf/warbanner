@@ -2,35 +2,50 @@ import logging
 import cv2
 from .image_utils import crop_roi
 from .parsers import parse_float, parse_int, parse_win_rate
-from .roi_map import MAIN_ROIS
+from .roi_map import get_main_rois
 from .ocr_utils_win import read_text_win
+from .digit_recognizer import extract_rank_from_nickname, recognize_number, recognize_decimal
+from ...log_styles import C_CYAN, C_END
+from ...log_styles import C_CYAN, C_END
 
 logger = logging.getLogger(__name__)
 
 def extract_main_stats(img):
     """
     Extrai as estatísticas principais (Nickname, Win Rate, KD Geral, etc.)
-    usando o motor native Windows OCR.
+    usando OCR e Template Matching para Rank.
     """
     results = {}
+    h, w = img.shape[:2]
+    rois = get_main_rois(w)
     
-    # 2. Nickname
-    results["nickname"] = read_text_win(crop_roi(img, MAIN_ROIS["nickname"])).strip()
+    # 2. Nickname e Rank visual
+    nick_roi = crop_roi(img, rois["nickname"])
+    logger.info(f"   {C_CYAN}[OCR]{C_END} Extraindo Nickname...")
+    results["nickname"] = read_text_win(nick_roi).strip()
     
-    # 3. KD Geral (O E/M do PvP)
-    kd_text = read_text_win(crop_roi(img, MAIN_ROIS["kd_geral"])).replace(" ", "").replace("o", "0").replace("O", "0")
-    results["kd_ratio"] = parse_float(kd_text)
+    logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo Rank Numérico...")
+    rank_tm = extract_rank_from_nickname(nick_roi)
+    if rank_tm is not None:
+        results["nickname_rank"] = rank_tm
     
-    # 4. Win Rate Geral (Float/Percent)
-    wr_text = read_text_win(crop_roi(img, MAIN_ROIS["win_rate_geral"])).replace(" ", "").replace("o", "0").replace("O", "0")
-    results["win_rate"] = parse_win_rate(wr_text)
+    # 3. KD Geral (O E/M do PvP) - Migrando para recognize_decimal (TM)
+    logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo KD Geral...")
+    results["kd_ratio"] = recognize_decimal(crop_roi(img, rois["kd_geral"]))
     
-    # 5. Partidas (Int)
-    matches_text = read_text_win(crop_roi(img, MAIN_ROIS["partidas"])).replace(" ", "").replace("o", "0").replace("O", "0")
-    results["matches_played"] = parse_int(matches_text)
+    # 4. Win Rate Geral (Inteiro/Percent) - Normalização robusta
+    logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo Win Rate...")
+    # Mudado para recognize_number com flag de porcentagem para garantir 0-100% sem decimais
+    wr_raw = recognize_number(crop_roi(img, rois["win_rate_geral"]), is_percentage=True)
+    results["win_rate"] = wr_raw
     
-    # 6. Melhor Divisão (Best Rank) - Ex: "Bronze I 150 RP"
-    best_rank_text = read_text_win(crop_roi(img, MAIN_ROIS["best_rank"])).strip()
+    # 5. Partidas (Int) - Migrando para recognize_number (TM)
+    logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo Partidas...")
+    results["matches_played"] = recognize_number(crop_roi(img, rois["partidas"]))
+    
+    # 6. Melhor Divisão (Best Rank)
+    logger.info(f"   {C_CYAN}[OCR]{C_END} Extraindo Melhor Divisão (Best Rank)...")
+    best_rank_text = read_text_win(crop_roi(img, rois["best_rank"])).strip()
     
     import re
     # Limpeza: Mantém letras, números e espaços
@@ -62,8 +77,8 @@ def extract_main_stats(img):
         "rp": rp_value
     }
     
-    # 7. Horas Totais
-    hours_text = read_text_win(crop_roi(img, MAIN_ROIS["total_hours"])).replace(" ", "").replace("o", "0").replace("O", "0")
-    results["total_hours"] = parse_int(hours_text)
+    # 7. Horas Totais - Migrando para recognize_number (TM)
+    logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo Horas Totais...")
+    results["total_hours"] = recognize_number(crop_roi(img, rois["total_hours"]))
 
     return results

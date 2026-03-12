@@ -1,0 +1,8 @@
+<Achievement active="1" id="715" kind="game_end" MS_side="0" amount="10" tags="ctf">
+	<UI name="@winCTFDeposit1" desc="@winCTFDeposit1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="d5da06ce-a425-4013-abd8-6f9bfbe9f763"/>
+	</Filters>
+	<BannerImage image="challenge_mark_bank_01" type="mark" />
+</Achievement>

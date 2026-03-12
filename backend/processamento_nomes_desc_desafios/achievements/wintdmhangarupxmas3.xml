@@ -1,0 +1,8 @@
+<Achievement active="1" id="2434" kind="game_end" MS_side="0" amount="50" tags="tdm">
+	<UI name="@winTDMHangarUpXmas3" desc="@winTDMHangarUpXmas3_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="7863a04a-5e3b-40c5-8a51-c12f6511d84e"/>		
+	</Filters>
+	<BannerImage image="challenge_mark_hangar_xmas_03" type="mark" />
+</Achievement>		

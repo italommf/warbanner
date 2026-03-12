@@ -1,0 +1,12 @@
+<Achievement active="1" id="1111" kind="kills" MS_side="0" amount="5000">
+	<UI name="@kn16Kill" desc="@kn16Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="weapon" param="kn16"/>
+		<Filter kind="weapon" param="kn16_gold01"/>
+		<Filter kind="weapon" param="kn16_wf01"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon10_53" type="stripe"/>
+</Achievement>

@@ -1,0 +1,8 @@
+<Achievement active="0" id="266" kind="kills" MS_side="0" amount="5000">
+	<UI name="@cm02Kill" desc="@cm02Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="cm04_c"/>
+	</Filters>
+	<BannerImage image="challenge_badge_weapon10_39" type="badge"/>
+</Achievement>

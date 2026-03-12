@@ -1,0 +1,9 @@
+<Achievement active="1" id="13004" kind="game_end" MS_side="0" amount="1">
+	<UI name="@winRW3Sed" desc="@winRW3Sed_desc"/>
+	<Filters>
+		<Filter kind="mission_type" param="campaignsection3"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="my_class" param="Heavy"/>
+	</Filters>
+	<BannerImage image="challenge_badge_rw_10" type="badge" />
+</Achievement>

@@ -1,0 +1,16 @@
+<Achievement active="1" id="10105" kind="kills" MS_side="0" amount="1707">
+	<Filters>
+		<Filter kind="weapon" param="mg07_shop"/>
+		<Filter kind="weapon" param="mg07_gold01_shop"/>
+		<Filter kind="weapon" param="sr14_shop"/>
+		<Filter kind="weapon" param="sr14_gold01_shop"/>
+		<Filter kind="weapon" param="sr39_shop"/>
+		<Filter kind="weapon" param="smg15_shop"/>
+		<Filter kind="weapon" param="smg13_shop"/>
+		<Filter kind="weapon" param="ar25_shop"/>
+		<Filter kind="weapon" param="ar25_gold01_shop"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<UI name="@uk_day_01" desc="@uk_day_01_desc"/>
+	<BannerImage image="challenge_mark_nb_06" type="mark" />
+</Achievement>		

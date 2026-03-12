@@ -1,0 +1,28 @@
+<Achievement active="1" id="12167" kind="kills" MS_side="0" amount="1000">
+	<UI name="@bp09_mark_01" desc="@bp09_mark_01_desc"/>
+	<Filters>
+		<Filter kind="in_jump" param="1"/>	
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+ 		<Filter kind="weapon" param="ar11_bp09_shop"/>		
+		<Filter kind="weapon" param="ar23_bp09_shop"/>	
+		<Filter kind="weapon" param="ar22_bp09_shop"/>
+		<Filter kind="weapon" param="smg36_bp09_shop"/>
+		<Filter kind="weapon" param="smg37_bp09_shop"/>
+		<Filter kind="weapon" param="smg26_bp09_shop"/>
+		<Filter kind="weapon" param="shg33_bp09_shop"/>
+		<Filter kind="weapon" param="shg35_bp09_shop"/>
+		<Filter kind="weapon" param="shg46_bp09_shop"/>		
+		<Filter kind="weapon" param="sr34_bp09_shop"/>
+ 		<Filter kind="weapon" param="sr35_bp09_shop"/>	
+		<Filter kind="weapon" param="sr08_bp09_shop"/>
+		<Filter kind="weapon" param="pt23_bp09_shop"/>		
+		<Filter kind="weapon" param="pt32_bp09_shop"/>
+		<Filter kind="weapon" param="kn16_bp09"/>
+ 		<Filter kind="weapon" param="kn07_bp09"/>	
+	</Filters> 
+	<BannerImage image="challenge_mark_bp09_05" type="mark" />
+</Achievement>

@@ -1,0 +1,10 @@
+<Achievement active="0" id="60519" kind="instant_award" MS_side="0" amount="1">
+	<UI name="@kill_test" desc="@kill_test_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="1"/>
+		<Filter kind="difficulty" param="normal"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="badge" />
+	<Steam name="test_item_icon" stat_name="STAT_MULTIFRAG" />
+	<Epic name="test_item_icon" stat_name="STAT_MULTIFRAG" />
+</Achievement>

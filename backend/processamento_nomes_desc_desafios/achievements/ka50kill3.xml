@@ -1,0 +1,10 @@
+<Achievement active="1" id="1064" kind="kills" MS_side="0" amount="250">
+	<UI name="@ka50Kill3" desc="@ka50Kill3_desc"/>
+	<Filters>
+		<Filter kind="ai_archetype" param="Helicopter"/>
+		<Filter kind="player" param="0"/>		
+		<Filter kind="victory_condition" param="3"/>		
+		<Filter kind="ai_tag" param="helicopter_ka50" compare="==" />
+	</Filters>
+	<BannerImage image="challenge_badge_29" type="badge" />
+</Achievement>

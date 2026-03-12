@@ -1,0 +1,10 @@
+<Achievement active="1" id="6065" kind="kills" MS_side="0" amount="50">
+	<UI name="@lms_kills_explosive_03" desc="@lms_kills_explosive_03_desc"/>
+	<Filters>
+	    <Filter kind="victory_condition" param="11"/>
+		<Filter kind="player" param="1"/>
+ 		<Filter kind="enemy" param="1"/> 
+		<Filter kind="claymore" param="1"/>
+	</Filters>	
+	<BannerImage image="challenge_badge_LMSP_04" type="badge" />
+</Achievement>

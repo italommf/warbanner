@@ -1,0 +1,8 @@
+<Achievement active="1" id="13071" kind="game_end" MS_side="0" amount="25" tags="ctf">
+	<UI name="@winPTB_DISTRICT_UP2" desc="@winPTB_DISTRICT_UP2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="a83872cc-e79b-4d7a-800b-7162384ef4a0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_winPTB_DISTRICT_UP2" type="mark" />
+</Achievement>

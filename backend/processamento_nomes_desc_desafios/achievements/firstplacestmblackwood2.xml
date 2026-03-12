@@ -1,0 +1,8 @@
+<Achievement active="1" id="20316" kind="game_end" MS_side="0" amount="50" tags="stm">
+	<UI name="@firstPlaceSTMBlackwood2" desc="@firstPlaceSTMBlackwood2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="13357a80-1c3f-49f9-be88-3f95ef931246"/>
+	</Filters>
+	<BannerImage image="challenge_badge_blackstm_02" type="badge"/>
+</Achievement>		

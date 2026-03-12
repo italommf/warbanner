@@ -1,0 +1,12 @@
+<Achievement active="1" id="6007" kind="kills" MS_side="0" amount="2500">
+	<UI name="@smg40_set12Kill15" desc="@smg40_set12Kill15_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg40_set12_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_set12_09" type="stripe" />
+</Achievement>

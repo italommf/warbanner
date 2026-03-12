@@ -1,0 +1,4 @@
+<Achievement active="1" id="1073" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_return_friend" desc="@ru_return_friend_desc"/>
+        <BannerImage image="challenge_mark_128" type="mark" />
+    </Achievement>

@@ -1,0 +1,9 @@
+<Achievement active="1" id="10004" kind="game_end" MS_side="0" amount="500">
+	<UI name="@rm_firstplacewin_ach04" desc="@rm_firstplacewin_ach04_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="game_room_type" param="pvp_rating"/>
+	</Filters>
+	<BannerImage image="challenge_strip_RM_firstplace_02" type="stripe" />
+</Achievement>

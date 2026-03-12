@@ -105,6 +105,15 @@ function UserWidget() {
             exit={{ opacity: 0, y: -6, scale: 0.95 }}
             transition={{ duration: 0.15 }}
           >
+            {user.is_staff && (
+              <button
+                className={styles.dropItem}
+                onClick={() => { navigate('/admin'); setOpen(false) }}
+                style={{ color: 'var(--primary)' }}
+              >
+                PAINEL ADMIN
+              </button>
+            )}
             <button className={styles.dropItem} onClick={() => { setModalOpen(true); setOpen(false) }}>
               EDITAR PERFIL
             </button>
@@ -230,6 +239,14 @@ function WallpaperWidget() {
   const { data: bgs = [] } = useBackgrounds()
   const videos = bgs.filter(b => b.type === 'video')
 
+  // Se não houver wallpaper (primeira vez), escolhe um aleatório dos vídeos disponíveis
+  useEffect(() => {
+    if (!bgImage && videos.length > 0) {
+      const randomBg = videos[Math.floor(Math.random() * videos.length)].url
+      setBgImage(randomBg)
+    }
+  }, [bgImage, videos, setBgImage])
+
   useEffect(() => {
     function handler(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
@@ -263,12 +280,6 @@ function WallpaperWidget() {
           >
             <span className={styles.dropdownTitle}>WALLPAPERS ANIMADOS</span>
             <div className={styles.wallpaperGrid}>
-              <button
-                className={`${styles.wallThumb} ${styles.wallThumbNone} ${!bgImage || !VIDEO_EXT.test(bgImage) ? styles.wallThumbActive : ''}`}
-                onClick={() => setBgImage(null)}
-              >
-                <span className={styles.noneLabel}>—</span>
-              </button>
               {videos.map((v) => (
                 <button
                   key={v.url}
@@ -278,6 +289,12 @@ function WallpaperWidget() {
                   <video src={v.url} muted autoPlay loop playsInline />
                 </button>
               ))}
+              <button
+                className={`${styles.wallThumb} ${styles.wallThumbNone} ${!bgImage || !VIDEO_EXT.test(bgImage) ? styles.wallThumbActive : ''}`}
+                onClick={() => setBgImage(null)}
+              >
+                <span className={styles.noneLabel}>—</span>
+              </button>
             </div>
           </motion.div>
         )}

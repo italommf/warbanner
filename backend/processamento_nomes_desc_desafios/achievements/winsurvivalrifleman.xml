@@ -1,0 +1,10 @@
+<Achievement active="1" id="500" kind="game_end" MS_side="0" amount="1" tags="king_pve">
+	<UI name="@winSurvivalRifleman" desc="@winSurvivalRifleman_desc"/>
+	<Filters>
+		<Filter kind="stages" compare=">=" param="19"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_type" param="survivalmission"/>
+		<Filter kind="my_class" param="Rifleman"/>
+	</Filters>
+	<BannerImage image="challenge_strip_sm_01" type="stripe" />
+</Achievement>

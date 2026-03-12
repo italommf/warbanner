@@ -1,0 +1,13 @@
+<Achievement active="1" id="106521" kind="kills" MS_side="0" amount="10000" tags="weapons_S">
+	<UI name="@sr50Kill25" desc="@sr50Kill25_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="sr50_shop"/>
+		<Filter kind="weapon" param="sr50_gold01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon25_sr50" type="stripe"/>
+</Achievement>

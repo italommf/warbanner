@@ -1,0 +1,12 @@
+<Achievement active="1" id="373093" kind="kills" MS_side="0" amount="999" tags="gold">
+	<UI name="@smg57_gold_kill_01" desc="@smg57_gold_kill_01_desc"/>
+	<Filters>
+		<Filter kind="weapon" param="smg57_gold01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_smg57_gold01" type="stripe" />
+</Achievement>

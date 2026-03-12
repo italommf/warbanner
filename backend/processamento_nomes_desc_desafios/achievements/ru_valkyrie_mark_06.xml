@@ -1,0 +1,4 @@
+<Achievement active="1" id="10154" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_valkyrie_mark_06" desc="@ru_valkyrie_mark_06_desc"/>
+        <BannerImage image="challenge_mark_valkyrie_06" type="mark" />
+</Achievement>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12243d" />
+      <stop offset="1" stop-color="#08111e" />
+    </linearGradient>
+  </defs>
+  <!-- Background with slight gradient and border -->
+  <rect width="32" height="32" rx="6" fill="url(#g)" />
+  <rect x="0.5" y="0.5" width="31" height="31" rx="5.5" fill="none" stroke="#1e3048" stroke-width="1" />
+  
+  <!-- WB Logo -->
+  <text x="50%" y="22.5" font-family="Arial Black, sans-serif" font-weight="900" font-size="18.5" text-anchor="middle" letter-spacing="-0.5">
+    <tspan fill="#ffffff">W</tspan><tspan fill="#e8332a">B</tspan>
+  </text>
+  
+  <!-- Subtle reflection for premium feel -->
+  <rect x="4" y="4" width="24" height="12" rx="2" fill="rgba(255,255,255,0.03)" />
+</svg>

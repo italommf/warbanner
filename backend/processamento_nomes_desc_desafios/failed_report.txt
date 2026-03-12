@@ -1,0 +1,11 @@
+﻿--------------------------------------------------
+RELATËRIO DE XMLS QUE N├O FORAM PARA O SITE (1 itens)
+--------------------------------------------------
+
+1. XMLs sem a tag <BannerImage> (1):
+   (Estes nÒo sÒo desafios de banner, por isso foram ignorados)
+   - text_achievements.xml
+
+2. XMLs com erro de leitura (Corrompidos) (0):
+
+3. Outros motivos (Tag banner presente mas tipo desconhecido) (0):

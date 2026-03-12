@@ -1,0 +1,9 @@
+<Achievement active="1" id="371012" kind="game_end" MS_side="0" amount="10" tags="arena_so_meta,king_pve">
+	<UI name="@arena_badge_console" desc="@arena_badge_console_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="pve_arena"/>
+	</Filters>
+	<BannerImage image="challenge_badge_pve_arena_04" type="badge" />
+</Achievement>

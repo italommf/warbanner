@@ -1,0 +1,4 @@
+<Achievement active="1" id="2107" kind="hidden" MS_side="1" amount="1">
+        <UI name="@zodiac_leo" desc="@zodiac_leo_desc"/>
+        <BannerImage image="challenge_mark_zodiac_05" type="mark" />
+    </Achievement>

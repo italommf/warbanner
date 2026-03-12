@@ -1,0 +1,16 @@
+<Achievement active="1" id="309" kind="kills" MS_side="0" amount="1000">
+	<UI name="@camo07" desc="@camo07_desc"/>
+	<Filters>
+		<Filter kind="weapon" param="ar02_camo07_shop"/>
+		<Filter kind="weapon" param="shg01_camo07_shop"/>
+		<Filter kind="weapon" param="smg13_camo07_shop"/>
+		<Filter kind="weapon" param="sr23_camo07_shop"/>
+		<Filter kind="weapon" param="pt07_camo07_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_camo07" type="stripe" />
+</Achievement>

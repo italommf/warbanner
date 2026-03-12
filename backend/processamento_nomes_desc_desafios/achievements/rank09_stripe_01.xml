@@ -1,0 +1,17 @@
+<Achievement active="1" id="10523" kind="kills" MS_side="0" amount="10000">
+	<UI name="@rank09_stripe_01" desc="@rank09_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar45_rank09_shop"/>
+		<Filter kind="weapon" param="pt39_rank09_shop"/>		
+		<Filter kind="weapon" param="smg51_rank09_shop"/>		
+		<Filter kind="weapon" param="shg58_rank09_shop"/>		
+		<Filter kind="weapon" param="sr51_rank09_shop"/>
+		<Filter kind="weapon" param="kn22_rank09"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_rank09_01" type="stripe"/>
+</Achievement>

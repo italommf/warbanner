@@ -15,7 +15,9 @@
 .listItem::before {
   content: '';
   position: absolute;
-  left: 0; top: 0; bottom: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   width: 2px;
   background: transparent;
   transition: background 0.15s;
@@ -33,7 +35,7 @@
 
 .selected {
   border-color: var(--selected-border);
-  background: rgba(255,69,0,0.08);
+  background: rgba(255, 69, 0, 0.08);
   animation: glow-pulse 2.5s ease-in-out infinite;
 }
 
@@ -55,7 +57,7 @@
   line-height: 1.3;
   white-space: nowrap;
   z-index: 1;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .itemThumb {
@@ -66,6 +68,79 @@
   height: 46px;
 }
 
-.thumb_marcas    { width: 92px;  height: 92px; margin-right: 12px; }
-.thumb_insignias { width: 92px;  height: 92px; margin-right: 12px; }
-.thumb_fitas     { width: auto; max-width: calc(100% - 24px); height: 62px; object-fit: contain; margin-right: 12px; }
+.thumb_marcas {
+  width: 92px;
+  height: 92px;
+  margin-right: 12px;
+}
+
+.thumb_insignias {
+  width: 92px;
+  height: 92px;
+  margin-right: 12px;
+}
+
+.thumb_fitas {
+  width: auto;
+  max-width: calc(100% - 24px);
+  height: 62px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+/* Overlay de descrição no hover */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 15, 25, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 5;
+  backdrop-filter: blur(2px);
+}
+
+.listItem:hover .overlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overlayDesc {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.overlayMeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 6px;
+}
+
+.overlayMeta strong {
+  color: var(--orange);
+  font-weight: 600;
+}

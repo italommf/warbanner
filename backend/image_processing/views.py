@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import UploadedImage
 from .serializers import UploadedImageSerializer, UserProfileStatsSerializer
-from .tasks import process_uploaded_image
+from .tasks import process_queue
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -20,8 +20,9 @@ def upload_image(request):
     for f in files:
         image_obj = UploadedImage.objects.create(user=request.user, image=f, image_type=img_type)
         uploaded_ids.append(image_obj.id)
-        # Chama a task do Celery para processamento em background
-        process_uploaded_image.delay(image_obj.id)
+
+    # Aciona a fila mestre UMA vez — ela processa tudo agrupado por usuário
+    process_queue.delay()
 
     return Response({
         'message': f'{len(uploaded_ids)} imagens enviadas para processamento.',

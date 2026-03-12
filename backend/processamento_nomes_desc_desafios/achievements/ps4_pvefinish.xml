@@ -1,0 +1,8 @@
+<Achievement active="0" id="30003" kind="game_end" MS_side="0" amount="1" tags="ps4_achiev">
+	<UI name="@ps4_pvefinish" desc="@ps4_pvefinish_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>	
+		<Filter kind="victory_condition" param="3"/>			
+	</Filters>	
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>	

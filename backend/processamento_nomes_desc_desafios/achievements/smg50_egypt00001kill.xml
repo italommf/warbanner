@@ -1,0 +1,12 @@
+<Achievement active="1" id="373048" kind="kills" MS_side="0" amount="5000">
+	<UI name="@smg50_egypt00001_Kill" desc="@smg50_egypt00001_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg50_egypt00001_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_smg50_egypt00001" type="stripe" />
+</Achievement>

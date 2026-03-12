@@ -1,0 +1,8 @@
+<Achievement active="1" id="417" kind="game_end" MS_side="0" amount="1000" tags="ffa">
+	<UI name="@winFFA3" desc="@winFFA3_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="6"/>
+		<Filter kind="place_taken" param="1"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_87" type="mark" />
+</Achievement>

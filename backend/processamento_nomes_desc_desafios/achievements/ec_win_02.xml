@@ -1,0 +1,9 @@
+<Achievement active="1" id="1072" kind="game_end" MS_side="0" amount="25">
+	<UI name="@ec_win_02" desc="@ec_win_02_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="0575ee9b-db2a-4a8d-a376-c2ec4b021587"/> 
+		<Filter kind="mission_uid" param="fd2ade6c-9b88-4e21-8fac-218c6a6031a4"/> 
+	</Filters>
+	<BannerImage image="challenge_badge_euro2016" type="badge"/>
+</Achievement>

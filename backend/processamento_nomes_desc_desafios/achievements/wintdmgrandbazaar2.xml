@@ -1,0 +1,8 @@
+<Achievement active="0" id="5121" kind="game_end" MS_side="0" amount="25">
+	<UI name="@winTDMGrandbazaar2" desc="@winTDMGrandbazaar2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="3347d361-ef36-4c57-8bca-4f8051fc97e6"/>
+	</Filters>
+	<BannerImage image="challenge_mark_firstPlaceTDMBazar2" type="mark" />
+</Achievement>

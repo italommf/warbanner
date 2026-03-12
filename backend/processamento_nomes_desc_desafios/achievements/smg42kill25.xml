@@ -1,0 +1,12 @@
+<Achievement active="1" id="5051" kind="kills" MS_side="0" amount="10000" tags="weapons_E">
+	<Filters>
+		<Filter kind="weapon" param="smg42_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@smg42Kill25" desc="@smg42Kill25_desc"/>
+	<BannerImage image="challenge_mark_weapon25_59" type="mark"/>
+</Achievement>

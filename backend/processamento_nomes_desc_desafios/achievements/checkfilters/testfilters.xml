@@ -1,0 +1,66 @@
+<Settings>
+	<Events>
+		<event id="pve_enemy_kill" kind="kills">
+			<Filters>
+				<Filter kind="enemy" param="1"/>
+				<Filter kind="player" param="0"/>
+				<Filter kind="victory_condition" param="3"/>
+				<Filter kind="mission_type" param="heist"/>
+			</Filters>
+		</event>
+		<event id="pve_enemy_kill2" kind="kills">
+			<Filters>
+				<Filter kind="enemy" param="1"/>
+				<Filter kind="player" param="0"/>
+				<Filter kind="victory_condition" param="3"/>
+				<Filter kind="weapon" param="ar02_shop"/>
+                <Filter kind="to_head" param="1"/>
+                <Filter kind="zoomed" param="1"/>
+				<Filter kind="mission_type" param="swarm"/>
+			</Filters>
+		</event>
+		<event id="pve_heist_jugger" kind="kills">
+			<Filters>
+				<Filter kind="enemy" param="1"/>
+				<Filter kind="player" param="0"/>
+				<Filter compare="==" kind="ai_tag" param="jugger_floor_heist"/>
+				<Filter compare="==" kind="ai_tag" param="jugger_roof_heist"/>
+				<Filter kind="mission_type" param="heist"/>
+			</Filters>
+		</event>
+	</Events>
+	<CheckEvents>
+		<CheckEvent id="pve_enemy_kill" kind="kills" result="false">
+			<Filters>
+				<Filter kind="enemy" compare="!=" param="0"/>
+				<Filter kind="player" param="0"/>
+				<Filter kind="victory_condition" param="3"/>
+				<Filter kind="mission_type" compare="!=" param="trainingmission"/>
+				<Filter kind="mission_type" compare="!=" param="solomission"/>
+				<Filter kind="mission_type" compare="!=" param="heist"/>
+				<Filter kind="mission_type" compare="!=" param="swarm"/>
+			</Filters>
+		</CheckEvent>
+		<CheckEvent id="pve_enemy_kill2" kind="kills" result="true">
+			<Filters>
+				<Filter kind="enemy" param="1"/>
+				<Filter kind="player" param="0"/>
+				<Filter kind="victory_condition" param="3"/>
+				<Filter kind="weapon" param="ar02_shop"/>
+                <Filter kind="to_head" param="1"/>
+                <Filter kind="zoomed" param="1"/>
+				<Filter kind="mission_type" compare="!=" param="trainingmission"/>
+				<Filter kind="mission_type" compare="!=" param="solomission"/>
+				<Filter kind="mission_type" compare="!=" param="heist"/>
+			</Filters>
+		</CheckEvent>
+		<CheckEvent id="pve_heist_jugger" kind="kills" result="true">
+			<Filters>
+				<Filter kind="enemy" param="1"/>
+				<Filter kind="player" param="0"/>
+				<Filter compare="==" kind="ai_tag" param="jugger_roof_heist"/>
+				<Filter kind="mission_type" param="heist"/>
+			</Filters>
+		</CheckEvent>
+	</CheckEvents>
+</Settings>

@@ -1,0 +1,10 @@
+<Achievement active="1" id="2378" kind="game_end" MS_side="0" amount="10">
+	<UI name="@ice_kills02" desc="@ice_kills02_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="hard"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="icebreakerhard"/>
+	</Filters>
+	<BannerImage image="challenge_strip_ice_06" type="stripe" />
+</Achievement>

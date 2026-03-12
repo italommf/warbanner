@@ -1,0 +1,11 @@
+<Achievement active="0" id="60512" kind="kills" MS_side="0" amount="1">
+	<UI name="@5in1"/>
+	<UI name="@3in1" desc="@Deliberately bad achievement"/>
+	<Filter kind="grenade" param="1"/>
+	<Filter kind="at_once" param="5"/>
+	<Filter kind="enemy" param="1"/>
+	<BannerImage image="challenge_badge_26" type="badge"/>
+	<BannerImage image="challenge_badge_26" type="badge"/>
+	<Steam name="ACH_MULTIFRAG" stat_name="STAT_MULTIFRAG"/>
+	<Epic name="ACH_MULTIFRAG" stat_name="STAT_MULTIFRAG"/>
+</Achievement>

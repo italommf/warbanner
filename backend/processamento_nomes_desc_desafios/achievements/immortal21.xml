@@ -1,0 +1,10 @@
+<Achievement active="1" id="432" kind="game_end" MS_side="0" amount="10">
+	<UI name="@immortal21" desc="@immortal21_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="without_death" param="1"/>
+		<Filter kind="difficulty" param="easy"/>
+		<Filter kind="victory_condition" param="3"/>			
+	</Filters>
+	<BannerImage image="challenge_strip_26" type="stripe" />
+</Achievement>	

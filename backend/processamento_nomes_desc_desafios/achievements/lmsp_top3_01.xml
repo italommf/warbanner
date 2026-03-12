@@ -1,0 +1,12 @@
+<Achievement active="1" id="6068" kind="game_end" MS_side="0" amount="1000">
+	<UI name="@lmsp_top3_01" desc="@lmsp_top3_01_desc"/>
+	<Filters>
+	    <Filter kind="victory_condition" param="11"/>
+		<Filter kind="mission_uid" param="e246660c-52cb-4a56-8d25-c0f040d03793"/>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="place_taken" param="2"/>
+		<Filter kind="place_taken" param="3"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>
+	<BannerImage image="challenge_strip_LMSP_02" type="stripe" />
+</Achievement>

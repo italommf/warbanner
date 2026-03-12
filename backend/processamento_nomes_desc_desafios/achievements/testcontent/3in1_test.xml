@@ -1,0 +1,11 @@
+<Achievement active="0" id="60500" kind="kills" MS_side="0" amount="1">
+	<UI name="@3in1_test" desc="@3in1_test_desc"/>
+	<Filters>
+		<Filter kind="grenade" param="1"/>
+		<Filter kind="at_once" param="5"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="badge" />
+	<Steam name="ACH_MULTIFRAG" stat_name="STAT_MULTIFRAG" />
+	<Epic name="ACH_MULTIFRAG" stat_name="STAT_MULTIFRAG" />
+</Achievement>

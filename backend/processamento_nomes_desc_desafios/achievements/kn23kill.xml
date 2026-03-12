@@ -1,0 +1,12 @@
+<Achievement active="1" id="20182" kind="kills" MS_side="0" amount="500">
+	<UI name="@kn23Kill" desc="@kn23Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="kn23"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon10_kn23" type="stripe"/>
+</Achievement>

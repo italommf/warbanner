@@ -1,0 +1,9 @@
+<Achievement active="1" id="812" kind="core_captured" MS_side="0" amount="5000">
+	<UI name="@riflemanCoreCaptured1" desc="@riflemanCoreCaptured1_desc"/>
+	<Filters>
+		<Filter kind="player_class" param="Rifleman"/>
+		<Filter kind="victory_condition" param="5"/>
+		<Filter kind="victory_condition" param="8"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_dm_01" type="stripe" />
+</Achievement>

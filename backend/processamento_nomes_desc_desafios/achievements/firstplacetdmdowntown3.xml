@@ -1,0 +1,9 @@
+<Achievement active="1" id="752" kind="game_end" MS_side="0" amount="100" tags="tdm">
+	<UI name="@firstPlaceTDMDowntown3" desc="@firstPlaceTDMDowntown3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="0726fb17-1d35-4a43-97d1-4e0563794cd8"/>
+		<Filter kind="mission_uid" param="af0a358e-1bab-11ec-9621-0242ac130002"/>
+	</Filters>
+	<BannerImage image="challenge_badge_dtown_03" type="badge" />
+</Achievement>		

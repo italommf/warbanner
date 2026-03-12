@@ -1,0 +1,22 @@
+<Achievement active="1" id="2338" kind="kills" MS_side="0" amount="10000">
+	<UI name="@ice01Kills01" desc="@ice01Kills01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar12_ice01_shop"/>
+		<Filter kind="weapon" param="ar27_ice01_shop"/>
+		<Filter kind="weapon" param="shg37_ice01_shop"/>
+		<Filter kind="weapon" param="shg42_ice01_shop"/>
+		<Filter kind="weapon" param="smg33_ice01_shop"/>
+		<Filter kind="weapon" param="smg38_ice01_shop"/>
+		<Filter kind="weapon" param="sr34_ice01_shop"/>
+		<Filter kind="weapon" param="sr42_ice01_shop"/>
+		<Filter kind="weapon" param="pt14_ice01_shop"/>
+		<Filter kind="weapon" param="pt37_ice01_shop"/>
+		<Filter kind="weapon" param="kn16_ice01"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_ice_01" type="stripe" />
+</Achievement>

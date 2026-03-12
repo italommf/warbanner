@@ -1,0 +1,17 @@
+<Achievement active="1" id="616" kind="kills" MS_side="0" amount="5000">
+	<UI name="@zombie_headshots_2" desc="@zombie_headshots_2_desc"/>
+	<Filters>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="ai_archetype" param="Cyborg"/>
+		<Filter kind="ai_archetype" param="CyborgScreamer"/>
+		<Filter kind="ai_archetype" param="CyborgBarrelman"/>
+		<Filter kind="ai_archetype" param="CyborgTurtle"/>
+	</Filters>
+	<BannerImage image="challenge_mark_zsd_02" type="mark" />
+</Achievement>	

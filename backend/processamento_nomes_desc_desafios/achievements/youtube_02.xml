@@ -1,0 +1,4 @@
+<Achievement active="1" id="2118" kind="hidden" MS_side="1" amount="1">
+        <UI name="@youtube_02" desc="@youtube_02_desc"/>
+        <BannerImage image="challenge_mark_98" type="mark" />
+    </Achievement>

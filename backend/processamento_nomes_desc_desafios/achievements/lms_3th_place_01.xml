@@ -1,0 +1,10 @@
+<Achievement active="1" id="3003" kind="game_end" MS_side="0" amount="1">
+	<UI name="@lms_3th_place_01" desc="@lms_3th_place_01_desc"/>
+	<Filters>
+	    <Filter kind="victory_condition" param="11"/>
+		<Filter kind="place_taken" param="3"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="3889f29a-fe06-425b-9ff8-f94ffbd5307c"/>
+	</Filters>
+	<BannerImage image="challenge_mark_LMS_02" type="mark" />
+</Achievement>

@@ -1,50 +1,65 @@
 import os
 import logging
-from .image_utils import load_image, normalize_resolution
+from .image_utils import load_image, normalize_resolution, normalize_resolution_ai
 from .validator import validate_is_pvp
 from .main_stats_extractor import extract_main_stats
 from .class_stats_extractor import extract_class_stats
 from .parsers import validate_pvp_stats
 from .debug_utils import save_debug_images
+from ...log_styles import (
+    C_CYAN, C_GREEN, C_YELLOW, C_RED, C_BLUE, C_BOLD, C_END, SEP_IMAGE
+)
 
 logger = logging.getLogger(__name__)
 
 def run_pvp_pipeline(image_path):
     """
-    Fluxo completo para extrair estatísticas PvP usando Windows OCR.
-    Baseado no novo paradigma de alta precisão nativa.
+    Fluxo completo para extrair estatísticas PvP usando Template Matching.
     """
-    print(f"\n[PIPELINE] Inciando processamento: {os.path.basename(image_path)}")
+    fname = os.path.basename(image_path)
+    logger.info(f"\n{C_BOLD}{C_CYAN}[PIPELINE PVP]{C_END} 🔍 Analisando (Modo Normal 1080p): {fname}")
+    
     try:
-        # 1. Carregar e Normalizar
-        img = load_image(image_path)
-        norm = normalize_resolution(img)
+        # 1. Carregar e normalizar para 4K usando LANCZOS4 (Alta velocidade)
+        img_raw = load_image(image_path)
+        img = normalize_resolution_ai(img_raw, 3840)
+        logger.info(f"   {C_GREEN}√ Upscale 4K (LANCZOS4) concluído.{C_END}")
         
-        # 2. Debug e Validação de Modo
-        save_debug_images(norm, prefix=os.path.basename(image_path))
+        # 2. Debug e Validação de Modo (Ultra High Fidelity)
+        save_debug_images(img, prefix=fname)
         
-        is_pvp, error = validate_is_pvp(norm)
+        is_pvp, error = validate_is_pvp(img)
         if not is_pvp:
-            print(f"[PIPELINE] ERROR: {error}")
+            logger.error(f"{C_RED}[VALIDAÇÃO]{C_END} Imagem não é PvP: {error}")
             return { "error": error }
-        print("[PIPELINE] Modo JvJ validado.")
+        
+        logger.info(f"{C_GREEN}[VALIDAÇÃO]{C_END} Modo JvJ (PvP) detectado com sucesso.")
 
-        # 3. Extrair Estatísticas Principais (Nickname, KD, WR, Matches, Total Hours)
-        print("[PIPELINE] Extraindo Estatísticas Principais...")
-        main_stats = extract_main_stats(norm)
-        nickname = main_stats.get("nickname", "Não detectado")
+        # 3. Extrair Estatísticas Principais (DPI Aware)
+        logger.info(f"{C_BLUE}[EXTRAÇÃO]{C_END} Raspando estatísticas principais...")
+        main_stats = extract_main_stats(img)
+        nickname = main_stats.get("nickname", "???")
         total_hours = main_stats.get("total_hours", 0)
         
-        print(f"    -> Nick: {nickname}")
-        print(f"    -> Horas: {total_hours}h | KD: {main_stats['kd_ratio']} | WR: {main_stats['win_rate']}%")
-
-        # 4. Extrair Estatísticas por Classe
-        print("[PIPELINE] Extraindo Estatísticas por Classe...")
-        classes = extract_class_stats(norm)
+        logger.info(f"   {C_CYAN}» Nickname:{C_END} {C_BOLD}{nickname}{C_END}")
+        
+        # Best Rank
+        br = main_stats.get("best_rank", {})
+        br_str = f"{br.get('tier', 'N/A')} ({br.get('rp', 0)} RP)"
+        logger.info(f"   {C_CYAN}» Ranking:{C_END}  {C_BOLD}{br_str}{C_END}")
+        
+        logger.info(f"   {C_CYAN}» Stats:{C_END}    {total_hours}h | KD: {main_stats.get('kd_ratio', 0.0)} EM | WR: {main_stats.get('win_rate', 0.0)}%")
+        
+        # 4. Extrair Estatísticas por Classe (DPI Aware)
+        logger.info(f"{C_BLUE}[EXTRAÇÃO]{C_END} Raspando dados por classe...")
+        classes = extract_class_stats(img)
         for s in classes:
-            print(f"    - {s['name']}: KD={s['em']}, WR={s['winRate']}, Horas={s['hours']}")
+            kd = s.get('em') or 0.0
+            wr = s.get('winRate') or 0.0
+            hrs = s.get('hours') or 0
+            logger.info(f"      • {C_BOLD}{s['name']:<15}{C_END} | KD: {kd:<4} | WR: {wr:<4}% | Horas: {hrs}")
 
-        # 5. Montar JSON Estruturado
+        # 5. Montar JSON
         result = {
             "mode": "pvp",
             "nickname": nickname,
@@ -56,12 +71,13 @@ def run_pvp_pipeline(image_path):
         # 6. Validação Final
         is_valid, val_error = validate_pvp_stats(result)
         if not is_valid:
-            print(f"[PIPELINE] WARNING: {val_error}")
+            logger.warning(f"{C_YELLOW}[AVISO]{C_END} {val_error}")
             result["warning"] = val_error
             
-        print("[PIPELINE] Processamento finalizado com sucesso.\n")
+        logger.info(f"{C_GREEN}[COMPLETO]{C_END} Pipeline PvP finalizado sem erros.\n")
         return result
 
     except Exception as e:
-        logger.error(f"[PIPELINE] Erro Crítico: {e}")
-        return { "error": f"Erro interno do pipeline: {str(e)}" }
+        logger.error(f"{C_RED}[ERRO CRÍTICO]{C_END} {e}", exc_info=True)
+        return { "error": f"Erro interno: {str(e)}" }
+

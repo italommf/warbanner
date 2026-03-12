@@ -37,18 +37,18 @@ export function BannerCanvas() {
             <input
               type="text"
               className={styles.input}
-              placeholder="Nome do clã"
-              maxLength={20}
-              value={clan}
-              onChange={(e) => setClan(e.target.value)}
-            />
-            <input
-              type="text"
-              className={styles.input}
               placeholder="Nickname"
               maxLength={30}
               value={nick}
               onChange={(e) => setNick(e.target.value)}
+            />
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="Nome do clã"
+              maxLength={20}
+              value={clan}
+              onChange={(e) => setClan(e.target.value)}
             />
           </div>
 

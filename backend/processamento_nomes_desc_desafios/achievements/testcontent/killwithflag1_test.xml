@@ -1,0 +1,8 @@
+<Achievement active="0" id="60520" kind="kills" MS_side="0" amount="10">
+	<UI name="@killWithFlag1_test" desc="@killWithFlag1_test_desc"/>
+	<Filters>
+		<Filter kind="with_flag" param="1"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="mark" />
+</Achievement>

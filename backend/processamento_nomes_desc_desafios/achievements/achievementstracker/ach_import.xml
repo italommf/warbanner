@@ -1,0 +1,24 @@
+<Settings>
+    <Events>
+        <Event kind="kills" achievementId="109" result="true" count="100">
+            <Filters>
+                <Filter kind="enemy" param="1"/>
+				<Filter kind="zoomed" param="1"/>	
+				<Filter kind="claymore" param="0"/>
+				<Filter kind="grenade" param="0"/>				
+				<Filter kind="kill_zone" param="0"/>
+				<Filter kind="explosion" param="0"/>
+            </Filters>
+        </Event>
+        <Event kind="kills" achievementId="211" result="false" count="5000">
+            <Filters>
+                <Filter kind="enemy" param="1"/>
+				<Filter kind="weapon" param="ar02_shop"/>
+				<Filter kind="claymore" param="0"/>
+				<Filter kind="grenade" param="0"/>
+				<Filter kind="kill_zone" param="0"/>
+				<Filter kind="explosion" param="0"/>
+            </Filters>
+        </Event>
+    </Events>
+</Settings>

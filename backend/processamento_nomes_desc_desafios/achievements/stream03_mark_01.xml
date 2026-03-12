@@ -1,0 +1,30 @@
+<Achievement active="1" id="6401" kind="kills" MS_side="0" amount="1000">
+	<UI name="@stream03_mark_01" desc="@stream03_mark_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar37_stream03_shop"/>
+		<Filter kind="weapon" param="shg54_stream03_shop"/>
+		<Filter kind="weapon" param="smg49_stream03_shop"/>		
+		<Filter kind="weapon" param="sr48_stream03_shop"/>
+		<Filter kind="weapon" param="pt38_stream03_shop"/>
+		<Filter kind="weapon" param="kn19_stream03_shop"/>		
+		<Filter kind="weapon" param="ar32_stream02_shop"/>
+		<Filter kind="weapon" param="shg52_stream02_shop"/>
+		<Filter kind="weapon" param="smg45_stream02_shop"/>
+		<Filter kind="weapon" param="sr34_stream02_shop"/>
+		<Filter kind="weapon" param="pt36_stream02_shop"/>
+		<Filter kind="weapon" param="kn21_stream02"/>
+		<Filter kind="weapon" param="ar30_stream01_shop"/>
+		<Filter kind="weapon" param="shg44_stream01_shop"/>
+		<Filter kind="weapon" param="smg40_stream01_shop"/>
+		<Filter kind="weapon" param="sr17_stream01_shop"/>
+		<Filter kind="weapon" param="pt33_stream01_shop"/>
+		<Filter kind="weapon" param="kn18_stream01"/>
+		<Filter kind="zoomed" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_stream03_01" type="mark"/>
+</Achievement>

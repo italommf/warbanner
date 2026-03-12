@@ -1,0 +1,14 @@
+<Achievement active="1" id="109" kind="kills" MS_side="0" amount="100">
+	<UI name="@aiming1" desc="@aiming1_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="zoomed" param="1"/>	
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>				
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>	
+	<BannerImage image="challenge_badge_11" type="badge" />
+	<Steam name="ACH_STRAIGHT_AIM" stat_name="STAT_STRAIGHT_AIM" />
+	<Epic name="ACH_STRAIGHT_AIM" stat_name="STAT_STRAIGHT_AIM" />
+</Achievement>

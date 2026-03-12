@@ -1,0 +1,7 @@
+<Achievement active="0" id="36" kind="kills" MS_side="0" amount="3" tags="test1, test2">
+	<UI name="@test_slave_02" desc="@test_slave_02_desc"/>
+	<Filters>
+		<Filter kind="weapon_slot" param="pistol"/>
+	</Filters>		
+	<BannerImage image="test_item_icon" type="mark" />
+</Achievement>

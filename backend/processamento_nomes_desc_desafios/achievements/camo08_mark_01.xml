@@ -1,0 +1,42 @@
+<Achievement active="1" id="1259" kind="damage_done" MS_side="0" amount="25000">
+	<UI name="@camo08_mark_01" desc="@camo08_mark_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar23_camo08_shop"/>
+		<Filter kind="weapon" param="ar25_camo08_shop"/>
+		<Filter kind="weapon" param="mg07_camo08_shop"/>
+		<Filter kind="weapon" param="mg09_camo08_shop"/>
+		<Filter kind="weapon" param="shg04_camo08_shop"/>
+		<Filter kind="weapon" param="shg05_camo08_shop"/>
+		<Filter kind="weapon" param="smg39_camo08_shop"/>
+		<Filter kind="weapon" param="smg42_camo08_shop"/>
+		<Filter kind="weapon" param="smg46_camo08_shop"/>
+		<Filter kind="weapon" param="sr08_camo08_shop"/>
+		<Filter kind="weapon" param="sr13_camo08_shop"/>
+		<Filter kind="weapon" param="pt02_camo08_shop"/>
+		<Filter kind="weapon" param="pt37_camo08_shop"/>
+		<Filter kind="weapon" param="kn19_camo08"/>
+		<Filter kind="weapon" param="kn43_vdv_camo08"/>
+		<Filter kind="weapon" param="ar24_camo08_shop"/>
+		<Filter kind="weapon" param="ar27_camo08_shop"/>
+		<Filter kind="weapon" param="mg22_camo08_shop"/>
+		<Filter kind="weapon" param="shg35_camo08_shop"/>
+		<Filter kind="weapon" param="shg40_camo08_shop"/>
+		<Filter kind="weapon" param="shg43_camo08_shop"/>
+		<Filter kind="weapon" param="smg10_camo08_shop"/>
+		<Filter kind="weapon" param="smg18_camo08_shop"/>
+		<Filter kind="weapon" param="smg38_camo08_shop"/>
+		<Filter kind="weapon" param="smg40_camo08_shop"/>
+		<Filter kind="weapon" param="sr07_camo08_shop"/>
+		<Filter kind="weapon" param="sr31_camo08_shop"/>
+		<Filter kind="weapon" param="sr35_camo08_shop"/>
+		<Filter kind="weapon" param="pt26_camo08_shop"/>
+		<Filter kind="weapon" param="pt32_camo08_shop"/>
+		<Filter kind="weapon" param="kn17_camo08"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_camo08_01" type="mark"/>
+</Achievement>

@@ -1,0 +1,4 @@
+<Achievement active="1" id="13064" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_mvp_badge_10" desc="@ru_mvp_badge_10_desc"/>
+        <BannerImage image="challenge_badge_mvp_10" type="badge" />
+    </Achievement>

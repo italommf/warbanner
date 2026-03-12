@@ -1,0 +1,9 @@
+<Achievement active="0" id="30051" kind="game_end" MS_side="0" amount="1" tags="ps4_achiev">
+	<UI name="@ps4_survivor_greatwhite" desc="@ps4_survivor_greatwhite_desc"/>
+	<Filters>
+		<Filter kind="stages" compare=">=" param="19"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_type" param="survivalmission"/>
+	</Filters>
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

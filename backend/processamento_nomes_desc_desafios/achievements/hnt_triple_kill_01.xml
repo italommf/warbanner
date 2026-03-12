@@ -1,0 +1,8 @@
+<Achievement active="1"  id="859" kind="instant_award" MS_side="0" amount="50">
+	<UI name="@hnt_triple_kill_01" desc="@hnt_triple_kill_01_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="9"/>
+		<Filter kind="instant_award_id" param="18"/>
+	</Filters>	
+	<BannerImage image="challenge_badge_hunt_02" type="badge" />
+</Achievement>

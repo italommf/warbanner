@@ -1,0 +1,10 @@
+<Achievement active="1" id="2641" kind="game_end" MS_side="0" amount="1" tags="king_pve">
+	<UI name="@chernobyl_stripe_rifleman" desc="@chernobyl_stripe_rifleman_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="chernobylhard"/>
+		<Filter kind="my_class" param="Rifleman"/>
+	</Filters>
+	<BannerImage image="challenge_strip_chernobil_01" type="stripe" />
+</Achievement>

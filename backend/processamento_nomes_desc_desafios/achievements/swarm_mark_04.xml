@@ -1,0 +1,10 @@
+<Achievement active="1" id="10174" kind="kills" MS_side="0" amount="25" tags="swarm_so_meta,king_pve">
+<UI name="@swarm_mark_04" desc="@swarm_mark_04_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_tag" param="hive" compare="==" />
+		<Filter kind="mission_type" param="swarm"/>
+	</Filters>
+<BannerImage image="challenge_mark_swarm_04" type="mark" />
+</Achievement>

@@ -1,0 +1,4 @@
+<Achievement active="1" id="8027" kind="hidden" MS_side="1" amount="1">
+	<UI name="@opencup_15" desc="@opencup_15_desc"/>
+	<BannerImage image="challenge_badge_opencup_10" type="badge" />
+</Achievement>

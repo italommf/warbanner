@@ -1,0 +1,17 @@
+<Achievement active="1" id="13003" kind="kills" MS_side="0" amount="10000">
+	<UI name="@swarm01_stripe_01" desc="@swarm01_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar32_swarm01_shop"/>
+		<Filter kind="weapon" param="mg27_swarm01_shop"/>
+		<Filter kind="weapon" param="shg45_swarm01_shop"/>
+		<Filter kind="weapon" param="sr42_swarm01_shop"/>			
+		<Filter kind="weapon" param="smg47_swarm01_shop"/>
+		<Filter kind="weapon" param="hmg02_swarm01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_swarm01_01" type="stripe"/>
+</Achievement>

@@ -1,0 +1,8 @@
+<Achievement active="1" id="5109" kind="game_end" MS_side="0" amount="50" tags="stm">
+	<UI name="@firstPlaceSTMWarf2" desc="@firstPlaceSTMWarf2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="cd54d2eb-f00e-4ccc-bbd4-d4c0f2cc935e"/>
+	</Filters>
+	<BannerImage image="challenge_badge_firstPlaceSTMWarf2" type="badge" />
+</Achievement>

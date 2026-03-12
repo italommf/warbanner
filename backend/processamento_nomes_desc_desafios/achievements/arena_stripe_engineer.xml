@@ -1,0 +1,10 @@
+<Achievement active="1" id="371008" kind="game_end" MS_side="0" amount="1" tags="arena_so_class,king_pve">
+	<UI name="@arena_stripe_engineer" desc="@arena_stripe_engineer_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/> 
+		<Filter kind="victory_condition" param="3"/> 
+		<Filter kind="mission_type" param="pve_arena"/>
+		<Filter kind="my_class" param="Engineer"/>
+	</Filters>
+	<BannerImage image="challenge_strip_pve_arena_03" type="stripe" />
+</Achievement>

@@ -1,0 +1,10 @@
+<Achievement active="1" id="6560" kind="game_end" MS_side="0" amount="1" tags="king_pve">
+	<UI name="@chernobyl_stripe_heavy" desc="@chernobyl_stripe_heavy_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="chernobylhard"/>
+		<Filter kind="my_class" param="Heavy"/>
+	</Filters>
+	<BannerImage image="challenge_strip_chernobil_09" type="stripe" />
+</Achievement>

@@ -1,0 +1,10 @@
+<Achievement active="1" id="5066" kind="game_end" MS_side="0" amount="10" tags="ptb">
+	<UI name="@winPTBBridgesup1" desc="@winPTBBridgesup1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="2412db5e-c19a-4fe8-ba99-cd28cdcce388"/>
+		<Filter kind="mission_uid" param="50fc9354-40b0-11ec-973a-0242ac130003"/>
+	</Filters>
+	<BannerImage image="challenge_mark_firstPlacePTBBridgesup1" type="mark" />
+</Achievement>
+

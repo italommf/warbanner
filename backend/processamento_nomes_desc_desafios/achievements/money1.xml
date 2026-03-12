@@ -1,0 +1,4 @@
+<Achievement active="1" id="114" kind="money" MS_side="1" amount="100000">
+	<UI name="@money1" desc="@money1_desc"/>
+	<BannerImage image="challenge_badge_17" type="badge" />
+</Achievement>

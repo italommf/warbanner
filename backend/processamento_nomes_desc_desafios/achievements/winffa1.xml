@@ -1,0 +1,10 @@
+<Achievement active="1" id="69" kind="game_end" MS_side="0" amount="50" tags="ffa">
+	<UI name="@winFFA1" desc="@winFFA1_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="6"/>
+		<Filter kind="place_taken" param="1"/>			 
+	</Filters>		
+	<BannerImage image="challenge_mark_13" type="mark" />
+	<Steam name="ACH_LAST_MAN_STANDING" stat_name="STAT_LAST_MAN_STANDING" />
+	<Epic name="ACH_LAST_MAN_STANDING" stat_name="STAT_LAST_MAN_STANDING" />
+</Achievement>

@@ -1,0 +1,9 @@
+<Achievement active="1" id="372024" kind="kills" MS_side="0" amount="1" tags="bw_so_boss,king_pve,bw_so_meta">
+<UI name="@bw_mark_drone" desc="@bw_mark_drone_desc"/>
+<Filters>
+<Filter kind="by_flowgraph" param="1"/>
+<Filter kind="player" param="0"/>
+<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+</Filters>
+<BannerImage image="challenge_mark_raid_02" type="mark" />
+</Achievement>

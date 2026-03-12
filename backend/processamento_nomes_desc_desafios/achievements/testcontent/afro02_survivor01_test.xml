@@ -1,0 +1,10 @@
+<Achievement active="0" id="60502" kind="game_end" MS_side="0" amount="1">
+	<UI name="@afro02_survivor01_test" desc="@afro02_survivor01_test_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="easy"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="anubiseasy2"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="mark" />
+</Achievement>

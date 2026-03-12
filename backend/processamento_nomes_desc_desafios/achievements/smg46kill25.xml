@@ -1,0 +1,13 @@
+<Achievement active="1" id="6361" kind="kills" MS_side="0" amount="10000" tags="weapons_E">
+	<UI name="@smg46_Kill25" desc="@smg46_Kill25_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg46_shop"/>
+		<Filter kind="weapon" param="smg46_gold01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_weapon25_64" type="mark"/>
+</Achievement>

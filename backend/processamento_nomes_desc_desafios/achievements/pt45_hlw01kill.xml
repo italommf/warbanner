@@ -1,0 +1,12 @@
+<Achievement active="1" id="373143" kind="kills" MS_side="0" amount="2500">
+	<UI name="@pt45_hlw01_Kill" desc="@pt45_hlw01_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt45_hlw01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_pt45_hlw01" type="stripe" />
+</Achievement>

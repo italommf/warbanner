@@ -9,6 +9,7 @@ import { HistoricoPage } from '@/pages/HistoricoPage'
 import { ComunidadePage } from '@/pages/ComunidadePage'
 import { GuardarWarfacePage } from '@/pages/GuardarWarfacePage'
 import { AuthPage } from '@/pages/AuthPage'
+import { AdminPage } from '@/pages/AdminPage'
 import { useBannerStore } from '@/store/bannerStore'
 import { useAuthStore } from '@/store/authStore'
 import type { BgColors } from '@/store/bannerStore'
@@ -103,6 +104,20 @@ export function App() {
   useDiscordTokenFromUrl()
   useProfileSync()
 
+  // Sincroniza dados do usuário com o servidor na inicialização
+  useEffect(() => {
+    const token = useAuthStore.getState().accessToken
+    if (!token) return
+
+    fetch('/api/auth/me/', { headers: { Authorization: `Bearer ${token}` } })
+      .then((r) => {
+        if (!r.ok) throw new Error()
+        return r.json()
+      })
+      .then((user) => useAuthStore.getState().updateUser(user))
+      .catch(() => {})
+  }, [])
+
   useEffect(() => {
     if (!bgImage || isVideo) { setBgColors(null); return }
     extractPanelEdgeColors(bgImage, window.innerWidth).then(setBgColors)
@@ -135,13 +150,14 @@ export function App() {
             )}
           </AnimatePresence>
         )}
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
+        <AnimatePresence>
+          <Routes location={location}>
             <Route path="/" element={<CreatorPage />} />
             <Route path="/historico" element={<HistoricoPage />} />
             <Route path="/comunidade" element={<ComunidadePage />} />
             <Route path="/guardar" element={<GuardarWarfacePage />} />
             <Route path="/login" element={<AuthPage />} />
+            <Route path="/admin" element={<AdminPage />} />
           </Routes>
         </AnimatePresence>
       </div>

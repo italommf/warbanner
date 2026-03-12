@@ -1,0 +1,6 @@
+<Achievement active="1" id="413" kind="rank" MS_side="1" amount="70">
+	<UI name="@ranking4" desc="@ranking4_desc" starts_from_one="1"/>
+	<BannerImage image="challenge_mark_81" type="mark" />
+	<Steam name="ACH_WARFACE_CHIEF" stat_name="STAT_WARFACE_CHIEF" />
+	<Epic name="ACH_WARFACE_CHIEF" stat_name="STAT_WARFACE_CHIEF" />
+</Achievement>

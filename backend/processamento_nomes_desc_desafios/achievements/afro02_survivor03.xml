@@ -1,0 +1,10 @@
+<Achievement active="1" id="2293" kind="game_end" MS_side="0" amount="1" tags="king_pve">
+	<UI name="@afro02_survivor03" desc="@afro02_survivor03_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="hard"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="anubishard2"/>
+	</Filters>
+	<BannerImage image="challenge_strip_afro_09" type="stripe" />
+</Achievement>

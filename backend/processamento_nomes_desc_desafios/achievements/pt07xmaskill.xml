@@ -1,0 +1,13 @@
+<Achievement active="1" id="929" kind="kills" MS_side="0" amount="200">
+	<UI name="@pt07xmaskill" desc="@pt07xmaskill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="weapon" param="pt07_xmas_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_mark_xmas_02" type="mark" />
+</Achievement>

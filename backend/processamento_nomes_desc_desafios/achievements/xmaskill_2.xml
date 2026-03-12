@@ -1,0 +1,12 @@
+<Achievement active="1" id="1008" kind="kills" MS_side="0" amount="1000">
+	<UI name="@xmasKill_2" desc="@xmasKill_2_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>	
+		<Filter kind="weapon" param="pt28_shop"/>			
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>	
+	<BannerImage image="challenge_mark_xmas_03" type="mark" />
+</Achievement>

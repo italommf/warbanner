@@ -1,0 +1,10 @@
+<Achievement active="0" id="18" kind="kills" MS_side="0" amount="50">
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="weapon_tag" param="Gold"/>
+		<Filter kind="ai_tag" param="Easy" />   
+	</Filters>
+	<UI name="@tags_easy_gold" desc="@tags_easy_gold_desc"/>
+	<BannerImage image="test_item_icon" type="stripe" />
+</Achievement>

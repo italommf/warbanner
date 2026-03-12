@@ -1,0 +1,16 @@
+<Achievement active="1" id="488" kind="kills" MS_side="0" amount="500">
+	<UI name="@hlwKill_01" desc="@hlwKill_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>	
+		<Filter kind="weapon" param="ar06_hlw01_shop"/>
+		<Filter kind="weapon" param="mg06_hlw01_shop"/>	
+		<Filter kind="weapon" param="smg07_hlw01_shop"/>
+		<Filter kind="weapon" param="shg06_hlw01_shop"/>	
+		<Filter kind="weapon" param="sr06_hlw01_shop"/>				
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>	
+	<BannerImage image="challenge_badge_hlw01" type="badge" />
+</Achievement>	

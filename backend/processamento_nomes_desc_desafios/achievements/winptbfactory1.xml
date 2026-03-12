@@ -1,0 +1,9 @@
+<Achievement active="1" id="703" kind="game_end" MS_side="0" amount="10" tags="ptb">
+	<UI name="@winPTBFactory1" desc="@winPTBFactory1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="77e4f737-431c-4359-b27f-4800c5a5b780"/>
+		<Filter kind="mission_uid" param="5de80781-f065-4454-bc23-84a334b2d8f6"/>
+	</Filters>
+	<BannerImage image="challenge_mark_factory_01" type="mark" />
+</Achievement>		

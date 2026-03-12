@@ -23,7 +23,7 @@ export function BannerImage({ banner, withFrame = true, alt, className, onClick 
   }, [banner.fita, banner.insignia, banner.marca, banner.patente, banner.nick, banner.clan, withFrame])
 
   if (!src) {
-    return <div className={className} style={{ background: 'var(--bg3)', aspectRatio: '520/110' }} />
+    return <div className={className} style={{ background: 'var(--bg3)', aspectRatio: '520 / 110' }} />
   }
 
   return (

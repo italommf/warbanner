@@ -8,6 +8,13 @@ export interface AuthUser {
   game_nick: string
   game_clan: string
   game_rank: string
+  role: string
+  is_staff: boolean
+  warchaos_solicitou: boolean
+  warchaos_solicitou_at: string | null
+  warchaos_user: string | null
+  warchaos_nick: string | null
+  warchaos_migrado: boolean
 }
 
 interface AuthStore {

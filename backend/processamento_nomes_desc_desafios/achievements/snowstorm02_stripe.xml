@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<Achievement active="1" id="373286" kind="hidden" MS_side="1" amount="1">
+	<UI name="@snowstorm02_stripe" desc="@snowstorm02_stripe_desc"/>
+	<BannerImage image="challenge_stripe_snowstorm02" type="stripe"/>
+</Achievement>

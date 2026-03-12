@@ -1,0 +1,12 @@
+<Achievement active="1" id="235" kind="kills" MS_side="0" amount="5000" tags="weapons_R">
+	<UI name="@ar04Kill" desc="@ar04Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar04_default"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon10_04" type="stripe"/>
+</Achievement>

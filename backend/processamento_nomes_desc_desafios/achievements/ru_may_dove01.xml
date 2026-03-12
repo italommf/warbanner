@@ -1,0 +1,4 @@
+<Achievement active="1" id="8406" kind="hidden" MS_side="1" amount="1">
+	<UI name="@may_dove01" desc="@may_dove01_desc"/>
+	<BannerImage image="challenge_mark_peace" type="mark" />
+</Achievement>	

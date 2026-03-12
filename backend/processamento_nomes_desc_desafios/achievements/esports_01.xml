@@ -1,0 +1,10 @@
+<Achievement active="1" id="8421" kind="kills" MS_side="0" amount="1">
+	<UI name="@esports_01" desc="@esports_01_desc"/>
+	<Filters>
+	    <Filter kind="ai_archetype" param="Helicopter"/>
+		<Filter kind="weapon" param="kn01_shop"/>
+		<Filter kind="melee" param="1"/>
+		<Filter kind="in_special_move" param="slide"/>
+	</Filters>
+	<BannerImage image="challenge_badge_proleague" type="badge" />
+</Achievement>

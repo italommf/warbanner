@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useCommunity, useCommunityLatest } from '@/api/hooks'
+import { useCommunity, useCommunityLatest, useCommunityStatistics, type RankingItem } from '@/api/hooks'
 import type { CommunityBanner } from '@/api/hooks'
 import { useBannerStore } from '@/store/bannerStore'
 import { BannerImage } from '@/components/canvas/BannerImage'
@@ -32,18 +32,6 @@ function usePanelBg(): string {
   return 'rgba(8, 13, 21, 0.80)'
 }
 
-// ── Avatar ─────────────────────────────────────────────────────────────────────
-
-function UserAvatar({ username, avatar, size = 28 }: { username: string; avatar: string | null; size?: number }) {
-  if (avatar) {
-    return <img src={avatar} alt={username} className={styles.avatar} style={{ width: size, height: size }} />
-  }
-  return (
-    <span className={styles.avatarInitial} style={{ width: size, height: size, fontSize: size * 0.45 }}>
-      {username?.[0]?.toUpperCase() ?? '?'}
-    </span>
-  )
-}
 
 // ── Modal de preview ───────────────────────────────────────────────────────────
 
@@ -71,7 +59,6 @@ function PreviewModal({ banner, onClose }: { banner: CommunityBanner; onClose: (
         <BannerImage banner={banner} className={styles.previewImg} />
         <div className={styles.previewMeta}>
           <div className={styles.previewUser}>
-            <UserAvatar username={banner.username} avatar={banner.avatar} size={32} />
             <div className={styles.previewInfo}>
               <span className={styles.previewNick}>{banner.nick || '—'}</span>
               <span className={styles.previewUsername}>@{banner.username} · {dateStr}</span>
@@ -85,9 +72,7 @@ function PreviewModal({ banner, onClose }: { banner: CommunityBanner; onClose: (
   )
 }
 
-// ── Carrossel ─────────────────────────────────────────────────────────────────
-// Mais novo à esquerda (ordem da API). 6 itens visíveis por vez.
-// Novo banner entra deslizando da esquerda; os demais se deslocam para a direita.
+// ── Componentes das Abas ────────────────────────────────────────────────────────
 
 function Carousel() {
   const { data: banners = [] } = useCommunityLatest()
@@ -110,7 +95,6 @@ function Carousel() {
             >
               <BannerImage banner={b} className={styles.carouselImg} />
               <div className={styles.carouselLabel}>
-                <UserAvatar username={b.username} avatar={b.avatar} size={18} />
                 <span>@{b.username}</span>
               </div>
             </motion.button>
@@ -125,8 +109,6 @@ function Carousel() {
   )
 }
 
-// ── Card do grid ───────────────────────────────────────────────────────────────
-
 const cardVariants = {
   hidden:  { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
@@ -134,225 +116,323 @@ const cardVariants = {
 
 function CommunityCard({ banner }: { banner: CommunityBanner }) {
   const [showPreview, setShowPreview] = useState(false)
-
   const dateStr = new Date(banner.created_at).toLocaleString('pt-BR', {
     day: '2-digit', month: '2-digit', year: 'numeric',
     hour: '2-digit', minute: '2-digit',
   })
-
   return (
     <>
       <motion.div className={styles.card} variants={cardVariants} whileHover={{ borderColor: 'var(--border2)' }}>
         <div className={styles.cardHeader}>
-          <UserAvatar username={banner.username} avatar={banner.avatar} />
           <div className={styles.cardUserInfo}>
             <span className={styles.cardUsername}>@{banner.username}</span>
             <span className={styles.cardDate}>{dateStr}</span>
           </div>
         </div>
-
-        <BannerImage
-          banner={banner}
-          className={styles.cardImg}
-          onClick={() => setShowPreview(true)}
-        />
-
+        <BannerImage banner={banner} className={styles.cardImg} onClick={() => setShowPreview(true)} />
         <div className={styles.cardFooter}>
           <span className={styles.cardNick}>{banner.nick || '—'}</span>
           {banner.clan && <span className={styles.cardClan}>{banner.clan}</span>}
         </div>
       </motion.div>
-
       <AnimatePresence>
-        {showPreview && (
-          <PreviewModal banner={banner} onClose={() => setShowPreview(false)} />
-        )}
+        {showPreview && <PreviewModal banner={banner} onClose={() => setShowPreview(false)} />}
       </AnimatePresence>
     </>
   )
 }
 
-// ── Filtros ────────────────────────────────────────────────────────────────────
-
 type SortOrder = 'newest' | 'oldest'
 
-/** Agrupa itens por chave preservando a ordem de primeira aparição e mantendo todos os itens de cada grupo juntos. */
-function grouped<T>(items: T[], keyFn: (item: T) => string): T[] {
-  const map = new Map<string, T[]>()
-  for (const item of items) {
-    const k = keyFn(item)
-    if (!map.has(k)) map.set(k, [])
-    map.get(k)!.push(item)
-  }
-  return Array.from(map.values()).flat()
+function applyFilters(banners: CommunityBanner[]): CommunityBanner[] {
+  return banners
 }
 
-function applyFilters(
-  banners: CommunityBanner[],
-  sort: SortOrder,
-  groupByPlayer: boolean,
-  groupByClan: boolean,
-): CommunityBanner[] {
-  const result = sort === 'oldest' ? [...banners].reverse() : [...banners]
-
-  if (groupByClan && groupByPlayer) {
-    // Agrupa por clã; dentro de cada clã agrupa por jogador
-    const clanMap = new Map<string, CommunityBanner[]>()
-    for (const b of result) {
-      const k = b.clan ?? ''
-      if (!clanMap.has(k)) clanMap.set(k, [])
-      clanMap.get(k)!.push(b)
-    }
-    return Array.from(clanMap.values()).flatMap((cb) => grouped(cb, (b) => b.username))
-  }
-
-  if (groupByClan)   return grouped(result, (b) => b.clan ?? '')
-  if (groupByPlayer) return grouped(result, (b) => b.username)
-
-  return result
-}
-
-// ── Página ─────────────────────────────────────────────────────────────────────
-
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.04 } },
-}
-
-export function ComunidadePage() {
-  const panelBg = usePanelBg()
-  const {
-    data,
-    isLoading,
-    isError,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-  } = useCommunity()
-
-  const [sort, setSort]                   = useState<SortOrder>('newest')
+function WarbannersTab() {
+  const [sort, setSort] = useState<SortOrder>('newest')
   const [groupByPlayer, setGroupByPlayer] = useState(false)
-  const [groupByClan, setGroupByClan]     = useState(false)
+  const [groupByClan, setGroupByClan] = useState(false)
 
+  const groupParam = useMemo(() => {
+    if (groupByClan && groupByPlayer) return 'clan_player'
+    if (groupByClan) return 'clan'
+    if (groupByPlayer) return 'player'
+    return ''
+  }, [groupByClan, groupByPlayer])
+
+  const { data, isLoading, isError, fetchNextPage, hasNextPage, isFetchingNextPage } = useCommunity(sort, groupParam)
   const sentinelRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const el = sentinelRef.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      (entries) => { if (entries[0].isIntersecting && hasNextPage && !isFetchingNextPage) fetchNextPage() },
-      { threshold: 0.1 },
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
+    const el = sentinelRef.current; if (!el) return
+    const obs = new IntersectionObserver((es) => { if (es[0].isIntersecting && hasNextPage && !isFetchingNextPage) fetchNextPage() }, { threshold: 0.1 })
+    obs.observe(el); return () => obs.disconnect()
   }, [fetchNextPage, hasNextPage, isFetchingNextPage])
 
-  const allBanners: CommunityBanner[] = data?.pages.flatMap((p) => p.banners) ?? []
+  const allBanners = data?.pages.flatMap((p) => p.banners) ?? []
   const total = data?.pages[0]?.total ?? 0
-  const filtered = applyFilters(allBanners, sort, groupByPlayer, groupByClan)
+  const filtered = applyFilters(allBanners)
+
+  if (isLoading) return <div className={styles.loadingWrap}><div className={styles.spinner} /><span className={styles.loadingText}>CARREGANDO BANNERS...</span></div>
+  if (isError) return <p className={styles.empty}>Erro ao carregar banners.</p>
+
+  return (
+    <>
+      <div className={styles.gridSection} style={{ paddingBottom: 0 }}>
+        <Separator title="ÚLTIMOS BANNERS FEITOS PELA COMUNIDADE" />
+      </div>
+      <Carousel />
+      <div className={styles.gridSection}>
+        <div className={styles.gridHeader} style={{ marginBottom: 24, gap: 32 }}>
+          <Separator title={`TODOS OS BANNERS (${total})`} />
+          <div className={styles.filters}>
+            <div className={styles.filterGroup}>
+              <button className={`${styles.filterBtn} ${sort === 'newest' ? styles.filterActive : ''}`} onClick={() => setSort('newest')}>MAIS RECENTES</button>
+              <button className={`${styles.filterBtn} ${sort === 'oldest' ? styles.filterActive : ''}`} onClick={() => setSort('oldest')}>MAIS ANTIGOS</button>
+            </div>
+            <button className={`${styles.filterBtn} ${styles.filterStandalone} ${groupByPlayer ? styles.filterActive : ''}`} onClick={() => setGroupByPlayer(v => !v)}>POR JOGADOR</button>
+            <button className={`${styles.filterBtn} ${styles.filterStandalone} ${groupByClan ? styles.filterActive : ''}`} onClick={() => setGroupByClan(v => !v)}>POR CLÃ</button>
+          </div>
+        </div>
+        <motion.div className={styles.grid} initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.04 } } }}>
+          {filtered.map((b) => <CommunityCard key={b.id} banner={b} />)}
+        </motion.div>
+        <div ref={sentinelRef} style={{ height: 40 }} />
+      </div>
+    </>
+  )
+}
+
+// ── Utilitários ──────────────────────────────────────────────────────────────
+
+function formatNumber(num: number): string {
+  if (num % 1 !== 0) {
+    return num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+  }
+  return num.toLocaleString('pt-BR')
+}
+
+// ── Estatísticas components ───────────────────────────────────────────────────
+
+function RankIcon({ rankIdx, size = 24 }: { rankIdx: number; size?: number }) {
+  const url = `/media/site/patentes/Rank_${String(rankIdx).padStart(2, '0')}.png`
+  return <img src={url} alt={`Rank ${rankIdx}`} className={styles.rankImg} style={{ width: size, height: size }} />
+}
+
+function TopRankList({ title, data, unit = '' }: { title: string; data: { top5: RankingItem[]; user: RankingItem & { rank: number } }; unit?: string }) {
+  const isUserInTop5 = data.user.rank <= 5
+
+  const getRowClass = (index: number, username: string) => {
+    let classes = [styles.row]
+    if (index === 0) classes.push(styles.rowGold)
+    else if (index === 1) classes.push(styles.rowSilver)
+    else if (index === 2) classes.push(styles.rowBronze)
+    
+    if (username === data.user.username) classes.push(styles.rowUser)
+    return classes.join(' ')
+  }
+
+  return (
+    <div className={styles.statsListCard}>
+      <div className={styles.listTitle}>{title}</div>
+      <div className={styles.statsList}>
+        {data.top5.map((item, i) => (
+          <div key={i} className={getRowClass(i, item.username)}>
+            <span className={styles.rankPos}>{i + 1}º</span>
+            <div className={styles.userInfo}>
+              <RankIcon rankIdx={item.rank_idx} size={22} />
+              <span className={styles.userNick}>{item.nick}</span>
+            </div>
+            <span className={styles.val}>{formatNumber(item.value)}{unit}</span>
+          </div>
+        ))}
+        
+        {!isUserInTop5 && (
+          <>
+            <div className={styles.ellipsis}>•••••</div>
+            <div className={`${styles.row} ${styles.rowUser}`}>
+              <span className={styles.rankPos}>{data.user.rank}º</span>
+              <div className={styles.userInfo}>
+                <RankIcon rankIdx={data.user.rank_idx} size={22} />
+                <span className={styles.userNick}>{data.user.nick}</span>
+              </div>
+              <span className={styles.val}>{formatNumber(data.user.value)}{unit}</span>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function ComparisonBlock({ label, communityAvg, userVal, unit = '' }: { label: string; communityAvg: number; userVal: number; unit?: string }) {
+  const diff = userVal - communityAvg
+  const isUp = diff >= 0
+
+  return (
+    <div className={styles.compGroup}>
+      <span className={styles.compLabel}>{label}</span>
+      <div className={styles.compSideBySide}>
+        <div className={styles.compSide}>
+          <span className={styles.compSubLabel}>Média Global</span>
+          <span className={styles.avgVal}>{formatNumber(communityAvg)}{unit}</span>
+        </div>
+        <div className={styles.compSide}>
+          <span className={styles.compSubLabel}>Você</span>
+          <div className={`${styles.userCompareBadge} ${isUp ? styles.up : styles.down}`}>
+            <span className={styles.arrow}>{isUp ? '↑' : '↓'}</span>
+            <span className={styles.userValBadge}>{formatNumber(userVal)}{unit}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Separator({ title }: { title: string }) {
+  const parts = title.split(/(\(.*?\))/)
+  return (
+    <div className={styles.separator}>
+      <span className={styles.sepTitle}>
+        {parts.map((p, i) => p.startsWith('(') ? <span key={i}>{p}</span> : p)}
+      </span>
+      <div className={styles.sepLine} />
+    </div>
+  )
+}
+
+function CommunityStatsTab() {
+  const { data: stats, isLoading } = useCommunityStatistics()
+
+  if (isLoading) return <div className={styles.loadingWrap}><div className={styles.spinner} /><span className={styles.loadingText}>SINCRONIZANDO ESTATÍSTICAS...</span></div>
+  if (!stats) return <p className={styles.empty}>Dados não disponíveis no momento.</p>
+
+  return (
+    <div className={styles.statsContainer}>
+      {/* General Stats Section */}
+      <div className={styles.section}>
+        <div className={styles.combinedCard}>
+          <div className={styles.combinedHeader}>Estatísticas Gerais (Comunidade)</div>
+          <div className={styles.generalStatsGrid}>
+            <div className={styles.genItem}>
+              <span className={styles.genLabel}>Total Partidas PVP</span>
+              <span className={styles.genVal}>{formatNumber(stats.general.total_pvp_matches)}</span>
+            </div>
+            <div className={styles.genItem}>
+              <span className={styles.genLabel}>Tempo Total de Jogo</span>
+              <span className={styles.genVal}>{formatNumber(stats.general.total_hours)}h</span>
+            </div>
+            <div className={styles.genItem}>
+              <span className={styles.genLabel}>Players Registrados</span>
+              <span className={styles.genVal}>{formatNumber(stats.general.player_count)}</span>
+            </div>
+            <div className={styles.genItem}>
+              <span className={styles.genLabel}>Total Partidas PVE</span>
+              <span className={styles.genVal}>{formatNumber(stats.general.total_pve_matches)}</span>
+            </div>
+            <div className={styles.genItem}>
+              <span className={styles.genLabel}>PVE FÁCIL</span>
+              <span className={styles.genVal}>{formatNumber(stats.general.total_pve_easy)}</span>
+            </div>
+            <div className={styles.genItem}>
+              <span className={styles.genLabel}>PVE NORMAL</span>
+              <span className={styles.genVal}>{formatNumber(stats.general.total_pve_normal)}</span>
+            </div>
+            <div className={styles.genItem}>
+              <span className={styles.genLabel}>PVE DIFÍCIL</span>
+              <span className={styles.genVal}>{formatNumber(stats.general.total_pve_hard)}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* PVP Section */}
+      <Separator title="DADOS PVP" />
+      <div className={styles.section}>
+        <div className={styles.rankingsRow}>
+          <TopRankList title="RANKING DE MAIOR KD (PVP)" data={stats.pvp.ranking_kd} />
+          <TopRankList title="MAIS PARTIDAS (PVP)" data={stats.pvp.ranking_matches} />
+          <TopRankList title="TEMPO DE JOGO (PVP)" data={stats.pvp.ranking_hours} unit="h" />
+          <TopRankList title="MAIOR PATENTE" data={stats.pvp.ranking_rank} />
+        </div>
+        
+        <div className={styles.combinedCard}>
+          <div className={styles.combinedHeader}>Comparativo PVP</div>
+          <div className={styles.combinedBodyHorizontal}>
+            <ComparisonBlock label="MÉDIA DE KD" communityAvg={stats.pvp.community_avgs.kd} userVal={stats.pvp.user_stats.kd} />
+            <ComparisonBlock label="MÉDIA DE PARTIDAS" communityAvg={stats.pvp.community_avgs.matches} userVal={stats.pvp.user_stats.matches} />
+            <ComparisonBlock label="MÉDIA DE HORAS - PVP" communityAvg={stats.pvp.community_avgs.hours} userVal={stats.pvp.user_stats.hours} unit="h" />
+            <ComparisonBlock label="MÉDIA DE PATENTE" communityAvg={stats.pvp.community_avgs.rank} userVal={stats.pvp.user_stats.rank} />
+          </div>
+        </div>
+      </div>
+
+      {/* PVE Section */}
+      <Separator title="DADOS COOP" />
+      <div className={styles.section}>
+        <div className={styles.rankingsRow}>
+          <TopRankList title="PARTIDAS TOTAIS NO COOP (PVE)" data={stats.pve.ranking_total} />
+          <TopRankList title="PVE FÁCIL" data={stats.pve.ranking_easy} />
+          <TopRankList title="PVE MÉDIO" data={stats.pve.ranking_normal} />
+          <TopRankList title="PVE DIFÍCIL" data={stats.pve.ranking_hard} />
+        </div>
+
+        <div className={styles.combinedCard}>
+          <div className={styles.combinedHeader}>Comparativo PVE</div>
+          <div className={styles.combinedBodyHorizontalPve}>
+            <ComparisonBlock label="PARTIDAS TOTAIS PVE" communityAvg={stats.pve.community_avgs.total} userVal={stats.pve.user_stats.total} />
+            <ComparisonBlock label="MÉDIA DE HORAS - PVE" communityAvg={stats.pve.community_avgs.hours} userVal={stats.pve.user_stats.hours} unit="h" />
+            <ComparisonBlock label="Média de partidas - Fácil" communityAvg={stats.pve.community_avgs.easy} userVal={stats.pve.user_stats.easy} />
+            <ComparisonBlock label="Média de partidas - Normal" communityAvg={stats.pve.community_avgs.normal} userVal={stats.pve.user_stats.normal} />
+            <ComparisonBlock label="Média de partidas - Difícil" communityAvg={stats.pve.community_avgs.hard} userVal={stats.pve.user_stats.hard} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── Página Principal ───────────────────────────────────────────────────────────
+
+export function ComunidadePage() {
+  const panelBg = usePanelBg()
+  const [activeTab, setActiveTab] = useState<'banners' | 'stats'>('banners')
 
   return (
     <motion.main
-      style={{ flex: 1, background: panelBg, position: 'relative', zIndex: 1, borderRadius: 8, overflowY: 'auto' }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      style={{ flex: 1, display: 'flex', flexDirection: 'column', background: panelBg, position: 'relative', zIndex: 1, borderRadius: 8, overflow: 'hidden', margin: '0 8px' }}
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       transition={{ duration: 0.1 }}
     >
-      <div className={styles.header}>
-        <h2 className={styles.title}>BANNERS DA COMUNIDADE</h2>
-        <p className={styles.subtitle}>
-          Os últimos banners criados por todos os jogadores
-          {total > 0 && (
-            <span className={styles.count}>{total} banner{total !== 1 ? 's' : ''}</span>
-          )}
-        </p>
+      <div className={styles.tabsContainer}>
+        <button 
+          className={`${styles.tabBtn} ${activeTab === 'banners' ? styles.tabBtnActive : ''}`}
+          onClick={() => setActiveTab('banners')}
+        >
+          WARBANNERS
+          {activeTab === 'banners' && <motion.div layoutId="tabUnderline" className={styles.tabIndicator} />}
+        </button>
+        <button 
+          className={`${styles.tabBtn} ${activeTab === 'stats' ? styles.tabBtnActive : ''}`}
+          onClick={() => setActiveTab('stats')}
+        >
+          ESTATÍSTICAS DA COMUNIDADE
+          {activeTab === 'stats' && <motion.div layoutId="tabUnderline" className={styles.tabIndicator} />}
+        </button>
       </div>
 
-      {isLoading && (
-        <div className={styles.loadingWrap}>
-          <div className={styles.spinner} />
-          <span className={styles.loadingText}>CARREGANDO BANNERS DA COMUNIDADE...</span>
-        </div>
-      )}
-      {isError   && <p className={styles.empty}>Erro ao conectar com o servidor.</p>}
-
-      {!isLoading && allBanners.length === 0 && (
-        <p className={styles.empty}>Nenhum banner publicado ainda. Seja o primeiro!</p>
-      )}
-
-      {allBanners.length > 0 && (
-        <>
-          <Carousel />
-
-          <div className={styles.gridSection}>
-            <div className={styles.gridHeader}>
-              <span className={styles.gridLabel}>TODOS OS BANNERS</span>
-
-              <div className={styles.filters}>
-                <div className={styles.filterGroup}>
-                  <button
-                    className={`${styles.filterBtn} ${sort === 'newest' ? styles.filterActive : ''}`}
-                    onClick={() => setSort('newest')}
-                  >
-                    MAIS RECENTES
-                  </button>
-                  <button
-                    className={`${styles.filterBtn} ${sort === 'oldest' ? styles.filterActive : ''}`}
-                    onClick={() => setSort('oldest')}
-                  >
-                    MAIS ANTIGOS
-                  </button>
-                </div>
-
-                <button
-                  className={`${styles.filterBtn} ${groupByPlayer ? styles.filterActive : ''}`}
-                  onClick={() => setGroupByPlayer((v) => !v)}
-                >
-                  AGRUPAR POR JOGADOR
-                </button>
-
-                <button
-                  className={`${styles.filterBtn} ${groupByClan ? styles.filterActive : ''}`}
-                  onClick={() => setGroupByClan((v) => !v)}
-                >
-                  AGRUPAR POR CLÃ
-                </button>
-              </div>
-            </div>
-
-            <motion.div
-              className={styles.grid}
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              key={`${sort}-${groupByPlayer}-${groupByClan}`}
-            >
-              {filtered.map((banner) => (
-                <CommunityCard key={banner.id} banner={banner} />
-              ))}
-            </motion.div>
-
-            {filtered.length === 0 && (
-              <p className={styles.empty}>Nenhum banner encontrado com esses filtros.</p>
-            )}
-
-            {/* sentinel de infinite scroll */}
-            <div ref={sentinelRef} style={{ height: 40 }} />
-            {isFetchingNextPage && (
-              <div className={styles.loadingWrap}>
-                <div className={styles.spinner} />
-                <span className={styles.loadingText}>CARREGANDO MAIS BANNERS...</span>
-              </div>
-            )}
-            {!hasNextPage && allBanners.length > 0 && (
-              <p className={styles.empty} style={{ opacity: 0.4 }}>
-                Todos os {total} banners carregados.
-              </p>
-            )}
-          </div>
-        </>
-      )}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab}
+          style={{ flex: 1, overflowY: 'auto' }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2 }}
+        >
+          {activeTab === 'banners' ? <WarbannersTab /> : <CommunityStatsTab />}
+        </motion.div>
+      </AnimatePresence>
     </motion.main>
   )
 }

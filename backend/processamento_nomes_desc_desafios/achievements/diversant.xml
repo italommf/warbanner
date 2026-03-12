@@ -1,0 +1,4 @@
+<Achievement active="1" id="66" kind="bomb_explode" MS_side="0" amount="100">
+	<UI name="@diversant" desc="@diversant_desc"/>
+	<BannerImage image="challenge_mark_25" type="mark" />
+</Achievement>

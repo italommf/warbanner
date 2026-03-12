@@ -1,0 +1,10 @@
+<Achievement active="1" id="372020" kind="kills" MS_side="0" amount="15" tags="bw_so_meta">
+<UI name="@bw_mark_aa" desc="@bw_mark_aa_desc"/>
+<Filters>
+<Filter kind="enemy" param="1"/>
+<Filter kind="player" param="0"/>
+<Filter kind="ai_tag" param="helicopter" compare="==" />
+<Filter kind="mission_type" param="blackwood"/>
+</Filters>
+<BannerImage image="challenge_mark_raid_05" type="mark" />
+</Achievement>

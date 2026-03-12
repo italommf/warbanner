@@ -1,0 +1,8 @@
+<Achievement active="1" id="2192" kind="stages_completed_in_a_row" MS_side="0" amount="1">
+	<UI name="@zt01Stage08" desc="@zt01Stage08_desc"/>
+	<Filters>
+		<Filter kind="stages" compare=">=" param="9"/>
+		<Filter kind="mission_type" param="zombietowerhard"/>	
+	</Filters>	
+	<BannerImage image="challenge_badge_zsd02_11" type="badge" />
+</Achievement>

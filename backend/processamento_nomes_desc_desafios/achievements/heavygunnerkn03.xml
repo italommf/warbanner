@@ -1,0 +1,42 @@
+<Achievement active="1" id="225" kind="kills" MS_side="0" amount="5">
+	<UI name="@heavyGunnerKn03" desc="@heavyGunnerKn03_desc"/>
+	<Filters>
+		<Filter kind="ai_archetype" param="HeavyGunner"/>
+		<Filter kind="melee" param="1"/>
+		<Filter kind="weapon" param="kn03"/>
+		<Filter kind="weapon" param="kn03_carbon01"/>
+		<Filter kind="weapon" param="kn03_set10"/>
+		<Filter kind="weapon" param="kn03_xmas"/>
+		<Filter kind="weapon" param="kn03_zsd01"/>
+		<Filter kind="weapon" param="kn14"/>
+		<Filter kind="weapon" param="kn14_bp06"/>
+		<Filter kind="weapon" param="kn16"/>
+		<Filter kind="weapon" param="kn16_gold01"/>
+		<Filter kind="weapon" param="kn16_ice01"/>
+		<Filter kind="weapon" param="kn16_viet01"/>
+		<Filter kind="weapon" param="kn16_ps4_01"/>
+		<Filter kind="weapon" param="kn16_rad01"/>
+		<Filter kind="weapon" param="kn16_set09"/>
+		<Filter kind="weapon" param="kn16_set12"/>
+		<Filter kind="weapon" param="kn16_wf01"/>
+		<Filter kind="weapon" param="kn16_zsd02"/>
+		<Filter kind="weapon" param="kn21"/>
+		<Filter kind="weapon" param="kn21_gold01"/>
+		<Filter kind="weapon" param="kn21_rank05"/>
+		<Filter kind="weapon" param="kn21_rank06"/>
+		<Filter kind="weapon" param="kn21_rank07"/>
+		<Filter kind="weapon" param="kn21_rank08"/>
+		<Filter kind="weapon" param="kn21_oc05"/>
+		<Filter kind="weapon" param="kn21_samurai01"/>
+		<Filter kind="weapon" param="kn21_friday01"/>
+		<Filter kind="weapon" param="kn45_heist03"/>
+		<Filter kind="difficulty" param="normal"/>		
+		<Filter kind="player" param="0"/>			
+		<Filter kind="victory_condition" param="3"/>			
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_50" type="stripe" />
+</Achievement>	

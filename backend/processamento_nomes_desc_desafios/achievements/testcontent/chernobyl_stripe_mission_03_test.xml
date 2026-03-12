@@ -1,0 +1,19 @@
+<Achievement active="0" id="60509" kind="kills" MS_side="0" amount="222">
+	<UI name="@chernobyl_stripe_mission_03_test" desc="@chernobyl_stripe_mission_03_test_desc"/>
+	<Filters>
+		<Filter kind="enemies_at_once" param="2"/>
+		<Filter kind="weapon_slot" param="primary"/>
+		<Filter kind="weapon_slot" param="pistol"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="melee" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="chernobyleasy"/>
+		<Filter kind="mission_type" param="chernobylnormal"/>
+		<Filter kind="mission_type" param="chernobylhard"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="stripe" />
+</Achievement>

@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<Achievement active="1" id="373226" kind="hidden" MS_side="1" amount="1">
+	<UI name="@esports09_badge" desc="@esports09_badge_desc"/>
+	<BannerImage image="challenge_badge_esports09" type="badge"/>
+</Achievement>

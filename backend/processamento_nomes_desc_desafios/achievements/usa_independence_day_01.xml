@@ -1,0 +1,12 @@
+<Achievement active="1" id="10101" kind="kills" MS_side="0" amount="1776">
+	<Filters>
+		<Filter kind="weapon" param="ar02_shop"/>
+		<Filter kind="weapon" param="shg01_default"/>
+		<Filter kind="weapon" param="pt16_shop"/>
+		<Filter kind="weapon" param="pt16_bundle_shop"/>
+		<Filter kind="weapon" param="kn06"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<UI name="@usa_independence_day_01" desc="@usa_independence_day_01_desc"/>
+	<BannerImage image="challenge_mark_nb_01" type="mark" />
+</Achievement>

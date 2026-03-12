@@ -43,33 +43,69 @@ class WindowsOCR:
     @classmethod
     async def recognize_async(cls, img_np):
         """
-        Estratégia dual-pass:
-        1. Tenta OCR na imagem original (funciona para JvJ e maioria dos textos).
-        2. Se vazio, tenta com binarização invertida (resolve JxA e textos de baixo contraste).
+        Estratégia Multi-Pass Reclusiva:
+        1. Original (Puro - IGUAL PowerToys)
+        2. CLAHE (Contraste Adaptativo)
+        3. Binarização Invertida (Preto no Branco)
+        4. Unsharp Masking (Definição de bordas)
         """
         if img_np is None:
             return ""
 
-        # Pass 1: Imagem original (sem processamento)
+        # --- Passo 1: ORIGINAL (Modo PowerToys) ---
+        # Ideal para imagens de alta densidade de pixels (1440p/4K)
         text = await cls._ocr_from_numpy(img_np)
         if text.strip():
             return text
 
-        # Pass 2: Binarização Otsu + Inversão (texto preto no fundo branco)
+        # Pre-conversão para tons de cinza para os próximos passos
         if len(img_np.shape) == 3:
             gray = cv2.cvtColor(img_np, cv2.COLOR_BGR2GRAY)
         else:
             gray = img_np
-        _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-        text = await cls._ocr_from_numpy(thresh)
+
+        # --- Passo 2: CLAHE (Adaptativo) ---
+        # Resolve problemas de iluminação e fundos com gradientes
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+        res_clahe = clahe.apply(gray)
+        text = await cls._ocr_from_numpy(res_clahe)
+        if text.strip():
+            return text
+
+        # --- Passo 3: Binarização Invertida (Otsu) ---
+        # Emula um documento impresso (Padrão ouro para OCR de sistemas legados)
+        _, thresh_inv = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+        text = await cls._ocr_from_numpy(thresh_inv)
+        if text.strip():
+            return text
+
+        # --- Passo 4: Unsharp Masking ---
+        # Se a fonte estiver levemente borrada, o sharpening ajuda a definir caracteres
+        gaussian = cv2.GaussianBlur(img_np, (0, 0), 1.0)
+        sharpened = cv2.addWeighted(img_np, 1.5, gaussian, -0.5, 0)
+        text = await cls._ocr_from_numpy(sharpened)
+        
         return text
 
 def read_text_win(img_np):
-    """
-    Função síncrona helper para ser usada no pipeline existente.
-    """
+    """Função síncrona para uma única imagem."""
     try:
         return asyncio.run(WindowsOCR.recognize_async(img_np))
     except Exception as e:
         print(f"[WIN-OCR] Erro: {e}")
         return ""
+
+async def _process_batch_async(images_list):
+    tasks = [WindowsOCR.recognize_async(img) for img in images_list]
+    return await asyncio.gather(*tasks)
+
+def read_text_batch_win(images_list):
+    """
+    Processa uma lista de imagens em paralelo usando um único loop.
+    Extremamente mais rápido para ler múltiplos ROIs (como os 8 slots de desafios).
+    """
+    try:
+        return asyncio.run(_process_batch_async(images_list))
+    except Exception as e:
+        print(f"[WIN-OCR-BATCH] Erro: {e}")
+        return [""] * len(images_list)

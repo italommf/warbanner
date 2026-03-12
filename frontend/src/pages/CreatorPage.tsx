@@ -1,53 +1,15 @@
 import { useMemo } from 'react'
 import { BannerCanvas } from '@/components/canvas/BannerCanvas'
 import { PatenteSelector } from '@/components/patente/PatenteSelector'
-import { FilterBar, ColorFilterBar } from '@/components/filter/FilterBar'
+import { FilterBar, ColorFilterBar, SearchBar } from '@/components/filter/FilterBar'
 import { ListColumn } from '@/components/lists/ListColumn'
 import { useMarcas, useInsignias, useFitas, useItemsLoading } from '@/api/hooks'
 import type { Item } from '@/api/hooks'
 import { useBannerStore } from '@/store/bannerStore'
-import type { FilterCategory, MainFilter, ArmasFilter, ColorFilter } from '@/store/bannerStore'
+import type { MainFilter, ArmasFilter, ColorFilter } from '@/store/bannerStore'
 import { VIDEO_EXT } from '@/App'
+import { applyFilters } from '@/utils/challenges'
 import styles from './CreatorPage.module.css'
-
-// Palavras-chave para sub-filtro de armas por tier de eliminações
-const ARMAS_KW: Record<string, string[]> = {
-  '10k':  ['10000', '10k', '_10_'],
-  '5k':   ['5000', '5k', '_5_'],
-  '2.5k': ['2500', '25k', '2500'],
-  'ouro': ['gold', 'ouro'],
-}
-
-function applyFilters(
-  items: Item[],
-  category: FilterCategory,
-  applyTo: FilterCategory[],
-  mainFilter: MainFilter,
-  armasFilter: ArmasFilter,
-  colorFilter: ColorFilter,
-): Item[] {
-  if (!applyTo.includes(category)) return items
-
-  let result = items
-
-  if (mainFilter === 'armas') {
-    result = result.filter((i) => /strip|stripe/i.test(i.filename))
-    if (armasFilter !== 'todos') {
-      const kws = ARMAS_KW[armasFilter] ?? []
-      result = result.filter((i) => kws.some((kw) => i.filename.toLowerCase().includes(kw)))
-    }
-  } else if (mainFilter === 'pvp') {
-    result = result.filter((i) => /pvp/i.test(i.filename))
-  } else if (mainFilter === 'pve') {
-    result = result.filter((i) => /pve/i.test(i.filename))
-  }
-
-  if (colorFilter !== 'todos') {
-    result = result.filter((i) => (i.color ?? 'outro') === colorFilter)
-  }
-
-  return result
-}
 
 function meshGradient(tl: string, tr: string, bl: string, br: string, a = 0.70): string {
   return [
@@ -60,7 +22,7 @@ function meshGradient(tl: string, tr: string, bl: string, br: string, a = 0.70):
 }
 
 function usePanelBg(): string | undefined {
-  const bgImage  = useBannerStore((s) => s.bgImage)
+  const bgImage = useBannerStore((s) => s.bgImage)
   const bgColors = useBannerStore((s) => s.bgColors)
   if (!bgImage) return undefined
   if (VIDEO_EXT.test(bgImage)) {
@@ -74,20 +36,26 @@ function usePanelBg(): string | undefined {
 }
 
 export function CreatorPage() {
-  const rawMarcas    = useMarcas()
+  const rawMarcas = useMarcas()
   const rawInsignias = useInsignias()
-  const rawFitas     = useFitas()
-  const isLoading    = useItemsLoading()
+  const rawFitas = useFitas()
+  const isLoading = useItemsLoading()
 
-  const applyTo     = useBannerStore((s) => s.applyTo)
-  const mainFilter  = useBannerStore((s) => s.mainFilter)
+  const mainFilter = useBannerStore((s) => s.mainFilter)
   const armasFilter = useBannerStore((s) => s.armasFilter)
   const colorFilter = useBannerStore((s) => s.colorFilter)
-  const panelBg     = usePanelBg()
+  const searchTerm = useBannerStore((s) => s.searchTerm)
+  const hideEmpty = useBannerStore((s) => s.hideEmpty)
+  const panelBg = usePanelBg()
 
-  const marcas    = useMemo(() => applyFilters(rawMarcas,    'marcas',    applyTo, mainFilter, armasFilter, colorFilter), [rawMarcas,    applyTo, mainFilter, armasFilter, colorFilter])
-  const insignias = useMemo(() => applyFilters(rawInsignias, 'insignias', applyTo, mainFilter, armasFilter, colorFilter), [rawInsignias, applyTo, mainFilter, armasFilter, colorFilter])
-  const fitas     = useMemo(() => applyFilters(rawFitas,     'fitas',     applyTo, mainFilter, armasFilter, colorFilter), [rawFitas,     applyTo, mainFilter, armasFilter, colorFilter])
+  const marcas = useMemo(() => applyFilters(rawMarcas, 'marcas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
+    [rawMarcas, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+
+  const insignias = useMemo(() => applyFilters(rawInsignias, 'insignias', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
+    [rawInsignias, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+
+  const fitas = useMemo(() => applyFilters(rawFitas, 'fitas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
+    [rawFitas, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
 
   return (
     <main className={styles.main} style={panelBg ? { background: panelBg } : undefined}>
@@ -97,12 +65,13 @@ export function CreatorPage() {
         <PatenteSelector />
         <FilterBar />
         <ColorFilterBar />
+        <SearchBar />
       </div>
 
       <div className={styles.lists}>
-        <ListColumn category="marcas"    items={marcas}    columnIndex={0} isLoading={isLoading} />
+        <ListColumn category="marcas" items={marcas} columnIndex={0} isLoading={isLoading} />
         <ListColumn category="insignias" items={insignias} columnIndex={1} isLoading={isLoading} />
-        <ListColumn category="fitas"     items={fitas}     columnIndex={2} isLoading={isLoading} />
+        <ListColumn category="fitas" items={fitas} columnIndex={2} isLoading={isLoading} />
       </div>
     </main>
   )

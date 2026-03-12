@@ -1,0 +1,10 @@
+<Achievement active="1" id="76" kind="game_end" MS_side="0" amount="100" tags="ptb">
+	<UI name="@winPTB2" desc="@winPTB2_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="4"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_30" type="mark" />
+	<Steam name="ACH_FATHER_OF_ALL_BOMBS" stat_name="STAT_FATHER_OF_ALL_BOMBS" />
+	<Epic name="ACH_FATHER_OF_ALL_BOMBS" stat_name="STAT_FATHER_OF_ALL_BOMBS" />
+</Achievement>

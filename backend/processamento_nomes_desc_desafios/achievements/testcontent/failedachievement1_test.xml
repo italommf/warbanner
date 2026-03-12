@@ -1,0 +1,15 @@
+<Achievement active="0" id="60511" kind="kills" MS_side="0" amount="1">
+	<UI name="@3in1" desc="Deliberately bad achievement"/>
+	<Filters>
+		<Filter kind="grenade" param="1" other_attribute="1"/>
+		<Filter kind="at_once" param="5"/>
+		<Filter kind="enemy" param="10"/>
+		<Filter kind="zoomed"/>
+		<Filter kind="weapon" param="wrong_weapon_name"/>
+		<Filter kind="weapon" param="kn_01" compare=">="/>
+		<Filter kind="instant_award_name" param="@achievement_kills_in_a_row_1"/>
+		<Filter kind="grenade" param="1"/>
+	</Filters>
+	<Steam name="ACH_MULTIFRAG" stat_name="STAT_MULTIFRAG" />
+	<Epic name="ACH_MULTIFRAG" stat_name="STAT_MULTIFRAG" />
+</Achievement>

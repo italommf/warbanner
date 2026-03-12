@@ -1,0 +1,7 @@
+<Achievement active="0" id="16" kind="kills" MS_side="0" amount="5">
+	<UI name="@test_in_jump" desc="@test_in_jump_desc"/>
+	<Filters>
+		<Filter kind="in_jump" param="1"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="mark" />
+</Achievement>

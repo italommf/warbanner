@@ -1,0 +1,8 @@
+<Achievement active="0" id="23" kind="kills" MS_side="0" amount="50">
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar12_shop"/>
+	</Filters>
+	<UI name="@tags_ar12" desc="@tags_ar12_desc"/>
+	<BannerImage image="test_item_icon" type="stripe" />
+</Achievement>

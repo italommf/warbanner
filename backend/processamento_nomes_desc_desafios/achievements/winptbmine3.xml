@@ -1,0 +1,4 @@
+<Achievement active="1" id="2528" kind="hidden" MS_side="1" amount="1" tags="ptb">
+	<UI name="@winPTBMine3" desc="@winPTBMine3_desc"/>
+	<BannerImage image="challenge_mark_mine_03" type="mark" />
+</Achievement>

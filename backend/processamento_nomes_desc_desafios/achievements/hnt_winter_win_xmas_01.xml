@@ -1,0 +1,9 @@
+<Achievement active="1" id="2347" kind="game_end" MS_side="0" amount="5" tags="hnt">
+	<UI name="@hnt_winter_win_xmas_01" desc="@hnt_winter_win_xmas_01_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="bee96351-e973-4222-a145-5a68a6773bba"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_hunt_xmas_01" type="stripe"/>
+</Achievement>

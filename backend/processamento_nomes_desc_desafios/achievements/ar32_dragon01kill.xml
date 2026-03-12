@@ -1,0 +1,12 @@
+<Achievement active="1" id="40009" kind="kills" MS_side="0" amount="5000">
+	<UI name="@ar32_dragon01kill" desc="@ar32_dragon01kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar32_dragon01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_dragon01_03" type="stripe"/>
+</Achievement>

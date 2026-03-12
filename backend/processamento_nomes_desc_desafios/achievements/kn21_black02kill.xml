@@ -1,0 +1,14 @@
+<Achievement active="1" id="7090" kind="kills" MS_side="0" amount="2500">
+	<UI name="@kn21_black02Kill" desc="@kn21_black02Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="kn21_black02"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_black02_10" type="stripe" />
+</Achievement>
+
+

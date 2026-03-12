@@ -1,0 +1,10 @@
+<Achievement active="1" id="6367" kind="kills" MS_side="0" amount="1000" tags="mars_so_class,king_pve">
+	<UI name="@mars_stripe_rifleman" desc="@mars_stripe_rifleman_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="marshard"/>
+		<Filter kind="my_class" param="Rifleman"/>
+	</Filters>
+	<BannerImage image="challenge_strip_marsop_08" type="stripe" />
+</Achievement>

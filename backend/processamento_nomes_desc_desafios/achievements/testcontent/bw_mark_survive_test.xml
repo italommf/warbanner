@@ -1,0 +1,11 @@
+<Achievement active="0" id="60507" kind="game_end" MS_side="0" amount="1" tags="bw_so_meta,king_pve">
+	<UI name="@bw_mark_survive_test" desc="@bw_mark_survive_test_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="blackwood"/>
+		<Filter kind="without_death" param="1"/>
+		<Filter kind="stages" compare=">=" param="6"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="mark" />
+</Achievement>

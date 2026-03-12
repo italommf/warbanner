@@ -1,0 +1,8 @@
+<Achievement active="1" id="1226" kind="game_end" MS_side="0" amount="50" tags="dst">
+	<UI name="@winDSTMars3" desc="@winDSTMars3_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="0d4dff0c-4dbb-4970-9825-eadc97691cb4"/>
+	</Filters>
+	<BannerImage image="challenge_mark_xxx_marsdst_03" type="mark" />
+</Achievement>		

@@ -1,0 +1,8 @@
+<Achievement active="1" id="2142" kind="game_end" MS_side="0" amount="50" tags="tdm">
+	<UI name="@firstPlaceTDMCrossriver2" desc="@firstPlaceTDMCrossriver2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="15144c77-4aaa-4d33-a88b-06eee80fd7f7"/>
+	</Filters>
+	<BannerImage image="challenge_badge_crossriver_02" type="badge"/>
+</Achievement>		

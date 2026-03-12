@@ -1,0 +1,12 @@
+<Achievement active="1" id="6250" kind="kills" MS_side="0" amount="2500">
+	<UI name="@ar29_set10Kill15" desc="@ar29_set10Kill15_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar29_set10_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_ap_13" type="stripe"/>
+</Achievement>

@@ -1,0 +1,12 @@
+<Achievement active="1" id="2647" kind="game_end" MS_side="0" amount="1">
+	<UI name="@chernobyl_stripe_hardcore" desc="@chernobyl_stripe_hardcore_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="hard"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="chernobylhard"/>
+		<Filter kind="without_death" param="1"/>
+		<Filter kind="stages" compare=">=" param="16"/>
+	</Filters>
+	<BannerImage image="challenge_strip_chernobil_07" type="stripe" />
+</Achievement>

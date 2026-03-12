@@ -1,0 +1,17 @@
+<Achievement active="1" id="12138" kind="kills" MS_side="0" amount="10000">
+	<UI name="@rank07_stripe_01" desc="@rank07_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar36_rank07_shop"/>
+		<Filter kind="weapon" param="shg52_rank07_shop"/>		
+		<Filter kind="weapon" param="smg46_rank07_shop"/>		
+		<Filter kind="weapon" param="sr47_rank07_shop"/>
+		<Filter kind="weapon" param="pt38_rank07_shop"/>
+		<Filter kind="weapon" param="kn21_rank07"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_rank07_01" type="stripe"/>
+</Achievement>

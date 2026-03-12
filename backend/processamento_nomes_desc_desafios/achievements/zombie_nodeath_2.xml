@@ -1,0 +1,10 @@
+<Achievement active="1" id="622" kind="game_end" MS_side="0" amount="5">
+	<UI name="@zombie_nodeath_2" desc="@zombie_nodeath_2_desc"/>
+	<Filters>
+		<Filter kind="without_death" param="1"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_type" param="zombienormal"/>
+		<Filter kind="victory_condition" param="3"/>
+	</Filters>
+	<BannerImage image="challenge_strip_zsd_02" type="stripe" />
+</Achievement>	

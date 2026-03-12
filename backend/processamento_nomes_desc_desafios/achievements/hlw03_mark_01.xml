@@ -1,0 +1,18 @@
+<Achievement active="1" id="12162" kind="damage_done" MS_side="0" amount="25000">
+	<UI name="@hlw03_mark_01" desc="@hlw03_mark_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar39_hlw03_shop"/>
+		<Filter kind="weapon" param="shg55_hlw03_shop"/>
+		<Filter kind="weapon" param="smg47_hlw03_shop"/>
+		<Filter kind="weapon" param="pt39_hlw03_shop"/>
+		<Filter kind="weapon" param="kn22_hlw03"/>
+		<Filter kind="weapon" param="hmg02_hlw03_shop"/>
+		<Filter kind="weapon" param="sr51_hlw03_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_hlw03_01" type="mark"/>
+</Achievement>

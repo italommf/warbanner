@@ -1,0 +1,12 @@
+<Achievement active="1" id="373323" kind="kills" MS_side="0" amount="1500">
+	<UI name="@kn19_rating04_Kill" desc="@kn19_rating04_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="kn19_bone01"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_kn19_bone01" type="stripe" />
+</Achievement>

@@ -1,0 +1,12 @@
+<Achievement active="1" id="13090" kind="kills" MS_side="0" amount="2500">
+	<UI name="@pt14_brazil01Kill" desc="@pt14_brazil01Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt14_brazil01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_brazil01_15" type="stripe" />
+</Achievement>

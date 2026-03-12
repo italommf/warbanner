@@ -1,0 +1,16 @@
+<Achievement active="1" id="6071" kind="kills" MS_side="0" amount="100">
+	<UI name="@lmsp_ww2_01" desc="@lmsp_ww2_01_desc"/>
+	<Filters>
+	    <Filter kind="victory_condition" param="11"/>
+		<Filter kind="mission_uid" param="e246660c-52cb-4a56-8d25-c0f040d03793"/>
+ 		<Filter kind="enemy" param="1"/> 
+ 		<Filter kind="weapon" param="smg41_ww2"/> 
+ 		<Filter kind="weapon" param="pt41_ww2"/> 
+ 		<Filter kind="weapon" param="sr41"/> 
+ 		<Filter kind="weapon" param="pt24"/> 
+ 		<Filter kind="weapon" param="mg24"/> 
+ 		<Filter kind="weapon" param="ar41"/> 
+ 		<Filter kind="weapon" param="shg31"/> 
+	</Filters>
+	<BannerImage image="challenge_mark_LMSP_06" type="mark" />
+</Achievement>

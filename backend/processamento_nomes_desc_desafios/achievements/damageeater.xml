@@ -1,0 +1,7 @@
+<Achievement active="0" id="231" kind="damage_taken" MS_side="0" amount="5000">
+	<UI name="@damageEater" desc="@damageEater_desc"/>
+	<Filters>
+		<Filter kind="without_death" param="1"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_42" type="stripe" />
+</Achievement>			

@@ -1,0 +1,16 @@
+<Achievement active="1" id="60084" kind="kills" MS_side="0" amount="10000">
+	<UI name="@pirate01_stripe_01" desc="@pirate01_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar38_pirate01_shop"/>
+		<Filter kind="weapon" param="shg53_pirate01_shop"/>
+		<Filter kind="weapon" param="smg48_pirate01_shop"/>
+		<Filter kind="weapon" param="pt21_pirate01_shop"/>
+		<Filter kind="weapon" param="kn15_pirate01"/>
+		<Filter kind="weapon" param="gl02_pirate01_shop"/>
+		<Filter kind="weapon" param="sr49_pirate01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_pirate01_01" type="stripe"/>
+</Achievement>

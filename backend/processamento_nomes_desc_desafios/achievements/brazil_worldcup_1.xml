@@ -1,0 +1,10 @@
+<Achievement active="1" id="7500" kind="kills" MS_side="0" amount="1000">
+	<Filters>
+		<Filter kind="weapon" param="pt01_bra01_shop"/>
+		<Filter kind="weapon" param="ar01_bra01_shop"/>
+		<Filter kind="weapon" param="smg12_bra01_shop"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<UI name="@brazil_worldcup_1" desc="@brazil_worldcup_1_desc"/>
+	<BannerImage image="challenge_mark_bra_01" type="mark" />
+</Achievement>

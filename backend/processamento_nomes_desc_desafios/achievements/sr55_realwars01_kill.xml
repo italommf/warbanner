@@ -1,0 +1,12 @@
+<Achievement active="1" id="373109" kind="kills" MS_side="0" amount="1500">
+	<UI name="@sr55_realwars01_Kill" desc="@sr55_realwars01_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="sr55_realwars01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon25_sr55_realwars01" type="stripe"/>
+</Achievement>

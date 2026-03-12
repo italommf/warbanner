@@ -1,0 +1,13 @@
+<Achievement active="1" id="8002" kind="kills" MS_side="0" amount="500">
+	<UI name="@vdvKalashKill" desc="@vdvKalashKill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar04_camo05_shop"/>   
+		<Filter kind="weapon" param="smg06_camo05_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_badge_vdv" type="badge" />
+</Achievement>

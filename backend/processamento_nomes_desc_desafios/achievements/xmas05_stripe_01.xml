@@ -1,0 +1,18 @@
+<Achievement active="1" id="30063" kind="kills" MS_side="0" amount="1000">
+	<UI name="@xmas05_stripe_01" desc="@xmas05_stripe_01_desc"/>
+	<Filters>
+	    <Filter kind="to_head" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg42_xmas05_shop"/>
+		<Filter kind="weapon" param="ar28_xmas05_shop"/>
+		<Filter kind="weapon" param="sr43_xmas05_shop"/>
+		<Filter kind="weapon" param="shg48_xmas05_shop"/>
+		<Filter kind="weapon" param="pt34_xmas05_shop"/>
+		<Filter kind="weapon" param="kn18_xmas05"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_xmas05_01" type="stripe"/>
+</Achievement>

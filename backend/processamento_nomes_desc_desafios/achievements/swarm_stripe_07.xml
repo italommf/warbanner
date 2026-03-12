@@ -1,0 +1,7 @@
+<Achievement active="1" id="10187" kind="achievement_awarded" MS_side="1" amount="19" >
+<UI name="@swarm_stripe_07" desc="@swarm_stripe_07_desc"/>
+	<Filters>
+		<Filter kind="tag" param="swarm_so_meta"/>
+	</Filters>
+<BannerImage image="challenge_strip_swarm_07" type="stripe" />
+</Achievement>

@@ -1,0 +1,9 @@
+<Achievement active="1" id="455" kind="kills" MS_side="0" amount="100">
+	<UI name="@engineerHunter1" desc="@engineerHunter1_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="player_class" param="Engineer"/>	
+	</Filters>
+	<BannerImage image="challenge_badge_91" type="badge" />
+</Achievement>	

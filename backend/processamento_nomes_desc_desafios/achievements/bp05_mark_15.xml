@@ -1,0 +1,4 @@
+<Achievement active="1" id="6235" kind="hidden" MS_side="1" amount="1">
+        <UI name="@bp05_mark_15" desc="@bp05_mark_15_desc"/>
+        <BannerImage image="challenge_mark_bp05_15" type="mark" />
+    </Achievement>

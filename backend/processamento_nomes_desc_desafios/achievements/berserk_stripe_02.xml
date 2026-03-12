@@ -1,0 +1,4 @@
+<Achievement active="1" id="60081" kind="hidden" MS_side="1" amount="1">
+        <UI name="@berserk_stripe_02" desc="@berserk_stripe_02_desc"/>
+        <BannerImage image="challenge_strip_berserk_02" type="stripe" />
+    </Achievement>

@@ -1,0 +1,8 @@
+<Achievement active="1" id="6070" kind="kills" MS_side="0" amount="3000">
+	<UI name="@lms_kills_04" desc="@lms_kills_04_desc"/>
+	<Filters>
+	    <Filter kind="victory_condition" param="11"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_LMSP_05" type="stripe" />
+</Achievement>

@@ -1,0 +1,19 @@
+<Achievement active="1" id="6179" kind="kills" MS_side="0" amount="500">
+	<UI name="@japan_badge_katana_kills" desc="@japan_badge_katana_kills_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="weapon" param="kn13"/>
+		<Filter kind="weapon" param="kn13_gold01"/>
+		<Filter kind="weapon" param="kn13_lava01"/>
+		<Filter kind="weapon" param="kn13_jp01"/>		
+		<Filter kind="weapon" param="kn13_rad01"/>
+		<Filter kind="weapon" param="kn13_zsd01"/>
+		<Filter kind="weapon" param="kn13_zsd02"/>
+		<Filter kind="weapon" param="kn13_samurai02"/>
+		<Filter kind="mission_type" param="japaneasy"/>
+		<Filter kind="mission_type" param="japannormal"/>
+		<Filter kind="mission_type" param="japanhard"/>
+	</Filters>
+	<BannerImage image="challenge_badge_japan_06" type="badge" />
+</Achievement>

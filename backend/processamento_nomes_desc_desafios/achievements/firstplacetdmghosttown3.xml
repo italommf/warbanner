@@ -1,0 +1,9 @@
+<Achievement active="1" id="10164" kind="game_end" MS_side="0" amount="100" tags="tdm">
+	<UI name="@firstPlaceTDMGhosttown3" desc="@firstPlaceTDMGhosttown3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="b4ac3d2f-1e97-4132-800e-7e1dbcd3512f"/>
+		<Filter kind="mission_uid" param="ad7e9b12-7c47-428a-860b-21c5260ce6bd"/>
+	</Filters>
+	<BannerImage image="challenge_badge_ghosttown_03" type="badge" />
+</Achievement>		

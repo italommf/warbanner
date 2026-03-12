@@ -6,7 +6,7 @@ from .models import UploadedImage
 class UploadedImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = UploadedImage
-        fields = ['id', 'user', 'image', 'status', 'created_at']
+        fields = ['id', 'user', 'image', 'status', 'image_type', 'created_at']
 
 class UserProfileStatsSerializer(serializers.ModelSerializer):
     pvp_classes = serializers.SerializerMethodField()
@@ -16,7 +16,8 @@ class UserProfileStatsSerializer(serializers.ModelSerializer):
         fields = [
             'game_rank_idx',
             'pvp_em', 'pvp_win_rate', 'pvp_matches', 'pvp_hours', 'pvp_best_rank_rp', 'pvp_best_rank_name', 'pvp_classes',
-            'pve_em', 'pve_win_rate', 'pve_matches', 'pve_mission_easy', 'pve_mission_medium', 'pve_mission_hard', 'pve_hours', 'pve_classes'
+            'pve_em', 'pve_win_rate', 'pve_matches', 'pve_mission_easy', 'pve_mission_medium', 'pve_mission_hard', 'pve_hours', 'pve_classes',
+            'my_marcas', 'my_insignias', 'my_fitas'
         ]
 
     def get_pvp_classes(self, obj):

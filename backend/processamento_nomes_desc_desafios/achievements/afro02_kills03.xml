@@ -1,0 +1,11 @@
+<Achievement active="1" id="2296" kind="kills" MS_side="0" amount="2000">
+	<UI name="@afro02_kills03" desc="@afro02_kills03_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="difficulty" param="hard"/>
+		<Filter kind="mission_type" param="anubishard2"/>
+		<Filter kind="my_class" param="Engineer"/>
+	</Filters>
+	<BannerImage image="challenge_strip_afro_07" type="stripe" />
+</Achievement>

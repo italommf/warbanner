@@ -1,0 +1,13 @@
+<Achievement active="1" id="2084" kind="hits" MS_side="0" amount="100000">
+	<UI name="@hits_02" desc="@hits_02_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>	
+		<Filter kind="damage" compare=">" param="0"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="melee" param="0"/>		
+	</Filters>	
+	<BannerImage image="challenge_mark_95" type="mark" />
+</Achievement>		

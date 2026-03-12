@@ -1,0 +1,10 @@
+<Achievement active="0" id="127" kind="kills" MS_side="0" amount="30">
+	<UI name="@coopStreak2" desc="@coopStreak2_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="difficulty" param="normal"/>		
+		<Filter kind="without_death" param="1"/>					
+		<Filter kind="victory_condition" param="3"/>
+	</Filters>
+	<BannerImage image="challenge_badge_50" type="badge" />
+</Achievement>

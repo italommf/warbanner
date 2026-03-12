@@ -1,0 +1,4 @@
+<Achievement active="1" id="6077" kind="hidden" MS_side="1" amount="1">
+        <UI name="@kiwi_badge_02" desc="@kiwi_badge_02_desc"/>
+        <BannerImage image="challenge_badge_kiwi_02" type="badge" />
+    </Achievement>

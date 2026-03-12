@@ -1,0 +1,9 @@
+<Achievement active="1" id="6372" kind="kills" MS_side="0" amount="1">
+	<UI name="@mars_stripe_boss" desc="@mars_stripe_boss_desc"/>
+	<Filters>
+		<Filter kind="by_flowgraph" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+	</Filters>
+	<BannerImage image="challenge_strip_marsop_01" type="stripe" />
+</Achievement>

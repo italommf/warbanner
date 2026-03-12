@@ -1,0 +1,10 @@
+<Achievement active="1" id="2194" kind="game_end" MS_side="0" amount="1">
+	<UI name="@zt01Stage10" desc="@zt01Stage10_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="hard"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="zombietowerhard"/>	
+	</Filters>	
+	<BannerImage image="challenge_badge_zsd02_13" type="badge" />
+</Achievement>

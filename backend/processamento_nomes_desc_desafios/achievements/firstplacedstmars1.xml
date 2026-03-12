@@ -1,0 +1,8 @@
+<Achievement active="1" id="1227" kind="game_end" MS_side="0" amount="25" tags="dst">
+	<UI name="@firstPlaceDSTMars1" desc="@firstPlaceDSTMars1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="0d4dff0c-4dbb-4970-9825-eadc97691cb4"/>
+	</Filters>
+	<BannerImage image="challenge_badge_xxx_marsdst_01" type="badge"/>
+</Achievement>		

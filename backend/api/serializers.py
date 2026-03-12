@@ -19,6 +19,7 @@ class CommunityBannerSerializer(serializers.ModelSerializer):
 
     def get_avatar(self, obj):
         try:
-            return obj.user.userprofile.avatar or None
+            discord = getattr(obj.user, 'discord', None)
+            return discord.avatar if discord else None
         except Exception:
             return None
