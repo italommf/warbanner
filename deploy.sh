@@ -30,7 +30,11 @@ echo -e "${BLUE}Puxando atualizações do Git...${NC}"
 git pull origin main
 
 # 4. Criar rede persistente se necessário (opcional no compose v2)
-# 5. Build e Up
+# 5. Limpeza preventiva de espaço
+echo -e "${BLUE}Limpando cache e imagens antigas para garantir espaço...${NC}"
+docker system prune -a -f
+
+# 6. Build e Up
 echo -e "${BLUE}Construindo e iniciando containers com Docker Compose...${NC}"
 docker compose up -d --build
 
