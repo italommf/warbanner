@@ -1,20 +1,20 @@
 import os
 from pathlib import Path
 from datetime import timedelta
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SECRET_KEY = os.environ.get('SECRET_KEY', 'warface-desafios-dev-secret-key-change-in-production')
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-SECRET_KEY = 'warface-desafios-dev-secret-key-change-in-production'
-
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.auth',
     'django.contrib.sessions',
+    'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
     'api',
@@ -31,19 +31,23 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'warface.urls'
 
+# Database
+# Use SQLite locally if DATABASE_URL is not set
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+        conn_max_age=600
+    )
 }
 
-# CORS - permitir frontend local
+# CORS
 CORS_ALLOW_ALL_ORIGINS = True
 
-# Imagens servidas como media
+# Static & Media
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'imagens'  # backend/imagens/marcas/, etc.
+MEDIA_ROOT = BASE_DIR / 'imagens'
 
 # Músicas
 MUSIC_ROOT = BASE_DIR / 'music'
@@ -71,8 +75,8 @@ DISCORD_REDIRECT_URI  = os.environ.get('DISCORD_REDIRECT_URI', 'http://localhost
 FRONTEND_URL          = os.environ.get('FRONTEND_URL', 'http://localhost:5173')
 
 # Celery Configuration
-CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
-CELERY_RESULT_BACKEND = "django-db"
+CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL', "redis://127.0.0.1:6379/0")
+CELERY_RESULT_BACKEND = os.environ.get('CELERY_RESULT_BACKEND', "django-db")
 CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
