@@ -20,6 +20,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Corrigir bug de compatibilidade do basicsr com versões novas do torchvision
+RUN sed -i 's/from torchvision.transforms.functional_tensor import rgb_to_grayscale/from torchvision.transforms.functional import rgb_to_grayscale/g' /usr/local/lib/python3.10/site-packages/basicsr/data/degradations.py
+
+
 # Copiar o restante do código
 COPY . .
 
