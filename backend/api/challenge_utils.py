@@ -35,11 +35,11 @@ def get_all_challenges():
     _challenge_cache = mapping
     return mapping
 
-def find_best_challenge_match(ocr_name, threshold=0.85):
+def find_best_challenge_match(ocr_name, threshold=0.75):
     """
     Compara o nome vindo do OCR com a lista de desafios oficiais.
     Prioriza Match Exato (case-insensitive). 
-    Apenas se não encontrar, tenta similaridade com threshold alto (0.85).
+    Apenas se não encontrar, tenta similaridade equilibrada (0.75) + trava de palavras.
     """
     if not ocr_name or len(ocr_name.strip()) < 3:
         return None
