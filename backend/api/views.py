@@ -138,7 +138,12 @@ def _user_info(user: User) -> dict:
 
 @api_view(['GET'])
 def items(request):
-    data = {cat: scan_category(cat) for cat in CATEGORIES}
+    print(f"\n[SCAN] Iniciando escaneamento de itens...")
+    data = {}
+    for cat in CATEGORIES:
+        items_list = scan_category(cat)
+        data[cat] = items_list
+        print(f"   √ Categoria '{cat}': {len(items_list)} itens encontrados.")
     return Response(data)
 
 
