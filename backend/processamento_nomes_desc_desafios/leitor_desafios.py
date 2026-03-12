@@ -62,7 +62,8 @@ def carregar_desafios(file_path):
 
 if __name__ == "__main__":
     # Caminho absoluto baseado na estrutura do projeto
-    file_path = r"d:\Git\Projetos Pessoais\Warface Desafios\backend\processamento_nomes_desc_desafios\nome desafio - quantidade - xml.txt"
+    base_path = os.path.dirname(__file__)
+    file_path = os.path.join(base_path, "nome desafio - quantidade - xml.txt")
     
     try:
         df_marcas, df_insignias, df_fitas = carregar_desafios(file_path)

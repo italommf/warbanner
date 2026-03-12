@@ -47,6 +47,7 @@ def _load_challenge_data():
                 'insignias': process_df(df_i),
                 'fitas': process_df(df_f)
             }
+            print(f"[DATA] Base de nomes/descrições carregada: {len(_challenge_data['marcas'])} marcas, {len(_challenge_data['insignias'])} insígnias, {len(_challenge_data['fitas'])} fitas.")
         except Exception as e:
 
 
@@ -77,9 +78,7 @@ def _natural_key(path):
 def scan_category(category: str) -> list:
     subfolder = f'site/{category}' if category == 'patentes' else f'desafios/{category}'
     folder = Path(settings.MEDIA_ROOT) / subfolder
-    print(f"      - Escaneando pasta: {folder.absolute()}")
     if not folder.exists():
-        print(f"      - [ERRO] Pasta não existe!")
         return []
     
     color_index = _load_color_index()
@@ -140,12 +139,7 @@ def _user_info(user: User) -> dict:
 
 @api_view(['GET'])
 def items(request):
-    print(f"\n[SCAN] Iniciando escaneamento de itens...")
-    data = {}
-    for cat in CATEGORIES:
-        items_list = scan_category(cat)
-        data[cat] = items_list
-        print(f"   √ Categoria '{cat}': {len(items_list)} itens encontrados.")
+    data = {cat: scan_category(cat) for cat in CATEGORIES}
     return Response(data)
 
 

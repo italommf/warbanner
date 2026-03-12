@@ -93,7 +93,7 @@ def processar_arquivos_xml(df, tipo, base_path, traducoes):
     return pd.DataFrame(novos_dados)
 
 def obter_dataframes_completos():
-    base_path = r"d:\Git\Projetos Pessoais\Warface Desafios\backend\processamento_nomes_desc_desafios"
+    base_path = os.path.dirname(__file__)
     txt_file = os.path.join(base_path, "nome desafio - quantidade - xml.txt")
     trans_file = os.path.join(base_path, "text_achievements.xml")
     achievements_dir = os.path.join(base_path, "achievements")
