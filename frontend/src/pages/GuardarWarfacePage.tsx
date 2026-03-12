@@ -297,9 +297,18 @@ function GuardarDadosTab() {
       try { await uploadImages({ files: pveFiles, type: 'pve' }) }
       catch (e) { console.error('Erro no upload PVE:', e) }
     }
+
     if (desafioFiles.length > 0) {
-      try { await uploadImages({ files: desafioFiles, type: 'desafios' }) }
-      catch (e) { console.error('Erro no upload Desafios:', e) }
+      // Chunking: Envia em lotes de 10 imagens para evitar timeout e erro 413
+      const CHUNK_SIZE = 10
+      for (let i = 0; i < desafioFiles.length; i += CHUNK_SIZE) {
+        const chunk = desafioFiles.slice(i, i + CHUNK_SIZE)
+        try {
+          await uploadImages({ files: chunk, type: 'desafios' })
+        } catch (e) {
+          console.error(`Erro no upload do lote de Desafios ${Math.floor(i / CHUNK_SIZE) + 1}:`, e)
+        }
+      }
     }
 
     setImages([])
