@@ -28,6 +28,8 @@ services:
     depends_on:
       - db
       - redis
+    ports:
+      - "8001:8000"
     restart: always
 
   worker:
