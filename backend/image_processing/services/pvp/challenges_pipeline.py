@@ -3,7 +3,8 @@ import logging
 import time
 from .image_utils import load_image, normalize_resolution_ai, crop_roi
 from .roi_map import get_challenge_slots
-from .ocr_utils_win import WindowsOCR
+from .ocr_utils import WindowsOCR
+
 import asyncio
 from .debug_utils import save_debug_images
 from api.challenge_utils import find_best_challenge_match

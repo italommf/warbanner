@@ -3,7 +3,9 @@ import cv2
 from .image_utils import crop_roi
 from .parsers import parse_float, parse_int, parse_win_rate
 from .roi_map import get_main_rois
-from .ocr_utils_win import read_text_win
+from .ocr_utils import read_text_win
+
+
 from .digit_recognizer import extract_rank_from_nickname, recognize_number, recognize_decimal
 from ...log_styles import C_CYAN, C_END
 from ...log_styles import C_CYAN, C_END

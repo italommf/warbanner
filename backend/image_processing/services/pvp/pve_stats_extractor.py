@@ -1,5 +1,6 @@
 from .image_utils import crop_roi, load_image
-from .ocr_utils_win import read_text_win
+from .ocr_utils import read_text_win
+
 from .roi_map import get_main_rois, get_pve_rois
 from .parsers import parse_int, parse_float, parse_win_rate
 from ...log_styles import C_CYAN, C_END

@@ -2,9 +2,16 @@ import asyncio
 import cv2
 import numpy as np
 import io
-from winsdk.windows.graphics.imaging import BitmapDecoder, SoftwareBitmap
-from winsdk.windows.media.ocr import OcrEngine
-from winsdk.windows.storage.streams import DataWriter, InMemoryRandomAccessStream
+import io
+
+try:
+    from winsdk.windows.graphics.imaging import BitmapDecoder, SoftwareBitmap
+    from winsdk.windows.media.ocr import OcrEngine
+    from winsdk.windows.storage.streams import DataWriter, InMemoryRandomAccessStream
+    HAS_WINSDK = True
+except (ImportError, ModuleNotFoundError):
+    HAS_WINSDK = False
+
 
 class WindowsOCR:
     _engine = None
