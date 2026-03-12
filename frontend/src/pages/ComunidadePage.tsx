@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { createPortal } from 'react-dom'
+import { NavLink } from 'react-router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useCommunity, useCommunityLatest, useCommunityStatistics, type RankingItem } from '@/api/hooks'
 import type { CommunityBanner } from '@/api/hooks'
 import { useBannerStore } from '@/store/bannerStore'
+import { useAuthStore } from '@/store/authStore'
 import { BannerImage } from '@/components/canvas/BannerImage'
 import { VIDEO_EXT } from '@/App'
 import styles from './ComunidadePage.module.css'
@@ -397,8 +399,27 @@ function CommunityStatsTab() {
 // ── Página Principal ───────────────────────────────────────────────────────────
 
 export function ComunidadePage() {
+  const user = useAuthStore(s => s.user)
   const panelBg = usePanelBg()
   const [activeTab, setActiveTab] = useState<'banners' | 'stats'>('banners')
+
+  if (!user) {
+    return (
+      <main className={styles.lockedPage} style={{ background: panelBg }}>
+        <div className={styles.lockedContent}>
+          <div className={styles.lockIconLarge}>
+            <svg width="40" height="48" viewBox="0 0 10 12" fill="currentColor">
+              <rect x="0.5" y="5" width="9" height="7" rx="1.2" />
+              <path d="M2.5 5V3.5a2.5 2.5 0 0 1 5 0V5" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+            </svg>
+          </div>
+          <h2>ACESSO RESTRITO</h2>
+          <p>Você precisa estar logado para ver as criações da comunidade e o ranking global.</p>
+          <NavLink to="/login" className={styles.loginLink}>IR PARA O DESERTO (LOGIN)</NavLink>
+        </div>
+      </main>
+    )
+  }
 
   return (
     <motion.main

@@ -203,7 +203,6 @@ def gifs(request):
 PAGE_SIZE = 100
 
 @api_view(['GET'])
-@permission_classes([AllowAny])
 def community_latest(request):
     """Retorna os 6 banners mais recentes para o carrossel."""
     banners = Banner.objects.select_related('user').order_by('-created_at')[:4]
@@ -211,7 +210,6 @@ def community_latest(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
-@permission_classes([AllowAny])
 def community(request):
     page = max(1, int(request.query_params.get('page', 1)))
     sort = request.query_params.get('sort', 'newest')

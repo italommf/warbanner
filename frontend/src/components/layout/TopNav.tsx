@@ -377,12 +377,24 @@ export function TopNav() {
             </div>
           </div>
         )}
-        <NavLink
-          to="/comunidade"
-          className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
-        >
-          COMUNIDADE
-        </NavLink>
+        {isLoggedIn ? (
+          <NavLink
+            to="/comunidade"
+            className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+          >
+            COMUNIDADE
+          </NavLink>
+        ) : (
+          <div className={styles.lockedNav}>
+            <span className={styles.navItemLocked}>
+              <LockIcon />
+              COMUNIDADE
+            </span>
+            <div className={styles.navTooltip}>
+              Faça login para ver a comunidade e rankings
+            </div>
+          </div>
+        )}
       </nav>
 
       <div className={styles.player}>

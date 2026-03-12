@@ -405,3 +405,57 @@
 .carouselItem:hover { border-color: var(--orange); }
 .carouselImg { width: 100%; aspect-ratio: 520 / 110; object-fit: cover; }
 .carouselLabel { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%); padding: 12px 8px 8px; display: flex; align-items: center; gap: 6px; font-size: 9px; font-weight: 800; color: #fff; }
+
+.lockedPage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.lockedContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 400px;
+}
+
+.lockIconLarge {
+  color: var(--text2);
+  opacity: 0.3;
+  margin-bottom: 8px;
+}
+
+.lockedContent h2 {
+  font-size: 24px;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  color: var(--text);
+}
+
+.lockedContent p {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.loginLink {
+  background: var(--orange);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: transform 0.2s, filter 0.2s;
+  margin-top: 10px;
+}
+
+.loginLink:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
