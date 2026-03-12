@@ -77,7 +77,9 @@ def _natural_key(path):
 def scan_category(category: str) -> list:
     subfolder = f'site/{category}' if category == 'patentes' else f'desafios/{category}'
     folder = Path(settings.MEDIA_ROOT) / subfolder
+    print(f"      - Escaneando pasta: {folder.absolute()}")
     if not folder.exists():
+        print(f"      - [ERRO] Pasta não existe!")
         return []
     
     color_index = _load_color_index()
