@@ -45,6 +45,10 @@ docker image prune -f
 echo -e "${BLUE}Aguardando os containers estabilizarem (10s)...${NC}"
 sleep 10
 
+# 7. Gerar Mapeamento de Desafios (JSON)
+echo -e "${BLUE}Gerando mapeamento estático de desafios (JSON)...${NC}"
+docker exec warbanner-backend-1 python scripts/gerar_json_desafios.py
+
 echo -e "${BLUE}=== STATUS DOS SERVIÇOS ===${NC}"
 docker compose ps
 

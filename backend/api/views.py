@@ -32,12 +32,25 @@ _challenge_data: dict | None = None
 
 def _load_challenge_data():
     global _challenge_data
-    if _challenge_data is None and obter_dataframes_completos:
+    if _challenge_data is not None:
+        return _challenge_data
+
+    # Tenta carregar do JSON gerado (Cache)
+    json_path = Path(settings.MEDIA_ROOT) / 'desafios_master.json'
+    if json_path.exists():
+        try:
+            _challenge_data = json.loads(json_path.read_text(encoding='utf-8'))
+            print(f"[DATA] Base de nomes/descrições carregada via JSON.")
+            return _challenge_data
+        except Exception as e:
+            print(f"Erro ao ler desafios_master.json: {e}")
+
+    # Fallback para processamento dinâmico
+    if obter_dataframes_completos:
         try:
             df_m, df_i, df_f = obter_dataframes_completos()
             
             def process_df(df):
-                # Normaliza para lowercase para evitar problemas de sensibilidade
                 df = df.copy()
                 df['imagem'] = df['imagem'].str.lower()
                 return df.drop_duplicates('imagem').set_index('imagem').to_dict('index')
@@ -47,12 +60,11 @@ def _load_challenge_data():
                 'insignias': process_df(df_i),
                 'fitas': process_df(df_f)
             }
-            print(f"[DATA] Base de nomes/descrições carregada: {len(_challenge_data['marcas'])} marcas, {len(_challenge_data['insignias'])} insígnias, {len(_challenge_data['fitas'])} fitas.")
+            print(f"[DATA] Base de nomes/descrições carregada via XML/TXT.")
         except Exception as e:
-
-
             print(f"Erro ao carregar dados dos desafios: {e}")
             _challenge_data = {}
+            
     return _challenge_data or {}
 
 
