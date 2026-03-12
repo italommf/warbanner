@@ -44,25 +44,6 @@ export function AdminPage() {
                     </svg>
                     ADMINISTRAÇÃO
                 </div>
-                <div className={styles.searchBox}>
-                    <input
-                        className={styles.searchInput}
-                        placeholder="Buscar usuários..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
-                    <CustomSelect
-                        className={styles.searchType}
-                        value={searchType}
-                        onChange={(val: any) => setSearchType(val)}
-                        options={[
-                            { value: 'all', label: 'Todos' },
-                            { value: 'nick', label: 'Nick' },
-                            { value: 'username', label: 'Usuário' },
-                            { value: 'email', label: 'Email' },
-                        ]}
-                    />
-                </div>
             </header>
 
             <div className={styles.gameTabBar}>
@@ -130,39 +111,61 @@ export function AdminPage() {
             <div className={`${styles.content} ${(mainTab === 'queue' || mainTab === 'support' || mainTab === 'migrations') ? styles.contentFull : ''}`}>
                 {mainTab === 'admin' ? (
                     <>
-                        <div
-                            className={styles.userList}
-                            onScroll={(e) => {
-                                const el = e.currentTarget
-                                if (el.scrollHeight - el.scrollTop <= el.clientHeight + 50 && hasNextPage && !isFetchingNextPage) {
-                                    fetchNextPage()
-                                }
-                            }}
-                        >
-                            {loadingUsers ? (
-                                <p className={styles.loadingMsg}>Carregando desertores...</p>
-                            ) : (
-                                <>
-                                    {allUsers.map((u: any) => (
-                                        <div
-                                            key={u.id}
-                                            className={`${styles.userCard} ${selectedUserId === u.id ? styles.userCardActive : ''}`}
-                                            onClick={() => setSelectedUserId(u.id)}
-                                        >
-                                            <div className={styles.userAvatar}>
-                                                {u.game_nick?.[0] || u.username[0].toUpperCase()}
+                        <div className={styles.sidebar}>
+                            <div className={styles.searchBox}>
+                                <input
+                                    className={styles.searchInput}
+                                    placeholder="Buscar usuários..."
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                />
+                                <CustomSelect
+                                    className={styles.searchType}
+                                    value={searchType}
+                                    onChange={(val: any) => setSearchType(val)}
+                                    options={[
+                                        { value: 'all', label: 'Todos' },
+                                        { value: 'nick', label: 'Nick' },
+                                        { value: 'username', label: 'Usuário' },
+                                        { value: 'email', label: 'Email' },
+                                    ]}
+                                />
+                            </div>
+
+                            <div
+                                className={styles.userList}
+                                onScroll={(e) => {
+                                    const el = e.currentTarget
+                                    if (el.scrollHeight - el.scrollTop <= el.clientHeight + 50 && hasNextPage && !isFetchingNextPage) {
+                                        fetchNextPage()
+                                    }
+                                }}
+                            >
+                                {loadingUsers ? (
+                                    <p className={styles.loadingMsg}>Carregando desertores...</p>
+                                ) : (
+                                    <>
+                                        {allUsers.map((u: any) => (
+                                            <div
+                                                key={u.id}
+                                                className={`${styles.userCard} ${selectedUserId === u.id ? styles.userCardActive : ''}`}
+                                                onClick={() => setSelectedUserId(u.id)}
+                                            >
+                                                <div className={styles.userAvatar}>
+                                                    {u.game_nick?.[0] || u.username[0].toUpperCase()}
+                                                </div>
+                                                <div className={styles.userInfo}>
+                                                    <span className={styles.userName}>{u.game_nick || u.username}</span>
+                                                    <span className={styles.userEmail}>{u.email}</span>
+                                                </div>
+                                                {u.role === 'admin' && <span className={styles.staffBadge}>ADMIN</span>}
+                                                {u.role === 'moderator' && <span className={styles.staffBadge} style={{ background: 'var(--gold)' }}>MOD</span>}
                                             </div>
-                                            <div className={styles.userInfo}>
-                                                <span className={styles.userName}>{u.game_nick || u.username}</span>
-                                                <span className={styles.userEmail}>{u.email}</span>
-                                            </div>
-                                            {u.role === 'admin' && <span className={styles.staffBadge}>ADMIN</span>}
-                                            {u.role === 'moderator' && <span className={styles.staffBadge} style={{ background: 'var(--gold)' }}>MOD</span>}
-                                        </div>
-                                    ))}
-                                    {isFetchingNextPage && <p className={styles.loadingNext}>Carregando mais...</p>}
-                                </>
-                            )}
+                                        ))}
+                                        {isFetchingNextPage && <p className={styles.loadingNext}>Carregando mais...</p>}
+                                    </>
+                                )}
+                            </div>
                         </div>
 
                         <div className={styles.detailsArea}>
