@@ -52,6 +52,9 @@ services:
       - "8081:80"
     depends_on:
       - backend
+    volumes:
+      - ./backend/imagens:/usr/share/nginx/html/media
+      - ./backend/music:/usr/share/nginx/html/music
     restart: always
 
 volumes:
