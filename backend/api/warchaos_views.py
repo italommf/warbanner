@@ -7,24 +7,95 @@ from django.contrib.auth.models import User
 from .models import UserProfile
 
 class WarchaosMigrationSerializer(serializers.ModelSerializer):
-    username = serializers.CharField(source='user.username', read_only=True)
+    usuario = serializers.CharField(source='user.username', read_only=True)
     email = serializers.CharField(source='user.email', read_only=True)
+    nick_warface = serializers.CharField(source='game_nick', read_only=True)
+    cla_warface = serializers.CharField(source='game_clan', read_only=True)
+    
+    # Stats Renaming
+    pvp_em = serializers.FloatField(read_only=True)
+    pvp_taxa_vitoria = serializers.IntegerField(source='pvp_win_rate', read_only=True)
+    pvp_partidas = serializers.IntegerField(source='pvp_matches', read_only=True)
+    pvp_horas = serializers.IntegerField(read_only=True)
+    pvp_melhor_rank_pontos = serializers.IntegerField(source='pvp_best_rank_rp', read_only=True)
+    pvp_melhor_rank_nome = serializers.CharField(source='pvp_best_rank_name', read_only=True)
+    
+    pve_em = serializers.FloatField(read_only=True)
+    pve_taxa_vitoria = serializers.IntegerField(source='pve_win_rate', read_only=True)
+    pve_partidas = serializers.IntegerField(source='pve_matches', read_only=True)
+    pve_missao_facil = serializers.IntegerField(source='pve_mission_easy', read_only=True)
+    pve_missao_normal = serializers.IntegerField(source='pve_mission_medium', read_only=True)
+    pve_missao_dificil = serializers.IntegerField(source='pve_mission_hard', read_only=True)
+    pve_horas = serializers.IntegerField(read_only=True)
+    
+    estatisticas_classes_pvp = serializers.JSONField(source='pvp_classes', read_only=True)
+    estatisticas_classes_pve = serializers.JSONField(source='pve_classes', read_only=True)
+
+    desafios = serializers.SerializerMethodField()
+    
+    usuario_warchaos = serializers.CharField(source='warchaos_user', read_only=True)
+    nick_warchaos = serializers.CharField(source='warchaos_nick', read_only=True)
+    solicitou_migracao = serializers.BooleanField(source='warchaos_solicitou', read_only=True)
+    migrado_para_warchaos = serializers.BooleanField(source='warchaos_migrado', read_only=True)
     
     class Meta:
         model = UserProfile
         fields = [
-            'username', 'email', 'game_nick', 'game_clan', 
-            'pvp_em', 'pvp_win_rate', 'pvp_matches', 'pvp_hours', 'pvp_best_rank_rp', 'pvp_best_rank_name',
-            'pve_em', 'pve_win_rate', 'pve_matches', 'pve_mission_easy', 'pve_mission_medium', 'pve_mission_hard', 'pve_hours',
-            'pvp_classes', 'pve_classes',
-            'my_marcas', 'my_insignias', 'my_fitas',
-            'warchaos_user', 'warchaos_nick',
-            'warchaos_solicitou', 'warchaos_migrado'
+            'usuario', 'email', 'nick_warface', 'cla_warface', 
+            'pvp_em', 'pvp_taxa_vitoria', 'pvp_partidas', 'pvp_horas', 'pvp_melhor_rank_pontos', 'pvp_melhor_rank_nome',
+            'pve_em', 'pve_taxa_vitoria', 'pve_partidas', 'pve_missao_facil', 'pve_missao_normal', 'pve_missao_dificil', 'pve_horas',
+            'estatisticas_classes_pvp', 'estatisticas_classes_pve',
+            'desafios',
+            'usuario_warchaos', 'nick_warchaos',
+            'solicitou_migracao', 'migrado_para_warchaos'
         ]
+
+    def get_desafios(self, obj):
+        return {
+            'marcas': obj.my_marcas,
+            'insignias': obj.my_insignias,
+            'fitas': obj.my_fitas
+        }
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        
+        # Define groupings
+        pvp_keys = [
+            'pvp_em', 'pvp_taxa_vitoria', 'pvp_partidas', 'pvp_horas', 
+            'pvp_melhor_rank_pontos', 'pvp_melhor_rank_nome'
+        ]
+        pve_keys = [
+            'pve_em', 'pve_taxa_vitoria', 'pve_partidas', 'pve_missao_facil', 
+            'pve_missao_normal', 'pve_missao_dificil', 'pve_horas'
+        ]
+        
+        # Build the final structure
+        return {
+            'warbanner': {
+                'usuario': representation['usuario'],
+                'email': representation['email'],
+                'nick_warface': representation['nick_warface'],
+                'cla_warface': representation['cla_warface'],
+                'pvp': {key: representation[key] for key in pvp_keys},
+                'pve': {key: representation[key] for key in pve_keys},
+                'estatisticas_classes': {
+                    'pvp': representation['estatisticas_classes_pvp'],
+                    'pve': representation['estatisticas_classes_pve']
+                },
+                'desafios': representation['desafios']
+            },
+            'warchaos': {
+                'usuario_warchaos': representation['usuario_warchaos'],
+                'nick_warchaos': representation['nick_warchaos'],
+                'solicitou_migracao': representation['solicitou_migracao'],
+                'migrado_para_warchaos': representation['migrado_para_warchaos']
+            }
+        }
 
 @api_view(['GET', 'POST'])
 @authentication_classes([BasicAuthentication])
-@permission_classes([IsAuthenticated]) # Ensure it's a valid user, maybe IsAdminUser if we want restrict it more, but request said Basic Auth.
+@permission_classes([IsAdminUser])
 def warchaos_migration_api(request):
     """
     API for Warchaos consultation.
@@ -39,24 +110,24 @@ def warchaos_migration_api(request):
 
     elif request.method == 'POST':
         # Update migration status
-        # Expected: { "username": "...", "email": "...", "Migrado": true }
-        username = request.data.get('username')
+        # Expected: { "usuario": "...", "email": "...", "migrado_para_warchaos": true }
+        usuario = request.data.get('usuario')
         email = request.data.get('email')
-        migrado = request.data.get('Migrado') or request.data.get('migrado')
+        migrado = request.data.get('migrado_para_warchaos')
 
-        if not username or not email:
-            return Response({"error": "Username and Email are required."}, status=status.HTTP_400_BAD_REQUEST)
+        if not usuario or not email:
+            return Response({"error": "Usuário e Email são obrigatórios."}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            user = User.objects.get(username=username, email=email)
+            user = User.objects.get(username=usuario, email=email)
             profile = user.profile
             if migrado is not None:
                 profile.warchaos_migrado = bool(migrado)
                 profile.save()
-                return Response({"message": f"User {username} migration status updated to {profile.warchaos_migrado}."}, status=status.HTTP_200_OK)
-            return Response({"error": "Migrado key missing."}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"message": f"Status de migração do usuário {usuario} atualizado para {profile.warchaos_migrado}."}, status=status.HTTP_200_OK)
+            return Response({"error": "Chave 'migrado_para_warchaos' ausente."}, status=status.HTTP_400_BAD_REQUEST)
         except User.DoesNotExist:
-            return Response({"error": "User not found."}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Usuário não encontrado."}, status=status.HTTP_404_NOT_FOUND)
 
 from django.utils import timezone
 
