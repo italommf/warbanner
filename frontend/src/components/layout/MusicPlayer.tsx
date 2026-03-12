@@ -2,13 +2,18 @@ import { useEffect, useRef } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { useMusicStore } from '@/store/musicStore'
 import type { MusicTrack } from '@/store/musicStore'
+import { authFetch } from '@/api/hooks'
 
 export function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null)
 
   const { data: tracks } = useQuery<MusicTrack[]>({
     queryKey: ['music'],
-    queryFn: () => fetch('/api/music/').then((r) => r.json()),
+    queryFn: () => authFetch('/api/music/').then(async (r) => {
+      const data = await r.json()
+      if (!r.ok) throw new Error(data.detail || 'Erro ao carregar músicas')
+      return data
+    }),
     staleTime: Infinity,
     retry: false,
   })

@@ -348,7 +348,7 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                             <RankSelector
                                 value={formData.game_rank_idx}
                                 onChange={(idx: number, filename: string) => {
-                                    setFormData((prev: any) => ({ ...prev, game_rank_idx: idx, game_rank: filename }))
+                                    setFormData((prev: any) => ({ ...prev, game_rank_idx: idx + 1, game_rank: filename }))
                                 }}
                             />
                         </div>
@@ -730,7 +730,7 @@ function ImageCard({ img }: { img: any }) {
 function RankSelector({ value, onChange }: { value: number, onChange: (idx: number, filename: string) => void }) {
     const patentes = usePatentes()
     const [open, setOpen] = useState(false)
-    const current = patentes.find((_, idx) => idx === value)
+    const current = patentes.find((_, idx) => idx === (value - 1))
 
     return (
         <div className={styles.rankSelector}>
@@ -758,7 +758,7 @@ function RankSelector({ value, onChange }: { value: number, onChange: (idx: numb
                         {patentes.map((p, idx) => (
                             <button
                                 key={p.filename}
-                                className={`${styles.rankItem} ${value === idx ? styles.rankItemActive : ''}`}
+                                className={`${styles.rankItem} ${value === (idx + 1) ? styles.rankItemActive : ''}`}
                                 onClick={() => {
                                     onChange(idx, p.filename);
                                     setOpen(false);

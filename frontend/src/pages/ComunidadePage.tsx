@@ -171,12 +171,12 @@ function WarbannersTab() {
     obs.observe(el); return () => obs.disconnect()
   }, [fetchNextPage, hasNextPage, isFetchingNextPage])
 
-  const allBanners = data?.pages.flatMap((p) => p.banners) ?? []
-  const total = data?.pages[0]?.total ?? 0
-  const filtered = applyFilters(allBanners)
-
   if (isLoading) return <div className={styles.loadingWrap}><div className={styles.spinner} /><span className={styles.loadingText}>CARREGANDO BANNERS...</span></div>
   if (isError) return <p className={styles.empty}>Erro ao carregar banners.</p>
+
+  const allBanners = data?.pages.flatMap((p) => p.banners || []) ?? []
+  const total = data?.pages[0]?.total ?? 0
+  const filtered = applyFilters(allBanners)
 
   return (
     <>
@@ -238,28 +238,36 @@ function TopRankList({ title, data, unit = '' }: { title: string; data: { top5: 
     <div className={styles.statsListCard}>
       <div className={styles.listTitle}>{title}</div>
       <div className={styles.statsList}>
-        {data.top5.map((item, i) => (
-          <div key={i} className={getRowClass(i, item.username)}>
-            <span className={styles.rankPos}>{i + 1}º</span>
-            <div className={styles.userInfo}>
-              <RankIcon rankIdx={item.rank_idx} size={22} />
-              <span className={styles.userNick}>{item.nick}</span>
-            </div>
-            <span className={styles.val}>{formatNumber(item.value)}{unit}</span>
+        {data.top5.length === 0 ? (
+          <div className={styles.emptyList}>
+            <span className={styles.emptyText}>Ainda não há dados suficientes para este ranking.</span>
           </div>
-        ))}
-        
-        {!isUserInTop5 && (
+        ) : (
           <>
-            <div className={styles.ellipsis}>•••••</div>
-            <div className={`${styles.row} ${styles.rowUser}`}>
-              <span className={styles.rankPos}>{data.user.rank}º</span>
-              <div className={styles.userInfo}>
-                <RankIcon rankIdx={data.user.rank_idx} size={22} />
-                <span className={styles.userNick}>{data.user.nick}</span>
+            {data.top5.map((item, i) => (
+              <div key={i} className={getRowClass(i, item.username)}>
+                <span className={styles.rankPos}>{i + 1}º</span>
+                <div className={styles.userInfo}>
+                  <RankIcon rankIdx={item.rank_idx} size={22} />
+                  <span className={styles.userNick}>{item.nick}</span>
+                </div>
+                <span className={styles.val}>{formatNumber(item.value)}{unit}</span>
               </div>
-              <span className={styles.val}>{formatNumber(data.user.value)}{unit}</span>
-            </div>
+            ))}
+            
+            {!isUserInTop5 && (
+              <>
+                <div className={styles.ellipsis}>•••••</div>
+                <div className={`${styles.row} ${styles.rowUser}`}>
+                  <span className={styles.rankPos}>{data.user.rank}º</span>
+                  <div className={styles.userInfo}>
+                    <RankIcon rankIdx={data.user.rank_idx} size={22} />
+                    <span className={styles.userNick}>{data.user.nick}</span>
+                  </div>
+                  <span className={styles.val}>{formatNumber(data.user.value)}{unit}</span>
+                </div>
+              </>
+            )}
           </>
         )}
       </div>
@@ -310,6 +318,19 @@ function CommunityStatsTab() {
   
   const isDataReady = stats && stats.general && stats.pvp && stats.pve
   if (!isDataReady) return <p className={styles.empty}>Dados não disponíveis no momento.</p>
+
+  // Caso não haja usuários registrados ou dados suficientes
+  if (stats.general.player_count === 0) {
+    return (
+      <div className={styles.emptyStatsOverlay}>
+        <div className={styles.emptyStatsContent}>
+          <h2>AGUARDANDO REFORÇOS</h2>
+          <p>Ainda não existem usuários suficientes para gerar as estatísticas globais.</p>
+          <p className={styles.emptyHint}>Seja o primeiro a subir seu screenshot!</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={styles.statsContainer}>

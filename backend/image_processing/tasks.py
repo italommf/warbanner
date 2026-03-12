@@ -73,7 +73,7 @@ def _process_single_image(image_obj):
                     logger.info(f"{C_CYAN}[MATCH-RANK]{C_END} Usando rank visual: {C_BOLD}{rank_idx}{C_END}")
                 
                 updates['game_nick'] = clean_nick
-                updates['game_rank_idx'] = rank_idx
+                updates['game_rank_idx'] = rank_idx + 1 # 1-based per USER request
                 from api.views import scan_category
                 patentes = scan_category('patentes')
                 if rank_idx < len(patentes):
@@ -289,3 +289,99 @@ def process_uploaded_image(image_id):
     """
     process_queue.delay()
     return f"Queue triggered for image {image_id}"
+
+
+def apply_ocr_updates(image_obj, result):
+    """
+    Função chamada pelo admin_views para aplicar resultados de OCR remoto.
+    Centraliza a lógica de atualização do Perfil e dos Banners.
+    """
+    from api.models import UserProfile, Banner
+    from api.views import scan_category, _load_challenge_data
+    
+    user = image_obj.user
+    profile, _ = UserProfile.objects.get_or_create(user=user)
+    
+    modified_profile = []
+    
+    # Nickname e Rank
+    if result.get("nickname"):
+        clean_nick, rank_idx = parse_nickname_and_rank(result["nickname"])
+        
+        if result.get("nickname_rank") is not None:
+             rank_idx = result["nickname_rank"]
+             
+        # Atualiza Perfil
+        profile.game_nick = clean_nick
+        profile.game_rank_idx = rank_idx + 1 # 1-based
+        
+        patentes = scan_category('patentes')
+        if rank_idx < len(patentes):
+            profile.game_rank = patentes[rank_idx]['filename']
+        
+        modified_profile.extend(['game_nick', 'game_rank_idx', 'game_rank'])
+        
+        # Sincroniza todos os Banners do usuário (Fonte da verdade é o OCR)
+        Banner.objects.filter(user=user).update(
+            nick=clean_nick,
+            patente=profile.game_rank
+        )
+        logger.info(f"[OCR] Banners de {user.username} atualizados com nick '{clean_nick}' e patente '{profile.game_rank}'")
+
+    # PvP Stats
+    pvp = result.get("pvp_stats", {})
+    if pvp:
+        if pvp.get("kd_ratio") is not None:
+            profile.pvp_em = pvp["kd_ratio"]
+            modified_profile.append('pvp_em')
+        if pvp.get("matches_played") is not None:
+            profile.pvp_matches = max(0, pvp["matches_played"])
+            modified_profile.append('pvp_matches')
+        if result.get("time_played_hours") is not None:
+            profile.pvp_hours = max(0, result["time_played_hours"])
+            modified_profile.append('pvp_hours')
+
+    # PvE Stats
+    pve = result.get("pve_stats", {})
+    if pve:
+        if pve.get("matches_played") is not None:
+            profile.pve_matches = max(0, pve["matches_played"])
+            modified_profile.append('pve_matches')
+        if result.get("time_played_hours") is not None:
+            profile.pve_hours = max(0, result["time_played_hours"])
+            modified_profile.append('pve_hours')
+        missions = pve.get("missions", {})
+        if missions:
+            if missions.get("easy") is not None:
+                profile.pve_mission_easy = max(0, missions["easy"])
+                modified_profile.append('pve_mission_easy')
+            if missions.get("medium") is not None:
+                profile.pve_mission_medium = max(0, missions["medium"])
+                modified_profile.append('pve_mission_medium')
+            if missions.get("hard") is not None:
+                profile.pve_mission_hard = max(0, missions["hard"])
+                modified_profile.append('pve_mission_hard')
+
+    # Conquistas (Desafios)
+    detected = result.get("detected_achievements", [])
+    if detected:
+        for item in detected:
+            cat = item.get("category")
+            filename = item.get("id")
+            if cat in ['marcas', 'insignias', 'fitas'] and filename:
+                field_name = f'my_{cat}'
+                current_list = getattr(profile, field_name) or []
+                if filename not in current_list:
+                    current_list.append(filename)
+                    setattr(profile, field_name, current_list)
+                    if field_name not in modified_profile:
+                        modified_profile.append(field_name)
+
+    if modified_profile:
+        profile.save(update_fields=modified_profile)
+        image_obj.status = 'done'
+        image_obj.result = result
+        image_obj.save(update_fields=['status', 'result', 'updated_at'])
+        return True
+    
+    return False

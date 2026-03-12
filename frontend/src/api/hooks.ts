@@ -87,7 +87,11 @@ export interface RecoverPayload {
 export function useItems() {
   return useQuery<ItemsResponse>({
     queryKey: ['items'],
-    queryFn: () => fetch('/api/items/').then((r) => r.json()),
+    queryFn: () => authFetch('/api/items/').then(async (r) => {
+      const data = await r.json()
+      if (!r.ok) throw new Error(data.detail || 'Erro ao carregar itens')
+      return data
+    }),
     staleTime: 60_000,
     refetchInterval: 60_000,
     refetchIntervalInBackground: false,
@@ -111,7 +115,11 @@ export interface BackgroundItem {
 export function useBackgrounds() {
   return useQuery<BackgroundItem[]>({
     queryKey: ['backgrounds'],
-    queryFn: () => fetch('/api/backgrounds/').then((r) => r.json()),
+    queryFn: () => authFetch('/api/backgrounds/').then(async (r) => {
+      const data = await r.json()
+      if (!r.ok) throw new Error(data.detail || 'Erro ao carregar fundos')
+      return data
+    }),
     staleTime: Infinity,
   })
 }
@@ -145,7 +153,11 @@ interface CommunityPage {
 export function useCommunityLatest() {
   return useQuery<CommunityBanner[]>({
     queryKey: ['community-latest'],
-    queryFn: () => fetch('/api/community/latest/').then((r) => r.json()),
+    queryFn: () => authFetch('/api/community/latest/').then(async (r) => {
+      const data = await r.json()
+      if (!r.ok) throw new Error(data.detail || 'Erro ao carregar últimos banners')
+      return data
+    }),
     staleTime: 30_000,
     refetchInterval: 30_000,
     refetchIntervalInBackground: false,
@@ -156,10 +168,14 @@ export function useCommunity(sort = 'newest', group = '') {
   return useInfiniteQuery<CommunityPage>({
     queryKey: ['community', sort, group],
     queryFn: ({ pageParam }) =>
-      fetch(`/api/community/?page=${pageParam}&sort=${sort}&group=${group}`).then((r) => r.json()),
+      authFetch(`/api/community/?page=${pageParam}&sort=${sort}&group=${group}`).then(async (r) => {
+        const data = await r.json()
+        if (!r.ok) throw new Error(data.detail || 'Erro ao carregar comunidade')
+        return data
+      }),
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) =>
-      lastPage.has_more ? allPages.length + 1 : undefined,
+      lastPage?.has_more ? allPages.length + 1 : undefined,
     staleTime: 30_000,
     refetchInterval: 60_000,
     refetchIntervalInBackground: false,
@@ -169,7 +185,11 @@ export function useCommunity(sort = 'newest', group = '') {
 export function useGifs() {
   return useQuery<GifItem[]>({
     queryKey: ['gifs'],
-    queryFn: () => fetch('/api/gifs/').then((r) => r.json()),
+    queryFn: () => authFetch('/api/gifs/').then(async (r) => {
+      const data = await r.json()
+      if (!r.ok) throw new Error(data.detail || 'Erro ao carregar GIFs')
+      return data
+    }),
     staleTime: Infinity,
   })
 }

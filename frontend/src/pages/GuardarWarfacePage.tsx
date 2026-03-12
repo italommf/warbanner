@@ -764,15 +764,16 @@ function RankTracker({ userRankIdx }: { userRankIdx: number }) {
 
   if (!patentes.length) return null
 
-  const centerIdx = Math.min(Math.max(userRankIdx, 0), patentes.length - 1)
+  const centerIdx = Math.max(0, (userRankIdx || 1) - 1)
+  const absCenter = Math.min(centerIdx, patentes.length - 1)
 
   const slots: RankSlot[] = Array.from({ length: VISIBLE_COUNT }, (_, i) => {
-    const absIdx = centerIdx - HALF + i
+    const absIdx = absCenter - HALF + i
     const patente = absIdx >= 0 && absIdx < patentes.length ? patentes[absIdx] : null
     let kind: SlotKind
     if (absIdx < 0 || absIdx >= patentes.length) kind = 'empty'
-    else if (absIdx < centerIdx) kind = 'past'
-    else if (absIdx === centerIdx) kind = 'current'
+    else if (absIdx < absCenter) kind = 'past'
+    else if (absIdx === absCenter) kind = 'current'
     else kind = 'future'
     return { absIdx, kind, patente }
   })
@@ -789,7 +790,7 @@ function RankTracker({ userRankIdx }: { userRankIdx: number }) {
       <div className={styles.rankTrackerHeader}>
         <span className={styles.rankTrackerTitle}>RANK ATUAL</span>
         <span className={styles.rankTrackerBadge}>
-          Rank {centerIdx + 1} · {patentes[centerIdx]?.name ?? ''}
+          Rank {absCenter + 1} · {patentes[absCenter]?.name ?? ''}
         </span>
       </div>
 

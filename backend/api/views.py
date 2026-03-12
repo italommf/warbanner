@@ -306,14 +306,18 @@ def auth_register(request):
     profile = user.profile
     profile.game_nick = game_nick
     profile.game_clan = game_clan
+    
+    patentes = scan_category('patentes')
+    if not game_rank and patentes:
+        game_rank = patentes[0]['filename']
+        
     profile.game_rank = game_rank
     profile.save()
     
-    if game_rank:
-        patentes = scan_category('patentes')
+    if game_rank and patentes:
         for i, p in enumerate(patentes):
             if p['filename'] == game_rank:
-                profile.game_rank_idx = i
+                profile.game_rank_idx = i + 1
                 profile.save()
                 break
 
@@ -393,7 +397,7 @@ def auth_update_profile(request):
         patentes = scan_category('patentes')
         for i, p in enumerate(patentes):
             if p['filename'] == gr:
-                profile.game_rank_idx = i
+                profile.game_rank_idx = i + 1
                 break
     profile.save()
     return Response(_user_info(request.user))
@@ -487,6 +491,15 @@ def discord_callback(request):
             username = f'{base}{counter}'
             counter += 1
         user = User.objects.create_user(username=username, password=None)
+        
+        # Garante patente inicial na criação via Discord
+        profile = user.profile
+        patentes = scan_category('patentes')
+        if patentes:
+            profile.game_rank = patentes[0]['filename']
+            profile.game_rank_idx = 1
+            profile.save()
+            
         DiscordProfile.objects.create(user=user, discord_id=discord_id, avatar=avatar_url)
 
     tokens = _get_tokens(user)
