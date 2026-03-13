@@ -133,20 +133,93 @@
     transition: all 0.2s;
 }
 
-.searchType {
-    width: auto;
-    min-width: 80px;
-    flex-shrink: 0;
-}
-
-.selectTrigger {
-    padding: 8px;
-}
-
 .searchInput:focus {
     border-color: var(--orange);
     outline: none;
     background: rgba(0, 0, 0, 0.5);
+}
+
+.searchFilterSelectWrapper {
+    position: relative;
+    width: max-content;
+    flex-shrink: 0;
+}
+
+.searchFilterTrigger {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    color: #fff;
+    padding: 0 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    height: 38px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.searchFilterTrigger:hover {
+    background: rgba(255, 255, 254, 0.12);
+    border-color: var(--orange);
+}
+
+.searchFilterBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+}
+
+.searchFilterDropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    width: max-content;
+    min-width: 100%;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.searchFilterItem {
+    padding: 10px 16px;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    background: transparent;
+    border: none;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.searchFilterItem:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.searchFilterItemActive {
+    background: var(--orange);
+    color: #fff;
+}
+
+.searchFilterItemActive:hover {
+    background: var(--orange);
+    filter: brightness(1.1);
 }
 
 .content {
@@ -466,8 +539,10 @@
 .selectDropdown {
     position: absolute;
     top: calc(100% + 5px);
-    left: 0;
-    width: 100%;
+    right: 0;
+    left: auto;
+    width: max-content;
+    min-width: 100%;
     background: #111;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 6px;
@@ -489,6 +564,7 @@
     font-size: 0.85rem;
     cursor: pointer;
     transition: background 0.2s;
+    white-space: nowrap;
 }
 
 .selectItem:hover {

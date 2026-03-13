@@ -37,14 +37,6 @@ export function AdminPage() {
 
     return (
         <div className={styles.container}>
-            <header className={styles.header}>
-                <div className={styles.title}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
-                    ADMINISTRAÇÃO
-                </div>
-            </header>
 
             <div className={styles.gameTabBar}>
                 <button
@@ -119,10 +111,9 @@ export function AdminPage() {
                                     value={search}
                                     onChange={(e) => setSearch(e.target.value)}
                                 />
-                                <CustomSelect
-                                    className={styles.searchType}
+                                <SearchFilterSelect
                                     value={searchType}
-                                    onChange={(val: any) => setSearchType(val)}
+                                    onChange={(val) => setSearchType(val as any)}
                                     options={[
                                         { value: 'all', label: 'Todos' },
                                         { value: 'nick', label: 'Nick' },
@@ -773,6 +764,48 @@ function RankSelector({ value, onChange }: { value: number, onChange: (idx: numb
                             </button>
                         ))}
                     </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    )
+}
+
+function SearchFilterSelect({ value, onChange, options }: { value: string, onChange: (v: string) => void, options: { value: string, label: string }[] }) {
+    const [open, setOpen] = useState(false)
+    const current = options.find(o => o.value === value)
+
+    return (
+        <div className={styles.searchFilterSelectWrapper}>
+            <button className={styles.searchFilterTrigger} onClick={() => setOpen(!open)} type="button">
+                <span>{current?.label}</span>
+                <span className={`${styles.caret} ${open ? styles.caretOpen : ''}`}></span>
+            </button>
+            <AnimatePresence>
+                {open && (
+                    <>
+                        <div className={styles.searchFilterBackdrop} onClick={() => setOpen(false)} />
+                        <motion.div
+                            className={styles.searchFilterDropdown}
+                            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                            transition={{ duration: 0.1 }}
+                        >
+                            {options.map(opt => (
+                                <button
+                                    key={opt.value}
+                                    className={`${styles.searchFilterItem} ${value === opt.value ? styles.searchFilterItemActive : ''}`}
+                                    onClick={() => {
+                                        onChange(opt.value);
+                                        setOpen(false);
+                                    }}
+                                    type="button"
+                                >
+                                    {opt.label}
+                                </button>
+                            ))}
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </div>
