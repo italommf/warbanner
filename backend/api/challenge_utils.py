@@ -35,11 +35,12 @@ def get_all_challenges():
     _challenge_cache = mapping
     return mapping
 
+import re
+
 def find_best_challenge_match(ocr_name, threshold=0.75):
     """
     Compara o nome vindo do OCR com a lista de desafios oficiais.
-    Prioriza Match Exato (case-insensitive). 
-    Apenas se não encontrar, tenta similaridade equilibrada (0.75) + trava de palavras.
+    Prioriza Match Exato (case-insensitive e space-insensitive). 
     """
     if not ocr_name or len(ocr_name.strip()) < 3:
         return None
@@ -47,47 +48,77 @@ def find_best_challenge_match(ocr_name, threshold=0.75):
     challenges = get_all_challenges()
     names = list(challenges.keys())
     
-    ocr_name_clean = ocr_name.lower().strip()
-    
-    # 1. Busca exata primeiro
+    # Normalização base
+    ocr_name_raw = ocr_name.strip()
+    ocr_name_low = ocr_name_raw.lower()
+    # Remove espaços duplos e pontuação básica para busca mais limpa
+    ocr_name_clean = re.sub(r'\s+', ' ', ocr_name_low)
+    ocr_name_no_space = ocr_name_low.replace(' ', '').replace('!', '').replace('.', '').replace('-', '')
+
+    # 1. Busca exata (Primeira tentativa: literal limpo)
     if ocr_name_clean in challenges:
         match_data = challenges[ocr_name_clean].copy()
-        match_data['match_type'] = 'exact'
-        match_data['similarity'] = 1.0
+        match_data.update({'match_type': 'exact', 'similarity': 1.0})
         return match_data
-    
-    # 2. Busca por similaridade (apenas se exato falhar e o threshold for atingido)
-    matches = difflib.get_close_matches(ocr_name_clean, names, n=3, cutoff=threshold)
+
+    # 2. Busca exata (Segunda tentativa: sem espaços/pontuação)
+    # Útil para "SureFire MGX" vs "SurefireMGX" ou "GrandPower" vs "Grand Power"
+    for name_key, data in challenges.items():
+        name_no_space = name_key.replace(' ', '').replace('!', '').replace('.', '').replace('-', '')
+        if ocr_name_no_space == name_no_space:
+            match_data = data.copy()
+            match_data.update({'match_type': 'exact_normalized', 'similarity': 1.0})
+            return match_data
+
+    # 3. Busca por similaridade
+    # Vamos aumentar o n para pegar mais candidatos e filtrar manualmente
+    matches = difflib.get_close_matches(ocr_name_clean, names, n=10, cutoff=threshold)
     
     if matches:
-        # Filtro extra: vamos garantir que as palavras principais façam sentido
-        # Isso evita que "Equipamento de X" bata com "Mestre de X" apenas pelo "de X"
         ocr_words = set(ocr_name_clean.split())
-        
         best_match = None
-        highest_ratio = 0
+        highest_score = 0
         
         for m_name in matches:
+            # Ratio base do difflib
             ratio = difflib.SequenceMatcher(None, ocr_name_clean, m_name).ratio()
             
-            # Verificação de palavras: pelo menos 60% das palavras do OCR devem ser parecidas
-            # com alguma palavra do match (evita trocar palavras inteiras cruciais)
+            # Verificação de palavras: garante que as palavras chaves existam
             match_words = m_name.split()
             word_matches = 0
             for ow in ocr_words:
-                if any(difflib.SequenceMatcher(None, ow, mw).ratio() > 0.8 for mw in match_words):
+                if any(difflib.SequenceMatcher(None, ow, mw).ratio() > 0.85 for mw in match_words):
                     word_matches += 1
             
             word_ratio = word_matches / len(ocr_words) if ocr_words else 0
             
-            if ratio > highest_ratio and word_ratio >= 0.6:
-                highest_ratio = ratio
+            # --- CORREÇÃO DE GREEDY MATCH (Dourada vs Normal) ---
+            # Penalidade por diferença de tamanho: 
+            # Se o OCR é curto ("SureFire MGX") e o match é longo ("SureFire MGX Dourada"),
+            # a penalidade empurra o score para baixo para favorecer o match mais curto/preciso.
+            len_diff = abs(len(ocr_name_clean) - len(m_name))
+            len_penalty = (len_diff / max(len(ocr_name_clean), len(m_name))) * 0.4
+            
+            # Bônus se um contém o outro exatamente (Sub-string match)
+            contain_bonus = 0.1 if (ocr_name_clean in m_name or m_name in ocr_name_clean) else 0
+            
+            final_score = (ratio * 0.7) + (word_ratio * 0.3) - len_penalty + contain_bonus
+
+            # Debug log interno (visível no console do servidor)
+            # logger.debug(f"Match candidate: '{m_name}' | Ratio: {ratio:.2f} | WordMatch: {word_ratio:.2f} | Penalty: {len_penalty:.2f} | Final: {final_score:.2f}")
+
+            if final_score > highest_score and word_ratio >= 0.6:
+                highest_score = final_score
                 best_match = m_name
 
         if best_match:
             match_data = challenges[best_match].copy()
-            match_data['match_type'] = 'similarity'
-            match_data['similarity'] = round(highest_ratio, 2)
+            match_data.update({
+                'match_type': 'similarity',
+                'similarity': round(min(1.0, highest_score), 2),
+                'debug_name': best_match
+            })
             return match_data
     
     return None
+

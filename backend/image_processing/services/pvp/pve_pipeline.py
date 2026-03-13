@@ -42,7 +42,7 @@ def run_pve_pipeline(image_path: str):
         m_med  = main_stats.get("missions", {}).get("medium", 0)
         m_hard = main_stats.get("missions", {}).get("hard", 0)
         
-        logger.info(f"   {C_MAGENTA}» Nickname:{C_END} {C_BOLD}{main_stats.get('nickname', '???')}{C_END}")
+        logger.info(f"   {C_MAGENTA}» Nickname (OCR):{C_END} {C_BOLD}{main_stats.get('nickname', '???')}{C_END}")
         logger.info(f"   {C_MAGENTA}» Missões:{C_END} Fácil: {m_easy} | Médio: {m_med} | Difícil: {m_hard}")
         logger.info(f"   {C_MAGENTA}» Stats:{C_END} {main_stats.get('kd_ratio', 0.0)} EM | {main_stats.get('win_rate', 0.0)}% WR")
 

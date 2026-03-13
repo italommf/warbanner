@@ -41,7 +41,7 @@ def run_pvp_pipeline(image_path):
         nickname = main_stats.get("nickname", "???")
         total_hours = main_stats.get("total_hours", 0)
         
-        logger.info(f"   {C_CYAN}» Nickname:{C_END} {C_BOLD}{nickname}{C_END}")
+        logger.info(f"   {C_CYAN}» Nickname (OCR):{C_END} {C_BOLD}{nickname}{C_END}")
         
         # Best Rank
         br = main_stats.get("best_rank", {})

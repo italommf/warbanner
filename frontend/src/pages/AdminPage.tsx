@@ -1016,32 +1016,59 @@ function QueuePanel() {
                         <div className={styles.queueUserHeader}>
                             <h3>{u.game_nick || u.username} <span>({u.images.length} pendentes)</span></h3>
                         </div>
-                        <div className={styles.queueGrid}>
-                            {u.images.map(img => (
-                                <div key={img.id} className={styles.queueItem}>
-                                    <div className={styles.queueThumb}>
-                                        <img src={img.image} alt="upload" />
+                        <div className={styles.queueListsWrapper}>
+                            {(['pvp', 'pve', 'desafios'] as const).map(type => {
+                                const typeImages = u.images.filter((img: any) => img.image_type === type);
+                                if (typeImages.length === 0) return null;
+
+                                return (
+                                    <div key={type} className={styles.queueGroup}>
+                                        <h4 className={styles.queueGroupTitle}>
+                                            {type === 'desafios' ? 'CONQUISTAS' : type.toUpperCase()} ({typeImages.length})
+                                        </h4>
+                                        <div className={styles.queueList}>
+                                            {typeImages.map((img: any) => (
+                                                <div key={img.id} className={styles.queueListItem}>
+                                                    <div className={styles.queueListThumb}>
+                                                        <img src={img.image} alt="upload" />
+                                                    </div>
+                                                    
+                                                    <div className={styles.queueListInfo}>
+                                                        <span className={styles.queueListName}>
+                                                            {img.image.split('/').pop() || 'Imagem_desconhecida.png'}
+                                                        </span>
+                                                        <div className={styles.queueListMeta}>
+                                                            <span className={styles.queueListTypeTag}>{type === 'desafios' ? 'CONQUISTAS' : type.toUpperCase()}</span>
+                                                            <span className={styles.queueListDate}>
+                                                                {img.created_at ? new Date(img.created_at).toLocaleString('pt-BR') : ''}
+                                                            </span>
+                                                        </div>
+                                                        {img.error && <span className={styles.errorText} title={img.error}>{img.error}</span>}
+                                                    </div>
+
+                                                    <div className={styles.queueListStatusCell}>
+                                                        <span className={`${styles.queueStatus} ${styles['status-' + img.status]}`}>
+                                                            {img.status === 'pending' && '🕒 AGUARDANDO'}
+                                                            {img.status === 'processing' && '⚙️ PROCESSANDO...'}
+                                                            {img.status === 'completed' && '✅ CONCLUÍDO'}
+                                                            {img.status === 'failed' && '❌ FALHA'}
+                                                        </span>
+                                                        {img.status === 'failed' && (
+                                                            <button
+                                                                className={styles.reprocessBtn}
+                                                                onClick={() => reprocess(img.id)}
+                                                                disabled={isReprocessing}
+                                                            >
+                                                                REPROCESSAR
+                                                            </button>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
-                                    <div className={styles.queueInfo}>
-                                        <span className={styles.queueType}>{img.image_type}</span>
-                                        <span className={`${styles.queueStatus} ${styles['status-' + img.status]}`}>
-                                            {img.status === 'pending' && '🕒 AGUARDANDO'}
-                                            {img.status === 'processing' && '⚙️ PROCESSANDO...'}
-                                            {img.status === 'failed' && '❌ FALHA'}
-                                        </span>
-                                        {img.error && <span className={styles.errorText} title={img.error}>{img.error}</span>}
-                                    </div>
-                                    {img.status === 'failed' && (
-                                        <button
-                                            className={styles.reprocessBtn}
-                                            onClick={() => reprocess(img.id)}
-                                            disabled={isReprocessing}
-                                        >
-                                            REPROCESSAR
-                                        </button>
-                                    )}
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 ))

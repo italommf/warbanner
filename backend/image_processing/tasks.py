@@ -64,20 +64,24 @@ def _process_single_image(image_obj):
 
             # Prepare updates...
             updates = {}
-            if result.get("nickname"):
-                clean_nick, rank_idx = parse_nickname_and_rank(result["nickname"])
+            # Extração de Rank (ID do Rank)
+            # Nota: O Nickname não é mais atualizado via OCR seguindo solicitação do usuário.
+            # No entanto, ainda usamos a área do nickname para extrair a patente (rank).
+            if result.get("nickname") or result.get("nickname_rank") is not None:
+                rank_idx = 0
+                if result.get("nickname"):
+                    _, rank_idx = parse_nickname_and_rank(result["nickname"])
                 
-                # Priorizar o rank extraído via Template Matching se disponível
                 if result.get("nickname_rank") is not None:
                     rank_idx = result["nickname_rank"]
                     logger.info(f"{C_CYAN}[MATCH-RANK]{C_END} Usando rank visual: {C_BOLD}{rank_idx}{C_END}")
                 
-                updates['game_nick'] = clean_nick
-                updates['game_rank_idx'] = rank_idx + 1 # 1-based per USER request
+                updates['game_rank_idx'] = rank_idx + 1 # 1-based
                 from api.views import scan_category
                 patentes = scan_category('patentes')
                 if rank_idx < len(patentes):
                     updates['game_rank'] = patentes[rank_idx]['filename']
+
 
             if image_obj.image_type == 'pvp':
                 pvp = result.get("pvp_stats", {})
@@ -304,29 +308,31 @@ def apply_ocr_updates(image_obj, result):
     
     modified_profile = []
     
-    # Nickname e Rank
-    if result.get("nickname"):
-        clean_nick, rank_idx = parse_nickname_and_rank(result["nickname"])
+    # Rank (Patente)
+    # Nickname não é mais atualizado via OCR.
+    if result.get("nickname") or result.get("nickname_rank") is not None:
+        rank_idx = 0
+        if result.get("nickname"):
+            _, rank_idx = parse_nickname_and_rank(result["nickname"])
         
         if result.get("nickname_rank") is not None:
              rank_idx = result["nickname_rank"]
              
-        # Atualiza Perfil
-        profile.game_nick = clean_nick
+        # Atualiza apenas Rank no Perfil
         profile.game_rank_idx = rank_idx + 1 # 1-based
         
         patentes = scan_category('patentes')
         if rank_idx < len(patentes):
             profile.game_rank = patentes[rank_idx]['filename']
         
-        modified_profile.extend(['game_nick', 'game_rank_idx', 'game_rank'])
+        modified_profile.extend(['game_rank_idx', 'game_rank'])
         
-        # Sincroniza todos os Banners do usuário (Fonte da verdade é o OCR)
+        # Sincroniza Banners com a nova patente (Nick permanece o que já estava no perfil/banner)
         Banner.objects.filter(user=user).update(
-            nick=clean_nick,
             patente=profile.game_rank
         )
-        logger.info(f"[OCR] Banners de {user.username} atualizados com nick '{clean_nick}' e patente '{profile.game_rank}'")
+        logger.info(f"[OCR] Banners de {user.username} atualizados com patente '{profile.game_rank}'")
+
 
     # PvP Stats
     pvp = result.get("pvp_stats", {})
