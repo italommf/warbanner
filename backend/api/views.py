@@ -115,7 +115,7 @@ def scan_category(category: str) -> list:
                 'amount': info.get('quantidade', ''),
                 'filename': f.name,
                 'url': f'/media/{subfolder}/{f.name}',
-                'color': color_index.get(key, 'outro'),
+                'color': color_index.get(f'{category}/{f.name}', 'outro'),
             })
     return items
 

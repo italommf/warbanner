@@ -17,8 +17,9 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 24px;
+  gap: 10px;
   flex-shrink: 0;
+  width: 100%;
 }
 
 .lists {

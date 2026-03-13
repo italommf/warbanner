@@ -11,7 +11,7 @@
   background: var(--bg3);
   border: 1px solid var(--border2);
   cursor: pointer;
-  min-width: 220px;
+  min-width: 140px;
   height: 46px;
   transition: border-color 0.15s;
   user-select: none;

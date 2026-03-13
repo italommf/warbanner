@@ -7,8 +7,8 @@ import styles from './BannerCanvas.module.css'
 export function BannerCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const setCanvasRef = useBannerStore((s) => s.setCanvasRef)
-  const noFrame = useBannerStore((s) => s.noFrame)
-  const setNoFrame = useBannerStore((s) => s.setNoFrame)
+  const hideEmpty = useBannerStore((s) => s.hideEmpty)
+  const setHideEmpty = useBannerStore((s) => s.setHideEmpty)
   const nick = useBannerStore((s) => s.nick)
   const setNick = useBannerStore((s) => s.setNick)
   const clan = useBannerStore((s) => s.clan)
@@ -55,10 +55,10 @@ export function BannerCanvas() {
           <label className={styles.noFrameLabel}>
             <input
               type="checkbox"
-              checked={noFrame}
-              onChange={(e) => setNoFrame(e.target.checked)}
+              checked={hideEmpty}
+              onChange={(e) => setHideEmpty(e.target.checked)}
             />
-            DESABILITAR MOLDURA
+            Sem nome ou Desc
           </label>
         </div>
       </div>

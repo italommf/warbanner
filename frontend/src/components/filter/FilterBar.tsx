@@ -157,7 +157,7 @@ export function ColorFilterBar() {
   return (
     <div className={styles.wrapper} ref={ref}>
       <button className={styles.trigger} onClick={() => setOpen((v) => !v)}>
-        <span className={styles.triggerLabel}>Agrupar por cores</span>
+        <span className={styles.triggerLabel}>Cores</span>
         <span className={`${styles.triggerValue} ${styles.triggerValueColor}`}>
           {colorFilter !== 'todos' && active && (
             <span className={styles.colorDot} style={{ background: active.dot }} />
@@ -208,8 +208,6 @@ export function ColorFilterBar() {
 export function SearchBar() {
   const searchTerm = useBannerStore((s) => s.searchTerm)
   const setSearchTerm = useBannerStore((s) => s.setSearchTerm)
-  const hideEmpty = useBannerStore((s) => s.hideEmpty)
-  const setHideEmpty = useBannerStore((s) => s.setHideEmpty)
 
   return (
     <div className={styles.searchContainer}>
@@ -231,16 +229,6 @@ export function SearchBar() {
           </button>
         )}
       </div>
-
-      <label className={styles.checkboxLabel}>
-        <input
-          type="checkbox"
-          checked={hideEmpty}
-          onChange={(e) => setHideEmpty(e.target.checked)}
-          className={styles.checkbox}
-        />
-        <span>Ocultar sem descrição</span>
-      </label>
     </div>
   )
 }
