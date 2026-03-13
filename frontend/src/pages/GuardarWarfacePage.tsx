@@ -721,6 +721,25 @@ function FavoriteAchievements({ userStats }: { userStats: any }) {
   const [pickerOpen, setPickerOpen] = useState<number | null>(null)
 
   useEffect(() => {
+    if (!userStats?.stats) return;
+
+    setSlots((prev) => {
+      let changed = false;
+      const newSlots = prev.map((slot) => {
+        if (!slot.item) return slot;
+        const category = ACH_CATEGORY[slot.type];
+        const owned = userStats.stats[`my_${category}`] || [];
+        if (!owned.includes(slot.item.filename)) {
+          changed = true;
+          return { ...slot, item: null };
+        }
+        return slot;
+      });
+      return changed ? newSlots : prev;
+    });
+  }, [userStats]);
+
+  useEffect(() => {
     if (userId) {
       localStorage.setItem(`${FAV_STORAGE_KEY}_${userId}`, JSON.stringify(slots.map((s) => s.item)))
     }

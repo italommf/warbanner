@@ -2108,9 +2108,24 @@
 
 /* Migrations Panel */
 .migrationsContainer {
-  padding: 24px;
   height: 100%;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding-right: 8px; /* espaço pro scrollbar não colar */
+}
+
+.migrationsFilterBar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.migrationsFilterBar > div:first-child {
+  flex: 1;
+  min-width: 200px;
 }
 
 .warchaosCode {

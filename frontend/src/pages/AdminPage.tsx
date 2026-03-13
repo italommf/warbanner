@@ -1296,12 +1296,68 @@ function AdminTicketDetail({ ticketId, onClose }: { ticketId: number, onClose: (
 
 function MigrationsPanel({ onSelectUser }: { onSelectUser: (id: number) => void }) {
     const { data: migrations = [], isLoading } = useAdminMigrations()
+    const [search, setSearch] = useState('')
+    const [statusFilter, setStatusFilter] = useState<'all' | 'pending' | 'done'>('all')
+    const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest')
+
+    const filteredMigrations = useMemo(() => {
+        let filtered = [...migrations];
+
+        if (statusFilter === 'pending') filtered = filtered.filter(m => !m.migrado);
+        else if (statusFilter === 'done') filtered = filtered.filter(m => m.migrado);
+
+        if (search) {
+            const lowerSearch = search.toLowerCase();
+            filtered = filtered.filter(m => 
+                m.username?.toLowerCase().includes(lowerSearch) || 
+                m.email?.toLowerCase().includes(lowerSearch) || 
+                m.warchaos_user?.toLowerCase().includes(lowerSearch) || 
+                m.warchaos_nick?.toLowerCase().includes(lowerSearch)
+            );
+        }
+
+        filtered.sort((a, b) => {
+            const dateA = new Date(a.solicitou_at).getTime();
+            const dateB = new Date(b.solicitou_at).getTime();
+            return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+        });
+
+        return filtered;
+    }, [migrations, search, statusFilter, sortOrder]);
 
     if (isLoading) return <div className={styles.noUser}>Carregando solicitações de migração...</div>
 
     return (
         <div className={styles.migrationsContainer}>
-            {migrations.length === 0 ? (
+            <div className={styles.migrationsFilterBar}>
+                <div className={styles.searchBox} style={{ marginBottom: 0 }}>
+                    <input
+                        className={styles.searchInput}
+                        placeholder="Buscar por usuário, email ou nick..."
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                </div>
+                <SearchFilterSelect
+                    value={statusFilter}
+                    onChange={(val) => setStatusFilter(val as any)}
+                    options={[
+                        { value: 'all', label: 'Todos os Status' },
+                        { value: 'pending', label: 'Aguardando' },
+                        { value: 'done', label: 'Migrados' },
+                    ]}
+                />
+                <SearchFilterSelect
+                    value={sortOrder}
+                    onChange={(val) => setSortOrder(val as any)}
+                    options={[
+                        { value: 'newest', label: 'Mais Recentes' },
+                        { value: 'oldest', label: 'Mais Antigos' },
+                    ]}
+                />
+            </div>
+
+            {filteredMigrations.length === 0 ? (
                 <div className={styles.noUser} style={{ padding: '60px' }}>
                     <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.3">
                         <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -1325,7 +1381,7 @@ function MigrationsPanel({ onSelectUser }: { onSelectUser: (id: number) => void 
                             </tr>
                         </thead>
                         <tbody>
-                            {migrations.map((m: any) => (
+                            {filteredMigrations.map((m: any) => (
                                 <tr key={m.user_id}>
                                     <td>{new Date(m.solicitou_at).toLocaleString('pt-BR')}</td>
                                     <td>
