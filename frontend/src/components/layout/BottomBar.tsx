@@ -61,6 +61,8 @@ export function BottomBar({ isHistorico = false }: Props) {
   const insignias = useBannerStore((s) => s.insignias)
   const fitas = useBannerStore((s) => s.fitas)
   const patentes = useBannerStore((s) => s.patentes)
+  const rankLevel = useBannerStore((s) => s.rankLevel)
+  const hideEmpty = useBannerStore((s) => s.hideEmpty)
   const user = useAuthStore((s) => s.user)
   const isLoggedIn = !!user
   const canSave = isLoggedIn && nick.trim() !== ''
@@ -80,6 +82,8 @@ export function BottomBar({ isHistorico = false }: Props) {
       insignia: insignias.selected ?? '',
       fita: fitas.selected ?? '',
       patente: patentes.selected ?? '',
+      rank_level: rankLevel,
+      hide_empty: hideEmpty,
     })
     setSaved(true)
     setToast(true)

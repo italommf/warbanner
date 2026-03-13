@@ -60,6 +60,8 @@ interface BannerStore {
   setSearchTerm: (v: string) => void
   hideEmpty: boolean
   setHideEmpty: (v: boolean) => void
+  rankLevel: string
+  setRankLevel: (v: string) => void
 }
 
 
@@ -122,4 +124,7 @@ export const useBannerStore = create<BannerStore>((set) => ({
 
   hideEmpty: true,
   setHideEmpty: (hideEmpty) => set({ hideEmpty }),
+
+  rankLevel: '',
+  setRankLevel: (rankLevel) => set({ rankLevel }),
 }))

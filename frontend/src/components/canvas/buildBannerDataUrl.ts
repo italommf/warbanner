@@ -8,6 +8,8 @@ export interface BannerComposition {
   insignia: string
   fita: string
   patente: string
+  rank_level?: string
+  hide_empty?: boolean
 }
 
 function loadImage(src: string): Promise<HTMLImageElement | null> {
@@ -71,20 +73,68 @@ export async function buildBannerDataUrl(
   const insigniaCY = fitaY + fitaH / 2
   const insW = 84
   if (insigniaImg) ctx.drawImage(insigniaImg, insigniaCX - insW / 2, insigniaCY - insW / 2, insW, insW)
-  if (marcaImg) ctx.drawImage(marcaImg, insigniaCX - 36, insigniaCY - 36, 72, 72)
+  if (marcaImg) {
+    const mSize = 72 * 1.15 // 82.8
+    ctx.drawImage(marcaImg, insigniaCX - mSize/2, insigniaCY - mSize/2, mSize, mSize)
+  }
 
   const patX = insigniaCX + insW / 2 + 6
-  const patSize = 44
+  const patSize = 39.6
   if (patenteImg) ctx.drawImage(patenteImg, patX, insigniaCY - patSize / 2, patSize, patSize)
 
-  const textX = patX + (patenteImg ? patSize + 8 : 12)
+  const textX = patX + (patenteImg ? patSize + 13 : 17)
   const clanUpper = (banner.clan || '').toUpperCase()
-  ctx.font = '300 12px Warface, "Arial Narrow", Arial'
-  ctx.fillStyle = '#9aafc0'
-  if (clanUpper) ctx.fillText(clanUpper, textX, insigniaCY - 4)
-  ctx.font = '13px Warface, "Arial Narrow", Arial'
-  ctx.fillStyle = '#c8d4e0'
-  if (banner.nick) ctx.fillText(banner.nick, textX, insigniaCY + 13)
+
+  // Apply Shadow & stroke settings
+  ctx.shadowColor = '#000000'
+  ctx.shadowBlur = 3.2
+  ctx.shadowOffsetX = 1.2
+  ctx.shadowOffsetY = 1.2
+  ctx.strokeStyle = '#000000'
+  ctx.lineWidth = 1.5
+
+  const baseNick = banner.nick || 'Nickname'
+  const rankPart = banner.rank_level ? ` [${banner.rank_level}]` : ''
+
+  if (clanUpper || !banner.nick) {
+    // Both exist or empty state
+    ctx.font = '300 14.4px Warface, "Arial Narrow", Arial'
+    ctx.fillStyle = clanUpper ? '#ffffff' : 'rgba(255,255,255,0.2)'
+    const cText = clanUpper || 'Nome do clã'
+    ctx.strokeText(cText, textX, insigniaCY - 6)
+    ctx.fillText(cText, textX, insigniaCY - 6)
+
+    ctx.font = '15.6px Warface, "Arial Narrow", Arial'
+    const baseColor = banner.nick ? '#ffffff' : 'rgba(255,255,255,0.2)'
+    const rankColor = banner.nick ? '#ffe1b2' : 'rgba(255, 225, 178, 0.4)'
+    const yPos = insigniaCY + 15
+
+    // Draw Base Nick
+    ctx.fillStyle = baseColor
+    ctx.strokeText(baseNick, textX, yPos)
+    ctx.fillText(baseNick, textX, yPos)
+
+    if (rankPart) {
+      const nickWidth = ctx.measureText(baseNick).width
+      ctx.fillStyle = rankColor
+      ctx.strokeText(rankPart, textX + nickWidth, yPos)
+      ctx.fillText(rankPart, textX + nickWidth, yPos)
+    }
+  } else {
+    // Only Nickname
+    ctx.font = '15.6px Warface, "Arial Narrow", Arial'
+    const yPos = insigniaCY + 5
+    ctx.fillStyle = '#ffffff'
+    ctx.strokeText(baseNick, textX, yPos)
+    ctx.fillText(baseNick, textX, yPos)
+
+    if (rankPart) {
+      const nickWidth = ctx.measureText(baseNick).width
+      ctx.fillStyle = '#ffe1b2'
+      ctx.strokeText(rankPart, textX + nickWidth, yPos)
+      ctx.fillText(rankPart, textX + nickWidth, yPos)
+    }
+  }
 
   return canvas.toDataURL('image/png')
 }

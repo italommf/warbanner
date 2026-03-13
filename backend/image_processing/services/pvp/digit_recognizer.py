@@ -267,9 +267,8 @@ def extract_rank_from_nickname(roi_crop):
             match = re.search(r'\[(\d+)\]', full_str)
             if match:
                 val = int(match.group(1))
-                limited = min(val, 100)
-                logger.info(f"   {C_GREEN}√ Rank Extraído ({strat_name}):{C_END} {C_BOLD}{limited}{C_END}")
-                return limited
+                logger.info(f"   {C_GREEN}√ Rank Extraído ({strat_name}):{C_END} {C_BOLD}{val}{C_END}")
+                return val
                 
         except Exception:
             continue

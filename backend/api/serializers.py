@@ -5,7 +5,7 @@ from .models import Banner
 class BannerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Banner
-        fields = ['id', 'nick', 'clan', 'marca', 'insignia', 'fita', 'patente', 'created_at']
+        fields = ['id', 'nick', 'clan', 'marca', 'insignia', 'fita', 'patente', 'rank_level', 'hide_empty', 'created_at']
         read_only_fields = ['id', 'created_at']
 
 
@@ -15,7 +15,7 @@ class CommunityBannerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Banner
-        fields = ['id', 'nick', 'clan', 'marca', 'insignia', 'fita', 'patente', 'created_at', 'username', 'avatar']
+        fields = ['id', 'nick', 'clan', 'marca', 'insignia', 'fita', 'patente', 'rank_level', 'hide_empty', 'created_at', 'username', 'avatar']
 
     def get_avatar(self, obj):
         try:

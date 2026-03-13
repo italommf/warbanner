@@ -16,6 +16,7 @@ export function useCanvasDraw(canvasRef: CanvasRef) {
   const fitas     = useBannerStore((s) => s.fitas)
   const patentes  = useBannerStore((s) => s.patentes)
   const noFrame   = useBannerStore((s) => s.noFrame)
+  const rankLevel = useBannerStore((s) => s.rankLevel)
   const { data }  = useItems()
   const imgCache  = useImageCache()
 
@@ -71,29 +72,85 @@ export function useCanvasDraw(canvasRef: CanvasRef) {
     // Layer 3: MARCA
     const marcaImg = imgCache.get('marcas')
     if (marcaImg) {
-      ctx.drawImage(marcaImg, insigniaCX - 36, insigniaCY - 36, 72, 72)
+      const mSize = 72 * 1.15 // 82.8
+      ctx.drawImage(marcaImg, insigniaCX - mSize/2, insigniaCY - mSize/2, mSize, mSize)
     }
 
     // Layer 4: PATENTE
     const patenteImg = imgCache.get('patentes')
     const patX = insigniaCX + insW / 2 + 6
-    const patSize = 44
+    const patSize = 39.6
     const patY = insigniaCY - patSize / 2
     if (patenteImg) {
       ctx.drawImage(patenteImg, patX, patY, patSize, patSize)
     }
 
     // Texto
-    const textX = patX + (patenteImg ? patSize + 8 : 12)
-    const hasAnyText = !!(nick || clan)
+    const textX = patX + (patenteImg ? patSize + 13 : 17)
     const clanUpper = (clan || '').toUpperCase()
-    ctx.font = '300 12px Warface, "Arial Narrow", Arial'
-    ctx.fillStyle = clanUpper ? '#9aafc0' : 'rgba(122,149,171,0.4)'
-    if (clanUpper || !hasAnyText) ctx.fillText(clanUpper || 'Nome do clã', textX, insigniaCY - 4)
 
-    ctx.font = '13px Warface, "Arial Narrow", Arial'
-    ctx.fillStyle = nick ? '#c8d4e0' : 'rgba(122,149,171,0.4)'
-    if (nick || !hasAnyText) ctx.fillText(nick || 'Nickname', textX, insigniaCY + 13)
+    ctx.shadowColor = '#000000'
+    ctx.shadowBlur = 3.2
+    ctx.shadowOffsetX = 1.2
+    ctx.shadowOffsetY = 1.2
+    ctx.strokeStyle = '#000000'
+    ctx.lineWidth = 1.5
+
+    const baseNick = nick || 'Nickname'
+    const rankPart = rankLevel ? ` [${rankLevel}]` : ''
+
+    if (clanUpper || !nick) {
+      // Both exist or empty state
+      ctx.font = '300 14.4px Warface, "Arial Narrow", Arial'
+      ctx.fillStyle = clanUpper ? '#ffffff' : 'rgba(255,255,255,0.2)'
+      const cText = clanUpper || 'Nome do clã'
+      ctx.strokeText(cText, textX, insigniaCY - 6)
+      ctx.fillText(cText, textX, insigniaCY - 6)
+
+      ctx.font = '15.6px Warface, "Arial Narrow", Arial'
+      const baseColor = nick ? '#ffffff' : 'rgba(255,255,255,0.2)'
+      const rankColor = nick ? '#ffe1b2' : 'rgba(255, 225, 178, 0.4)'
+      const yPos = insigniaCY + 15
+
+      // Draw Base Nick
+      ctx.fillStyle = baseColor
+      ctx.strokeText(baseNick, textX, yPos)
+      ctx.fillText(baseNick, textX, yPos)
+
+      // Draw Rank if available
+      if (rankPart) {
+        const nickWidth = ctx.measureText(baseNick).width
+        ctx.fillStyle = rankColor
+        ctx.strokeText(rankPart, textX + nickWidth, yPos)
+        ctx.fillText(rankPart, textX + nickWidth, yPos)
+      }
+    } else {
+      // Only Nickname (Centered vertically)
+      ctx.font = '15.6px Warface, "Arial Narrow", Arial'
+      const yPos = insigniaCY + 5
+
+      // Draw Base Nick
+      ctx.fillStyle = '#ffffff'
+      ctx.strokeText(baseNick, textX, yPos)
+      ctx.fillText(baseNick, textX, yPos)
+
+      // Draw Rank if available
+      if (rankPart) {
+        const nickWidth = ctx.measureText(baseNick).width
+        ctx.fillStyle = '#ffe1b2'
+        ctx.strokeText(rankPart, textX + nickWidth, yPos)
+        ctx.fillText(rankPart, textX + nickWidth, yPos)
+      }
+    }
+
+    // Reset shadow & stroke
+    ctx.shadowColor = 'transparent'
+    ctx.shadowBlur = 0
+    ctx.shadowOffsetX = 0
+    ctx.shadowOffsetY = 0
+    ctx.strokeStyle = 'transparent'
+    ctx.lineWidth = 0
+
   }
 
   drawRef.current = draw
@@ -130,7 +187,7 @@ export function useCanvasDraw(canvasRef: CanvasRef) {
   useEffect(() => {
     draw()
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [nick, clan, noFrame])
+  }, [nick, clan, noFrame, rankLevel])
 
   // Aguardar fonte antes do primeiro draw
   useEffect(() => {

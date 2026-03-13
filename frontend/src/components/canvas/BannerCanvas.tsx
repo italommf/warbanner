@@ -13,6 +13,8 @@ export function BannerCanvas() {
   const setNick = useBannerStore((s) => s.setNick)
   const clan = useBannerStore((s) => s.clan)
   const setClan = useBannerStore((s) => s.setClan)
+  const rankLevel = useBannerStore((s) => s.rankLevel)
+  const setRankLevel = useBannerStore((s) => s.setRankLevel)
 
   useCanvasDraw(canvasRef)
 
@@ -32,7 +34,6 @@ export function BannerCanvas() {
       <div className={styles.wrapper}>
         <canvas ref={canvasRef} width={520} height={110} className={styles.canvas} />
 
-        <div className={styles.controlsLayout}>
           <div className={styles.inputsGroup}>
             <input
               type="text"
@@ -50,17 +51,34 @@ export function BannerCanvas() {
               value={clan}
               onChange={(e) => setClan(e.target.value)}
             />
-          </div>
 
-          <label className={styles.noFrameLabel}>
             <input
-              type="checkbox"
-              checked={hideEmpty}
-              onChange={(e) => setHideEmpty(e.target.checked)}
+              type="text"
+              className={styles.rankInputSmall}
+              placeholder="Rank"
+              value={rankLevel}
+              onChange={(e) => {
+                const val = e.target.value.replace(/\D/g, '')
+                if (val === '') {
+                  setRankLevel('')
+                  return
+                }
+                const num = parseInt(val, 10)
+                if (num >= 1 && num <= 1000) {
+                  setRankLevel(num.toString())
+                }
+              }}
             />
-            Sem nome ou Desc
-          </label>
-        </div>
+
+            <label className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                checked={hideEmpty}
+                onChange={(e) => setHideEmpty(e.target.checked)}
+              />
+              Sem nome ou Desc
+            </label>
+          </div>
       </div>
     </motion.section>
   )

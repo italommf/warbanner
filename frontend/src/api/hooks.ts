@@ -40,6 +40,8 @@ export interface BannerRecord {
   insignia: string
   fita: string
   patente: string
+  rank_level: string
+  hide_empty: boolean
   created_at: string
 }
 
@@ -50,6 +52,8 @@ export interface SavePayload {
   insignia: string
   fita: string
   patente: string
+  rank_level: string
+  hide_empty: boolean
 }
 
 // ── Auth types ──────────────────────────────────────────────────────────────
@@ -139,6 +143,8 @@ export interface CommunityBanner {
   insignia: string
   fita: string
   patente: string
+  rank_level: string
+  hide_empty: boolean
   created_at: string
   username: string
   avatar: string | null

@@ -36,8 +36,10 @@
 
 .inputsGroup {
   display: flex;
-  gap: 8px;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .input {
@@ -59,7 +61,56 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-.noFrameLabel {
+.rankInputSmall {
+  width: 50px;
+  flex: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  padding: 8px 0;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.rankInputSmall:focus {
+  border-color: var(--orange);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.rankInputWrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0 12px;
+  transition: border-color 0.15s, background 0.15s;
+  min-width: 140px;
+}
+
+.rankInputWrapper:focus-within {
+  border-color: var(--orange);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.rankInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  padding: 8px 0;
+  outline: none;
+}
+
+.checkboxLabel {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -72,15 +123,15 @@
   white-space: nowrap;
 }
 
-.noFrameLabel:hover {
+.checkboxLabel:hover {
   color: var(--text);
 }
 
-.noFrameLabel input {
+.checkboxLabel input {
   appearance: none;
   -webkit-appearance: none;
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   border: 1px solid var(--border2);
   border-radius: 3px;
   background: var(--bg2);
@@ -90,12 +141,12 @@
   transition: border-color 0.15s, background 0.15s;
 }
 
-.noFrameLabel input:checked {
+.checkboxLabel input:checked {
   background: var(--orange);
   border-color: var(--orange);
 }
 
-.noFrameLabel input:checked::after {
+.checkboxLabel input:checked::after {
   content: '';
   position: absolute;
   left: 3px;

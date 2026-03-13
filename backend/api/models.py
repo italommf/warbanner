@@ -123,6 +123,8 @@ class Banner(models.Model):
     insignia = models.CharField(max_length=255, blank=True)
     fita     = models.CharField(max_length=255, blank=True)
     patente  = models.CharField(max_length=255, blank=True)
+    rank_level = models.CharField(max_length=10, blank=True)
+    hide_empty = models.BooleanField(default=True)
     banner_data = models.TextField(blank=True)  # base64 canvas image
     created_at  = models.DateTimeField(auto_now_add=True)
 

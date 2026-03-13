@@ -1,12 +1,10 @@
-# ==============================================================================
-# ROI MAP - DPI AWARE (1080p and 4K support)
-# ==============================================================================
+
 
 def get_main_rois(width=1920):
     """
     Retorna o mapa de ROIs principais baseado na resolução da imagem.
     """
-    if width > 2500: # 4K Mode
+    if width > 2500:
         return {
             "nickname":       {"x": 450,  "y": 416,  "w": 900, "h": 148, "zoom": 1,   "base": 3840},
             "mode":           {"x": 219,  "y": 704,  "w": 63,  "h": 31,  "zoom": 2.0, "base": 3840},
@@ -17,7 +15,7 @@ def get_main_rois(width=1920):
             "total_hours":    {"x": 1300, "y": 1030, "w": 360, "h": 120, "zoom": 1.0, "base": 3840},
         }
     
-    # Default 1080p Mode
+
     return {
         "nickname":       {"x": 225, "y": 208, "w": 450, "h": 74, "zoom": 1,   "base": 1920},
         "mode":           {"x": 80,  "y": 320, "w": 280, "h": 80, "zoom": 4.0, "base": 1920},
@@ -28,14 +26,14 @@ def get_main_rois(width=1920):
         "total_hours":    {"x": 650, "y": 515, "w": 180, "h": 60, "zoom": 1.5, "base": 1920},
     }
 
-# Horas Totais
+
 ROI_TOTAL_HOURS = {"x": 650, "y": 515, "w": 180, "h": 60, "zoom": 1.5, "base": 1920}
 
-# Marcadores de Layout para Validação de Modo
-ROI_PVP_MARKER = {"x": 95, "y": 630, "w": 300, "h": 50, "zoom": 1.0, "base": 1920} # "Melhor classificação"
-ROI_PVE_MARKER = {"x": 95, "y": 700, "w": 300, "h": 50, "zoom": 1.0, "base": 1920} # "Missões"
 
-# Fallback para compatibilidade com código antigo (vai ser atualizado nos extractors)
+ROI_PVP_MARKER = {"x": 95, "y": 630, "w": 300, "h": 50, "zoom": 1.0, "base": 1920} 
+ROI_PVE_MARKER = {"x": 95, "y": 700, "w": 300, "h": 50, "zoom": 1.0, "base": 1920} 
+
+
 MAIN_ROIS = get_main_rois(1920)
 
 def get_pve_rois(width=1920):
@@ -54,8 +52,7 @@ def get_pve_rois(width=1920):
 PVE_ROIS = get_pve_rois(1920)
 
 def get_class_rois(width=1920):
-    # Por simplicidade, as classes usam a mesma lógica DPI-aware automática do crop_roi
-    # Se precisar de ajuste fino 4K, podemos expandir aqui.
+
     scale = 2.0 if width > 2500 else 1.0
     base = 3840 if width > 2500 else 1920
     
@@ -87,11 +84,11 @@ def get_challenge_slots(width=1920):
     Usamos a base 1920 para todos, e o crop_roi escala para 4K automaticamente.
     """
     return [
-        {"x": 102, "y": 372,  "w": 518, "h": 26, "zoom": 1, "base": 1920}, 
+        {"x": 102, "y": 372,   "w": 518, "h": 26, "zoom": 1, "base": 1920}, 
         {"x": 102, "y": 552,   "w": 518, "h": 26, "zoom": 1, "base": 1920}, 
         {"x": 102, "y": 729,   "w": 518, "h": 26, "zoom": 1, "base": 1920}, 
         {"x": 102, "y": 909,   "w": 518, "h": 26, "zoom": 1, "base": 1920}, 
-        
+    
         {"x": 647, "y": 372,   "w": 518, "h": 26, "zoom": 1, "base": 1920}, 
         {"x": 647, "y": 552,   "w": 518, "h": 26, "zoom": 1, "base": 1920}, 
         {"x": 647, "y": 729,   "w": 518, "h": 26, "zoom": 1, "base": 1920},

@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 from .services.pvp.pvp_pipeline import run_pvp_pipeline
 from .services.pvp.pve_pipeline import run_pve_pipeline
 from .services.pvp.challenges_pipeline import run_challenges_pipeline
-from .services.pvp.parsers import parse_nickname_and_rank
+from .services.pvp.parsers import parse_nickname_and_rank, level_to_rank_idx
 
 
 from .log_styles import (
@@ -73,8 +73,8 @@ def _process_single_image(image_obj):
                     _, rank_idx = parse_nickname_and_rank(result["nickname"])
                 
                 if result.get("nickname_rank") is not None:
-                    rank_idx = result["nickname_rank"]
-                    logger.info(f"{C_CYAN}[MATCH-RANK]{C_END} Usando rank visual: {C_BOLD}{rank_idx}{C_END}")
+                    rank_idx = level_to_rank_idx(result["nickname_rank"])
+                    logger.info(f"{C_CYAN}[MATCH-RANK]{C_END} Usando rank visual (nível {result['nickname_rank']}): {C_BOLD}{rank_idx}{C_END}")
                 
                 updates['game_rank_idx'] = rank_idx + 1 # 1-based
                 from api.views import scan_category
@@ -316,7 +316,7 @@ def apply_ocr_updates(image_obj, result):
             _, rank_idx = parse_nickname_and_rank(result["nickname"])
         
         if result.get("nickname_rank") is not None:
-             rank_idx = result["nickname_rank"]
+             rank_idx = level_to_rank_idx(result["nickname_rank"])
              
         # Atualiza apenas Rank no Perfil
         profile.game_rank_idx = rank_idx + 1 # 1-based

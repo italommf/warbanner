@@ -5,6 +5,33 @@ def clean_text(text):
     if not text: return ""
     return text.strip().replace('\n', ' ').replace('\r', '')
 
+def level_to_rank_idx(level):
+    """
+    Mapping for Warface ranks:
+    - 1-100: Standard ranks (index 0-99)
+    - 101-199: Prestige 1 (index 100)
+    - 200-299: Prestige 2 (index 101)
+    - 300-399: Prestige 3 (index 102)
+    - 400-499: Prestige 4 (index 103)
+    - 500-999: Prestige 5 (index 104)
+    - 1000+:   Prestige 6 (index 105)
+    """
+    if level <= 100:
+        return max(0, level - 1)
+    elif level <= 199:
+        return 100
+    elif level <= 299:
+        return 101
+    elif level <= 399:
+        return 102
+    elif level <= 499:
+        return 103
+    elif level <= 999:
+        return 104
+    else:
+        return 105
+
+
 def parse_nickname_and_rank(raw_nick):
     """
     Extrai o nickname limpo e o rank (patente) do texto do OCR.
@@ -19,8 +46,7 @@ def parse_nickname_and_rank(raw_nick):
     match = re.search(r'\[\s*(\d+)\s*\]', raw_nick)
     if match:
         rank_num = int(match.group(1))
-        # Clamp: 1-100, converte para 0-indexed (0-99)
-        rank_idx = max(0, min(99, rank_num - 1))
+        rank_idx = level_to_rank_idx(rank_num)
         # Remove o [XX] do nickname
         nickname = raw_nick[:match.start()].strip()
     else:
