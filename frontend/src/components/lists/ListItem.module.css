@@ -10,6 +10,9 @@
   position: relative;
   overflow: hidden;
   border-radius: 6px;
+  font-family: "archivo", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
 .listItem::before {
@@ -48,6 +51,9 @@
 }
 
 .itemName {
+  font-family: "archivo", sans-serif;
+  font-weight: 100;
+  font-style: normal;
   position: absolute;
   top: 8px;
   left: 12px;

@@ -83,7 +83,7 @@ export async function buildBannerDataUrl(
   if (patenteImg) ctx.drawImage(patenteImg, patX, insigniaCY - patSize / 2, patSize, patSize)
 
   const textX = patX + (patenteImg ? patSize + 13 : 17)
-  const clanUpper = (banner.clan || '').toUpperCase()
+  const clanText = banner.clan || ''
 
   // Apply Shadow & stroke settings
   ctx.shadowColor = '#000000'
@@ -96,15 +96,15 @@ export async function buildBannerDataUrl(
   const baseNick = banner.nick || 'Nickname'
   const rankPart = banner.rank_level ? ` [${banner.rank_level}]` : ''
 
-  if (clanUpper || !banner.nick) {
+  if (clanText || !banner.nick) {
     // Both exist or empty state
-    ctx.font = '300 14.4px Warface, "Arial Narrow", Arial'
-    ctx.fillStyle = clanUpper ? '#ffffff' : 'rgba(255,255,255,0.2)'
-    const cText = clanUpper || 'Nome do clã'
+    ctx.font = '100 13.4px "archivo", sans-serif'
+    ctx.fillStyle = clanText ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.2)'
+    const cText = clanText || 'Nome do clã'
     ctx.strokeText(cText, textX, insigniaCY - 6)
     ctx.fillText(cText, textX, insigniaCY - 6)
 
-    ctx.font = '15.6px Warface, "Arial Narrow", Arial'
+    ctx.font = '400 15.6px "archivo", sans-serif'
     const baseColor = banner.nick ? '#ffffff' : 'rgba(255,255,255,0.2)'
     const rankColor = banner.nick ? '#ffe1b2' : 'rgba(255, 225, 178, 0.4)'
     const yPos = insigniaCY + 15
@@ -122,7 +122,7 @@ export async function buildBannerDataUrl(
     }
   } else {
     // Only Nickname
-    ctx.font = '15.6px Warface, "Arial Narrow", Arial'
+    ctx.font = '400 15.6px "archivo", sans-serif'
     const yPos = insigniaCY + 5
     ctx.fillStyle = '#ffffff'
     ctx.strokeText(baseNick, textX, yPos)

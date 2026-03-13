@@ -87,7 +87,7 @@ export function useCanvasDraw(canvasRef: CanvasRef) {
 
     // Texto
     const textX = patX + (patenteImg ? patSize + 13 : 17)
-    const clanUpper = (clan || '').toUpperCase()
+    const clanText = clan || ''
 
     ctx.shadowColor = '#000000'
     ctx.shadowBlur = 3.2
@@ -99,15 +99,15 @@ export function useCanvasDraw(canvasRef: CanvasRef) {
     const baseNick = nick || 'Nickname'
     const rankPart = rankLevel ? ` [${rankLevel}]` : ''
 
-    if (clanUpper || !nick) {
+    if (clanText || !nick) {
       // Both exist or empty state
-      ctx.font = '300 14.4px Warface, "Arial Narrow", Arial'
-      ctx.fillStyle = clanUpper ? '#ffffff' : 'rgba(255,255,255,0.2)'
-      const cText = clanUpper || 'Nome do clã'
+      ctx.font = '100 13.4px "archivo", sans-serif'
+      ctx.fillStyle = clanText ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.2)'
+      const cText = clanText || 'Nome do clã'
       ctx.strokeText(cText, textX, insigniaCY - 6)
       ctx.fillText(cText, textX, insigniaCY - 6)
 
-      ctx.font = '15.6px Warface, "Arial Narrow", Arial'
+      ctx.font = '400 15.6px "archivo", sans-serif'
       const baseColor = nick ? '#ffffff' : 'rgba(255,255,255,0.2)'
       const rankColor = nick ? '#ffe1b2' : 'rgba(255, 225, 178, 0.4)'
       const yPos = insigniaCY + 15
@@ -126,7 +126,7 @@ export function useCanvasDraw(canvasRef: CanvasRef) {
       }
     } else {
       // Only Nickname (Centered vertically)
-      ctx.font = '15.6px Warface, "Arial Narrow", Arial'
+      ctx.font = '400 15.6px "archivo", sans-serif'
       const yPos = insigniaCY + 5
 
       // Draw Base Nick
