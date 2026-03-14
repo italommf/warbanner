@@ -163,6 +163,18 @@
   justify-content: flex-end;
 }
 
+.desktopOnlyWidgets {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 800px) {
+  .desktopOnlyWidgets {
+    display: none;
+  }
+}
+
 /* ── Icon buttons (music, wallpaper) ─────────────────────────────────────── */
 
 .iconButton {
@@ -1060,4 +1072,37 @@
 .loginBtn:hover {
   filter: brightness(1.15);
   transform: translateY(-1px);
+}
+
+.musicInline,
+.wallpaperInline {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 20px;
+}
+
+.sidebarWidgets {
+  margin-bottom: 30px;
+}
+
+.musicInline .musicMain {
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.musicInline .musicContent {
+  width: 100%;
+}
+
+.musicInline .musicGif {
+  height: 120px;
+}
+
+.wallpaperInline .wallpaperGrid {
+  max-height: none;
+  padding-bottom: 0;
 }

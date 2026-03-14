@@ -132,7 +132,11 @@ function UserWidget() {
 
 // ── Music Widget ────────────────────────────────────────────────────────────
 
-function MusicWidget() {
+interface MusicWidgetProps {
+  inline?: boolean
+}
+
+function MusicWidget({ inline }: MusicWidgetProps) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   const { isPlaying, isMuted, queue, currentIndex, volume, togglePlay, toggleMute, next, prev, setVolume, playKey } = useMusicStore()
@@ -156,12 +160,66 @@ function MusicWidget() {
   }, [playKey, gifs.length])
 
   useEffect(() => {
+    if (inline) return
     function handler(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
     }
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
-  }, [])
+  }, [inline])
+
+  const content = (
+    <div className={styles.musicMain}>
+      {currentGif && (
+        <div className={styles.musicGif}>
+          <img src={currentGif} alt="gif" />
+        </div>
+      )}
+
+      <div className={styles.musicContent}>
+        <div className={styles.trackInfo}>
+          <span className={styles.nowPlaying}>TOCANDO AGORA</span>
+          <span className={styles.trackName}>{currentTrack?.name || '---'}</span>
+        </div>
+
+        <div className={styles.musicControls}>
+          <button onClick={prev} className={styles.btnSm} title="Anterior">◀◀</button>
+          <button
+            onClick={togglePlay}
+            className={`${styles.btnPlay} ${isPlaying ? styles.btnPlayActive : ''}`}
+            title={isPlaying ? 'Pausar' : 'Tocar'}
+          >
+            {isPlaying ? '❙❙' : '▶'}
+          </button>
+          <button onClick={next} className={styles.btnSm} title="Próxima">▶▶</button>
+        </div>
+
+        <div className={styles.volumeRow}>
+          <button onClick={toggleMute} className={styles.muteBtn} title={isMuted ? 'Ativar som' : 'Mutar'}>
+            {isMuted ? <IconMute /> : <IconVolume />}
+          </button>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={volume}
+            onChange={(e) => setVolume(parseFloat(e.target.value))}
+            className={styles.volumeSlider}
+          />
+        </div>
+      </div>
+    </div>
+  )
+
+  if (inline) {
+    return (
+      <div className={styles.musicInline}>
+        <span className={styles.dropdownTitle}>PLAYER DE MÚSICA</span>
+        {content}
+      </div>
+    )
+  }
 
   return (
     <div className={styles.musicWidget} ref={ref}>
@@ -183,47 +241,7 @@ function MusicWidget() {
             exit={{ opacity: 0, y: -6, scale: 0.95 }}
             transition={{ duration: 0.15 }}
           >
-            <div className={styles.musicMain}>
-              {currentGif && (
-                <div className={styles.musicGif}>
-                  <img src={currentGif} alt="gif" />
-                </div>
-              )}
-
-              <div className={styles.musicContent}>
-                <div className={styles.trackInfo}>
-                  <span className={styles.nowPlaying}>TOCANDO AGORA</span>
-                  <span className={styles.trackName}>{currentTrack?.name || '---'}</span>
-                </div>
-
-                <div className={styles.musicControls}>
-                  <button onClick={prev} className={styles.btnSm} title="Anterior">◀◀</button>
-                  <button
-                    onClick={togglePlay}
-                    className={`${styles.btnPlay} ${isPlaying ? styles.btnPlayActive : ''}`}
-                    title={isPlaying ? 'Pausar' : 'Tocar'}
-                  >
-                    {isPlaying ? '❙❙' : '▶'}
-                  </button>
-                  <button onClick={next} className={styles.btnSm} title="Próxima">▶▶</button>
-                </div>
-
-                <div className={styles.volumeRow}>
-                  <button onClick={toggleMute} className={styles.muteBtn} title={isMuted ? 'Ativar som' : 'Mutar'}>
-                    {isMuted ? <IconMute /> : <IconVolume />}
-                  </button>
-                  <input
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.01"
-                    value={volume}
-                    onChange={(e) => setVolume(parseFloat(e.target.value))}
-                    className={styles.volumeSlider}
-                  />
-                </div>
-              </div>
-            </div>
+            {content}
           </motion.div>
         )}
       </AnimatePresence>
@@ -233,7 +251,11 @@ function MusicWidget() {
 
 // ── Wallpaper Widget ─────────────────────────────────────────────────────
 
-function WallpaperWidget() {
+interface WallpaperWidgetProps {
+  inline?: boolean
+}
+
+function WallpaperWidget({ inline }: WallpaperWidgetProps) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   const { bgImage, setBgImage } = useBannerStore()
@@ -249,12 +271,40 @@ function WallpaperWidget() {
   }, [bgImage, videos, setBgImage])
 
   useEffect(() => {
+    if (inline) return
     function handler(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
     }
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
-  }, [])
+  }, [inline])
+
+  const content = (
+    <>
+      <span className={styles.dropdownTitle}>WALLPAPERS ANIMADOS</span>
+      <div className={styles.wallpaperGrid}>
+        {videos.map((v) => (
+          <button
+            key={v.url}
+            className={`${styles.wallThumb} ${bgImage === v.url ? styles.wallThumbActive : ''}`}
+            onClick={() => setBgImage(v.url)}
+          >
+            <video src={v.url} muted autoPlay loop playsInline />
+          </button>
+        ))}
+        <button
+          className={`${styles.wallThumb} ${styles.wallThumbNone} ${!bgImage || !VIDEO_EXT.test(bgImage) ? styles.wallThumbActive : ''}`}
+          onClick={() => setBgImage(null)}
+        >
+          <span className={styles.noneLabel}>—</span>
+        </button>
+      </div>
+    </>
+  )
+
+  if (inline) {
+    return <div className={styles.wallpaperInline}>{content}</div>
+  }
 
   return (
     <div className={styles.wallpaperWidget} ref={ref}>
@@ -279,24 +329,7 @@ function WallpaperWidget() {
             exit={{ opacity: 0, y: -6, scale: 0.95 }}
             transition={{ duration: 0.15 }}
           >
-            <span className={styles.dropdownTitle}>WALLPAPERS ANIMADOS</span>
-            <div className={styles.wallpaperGrid}>
-              {videos.map((v) => (
-                <button
-                  key={v.url}
-                  className={`${styles.wallThumb} ${bgImage === v.url ? styles.wallThumbActive : ''}`}
-                  onClick={() => setBgImage(v.url)}
-                >
-                  <video src={v.url} muted autoPlay loop playsInline />
-                </button>
-              ))}
-              <button
-                className={`${styles.wallThumb} ${styles.wallThumbNone} ${!bgImage || !VIDEO_EXT.test(bgImage) ? styles.wallThumbActive : ''}`}
-                onClick={() => setBgImage(null)}
-              >
-                <span className={styles.noneLabel}>—</span>
-              </button>
-            </div>
+            {content}
           </motion.div>
         )}
       </AnimatePresence>
@@ -421,8 +454,10 @@ export function TopNav() {
         </nav>
 
         <div className={styles.player}>
-          <MusicWidget />
-          <WallpaperWidget />
+          <div className={styles.desktopOnlyWidgets}>
+            <MusicWidget />
+            <WallpaperWidget />
+          </div>
           <UserWidget />
         </div>
       </motion.header>
@@ -451,6 +486,12 @@ export function TopNav() {
                 </div>
                 <button className={styles.closeBtn} onClick={() => setSidebarOpen(false)}>✕</button>
               </div>
+
+              <div className={styles.sidebarWidgets}>
+                <MusicWidget inline />
+                <WallpaperWidget inline />
+              </div>
+
               <nav className={styles.sidebarLinks}>
                 <NavLink
                   to="/"
@@ -508,7 +549,7 @@ export function TopNav() {
   )
 }
 
-// ── Modal de Editar Perfil (Copiado de BottomBar para evitar circular dep) ─────
+// ── Modal de Editar Perfil ───────────────────────────────────────────────────
 
 type ProfileTab = 'warface' | 'warbanner'
 
