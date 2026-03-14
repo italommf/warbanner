@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useBannerStore } from '@/store/bannerStore'
 import type { Category } from '@/store/bannerStore'
 import type { Item } from '@/api/hooks'
@@ -38,12 +38,12 @@ interface Props {
   isLoading?: boolean
 }
 
-
 export function ListColumn({ category, items, columnIndex, isLoading = false }: Props) {
   const state = useBannerStore((s) => s[category])
   const selectItem = useBannerStore((s) => s.selectItem)
 
   const [modalOpen, setModalOpen] = useState(false)
+  const [collapsed, setCollapsed] = useState(false)
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
   const sentinelRef = useRef<HTMLDivElement>(null)
 
@@ -58,6 +58,7 @@ export function ListColumn({ category, items, columnIndex, isLoading = false }: 
 
   // IntersectionObserver: carrega mais ao chegar perto do fim
   useEffect(() => {
+    if (collapsed) return
     const sentinel = sentinelRef.current
     if (!sentinel) return
     const observer = new IntersectionObserver(
@@ -66,7 +67,7 @@ export function ListColumn({ category, items, columnIndex, isLoading = false }: 
     )
     observer.observe(sentinel)
     return () => observer.disconnect()
-  }, [loadMore])
+  }, [loadMore, collapsed])
 
   const visibleItems = items.slice(0, visibleCount)
   const total = items.length
@@ -76,43 +77,74 @@ export function ListColumn({ category, items, columnIndex, isLoading = false }: 
 
   return (
     <motion.div
-      className={styles.column}
+      className={`${styles.column} ${collapsed ? styles.collapsed : ''}`}
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: columnIndex * 0.05 }}
     >
-      <div className={styles.header}>
+      <div 
+        className={styles.header} 
+        onClick={() => window.innerWidth < 800 && setCollapsed(!collapsed)}
+        style={{ cursor: 'pointer' }}
+      >
         <span className={styles.title}>
           {LABELS[category]}{' '}
           <span className={styles.count}>{selectedIndex}/{total}</span>
         </span>
-        <button className={styles.expandBtn} title="Expandir" onClick={() => setModalOpen(true)}>⛶</button>
+        <div className={styles.headerActions}>
+          <button 
+            className={styles.expandBtn} 
+            title="Expandir" 
+            onClick={(e) => { e.stopPropagation(); setModalOpen(true) }}
+          >
+            ⛶
+          </button>
+          <button 
+            className={styles.collapseBtn} 
+            title={collapsed ? 'Expandir' : 'Recolher'} 
+            onClick={(e) => { e.stopPropagation(); setCollapsed(!collapsed) }}
+          >
+            {collapsed ? '▼' : '▲'}
+          </button>
+        </div>
       </div>
 
       {modalOpen && (
         <ListModal category={category} items={items} onClose={() => setModalOpen(false)} />
       )}
 
-      {isLoading ? (
-        <SkeletonList />
-      ) : total === 0 ? (
-        <div className={styles.empty}>
-          Sem {LABELS[category].toLowerCase()} disponíveis
-        </div>
-      ) : (
-        <div className={styles.items}>
-          {visibleItems.map((item) => (
-            <ListItem
-              key={item.filename}
-              item={item}
-              category={category}
-              isSelected={state.selected === item.filename}
-              onClick={() => selectItem(category, item.filename)}
-            />
-          ))}
-          {visibleCount < total && <div ref={sentinelRef} className={styles.sentinel} />}
-        </div>
-      )}
+      <AnimatePresence initial={false}>
+        {!collapsed && (
+          <motion.div 
+            className={styles.itemsWrapper}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+          >
+            {isLoading ? (
+              <SkeletonList />
+            ) : total === 0 ? (
+              <div className={styles.empty}>
+                Sem {LABELS[category].toLowerCase()} disponíveis
+              </div>
+            ) : (
+              <div className={styles.items}>
+                {visibleItems.map((item) => (
+                  <ListItem
+                    key={item.filename}
+                    item={item}
+                    category={category}
+                    isSelected={state.selected === item.filename}
+                    onClick={() => selectItem(category, item.filename)}
+                  />
+                ))}
+                {visibleCount < total && <div ref={sentinelRef} className={styles.sentinel} />}
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }

@@ -8,10 +8,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 4px 8px;
+  padding: 8px 10px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 4px;
   flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.header:hover {
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .title {
@@ -21,6 +26,13 @@
   font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--text2);
+  user-select: none;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .count {
@@ -50,11 +62,47 @@
   color: var(--text);
 }
 
+.collapseBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  width: 24px;
+  height: 24px;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  border-radius: 4px;
+}
+
+.collapseBtn:hover {
+  border-color: var(--border2);
+  color: var(--text);
+}
+
+.itemsWrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+}
+
+.collapsed .header {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.collapsed {
+  flex: 0 0 auto !important;
+}
+
 .items {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   flex: 1;
   scrollbar-width: thin;
