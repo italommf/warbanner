@@ -318,91 +318,183 @@ function LockIcon() {
 
 export function TopNav() {
   const isLoggedIn = !!useAuthStore((s) => s.user)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <motion.header
-      className={styles.nav}
-      initial={{ y: -52, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.3, ease: 'easeOut' }}
-    >
-      <div className={styles.left}>
-        <div className={styles.logo}>
-          <span className={styles.logoWar}>WAR</span>
-          <span className={styles.logoFace}>BANNER</span>
+    <>
+      <motion.header
+        className={styles.nav}
+        initial={{ y: -52, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+      >
+        <div className={styles.left}>
+          <button
+            className={styles.burgerBtn}
+            onClick={() => setSidebarOpen(true)}
+            aria-label="Menu"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+          <div className={styles.logo}>
+            <span className={styles.logoWar}>WAR</span>
+            <span className={styles.logoFace}>BANNER</span>
+          </div>
         </div>
-      </div>
 
-      <nav className={styles.links}>
-        <NavLink
-          to="/"
-          end
-          className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
-        >
-          CRIAR BANNER
-        </NavLink>
-        {isLoggedIn ? (
+        <nav className={`${styles.links} ${styles.desktopOnly}`}>
           <NavLink
-            to="/historico"
+            to="/"
+            end
             className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
           >
-            BANNERS SALVOS
+            CRIAR BANNER
           </NavLink>
-        ) : (
-          <div className={styles.lockedNav}>
-            <span className={styles.navItemLocked}>
-              <LockIcon />
+          {isLoggedIn ? (
+            <NavLink
+              to="/historico"
+              className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+            >
               BANNERS SALVOS
-            </span>
-            <div className={styles.navTooltip}>
-              Faça login para ter acesso aos banners salvos
+            </NavLink>
+          ) : (
+            <div className={styles.lockedNav}>
+              <span className={styles.navItemLocked}>
+                <LockIcon />
+                BANNERS SALVOS
+              </span>
+              <div className={styles.navTooltip}>
+                Faça login para ter acesso aos banners salvos
+              </div>
             </div>
-          </div>
-        )}
-        {isLoggedIn ? (
-          <NavLink
-            to="/guardar"
-            className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
-          >
-            MEU WARFACE
-          </NavLink>
-        ) : (
-          <div className={styles.lockedNav}>
-            <span className={styles.navItemLocked}>
-              <LockIcon />
+          )}
+          {isLoggedIn ? (
+            <NavLink
+              to="/guardar"
+              className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+            >
               MEU WARFACE
-            </span>
-            <div className={styles.navTooltip}>
-              Faca login para salvar seus desafios
+            </NavLink>
+          ) : (
+            <div className={styles.lockedNav}>
+              <span className={styles.navItemLocked}>
+                <LockIcon />
+                MEU WARFACE
+              </span>
+              <div className={styles.navTooltip}>
+                Faca login para salvar seus desafios
+              </div>
             </div>
-          </div>
-        )}
-        {isLoggedIn ? (
-          <NavLink
-            to="/comunidade"
-            className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
-          >
-            COMUNIDADE
-          </NavLink>
-        ) : (
-          <div className={styles.lockedNav}>
-            <span className={styles.navItemLocked}>
-              <LockIcon />
+          )}
+          {isLoggedIn ? (
+            <NavLink
+              to="/comunidade"
+              className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+            >
               COMUNIDADE
-            </span>
-            <div className={styles.navTooltip}>
-              Faça login para ver a comunidade e rankings
+            </NavLink>
+          ) : (
+            <div className={styles.lockedNav}>
+              <span className={styles.navItemLocked}>
+                <LockIcon />
+                COMUNIDADE
+              </span>
+              <div className={styles.navTooltip}>
+                Faça login para ver a comunidade e rankings
+              </div>
             </div>
-          </div>
-        )}
-      </nav>
+          )}
+        </nav>
 
-      <div className={styles.player}>
-        <MusicWidget />
-        <WallpaperWidget />
-        <UserWidget />
-      </div>
-    </motion.header>
+        <div className={styles.player}>
+          <MusicWidget />
+          <WallpaperWidget />
+          <UserWidget />
+        </div>
+      </motion.header>
+
+      <AnimatePresence>
+        {sidebarOpen && (
+          <>
+            <motion.div
+              className={styles.sidebarOverlay}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSidebarOpen(false)}
+            />
+            <motion.aside
+              className={styles.sidebar}
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            >
+              <div className={styles.sidebarHeader}>
+                <div className={styles.logo}>
+                  <span className={styles.logoWar}>WAR</span>
+                  <span className={styles.logoFace}>BANNER</span>
+                </div>
+                <button className={styles.closeBtn} onClick={() => setSidebarOpen(false)}>✕</button>
+              </div>
+              <nav className={styles.sidebarLinks}>
+                <NavLink
+                  to="/"
+                  end
+                  className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
+                  onClick={() => setSidebarOpen(false)}
+                >
+                  CRIAR BANNER
+                </NavLink>
+                {isLoggedIn ? (
+                  <NavLink
+                    to="/historico"
+                    className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    BANNERS SALVOS
+                  </NavLink>
+                ) : (
+                  <div className={styles.sideLockedNav}>
+                    <LockIcon /> BANNERS SALVOS (BLOQUEADO)
+                  </div>
+                )}
+                {isLoggedIn ? (
+                  <NavLink
+                    to="/guardar"
+                    className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    MEU WARFACE
+                  </NavLink>
+                ) : (
+                  <div className={styles.sideLockedNav}>
+                    <LockIcon /> MEU WARFACE (BLOQUEADO)
+                  </div>
+                )}
+                {isLoggedIn ? (
+                  <NavLink
+                    to="/comunidade"
+                    className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    COMUNIDADE
+                  </NavLink>
+                ) : (
+                  <div className={styles.sideLockedNav}>
+                    <LockIcon /> COMUNIDADE (BLOQUEADO)
+                  </div>
+                )}
+              </nav>
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
