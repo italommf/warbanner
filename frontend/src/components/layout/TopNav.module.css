@@ -1092,14 +1092,21 @@
   border: none;
   padding: 0;
   box-shadow: none;
+  gap: 10px;
 }
 
 .musicInline .musicContent {
   width: 100%;
+  min-width: 0;
 }
 
 .musicInline .musicGif {
-  height: 120px;
+  width: 100px;
+  height: 100px;
+}
+
+.musicInline .trackName {
+  max-width: 100%;
 }
 
 .wallpaperInline .wallpaperGrid {
