@@ -27,13 +27,26 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100vh;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
   font-size: 14px;
   letter-spacing: 0.04em;
   overflow-x: hidden;
+}
+
+/* Base font-size adjustments for different resolutions */
+@media (max-width: 1920px) {
+  html, body { font-size: 13px; }
+}
+
+@media (max-width: 1600px) {
+  html, body { font-size: 12px; }
+}
+
+@media (max-width: 1366px) {
+  html, body { font-size: 11px; }
 }
 
 body {
@@ -49,8 +62,8 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* ── SCROLLBAR ── */

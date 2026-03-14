@@ -42,11 +42,14 @@
 
 .links {
   display: flex;
-  gap: 32px;
+  gap: 2rem;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+}
+
+@media (max-width: 1024px) {
+  .links {
+    gap: 1rem;
+  }
 }
 
 .navItem {

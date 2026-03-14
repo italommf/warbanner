@@ -1,12 +1,12 @@
 .main {
   flex: 1;
-  padding: 20px 24px 12px;
-  max-width: 1200px;
+  padding: 2.5vh 24px 1.5vh;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  min-height: 0;
   background: rgba(8, 13, 21, 0.80);
   position: relative;
   z-index: 1;
@@ -15,20 +15,23 @@
 
 .controlsRow {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
+  flex-wrap: wrap;
   flex-shrink: 0;
   width: 100%;
+  margin-bottom: 8px;
 }
 
 .lists {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
   flex: 1;
-  overflow: hidden;
-  margin-top: 16px;
+  overflow-y: auto;
+  margin-top: 12px;
+  min-height: 0;
 }
 
 .lists > * {

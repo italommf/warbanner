@@ -186,11 +186,18 @@
 
 .guardarLayout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 24px;
   align-items: stretch;
   flex: 1;
   min-height: 0;
+}
+
+@media (max-width: 1200px) {
+  .guardarLayout {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
 }
 
 .guardarLeft {
@@ -207,7 +214,6 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  overflow-y: auto;
   padding-right: 8px;
 }
 
@@ -414,7 +420,7 @@
 
 .previewGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 12px;
 }
 
@@ -695,11 +701,11 @@
 
 .profileColumns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 16px;
   flex: 1;
   min-height: 0;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .statColumn {
@@ -731,15 +737,13 @@
 
 .statLeft {
   flex: 1.2;
-  /* Slightly more space for the grid */
   padding: 12px;
   border-right: 1px solid var(--border);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 16px 12px;
   align-content: center;
   justify-items: center;
-  overflow-y: auto;
   min-height: 0;
 }
 
@@ -847,6 +851,7 @@
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .missionItem {
@@ -911,6 +916,14 @@
   border-collapse: collapse;
 }
 
+@media (max-width: 1400px) {
+  .classTable {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
 .classTable th {
   font-size: 11px;
   letter-spacing: 0.08em;
@@ -959,6 +972,7 @@
 .statsRow {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .statBox {
@@ -1210,9 +1224,26 @@
 .achievGrid {
   display: grid;
   /* marcas e insígnias: 1fr cada; fitas: 2fr cada (paisagem) */
-  grid-template-columns: 1fr 1fr 1fr 1fr 2fr 2fr;
-  grid-auto-rows: 72px;
-  gap: 6px;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  grid-auto-rows: min-content;
+  gap: 8px;
+}
+
+/* Specific sizing for different types to maintain proportion while being responsive */
+.achievSlot_marca, .achievSlot_insignia {
+  aspect-ratio: 1;
+}
+
+.achievSlot_fita {
+  grid-column: span 2;
+  aspect-ratio: 3 / 1;
+}
+
+@media (max-width: 600px) {
+  .achievSlot_fita {
+    grid-column: span 1;
+    aspect-ratio: 1;
+  }
 }
 
 /* slot base */
@@ -1583,7 +1614,7 @@
 
 .profileGroupsRow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 12px;
 }
 
