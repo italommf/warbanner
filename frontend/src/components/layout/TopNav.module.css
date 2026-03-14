@@ -1092,25 +1092,49 @@
   border: none;
   padding: 0;
   box-shadow: none;
-  gap: 10px;
+  gap: 12px;
+  width: 100%;
 }
 
 .musicInline .musicContent {
-  width: 100%;
+  flex: 1;
   min-width: 0;
 }
 
 .musicInline .musicGif {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
 }
 
 .musicInline .volumeSlider {
-  max-width: 120px;
+  flex: 1;
+  min-width: 0;
+  max-width: none; /* Let it be controlled by flex */
+}
+
+.musicInline .volumeRow {
+  width: 100%;
+  gap: 6px;
 }
 
 .musicInline .trackName {
   max-width: 100%;
+  font-size: 10px;
+}
+
+.musicInline .nowPlaying {
+  font-size: 7px;
+}
+
+.musicInline .btnSm {
+  font-size: 9px;
+}
+
+.musicInline .btnPlay {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
 }
 
 .wallpaperInline .wallpaperGrid {
