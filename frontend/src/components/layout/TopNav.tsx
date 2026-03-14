@@ -489,7 +489,6 @@ export function TopNav() {
 
               <div className={styles.sidebarWidgets}>
                 <MusicWidget inline />
-                <WallpaperWidget inline />
               </div>
 
               <nav className={styles.sidebarLinks}>
@@ -511,7 +510,11 @@ export function TopNav() {
                   </NavLink>
                 ) : (
                   <div className={styles.sideLockedNav}>
-                    <LockIcon /> BANNERS SALVOS (BLOQUEADO)
+                    <div className={styles.sideLockedTop}>
+                      <LockIcon />
+                      <span>BANNERS SALVOS</span>
+                    </div>
+                    <span className={styles.sideLockedSub}>Faça login para acessar</span>
                   </div>
                 )}
                 {isLoggedIn ? (
@@ -524,7 +527,11 @@ export function TopNav() {
                   </NavLink>
                 ) : (
                   <div className={styles.sideLockedNav}>
-                    <LockIcon /> MEU WARFACE (BLOQUEADO)
+                    <div className={styles.sideLockedTop}>
+                      <LockIcon />
+                      <span>MEU WARFACE</span>
+                    </div>
+                    <span className={styles.sideLockedSub}>Faça login para acessar</span>
                   </div>
                 )}
                 {isLoggedIn ? (
@@ -537,7 +544,11 @@ export function TopNav() {
                   </NavLink>
                 ) : (
                   <div className={styles.sideLockedNav}>
-                    <LockIcon /> COMUNIDADE (BLOQUEADO)
+                    <div className={styles.sideLockedTop}>
+                      <LockIcon />
+                      <span>COMUNIDADE</span>
+                    </div>
+                    <span className={styles.sideLockedSub}>Faça login para acessar</span>
                   </div>
                 )}
               </nav>

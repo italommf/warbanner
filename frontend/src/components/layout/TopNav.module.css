@@ -960,12 +960,26 @@
 
 .sideLockedNav {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
   color: rgba(255, 255, 255, 0.2);
-  font-size: 12px;
   padding: 12px 0;
   letter-spacing: 0.05em;
+}
+
+.sideLockedTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.sideLockedSub {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.15);
+  margin-left: 20px; /* Alinhar com o nome depois do cadeado */
 }
 
 .spinning {
