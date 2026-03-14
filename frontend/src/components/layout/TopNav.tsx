@@ -72,7 +72,8 @@ function UserWidget() {
   if (!user) {
     return (
       <button className={styles.loginBtn} onClick={() => navigate('/login')}>
-        Entrar / Criar conta
+        <span className={styles.desktopLogo}>Entrar / Criar conta</span>
+        <span className={styles.mobileLogo}>ENTRAR</span>
       </button>
     )
   }
@@ -340,7 +341,10 @@ export function TopNav() {
               <line x1="3" y1="18" x2="21" y2="18" />
             </svg>
           </button>
-          <div className={styles.logo}>
+        </div>
+
+        <div className={styles.logo}>
+          <NavLink to="/" className={styles.logoLink}>
             <span className={styles.desktopLogo}>
               <span className={styles.logoWar}>WAR</span>
               <span className={styles.logoFace}>BANNER</span>
@@ -349,7 +353,7 @@ export function TopNav() {
               <span className={styles.logoWar}>W</span>
               <span className={styles.logoFace}>B</span>
             </span>
-          </div>
+          </NavLink>
         </div>
 
         <nav className={`${styles.links} ${styles.desktopOnly}`}>

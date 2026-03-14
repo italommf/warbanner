@@ -2,12 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 16px;
   height: 52px;
   background: linear-gradient(180deg, #0c1828 0%, #08111e 100%);
   border-bottom: 1px solid var(--border);
   position: relative;
   z-index: 10;
+  gap: 10px;
 }
 
 .nav::after {
@@ -23,6 +24,7 @@
 .left {
   display: flex;
   align-items: center;
+  flex: 1 1 0;
 }
 
 .logo {
@@ -30,6 +32,13 @@
   font-weight: bold;
   letter-spacing: 0.12em;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoLink {
+  text-decoration: none;
   display: flex;
   align-items: center;
 }
@@ -48,11 +57,6 @@
   }
   .mobileLogo {
     display: block;
-  }
-  .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
 
@@ -155,6 +159,8 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  flex: 1 1 0;
+  justify-content: flex-end;
 }
 
 /* ── Icon buttons (music, wallpaper) ─────────────────────────────────────── */
@@ -1029,14 +1035,26 @@
   font-family: var(--font);
   font-size: 11px;
   letter-spacing: 0.1em;
-  padding: 0 18px;
-  height: 40px;
+  padding: 0 16px;
+  height: 36px;
   border-radius: 6px;
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: filter 0.15s, transform 0.15s;
   white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .loginBtn {
+    padding: 0 10px;
+    font-size: 10px;
+    height: 32px;
+  }
+  .player {
+    gap: 8px;
+  }
 }
 
 .loginBtn:hover {
