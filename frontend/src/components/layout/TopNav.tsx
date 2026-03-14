@@ -341,8 +341,14 @@ export function TopNav() {
             </svg>
           </button>
           <div className={styles.logo}>
-            <span className={styles.logoWar}>WAR</span>
-            <span className={styles.logoFace}>BANNER</span>
+            <span className={styles.desktopLogo}>
+              <span className={styles.logoWar}>WAR</span>
+              <span className={styles.logoFace}>BANNER</span>
+            </span>
+            <span className={styles.mobileLogo}>
+              <span className={styles.logoWar}>W</span>
+              <span className={styles.logoFace}>B</span>
+            </span>
           </div>
         </div>
 

@@ -30,6 +30,30 @@
   font-weight: bold;
   letter-spacing: 0.12em;
   line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.desktopLogo {
+  display: block;
+}
+
+.mobileLogo {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .desktopLogo {
+    display: none;
+  }
+  .mobileLogo {
+    display: block;
+  }
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .logoWar {
@@ -258,6 +282,23 @@
   margin-top: 2px;
 }
 
+@media (max-width: 600px) {
+  .userLines {
+    display: none;
+  }
+  .userDisplay {
+    padding: 4px;
+    gap: 0;
+  }
+  .player {
+    gap: 4px;
+  }
+  .rankIconBox {
+    width: 28px;
+    height: 28px;
+  }
+}
+
 .gearIcon {
   color: var(--text2);
   display: flex;
@@ -301,6 +342,14 @@
   border: 1px solid var(--orange);
   box-shadow: 0 0 8px rgba(255, 85, 0, 0.3), inset 0 0 8px rgba(255, 85, 0, 0.1);
   animation: borderRotate 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+  .iconButton {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
 }
 
 @keyframes borderRotate {
