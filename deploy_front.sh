@@ -13,9 +13,10 @@ git fetch origin main
 git reset --hard origin/main
 
 # 2. Build e Up APENAS do frontend
-# Removido o 'docker system prune -a' para não apagar o cache de build do Node
+# --build: Força a reconstrução da imagem
+# --no-deps: Ignora as dependências (backend, db, etc) para não reconstruí-las
 echo -e "${BLUE}Reconstruindo e reiniciando APENAS o container do frontend...${NC}"
-docker compose up -d --build frontend
+docker compose up -d --no-deps --build frontend
 
 # 3. Limpeza de imagens órfãs (apenas as que ficaram sem tag após o novo build)
 echo -e "${BLUE}Limpando imagens antigas sem tag (dangling)...${NC}"
