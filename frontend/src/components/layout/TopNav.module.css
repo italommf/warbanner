@@ -1101,8 +1101,12 @@
 }
 
 .musicInline .musicGif {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+}
+
+.musicInline .volumeSlider {
+  max-width: 120px;
 }
 
 .musicInline .trackName {
