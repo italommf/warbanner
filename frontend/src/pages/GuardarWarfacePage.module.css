@@ -621,10 +621,19 @@
 .totalUploads {
   margin-top: 12px;
   font-size: 0.85rem;
-  color: var(--text-dim);
+  color: var(--text2);
   text-align: center;
   border-top: 1px solid var(--border);
   padding-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .totalUploads {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 4px;
+    font-size: 0.8rem;
+  }
 }
 
 .totalUploads strong {
@@ -2032,6 +2041,14 @@
   display: flex;
   gap: 12px;
   align-items: center;
+}
+
+@media (max-width: 600px) {
+  .processingInfo {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+  }
 }
 
 .processingIcon {
