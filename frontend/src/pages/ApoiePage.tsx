@@ -25,10 +25,9 @@ export function ApoiePage() {
             <h1 className={styles.title}>Apoie o Projeto</h1>
             
             <p className={styles.description}>
-              O <strong>WarBanner</strong> é um projeto independente dedicado a preservar a história e o legado dos jogadores de Warface. 
-              Após o encerramento dos servidores oficiais, nos tornamos um <strong>"museu digital"</strong> onde é possível consultar e relembrar a jornada de cada soldado.
-              Para manter este arquivo vivo e continuar implementando novos recursos, contamos com o apoio direto da nossa comunidade.
-              Sua contribuição, de qualquer valor, é fundamental para garantir a manutenção do servidor e a evolução constante deste projeto.
+              O <strong>WarBanner</strong> é um projeto independente que atua como um <strong>"museu digital"</strong>, preservando a história e o legado dos jogadores de Warface. 
+              Para manter o site online e implementar novas funções, contamos com o apoio da nossa comunidade. 
+              Sua contribuição garante a manutenção constante e a evolução deste arquivo histórico.
             </p>
             
             <div className={styles.reinvestCard}>
