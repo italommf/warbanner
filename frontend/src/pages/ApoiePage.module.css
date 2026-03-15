@@ -171,6 +171,7 @@
 .supportOptions {
   border-top: 1px solid var(--border);
   padding-top: 32px;
+  width: 100%;
 }
 
 .donateCard {
@@ -343,13 +344,21 @@
   }
   .card {
     padding: 24px 12px;
-    margin: 0 0 20px 0;
+    margin: 0 auto 20px auto;
     width: 100% !important;
     max-width: 100% !important;
   }
-  .title, .description, .importanceCard, .reinvestNote, .devSection, .devName, .donateCard {
-    word-wrap: break-word;
-    overflow-wrap: anywhere;
+  .supportOptions {
+    width: 100%;
+    padding-top: 24px;
+    margin: 0;
+  }
+  .donateCard {
+    padding: 16px 12px;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0;
+    gap: 16px;
   }
   .devSection {
     flex-direction: column;
