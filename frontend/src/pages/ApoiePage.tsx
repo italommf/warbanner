@@ -25,8 +25,10 @@ export function ApoiePage() {
             <h1 className={styles.title}>Apoie o Projeto</h1>
             
             <p className={styles.description}>
-              O <strong>Warface Desafios</strong> é um projeto independente criado para fortalecer a nossa comunidade. 
-              Manter o site online e atualizado exige dedicação e recursos constantes.
+              O <strong>WarBanner</strong> é um projeto independente dedicado a preservar a história e o legado dos jogadores de Warface. 
+              Após o encerramento dos servidores oficiais, nos tornamos um <strong>"museu digital"</strong> onde é possível consultar e relembrar a jornada de cada soldado.
+              Para manter este arquivo vivo e continuar implementando novos recursos, contamos com o apoio direto da nossa comunidade.
+              Sua contribuição, de qualquer valor, é fundamental para garantir a manutenção do servidor e a evolução constante deste projeto.
             </p>
             
             <div className={styles.reinvestCard}>
