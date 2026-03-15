@@ -24,15 +24,13 @@ export function ApoiePage() {
           <div className={styles.leftCol}>
             <h1 className={styles.title}>Apoie o Projeto</h1>
             
-            <div className={styles.importanceCard}>
-              <p className={styles.description}>
-                O <strong>Warface Desafios</strong> é um projeto independente criado para fortalecer a nossa comunidade. 
-                Manter o site online e atualizado exige dedicação e recursos constantes.
-              </p>
-              <div className={styles.reinvestNote}>
-                 <span className={styles.noteIcon}>🚀</span>
-                 <p><strong>100%</strong> das doações são revertidas para a <strong>manutenção do servidor</strong> e o desenvolvimento de <strong>melhorias exclusivas</strong> no site.</p>
-              </div>
+            <p className={styles.description}>
+              O <strong>Warface Desafios</strong> é um projeto independente criado para fortalecer a nossa comunidade. 
+              Manter o site online e atualizado exige dedicação e recursos constantes.
+            </p>
+            
+            <div className={styles.reinvestCard}>
+               <p><strong>100%</strong> das doações são revertidas para a <strong>manutenção do servidor</strong> e o desenvolvimento de <strong>melhorias exclusivas</strong> no site.</p>
             </div>
             <div className={styles.devSection}>
               <span className={styles.devLabel}>CRIADO POR</span>
