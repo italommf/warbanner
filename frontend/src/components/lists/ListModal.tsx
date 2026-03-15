@@ -86,21 +86,32 @@ export function ListModal({ category, items, onClose, onSelect, selectedFilename
             <button className={styles.closeBtn} onClick={onClose}>✕</button>
           </div>
 
-          <div className={styles.grid}>
-            {visibleItems.map((item) => (
-              <div
-                key={item.filename}
-                className={`${styles.cell} ${effectiveSelected === item.filename ? styles.selected : ''}`}
-                title={`${item.name}${item.description ? `\n\n${item.description}` : ''}${item.amount ? `\nObjetivo: ${formatAmount(item.amount)}` : ''}`}
-                onClick={() => {
-                  if (onSelect) { onSelect(item); onClose() }
-                  else { selectItem(category, item.filename); onClose() }
-                }}
-              >
-                <img src={item.url} alt={item.name} loading="lazy" />
-                <span className={styles.cellName}>{item.name}</span>
+          <div className={`${styles.grid} ${items.length === 0 ? styles.gridEmpty : ''}`}>
+            {items.length === 0 ? (
+              <div className={styles.emptyContainer}>
+                <div className={styles.emptyIcon}>🏆</div>
+                <p className={styles.emptyTitle}>NENHUMA CONQUISTA ENCONTRADA</p>
+                <p className={styles.emptyDesc}>
+                  Você ainda não possui conquistas nesta categoria. 
+                  Continue jogando e processe suas capturas para desbloqueá-las!
+                </p>
               </div>
-            ))}
+            ) : (
+              visibleItems.map((item) => (
+                <div
+                  key={item.filename}
+                  className={`${styles.cell} ${effectiveSelected === item.filename ? styles.selected : ''} ${category === 'fitas' ? styles.cellFita : ''}`}
+                  title={`${item.name}${item.description ? `\n\n${item.description}` : ''}${item.amount ? `\nObjetivo: ${formatAmount(item.amount)}` : ''}`}
+                  onClick={() => {
+                    if (onSelect) { onSelect(item); onClose() }
+                    else { selectItem(category, item.filename); onClose() }
+                  }}
+                >
+                  <img src={item.url} alt={item.name} loading="lazy" />
+                  <span className={styles.cellName}>{item.name}</span>
+                </div>
+              ))
+            )}
             {visibleCount < total && <div ref={sentinelRef} className={styles.sentinel} />}
           </div>
         </motion.div>

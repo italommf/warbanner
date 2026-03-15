@@ -1399,7 +1399,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Alinhado à direita no desktop */
+  justify-content: center; /* Centralizado em todas as telas */
   transition: all 0.15s;
   padding: 8px;
 }

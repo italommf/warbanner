@@ -10,34 +10,43 @@
 }
 
 .modal {
-  background: var(--bg2);
-  border: 1px solid var(--border2);
+  background: #080d15;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: min(1800px, 95vw);
   max-height: 85vh;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .header {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   flex-shrink: 0;
 }
 
 .title {
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  color: var(--text2);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--orange);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .count {
-  font-size: 12px;
-  color: var(--text2);
+  font-size: 10px;
+  color: #fff;
+  opacity: 0.5;
+  margin-left: 8px;
+  font-weight: 400;
+  letter-spacing: normal;
 }
 
 .closeBtn {
@@ -63,12 +72,39 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 4px;
-  padding: 12px;
+  gap: 8px;
+  padding: 16px;
   overflow-y: auto;
   flex: 1;
   scrollbar-width: thin;
   scrollbar-color: var(--border2) transparent;
+}
+
+@media (max-width: 1400px) {
+  .grid { grid-template-columns: repeat(8, 1fr); }
+}
+
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(6, 1fr); }
+}
+
+@media (max-width: 800px) {
+  .grid { 
+    grid-template-columns: repeat(4, 1fr); 
+    padding: 12px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.gridEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
 }
 
 .grid::-webkit-scrollbar { width: 4px; }
@@ -97,8 +133,44 @@
 
 .cell img {
   width: 100%;
-  max-height: 80px;
+  max-height: 60px;
   object-fit: contain;
+  transition: transform 0.2s;
+}
+
+.cell:hover img {
+  transform: scale(1.1);
+}
+
+/* Fitas são 4x1 ou 5x1, então ocupam mais espaço horizontal */
+.cellFita {
+  grid-column: span 5;
+}
+
+@media (max-width: 1400px) {
+  .cellFita { grid-column: span 4; }
+}
+
+@media (max-width: 1100px) {
+  .cellFita { grid-column: span 3; }
+}
+
+@media (max-width: 600px) {
+  .achievSlot {
+    padding: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .cellFita {
+    grid-column: span 4; /* Ocupa a linha toda em mobile com 4 colunas */
+  }
+}
+
+@media (max-width: 500px) {
+  .cellFita {
+    grid-column: span 3; /* Ocupa a linha toda em mobile com 3 colunas */
+  }
 }
 
 .cellName {
@@ -123,4 +195,38 @@
 .sentinel {
   grid-column: 1 / -1;
   height: 40px;
+}
+
+/* Empty State */
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.emptyIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  filter: grayscale(1) opacity(0.3);
+}
+
+.emptyTitle {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: 0.12em;
+  margin: 0 0 8px;
+}
+
+.emptyDesc {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.6;
+  opacity: 0.7;
+  margin: 0;
 }
