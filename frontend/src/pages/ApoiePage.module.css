@@ -310,8 +310,13 @@
     align-items: center;
     margin-top: 0;
   }
+  .title {
+    text-align: center;
+    width: 100%;
+  }
   .leftCol {
     text-align: center;
+    align-items: center;
   }
 }
 
@@ -329,6 +334,17 @@
     padding: 12px 16px;
     width: 100%;
     justify-content: center;
+  }
+  .importanceCard {
+    text-align: center;
+  }
+  .reinvestNote {
+    flex-direction: column;
+    text-align: center;
+    border-left: none;
+    border-top: 3px solid var(--orange);
+    border-radius: 8px;
+    padding: 20px;
   }
   .devBadge {
     max-height: 80px;
