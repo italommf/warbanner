@@ -4,7 +4,7 @@ import { motion } from 'framer-motion' // Added missing import for motion
 
 export function ApoiePage() {
   const [copied, setCopied] = useState(false)
-  const pixKey = '405530c2-8586-4deb-bb4f-10ca526c4564'
+  const pixKey = '59473e0c-fd1c-44dd-bca7-cd7f51e19d65'
 
   const handleCopy = () => {
     navigator.clipboard.writeText(pixKey)
