@@ -359,9 +359,29 @@
     margin-top: 24px;
     align-items: center;
   }
+  .donateCard {
+    padding: 16px;
+    width: 100%;
+    gap: 16px;
+  }
+  .qrCode {
+    width: 140px;
+    height: 140px;
+  }
+  .anyAmountNote {
+    text-align: center;
+    font-size: 12px;
+    padding: 0 8px;
+  }
+  .pixKey {
+    font-size: 12px;
+  }
+  .pixKeyBox {
+    padding: 6px 10px 6px 12px;
+  }
   .reinvestCard {
     text-align: center;
-    padding: 20px;
+    padding: 16px;
   }
   .devBadge {
     max-height: 80px;
