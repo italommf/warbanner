@@ -204,9 +204,10 @@
 
 .donateCard h3 {
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 
 .anyAmountNote {
@@ -238,13 +239,14 @@
   align-items: center;
   justify-content: space-between;
   background: rgba(0, 0, 0, 0.4);
-  padding: 6px 6px 6px 20px;
+  padding: 8px 12px 8px 16px;
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.05);
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
 .pixKeyBox:hover {
@@ -271,21 +273,30 @@
   margin-right: 12px;
 }
 
-.copyBtn {
-  background: var(--orange);
-  color: #fff;
+.copyBtnIcon {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text2);
   border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
+  margin-left: 10px;
 }
 
-.copied .copyBtn {
-  background: #00ff88;
+.copyBtnIcon:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.copied .copyBtnIcon {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
 }
 
 .pixHint {
