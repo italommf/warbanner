@@ -27,32 +27,23 @@
 }
 
 html, body {
-  min-height: 100vh;
+  height: 100vh;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
   font-size: 14px;
   letter-spacing: 0.04em;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-/* Base font-size adjustments for different resolutions */
-@media (max-width: 1920px) {
-  html, body { font-size: 13px; }
-}
-
-@media (max-width: 1600px) {
-  html, body { font-size: 12px; }
-}
-
-@media (max-width: 1366px) {
-  html, body { font-size: 11px; }
+@media (max-width: 800px) {
+  /* No mobile podemos reduzir um pouco a base se necessário, mas vamos manter o padrão por enquanto */
 }
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   background:
     radial-gradient(ellipse at 20% 50%, rgba(14,30,54,0.6) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 20%, rgba(10,20,40,0.4) 0%, transparent 50%),
@@ -62,8 +53,17 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  /* No mobile, mantemos a altura fixa para o footer não subir e a página não rolar inteira */
+  html, body, #root {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
 }
 
 /* ── SCROLLBAR ── */

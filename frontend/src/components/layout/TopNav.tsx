@@ -38,9 +38,24 @@ function IconMute() {
   )
 }
 
+function LogoutIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
+    </svg>
+  )
+}
+
 // ── Widget de usuário (logado) ────────────────────────────────────────────────
 
-function UserWidget() {
+interface UserWidgetProps {
+  inline?: boolean
+  onCloseSidebar?: () => void
+}
+
+function UserWidget({ inline, onCloseSidebar }: UserWidgetProps) {
   const user = useAuthStore((s) => s.user)
   const logout = useAuthStore((s) => s.logout)
   const navigate = useNavigate()
@@ -70,6 +85,15 @@ function UserWidget() {
   }
 
   if (!user) {
+    if (inline) {
+      return (
+        <div className={styles.userWidgetInline}>
+          <button className={styles.sidebarLoginBtn} onClick={() => { navigate('/login'); onCloseSidebar?.(); }}>
+            FAZER LOGIN
+          </button>
+        </div>
+      )
+    }
     return (
       <button className={styles.loginBtn} onClick={() => navigate('/login')}>
         <span className={styles.desktopLogo}>Entrar / Criar conta</span>
@@ -78,24 +102,51 @@ function UserWidget() {
     )
   }
 
-  return (
-    <div className={styles.userWidget} ref={ref}>
-      <div className={`${styles.userDisplay} ${open ? styles.widgetActive : ''}`} onClick={() => setOpen((v) => !v)}>
-        <div className={styles.rankIconBox}>
-          {rankUrl ? (
-            <img src={rankUrl} alt="rank" className={styles.rankAvatar} />
-          ) : (
-            <div className={styles.rankPlaceholder} />
-          )}
-        </div>
-        <div className={styles.userLines}>
-          <span className={styles.displayNick}>{user.game_nick || user.username}</span>
-          <span className={styles.displayUser}>{user.username}</span>
-        </div>
+  const content = (
+    <div className={`${styles.userDisplay} ${open ? styles.widgetActive : ''}`} onClick={() => !inline && setOpen((v) => !v)}>
+      <div className={styles.rankIconBox}>
+        {rankUrl ? (
+          <img src={rankUrl} alt="rank" className={styles.rankAvatar} />
+        ) : (
+          <div className={styles.rankPlaceholder} />
+        )}
+      </div>
+      <div className={styles.userLines}>
+        <span className={styles.displayNick}>
+          {user?.game_nick ? user.game_nick : (user?.username ? user.username : 'Soldado')}
+        </span>
+        {!inline && <span className={styles.displayUser}>{user?.username}</span>}
+      </div>
+      {!inline && (
         <div className={`${styles.gearIcon} ${open ? styles.gearIconActive : ''}`}>
           <GearIcon />
         </div>
+      )}
+    </div>
+  )
+
+  if (inline) {
+    return (
+      <div className={styles.userWidgetInline}>
+        <div className={styles.userInlineMain}>
+          {content}
+          <div className={styles.userInlineActions}>
+            <button className={styles.inlineActionBtn} onClick={() => setModalOpen(true)} title="Editar Perfil">
+              <GearIcon />
+            </button>
+            <button className={styles.inlineLogoutBtn} onClick={() => { handleLogout(); onCloseSidebar?.(); }} title="Sair">
+              <LogoutIcon />
+            </button>
+          </div>
+        </div>
+        {modalOpen && <ProfileModal onClose={() => setModalOpen(false)} />}
       </div>
+    )
+  }
+
+  return (
+    <div className={styles.userWidget} ref={ref}>
+      {content}
 
       <AnimatePresence>
         {open && (
@@ -351,7 +402,8 @@ function LockIcon() {
 // ── TopNav ─────────────────────────────────────────────────────────────────────
 
 export function TopNav() {
-  const isLoggedIn = !!useAuthStore((s) => s.user)
+  const user = useAuthStore((s) => s.user)
+  const isLoggedIn = !!user
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -395,23 +447,23 @@ export function TopNav() {
             end
             className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
           >
-            CRIAR BANNER
+            CRIAR WARBANNER
           </NavLink>
           {isLoggedIn ? (
             <NavLink
               to="/historico"
               className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
             >
-              BANNERS SALVOS
+              MEUS WARBANNERS
             </NavLink>
           ) : (
             <div className={styles.lockedNav}>
               <span className={styles.navItemLocked}>
                 <LockIcon />
-                BANNERS SALVOS
+                MEUS WARBANNERS
               </span>
               <div className={styles.navTooltip}>
-                Faça login para ter acesso aos banners salvos
+                Faça login para ter acesso aos seus warbanners
               </div>
             </div>
           )}
@@ -451,6 +503,12 @@ export function TopNav() {
               </div>
             </div>
           )}
+          <NavLink
+            to="/apoie"
+            className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+          >
+            APOIE O PROJETO
+          </NavLink>
         </nav>
 
         <div className={styles.player}>
@@ -458,7 +516,9 @@ export function TopNav() {
             <MusicWidget />
             <WallpaperWidget />
           </div>
-          <UserWidget />
+          <div className={styles.headerUserWidget}>
+            <UserWidget />
+          </div>
         </div>
       </motion.header>
 
@@ -487,71 +547,84 @@ export function TopNav() {
                 <button className={styles.closeBtn} onClick={() => setSidebarOpen(false)}>✕</button>
               </div>
 
-              <div className={styles.sidebarWidgets}>
-                <MusicWidget inline />
+              <div className={styles.sidebarContent}>
+                <nav className={styles.sidebarLinks}>
+                  <NavLink
+                    to="/"
+                    end
+                    className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    CRIAR WARBANNER
+                  </NavLink>
+                  {isLoggedIn ? (
+                    <NavLink
+                      to="/historico"
+                      className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
+                      onClick={() => setSidebarOpen(false)}
+                    >
+                      MEUS WARBANNERS
+                    </NavLink>
+                  ) : (
+                    <div className={styles.sideLockedNav}>
+                      <div className={styles.sideLockedTop}>
+                        <LockIcon />
+                        <span>MEUS WARBANNERS</span>
+                      </div>
+                      <span className={styles.sideLockedSub}>Faça login para acessar</span>
+                    </div>
+                  )}
+                  {isLoggedIn ? (
+                    <NavLink
+                      to="/guardar"
+                      className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
+                      onClick={() => setSidebarOpen(false)}
+                    >
+                      MEU WARFACE
+                    </NavLink>
+                  ) : (
+                    <div className={styles.sideLockedNav}>
+                      <div className={styles.sideLockedTop}>
+                        <LockIcon />
+                        <span>MEU WARFACE</span>
+                      </div>
+                      <span className={styles.sideLockedSub}>Faça login para acessar</span>
+                    </div>
+                  )}
+                  {isLoggedIn ? (
+                    <NavLink
+                      to="/comunidade"
+                      className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
+                      onClick={() => setSidebarOpen(false)}
+                    >
+                      COMUNIDADE
+                    </NavLink>
+                  ) : (
+                    <div className={styles.sideLockedNav}>
+                      <div className={styles.sideLockedTop}>
+                        <LockIcon />
+                        <span>COMUNIDADE</span>
+                      </div>
+                      <span className={styles.sideLockedSub}>Faça login para acessar</span>
+                    </div>
+                  )}
+                  <NavLink
+                    to="/apoie"
+                    className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    APOIE O PROJETO
+                  </NavLink>
+                </nav>
+
+                <div className={styles.sidebarWidgets}>
+                </div>
               </div>
 
-              <nav className={styles.sidebarLinks}>
-                <NavLink
-                  to="/"
-                  end
-                  className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
-                  onClick={() => setSidebarOpen(false)}
-                >
-                  CRIAR BANNER
-                </NavLink>
-                {isLoggedIn ? (
-                  <NavLink
-                    to="/historico"
-                    className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
-                    onClick={() => setSidebarOpen(false)}
-                  >
-                    BANNERS SALVOS
-                  </NavLink>
-                ) : (
-                  <div className={styles.sideLockedNav}>
-                    <div className={styles.sideLockedTop}>
-                      <LockIcon />
-                      <span>BANNERS SALVOS</span>
-                    </div>
-                    <span className={styles.sideLockedSub}>Faça login para acessar</span>
-                  </div>
-                )}
-                {isLoggedIn ? (
-                  <NavLink
-                    to="/guardar"
-                    className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
-                    onClick={() => setSidebarOpen(false)}
-                  >
-                    MEU WARFACE
-                  </NavLink>
-                ) : (
-                  <div className={styles.sideLockedNav}>
-                    <div className={styles.sideLockedTop}>
-                      <LockIcon />
-                      <span>MEU WARFACE</span>
-                    </div>
-                    <span className={styles.sideLockedSub}>Faça login para acessar</span>
-                  </div>
-                )}
-                {isLoggedIn ? (
-                  <NavLink
-                    to="/comunidade"
-                    className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
-                    onClick={() => setSidebarOpen(false)}
-                  >
-                    COMUNIDADE
-                  </NavLink>
-                ) : (
-                  <div className={styles.sideLockedNav}>
-                    <div className={styles.sideLockedTop}>
-                      <LockIcon />
-                      <span>COMUNIDADE</span>
-                    </div>
-                    <span className={styles.sideLockedSub}>Faça login para acessar</span>
-                  </div>
-                )}
-              </nav>
+              <div className={styles.sidebarFooter}>
+                <MusicWidget inline />
+                <UserWidget inline onCloseSidebar={() => setSidebarOpen(false)} />
+              </div>
             </motion.aside>
           </>
         )}
@@ -570,6 +643,8 @@ function ProfileModal({ onClose }: { onClose: () => void }) {
   const setBannerNick = useBannerStore((s) => s.setNick)
   const setBannerClan = useBannerStore((s) => s.setClan)
   const selectPatente = useBannerStore((s) => s.selectPatente)
+  const hideEmpty = useBannerStore((s) => s.hideEmpty)
+  const setHideEmpty = useBannerStore((s) => s.setHideEmpty)
 
   const [tab, setTab] = useState<ProfileTab>('warface')
 
@@ -756,6 +831,20 @@ function ProfileModal({ onClose }: { onClose: () => void }) {
             >
               {pwdSaved ? 'ALTERADA!' : changingPwd ? 'ALTERANDO...' : 'ALTERAR SENHA'}
             </button>
+
+            <div className={styles.modalSeparator} style={{ height: '1px', background: 'var(--border)', margin: '16px 0', opacity: 0.5 }} />
+            
+            <div className={styles.modalField}>
+              <label>PREFERÊNCIAS DO BANNER</label>
+              <label className={styles.hideEmptyOption} style={{ padding: '8px 0' }}>
+                <input
+                  type="checkbox"
+                  checked={hideEmpty}
+                  onChange={(e) => setHideEmpty(e.target.checked)}
+                />
+                <span className={styles.optionLabel}>Ocultar desafios sem nome / descrição</span>
+              </label>
+            </div>
           </form>
         )}
       </div>

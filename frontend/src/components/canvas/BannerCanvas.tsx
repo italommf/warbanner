@@ -7,8 +7,6 @@ import styles from './BannerCanvas.module.css'
 export function BannerCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const setCanvasRef = useBannerStore((s) => s.setCanvasRef)
-  const hideEmpty = useBannerStore((s) => s.hideEmpty)
-  const setHideEmpty = useBannerStore((s) => s.setHideEmpty)
   const nick = useBannerStore((s) => s.nick)
   const setNick = useBannerStore((s) => s.setNick)
   const clan = useBannerStore((s) => s.clan)
@@ -69,15 +67,6 @@ export function BannerCanvas() {
                 }
               }}
             />
-
-            <label className={styles.checkboxLabel}>
-              <input
-                type="checkbox"
-                checked={hideEmpty}
-                onChange={(e) => setHideEmpty(e.target.checked)}
-              />
-              Sem nome ou Desc
-            </label>
           </div>
       </div>
     </motion.section>

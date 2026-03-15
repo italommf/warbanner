@@ -100,34 +100,12 @@ export function BottomBar({ isHistorico = false }: Props) {
         transition={{ duration: 0.3, ease: 'easeOut', delay: 0.1 }}
       >
         <div className={styles.stats}>
-          <div className={styles.devCard}>
-            <div className={styles.devInfo}>
-              <span className={styles.devLabel}>Desenvolvido por</span>
-              <div className={styles.devSocials}>
-                <a href="mailto:italo.mageste@gmail.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink} title="Gmail">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />
-                  </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/italommf/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} title="LinkedIn">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-                  </svg>
-                </a>
-                <a href="https://steamcommunity.com/id/Italommf/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} title="Steam">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2a10 10 0 0 0-9.96 9.04l5.37 2.22a2.82 2.82 0 0 1 1.62-.51l2.54-3.69v-.06a3.75 3.75 0 1 1 3.75 3.75h-.09l-3.63 2.59a2.84 2.84 0 0 1-5.65.26L1.1 13.52A10 10 0 1 0 12 2zm5.64 9a2.25 2.25 0 1 0-4.5 0 2.25 2.25 0 0 0 4.5 0zm-8.11 5.25a1.69 1.69 0 0 0 .94-2.19l-1.22-.5a2.12 2.12 0 0 1 2.74 1.44 2.12 2.12 0 0 1-1.35 2.67 2.12 2.12 0 0 1-2.63-1.17l1.26.52a1.69 1.69 0 0 0 .26-1.77z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <img src="/media/site/footer/footer_banner.png" alt="VIP" className={styles.devBadge} />
-          </div>
+          {/* Espaço reservado ou mantido vazio para centralizar outros elementos se necessário */}
         </div>
 
         {isHistorico ? (
           <a href="/" className={`${styles.saveBtn} ${styles.saveBtnLink}`}>
-            NOVO BANNER
+            NOVO WARBANNER
           </a>
         ) : isCreator ? canSave ? (
           <motion.button
@@ -136,13 +114,13 @@ export function BottomBar({ isHistorico = false }: Props) {
             disabled={isPending}
             whileTap={{ scale: 0.97 }}
           >
-            {saved ? 'SALVO!' : 'SALVAR BANNER'}
+            {saved ? 'SALVO!' : 'SALVAR WARBANNER'}
           </motion.button>
         ) : (
           <div className={styles.lockedWrapper}>
             <div className={styles.saveBtnLocked}>
               <LockIcon />
-              SALVAR BANNER
+              SALVAR WARBANNER
             </div>
             <div className={styles.lockTooltip}>
               {isLoggedIn

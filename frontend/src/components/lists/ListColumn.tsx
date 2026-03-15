@@ -117,9 +117,9 @@ export function ListColumn({ category, items, columnIndex, isLoading = false }: 
         {!collapsed && (
           <motion.div 
             className={styles.itemsWrapper}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={window.innerWidth < 800 ? { height: 0, opacity: 0 } : { opacity: 0 }}
+            animate={window.innerWidth < 800 ? { height: 'auto', opacity: 1 } : { opacity: 1 }}
+            exit={window.innerWidth < 800 ? { height: 0, opacity: 0 } : { opacity: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
           >
             {isLoading ? (

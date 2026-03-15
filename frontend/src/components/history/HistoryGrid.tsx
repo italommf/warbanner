@@ -27,8 +27,8 @@ export function HistoryGrid() {
   if (!data?.length) {
     return (
       <p className={styles.empty}>
-        Nenhum banner salvo ainda.<br />
-        Vá para Meus Desafios e salve seu primeiro banner!
+        Nenhum warbanner salvo ainda.<br />
+        Vá para CRIAR BANNER e salve seu primeiro!
       </p>
     )
   }

@@ -1,14 +1,15 @@
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
+  justify-content: center; /* Centraliza o conteúdo (links) */
+  padding: 0 32px;
   height: 52px;
   background: linear-gradient(180deg, #0c1828 0%, #08111e 100%);
   border-bottom: 1px solid var(--border);
   position: relative;
   z-index: 10;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .nav::after {
@@ -24,7 +25,22 @@
 .left {
   display: flex;
   align-items: center;
-  flex: 1 1 0;
+}
+
+@media (min-width: 1281px) {
+  .left {
+    position: absolute;
+    left: 32px;
+    z-index: 5;
+  }
+}
+
+@media (max-width: 1280px) {
+  .left {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .logo {
@@ -35,6 +51,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 1281px) {
+  .logo {
+    position: absolute;
+    left: 32px; /* Alineado à esquerda no desktop */
+    justify-content: flex-start;
+  }
 }
 
 .logoLink {
@@ -159,8 +183,21 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  flex: 1 1 0;
   justify-content: flex-end;
+}
+
+@media (min-width: 1281px) {
+  .player {
+    position: absolute;
+    right: 32px;
+    z-index: 5;
+  }
+}
+
+@media (max-width: 1280px) {
+  .player {
+    flex: 1 1 0;
+  }
 }
 
 .desktopOnlyWidgets {
@@ -169,7 +206,7 @@
   gap: 6px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1280px) {
   .desktopOnlyWidgets {
     display: none;
   }
@@ -315,6 +352,15 @@
     width: 28px;
     height: 28px;
   }
+  .headerUserWidget {
+    display: none;
+  }
+}
+
+@media (max-width: 1280px) {
+  .headerUserWidget {
+    display: none;
+  }
 }
 
 .gearIcon {
@@ -445,6 +491,78 @@
 
 .logoutBtn:hover {
   background: rgba(255, 85, 85, 0.1);
+}
+
+/* ── Options (checkboxes) ────────────────────────────────────────────────── */
+.hideEmptyOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.hideEmptyOption:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hideEmptyOption input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  background: var(--bg2);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.hideEmptyOption input:checked {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.hideEmptyOption input:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 1px;
+  width: 4px;
+  height: 7px;
+  border: 1.5px solid #000;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.optionLabel {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.sidebarOption {
+  margin-top: auto;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sidebarOption .hideEmptyOption {
+  padding: 0;
+}
+
+.sidebarOption .hideEmptyOption:hover {
+  background: none;
 }
 
 /* ── ModalStyles (Moved from BottomBar) ─────────────────────────────────── */
@@ -896,20 +1014,7 @@
   z-index: 1000;
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 280px;
-  background: #08111e;
-  border-right: 1px solid var(--border);
-  z-index: 1001;
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
-}
+
 
 .sidebarHeader {
   display: flex;
@@ -1061,9 +1166,10 @@
   font-family: var(--font);
   font-size: 11px;
   letter-spacing: 0.1em;
-  padding: 0 16px;
   height: 36px;
+  padding: 0 16px;
   border-radius: 6px;
+  font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1082,13 +1188,167 @@
     gap: 8px;
   }
 }
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  background: #08111e;
+  border-right: 1px solid var(--border);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.sidebarContent {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarFooter {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+}
+
+.userWidgetInline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.userInlineMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.userInlineMain .userDisplay {
+  flex: 1;
+  background: none !important;
+  border: none !important;
+  padding: 0;
+  min-width: 0; /* Important for ellipsis in children */
+  display: flex;
+}
+
+.userInlineMain .rankIconBox {
+  background: none;
+  width: 28px;
+  height: 28px;
+  margin-right: 8px; /* Espaço entre patente e nick */
+}
+
+.userInlineMain .userLines {
+  min-width: 0; 
+  flex: 1;
+  gap: 0;
+  overflow: hidden;
+  display: flex !important; /* Overrides the global max-width: 600px hide rule */
+}
+
+.userInlineMain .displayNick {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500; /* Mudei para 500 para ficar mais limpo em letras minúsculas */
+  display: block;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.02em; /* Reduzi um pouco para letras minúsculas */
+}
+
+.sidebarSeparator {
+  height: 1px;
+  background: var(--border);
+  margin: 12px 0;
+  opacity: 0.3;
+}
+
+.userInlineActions {
+  display: flex;
+  gap: 4px;
+}
+
+.inlineActionBtn,
+.inlineLogoutBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.inlineActionBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--orange);
+}
+
+.inlineLogoutBtn {
+  color: var(--red);
+  width: 32px;
+  min-width: 0;
+}
+
+.inlineLogoutBtn:hover {
+  background: rgba(230, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.sidebarLoginBtn {
+  width: 100%;
+  padding: 12px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.sidebarLoginBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(230, 0, 0, 0.3);
+}
 
 .loginBtn:hover {
   filter: brightness(1.15);
   transform: translateY(-1px);
 }
 
-.musicInline,
+.musicInline {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 0;
+}
+
 .wallpaperInline {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
@@ -1098,7 +1358,7 @@
 }
 
 .sidebarWidgets {
-  margin-bottom: 30px;
+  flex: 1;
 }
 
 .musicInline .musicMain {

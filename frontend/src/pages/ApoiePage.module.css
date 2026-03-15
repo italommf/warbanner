@@ -1,0 +1,126 @@
+.container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 0;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.card {
+  background: rgba(13, 21, 32, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: 0.1em;
+}
+
+.description {
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  font-size: 14px;
+}
+
+.devSection {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.devLabel {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--orange);
+  font-weight: bold;
+}
+
+.devCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 15px 25px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.devBadge {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.devInfo {
+  text-align: left;
+}
+
+.devName {
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.socialPlaceholder {
+  font-size: 12px;
+  color: var(--text2);
+  opacity: 0.7;
+}
+
+.supportOptions {
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+}
+
+.option h3 {
+  color: var(--orange);
+  font-size: 14px;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+
+.option p {
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 16px;
+}
+
+.pixPlaceholder {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  border-radius: 6px;
+  color: #fff;
+  font-family: monospace;
+  font-size: 14px;
+  border: 1px dashed var(--border2);
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 24px;
+  }
+  .devCard {
+    flex-direction: column;
+    text-align: center;
+  }
+  .devInfo {
+    text-align: center;
+  }
+}

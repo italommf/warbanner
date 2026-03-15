@@ -8,6 +8,7 @@ import { CreatorPage } from '@/pages/CreatorPage'
 import { HistoricoPage } from '@/pages/HistoricoPage'
 import { ComunidadePage } from '@/pages/ComunidadePage'
 import { GuardarWarfacePage } from '@/pages/GuardarWarfacePage'
+import { ApoiePage } from '@/pages/ApoiePage'
 import { AuthPage } from '@/pages/AuthPage'
 import { AdminPage } from '@/pages/AdminPage'
 import { useBannerStore } from '@/store/bannerStore'
@@ -156,6 +157,7 @@ export function App() {
             <Route path="/historico" element={<HistoricoPage />} />
             <Route path="/comunidade" element={<ComunidadePage />} />
             <Route path="/guardar" element={<GuardarWarfacePage />} />
+            <Route path="/apoie" element={<ApoiePage />} />
             <Route path="/login" element={<AuthPage />} />
             <Route path="/admin" element={<AdminPage />} />
           </Routes>

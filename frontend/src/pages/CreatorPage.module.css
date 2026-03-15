@@ -1,16 +1,18 @@
 .main {
   flex: 1;
-  padding: 2.5vh 24px 1.5vh;
+  padding: 1.5vh 24px 1vh;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%; /* Ocupa exatamente o espaço disponível no desktop */
   min-height: 0;
-  background: rgba(8, 13, 21, 0.80);
+  background: rgba(8, 13, 21, 0.82);
   position: relative;
   z-index: 1;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .controlsRow {
@@ -24,18 +26,53 @@
   margin-bottom: 8px;
 }
 
-.lists {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-  flex: 1;
-  overflow-y: auto;
-  margin-top: 12px;
-  min-height: 0;
+@media (max-width: 800px) {
+  .controlsRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .controlsRow > * {
+    width: 100%;
+  }
 }
 
-.lists > * {
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0 6px 6px;
+.lists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 16px;
+  flex: 1;
+  margin-top: 12px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 1100px) {
+  .lists {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr; /* Mantém as listas contidas */
+    overflow-y: hidden; /* O scroll será interno às colunas */
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    padding: 16px 12px;
+    height: auto !important; /* No mobile a página cresce naturalmente */
+    max-width: none;
+    border-radius: 0;
+    flex: none !important;
+    overflow: visible !important;
+  }
+  .lists {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 12px;
+    height: auto !important;
+    overflow: visible !important;
+    flex: none !important;
+  }
 }

@@ -5,6 +5,17 @@
   border-bottom: 1px solid var(--border);
 }
 
+.pageMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 8px;
+}
+
 .title {
   font-size: 16px;
   letter-spacing: 0.14em;
@@ -63,6 +74,32 @@
 
 .guardarAlertBtn:hover {
   background: rgba(255, 85, 0, 0.20);
+}
+
+.daysHighlight {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+@media (max-width: 800px) {
+  .warfaceAlert {
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo */
+    text-align: center;  /* Centraliza o texto */
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .warfaceAlertText {
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  .guardarAlertBtn {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* ── Abas nivel 1 (jogos) ──────────────────────────────────────────────────── */
@@ -141,6 +178,29 @@
   padding: 0 28px;
   border-bottom: 1px solid var(--border);
   background: rgba(8, 13, 21, 0.3);
+}
+
+@media (max-width: 800px) {
+  .pageMain,
+  .gameTabContent,
+  .subSection,
+  .tabAnimWrapper,
+  .tabContent,
+  .guardarLayout {
+    flex: none !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+  
+  .pageMain {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .tabContent {
+    padding: 16px 16px 20px;
+  }
 }
 
 .subTab {
@@ -700,12 +760,28 @@
 /* ── Perfil (colunas PVP / PVE) ────────────────────────────────────────────── */
 
 .profileColumns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 16px;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0;
   min-height: 0;
-  overflow-y: auto;
+}
+
+@media (max-width: 1100px) {
+  .profileColumns {
+    flex: none;
+    height: auto;
+    overflow: visible; /* Deixa o scroll para o pai */
+  }
+}
+
+@media (min-width: 1101px) {
+  .profileColumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 320px;
+  }
 }
 
 .statColumn {
@@ -718,8 +794,16 @@
   min-height: 0;
 }
 
+@media (max-width: 1100px) {
+  .statColumn {
+    height: auto;
+    flex: none;
+    min-height: auto;
+  }
+}
+
 .statColumnTitle {
-  padding: 10px 18px;
+  padding: 6px 18px;
   font-size: 11px;
   letter-spacing: 0.14em;
   color: var(--orange, #ff5500);
@@ -735,16 +819,34 @@
   overflow: hidden;
 }
 
+@media (max-width: 1100px) {
+  .statColumnBody {
+    flex-direction: column;
+    height: auto;
+    flex: none;
+    overflow: visible;
+  }
+}
+
 .statLeft {
   flex: 1.2;
-  padding: 12px;
+  padding: 8px;
   border-right: 1px solid var(--border);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 16px 12px;
+  gap: 8px 12px;
   align-content: center;
   justify-items: center;
   min-height: 0;
+}
+
+@media (max-width: 600px) {
+  .statLeft {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    flex: none;
+    padding: 20px 12px;
+  }
 }
 
 .metricItem {
@@ -762,7 +864,7 @@
 
 .statRight {
   flex: 1;
-  padding: 10px 12px;
+  padding: 6px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -770,6 +872,15 @@
   gap: 8px;
   overflow-y: auto;
   min-height: 0;
+}
+
+@media (max-width: 1100px) {
+  .statRight {
+    flex: none;
+    height: auto;
+    overflow: visible;
+    padding: 20px 12px;
+  }
 }
 
 .bigStatRow {
@@ -849,7 +960,7 @@
 
 .missionRow {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -1221,46 +1332,74 @@
   margin: 0;
 }
 
+.achievGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .achievGroups {
+    gap: 12px;
+  }
+}
+
 .achievGrid {
   display: grid;
-  /* marcas e insígnias: 1fr cada; fitas: 2fr cada (paisagem) */
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  grid-auto-rows: min-content;
+  /* Desktop: 10 colunas para M(1) M(1) I(1) I(1) F(3) F(3) = 10 no mesmo bloco */
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-rows: 70px;
   gap: 8px;
 }
 
 /* Specific sizing for different types to maintain proportion while being responsive */
 .achievSlot_marca, .achievSlot_insignia {
-  aspect-ratio: 1;
+  grid-column: span 1;
 }
 
 .achievSlot_fita {
-  grid-column: span 2;
-  aspect-ratio: 3 / 1;
+  grid-column: span 3;
 }
 
 @media (max-width: 600px) {
-  .achievSlot_fita {
+  .achievGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 6px;
+  }
+  
+  .achievSlot_marca, 
+  .achievSlot_insignia {
     grid-column: span 1;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
+  }
+
+  .achievSlot_fita {
+    grid-column: span 4;
+    aspect-ratio: 4 / 1;
   }
 }
 
 /* slot base */
 .achievSlot {
   position: relative;
-  background: rgba(14, 25, 40, 0.5);
+  background: rgba(14, 25, 40, 0.4);
   border: 1px solid var(--border);
   border-radius: 4px;
   cursor: pointer;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: border-color 0.15s, background 0.15s;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+  justify-content: flex-end; /* Alinhado à direita no desktop */
+  transition: all 0.15s;
+  padding: 8px;
+}
+
+@media (max-width: 600px) {
+  .achievSlot {
+    justify-content: center;
+    padding: 0;
+  }
 }
 
 .achievSlot:hover {
@@ -1269,19 +1408,55 @@
 }
 
 .achievImg {
-  width: 100%;
   height: 100%;
+  width: auto;
+  max-width: 60%;
   object-fit: contain;
   display: block;
-  padding: 6px;
+}
+
+.achievNameDesktop {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--text2);
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+  max-width: 60%;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .achievNameDesktop {
+    display: none;
+  }
+  .achievImg {
+    width: 100%;
+    max-width: 100%;
+    padding: 6px;
+  }
 }
 
 .achievEmpty {
-  font-size: 18px;
-  color: var(--border2);
-  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 11px;
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: var(--text2);
+  opacity: 0.3;
   pointer-events: none;
-  transition: color 0.15s;
+  transition: all 0.15s;
+}
+
+.achievEmpty span:first-child {
+  font-size: 14px;
 }
 
 .achievSlot:hover .achievEmpty {
@@ -1433,6 +1608,16 @@
   padding-bottom: 8px;
 }
 
+@media (max-width: 800px) {
+  .rankCarouselWrap {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  }
+}
+
 /*
  * Carrossel: ocupa 100% da largura, itens distribuídos igualmente
  * Linha de conexão via ::before no centro vertical dos losangos
@@ -1444,6 +1629,14 @@
   /* alinha centros verticais de todos os losangos */
   justify-content: space-between;
   width: 100%;
+}
+
+@media (max-width: 800px) {
+  .rankCarousel {
+    width: max-content;
+    justify-content: center;
+    flex-shrink: 0;
+  }
 }
 
 /* Linha horizontal passando pelo centro dos losangos (ponta a ponta) */
@@ -1460,6 +1653,13 @@
   z-index: 0;
 }
 
+@media (max-width: 800px) {
+  .rankCarousel::before {
+    left: -500px;
+    right: -500px;
+  }
+}
+
 /* ── Item individual ───────────────────────────────────────────────────────── */
 
 .rankItem {
@@ -1470,6 +1670,15 @@
   flex: 1;
   /* ocupa espaço igual entre os itens */
   z-index: 1;
+}
+
+@media (max-width: 800px) {
+  .rankItem {
+    flex: 0 0 52px;
+  }
+  .rankItemCurrent {
+    flex: 0 0 68px;
+  }
 }
 
 /* Número flutua acima do losango, fora do fluxo flex */
@@ -1545,25 +1754,31 @@
   font-weight: 600;
 }
 
-.rankItemCurrent .rankDiamondOuter {
-  width: 78px;
-  /* 62 × 1.25 */
-  height: 78px;
-}
-
-.rankItemCurrent .rankDiamond {
-  width: 55px;
-  /* 44 × 1.25 */
-  height: 55px;
-  border-color: #c9a227;
-  border-width: 2px;
-  animation: goldGlow 3s ease-in-out infinite;
-}
-
-.rankItemCurrent .rankImg {
-  width: 80px;
-  /* 64 × 1.25 */
-  height: 80px;
+@media (max-width: 800px) {
+  .rankDiamondOuter {
+    width: 48px;
+    height: 48px;
+  }
+  .rankDiamond {
+    width: 32px;
+    height: 32px;
+  }
+  .rankImg {
+    width: 48px;
+    height: 48px;
+  }
+  .rankItemCurrent .rankDiamondOuter {
+    width: 62px;
+    height: 62px;
+  }
+  .rankItemCurrent .rankDiamond {
+    width: 44px;
+    height: 44px;
+  }
+  .rankItemCurrent .rankImg {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 /* ── Ranks futuros (direita) — mesmo visual do vazio, imagem esmaecida ─────── */
@@ -1841,9 +2056,17 @@
   flex-direction: column;
   gap: 12px;
   padding: 16px 28px;
-  flex: 1;
-  overflow: hidden;
   min-height: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .desafiosTab {
+    padding: 16px 12px;
+    height: auto;
+    overflow: visible;
+    flex: none;
+  }
 }
 
 .desafiosNote {
@@ -1890,6 +2113,18 @@
   padding: 8px 0;
 }
 
+@media (max-width: 800px) {
+  .desafiosToolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .desafiosToolbar > * {
+    width: 100%;
+  }
+}
+
 .desafiosLists {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -1899,11 +2134,24 @@
   min-height: 400px;
 }
 
-.desafiosLists>* {
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0 6px 6px;
+@media (max-width: 1100px) {
+  .desafiosLists {
+    grid-template-columns: 1fr 1fr;
+  }
 }
+
+@media (max-width: 800px) {
+  .desafiosLists {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+    overflow: visible;
+    flex: none;
+    min-height: auto;
+  }
+}
+
 /* My Tickets Tab Styles */
 .ticketsGrid {
   display: grid;
@@ -2358,35 +2606,44 @@
 /* ── Warchaos Tab ────────────────────────────────────────────────────────── */
 
 .warchaosContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  grid-template-areas: 
+    "primary video"
+    "fine video"
+    "btn video";
+  align-items: start;
   justify-content: center;
-  gap: 60px;
-  padding: 0 60px; /* Reduzido padding superior/inferior para aproximar do centro */
-  max-width: 1400px;
+  gap: 20px 60px;
+  padding: 0 40px;
+  max-width: 1300px;
   width: 100%;
   margin: 0 auto;
 }
 
-.warchaosInfo h2 {
-  margin-top: 0;
-  margin-bottom: 2px;
-}
-
-.warchaosInfo {
-  flex: 1.6;
+.warchaosPrimaryInfo {
+  grid-area: primary;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinhado à esquerda como solicitado */
-  gap: 20px;
-  text-align: left; /* Alinhado à esquerda como solicitado */
+  gap: 16px;
+  text-align: left;
+}
+
+.warchaosFinePrint {
+  grid-area: fine;
+}
+
+.warchaosBtnArea {
+  grid-area: btn;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .warchaosVideo {
-  flex: 1;
+  grid-area: video;
   width: 100%;
-  max-width: 640px; /* Slightly smaller for balance */
+  max-width: 640px;
   aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
@@ -2394,6 +2651,7 @@
   background: #000;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
   transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
+  align-self: center;
 }
 
 .warchaosVideo:hover {
@@ -2602,22 +2860,43 @@
 
 @media (max-width: 1150px) {
   .warchaosContainer {
+    display: flex;
     flex-direction: column;
-    text-align: center;
-    padding: 60px 30px;
-    gap: 40px;
+    padding: 20px 16px;
+    gap: 20px;
+    max-height: none;
+    overflow: visible;
   }
-  .warchaosInfo {
+  
+  .warchaosPrimaryInfo {
+    order: 1;
     align-items: center;
     text-align: center;
+  }
+  
+  .warchaosFinePrint {
     order: 2;
+    text-align: center;
   }
+  
   .warchaosVideo {
+    order: 3;
     max-width: 100%;
-    order: 1;
+    align-self: stretch;
   }
+  
+  .warchaosBtnArea {
+    order: 4;
+    align-items: center;
+  }
+
   .warchaosLinks {
     justify-content: center;
+  }
+  
+  .warchaosFeatures {
+    grid-template-columns: 1fr;
+    text-align: left;
   }
 }
 

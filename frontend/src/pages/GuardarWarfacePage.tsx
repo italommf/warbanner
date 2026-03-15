@@ -680,14 +680,26 @@ type AchSlotType = 'marca' | 'insignia' | 'fita'
 
 interface AchSlot { type: AchSlotType; item: Item | null }
 
-// 3 linhas × 6 colunas: [marca, marca, insignia, insignia, fita, fita]
-const ROW_PATTERN: AchSlotType[] = ['marca', 'marca', 'insignia', 'insignia', 'fita', 'fita']
-const ROWS = 3
-
+// 6 de cada tipo totalizando 18 slots
 const FAV_STORAGE_KEY = 'wf_fav_achievements'
 
 function buildSlots(): AchSlot[] {
-  return Array.from({ length: ROWS }, () => ROW_PATTERN.map((type) => ({ type, item: null }))).flat()
+  const slots: AchSlot[] = []
+
+  // Repete o bloco 3 vezes: (M M I I) + F + F
+  for (let i = 0; i < 3; i++) {
+    // Linha de Marcas e Insígnias
+    slots.push({ type: 'marca', item: null })
+    slots.push({ type: 'marca', item: null })
+    slots.push({ type: 'insignia', item: null })
+    slots.push({ type: 'insignia', item: null })
+    
+    // Duas linhas de fitas (uma cada)
+    slots.push({ type: 'fita', item: null })
+    slots.push({ type: 'fita', item: null })
+  }
+
+  return slots
 }
 
 function loadSlots(userId: number): AchSlot[] {
@@ -761,20 +773,33 @@ function FavoriteAchievements({ userStats }: { userStats: any }) {
   return (
     <div className={styles.achievSection}>
       <h4 className={styles.achievTitle}>MINHAS CONQUISTAS FAVORITAS</h4>
-      <div className={styles.achievGrid}>
-        {slots.map((slot, i) => (
-          <button
-            key={i}
-            className={`${styles.achievSlot} ${styles[`achievSlot_${slot.type}` as keyof typeof styles]}`}
-            onClick={() => setPickerOpen(i)}
-            title={slot.item?.name ?? `Adicionar ${slot.type}`}
-          >
-            {slot.item ? (
-              <img src={slot.item.url} alt={slot.item.name} className={styles.achievImg} />
-            ) : (
-              <span className={styles.achievEmpty}>+</span>
-            )}
-          </button>
+      <div className={styles.achievGroups}>
+        {Array.from({ length: 3 }).map((_, groupIdx) => (
+          <div key={groupIdx} className={styles.achievGrid}>
+            {slots.slice(groupIdx * 6, (groupIdx + 1) * 6).map((slot, i) => {
+              const globalIdx = groupIdx * 6 + i
+              return (
+                <button
+                  key={globalIdx}
+                  className={`${styles.achievSlot} ${styles[`achievSlot_${slot.type}` as keyof typeof styles]}`}
+                  onClick={() => setPickerOpen(globalIdx)}
+                  title={slot.item?.name ?? `Adicionar ${slot.type}`}
+                >
+                  {slot.item ? (
+                    <>
+                      <img src={slot.item.url} alt={slot.item.name} className={styles.achievImg} />
+                      <span className={styles.achievNameDesktop}>{slot.item.name}</span>
+                    </>
+                  ) : (
+                    <span className={styles.achievEmpty}>
+                      <span>+</span>
+                      <span>{slot.type}</span>
+                    </span>
+                  )}
+                </button>
+              )
+            })}
+          </div>
         ))}
       </div>
 
@@ -1358,7 +1383,8 @@ function WarchaosTab() {
       </AnimatePresence>
 
       <div className={styles.warchaosContainer}>
-        <div className={styles.warchaosInfo}>
+        {/* Lado esquerdo (ou sequência no mobile) */}
+        <div className={styles.warchaosPrimaryInfo}>
           <h2 style={{ fontSize: '24px', fontWeight: 900, color: 'var(--orange)', letterSpacing: '0.05em' }}>
             O servidor privado de Warface feito pela comunidade!
           </h2>
@@ -1403,8 +1429,10 @@ function WarchaosTab() {
               CRIAR CONTA NO WARCHAOS*
             </a>
           </div>
+        </div>
 
-          <div style={{ fontSize: '9px', color: 'var(--text2)', opacity: 0.5, marginTop: '12px', fontStyle: 'italic', display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left', width: '100%' }}>
+        <div className={styles.warchaosFinePrint}>
+          <div style={{ fontSize: '9px', color: 'var(--text2)', opacity: 0.5, fontStyle: 'italic', display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left', width: '100%' }}>
             <p>
               * Ao criar sua conta através do botão acima, você estará usando o link de afiliado do desenvolvedor deste site.
             </p>
@@ -1414,7 +1442,19 @@ function WarchaosTab() {
               sem vínculos oficiais com a Crytek, My.Games ou Warface Clutch.
             </p>
           </div>
+        </div>
 
+        <div className={styles.warchaosVideo}>
+           <iframe 
+              src="https://www.youtube.com/embed/7etfQUoVza4" 
+              title="WarChaos" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+           />
+        </div>
+
+        <div className={styles.warchaosBtnArea}>
           {!user?.warchaos_migrado && !user?.warchaos_solicitou && (
             <div style={{ padding: '8px 0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <p style={{ fontSize: '11px', color: 'var(--text2)', fontWeight: 600, opacity: 0.8 }}>
@@ -1467,16 +1507,6 @@ function WarchaosTab() {
             )}
           </div>
         </div>
-
-        <div className={styles.warchaosVideo}>
-           <iframe 
-              src="https://www.youtube.com/embed/7etfQUoVza4" 
-              title="WarChaos" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-           />
-        </div>
       </div>
     </div>
   )
@@ -1511,7 +1541,7 @@ function WarfaceSection({ activeTab, setActiveTab }: WarfaceSectionProps) {
         </span>
         <p className={styles.warfaceAlertText}>
           {daysLeft > 0 
-            ? `O servidor do Warface (MYGAMES) será encerrado em ${daysLeft} dias. Preserve seus dados aqui.`
+            ? <>O servidor do Warface (MYGAMES) será encerrado em <span className={styles.daysHighlight}>{daysLeft}</span> dias. Preserve seus dados aqui.</>
             : 'Os servidores oficiais foram encerrados. Esta é a Central de Suporte do WarBanner.'
           }
         </p>
@@ -1569,7 +1599,8 @@ export function GuardarWarfacePage() {
 
   return (
     <motion.main
-      style={{ flex: 1, display: 'flex', flexDirection: 'column', background: panelBg, position: 'relative', zIndex: 1, borderRadius: 8, overflow: 'hidden', margin: '0 8px' }}
+      className={styles.pageMain}
+      style={{ background: panelBg }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
