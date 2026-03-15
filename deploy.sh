@@ -5,7 +5,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 
-echo -e "${BLUE}Iniciando deploy do Warface Desafios em warbanner.italommf.com.br...${NC}"
+echo -e "${BLUE}Iniciando deploy do Warface Desafios em warbanner.com.br...${NC}"
 
 # 1. Verificar e instalar Docker se necessário
 if ! [ -x "$(command -v docker)" ]; then
@@ -59,7 +59,7 @@ echo -e "\n${BLUE}Para configurar o HTTPS no Nginx da sua VPS, use este modelo:$
 echo "------------------------------------------------------------"
 echo "server {"
 echo "    listen 80;"
-echo "    server_name warbanner.italommf.com.br;"
+echo "    server_name warbanner.com.br;"
 echo "    location / {"
 echo "        proxy_pass http://127.0.0.1:8081;"
 echo "        proxy_set_header Host \$host;"
@@ -70,5 +70,5 @@ echo "        client_max_body_size 50M;"
 echo "    }"
 echo "}"
 echo "------------------------------------------------------------"
-echo -e "${BLUE}Após criar o arquivo, rode: sudo certbot --nginx -d warbanner.italommf.com.br${NC}"
+echo -e "${BLUE}Após criar o arquivo, rode: sudo certbot --nginx -d warbanner.com.br${NC}"
 echo -e "${GREEN}Verifique os logs com: docker compose logs -f${NC}"

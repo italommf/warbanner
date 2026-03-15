@@ -1,69 +1,130 @@
 .container {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 40px 20px;
+  overflow-x: hidden;
   min-height: 0;
-  overflow-y: auto;
-  z-index: 1;
 }
 
 .card {
   background: rgba(13, 21, 32, 0.9);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 40px;
-  max-width: 600px;
+  padding: 60px;
+  max-width: 1100px;
   width: 100%;
   text-align: center;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
+  margin-bottom: 40px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 10fr 9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: 950;
   color: #fff;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
 }
 
 .description {
   color: var(--text2);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 16px;
+  margin: 0;
+}
+
+.importanceCard {
+  background: rgba(255, 85, 0, 0.03);
+  border: 1px solid rgba(255, 85, 0, 0.1);
+  padding: 24px;
+  border-radius: 12px;
   margin-bottom: 32px;
-  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.reinvestNote {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #fff;
+}
+
+.reinvestNote strong {
+  color: var(--orange);
+}
+
+.noteIcon {
+  font-size: 20px;
 }
 
 .devSection {
-  margin-bottom: 40px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .devLabel {
   font-size: 10px;
   letter-spacing: 0.2em;
   color: var(--orange);
-  font-weight: bold;
-}
-
-.devCard {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 15px 25px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-weight: 800;
+  opacity: 0.8;
 }
 
 .devBadge {
-  height: 60px;
+  width: 100%;
+  max-width: 460px; /* Garante que não ultrapasse o card */
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s;
+}
+
+.devBadge:hover {
+  transform: scale(1.05);
+}
+
+.devBadge {
+  height: 54px;
   width: auto;
   object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 .devInfo {
@@ -72,16 +133,40 @@
 
 .devName {
   display: block;
-  font-size: 18px;
+  font-size: 22px;
   color: #fff;
-  font-weight: bold;
-  margin-bottom: 4px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: -8px;
 }
 
-.socialPlaceholder {
-  font-size: 12px;
+.socialActions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.socialBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   color: var(--text2);
-  opacity: 0.7;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.socialBtn:hover {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(255, 85, 0, 0.3);
 }
 
 .supportOptions {
@@ -89,38 +174,164 @@
   padding-top: 32px;
 }
 
-.option h3 {
-  color: var(--orange);
-  font-size: 14px;
-  margin-bottom: 8px;
+.donateCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 32px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.pixHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pixIconCircle {
+  width: 44px;
+  height: 44px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
+}
+
+.donateCard h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
   letter-spacing: 0.1em;
 }
 
-.option p {
+.anyAmountNote {
   font-size: 13px;
   color: var(--text2);
-  margin-bottom: 16px;
+  max-width: 400px;
+  line-height: 1.5;
 }
 
-.pixPlaceholder {
-  background: rgba(0, 0, 0, 0.3);
+.qrCodeWrapper {
+  background: #fff;
   padding: 12px;
-  border-radius: 6px;
-  color: #fff;
-  font-family: monospace;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(255, 85, 0, 0.15);
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrCode {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.pixKeyBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 6px 6px 20px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pixKeyBox:hover {
+  border-color: rgba(255, 85, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+}
+
+.pixKeyBox.copied {
+  border-color: #00ff88;
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.pixKey {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 14px;
-  border: 1px dashed var(--border2);
+  color: #fff;
+  font-weight: 500;
+}
+
+.copyBtn {
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copied .copyBtn {
+  background: #00ff88;
+}
+
+.pixHint {
+  font-size: 10px;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .card {
+    padding: 32px 24px;
+    max-width: 540px;
+  }
+  .devSection {
+    align-items: center;
+    margin-top: 0;
+  }
+  .leftCol {
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding: 20px 16px;
+  }
   .card {
-    padding: 24px;
+    padding: 24px 16px;
+    margin-bottom: 20px;
   }
   .devCard {
     flex-direction: column;
     text-align: center;
+    padding: 12px 16px;
+    width: 100%;
+    justify-content: center;
   }
-  .devInfo {
-    text-align: center;
+  .devBadge {
+    max-height: 80px;
+  }
+  .devName {
+    font-size: 18px;
+  }
+  .socialBtn {
+    width: 36px;
+    height: 36px;
   }
 }

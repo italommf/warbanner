@@ -48,7 +48,7 @@ DATABASES = {
 # CORS
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "https://warbanner.italommf.com.br",
+    "https://warbanner.com.br",
     "http://localhost:5173", # Para desenvolvimento local
 ]
 
