@@ -91,6 +91,11 @@
   margin: 0;
 }
 
+.reinvestCard strong {
+  color: var(--orange);
+  font-weight: 800;
+}
+
 .devSection {
   margin-top: 20px;
   display: flex;
