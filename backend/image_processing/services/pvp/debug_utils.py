@@ -3,6 +3,8 @@ import cv2
 from .image_utils import crop_roi
 from .roi_map import get_main_rois, get_pve_rois, get_class_rois, get_challenge_slots
 
+from django.conf import settings
+
 DEBUG_DIR = "debug_outputs"
 
 def save_debug_images(img, prefix="debug"):
@@ -10,6 +12,9 @@ def save_debug_images(img, prefix="debug"):
     Saves ROI crops and a visualization of all ROIs for debugging purposes.
     DPI-Aware: Ajusta o desenho dos retângulos conforme a resolução da imagem (ex: 4K).
     """
+    if not settings.DEBUG:
+        return
+        
     if not os.path.exists(DEBUG_DIR):
         os.makedirs(DEBUG_DIR)
         
