@@ -2833,6 +2833,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 12px;
   padding: 16px 36px;
   background: rgba(255, 255, 255, 0.03);
@@ -2887,7 +2888,21 @@
   
   .warchaosBtnArea {
     order: 4;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .warchaosBtnWrapper {
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .warchaosStatus {
+    width: fit-content;
   }
 
   .warchaosLinks {

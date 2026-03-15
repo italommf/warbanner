@@ -1456,7 +1456,7 @@ function WarchaosTab() {
 
         <div className={styles.warchaosBtnArea}>
           {!user?.warchaos_migrado && !user?.warchaos_solicitou && (
-            <div style={{ padding: '8px 0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div style={{ padding: '8px 0', display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
               <p style={{ fontSize: '11px', color: 'var(--text2)', fontWeight: 600, opacity: 0.8 }}>
                 Já criou sua conta no WarChaos? Solicite a migração dos dados para o servidor privado 
                 e mantenha viva a sua conta pós encerramento dos servidores oficiais do Warface.
@@ -1475,7 +1475,7 @@ function WarchaosTab() {
                 <span>✅</span> DADOS MIGRADOS
               </div>
             ) : user?.warchaos_solicitou ? (
-              <div className={`${styles.warchaosStatus} ${styles.statusWaiting}`} style={{ flexDirection: 'column', gap: '4px', padding: '12px 20px' }}>
+              <div className={`${styles.warchaosStatus} ${styles.statusWaiting}`} style={{ flexDirection: 'column', gap: '4px', padding: '12px 20px', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span>⏳</span> AGUARDANDO MIGRAÇÃO DOS DADOS
                 </div>

@@ -217,7 +217,13 @@ function formatNumber(num: number): string {
 // ── Estatísticas components ───────────────────────────────────────────────────
 
 function RankIcon({ rankIdx, size = 24 }: { rankIdx: number; size?: number }) {
-  const url = `/media/site/patentes/Rank_${String(rankIdx).padStart(2, '0')}.png`
+  // Se for maior que 100, é patente de prestígio (101=Prestige_1, 102=Prestige_2, etc)
+  const isPrestige = rankIdx > 100
+  const filename = isPrestige 
+    ? `Rank_Prestige_${rankIdx - 100}` 
+    : `Rank_${String(rankIdx).padStart(2, '0')}`
+    
+  const url = `/media/site/patentes/${filename}.png`
   return <img src={url} alt={`Rank ${rankIdx}`} className={styles.rankImg} style={{ width: size, height: size }} />
 }
 
@@ -444,7 +450,8 @@ export function ComunidadePage() {
 
   return (
     <motion.main
-      style={{ flex: 1, display: 'flex', flexDirection: 'column', background: panelBg, position: 'relative', zIndex: 1, borderRadius: 8, overflow: 'hidden', margin: '0 8px' }}
+      className={styles.pageMain}
+      style={{ background: panelBg }}
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       transition={{ duration: 0.1 }}
     >
@@ -468,7 +475,7 @@ export function ComunidadePage() {
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
-          style={{ flex: 1, overflowY: 'auto' }}
+          className={styles.tabContentWrapper}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
