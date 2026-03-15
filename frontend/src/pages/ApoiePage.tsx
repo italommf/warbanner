@@ -4,7 +4,7 @@ import { motion } from 'framer-motion' // Added missing import for motion
 
 export function ApoiePage() {
   const [copied, setCopied] = useState(false)
-  const pixKey = 'contato@italommf.com.br'
+  const pixKey = '405530c2-8586-4deb-bb4f-10ca526c4564'
 
   const handleCopy = () => {
     navigator.clipboard.writeText(pixKey)
