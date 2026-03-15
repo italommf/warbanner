@@ -85,8 +85,8 @@ SIMPLE_JWT = {
 # Discord OAuth2
 DISCORD_CLIENT_ID     = os.environ.get('DISCORD_CLIENT_ID', '')
 DISCORD_CLIENT_SECRET = os.environ.get('DISCORD_CLIENT_SECRET', '')
-DISCORD_REDIRECT_URI  = os.environ.get('DISCORD_REDIRECT_URI', 'http://localhost:8000/api/auth/discord/callback/')
-FRONTEND_URL          = os.environ.get('FRONTEND_URL', 'http://localhost:5173')
+DISCORD_REDIRECT_URI  = os.environ.get('DISCORD_REDIRECT_URI', 'https://warbanner.com.br/api/auth/discord/callback/')
+FRONTEND_URL          = os.environ.get('FRONTEND_URL', 'https://warbanner.com.br')
 
 # Celery Configuration
 CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL', "redis://127.0.0.1:6379/0")
