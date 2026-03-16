@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 24px;
+  padding: 60px 24px; /* Aumentado para 60px para melhor respiro */
   box-sizing: border-box;
   position: relative;
   scrollbar-width: thin;
@@ -43,6 +43,7 @@
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  margin: auto 0; /* Centralização mágica que respeita o scroll (não corta o topo) */
 }
 
 .contentGrid {
