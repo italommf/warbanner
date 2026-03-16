@@ -209,6 +209,7 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
     const currentUser = useAuthStore(s => s.user)
     const [formData, setFormData] = useState<any>(null)
     const [saved, setSaved] = useState(false)
+    const [selectedImage, setSelectedImage] = useState<any>(null)
 
     // Admin = role 'admin'. Moderador tem is_staff mas NÃO é admin.
     const isAdmin = currentUser?.role === 'admin'
@@ -233,6 +234,28 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
 
     const handleSave = () => {
         update({ id: userId, data: formData }, {
+            onSuccess: () => {
+                setSaved(true)
+                setTimeout(() => setSaved(false), 2500)
+            }
+        })
+    }
+
+    const handleDeleteMigration = () => {
+        if (!window.confirm("Deseja realmente REMOVER este usuário da fila de migração? Isso apagará os dados de usuário e nick Warchaos.")) return;
+        
+        const resetData = {
+            warchaos_solicitou: false,
+            warchaos_solicitou_at: null,
+            warchaos_user: null,
+            warchaos_nick: null,
+            warchaos_migrado: false
+        }
+        
+        setFormData((prev: any) => ({ ...prev, ...resetData }))
+        
+        // Salva imediatamente
+        update({ id: userId, data: resetData }, {
             onSuccess: () => {
                 setSaved(true)
                 setTimeout(() => setSaved(false), 2500)
@@ -317,6 +340,11 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                             onClick={() => handleLocalReset('desafios')}
                         >
                             {formData._reset_desafios ? '✓ APAGAR AGENDADO' : 'APAGAR IMAGENS'}
+                        </button>
+                    )}
+                    {activeTab === 'warchaos' && canEdit && (formData.warchaos_solicitou || formData.warchaos_migrado) && (
+                        <button className={`${styles.resetBtn} ${styles.resetBtnDanger}`} onClick={handleDeleteMigration}>
+                            EXCLUIR SOLICITAÇÃO
                         </button>
                     )}
                     
@@ -498,52 +526,101 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                 )}
 
                 {activeTab === 'imagens' && (
-                    <div className={styles.imageTabs}>
-                        <div className={styles.statsImagesRow}>
-                            <div className={styles.imageSection}>
-                                <h3 className={styles.sectionTitle}>PVP</h3>
-                                <div className={styles.imageGridMini}>
-                                    {images.filter(img => img.image_type === 'pvp').length > 0 ? (
-                                        images.filter(img => img.image_type === 'pvp').map(img => (
-                                            <ImageCard key={img.id} img={img} />
-                                        ))
-                                    ) : (
-                                        <p className={styles.noImagesSmall}>Nenhum upload de PvP</p>
-                                    )}
+                    <div className={styles.imageTabContent}>
+                        <div className={styles.imageGridScroll}>
+                            <div className={styles.imageTabs}>
+                                <div className={styles.statsImagesRow}>
+                                    <div className={styles.imageSection}>
+                                        <h3 className={styles.sectionTitle}>PVP</h3>
+                                        <div className={styles.imageGridMini}>
+                                            {images.filter(img => img.image_type === 'pvp').length > 0 ? (
+                                                images.filter(img => img.image_type === 'pvp').map(img => (
+                                                    <ImageCard 
+                                                        key={img.id} 
+                                                        img={img} 
+                                                        active={selectedImage?.id === img.id}
+                                                        onClick={() => setSelectedImage(img)} 
+                                                    />
+                                                ))
+                                            ) : (
+                                                <p className={styles.noImagesSmall}>Nenhum upload de PvP</p>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className={styles.imageSection}>
+                                        <h3 className={styles.sectionTitle}>PVE</h3>
+                                        <div className={styles.imageGridMini}>
+                                            {images.filter(img => img.image_type === 'pve').length > 0 ? (
+                                                images.filter(img => img.image_type === 'pve').map(img => (
+                                                    <ImageCard 
+                                                        key={img.id} 
+                                                        img={img} 
+                                                        active={selectedImage?.id === img.id}
+                                                        onClick={() => setSelectedImage(img)} 
+                                                    />
+                                                ))
+                                            ) : (
+                                                <p className={styles.noImagesSmall}>Nenhum upload de PvE</p>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className={styles.imageSection}>
-                                <h3 className={styles.sectionTitle}>PVE</h3>
-                                <div className={styles.imageGridMini}>
-                                    {images.filter(img => img.image_type === 'pve').length > 0 ? (
-                                        images.filter(img => img.image_type === 'pve').map(img => (
-                                            <ImageCard key={img.id} img={img} />
-                                        ))
-                                    ) : (
-                                        <p className={styles.noImagesSmall}>Nenhum upload de PvE</p>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
 
-                        <div className={styles.imageSection}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-                                <h3 className={styles.sectionTitle} style={{ margin: 0 }}>CONQUISTAS</h3>
-                            </div>
-                            <div className={styles.imageGrid}>
-                                {images.filter(img => img.image_type === 'desafios').length > 0 ? (
-                                    images.filter(img => img.image_type === 'desafios').map(img => (
-                                        <ImageCard key={img.id} img={img} />
-                                    ))
-                                ) : (
-                                    <p className={styles.noImagesSmall}>Nenhum upload de conquistas</p>
+                                <div className={styles.imageSection}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+                                        <h3 className={styles.sectionTitle} style={{ margin: 0 }}>CONQUISTAS</h3>
+                                    </div>
+                                    <div className={styles.imageGrid}>
+                                        {images.filter(img => img.image_type === 'desafios').length > 0 ? (
+                                            images.filter(img => img.image_type === 'desafios').map(img => (
+                                                <ImageCard 
+                                                    key={img.id} 
+                                                    img={img} 
+                                                    active={selectedImage?.id === img.id}
+                                                    onClick={() => setSelectedImage(img)} 
+                                                />
+                                            ))
+                                        ) : (
+                                            <p className={styles.noImagesSmall}>Nenhum upload de conquistas</p>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {images.length === 0 && (
+                                    <p className={styles.noUser}>Usuário ainda não enviou capturas para processamento.</p>
                                 )}
                             </div>
                         </div>
 
-                        {images.length === 0 && (
-                            <p className={styles.noUser}>Usuário ainda não enviou capturas para processamento.</p>
-                        )}
+                        <AnimatePresence>
+                            {selectedImage && (
+                                <motion.div 
+                                    className={styles.imageDetailSidebar}
+                                    initial={{ x: 300, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    exit={{ x: 300, opacity: 0 }}
+                                >
+                                    <div className={styles.detailHeader}>
+                                        <h3>DETALHES DO OCR</h3>
+                                        <button className={styles.closeDetail} onClick={() => setSelectedImage(null)}>✕</button>
+                                    </div>
+                                    <div className={styles.detailBody}>
+                                        <a href={selectedImage.image} target="_blank" rel="noreferrer" className={styles.fullImgBox}>
+                                            <img src={selectedImage.image} alt="Original" />
+                                        </a>
+
+                                        <div className={styles.ocrResults}>
+                                            <span className={styles.ocrSectionTitle}>Dados Identificados</span>
+                                            {selectedImage.result ? (
+                                                <OCRDetails result={selectedImage.result} />
+                                            ) : (
+                                                <p className={styles.noImagesSmall}>Sem resultados de OCR disponíveis.</p>
+                                            )}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
                 )}
 
@@ -696,9 +773,13 @@ function ClassesEditor({ value, onChange }: { value: ClassEntry[]; onChange: (v:
     )
 }
 
-function ImageCard({ img }: { img: any }) {
+function ImageCard({ img, active, onClick }: { img: any, active?: boolean, onClick?: () => void }) {
     return (
-        <div className={styles.imgCard}>
+        <div 
+            className={`${styles.imgCard} ${active ? styles.imgCardActive : ''}`}
+            onClick={onClick}
+            style={{ cursor: onClick ? 'pointer' : 'default' }}
+        >
             <div className={styles.thumbBox}>
                 <img src={img.image} alt={`Upload ${img.id}`} />
             </div>
@@ -710,6 +791,88 @@ function ImageCard({ img }: { img: any }) {
                     {img.status}
                 </div>
             </div>
+        </div>
+    )
+}
+
+function OCRDetails({ result }: { result: any }) {
+    return (
+        <div className={styles.ocrBody}>
+            {/* PvP Stats */}
+            {result.pvp_stats && (
+                <div className={styles.ocrSection}>
+                    <span className={styles.ocrSectionTitle}>Status PvP</span>
+                    <div className={styles.ocrDataGrid}>
+                        <div className={styles.ocrDataItem}>
+                            <span className={styles.ocrDataLabel}>E/M</span>
+                            <span className={styles.ocrDataValue}>{result.pvp_stats.kd_ratio ?? '---'}</span>
+                        </div>
+                        <div className={styles.ocrDataItem}>
+                            <span className={styles.ocrDataLabel}>VITÓRIAS</span>
+                            <span className={styles.ocrDataValue}>{result.pvp_stats.win_rate ?? '---'}%</span>
+                        </div>
+                        <div className={styles.ocrDataItem}>
+                            <span className={styles.ocrDataLabel}>PARTIDAS</span>
+                            <span className={styles.ocrDataValue}>{result.pvp_stats.matches_played ?? '---'}</span>
+                        </div>
+                        <div className={styles.ocrDataItem}>
+                            <span className={styles.ocrDataLabel}>HORAS</span>
+                            <span className={styles.ocrDataValue}>{result.time_played_hours ?? '---'}h</span>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* PvE Stats */}
+            {result.pve_stats && (
+                <div className={styles.ocrSection}>
+                    <span className={styles.ocrSectionTitle}>Status PvE</span>
+                    <div className={styles.ocrDataGrid}>
+                        <div className={styles.ocrDataItem}>
+                            <span className={styles.ocrDataLabel}>PARTIDAS</span>
+                            <span className={styles.ocrDataValue}>{result.pve_stats.matches_played ?? '---'}</span>
+                        </div>
+                        <div className={styles.ocrDataItem}>
+                            <span className={styles.ocrDataLabel}>FÁCIL</span>
+                            <span className={styles.ocrDataValue}>{result.pve_stats.missions?.easy ?? 0}</span>
+                        </div>
+                        <div className={styles.ocrDataItem}>
+                            <span className={styles.ocrDataLabel}>NORMAL</span>
+                            <span className={styles.ocrDataValue}>{result.pve_stats.missions?.medium ?? 0}</span>
+                        </div>
+                        <div className={styles.ocrDataItem}>
+                            <span className={styles.ocrDataLabel}>PRO</span>
+                            <span className={styles.ocrDataValue}>{result.pve_stats.missions?.hard ?? 0}</span>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Conquistas */}
+            {result.detected_achievements && result.detected_achievements.length > 0 && (
+                <div className={styles.ocrSection}>
+                    <span className={styles.ocrSectionTitle}>Desafios Detectados</span>
+                    <div className={styles.ocrAchievements}>
+                        {result.detected_achievements.map((ach: any, idx: number) => (
+                            <div key={idx} className={styles.ocrAchievementItem}>
+                                <div className={styles.ocrAchInfo}>
+                                    <span className={styles.ocrAchCat}>{ach.category}</span>
+                                    <span className={styles.ocrAchName}>{ach.id}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {result.error && (
+                <div className={styles.ocrSection}>
+                    <span className={styles.ocrSectionTitle} style={{ color: 'var(--red)' }}>ERRO OCR</span>
+                    <p style={{ fontSize: '0.8rem', color: '#ff4757', background: 'rgba(255, 71, 87, 0.1)', padding: '8px', borderRadius: '4px' }}>
+                        {result.error}
+                    </p>
+                </div>
+            )}
         </div>
     )
 }
