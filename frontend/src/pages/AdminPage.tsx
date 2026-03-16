@@ -296,6 +296,30 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                     <span>ID: {userId} • Membro desde {new Date(formData.date_joined).toLocaleDateString()}</span>
                 </div>
                 <div className={styles.detailsActions}>
+                    {activeTab === 'pvp' && canEdit && (
+                        <button className={styles.resetBtn} onClick={() => handleLocalReset('pvp')}>
+                            RESETAR PVP
+                        </button>
+                    )}
+                    {activeTab === 'pve' && canEdit && (
+                        <button className={styles.resetBtn} onClick={() => handleLocalReset('pve')}>
+                            RESETAR PVE
+                        </button>
+                    )}
+                    {activeTab === 'desafios' && canEdit && (
+                        <button className={styles.resetBtn} onClick={() => handleLocalReset('desafios_data')}>
+                            RESETAR CONQUISTAS
+                        </button>
+                    )}
+                    {activeTab === 'imagens' && canEdit && (
+                        <button 
+                            className={`${styles.resetBtn} ${formData._reset_desafios ? styles.resetBtnActive : ''}`} 
+                            onClick={() => handleLocalReset('desafios')}
+                        >
+                            {formData._reset_desafios ? '✓ APAGAR AGENDADO' : 'APAGAR IMAGENS'}
+                        </button>
+                    )}
+                    
                     {activeTab !== 'historico' && (
                         <button
                             className={`${styles.saveBtn} ${saved ? styles.saveBtnSuccess : ''}`}
@@ -407,14 +431,6 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                             <label>CLASSES PVP</label>
                             <ClassesEditor value={formData.pvp_classes ?? []} onChange={v => handleChange('pvp_classes', v)} />
                         </div>
-                        <div className={styles.tabResetArea}>
-                            <button
-                                className={styles.resetBtn}
-                                onClick={() => handleLocalReset('pvp')}
-                            >
-                                RESETAR DADOS PVP
-                            </button>
-                        </div>
                     </div>
                 )}
 
@@ -452,14 +468,6 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                             <label>CLASSES PVE</label>
                             <ClassesEditor value={formData.pve_classes ?? []} onChange={v => handleChange('pve_classes', v)} />
                         </div>
-                        <div className={styles.tabResetArea}>
-                            <button
-                                className={styles.resetBtn}
-                                onClick={() => handleLocalReset('pve')}
-                            >
-                                RESETAR DADOS PVE
-                            </button>
-                        </div>
                     </div>
                 )}
 
@@ -486,14 +494,6 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                             />
                         </div>
 
-                        <div className={styles.challengesFixedFooter}>
-                            <button
-                                className={styles.resetBtn}
-                                onClick={() => handleLocalReset('desafios_data')}
-                            >
-                                Resetar Desafios
-                            </button>
-                        </div>
                     </div>
                 )}
 
@@ -529,13 +529,6 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                         <div className={styles.imageSection}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
                                 <h3 className={styles.sectionTitle} style={{ margin: 0 }}>CONQUISTAS</h3>
-                                <button
-                                    className={styles.resetBtn}
-                                    style={{ fontSize: '10px', padding: '4px 10px' }}
-                                    onClick={() => handleLocalReset('desafios')}
-                                >
-                                    RESETAR CONQUISTAS
-                                </button>
                             </div>
                             <div className={styles.imageGrid}>
                                 {images.filter(img => img.image_type === 'desafios').length > 0 ? (
