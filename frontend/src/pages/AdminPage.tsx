@@ -836,44 +836,83 @@ function OCRDetails({ result }: { result: any }) {
                 <div className={styles.ocrSection}>
                     <span className={styles.ocrSectionTitle}>Processamento por ROI</span>
                     <div className={styles.ocrDetailsList}>
-                        {result.ocr_report.map((item: any, idx: number) => (
-                            <div key={idx} className={styles.ocrTableRow}>
-                                <div className={styles.ocrFieldInfo}>
-                                    <span className={styles.fieldName}>{item.name}</span>
-                                    <div className={styles.fieldValues}>
-                                        <span className={styles.rawVal}>{item.raw_ocr || '---'}</span>
-                                        <span className={styles.fieldArrow}>→</span>
-                                        <span className={styles.finalVal}>{item.assigned_value}</span>
+                        {result.ocr_report.map((item: any, idx: number) => {
+                            const isV2 = item.raw_ocr !== undefined;
+                            const needsReview = isV2 && item.raw_ocr !== String(item.assigned_value);
+                            
+                            return (
+                                <div key={idx} className={styles.ocrTableRow}>
+                                    <div className={styles.slotIndicator} style={{ backgroundColor: item.color || 'var(--orange)' }} />
+                                    <div className={styles.ocrFieldInfo}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                            <span className={styles.fieldName}>{item.name}</span>
+                                            {isV2 && needsReview && <span className={styles.warningBadge}>Revisar</span>}
+                                        </div>
+                                        <div className={styles.fieldValues}>
+                                            {isV2 && (
+                                                <div className={styles.fieldRow}>
+                                                    <span className={styles.rowLabel}>OCR:</span>
+                                                    <span className={styles.rawVal}>{item.raw_ocr || '---'}</span>
+                                                </div>
+                                            )}
+                                            <div className={styles.fieldRow}>
+                                                <span className={styles.rowLabel}>{isV2 ? 'Final:' : 'Valor:'}</span>
+                                                <span className={styles.finalVal}>{item.assigned_value}</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             )}
 
-            {/* Conquistas (v2 com Metadados) */}
+            {/* Conquistas (v2 com Metadados e Cores) */}
             {result.detected_achievements && result.detected_achievements.length > 0 && (
                 <div className={styles.ocrSection}>
                     <span className={styles.ocrSectionTitle}>Desafios Detectados</span>
                     <div className={styles.ocrAchievements}>
-                        {result.detected_achievements.map((ach: any, idx: number) => (
-                            <div key={idx} className={styles.ocrTableRow}>
-                                <div className={styles.ocrFieldInfo}>
-                                    <span className={styles.fieldName}>Slot {ach.slot}</span>
-                                    <div className={styles.fieldValues}>
-                                        <span className={styles.rawVal}>{ach.raw_ocr || 'vazio'}</span>
-                                        <span className={`${styles.matchBadge} ${styles['match' + (ach.match_type === 'exact' ? 'Exact' : ach.match_type === 'similarity' ? 'Sim' : 'Fail')]}`}>
-                                            {ach.match_type}
-                                        </span>
-                                        <span className={styles.finalVal}>{ach.name}</span>
+                        {result.detected_achievements.map((ach: any, idx: number) => {
+                            // Só mostramos "Revisar/Falha" se os novos campos existirem (v2)
+                            const isV2 = ach.match_type !== undefined;
+                            const needsReview = isV2 && ach.match_type !== 'failed' && ach.raw_ocr !== ach.name;
+                            
+                            return (
+                                <div key={idx} className={styles.ocrTableRow}>
+                                    <div className={styles.slotIndicator} style={{ backgroundColor: ach.color || '#333' }} />
+                                    <div className={styles.ocrFieldInfo}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                            <span className={styles.fieldName}>Slot {ach.slot}</span>
+                                            {isV2 && needsReview && <span className={styles.warningBadge}>Revisar</span>}
+                                        </div>
+                                        
+                                        <div className={styles.fieldValues}>
+                                            {/* OCR só faz sentido mostrar se tiver o dado ou se for v2 */}
+                                            {isV2 && (
+                                                <div className={styles.fieldRow}>
+                                                    <span className={styles.rowLabel}>OCR:</span>
+                                                    <span className={styles.rawVal}>{ach.raw_ocr || 'vazio'}</span>
+                                                </div>
+                                            )}
+                                            <div className={styles.fieldRow}>
+                                                <span className={styles.rowLabel}>{isV2 ? 'Atrib:' : 'Desafio:'}</span>
+                                                <span className={styles.finalVal}>{ach.name}</span>
+                                                {isV2 && (
+                                                    <span className={`${styles.matchBadge} ${styles['match' + (ach.match_type === 'exact' ? 'Exact' : ach.match_type === 'similarity' ? 'Sim' : 'Fail')]}`}>
+                                                        {ach.match_type === 'exact' ? 'Match Exato' : ach.match_type === 'similarity' ? 'Similaridade' : 'Falha'}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </div>
+
+                                        {isV2 && ach.similarity && ach.similarity < 1 && (
+                                            <span className={styles.similarityScore}>Similaridade: {Math.round(ach.similarity * 100)}%</span>
+                                        )}
                                     </div>
-                                    {ach.similarity && ach.similarity < 1 && (
-                                        <span className={styles.similarityScore}>Similaridade: {Math.round(ach.similarity * 100)}%</span>
-                                    )}
                                 </div>
-                            </div>
-                        ))}
+                            )
+                        })}
                     </div>
                 </div>
             )}

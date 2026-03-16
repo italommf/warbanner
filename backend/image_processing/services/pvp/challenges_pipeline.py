@@ -112,6 +112,9 @@ def run_challenges_pipeline(image_path):
                     else:
                         logger.info(f"      {C_GREEN}√ Slot {i+1} (Match Exato):{C_END} {C_BOLD}{display_name}{C_END}")
 
+                    slot_colors = ["#ff3e3e", "#3eafff", "#3eff4b", "#ffdf3e", "#ff3eff", "#3effe4", "#ff913e", "#913eff"]
+                    current_color = slot_colors[i] if i < len(slot_colors) else "#ffffff"
+
                     items.append({
                         "id": found_match['filename'],
                         "name": display_name,
@@ -120,7 +123,7 @@ def run_challenges_pipeline(image_path):
                         "raw_ocr": raw_name,
                         "match_type": found_match['match_type'],
                         "similarity": similarity,
-                        "color": "#ff00ff",
+                        "color": current_color,
                         "roi": {
                             "x": int(roi_def["x"] * (img_w / roi_def.get("base", 1920))),
                             "y": int(roi_def["y"] * (img_w / roi_def.get("base", 1920))),
@@ -129,6 +132,9 @@ def run_challenges_pipeline(image_path):
                         }
                     })
                 else:
+                    slot_colors = ["#ff3e3e", "#3eafff", "#3eff4b", "#ffdf3e", "#ff3eff", "#3effe4", "#ff913e", "#913eff"]
+                    current_color = slot_colors[i] if i < len(slot_colors) else "#ffffff"
+                    
                     logger.info(f"      {C_CYAN}desafio encontrado com o ocr:{C_END} {C_RED}false{C_END}")
                     logger.warning(f"      {C_YELLOW}[!] Slot {i+1} não mapeado após {len(techniques)} tentativas.{C_END}")
                     items.append({
@@ -138,7 +144,7 @@ def run_challenges_pipeline(image_path):
                         "slot": i + 1,
                         "raw_ocr": raw_name if 'raw_name' in locals() else "",
                         "match_type": "failed",
-                        "color": "#ff00ff",
+                        "color": current_color,
                         "roi": {
                             "x": int(roi_def["x"] * (img_w / roi_def.get("base", 1920))),
                             "y": int(roi_def["y"] * (img_w / roi_def.get("base", 1920))),
