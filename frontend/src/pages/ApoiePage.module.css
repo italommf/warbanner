@@ -1,29 +1,12 @@
 .container {
   width: 100%;
   flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 60px 24px; /* Aumentado para 60px para melhor respiro */
+  padding: 1.5vh 24px 1vh;
   box-sizing: border-box;
   position: relative;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border2) transparent;
-}
-
-.container::-webkit-scrollbar {
-  width: 6px;
-}
-
-.container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.container::-webkit-scrollbar-thumb {
-  background: var(--border2);
-  border-radius: 3px;
+  min-height: 0;
 }
 
 .container *, .container ::before, .container ::after {
@@ -31,27 +14,38 @@
 }
 
 .card {
-  background: rgba(13, 21, 32, 0.9);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 60px;
-  max-width: 1100px;
+  max-width: 1400px;
+  margin: 0 auto;
   width: 100%;
-  text-align: center;
+  height: 100%;
+  background: rgba(8, 13, 21, 0.82);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* Importante: o scroll será no GRID interno */
+  box-sizing: border-box;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  margin: auto 0; /* Centralização mágica que respeita o scroll (não corta o topo) */
 }
 
 .contentGrid {
   display: grid;
   grid-template-columns: 10fr 9fr;
   gap: 60px;
-  align-items: center;
+  align-items: flex-start; /* Alinhado ao topo para scroll */
+  padding: 40px 60px;
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border2) transparent;
 }
+
+.contentGrid::-webkit-scrollbar { width: 6px; }
+.contentGrid::-webkit-scrollbar-track { background: transparent; }
+.contentGrid::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
 
 .leftCol {
   display: flex;
@@ -351,21 +345,29 @@
   }
 }
 
-@media (max-width: 600px) {
-  .title {
-    font-size: 26px;
-    text-align: center;
-    line-height: 1.2;
-    letter-spacing: 0.05em;
-  }
+@media (max-width: 800px) {
   .container {
-    padding: 24px 12px;
+    padding: 16px 12px;
+    height: auto !important;
+    max-width: none;
+    flex: none !important;
+    overflow: visible !important;
   }
   .card {
-    padding: 24px 12px;
-    margin: 0 auto;
-    width: 100% !important;
-    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    border-radius: 0;
+    max-width: none;
+    background: rgba(8, 13, 21, 0.82);
+    padding: 0;
+  }
+  .contentGrid {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 32px;
+    overflow: visible !important;
+    height: auto !important;
   }
   .supportOptions {
     width: 100%;
