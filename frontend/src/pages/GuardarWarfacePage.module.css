@@ -13,7 +13,11 @@
   z-index: 1;
   border-radius: 8px;
   overflow: hidden;
-  margin: 0 8px;
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  padding: 1.5vh 24px 1vh;
+  box-sizing: border-box;
 }
 
 .title {
@@ -240,8 +244,13 @@
 
 /* Helper para centralizar abas específicas */
 .tabContentCentered {
-  justify-content: center;
-  align-items: center;
+  /* Centralização segura para flex scroll */
+  display: flex;
+  flex-direction: column;
+}
+
+.tabContentCentered > * {
+  margin: auto 0;
 }
 
 .guardarLayout {
@@ -2632,7 +2641,7 @@
   align-items: start;
   justify-content: center;
   gap: 20px 60px;
-  padding: 0 40px;
+  padding: 40px 60px; /* Adicionado padding vertical para não ficar grudado */
   max-width: 1300px;
   width: 100%;
   margin: 0 auto;
