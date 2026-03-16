@@ -210,6 +210,7 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
     const [formData, setFormData] = useState<any>(null)
     const [saved, setSaved] = useState(false)
     const [selectedImage, setSelectedImage] = useState<any>(null)
+    const [modalData, setModalData] = useState<any>(null)
 
     // Admin = role 'admin'. Moderador tem is_staff mas NÃO é admin.
     const isAdmin = currentUser?.role === 'admin'
@@ -539,7 +540,10 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                                                         key={img.id} 
                                                         img={img} 
                                                         active={selectedImage?.id === img.id}
-                                                        onClick={() => setSelectedImage(img)} 
+                                                        onClick={() => {
+                                                            setSelectedImage(img)
+                                                            setModalData(img)
+                                                        }} 
                                                     />
                                                 ))
                                             ) : (
@@ -556,7 +560,10 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                                                         key={img.id} 
                                                         img={img} 
                                                         active={selectedImage?.id === img.id}
-                                                        onClick={() => setSelectedImage(img)} 
+                                                        onClick={() => {
+                                                            setSelectedImage(img)
+                                                            setModalData(img)
+                                                        }} 
                                                     />
                                                 ))
                                             ) : (
@@ -577,7 +584,10 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                                                     key={img.id} 
                                                     img={img} 
                                                     active={selectedImage?.id === img.id}
-                                                    onClick={() => setSelectedImage(img)} 
+                                                    onClick={() => {
+                                                        setSelectedImage(img)
+                                                        setModalData(img)
+                                                    }} 
                                                 />
                                             ))
                                         ) : (
@@ -622,6 +632,10 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                             )}
                         </AnimatePresence>
                     </div>
+                )}
+
+                {modalData && (
+                    <OCRModal img={modalData} onClose={() => setModalData(null)} />
                 )}
 
                 {activeTab === 'warchaos' && (
@@ -796,6 +810,8 @@ function ImageCard({ img, active, onClick }: { img: any, active?: boolean, onCli
 }
 
 function OCRDetails({ result }: { result: any }) {
+    if (!result) return <p className={styles.noImagesSmall}>Sem resultados de OCR.</p>
+
     return (
         <div className={styles.ocrBody}>
             {/* PvP Stats */}
@@ -811,53 +827,50 @@ function OCRDetails({ result }: { result: any }) {
                             <span className={styles.ocrDataLabel}>VITÓRIAS</span>
                             <span className={styles.ocrDataValue}>{result.pvp_stats.win_rate ?? '---'}%</span>
                         </div>
-                        <div className={styles.ocrDataItem}>
-                            <span className={styles.ocrDataLabel}>PARTIDAS</span>
-                            <span className={styles.ocrDataValue}>{result.pvp_stats.matches_played ?? '---'}</span>
-                        </div>
-                        <div className={styles.ocrDataItem}>
-                            <span className={styles.ocrDataLabel}>HORAS</span>
-                            <span className={styles.ocrDataValue}>{result.time_played_hours ?? '---'}h</span>
-                        </div>
                     </div>
                 </div>
             )}
 
-            {/* PvE Stats */}
-            {result.pve_stats && (
+            {/* Relatório Detalhado de OCR Campo a Campo */}
+            {result.ocr_report && result.ocr_report.length > 0 && (
                 <div className={styles.ocrSection}>
-                    <span className={styles.ocrSectionTitle}>Status PvE</span>
-                    <div className={styles.ocrDataGrid}>
-                        <div className={styles.ocrDataItem}>
-                            <span className={styles.ocrDataLabel}>PARTIDAS</span>
-                            <span className={styles.ocrDataValue}>{result.pve_stats.matches_played ?? '---'}</span>
-                        </div>
-                        <div className={styles.ocrDataItem}>
-                            <span className={styles.ocrDataLabel}>FÁCIL</span>
-                            <span className={styles.ocrDataValue}>{result.pve_stats.missions?.easy ?? 0}</span>
-                        </div>
-                        <div className={styles.ocrDataItem}>
-                            <span className={styles.ocrDataLabel}>NORMAL</span>
-                            <span className={styles.ocrDataValue}>{result.pve_stats.missions?.medium ?? 0}</span>
-                        </div>
-                        <div className={styles.ocrDataItem}>
-                            <span className={styles.ocrDataLabel}>PRO</span>
-                            <span className={styles.ocrDataValue}>{result.pve_stats.missions?.hard ?? 0}</span>
-                        </div>
+                    <span className={styles.ocrSectionTitle}>Processamento por ROI</span>
+                    <div className={styles.ocrDetailsList}>
+                        {result.ocr_report.map((item: any, idx: number) => (
+                            <div key={idx} className={styles.ocrTableRow}>
+                                <div className={styles.ocrFieldInfo}>
+                                    <span className={styles.fieldName}>{item.name}</span>
+                                    <div className={styles.fieldValues}>
+                                        <span className={styles.rawVal}>{item.raw_ocr || '---'}</span>
+                                        <span className={styles.fieldArrow}>→</span>
+                                        <span className={styles.finalVal}>{item.assigned_value}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             )}
 
-            {/* Conquistas */}
+            {/* Conquistas (v2 com Metadados) */}
             {result.detected_achievements && result.detected_achievements.length > 0 && (
                 <div className={styles.ocrSection}>
                     <span className={styles.ocrSectionTitle}>Desafios Detectados</span>
                     <div className={styles.ocrAchievements}>
                         {result.detected_achievements.map((ach: any, idx: number) => (
-                            <div key={idx} className={styles.ocrAchievementItem}>
-                                <div className={styles.ocrAchInfo}>
-                                    <span className={styles.ocrAchCat}>{ach.category}</span>
-                                    <span className={styles.ocrAchName}>{ach.id}</span>
+                            <div key={idx} className={styles.ocrTableRow}>
+                                <div className={styles.ocrFieldInfo}>
+                                    <span className={styles.fieldName}>Slot {ach.slot}</span>
+                                    <div className={styles.fieldValues}>
+                                        <span className={styles.rawVal}>{ach.raw_ocr || 'vazio'}</span>
+                                        <span className={`${styles.matchBadge} ${styles['match' + (ach.match_type === 'exact' ? 'Exact' : ach.match_type === 'similarity' ? 'Sim' : 'Fail')]}`}>
+                                            {ach.match_type}
+                                        </span>
+                                        <span className={styles.finalVal}>{ach.name}</span>
+                                    </div>
+                                    {ach.similarity && ach.similarity < 1 && (
+                                        <span className={styles.similarityScore}>Similaridade: {Math.round(ach.similarity * 100)}%</span>
+                                    )}
                                 </div>
                             </div>
                         ))}
@@ -874,6 +887,60 @@ function OCRDetails({ result }: { result: any }) {
                 </div>
             )}
         </div>
+    )
+}
+
+function OCRModal({ img, onClose }: { img: any, onClose: () => void }) {
+    const result = img.result
+    const report = result?.ocr_report || result?.detected_achievements || []
+    const imgW = result?.image_width || 3840
+    const imgH = result?.image_height || 2160
+
+    return createPortal(
+        <div className={styles.ocrModalOverlay} onClick={onClose}>
+            <div className={styles.ocrModalContent} onClick={e => e.stopPropagation()}>
+                <button className={styles.modalClose} onClick={onClose}>✕</button>
+                
+                <div className={styles.modalImageArea}>
+                    <img src={img.image} alt="Original Capture" />
+                    <div className={styles.roiOverlay}>
+                        {report.map((item: any, idx: number) => {
+                            if (!item.roi) return null
+                            const x = (item.roi.x / imgW) * 100
+                            const y = (item.roi.y / imgH) * 100
+                            const w = (item.roi.w / imgW) * 100
+                            const h = (item.roi.h / imgH) * 100
+                            
+                            return (
+                                <div 
+                                    key={idx}
+                                    className={styles.roiBox}
+                                    style={{
+                                        left: `${x}%`,
+                                        top: `${y}%`,
+                                        width: `${w}%`,
+                                        height: `${h}%`,
+                                        borderColor: item.color || (item.match_type === 'failed' ? 'var(--red)' : 'var(--orange)')
+                                    }}
+                                    title={`${item.name || 'Slot ' + item.slot}: ${item.raw_ocr}`}
+                                />
+                            )
+                        })}
+                    </div>
+                </div>
+
+                <div className={styles.modalSidebar}>
+                    <div className={styles.sidebarHeader}>
+                        <h2>Diagnóstico de Extração</h2>
+                        <span className={styles.userEmail}>Imagem ID: {img.id}</span>
+                    </div>
+                    <div className={styles.sidebarBody}>
+                        <OCRDetails result={img.result} />
+                    </div>
+                </div>
+            </div>
+        </div>,
+        document.body
     )
 }
 

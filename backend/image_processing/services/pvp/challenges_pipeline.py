@@ -116,12 +116,36 @@ def run_challenges_pipeline(image_path):
                         "id": found_match['filename'],
                         "name": display_name,
                         "category": found_match['category'],
-                        "score": 1.0,
-                        "slot": i + 1
+                        "slot": i + 1,
+                        "raw_ocr": raw_name,
+                        "match_type": found_match['match_type'],
+                        "similarity": similarity,
+                        "color": "#ff00ff",
+                        "roi": {
+                            "x": int(roi_def["x"] * (img_w / roi_def.get("base", 1920))),
+                            "y": int(roi_def["y"] * (img_w / roi_def.get("base", 1920))),
+                            "w": int(roi_def["w"] * (img_w / roi_def.get("base", 1920))),
+                            "h": int(roi_def["h"] * (img_w / roi_def.get("base", 1920)))
+                        }
                     })
                 else:
                     logger.info(f"      {C_CYAN}desafio encontrado com o ocr:{C_END} {C_RED}false{C_END}")
                     logger.warning(f"      {C_YELLOW}[!] Slot {i+1} não mapeado após {len(techniques)} tentativas.{C_END}")
+                    items.append({
+                        "id": None,
+                        "name": "Não Mapeado",
+                        "category": None,
+                        "slot": i + 1,
+                        "raw_ocr": raw_name if 'raw_name' in locals() else "",
+                        "match_type": "failed",
+                        "color": "#ff00ff",
+                        "roi": {
+                            "x": int(roi_def["x"] * (img_w / roi_def.get("base", 1920))),
+                            "y": int(roi_def["y"] * (img_w / roi_def.get("base", 1920))),
+                            "w": int(roi_def["w"] * (img_w / roi_def.get("base", 1920))),
+                            "h": int(roi_def["h"] * (img_w / roi_def.get("base", 1920)))
+                        }
+                    })
             return items
 
         # Executa o bloco assíncrono sequencial
@@ -134,7 +158,9 @@ def run_challenges_pipeline(image_path):
         return {
             "type": "desafios",
             "detected_achievements": detected_items,
-            "total_count": total_found
+            "total_count": total_found,
+            "image_width": img_w,
+            "image_height": img_h
         }
 
     except Exception as e:

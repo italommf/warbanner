@@ -13,49 +13,74 @@ logger = logging.getLogger(__name__)
 def extract_pve_stats(img):
     """
     Extrai estatísticas específicas do modo PvE (JxA).
+    Retorna (results, ocr_report)
     """
     if img is None:
-        return {"error": "Imagem inválida"}
+        return {"error": "Imagem inválida"}, []
 
     results = {}
+    ocr_report = []
     h, w = img.shape[:2]
     rois = get_main_rois(w)
     pve_rois = get_pve_rois(w)
     
-    # 1. Nickname e Rank via Template Matching
+    def add_to_report(name, roi_def, raw_text, val):
+        base_w = roi_def.get("base", 1920)
+        scale = w / float(base_w)
+        ocr_report.append({
+            "name": name,
+            "raw_ocr": str(raw_text),
+            "assigned_value": val,
+            "roi": {
+                "x": int(roi_def["x"] * scale),
+                "y": int(roi_def["y"] * scale),
+                "w": int(roi_def["w"] * scale),
+                "h": int(roi_def["h"] * scale)
+            }
+        })
+
+    # 1. Nickname e Rank
     nick_roi = crop_roi(img, rois["nickname"])
     logger.info(f"   {C_CYAN}[OCR]{C_END} Extraindo Nickname...")
-    results["nickname"] = read_text_win(nick_roi).strip()
-    
-    logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo Rank Numérico...")
+    raw_nick = read_text_win(nick_roi).strip()
+    results["nickname"] = raw_nick
     rank_tm = extract_rank_from_nickname(nick_roi)
-    if rank_tm is not None:
-        results["nickname_rank"] = rank_tm
+    if rank_tm is not None: results["nickname_rank"] = rank_tm
+    add_to_report("Nickname", rois["nickname"], raw_nick, raw_nick)
     
-    # 3. E/M (Eliminações / Mortes) - TM
+    # 2. E/M (KD)
     logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo E/M (KD)...")
-    results["kd_ratio"] = recognize_decimal(crop_roi(img, rois["kd_geral"]))
+    kd_val = recognize_decimal(crop_roi(img, rois["kd_geral"]))
+    results["kd_ratio"] = kd_val
+    add_to_report("E/M (PvE)", rois["kd_geral"], kd_val, kd_val)
     
-    # 4. Índice de Vitórias - TM
+    # 3. Índice de Vitórias
     logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo Índice de Vitórias...")
-    # Mudado para recognize_number com flag de porcentagem para garantir 0-100% sem decimais
     wr_raw = recognize_number(crop_roi(img, rois["win_rate_geral"]), is_percentage=True)
     results["win_rate"] = wr_raw
+    add_to_report("Win Rate (PvE)", rois["win_rate_geral"], wr_raw, wr_raw)
     
-    # 5. Partidas Jogadas - TM
+    # 4. Partidas Jogadas
     logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo Partidas Jogadas...")
-    results["matches_played"] = recognize_number(crop_roi(img, rois["partidas"]))
+    matches_val = recognize_number(crop_roi(img, rois["partidas"]))
+    results["matches_played"] = matches_val
+    add_to_report("Partidas (PvE)", rois["partidas"], matches_val, matches_val)
     
-    # 6. Horas Totais - TM
+    # 5. Horas Totais
     logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo Horas Totais...")
-    results["total_hours"] = recognize_number(crop_roi(img, rois["total_hours"]))
+    hours_val = recognize_number(crop_roi(img, rois["total_hours"]))
+    results["total_hours"] = hours_val
+    add_to_report("Horas Totais", rois["total_hours"], hours_val, hours_val)
 
-    # 7. Missões Concluídas (Caveiras) - TM
+    # 6. Missões Concluídas
     logger.info(f"   {C_CYAN}[TM]{C_END}  Extraindo Missões (Caveiras)...")
-    results["missions"] = {
-        "easy": recognize_number(crop_roi(img, pve_rois["easy"])),
-        "medium": recognize_number(crop_roi(img, pve_rois["medium"])),
-        "hard": recognize_number(crop_roi(img, pve_rois["hard"]))
-    }
+    m_easy = recognize_number(crop_roi(img, pve_rois["easy"]))
+    m_med = recognize_number(crop_roi(img, pve_rois["medium"]))
+    m_hard = recognize_number(crop_roi(img, pve_rois["hard"]))
+    
+    results["missions"] = {"easy": m_easy, "medium": m_med, "hard": m_hard}
+    add_to_report("Missões Fácil", pve_rois["easy"], m_easy, m_easy)
+    add_to_report("Missões Normal", pve_rois["medium"], m_med, m_med)
+    add_to_report("Missões Pro", pve_rois["hard"], m_hard, m_hard)
 
-    return results
+    return results, ocr_report

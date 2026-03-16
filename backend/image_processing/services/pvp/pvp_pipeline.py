@@ -37,7 +37,7 @@ def run_pvp_pipeline(image_path):
 
         # 3. Extrair Estatísticas Principais (DPI Aware)
         logger.info(f"{C_BLUE}[EXTRAÇÃO]{C_END} Raspando estatísticas principais...")
-        main_stats = extract_main_stats(img)
+        main_stats, main_report = extract_main_stats(img)
         nickname = main_stats.get("nickname", "???")
         total_hours = main_stats.get("total_hours", 0)
         
@@ -52,7 +52,7 @@ def run_pvp_pipeline(image_path):
         
         # 4. Extrair Estatísticas por Classe (DPI Aware)
         logger.info(f"{C_BLUE}[EXTRAÇÃO]{C_END} Raspando dados por classe...")
-        classes = extract_class_stats(img)
+        classes, class_report = extract_class_stats(img)
         for s in classes:
             kd = s.get('em') or 0.0
             wr = s.get('winRate') or 0.0
@@ -64,8 +64,11 @@ def run_pvp_pipeline(image_path):
             "mode": "pvp",
             "nickname": nickname,
             "pvp_stats": main_stats,
-            "time_played_hours": total_hours,
-            "classes": classes
+            "time_played_hours": main_stats.get("total_hours", 0),
+            "classes": class_stats,
+            "ocr_report": main_report + class_report,
+            "image_width": 3840,
+            "image_height": 2160
         }
 
         # 6. Validação Final

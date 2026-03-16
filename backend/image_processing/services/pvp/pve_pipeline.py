@@ -36,7 +36,7 @@ def run_pve_pipeline(image_path: str):
 
         # 3. Extracao de Estatisticas Principais e Missoes (DPI Aware)
         logger.info(f"{C_BLUE}[EXTRAÇÃO]{C_END} Raspando estatísticas principais e missões...")
-        main_stats = extract_pve_stats(img)
+        main_stats, main_report = extract_pve_stats(img)
         
         m_easy = main_stats.get("missions", {}).get("easy", 0)
         m_med  = main_stats.get("missions", {}).get("medium", 0)
@@ -48,7 +48,7 @@ def run_pve_pipeline(image_path: str):
 
         # 4. Extracao de Estatisticas por Classe (DPI Aware)
         logger.info(f"{C_BLUE}[EXTRAÇÃO]{C_END} Raspando dados por classe...")
-        class_stats = extract_class_stats(img)
+        class_stats, class_report = extract_class_stats(img)
         for s in class_stats:
             kd = s.get('em') or 0.0
             wr = s.get('winRate') or 0.0
@@ -61,7 +61,10 @@ def run_pve_pipeline(image_path: str):
             "mode": "pve",
             "pve_stats": main_stats,
             "time_played_hours": main_stats.get("total_hours", 0),
-            "classes": class_stats
+            "classes": class_stats,
+            "ocr_report": main_report + class_report,
+            "image_width": 3840,
+            "image_height": 2160
         }
 
         logger.info(f"{C_GREEN}[COMPLETO]{C_END} Pipeline PvE finalizado com sucesso.\n")
