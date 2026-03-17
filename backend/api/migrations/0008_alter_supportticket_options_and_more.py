@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('api', '0007_supportticket_ticketresponse'),
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ('api', '0000_user'),
     ]
 
     operations = [

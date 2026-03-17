@@ -10,6 +10,7 @@ from .services.pvp.pvp_pipeline import run_pvp_pipeline
 from .services.pvp.pve_pipeline import run_pve_pipeline
 from .services.pvp.challenges_pipeline import run_challenges_pipeline
 from .services.pvp.parsers import parse_nickname_and_rank, level_to_rank_idx
+from .services.pvp.debug_utils import draw_diagnostic_rois
 
 
 from .log_styles import (
@@ -61,6 +62,45 @@ def _process_single_image(image_obj):
                 image_obj.save(update_fields=['status', 'result', 'updated_at'])
                 logger.error(f"{C_RED}[ERRO OCR]{C_END} Falha: {result['error']}")
                 return False
+
+            # Diagnostic Image Generation (Baked-in ROI map)
+            try:
+                import cv2
+                from django.core.files.base import ContentFile
+                
+                # Tenta pegar a imagem 4K já processada e pintada (ROI map) do pipeline
+                # Removemos do dicionário para não salvar o array gigante no JSON da DB
+                img_cv = result.pop("_debug_img", None)
+                
+                drawing_report = []
+                if image_obj.image_type == 'desafios':
+                    drawing_report = result.get("detected_achievements", [])
+                else:
+                    drawing_report = result.get("ocr_report", [])
+                
+                if drawing_report:
+                    # Se não veio do pipeline (fallback), carrega do disco
+                    if img_cv is None:
+                        img_cv = cv2.imread(image_obj.image.path)
+                    
+                    if img_cv is not None:
+                        # Desenha os complementos (textos e caixas coloridas) na imagem já pintada
+                        debug_cv = draw_diagnostic_rois(img_cv, drawing_report)
+                        
+                        # Converte para JPG para economizar espaço
+                        _, buffer = cv2.imencode('.jpg', debug_cv, [cv2.IMWRITE_JPEG_QUALITY, 85])
+                        content = ContentFile(buffer.tobytes())
+                        
+                        # Salva o arquivo no campo debug_image
+                        image_obj.debug_image.save(
+                            f"diag_{image_obj.id}.jpg",
+                            content,
+                            save=False
+                        )
+                        image_obj.save(update_fields=['debug_image'])
+                        logger.info(f"{C_GREEN}[DIAGNOSTICO]{C_END} Imagem com ROI gerada com sucesso.")
+            except Exception as diag_e:
+                logger.error(f"{C_RED}[DIAGNOSTICO ERROR]{C_END} Erro ao gerar imagem: {diag_e}")
 
             # Prepare updates...
             updates = {}

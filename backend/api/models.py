@@ -1,6 +1,8 @@
+import uuid
 import random
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings
 
 USER_ROLES = (
     ('user', 'Usuário'),
@@ -8,10 +10,16 @@ USER_ROLES = (
     ('admin', 'Administrador'),
 )
 
+class User(AbstractUser):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
+    def __str__(self):
+        return self.username
+
 
 class AdminActionLog(models.Model):
-    target_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received_actions')
-    actor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='performed_actions')
+    target_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='received_actions')
+    actor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='performed_actions')
     field_name = models.CharField(max_length=100)
     old_value = models.TextField(null=True, blank=True)
     new_value = models.TextField(null=True, blank=True)
@@ -28,7 +36,7 @@ _WORDS = ['WOLF', 'HAWK', 'BEAR', 'LION', 'RAVEN', 'CROW', 'VIPER', 'KITE', 'LYN
 
 
 class RecoveryCode(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='recovery_code')
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='recovery_code')
     code = models.CharField(max_length=32, unique=True)
 
     @staticmethod
@@ -45,7 +53,7 @@ class RecoveryCode(models.Model):
 
 
 class UserProfile(models.Model):
-    user      = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user      = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     role      = models.CharField(max_length=20, choices=USER_ROLES, default='user')
     game_nick = models.CharField(max_length=50, blank=True)
     game_clan = models.CharField(max_length=50, blank=True)
@@ -107,7 +115,7 @@ def save_user_profile(sender, instance, **kwargs):
 
 
 class DiscordProfile(models.Model):
-    user       = models.OneToOneField(User, on_delete=models.CASCADE, related_name='discord')
+    user       = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='discord')
     discord_id = models.CharField(max_length=32, unique=True)
     avatar     = models.CharField(max_length=256, blank=True)
 
@@ -116,7 +124,7 @@ class DiscordProfile(models.Model):
 
 
 class Banner(models.Model):
-    user     = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, related_name='banners')
+    user     = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name='banners')
     nick     = models.CharField(max_length=100)
     clan     = models.CharField(max_length=100, blank=True)
     marca    = models.CharField(max_length=255, blank=True)
@@ -152,8 +160,8 @@ class SupportTicket(models.Model):
         ('sugestao', 'Sugerir melhorias'),
     )
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tickets')
-    assigned_to = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='assigned_tickets')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='tickets')
+    assigned_to = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='assigned_tickets')
     name = models.CharField(max_length=200)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='revisao_pvp')
     message = models.TextField(max_length=1000)
@@ -172,7 +180,7 @@ class SupportTicket(models.Model):
 
 class TicketResponse(models.Model):
     ticket = models.ForeignKey(SupportTicket, on_delete=models.CASCADE, related_name='responses')
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     message = models.TextField()
     is_staff_response = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

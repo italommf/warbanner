@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 
 class UploadedImage(models.Model):
     STATUS_CHOICES = [
@@ -15,8 +15,9 @@ class UploadedImage(models.Model):
         ('desafios', 'Desafios'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='uploaded_images')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='uploaded_images')
     image = models.ImageField(upload_to='uploads_ocr/')
+    debug_image = models.ImageField(upload_to='uploads_debug/', null=True, blank=True)
     image_type = models.CharField(max_length=10, choices=TYPE_CHOICES, default='desafios')
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     result = models.JSONField(null=True, blank=True)

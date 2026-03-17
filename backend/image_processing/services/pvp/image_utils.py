@@ -37,6 +37,24 @@ def normalize_resolution_ai(img, target_width=3840):
     """
     return normalize_resolution(img, target_width=target_width)
 
+def enhance_image_for_ocr(img):
+    """
+    Aplica Unsharp Mask para aumentar a nitidez e contraste dos caracteres.
+    Essencial para ajudar o OCR a ler fontes finas ou com pouco contraste.
+    """
+    # 1. Converter para escala de cinza
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) if len(img.shape) == 3 else img
+    
+    # 2. Unsharp Mask: img_final = original + (original - blurred) * amount
+    blurred = cv2.GaussianBlur(gray, (0, 0), 3)
+    sharpened = cv2.addWeighted(gray, 1.5, blurred, -0.5, 0)
+    
+    # 3. Normalização de Contraste (CLAHE)
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+    enhanced = clahe.apply(sharpened)
+    
+    return enhanced
+
 def crop_roi(img, roi_def, enhance_for_ocr=True):
     """
     Recorta uma região de interesse (ROI) com upscale de alta qualidade.
@@ -66,7 +84,6 @@ def crop_roi(img, roi_def, enhance_for_ocr=True):
         return crop
     
     # Se a imagem for pequena or zoom for pedido, aplicamos upscale de alta fidelidade
-    # Aumentar um pouco a imagem ajuda o motor do Windows a ler fontes pequenas
     base_zoom = 1.0
     if img_w < 1920: base_zoom = 1920 / img_w
     
@@ -78,4 +95,7 @@ def crop_roi(img, roi_def, enhance_for_ocr=True):
         # INTER_CUBIC preserva melhor as bordas dos caracteres do que LINEAR ou NEAREST
         crop = cv2.resize(crop, (new_w, new_h), interpolation=cv2.INTER_CUBIC)
     
+    if enhance_for_ocr:
+        return enhance_image_for_ocr(crop)
+        
     return crop

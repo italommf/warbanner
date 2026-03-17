@@ -3,8 +3,8 @@ services:
     image: postgres:15-alpine
     environment:
       POSTGRES_DB: warface_db
-      POSTGRES_USER: warface_user
-      POSTGRES_PASSWORD: warface_password
+      POSTGRES_USER: wb_db_user
+      POSTGRES_PASSWORD: WB_db_P4ss_9k2M5p8Q4z6
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always
@@ -17,7 +17,7 @@ services:
     build: ./backend
     environment:
       DEBUG: "False"
-      DATABASE_URL: postgres://warface_user:warface_password@db:5432/warface_db
+      DATABASE_URL: postgres://wb_db_user:WB_db_P4ss_9k2M5p8Q4z6@db:5432/warface_db
       CELERY_BROKER_URL: redis://redis:6379/0
       ALLOWED_HOSTS: warbanner.com.br,localhost,backend
     volumes:
@@ -34,7 +34,7 @@ services:
     build: ./backend
     command: celery -A warface worker --loglevel=info -P solo
     environment:
-      DATABASE_URL: postgres://warface_user:warface_password@db:5432/warface_db
+      DATABASE_URL: postgres://wb_db_user:WB_db_P4ss_9k2M5p8Q4z6@db:5432/warface_db
       CELERY_BROKER_URL: redis://redis:6379/0
     volumes:
       - ./backend/imagens:/app/imagens

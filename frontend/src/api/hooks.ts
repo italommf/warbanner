@@ -405,7 +405,7 @@ export function useUserStats() {
 // ── Admin Hooks ─────────────────────────────────────────────────────────────
 
 export interface AdminUser {
-  id: number
+  id: string
   username: string
   email: string
   game_nick: string
@@ -469,7 +469,7 @@ export function useAdminUsers(search = '', type = 'all') {
   })
 }
 
-export function useAdminUserDetail(userId: number | null) {
+export function useAdminUserDetail(userId: string | null) {
   return useQuery<AdminUserDetail>({
     queryKey: ['admin-user', userId],
     queryFn: () => authFetch(`/api/admin/users/${userId}/`).then((r) => r.json()),
@@ -486,7 +486,7 @@ export interface AdminLog {
   created_at: string
 }
 
-export function useAdminUserHistory(userId: number | null) {
+export function useAdminUserHistory(userId: string | null) {
   return useQuery<AdminLog[]>({
     queryKey: ['admin-user-history', userId],
     queryFn: () => authFetch(`/api/admin/users/${userId}/history/`).then((r) => r.json()),
@@ -496,7 +496,7 @@ export function useAdminUserHistory(userId: number | null) {
 
 export function useUpdateAdminUser() {
   const qc = useQueryClient()
-  return useMutation<AdminUserDetail, Error, { id: number; data: any }>({
+  return useMutation<AdminUserDetail, Error, { id: string; data: any }>({
     mutationFn: ({ id, data }) =>
       authFetch(`/api/admin/users/${id}/`, {
         method: 'PATCH',
@@ -510,7 +510,7 @@ export function useUpdateAdminUser() {
   })
 }
 
-export function useAdminUserImages(userId: number | null) {
+export function useAdminUserImages(userId: string | null) {
   return useQuery<AdminUserImage[]>({
     queryKey: ['admin-user-images', userId],
     queryFn: () => authFetch(`/api/admin/users/${userId}/images/`).then((r) => r.json()),
@@ -546,7 +546,7 @@ export interface QueueImage {
 }
 
 export interface QueueUser {
-  id: number
+  id: string
   username: string
   game_nick: string | null
   images: QueueImage[]
@@ -572,7 +572,7 @@ export function useReprocessImage() {
 }
 
 export interface AdminMigration {
-  user_id: number
+  user_id: string
   username: string
   email: string
   warchaos_user: string

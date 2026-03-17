@@ -5,17 +5,31 @@ import { useAdminUsers, useAdminUserDetail, useAdminUserImages, useUpdateAdminUs
 import type { AdminLog, ItemsResponse } from '@/api/hooks'
 import styles from './AdminPage.module.css'
 import { useAuthStore } from '@/store/authStore'
-import { Navigate } from 'react-router'
+import { Navigate, useParams, useNavigate } from 'react-router'
 
 type AdminTab = 'geral' | 'pvp' | 'pve' | 'desafios' | 'imagens' | 'historico' | 'warchaos'
 
 export function AdminPage() {
+    const { tab, id, subtab } = useParams()
+    const navigate = useNavigate()
     const user = useAuthStore((s) => s.user)
-    const [selectedUserId, setSelectedUserId] = useState<number | null>(null)
+    
     const [search, setSearch] = useState('')
     const [searchType, setSearchType] = useState<'all' | 'nick' | 'username' | 'email'>('all')
-    const [activeTab, setActiveTab] = useState<AdminTab>('geral')
-    const [mainTab, setMainTab] = useState<'admin' | 'queue' | 'support' | 'migrations'>('admin')
+
+    const mainTab = tab || 'dashboard'
+    const setMainTab = (newTab: string) => navigate(`/admin/${newTab}`)
+
+    const selectedUserId = (mainTab === 'users' && id) ? id : null
+    const setSelectedUserId = (uid: string | null) => {
+        if (uid) navigate(`/admin/users/${uid}/${subtab || 'geral'}`)
+        else navigate(`/admin/users`)
+    }
+
+    const activeTab = (subtab as AdminTab) || 'geral'
+    const setActiveTab = (at: AdminTab) => {
+        if (selectedUserId) navigate(`/admin/users/${selectedUserId}/${at}`)
+    }
 
     const { data: stats } = useAdminGlobalStats()
     const {
@@ -35,16 +49,27 @@ export function AdminPage() {
         return <Navigate to="/" replace />
     }
 
+    if (!tab) {
+        return <Navigate to="/admin/dashboard" replace />
+    }
+
     return (
         <div className={styles.container}>
 
             <div className={styles.gameTabBar}>
                 <button
-                    className={`${styles.gameTab} ${mainTab === 'admin' ? styles.gameTabActive : ''}`}
-                    onClick={() => setMainTab('admin')}
+                    className={`${styles.gameTab} ${mainTab === 'dashboard' ? styles.gameTabActive : ''}`}
+                    onClick={() => setMainTab('dashboard')}
+                >
+                    DASHBOARD
+                    <div className={`${styles.gameTabUnderline} ${mainTab === 'dashboard' ? styles.gameTabUnderlineActive : ''}`} />
+                </button>
+                <button
+                    className={`${styles.gameTab} ${mainTab === 'users' ? styles.gameTabActive : ''}`}
+                    onClick={() => setMainTab('users')}
                 >
                     ADMINISTRAÇÃO DE USUÁRIOS
-                    <div className={`${styles.gameTabUnderline} ${mainTab === 'admin' ? styles.gameTabUnderlineActive : ''}`} />
+                    <div className={`${styles.gameTabUnderline} ${mainTab === 'users' ? styles.gameTabUnderlineActive : ''}`} />
                 </button>
                 <button
                     className={`${styles.gameTab} ${mainTab === 'queue' ? styles.gameTabActive : ''}`}
@@ -69,39 +94,39 @@ export function AdminPage() {
                 </button>
             </div>
 
-            <div className={styles.dashboard}>
-                <div className={styles.statCard}>
-                    <span className={styles.statValue}>{stats?.total_users ?? '...'}</span>
-                    <span className={styles.statLabel}>Usuários</span>
-                </div>
-                <div className={styles.statCard}>
-                    <span className={styles.statValue} style={{ color: 'var(--orange)' }}>{stats?.total_admins ?? '...'}</span>
-                    <span className={styles.statLabel}>Admins</span>
-                </div>
-                <div className={styles.statCard}>
-                    <span className={styles.statValue} style={{ color: 'var(--gold)' }}>{stats?.total_mods ?? '...'}</span>
-                    <span className={styles.statLabel}>Moderadores</span>
-                </div>
-                <div className={styles.statCard}>
-                    <span className={styles.statValue}>{stats?.total_images ?? '...'}</span>
-                    <span className={styles.statLabel}>Total de Imagens</span>
-                </div>
-                <div className={styles.statCard} onClick={() => setMainTab('queue')} style={{ cursor: 'pointer' }}>
-                    <span className={styles.statValue} style={{ color: 'var(--gold)' }}>{stats?.pending ?? '...'}</span>
-                    <span className={styles.statLabel}>Pendente (Fila)</span>
-                </div>
-                <div className={styles.statCard} onClick={() => setMainTab('queue')} style={{ cursor: 'pointer' }}>
-                    <span className={styles.statValue} style={{ color: '#4caf82' }}>{stats?.done ?? '...'}</span>
-                    <span className={styles.statLabel}>Sucessos</span>
-                </div>
-                <div className={styles.statCard} onClick={() => setMainTab('queue')} style={{ cursor: 'pointer' }}>
-                    <span className={styles.statValue} style={{ color: 'var(--red)' }}>{stats?.failed ?? '...'}</span>
-                    <span className={styles.statLabel}>Falhas</span>
-                </div>
-            </div>
-
-            <div className={`${styles.content} ${(mainTab === 'queue' || mainTab === 'support' || mainTab === 'migrations') ? styles.contentFull : ''}`}>
-                {mainTab === 'admin' ? (
+            <div className={`${styles.content} ${(mainTab === 'queue' || mainTab === 'support' || mainTab === 'migrations' || mainTab === 'dashboard') ? styles.contentFull : ''}`}>
+                {mainTab === 'dashboard' ? (
+                    <div className={styles.dashboard}>
+                        <div className={styles.statCard}>
+                            <span className={styles.statValue}>{stats?.total_users ?? '...'}</span>
+                            <span className={styles.statLabel}>Usuários</span>
+                        </div>
+                        <div className={styles.statCard}>
+                            <span className={styles.statValue} style={{ color: 'var(--orange)' }}>{stats?.total_admins ?? '...'}</span>
+                            <span className={styles.statLabel}>Admins</span>
+                        </div>
+                        <div className={styles.statCard}>
+                            <span className={styles.statValue} style={{ color: 'var(--gold)' }}>{stats?.total_mods ?? '...'}</span>
+                            <span className={styles.statLabel}>Moderadores</span>
+                        </div>
+                        <div className={styles.statCard}>
+                            <span className={styles.statValue}>{stats?.total_images ?? '...'}</span>
+                            <span className={styles.statLabel}>Total de Imagens</span>
+                        </div>
+                        <div className={styles.statCard} onClick={() => setMainTab('queue')} style={{ cursor: 'pointer' }}>
+                            <span className={styles.statValue} style={{ color: 'var(--gold)' }}>{stats?.pending ?? '...'}</span>
+                            <span className={styles.statLabel}>Pendente (Fila)</span>
+                        </div>
+                        <div className={styles.statCard} onClick={() => setMainTab('queue')} style={{ cursor: 'pointer' }}>
+                            <span className={styles.statValue} style={{ color: '#4caf82' }}>{stats?.done ?? '...'}</span>
+                            <span className={styles.statLabel}>Sucessos</span>
+                        </div>
+                        <div className={styles.statCard} onClick={() => setMainTab('queue')} style={{ cursor: 'pointer' }}>
+                            <span className={styles.statValue} style={{ color: 'var(--red)' }}>{stats?.failed ?? '...'}</span>
+                            <span className={styles.statLabel}>Falhas</span>
+                        </div>
+                    </div>
+                ) : mainTab === 'users' ? (
                     <>
                         <div className={styles.sidebar}>
                             <div className={styles.searchBox}>
@@ -191,8 +216,7 @@ export function AdminPage() {
                     <QueuePanel />
                 ) : mainTab === 'migrations' ? (
                     <MigrationsPanel onSelectUser={(id) => {
-                        setMainTab('admin');
-                        setSelectedUserId(id);
+                        navigate(`/admin/users/${id}/warchaos`)
                     }} />
                 ) : (
                     <SupportPanel />
@@ -202,14 +226,13 @@ export function AdminPage() {
     )
 }
 
-function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activeTab: AdminTab, setActiveTab: (t: AdminTab) => void }) {
+function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activeTab: AdminTab, setActiveTab: (t: AdminTab) => void }) {
     const { data: user, isLoading } = useAdminUserDetail(userId)
     const { data: images = [] } = useAdminUserImages(userId)
     const { mutate: update, isPending: updating } = useUpdateAdminUser()
     const currentUser = useAuthStore(s => s.user)
     const [formData, setFormData] = useState<any>(null)
     const [saved, setSaved] = useState(false)
-    const [selectedImage, setSelectedImage] = useState<any>(null)
     const [modalData, setModalData] = useState<any>(null)
 
     // Admin = role 'admin'. Moderador tem is_staff mas NÃO é admin.
@@ -539,11 +562,8 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                                                     <ImageCard 
                                                         key={img.id} 
                                                         img={img} 
-                                                        active={selectedImage?.id === img.id}
-                                                        onClick={() => {
-                                                            setSelectedImage(img)
-                                                            setModalData(img)
-                                                        }} 
+                                                        active={modalData?.id === img.id}
+                                                        onClick={() => setModalData(img)} 
                                                     />
                                                 ))
                                             ) : (
@@ -559,11 +579,8 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                                                     <ImageCard 
                                                         key={img.id} 
                                                         img={img} 
-                                                        active={selectedImage?.id === img.id}
-                                                        onClick={() => {
-                                                            setSelectedImage(img)
-                                                            setModalData(img)
-                                                        }} 
+                                                        active={modalData?.id === img.id}
+                                                        onClick={() => setModalData(img)} 
                                                     />
                                                 ))
                                             ) : (
@@ -583,11 +600,8 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                                                 <ImageCard 
                                                     key={img.id} 
                                                     img={img} 
-                                                    active={selectedImage?.id === img.id}
-                                                    onClick={() => {
-                                                        setSelectedImage(img)
-                                                        setModalData(img)
-                                                    }} 
+                                                    active={modalData?.id === img.id}
+                                                    onClick={() => setModalData(img)} 
                                                 />
                                             ))
                                         ) : (
@@ -602,35 +616,6 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
                             </div>
                         </div>
 
-                        <AnimatePresence>
-                            {selectedImage && (
-                                <motion.div 
-                                    className={styles.imageDetailSidebar}
-                                    initial={{ x: 300, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
-                                    exit={{ x: 300, opacity: 0 }}
-                                >
-                                    <div className={styles.detailHeader}>
-                                        <h3>DETALHES DO OCR</h3>
-                                        <button className={styles.closeDetail} onClick={() => setSelectedImage(null)}>✕</button>
-                                    </div>
-                                    <div className={styles.detailBody}>
-                                        <a href={selectedImage.image} target="_blank" rel="noreferrer" className={styles.fullImgBox}>
-                                            <img src={selectedImage.image} alt="Original" />
-                                        </a>
-
-                                        <div className={styles.ocrResults}>
-                                            <span className={styles.ocrSectionTitle}>Dados Identificados</span>
-                                            {selectedImage.result ? (
-                                                <OCRDetails result={selectedImage.result} />
-                                            ) : (
-                                                <p className={styles.noImagesSmall}>Sem resultados de OCR disponíveis.</p>
-                                            )}
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
                     </div>
                 )}
 
@@ -697,7 +682,7 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: number, activ
     )
 }
 
-function HistoryTab({ userId }: { userId: number }) {
+function HistoryTab({ userId }: { userId: string }) {
     const { data: logs = [], isLoading } = useAdminUserHistory(userId)
 
     if (isLoading) return <div className={styles.noUser}>Carregando histórico...</div>
@@ -788,6 +773,14 @@ function ClassesEditor({ value, onChange }: { value: ClassEntry[]; onChange: (v:
 }
 
 function ImageCard({ img, active, onClick }: { img: any, active?: boolean, onClick?: () => void }) {
+    const result = img.result;
+    
+    // Detectar falhas ou necessidades de revisão para as tags rápidas no grid
+    const hasFail = img.status === 'failed' || (result?.detected_achievements?.some((a: any) => a.match_type === 'failed') || result?.ocr_report?.some((r: any) => r.match_type === 'failed'));
+    
+    const needsReview = result?.detected_achievements?.some((a: any) => a.match_type === 'similarity' || (a.raw_ocr && a.raw_ocr !== a.name)) ||
+                         result?.ocr_report?.some((r: any) => r.match_type === 'similarity' || (r.raw_ocr && String(r.raw_ocr) !== String(r.assigned_value)));
+
     return (
         <div 
             className={`${styles.imgCard} ${active ? styles.imgCardActive : ''}`}
@@ -796,6 +789,9 @@ function ImageCard({ img, active, onClick }: { img: any, active?: boolean, onCli
         >
             <div className={styles.thumbBox}>
                 <img src={img.image} alt={`Upload ${img.id}`} />
+                
+                {hasFail && <span className={styles.cardFailBadge}>Falha</span>}
+                {!hasFail && needsReview && <span className={styles.cardReviewBadge}>Revisar</span>}
             </div>
             <div className={styles.imgInfo}>
                 <div className={styles.imgDate}>
@@ -846,7 +842,6 @@ function OCRDetails({ result }: { result: any }) {
                                     <div className={styles.ocrFieldInfo}>
                                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                             <span className={styles.fieldName}>{item.name}</span>
-                                            {isV2 && needsReview && <span className={styles.warningBadge}>Revisar</span>}
                                         </div>
                                         <div className={styles.fieldValues}>
                                             {isV2 && (
@@ -858,6 +853,9 @@ function OCRDetails({ result }: { result: any }) {
                                             <div className={styles.fieldRow}>
                                                 <span className={styles.rowLabel}>{isV2 ? 'Final:' : 'Valor:'}</span>
                                                 <span className={styles.finalVal}>{item.assigned_value}</span>
+                                                <div className={styles.fieldBadges}>
+                                                    {isV2 && needsReview && <span className={styles.warningBadge}>Revisar</span>}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -883,8 +881,7 @@ function OCRDetails({ result }: { result: any }) {
                                     <div className={styles.slotIndicator} style={{ backgroundColor: ach.color || '#333' }} />
                                     <div className={styles.ocrFieldInfo}>
                                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                            <span className={styles.fieldName}>Slot {ach.slot}</span>
-                                            {isV2 && needsReview && <span className={styles.warningBadge}>Revisar</span>}
+                                            <span className={styles.fieldName}>L{((ach.slot-1)%4)+1} C{Math.floor((ach.slot-1)/4)+1}</span>
                                         </div>
                                         
                                         <div className={styles.fieldValues}>
@@ -898,17 +895,22 @@ function OCRDetails({ result }: { result: any }) {
                                             <div className={styles.fieldRow}>
                                                 <span className={styles.rowLabel}>{isV2 ? 'Atrib:' : 'Desafio:'}</span>
                                                 <span className={styles.finalVal}>{ach.name}</span>
-                                                {isV2 && (
-                                                    <span className={`${styles.matchBadge} ${styles['match' + (ach.match_type === 'exact' ? 'Exact' : ach.match_type === 'similarity' ? 'Sim' : 'Fail')]}`}>
-                                                        {ach.match_type === 'exact' ? 'Match Exato' : ach.match_type === 'similarity' ? 'Similaridade' : 'Falha'}
-                                                    </span>
-                                                )}
+                                                <div className={styles.fieldBadges}>
+                                                    {isV2 && needsReview && <span className={styles.warningBadge}>Revisar</span>}
+                                                    {isV2 && (
+                                                        <span className={`${styles.matchBadge} ${styles['match' + (ach.match_type === 'exact' ? 'Exact' : ach.match_type === 'similarity' ? 'Sim' : 'Fail')]}`}>
+                                                            {ach.match_type === 'exact' ? 'Match Exato' : ach.match_type === 'similarity' ? 'Similaridade' : 'Falha'}
+                                                        </span>
+                                                    )}
+                                                    {isV2 && ach.similarity && ach.similarity < 1 && (
+                                                        <span className={styles.similarityBadge}>
+                                                            {Math.round(ach.similarity * 100)}%
+                                                        </span>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
 
-                                        {isV2 && ach.similarity && ach.similarity < 1 && (
-                                            <span className={styles.similarityScore}>Similaridade: {Math.round(ach.similarity * 100)}%</span>
-                                        )}
                                     </div>
                                 </div>
                             )
@@ -931,9 +933,13 @@ function OCRDetails({ result }: { result: any }) {
 
 function OCRModal({ img, onClose }: { img: any, onClose: () => void }) {
     const result = img.result
-    const report = result?.ocr_report || result?.detected_achievements || []
+    const report = result?.ocr_report || result?.detected_achievements || result?.roi_report || []
     const imgW = result?.image_width || 3840
     const imgH = result?.image_height || 2160
+
+    // Se existir a imagem de debug (com ROI desenhado no backend), usamos ela.
+    const displayImage = img.debug_image || img.image;
+    const hasDebug = !!img.debug_image;
 
     return createPortal(
         <div className={styles.ocrModalOverlay} onClick={onClose}>
@@ -941,31 +947,35 @@ function OCRModal({ img, onClose }: { img: any, onClose: () => void }) {
                 <button className={styles.modalClose} onClick={onClose}>✕</button>
                 
                 <div className={styles.modalImageArea}>
-                    <img src={img.image} alt="Original Capture" />
-                    <div className={styles.roiOverlay}>
-                        {report.map((item: any, idx: number) => {
-                            if (!item.roi) return null
-                            const x = (item.roi.x / imgW) * 100
-                            const y = (item.roi.y / imgH) * 100
-                            const w = (item.roi.w / imgW) * 100
-                            const h = (item.roi.h / imgH) * 100
-                            
-                            return (
-                                <div 
-                                    key={idx}
-                                    className={styles.roiBox}
-                                    style={{
-                                        left: `${x}%`,
-                                        top: `${y}%`,
-                                        width: `${w}%`,
-                                        height: `${h}%`,
-                                        borderColor: item.color || (item.match_type === 'failed' ? 'var(--red)' : 'var(--orange)')
-                                    }}
-                                    title={`${item.name || 'Slot ' + item.slot}: ${item.raw_ocr}`}
-                                />
-                            )
-                        })}
-                    </div>
+                    <img src={displayImage} alt="Diagnóstico de Extração" />
+                    
+                    {/* Só pintamos o ROI via CSS se NÃO tivermos a imagem de debug pronta (fallback para legado) */}
+                    {!hasDebug && (
+                        <div className={styles.roiOverlay}>
+                            {report.map((item: any, idx: number) => {
+                                if (!item.roi) return null
+                                const x = (item.roi.x / imgW) * 100
+                                const y = (item.roi.y / imgH) * 100
+                                const w = (item.roi.w / imgW) * 100
+                                const h = (item.roi.h / imgH) * 100
+                                
+                                return (
+                                    <div 
+                                        key={idx}
+                                        className={styles.roiBox}
+                                        style={{
+                                            left: `${x}%`,
+                                            top: `${y}%`,
+                                            width: `${w}%`,
+                                            height: `${h}%`,
+                                            borderColor: item.color || (item.match_type === 'failed' ? 'var(--red)' : 'var(--orange)')
+                                        }}
+                                        title={`${item.name || 'Slot ' + item.slot}: ${item.raw_ocr}`}
+                                    />
+                                )
+                            })}
+                        </div>
+                    )}
                 </div>
 
                 <div className={styles.modalSidebar}>
@@ -1340,11 +1350,18 @@ function QueuePanel() {
 }
 
 function SupportPanel() {
+    const { id } = useParams()
+    const navigate = useNavigate()
     const { data: tickets = [], isLoading } = useTickets()
     const { mutate: updateStatus } = useUpdateTicketStatus()
     const [draggingId, setDraggingId] = useState<number | null>(null)
     const [dragOverCol, setDragOverCol] = useState<string | null>(null)
-    const [selectedTicketId, setSelectedTicketId] = useState<number | null>(null)
+    
+    const selectedTicketId = id ? parseInt(id) : null
+    const setSelectedTicketId = (tid: number | null) => {
+        if (tid) navigate(`/admin/support/${tid}`)
+        else navigate(`/admin/support`)
+    }
 
     const columns = [
         { id: 'waiting', title: 'AGUARDANDO ATENDIMENTO' },
@@ -1583,11 +1600,26 @@ function AdminTicketDetail({ ticketId, onClose }: { ticketId: number, onClose: (
     )
 }
 
-function MigrationsPanel({ onSelectUser }: { onSelectUser: (id: number) => void }) {
+function MigrationsPanel({ onSelectUser }: { onSelectUser: (id: string) => void }) {
     const { data: migrations = [], isLoading } = useAdminMigrations()
+    const { mutate: update } = useUpdateAdminUser()
     const [search, setSearch] = useState('')
     const [statusFilter, setStatusFilter] = useState<'all' | 'pending' | 'done'>('all')
     const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest')
+
+    const handleRemove = (userId: string, username: string) => {
+        if (!window.confirm(`Deseja realmente REMOVER ${username} da API de migração?`)) return;
+        
+        update({ 
+            id: userId, 
+            data: { 
+                warchaos_solicitou: false,
+                warchaos_user: null,
+                warchaos_nick: null,
+                warchaos_migrado: false
+            }
+        });
+    }
 
     const filteredMigrations = useMemo(() => {
         let filtered = [...migrations];
@@ -1686,17 +1718,31 @@ function MigrationsPanel({ onSelectUser }: { onSelectUser: (id: number) => void 
                                             {m.migrado ? 'MIGRADO' : 'AGUARDANDO'}
                                         </span>
                                     </td>
-                                    <td>
-                                        <button 
-                                            className={styles.viewUserBtn}
-                                            onClick={() => onSelectUser(m.user_id)}
-                                        >
-                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                                <circle cx="12" cy="12" r="3" />
-                                            </svg>
-                                            EDITAR PERFIL
-                                        </button>
+                                    <td className={styles.historyActions}>
+                                        <div style={{ display: 'flex', gap: '8px' }}>
+                                            <button 
+                                                className={styles.viewUserBtn}
+                                                onClick={() => onSelectUser(m.user_id)}
+                                                title="Editar dados de migração"
+                                            >
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                                </svg>
+                                                EDITAR
+                                            </button>
+                                            <button 
+                                                className={styles.resetBtn}
+                                                onClick={() => handleRemove(m.user_id, m.username)}
+                                                title="Remover solicitação"
+                                                style={{ padding: '6px 10px' }}
+                                            >
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                                    <polyline points="3 6 5 6 21 6" />
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}

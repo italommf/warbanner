@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { Navigate } from 'react-router'
+import { useAuthStore } from '@/store/authStore'
 import { HistoryGrid } from '@/components/history/HistoryGrid'
 import { useBannerStore } from '@/store/bannerStore'
 import { VIDEO_EXT } from '@/App'
@@ -28,7 +30,10 @@ function usePanelBg(): string {
 }
 
 export function HistoricoPage() {
+  const user = useAuthStore((s) => s.user)
   const panelBg = usePanelBg()
+
+  if (!user) return <Navigate to="/login" replace />
   return (
     <motion.main
       style={{ flex: 1, background: panelBg, position: 'relative', zIndex: 1, borderRadius: 8, overflowY: 'auto' }}

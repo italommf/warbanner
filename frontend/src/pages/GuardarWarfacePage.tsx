@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, useEffect, useMemo } from 'react'
 import type { DragEvent, ChangeEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Navigate } from 'react-router'
+import { Navigate, useParams, useNavigate } from 'react-router'
 import { useAuthStore } from '@/store/authStore'
 import { useBannerStore } from '@/store/bannerStore'
 import { VIDEO_EXT } from '@/App'
@@ -1589,13 +1589,33 @@ const GAME_TABS: { id: GameTab; label: string }[] = [
 ]
 
 export function GuardarWarfacePage() {
+  const { section } = useParams()
+  const navigate = useNavigate()
   const user = useAuthStore((s) => s.user)
   const panelBg = usePanelBg()
 
-  const [gameTab, setGameTab] = useState<GameTab>('warface')
-  const [activeTab, setActiveTab] = useState<WarfaceTab>('perfil')
+  // Mapeamento de URL para estados internos
+  const gameTab: GameTab = section === 'warchaos' ? 'warchaos' : 'warface'
+  
+  // Se section não for guardar/warchaos, tentamos ver se é uma das sub-abas do warface
+  const activeTab: WarfaceTab = (['guardar', 'perfil', 'desafios', 'chamados'].includes(section || '') ? section : 'perfil') as WarfaceTab
+
+  const setGameTab = (newGame: GameTab) => {
+    navigate(`/mywf/${newGame}`)
+  }
+
+  const setActiveTab = (newActive: WarfaceTab) => {
+    navigate(`/mywf/${newActive}`)
+  }
 
   if (!user) return <Navigate to="/login" replace />
+
+  // Se estiver só em /mywf ou em um slug desconhecido, redireciona para /mywf/perfil (que é a aba Warface)
+  if (!section || !['warface', 'warchaos', 'guardar', 'perfil', 'desafios', 'chamados'].includes(section)) {
+    // Se o usuário pediu /mywf/warface especificamente, ele cai em perfil.
+    if (section === 'warface') return <Navigate to="/mywf/perfil" replace />
+    return <Navigate to="/mywf/perfil" replace />
+  }
 
   return (
     <motion.main

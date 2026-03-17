@@ -22,7 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'api',
+    'api.apps.ApiConfig',
     'django_celery_results',
     'image_processing',
 ]
@@ -62,6 +62,8 @@ MEDIA_ROOT = BASE_DIR / 'imagens'
 MUSIC_ROOT = BASE_DIR / 'music'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'api.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

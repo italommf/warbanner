@@ -2,8 +2,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 from rest_framework import status
-from django.contrib.auth.models import User
-from .models import UserProfile, Banner, AdminActionLog
+from .models import User, UserProfile, Banner, AdminActionLog
 from image_processing.models import UploadedImage
 from image_processing.serializers import UploadedImageSerializer
 from django.shortcuts import get_object_or_404

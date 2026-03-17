@@ -26,7 +26,7 @@ def run_pvp_pipeline(image_path):
         logger.info(f"   {C_GREEN}√ Upscale 4K (LANCZOS4) concluído.{C_END}")
         
         # 2. Debug e Validação de Modo (Ultra High Fidelity)
-        save_debug_images(img, prefix=fname)
+        debug_vis = save_debug_images(img, prefix=fname)
         
         is_pvp, error = validate_is_pvp(img)
         if not is_pvp:
@@ -65,10 +65,10 @@ def run_pvp_pipeline(image_path):
             "nickname": nickname,
             "pvp_stats": main_stats,
             "time_played_hours": main_stats.get("total_hours", 0),
-            "classes": class_stats,
+            "classes": classes,
             "ocr_report": main_report + class_report,
-            "image_width": 3840,
-            "image_height": 2160
+            "image_height": 2160,
+            "_debug_img": debug_vis
         }
 
         # 6. Validação Final

@@ -156,10 +156,15 @@ export function App() {
             <Route path="/" element={<CreatorPage />} />
             <Route path="/historico" element={<HistoricoPage />} />
             <Route path="/comunidade" element={<ComunidadePage />} />
-            <Route path="/guardar" element={<GuardarWarfacePage />} />
+            <Route path="/comunidade/:tab" element={<ComunidadePage />} />
+            <Route path="/mywf" element={<GuardarWarfacePage />} />
+            <Route path="/mywf/:section" element={<GuardarWarfacePage />} />
             <Route path="/apoie" element={<ApoiePage />} />
             <Route path="/login" element={<AuthPage />} />
             <Route path="/admin" element={<AdminPage />} />
+            <Route path="/admin/:tab" element={<AdminPage />} />
+            <Route path="/admin/:tab/:id" element={<AdminPage />} />
+            <Route path="/admin/:tab/:id/:subtab" element={<AdminPage />} />
           </Routes>
         </AnimatePresence>
       </div>

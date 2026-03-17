@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { createPortal } from 'react-dom'
-import { NavLink } from 'react-router'
+import { useParams, useNavigate, Navigate } from 'react-router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useCommunity, useCommunityLatest, useCommunityStatistics, type RankingItem } from '@/api/hooks'
 import type { CommunityBanner } from '@/api/hooks'
@@ -426,26 +426,22 @@ function CommunityStatsTab() {
 // ── Página Principal ───────────────────────────────────────────────────────────
 
 export function ComunidadePage() {
+  const { tab } = useParams()
+  const navigate = useNavigate()
   const user = useAuthStore(s => s.user)
   const panelBg = usePanelBg()
-  const [activeTab, setActiveTab] = useState<'banners' | 'stats'>('banners')
+
+  const activeTab = tab === 'stats' ? 'stats' : 'warbanner'
+
+  const setActiveTab = (newTab: 'warbanner' | 'stats') => {
+    navigate(`/comunidade/${newTab}`)
+  }
 
   if (!user) {
-    return (
-      <main className={styles.lockedPage} style={{ background: panelBg }}>
-        <div className={styles.lockedContent}>
-          <div className={styles.lockIconLarge}>
-            <svg width="40" height="48" viewBox="0 0 10 12" fill="currentColor">
-              <rect x="0.5" y="5" width="9" height="7" rx="1.2" />
-              <path d="M2.5 5V3.5a2.5 2.5 0 0 1 5 0V5" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-            </svg>
-          </div>
-          <h2>ACESSO RESTRITO</h2>
-          <p>Você precisa estar logado para ver as criações da comunidade e o ranking global.</p>
-          <NavLink to="/login" className={styles.loginLink}>IR PARA O DESERTO (LOGIN)</NavLink>
-        </div>
-      </main>
-    )
+    return <Navigate to="/login" replace />
+  }
+  if (!tab) {
+    return <Navigate to="/comunidade/warbanner" replace />
   }
 
   return (
@@ -457,11 +453,11 @@ export function ComunidadePage() {
     >
       <div className={styles.tabsContainer}>
         <button 
-          className={`${styles.tabBtn} ${activeTab === 'banners' ? styles.tabBtnActive : ''}`}
-          onClick={() => setActiveTab('banners')}
+          className={`${styles.tabBtn} ${activeTab === 'warbanner' ? styles.tabBtnActive : ''}`}
+          onClick={() => setActiveTab('warbanner')}
         >
           WARBANNERS
-          {activeTab === 'banners' && <motion.div layoutId="tabUnderline" className={styles.tabIndicator} />}
+          {activeTab === 'warbanner' && <motion.div layoutId="tabUnderline" className={styles.tabIndicator} />}
         </button>
         <button 
           className={`${styles.tabBtn} ${activeTab === 'stats' ? styles.tabBtnActive : ''}`}
@@ -481,7 +477,7 @@ export function ComunidadePage() {
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
         >
-          {activeTab === 'banners' ? <WarbannersTab /> : <CommunityStatsTab />}
+          {activeTab === 'warbanner' ? <WarbannersTab /> : <CommunityStatsTab />}
         </motion.div>
       </AnimatePresence>
     </motion.main>

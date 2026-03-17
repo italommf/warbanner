@@ -30,11 +30,11 @@ urlpatterns = [
     path("admin/queue/", admin_views.admin_queue_list),
     path("admin/reprocess/<int:pk>/", admin_views.reprocess_image),
     path("admin/users/", admin_views.admin_users_list),
-    path("admin/users/<int:pk>/", admin_views.admin_user_detail),
-    path("admin/users/<int:pk>/history/", admin_views.admin_user_history),
-    path("admin/users/<int:pk>/images/", admin_views.admin_user_images),
-    path("admin/users/<int:pk>/banners/", admin_views.admin_user_banners),
-    path("admin/users/<int:user_id>/reset-ocr/", admin_views.reset_ocr_data),
+    path("admin/users/<uuid:pk>/", admin_views.admin_user_detail),
+    path("admin/users/<uuid:pk>/history/", admin_views.admin_user_history),
+    path("admin/users/<uuid:pk>/images/", admin_views.admin_user_images),
+    path("admin/users/<uuid:pk>/banners/", admin_views.admin_user_banners),
+    path("admin/users/<uuid:user_id>/reset-ocr/", admin_views.reset_ocr_data),
     path("admin/migrations/", admin_views.admin_migrations_list),
     
     # Remote OCR

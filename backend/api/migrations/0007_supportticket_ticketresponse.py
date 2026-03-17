@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('api', '0006_alter_userprofile_pve_win_rate_and_more'),
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ('api', '0000_user'),
     ]
 
     operations = [

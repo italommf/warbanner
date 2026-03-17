@@ -32,7 +32,7 @@ def run_challenges_pipeline(image_path):
         logger.info(f"   {C_GREEN}√ Upscale 4K (LANCZOS4) concluído.{C_END}")
         
         # 2. Salvar visualização dos ROIs (Ajuda o usuário a configurar no roi_map.py)
-        save_debug_images(img, prefix=f"ch_{fname}")
+        debug_vis = save_debug_images(img, prefix=f"ch_{fname}")
         
         detected_items = []
         
@@ -139,7 +139,7 @@ def run_challenges_pipeline(image_path):
                     logger.warning(f"      {C_YELLOW}[!] Slot {i+1} não mapeado após {len(techniques)} tentativas.{C_END}")
                     items.append({
                         "id": None,
-                        "name": "Não Mapeado",
+                        "name": "Desafio não encontrado",
                         "category": None,
                         "slot": i + 1,
                         "raw_ocr": raw_name if 'raw_name' in locals() else "",
@@ -165,8 +165,8 @@ def run_challenges_pipeline(image_path):
             "type": "desafios",
             "detected_achievements": detected_items,
             "total_count": total_found,
-            "image_width": img_w,
-            "image_height": img_h
+            "image_height": img_h,
+            "_debug_img": debug_vis
         }
 
     except Exception as e:

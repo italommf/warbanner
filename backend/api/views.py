@@ -4,14 +4,13 @@ import urllib.parse
 from pathlib import Path
 from django.utils import timezone
 from django.conf import settings
-from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import Banner, RecoveryCode, DiscordProfile, UserProfile, SupportTicket, TicketResponse
+from .models import User, Banner, RecoveryCode, DiscordProfile, UserProfile, SupportTicket, TicketResponse
 from .serializers import BannerSerializer, CommunityBannerSerializer
 import requests as http
 import sys

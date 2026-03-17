@@ -3,72 +3,63 @@
 # Cores para o output
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
 NC='\033[0m'
 
-echo -e "${BLUE}Iniciando deploy do Warface Desafios em warbanner.com.br...${NC}"
+echo -e "${BLUE}Iniciando deploy automatizado do Warface Desafios em warbanner.com.br...${NC}"
 
 # 1. Verificar e instalar Docker se necessário
 if ! [ -x "$(command -v docker)" ]; then
-    echo -e "${BLUE}Docker não encontrado. Instalando...${NC}"
+    echo -e "${YELLOW}Docker não encontrado. Instalando no Ubuntu...${NC}"
     sudo apt-get update
     sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/local/sources.list.d/docker.list > /dev/null
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt-get update
     sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 fi
 
-# 2. Verificar e instalar Docker Compose se necessário
+# 2. Verificar e instalar Docker Compose plugin se necessário
 if ! docker compose version > /dev/null 2>&1; then
-    echo -e "${BLUE}Docker Compose não encontrado. Instalando plugin...${NC}"
+    echo -e "${YELLOW}Docker Compose plugin não encontrado. Instalando...${NC}"
     sudo apt-get update
     sudo apt-get install -y docker-compose-plugin
 fi
 
-# 3. Baixar modificações do Git
-echo -e "${BLUE}Sincronizando com o Git (Reset para origin/main)...${NC}"
+# 3. Sincronizar código
+echo -e "${BLUE}Sincronizando com o Git...${NC}"
 git fetch origin main
 git reset --hard origin/main
 
-# 4. Criar rede persistente se necessário (opcional no compose v2)
-# 5. Limpeza preventiva de espaço
-echo -e "${BLUE}Limpando cache e imagens antigas para garantir espaço...${NC}"
-docker system prune -a -f
-
-# 6. Build e Up
-echo -e "${BLUE}Construindo e iniciando containers com Docker Compose...${NC}"
+# 4. Iniciar containers
+echo -e "${BLUE}Construindo e subindo os containers (Backend, Frontend, Postgres, Redis)...${NC}"
 docker compose up -d --build
 
-# 6. Limpeza de imagens antigas
-echo -e "${BLUE}Limpando imagens antigas (prune)...${NC}"
+# 5. Healthcheck do Banco de Dados
+echo -e "${BLUE}Aguardando o PostgreSQL estabilizar (15s)...${NC}"
+sleep 15
+
+# 6. Migrations e Configuração Inicial do Django
+echo -e "${BLUE}Executando Migrations no Banco de Dados (Postgres)...${NC}"
+docker compose exec -T backend python manage.py migrate --noinput
+
+echo -e "${BLUE}Configurando usuário administrador inicial...${NC}"
+docker compose exec -T backend python manage.py setup_admin
+
+# 7. Geração de Dados Estáticos
+echo -e "${BLUE}Gerando mapeamento de desafios...${NC}"
+docker compose exec -T backend python scripts/gerar_json_desafios.py 2>/dev/null || echo -e "${YELLOW}Aviso: Falha ao gerar JSON ou script não encontrado.${NC}"
+
+# 8. Limpeza de imagens órfãs
+echo -e "${BLUE}Limpando imagens antigas para liberar espaço...${NC}"
 docker image prune -f
-
-echo -e "${BLUE}Aguardando os containers estabilizarem (10s)...${NC}"
-sleep 10
-
-# 7. Gerar Mapeamento de Desafios (JSON)
-echo -e "${BLUE}Gerando mapeamento estático de desafios (JSON)...${NC}"
-docker exec warbanner-backend-1 python scripts/gerar_json_desafios.py
 
 echo -e "${BLUE}=== STATUS DOS SERVIÇOS ===${NC}"
 docker compose ps
 
-echo -e "${GREEN}Deploy finalizado!${NC}"
-echo -e "${GREEN}O serviço está rodando localmente na porta 8081.${NC}"
-echo -e "\n${BLUE}Para configurar o HTTPS no Nginx da sua VPS, use este modelo:${NC}"
-echo "------------------------------------------------------------"
-echo "server {"
-echo "    listen 80;"
-echo "    server_name warbanner.com.br;"
-echo "    location / {"
-echo "        proxy_pass http://127.0.0.1:8081;"
-echo "        proxy_set_header Host \$host;"
-echo "        proxy_set_header X-Real-IP \$remote_addr;"
-echo "        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;"
-echo "        proxy_set_header X-Forwarded-Proto \$scheme;"
-echo "        client_max_body_size 50M;"
-echo "    }"
-echo "}"
-echo "------------------------------------------------------------"
-echo -e "${BLUE}Após criar o arquivo, rode: sudo certbot --nginx -d warbanner.com.br${NC}"
-echo -e "${GREEN}Verifique os logs com: docker compose logs -f${NC}"
+echo -e "${GREEN}Deploy finalizado com sucesso!${NC}"
+echo -e "${GREEN}Frontend: http://warbanner.com.br (Porta 8081 mapeada)${NC}"
+echo -e "${GREEN}PostgreSQL está rodando internamente no Docker.${NC}"
+
+echo -e "\n${BLUE}Nota sobre PNGINX Proxy Manager:${NC}"
+echo -e "No NPM, aponte o domínio warbanner.com.br para o IP da sua VPS na porta 8081."

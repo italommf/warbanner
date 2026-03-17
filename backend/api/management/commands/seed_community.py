@@ -11,10 +11,8 @@ import io
 import random
 from pathlib import Path
 
-from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand
-
-from api.models import Banner, UserProfile
+from api.models import User, Banner, UserProfile
 
 # sem seed fixo — cada execucao gera combinacoes diferentes
 
@@ -264,12 +262,13 @@ class Command(BaseCommand):
             nick = f'{random.choice(NICK_PREFIXES)}{random.choice(NICK_SUFFIXES)}_BR'
 
             user = User.objects.create_user(username=username, password='seed1234')
-            UserProfile.objects.create(
-                user=user,
-                game_nick=nick,
-                game_clan=clan,
-                game_rank=random.choice(RANKS),
-            )
+            
+            # O perfil é criado via signal, então apenas atualizamos
+            profile = user.profile
+            profile.game_nick = nick
+            profile.game_clan = clan
+            profile.game_rank = random.choice(RANKS)
+            profile.save()
             created_users.append(user)
 
             n_banners = random.randint(5, 10)

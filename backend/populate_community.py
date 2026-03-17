@@ -7,8 +7,7 @@ from faker import Faker
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'warface.settings')
 django.setup()
 
-from django.contrib.auth.models import User
-from api.models import UserProfile, Banner
+from api.models import User, UserProfile, Banner
 
 fake = Faker(['pt_BR'])
 

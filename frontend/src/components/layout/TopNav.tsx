@@ -160,7 +160,7 @@ function UserWidget({ inline, onCloseSidebar }: UserWidgetProps) {
             {user.is_staff && (
               <button
                 className={styles.dropItem}
-                onClick={() => { navigate('/admin'); setOpen(false) }}
+                onClick={() => { navigate('/admin/dashboard'); setOpen(false) }}
                 style={{ color: 'var(--primary)' }}
               >
                 PAINEL ADMIN
@@ -469,7 +469,7 @@ export function TopNav() {
           )}
           {isLoggedIn ? (
             <NavLink
-              to="/guardar"
+              to="/mywf/warface"
               className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
             >
               MEU WARFACE
@@ -576,7 +576,7 @@ export function TopNav() {
                   )}
                   {isLoggedIn ? (
                     <NavLink
-                      to="/guardar"
+                      to="/mywf/warface"
                       className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
                       onClick={() => setSidebarOpen(false)}
                     >

@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User
+from api.models import User
 from api.models import UserProfile
 from .models import UploadedImage
 
 class UploadedImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = UploadedImage
-        fields = ['id', 'user', 'image', 'status', 'image_type', 'result', 'created_at']
+        fields = ['id', 'user', 'image', 'debug_image', 'status', 'image_type', 'result', 'created_at']
 
 class UserProfileStatsSerializer(serializers.ModelSerializer):
     pvp_classes = serializers.SerializerMethodField()

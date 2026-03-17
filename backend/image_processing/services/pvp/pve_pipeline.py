@@ -25,7 +25,7 @@ def run_pve_pipeline(image_path: str):
         logger.info(f"   {C_GREEN}√ Upscale 4K (LANCZOS4) concluído.{C_END}")
         
         # 2. Validação de Modo (Ultra High Fidelity)
-        save_debug_images(img, prefix=f"pve_{fname}")
+        debug_vis = save_debug_images(img, prefix=f"pve_{fname}")
         
         is_pve, error_msg = validate_is_pve(img)
         if not is_pve:
@@ -63,8 +63,8 @@ def run_pve_pipeline(image_path: str):
             "time_played_hours": main_stats.get("total_hours", 0),
             "classes": class_stats,
             "ocr_report": main_report + class_report,
-            "image_width": 3840,
-            "image_height": 2160
+            "image_height": 2160,
+            "_debug_img": debug_vis
         }
 
         logger.info(f"{C_GREEN}[COMPLETO]{C_END} Pipeline PvE finalizado com sucesso.\n")
