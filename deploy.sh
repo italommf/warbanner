@@ -35,11 +35,22 @@ git reset --hard origin/main
 echo -e "${BLUE}Construindo e subindo os containers (Backend, Frontend, Postgres, Redis)...${NC}"
 docker compose up -d --build
 
-# 5. Healthcheck do Banco de Dados
-echo -e "${BLUE}Aguardando o PostgreSQL estabilizar (15s)...${NC}"
-sleep 15
+# 5. Healthcheck do Banco de Dados e Inicialização
+echo -e "${BLUE}Aguardando o Backend e o PostgreSQL estabilizarem...${NC}"
+# Loop para esperar o container estar 'running' (não 'restarting')
+for i in {1..30}; do
+    STATUS=$(docker inspect -f '{{.State.Status}}' warbanner-backend-1 2>/dev/null)
+    if [ "$STATUS" == "running" ]; then
+        echo -e "${GREEN}Backend pronto!${NC}"
+        break
+    fi
+    echo -n "."
+    sleep 2
+done
 
-# 6. Migrations e Configuração Inicial do Django
+echo -e "${BLUE}Coletando arquivos estáticos...${NC}"
+docker compose exec -T backend python manage.py collectstatic --no-input
+
 echo -e "${BLUE}Executando Migrations no Banco de Dados (Postgres)...${NC}"
 docker compose exec -T backend python manage.py migrate --noinput
 

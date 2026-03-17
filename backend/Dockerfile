@@ -36,5 +36,5 @@ RUN mkdir -p imagens/marcas imagens/insignias imagens/fitas staticflakes
 # Expor a porta que o Gunicorn vai rodar
 EXPOSE 8000
 
-# Script de entrada para migrar e iniciar
-CMD ["sh", "-c", "python manage.py migrate && python manage.py collectstatic --no-input && python manage.py setup_admin && gunicorn warface.wsgi:application --bind 0.0.0.0:8000 --workers 3"]
+# Apenas inicia o servidor. Migrações e setup são feitos no deploy.sh
+CMD ["gunicorn", "warface.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "120"]
