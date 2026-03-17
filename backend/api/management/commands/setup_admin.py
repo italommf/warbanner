@@ -6,14 +6,15 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         username = 'italommf'
-        password = 'admin123'
-        email = 'italo@warbanner.com.br'
+        password = 'Hefesto@45'
+        email = 'italo.mageste@gmail.com'
 
         if not User.objects.filter(username=username).exists():
             user = User.objects.create_superuser(username=username, email=email, password=password)
             # Garantir que o perfil dele seja admin
             profile = user.profile
             profile.role = 'admin'
+            profile.game_nick = '720p'
             profile.save()
             self.stdout.write(self.style.SUCCESS(f'Usuário {username} criado com sucesso.'))
         else:
