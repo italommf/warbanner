@@ -702,7 +702,7 @@ function buildSlots(): AchSlot[] {
   return slots
 }
 
-function loadSlots(userId: number): AchSlot[] {
+function loadSlots(userId: string | number): AchSlot[] {
   const base = buildSlots()
   if (!userId) return base
   try {
@@ -723,7 +723,7 @@ const ACH_CATEGORY: Record<AchSlotType, Category> = {
 
 function FavoriteAchievements({ userStats }: { userStats: any }) {
   const user = useAuthStore((s) => s.user)
-  const userId = user?.id || 0
+  const userId = user?.id || ''
   
   const marcas = useMarcas()
   const insignias = useInsignias()
