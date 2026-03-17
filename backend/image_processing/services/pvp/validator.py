@@ -80,7 +80,7 @@ def check_template_in_roi_raw(img, roi_def, template_path):
         tpl = cv2.imread(template_path)
         if tpl is None: return False, "Erro leitura", 0.0
         
-        mode_roi = crop_roi(img, roi_def)
+        mode_roi = crop_roi(img, roi_def, enhance_for_ocr=False)
         if mode_roi.size == 0: return False, "ROI vazio", 0.0
         
         h_roi, w_roi = mode_roi.shape[:2]
