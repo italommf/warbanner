@@ -9,11 +9,6 @@ celery==5.4.0
 redis==5.0.8
 django-celery-results==2.5.1
 flower==2.0.1
---extra-index-url https://download.pytorch.org/whl/cpu
-torch
-torchvision
-realesrgan
-basicsr
 opencv-python
 psycopg2-binary==2.9.9
 gunicorn==22.0.0

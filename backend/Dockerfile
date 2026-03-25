@@ -21,6 +21,17 @@ WORKDIR /app
 
 # Copiar requirements primeiro para aproveitar o cache do Docker
 COPY requirements.txt .
+
+# 1. Upgrade de ferramentas de build para evitar erros no egg_info do basicsr
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+
+# 2. Instalar Torch e componentes críticos em separado para assegurar indexação CPU
+RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+# 3. Instalar basicsr e realesrgan antes do restante (pacotes "frágeis")
+RUN pip install --no-cache-dir basicsr==1.4.2 realesrgan
+
+# 4. Instalar o restante das dependências
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Corrigir bug de compatibilidade do basicsr com versões novas do torchvision
