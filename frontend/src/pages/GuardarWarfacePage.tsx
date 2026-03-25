@@ -808,6 +808,7 @@ function FavoriteAchievements({ userStats }: { userStats: any }) {
           category={ACH_CATEGORY[slots[pickerOpen].type]}
           items={getItems(slots[pickerOpen].type)}
           selectedFilename={slots[pickerOpen].item?.filename ?? null}
+          showFilters
           onSelect={(item) => selectItem(pickerOpen, item as Item)}
           onClose={() => setPickerOpen(null)}
         />

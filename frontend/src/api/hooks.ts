@@ -510,10 +510,10 @@ export function useUpdateAdminUser() {
   })
 }
 
-export function useAdminUserImages(userId: string | null) {
+export function useAdminUserImages(userId: string | null, search = '') {
   return useQuery<AdminUserImage[]>({
-    queryKey: ['admin-user-images', userId],
-    queryFn: () => authFetch(`/api/admin/users/${userId}/images/`).then((r) => r.json()),
+    queryKey: ['admin-user-images', userId, search],
+    queryFn: () => authFetch(`/api/admin/users/${userId}/images/?search=${search}`).then((r) => r.json()),
     enabled: userId !== null,
   })
 }
@@ -533,6 +533,19 @@ export function useAdminGlobalStats() {
     queryKey: ['admin-global-stats'],
     queryFn: () => authFetch('/api/admin/stats/').then((r) => r.json()),
     refetchInterval: 10000,
+  })
+}
+
+export interface AdminChartData {
+  labels: string[]
+  data: number[]
+}
+
+export function useAdminChartData(metric: string, period: string) {
+  return useQuery<AdminChartData>({
+    queryKey: ['admin-chart', metric, period],
+    queryFn: () => authFetch(`/api/admin/chart/?metric=${metric}&period=${period}`).then((r) => r.json()),
+    staleTime: 30_000,
   })
 }
 

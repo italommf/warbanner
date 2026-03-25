@@ -11,6 +11,7 @@ import { GuardarWarfacePage } from '@/pages/GuardarWarfacePage'
 import { ApoiePage } from '@/pages/ApoiePage'
 import { AuthPage } from '@/pages/AuthPage'
 import { AdminPage } from '@/pages/AdminPage'
+import { LogoRenderer } from '@/pages/LogoRenderer'
 import { useBannerStore } from '@/store/bannerStore'
 import { useAuthStore } from '@/store/authStore'
 import type { BgColors } from '@/store/bannerStore'
@@ -165,6 +166,7 @@ export function App() {
             <Route path="/admin/:tab" element={<AdminPage />} />
             <Route path="/admin/:tab/:id" element={<AdminPage />} />
             <Route path="/admin/:tab/:id/:subtab" element={<AdminPage />} />
+            <Route path="/render-logo" element={<LogoRenderer />} />
           </Routes>
         </AnimatePresence>
       </div>

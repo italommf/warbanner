@@ -232,7 +232,11 @@
 }
 
 .contentFull {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--orange) rgba(255, 255, 255, 0.05);
 }
 
 /* User List */
@@ -904,15 +908,23 @@
 
 .cardReviewBadge, .cardFailBadge {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
+    background: #ff4757;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 800;
     padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.6rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    z-index: 2;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
+    pointer-events: none;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .cardReviewBadge {
@@ -1321,31 +1333,244 @@
 .challengesToolbar {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding-bottom: 15px;
-    margin-bottom: 5px;
+    gap: 12px;
+    margin-bottom: 30px;
+    background: rgba(13, 21, 32, 0.4);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1100px) {
+    .challengesToolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+.challengeSearchContainer {
+    flex: 1;
+    min-width: 300px;
+}
+
+.challengeFilterBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.challengeFilterInput {
+    width: 100%;
+    height: 46px;
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    padding: 0 40px 0 14px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+}
+
+.challengeFilterInput:focus {
+    outline: none;
+    border-color: var(--orange);
+    box-shadow: 0 0 0 4px rgba(255, 85, 0, 0.1);
+}
+
+.clearSearchBtn {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--text2);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s;
+}
+
+.clearSearchBtn:hover {
+    color: var(--orange);
+}
+
+/* Filtros Estilizados (Igual ao site) */
+.filterWrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.filterTrigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 12px;
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    cursor: pointer;
+    min-width: 160px;
+    height: 46px;
+    transition: all 0.2s;
+    user-select: none;
+    font-family: inherit;
+    border-radius: 8px;
+}
+
+.filterTrigger:hover {
+    border-color: var(--orange);
+    background: var(--hover);
+}
+
+.filterTriggerLabel {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text2);
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.filterTriggerValue {
+    flex: 1;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filterArrow {
+    font-size: 10px;
+    color: var(--text2);
+    display: inline-block;
+}
+
+.filterDropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 100;
+    --bg2: #0d1520;
+    background: var(--bg2);
+    border: 1px solid var(--border2);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 320px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.filterSection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filterSectionLabel {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--text2);
+    text-transform: uppercase;
+}
+
+.filterChips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.filterChip {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--text2);
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    border-radius: 6px;
+}
+
+.filterChip:hover {
+    border-color: var(--border2);
+    color: var(--text);
+    background: var(--hover);
+}
+
+.filterChipActive {
+    border-color: var(--orange);
+    color: var(--orange);
+    background: rgba(255, 85, 0, 0.08);
+}
+
+.filterDivider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 0;
 }
 
 .adminCheckboxLabel {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     cursor: pointer;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
     user-select: none;
-    transition: color 0.2s;
+    font-size: 12px;
+    color: var(--text2);
+    white-space: nowrap;
+    background: var(--bg3);
+    height: 46px;
+    padding: 0 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border2);
+    transition: all 0.2s;
 }
 
 .adminCheckboxLabel:hover {
-    color: #fff;
+    border-color: var(--orange);
+    color: var(--text);
+    background: var(--hover);
 }
 
-.adminCheckboxLabel input {
-    cursor: pointer;
-    accent-color: var(--orange);
+.adminCheckbox {
+    appearance: none;
     width: 16px;
     height: 16px;
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    background: var(--bg2);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.15s;
+}
+
+.adminCheckbox:checked {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.adminCheckbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 11px;
 }
 
 .challengeGridsContainer {
@@ -2327,9 +2552,53 @@
 /* Image Detail Split View */
 .imageTabContent {
     display: flex;
-    gap: 24px;
+    flex-direction: column;
+    gap: 20px;
     height: 100%;
-    overflow: hidden;
+}
+
+.imageSearchBox {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.imageSearchInput {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none; /* Diferenciar das tabs */
+    border-radius: 0 0 8px 8px;
+    padding: 12px 16px;
+    padding-right: 40px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.imageSearchInput:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--orange);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.clearSearchBtn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.clearSearchBtn:hover {
+    color: var(--red);
 }
 
 .imageGridScroll {
@@ -2770,4 +3039,688 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+/* ═══ Dashboard Chart ═══ */
+
+.chartContainer {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
+}
+
+.chartSelectors {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.chartDropdownWrapper {
+    position: relative;
+}
+
+.chartDropdownTrigger {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    color: #fff;
+    padding: 0 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 34px;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+.chartDropdownTrigger:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--orange);
+}
+
+.chartDropdownTriggerActive {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 2px rgba(255, 85, 0, 0.15);
+}
+
+.chartDropdownBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+}
+
+.chartDropdownMenu {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: max-content;
+    min-width: 100%;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chartDropdownItem {
+    padding: 9px 16px;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    background: transparent;
+    border: none;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.chartDropdownItem:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.chartDropdownItemActive {
+    background: var(--orange);
+    color: #fff;
+}
+
+.chartDropdownItemActive:hover {
+    background: var(--orange);
+    filter: brightness(1.1);
+}
+
+.chartArea {
+    flex: 1;
+    min-height: 250px;
+    position: relative;
+}
+
+.chartLoading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 250px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.modalNavigation {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.navBtn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.navBtn:hover:not(:disabled) {
+    background: var(--orange);
+    border-color: white;
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(255, 111, 0, 0.4);
+}
+
+.navBtn:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.navBtn:disabled {
+    opacity: 0;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* OCR Correction UI */
+.correctionOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.correctionContent {
+    background: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    border-radius: 16px;
+    width: 600px;
+    max-width: 100%;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* OCR Correction UI (Modal Version - Legacy) */
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: var(--text2);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.closeBtn:hover {
+    color: white;
+}
+
+.correctionBody {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.searchBoxWrapper {
+    margin-bottom: 20px;
+}
+
+.correctionSearch {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.correctionSearch:focus {
+    outline: none;
+    border-color: var(--orange);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.correctionList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.correctionItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.correctionItem:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.itemImgWrapper {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.itemImgWrapper img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.correctionItemInfo {
+    flex: 1;
+}
+
+.itemName {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.itemFile {
+    font-size: 0.7rem;
+    color: var(--text2);
+    opacity: 0.7;
+}
+
+.itemSelectArrow {
+    color: var(--text2);
+    font-size: 1.2rem;
+}
+
+.noResults {
+    text-align: center;
+    padding: 40px;
+    color: var(--text2);
+}
+
+.correctBtn {
+    background: rgba(255, 111, 0, 0.1);
+    color: var(--orange);
+    border: 1px solid rgba(255, 111, 0, 0.3);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    cursor: pointer;
+    margin-left: 8px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+
+.correctBtn:hover {
+    background: var(--orange);
+    color: white;
+    border-color: white;
+}
+
+/* Inline OCR Correction */
+.clickableFailCard {
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 111, 0, 0.2);
+    background: rgba(255, 111, 0, 0.03);
+}
+
+.clickableFailCard:hover {
+    background: rgba(255, 111, 0, 0.08);
+    border-color: rgba(255, 111, 0, 0.5);
+    transform: translateX(4px);
+}
+
+.activeCorrection {
+    background: rgba(255, 111, 0, 0.12) !important;
+    border-color: var(--orange) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.inlineCorrectionWrapper {
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 111, 0, 0.1);
+    margin-top: 12px;
+    padding-top: 12px;
+}
+
+
+.correctionControls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.categoryToggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.catBtn {
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    color: var(--text2);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.catBtn.active {
+    background: var(--orange);
+    color: white;
+}
+
+.inlineSearch {
+    flex: 1;
+    min-width: 150px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.inlineSearch:focus {
+    outline: none;
+    border-color: var(--orange);
+}
+
+.inlineCancel {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text2);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.inlineCancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+
+.noResultsSmall {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 20px;
+    color: var(--text2);
+    font-size: 0.8rem;
+}
+
+/* Full-view OCR Correction */
+.ocrSectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.miniBackBtn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text2);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.miniBackBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.ocrResultsContainer {
+    position: relative;
+    min-height: 100px;
+}
+
+.fullCorrectionView {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 111, 0, 0.15);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.correctionFullViewWrapper {
+    width: 100%;
+}
+
+.backBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s;
+}
+
+.backBtn:hover {
+    transform: translateX(-4px);
+}
+
+.headerTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.headerTitle span {
+    font-size: 0.75rem;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rawHighlight {
+    font-size: 1.1rem;
+    color: white;
+    font-style: italic;
+}
+
+/* Refined 2-column Correction List */
+.backBtnInline {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text2);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    transition: all 0.2s;
+}
+
+.backBtnInline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateX(-4px);
+}
+
+.correctionInfoGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.infoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.infoLabel {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text2);
+    letter-spacing: 0.5px;
+}
+
+.infoValue {
+    font-size: 1rem;
+    color: white;
+    word-break: break-all;
+}
+
+.missingVal {
+    color: var(--red);
+    font-style: italic;
+}
+
+.inlineGridList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px;
+}
+
+.gridListItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 68px;
+}
+
+.gridListItem:hover {
+    background: rgba(255, 111, 0, 0.1);
+    border-color: var(--orange);
+    transform: translateY(-2px);
+}
+
+.gridItemIcon {
+    width: 160px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gridItemIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gridItemDetails {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.gridItemName {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gridItemFilename {
+    font-size: 0.7rem;
+    color: var(--text2);
+    font-family: monospace;
+}
+
+.loadMoreBtn {
+    background: rgba(255, 111, 0, 0.1);
+    border: 1px solid rgba(255, 111, 0, 0.3);
+    color: var(--orange);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 8px;
+}
+
+.loadMoreBtn:hover {
+    background: var(--orange);
+    color: white;
+}
+
+.ocrWarning {
+    color: #ffca28;
+    text-shadow: 0 0 10px rgba(255, 202, 40, 0.2);
+}
+
+/* New status for Not Unlocked challenges */
+.matchNotUnlocked { background: #0070f3 !important; color: #fff !important; }
+.correctionHeaderRow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.notUnlockedActionBtn { background: rgba(0, 112, 243, 0.1); border: 1px solid rgba(0, 112, 243, 0.3); color: #0070f3; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+.notUnlockedActionBtn:hover { background: #0070f3; color: white; }
+.cardUnlockedBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #007bff;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+    pointer-events: none;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }

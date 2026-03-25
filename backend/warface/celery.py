@@ -1,5 +1,6 @@
 import os
 from celery import Celery
+from celery.schedules import crontab
 
 # Define o módulo de configurações padrão do Django para o programa 'celery'.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'warface.settings')
@@ -14,6 +15,13 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 
 # Carrega módulos de tarefas de todos os aplicativos Django registrados.
 app.autodiscover_tasks()
+
+app.conf.beat_schedule = {
+    'limpeza-diaria-imagens': {
+        'task': 'image_processing.tasks.delete_old_images',
+        'schedule': crontab(hour=4, minute=0), # Roda todo dia às 04:00 da manhã
+    },
+}
 
 @app.task(bind=True, ignore_result=True)
 def debug_task(self):

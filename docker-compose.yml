@@ -44,6 +44,21 @@ services:
       - redis
     restart: always
 
+  beat:
+    build: ./backend
+    command: celery -A warface beat --loglevel=info
+    environment:
+      DEBUG: "False"
+      DATABASE_URL: postgres://wb_db_user:WB_db_P4ss_9k2M5p8Q4z6@db:5432/warface_db
+      CELERY_BROKER_URL: redis://redis:6379/0
+    volumes:
+      - ./backend/imagens:/app/imagens
+      - ./backend/music:/app/music
+    depends_on:
+      - db
+      - redis
+    restart: always
+
   frontend:
     build: ./frontend
     ports:

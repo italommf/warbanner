@@ -19,7 +19,8 @@
   max-height: 85vh;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
   border-radius: 12px;
-  overflow: hidden;
+  /* Permite dropdown dos filtros sem ser cortado pelo modal. */
+  overflow: visible;
 }
 
 .header {
@@ -30,6 +31,24 @@
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   flex-shrink: 0;
+}
+
+.filters {
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 800px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 .title {

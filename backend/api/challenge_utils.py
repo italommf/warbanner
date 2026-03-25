@@ -48,7 +48,7 @@ VARIANT_KEYWORDS = {
     "inverno", "imperador amarelo", "galáxia", "galaxia", "infernal", "torneio mundial",
     "papai noel maligno", "great gatsby", "gorgon", "medusa", "mechanical", "heat",
     "frankenstein", "quebra-gelo", "yakuza", "caimão", "caimao", "rust", "banshee",
-    "red dusk", "road block", "higwayman", "moray", "deimos", "light circle", "cyber pro"
+    "red dusk", "road block", "higwayman", "moray", "deimos", "light circle", "cyber pro", "tribal"
 }
 
 def find_best_challenge_match(ocr_name, threshold=0.75):
@@ -67,6 +67,26 @@ def find_best_challenge_match(ocr_name, threshold=0.75):
     ocr_name_clean = re.sub(r'\s+', ' ', ocr_name_low)
     ocr_name_no_space = ocr_name_low.replace(' ', '').replace('!', '').replace('.', '').replace('-', '')
     ocr_words = set(ocr_name_clean.split())
+
+    # 0. Busca por Correções Manuais (Prioridade Máxima)
+    try:
+        from image_processing.models import OCRCorrection
+        # Usamos o texto limpo para o match
+        corr = OCRCorrection.objects.filter(raw_text=ocr_name_clean).first()
+        if corr:
+            challenges = get_all_challenges()
+            # Procurar o desafio pelo ID (filename)
+            for name_key, data in challenges.items():
+                if data['filename'] == corr.correct_item_id:
+                    match_data = data.copy()
+                    match_data.update({
+                        'match_type': 'exact', 
+                        'similarity': 1.0,
+                        'is_manual_correction': True
+                    })
+                    return match_data
+    except Exception as e:
+        logger.error(f"Erro ao buscar correção OCR: {e}")
 
     # 1. Busca exata (Literal limpo)
     if ocr_name_clean in challenges:

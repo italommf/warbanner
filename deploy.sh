@@ -69,6 +69,7 @@ echo -e "${BLUE}=== STATUS DOS SERVIÇOS ===${NC}"
 docker compose ps
 
 echo -e "${GREEN}Deploy finalizado com sucesso!${NC}"
+echo -e "${GREEN}Serviço de Limpeza Automática (Celery Beat) iniciado.${NC}"
 echo -e "${GREEN}Frontend: http://warbanner.com.br (Porta 8081 mapeada)${NC}"
 echo -e "${GREEN}PostgreSQL está rodando internamente no Docker.${NC}"
 

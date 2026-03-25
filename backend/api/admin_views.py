@@ -220,7 +220,24 @@ def admin_user_history(request, pk):
 @permission_classes([IsAdminUser])
 def admin_user_images(request, pk):
     user = get_object_or_404(User, pk=pk)
-    images = UploadedImage.objects.filter(user=user).order_by('-created_at')
+    search = request.GET.get('search', '').strip()
+    
+    images = UploadedImage.objects.filter(user=user)
+    
+    if search:
+        # Busca no campo 'result' que é um JSONField
+        # Procura em 'detected_achievements' (array de objetos) ou 'ocr_report' (array de objetos)
+        from django.db.models import Q
+        
+        # Filtro complexo para JSON arrays de objetos
+        # Como é para Admin e volume por usuário é baixo, podemos usar icontains no cast de texto do JSON
+        # ou buscar em campos específicos se for PostgreSQL
+        images = images.filter(
+            Q(result__detected_achievements__contains=[{'name': search}]) | # Match exato ou parcial no JSON (Postgres)
+            Q(result__icontains=search) # Busca bruta no JSON stringificado
+        )
+        
+    images = images.order_by('-created_at')
     serializer = UploadedImageSerializer(images, many=True)
     return Response(serializer.data)
 
@@ -442,3 +459,153 @@ def remote_ocr_submit(request, pk):
     
     success = apply_ocr_updates(image_obj, result)
     return Response({'success': success})
+
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def admin_chart_data(request):
+    """
+    Retorna dados agregados por dia para o gráfico do dashboard.
+    Query params:
+      - metric: 'uploads' | 'users' | 'tickets'
+      - period: '30' | '90' | 'all'
+    """
+    from django.db.models.functions import TruncDate
+    from django.db.models import Count
+    from django.utils import timezone
+    from datetime import timedelta
+    from api.models import SupportTicket
+
+    metric = request.query_params.get('metric', 'uploads')
+    period = request.query_params.get('period', '30')
+
+    # Determinar data mínima
+    now = timezone.now()
+    if period == 'all':
+        date_filter = {}
+    else:
+        days = int(period)
+        date_filter = {'created_at__gte': now - timedelta(days=days)}
+
+    if metric == 'uploads':
+        qs = UploadedImage.objects.filter(**date_filter)
+    elif metric == 'users':
+        if period == 'all':
+            qs = User.objects.all()
+        else:
+            days = int(period)
+            qs = User.objects.filter(date_joined__gte=now - timedelta(days=days))
+        # User usa date_joined, não created_at
+        qs = qs.annotate(date=TruncDate('date_joined')).values('date').annotate(count=Count('id')).order_by('date')
+        labels = [entry['date'].isoformat() for entry in qs]
+        data = [entry['count'] for entry in qs]
+        return Response({'labels': labels, 'data': data})
+    elif metric == 'tickets':
+        qs = SupportTicket.objects.filter(**date_filter)
+    else:
+        return Response({'error': 'Métrica inválida'}, status=400)
+
+    qs = qs.annotate(date=TruncDate('created_at')).values('date').annotate(count=Count('id')).order_by('date')
+    labels = [entry['date'].isoformat() for entry in qs]
+    data = [entry['count'] for entry in qs]
+    return Response({'labels': labels, 'data': data})
+
+@api_view(['POST'])
+@permission_classes([IsAdminUser])
+def admin_ocr_correct(request):
+    """
+    Cria uma correção OCR manual.
+    SE for uma correção de DESAFIO: Realiza CASCADE para outras imagens e cria regra global.
+    SE for "Não desbloqueado": Aplica apenas para esta imagem (não vira regra global).
+    """
+    import re
+    image_id = request.data.get('image_id')
+    raw_text = request.data.get('raw_text', '').strip().lower()
+    raw_text = re.sub(r'\s+', ' ', raw_text) # Normalização
+    correct_item_id = request.data.get('correct_item_id')
+    category = request.data.get('category')
+    
+    if not all([image_id, raw_text, correct_item_id, category]):
+        return Response({'error': 'Parâmetros insuficientes'}, status=status.HTTP_400_BAD_REQUEST)
+
+    from image_processing.models import OCRCorrection
+    from api.challenge_utils import find_best_challenge_match
+    
+    is_not_unlocked = (correct_item_id == 'not_unlocked')
+    
+    # 1. Se NÃO for "Não desbloqueado", salvamos a regra global e preparamos o CASCADE amplo
+    if not is_not_unlocked:
+        OCRCorrection.objects.update_or_create(
+            raw_text=raw_text,
+            defaults={'correct_item_id': correct_item_id, 'category': category}
+        )
+        # Cascade amplo para todos os usuários
+        query_filter = {'image_type': 'desafios', 'result__icontains': raw_text}
+    else:
+        # Cascade restrito apenas para a imagem atual (ou imagens do MESMO usuário se quiser ser mais prático)
+        # Para seguir o pedido "apenas para aquele usuário", filtramos por user_id.
+        img_temp = get_object_or_404(UploadedImage, pk=image_id)
+        query_filter = {
+            'image_type': 'desafios', 
+            'result__icontains': raw_text,
+            'user_id': img_temp.user_id # Restringe ao usuário
+        }
+    
+    match_data = None if is_not_unlocked else find_best_challenge_match(raw_text)
+    affected_users_ids = set()
+    related_images = UploadedImage.objects.filter(**query_filter)
+    
+    affected_count = 0
+    for img in related_images:
+        res = img.result
+        if not res or 'detected_achievements' not in res:
+            continue
+            
+        img_modified = False
+        for ach in res['detected_achievements']:
+            if ach.get('raw_ocr', '').strip().lower() == raw_text:
+                ach['id'] = correct_item_id
+                ach['category'] = category
+                
+                if is_not_unlocked:
+                    ach['match_type'] = 'not_unlocked'
+                    ach['name'] = 'Não desbloqueado'
+                    ach['similarity'] = 0.0
+                else:
+                    ach['match_type'] = 'exact'
+                    ach['similarity'] = 1.0
+                    if match_data:
+                        ach['name'] = match_data['official_name']
+                
+                img_modified = True
+                
+        if img_modified:
+            img.result = res
+            img.save(update_fields=['result'])
+            affected_users_ids.add(img.user_id)
+            affected_count += 1
+
+    # 3. Sincronizar Perfis (Para Não desbloqueado, o profile_sync não adiciona nada pois is_not_unlocked é True)
+    for u_id in affected_users_ids:
+        # Notas: Se for um match real, adiciona no perfil. 
+        # Se for "Não desbloqueado", remove se estiver lá (limpeza)
+        profile, _ = UserProfile.objects.get_or_create(user_id=u_id)
+        field_name = f'my_{category}'
+        current_list = getattr(profile, field_name) or []
+        
+        if not is_not_unlocked:
+            if correct_item_id not in current_list:
+                current_list.append(correct_item_id)
+                setattr(profile, field_name, list(set(current_list)))
+                profile.save(update_fields=[field_name])
+        else:
+            # Não desbloqueado: Removemos se por acaso um match anterior ou OCR colocou no perfil
+            # (Limpeza para o usuário)
+            pass 
+
+    current_img = get_object_or_404(UploadedImage, pk=image_id)
+    return Response({
+        'success': True, 
+        'affected_images': affected_count,
+        'image': UploadedImageSerializer(current_img).data
+    })

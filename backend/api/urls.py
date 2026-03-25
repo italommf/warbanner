@@ -27,6 +27,7 @@ urlpatterns = [
 
     # Admin
     path("admin/stats/", admin_views.admin_global_stats),
+    path("admin/chart/", admin_views.admin_chart_data),
     path("admin/queue/", admin_views.admin_queue_list),
     path("admin/reprocess/<int:pk>/", admin_views.reprocess_image),
     path("admin/users/", admin_views.admin_users_list),
@@ -40,6 +41,7 @@ urlpatterns = [
     # Remote OCR
     path("admin/ocr/pending/", admin_views.remote_ocr_list),
     path("admin/ocr/submit/<int:pk>/", admin_views.remote_ocr_submit),
+    path("admin/ocr/correct/", admin_views.admin_ocr_correct),
 
     # Support
     path("support/tickets/", views.ticket_list_create),

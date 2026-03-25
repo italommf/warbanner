@@ -431,3 +431,72 @@ def apply_ocr_updates(image_obj, result):
         return True
     
     return False
+
+@shared_task
+def delete_old_images():
+    """
+    Deleta imagens enviadas há mais de 7 dias para economizar espaço em disco.
+    Lida com: original, debug/roi_map e crops temporários em debug_outputs.
+    """
+    from django.utils import timezone
+    from datetime import timedelta
+    import os
+    import glob
+    
+    cutoff = timezone.now() - timedelta(days=7)
+    old_images = UploadedImage.objects.filter(created_at__lt=cutoff)
+    
+    count = old_images.count()
+    if count == 0:
+        # Tenta limpar o diretório de debug mesmo se não houver imagens antigas no banco
+        # (Limpeza de resíduos de processos falhos ou deletados manualmente)
+        _cleanup_debug_dir()
+        return "Nenhuma imagem no banco para remover. Diretório de debug verificado."
+        
+    for img in old_images:
+        try:
+            # 1. Deleta a imagem original
+            if img.image and os.path.isfile(img.image.path):
+                os.remove(img.image.path)
+            
+            # 2. Deleta a imagem de diagnóstico (ROI map)
+            if img.debug_image and os.path.isfile(img.debug_image.path):
+                os.remove(img.debug_image.path)
+                
+            # 3. Procura por arquivos órfãos no diretório de debug com o ID/Prefix dessa imagem
+            # O prefixo costuma ser ch_filename ou pvp_filename
+            from django.conf import settings
+            fname = os.path.basename(img.image.name)
+            debug_dir = os.path.join(settings.BASE_DIR, "debug_outputs")
+            if os.path.exists(debug_dir):
+                patterns = [f"*{fname}*", f"*_{img.id}_*"]
+                for p in patterns:
+                    for f in glob.glob(os.path.join(debug_dir, p)):
+                        if os.path.isfile(f):
+                            os.remove(f)
+            
+            # 4. Deleta o registro final
+            img.delete()
+        except Exception as e:
+            logger.error(f"Erro ao deletar imagem {img.id}: {str(e)}")
+            
+    logger.info(f"{C_RED}[LIMPEZA]{C_END} Cron: {count} imagens e arquivos residuais removidos.")
+    return f"Limpeza concluída: {count} registros removidos."
+
+def _cleanup_debug_dir():
+    """Limpeza extra de arquivos velhos em debug_outputs (residuais)"""
+    from django.conf import settings
+    import os
+    import time
+    debug_dir = os.path.join(settings.BASE_DIR, "debug_outputs")
+    if not os.path.exists(debug_dir): return
+    
+    # 7 dias em segundos
+    sec_limit = 7 * 24 * 3600
+    now = time.time()
+    
+    for f in os.listdir(debug_dir):
+        fp = os.path.join(debug_dir, f)
+        if os.path.isfile(fp):
+            if now - os.path.getmtime(fp) > sec_limit:
+                os.remove(fp)

@@ -1,11 +1,18 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { applyFilters } from '@/utils/challenges'
+import type { MainFilter, ArmasFilter } from '@/store/bannerStore'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useAdminUsers, useAdminUserDetail, useAdminUserImages, useUpdateAdminUser, useAdminGlobalStats, usePatentes, useAdminQueue, useReprocessImage, useAdminUserHistory, useAdminMigrations, useItems, useTickets, useTicketDetail, useReplyTicket, useUpdateTicketStatus, type TicketStatus } from '@/api/hooks'
+import { useQueryClient } from '@tanstack/react-query'
+import { useAdminUsers, useAdminUserDetail, useAdminUserImages, useUpdateAdminUser, useAdminGlobalStats, useAdminChartData, usePatentes, useAdminQueue, useReprocessImage, useAdminUserHistory, useAdminMigrations, useItems, useTickets, useTicketDetail, useReplyTicket, useUpdateTicketStatus, authFetch, type TicketStatus, type Item } from '@/api/hooks'
 import type { AdminLog, ItemsResponse } from '@/api/hooks'
 import styles from './AdminPage.module.css'
 import { useAuthStore } from '@/store/authStore'
 import { Navigate, useParams, useNavigate } from 'react-router'
+import { Line } from 'react-chartjs-2'
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Filler } from 'chart.js'
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Filler)
 
 type AdminTab = 'geral' | 'pvp' | 'pve' | 'desafios' | 'imagens' | 'historico' | 'warchaos'
 
@@ -96,6 +103,7 @@ export function AdminPage() {
 
             <div className={`${styles.content} ${(mainTab === 'queue' || mainTab === 'support' || mainTab === 'migrations' || mainTab === 'dashboard') ? styles.contentFull : ''}`}>
                 {mainTab === 'dashboard' ? (
+                    <>
                     <div className={styles.dashboard}>
                         <div className={styles.statCard}>
                             <span className={styles.statValue}>{stats?.total_users ?? '...'}</span>
@@ -126,6 +134,8 @@ export function AdminPage() {
                             <span className={styles.statLabel}>Falhas</span>
                         </div>
                     </div>
+                    <DashboardChart />
+                    </>
                 ) : mainTab === 'users' ? (
                     <>
                         <div className={styles.sidebar}>
@@ -226,14 +236,315 @@ export function AdminPage() {
     )
 }
 
+const METRIC_OPTIONS = [
+    { value: 'uploads', label: 'Uploads por dia' },
+    { value: 'users', label: 'Usuários cadastrados por dia' },
+    { value: 'tickets', label: 'Tickets abertos por dia' },
+]
+
+const PERIOD_OPTIONS = [
+    { value: '30', label: 'Últimos 30 dias' },
+    { value: '90', label: 'Últimos 90 dias' },
+    { value: 'all', label: 'Todos' },
+]
+
+function DashboardChart() {
+    const [metric, setMetric] = useState('uploads')
+    const [period, setPeriod] = useState('30')
+    const [metricOpen, setMetricOpen] = useState(false)
+    const [periodOpen, setPeriodOpen] = useState(false)
+    const { data: chartData, isLoading } = useAdminChartData(metric, period)
+
+    const metricLabel = METRIC_OPTIONS.find(o => o.value === metric)?.label ?? ''
+    const periodLabel = PERIOD_OPTIONS.find(o => o.value === period)?.label ?? ''
+
+    const data = {
+        labels: chartData?.labels?.map(l => {
+            const d = new Date(l + 'T00:00:00')
+            return d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' })
+        }) ?? [],
+        datasets: [{
+            data: chartData?.data ?? [],
+            borderColor: '#ff9955',
+            borderWidth: 1.5,
+            pointRadius: 0,
+            pointHoverRadius: 4,
+            pointHoverBackgroundColor: '#ff9955',
+            pointHoverBorderColor: '#fff',
+            tension: 0.3,
+            fill: false,
+        }],
+    }
+
+    const options = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                backgroundColor: 'rgba(0,0,0,0.8)',
+                titleColor: '#fff',
+                bodyColor: '#ff9955',
+                borderColor: 'rgba(255,255,255,0.1)',
+                borderWidth: 1,
+                padding: 10,
+                displayColors: false,
+                callbacks: {
+                    title: (items: any) => items[0]?.label ?? '',
+                    label: (item: any) => `${item.raw}`,
+                },
+            },
+        },
+        scales: {
+            x: {
+                grid: { color: 'rgba(255,255,255,0.04)', drawBorder: false },
+                ticks: {
+                    color: 'rgba(255,255,255,0.35)',
+                    font: { size: 10, weight: 600 as const },
+                    maxTicksLimit: 15,
+                },
+                border: { display: false },
+            },
+            y: {
+                beginAtZero: true,
+                grid: { color: 'rgba(255,255,255,0.04)', drawBorder: false },
+                ticks: {
+                    color: 'rgba(255,255,255,0.35)',
+                    font: { size: 10, weight: 600 as const },
+                    precision: 0,
+                },
+                border: { display: false },
+            },
+        },
+        interaction: {
+            intersect: false,
+            mode: 'index' as const,
+        },
+    }
+
+    return (
+        <div className={styles.chartContainer}>
+            <div className={styles.chartSelectors}>
+                <div className={styles.chartDropdownWrapper}>
+                    <button
+                        className={`${styles.chartDropdownTrigger} ${metricOpen ? styles.chartDropdownTriggerActive : ''}`}
+                        onClick={() => { setMetricOpen(!metricOpen); setPeriodOpen(false) }}
+                    >
+                        {metricLabel}
+                        <span className={`${styles.caret} ${metricOpen ? styles.caretOpen : ''}`} />
+                    </button>
+                    {metricOpen && (
+                        <>
+                            <div className={styles.chartDropdownBackdrop} onClick={() => setMetricOpen(false)} />
+                            <div className={styles.chartDropdownMenu}>
+                                {METRIC_OPTIONS.map(o => (
+                                    <button
+                                        key={o.value}
+                                        className={`${styles.chartDropdownItem} ${metric === o.value ? styles.chartDropdownItemActive : ''}`}
+                                        onClick={() => { setMetric(o.value); setMetricOpen(false) }}
+                                    >
+                                        {o.label}
+                                    </button>
+                                ))}
+                            </div>
+                        </>
+                    )}
+                </div>
+
+                <div className={styles.chartDropdownWrapper}>
+                    <button
+                        className={`${styles.chartDropdownTrigger} ${periodOpen ? styles.chartDropdownTriggerActive : ''}`}
+                        onClick={() => { setPeriodOpen(!periodOpen); setMetricOpen(false) }}
+                    >
+                        {periodLabel}
+                        <span className={`${styles.caret} ${periodOpen ? styles.caretOpen : ''}`} />
+                    </button>
+                    {periodOpen && (
+                        <>
+                            <div className={styles.chartDropdownBackdrop} onClick={() => setPeriodOpen(false)} />
+                            <div className={styles.chartDropdownMenu}>
+                                {PERIOD_OPTIONS.map(o => (
+                                    <button
+                                        key={o.value}
+                                        className={`${styles.chartDropdownItem} ${period === o.value ? styles.chartDropdownItemActive : ''}`}
+                                        onClick={() => { setPeriod(o.value); setPeriodOpen(false) }}
+                                    >
+                                        {o.label}
+                                    </button>
+                                ))}
+                            </div>
+                        </>
+                    )}
+                </div>
+            </div>
+
+            <div className={styles.chartArea}>
+                {isLoading ? (
+                    <div className={styles.chartLoading}>Carregando dados...</div>
+                ) : (chartData?.labels?.length ?? 0) === 0 ? (
+                    <div className={styles.chartLoading}>Sem dados para o período selecionado</div>
+                ) : (
+                    <Line data={data} options={options} />
+                )}
+            </div>
+        </div>
+    )
+}
+
+
+
+const ARMAS_LABELS: Record<ArmasFilter, string> = {
+    'todos': 'Todos',
+    'low': '< 999',
+    '999': '999 / 1.000',
+    '2500': '2.500',
+    '5000': '5.000',
+    '10000': 'Avançado (10.000)',
+    'especiais': 'Especiais',
+    'crown': 'Crown',
+    'dourada': 'Dourada',
+}
+
+function getFilterLabel(main: MainFilter, armas: ArmasFilter): string {
+    if (main === 'armas') return `Armas — ${ARMAS_LABELS[armas]}`
+    if (main !== 'todos') return main.toUpperCase()
+    return 'Todos os desafios'
+}
+
+function AdminFilterBar({ mainFilter, armasFilter, setMainFilter, setArmasFilter }: {
+    mainFilter: MainFilter,
+    armasFilter: ArmasFilter,
+    setMainFilter: (v: MainFilter) => void,
+    setArmasFilter: (v: ArmasFilter) => void
+}) {
+    const [open, setOpen] = useState(false)
+    const ref = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        function onClick(e: MouseEvent) {
+            if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+        }
+        document.addEventListener('mousedown', onClick)
+        return () => document.removeEventListener('mousedown', onClick)
+    }, [])
+
+    return (
+        <div className={styles.filterWrapper} ref={ref}>
+            <button className={styles.filterTrigger} onClick={() => setOpen((v) => !v)}>
+                <span className={styles.filterTriggerLabel}>Filtro</span>
+                <span className={styles.filterTriggerValue}>{getFilterLabel(mainFilter, armasFilter)}</span>
+                <motion.span
+                    className={styles.filterArrow}
+                    animate={{ rotate: open ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                >▼</motion.span>
+            </button>
+
+            <AnimatePresence>
+                {open && (
+                    <motion.div
+                        className={styles.filterDropdown}
+                        initial={{ opacity: 0, y: -6, scaleY: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scaleY: 1 }}
+                        exit={{ opacity: 0, y: -6, scaleY: 0.95 }}
+                        transition={{ duration: 0.15 }}
+                        style={{ transformOrigin: 'top' }}
+                    >
+                        <div className={styles.filterSection}>
+                            <span className={styles.filterSectionLabel}>Categoria</span>
+                            <div className={styles.filterChips}>
+                                {(['todos', 'armas', 'pvp', 'pve'] as MainFilter[]).map((f) => (
+                                    <button
+                                        key={f}
+                                        className={`${styles.filterChip} ${mainFilter === f ? styles.filterChipActive : ''}`}
+                                        onClick={() => setMainFilter(f)}
+                                    >
+                                        {f === 'todos' ? 'Todos os desafios' : f.toUpperCase()}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {mainFilter === 'armas' && (
+                            <>
+                                <div className={styles.filterDivider} />
+                                <div className={styles.filterSection}>
+                                    <span className={styles.filterSectionLabel}>Eliminações</span>
+                                    <div className={styles.filterChips}>
+                                        {(['todos', 'low', '999', '2500', '5000', '10000'] as ArmasFilter[]).map((f) => (
+                                            <button
+                                                key={f}
+                                                className={`${styles.filterChip} ${armasFilter === f ? styles.filterChipActive : ''}`}
+                                                onClick={() => setArmasFilter(f)}
+                                            >
+                                                {ARMAS_LABELS[f]}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className={styles.filterSection}>
+                                    <span className={styles.filterSectionLabel}>Outros</span>
+                                    <div className={styles.filterChips}>
+                                        {(['especiais', 'crown', 'dourada'] as ArmasFilter[]).map((f) => (
+                                            <button
+                                                key={f}
+                                                className={`${styles.filterChip} ${armasFilter === f ? styles.filterChipActive : ''}`}
+                                                onClick={() => setArmasFilter(f)}
+                                            >
+                                                {ARMAS_LABELS[f]}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </>
+                        )}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    )
+}
+
+
 function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activeTab: AdminTab, setActiveTab: (t: AdminTab) => void }) {
     const { data: user, isLoading } = useAdminUserDetail(userId)
-    const { data: images = [] } = useAdminUserImages(userId)
+    const [imageSearch, setImageSearch] = useState('')
+    const { data: images = [] } = useAdminUserImages(userId, imageSearch)
     const { mutate: update, isPending: updating } = useUpdateAdminUser()
     const currentUser = useAuthStore(s => s.user)
     const [formData, setFormData] = useState<any>(null)
     const [saved, setSaved] = useState(false)
     const [modalData, setModalData] = useState<any>(null)
+    const [challengeSearch, setChallengeSearch] = useState('')
+    const [hideEmptyInTab, setHideEmptyInTab] = useState(false)
+    const [mainFilter, setMainFilter] = useState<MainFilter>('todos')
+    const [armasFilter, setArmasFilter] = useState<ArmasFilter>('todos')
+
+    const displayedImages = useMemo(() => {
+        if (!images) return []
+        // O hook useAdminUserImages já lida com o search. 
+        // Aqui apenas garantimos a ordem visual: PVP -> PVE -> DESAFIOS
+        const pvp = images.filter(img => img.image_type === 'pvp')
+        const pve = images.filter(img => img.image_type === 'pve')
+        const desafios = images.filter(img => img.image_type === 'desafios')
+        return [...pvp, ...pve, ...desafios]
+    }, [images])
+
+    const handleNextImage = () => {
+        if (!modalData) return
+        const idx = displayedImages.findIndex(img => img.id === modalData.id)
+        if (idx !== -1 && idx < displayedImages.length - 1) {
+            setModalData(displayedImages[idx + 1])
+        }
+    }
+
+    const handlePrevImage = () => {
+        if (!modalData) return
+        const idx = displayedImages.findIndex(img => img.id === modalData.id)
+        if (idx > 0) {
+            setModalData(displayedImages[idx - 1])
+        }
+    }
 
     // Admin = role 'admin'. Moderador tem is_staff mas NÃO é admin.
     const isAdmin = currentUser?.role === 'admin'
@@ -525,32 +836,89 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activ
 
                 {activeTab === 'desafios' && (
                     <div className={styles.challengesTabContent}>
+                        <div className={styles.challengesToolbar}>
+                            <div className={styles.challengeSearchContainer}>
+                                <div className={styles.challengeFilterBox}>
+                                    <input
+                                        className={styles.challengeFilterInput}
+                                        placeholder="Pesquisar desafio por nome ou descrição..."
+                                        value={challengeSearch}
+                                        onChange={e => setChallengeSearch(e.target.value)}
+                                    />
+                                    {challengeSearch && (
+                                        <button className={styles.clearSearchBtn} onClick={() => setChallengeSearch('')}>✕</button>
+                                    )}
+                                </div>
+                            </div>
+
+                            <AdminFilterBar 
+                                mainFilter={mainFilter} 
+                                armasFilter={armasFilter} 
+                                setMainFilter={setMainFilter} 
+                                setArmasFilter={setArmasFilter} 
+                            />
+
+
+                            
+                            <label className={styles.adminCheckboxLabel}>
+                                <input
+                                    className={styles.adminCheckbox}
+                                    type="checkbox"
+                                    checked={hideEmptyInTab}
+                                    onChange={e => setHideEmptyInTab(e.target.checked)}
+                                />
+                                <span>Ocultar sem descrição</span>
+                            </label>
+                        </div>
+
                         <div className={styles.challengeGridsContainer}>
                             <ChallengeCategoryEditor 
                                 title="MARCAS" 
                                 category="marcas"
                                 items={formData.my_marcas ?? []} 
-                                onChange={v => handleChange('my_marcas', v)} 
+                                onChange={v => handleChange('my_marcas', v)}
+                                filterText={challengeSearch}
+                                filterHideEmpty={hideEmptyInTab}
+                                mainFilter={mainFilter}
+                                armasFilter={armasFilter}
                             />
                             <ChallengeCategoryEditor 
                                 title="INSÍGNIAS" 
                                 category="insignias"
                                 items={formData.my_insignias ?? []} 
-                                onChange={v => handleChange('my_insignias', v)} 
+                                onChange={v => handleChange('my_insignias', v)}
+                                filterText={challengeSearch}
+                                filterHideEmpty={hideEmptyInTab}
+                                mainFilter={mainFilter}
+                                armasFilter={armasFilter}
                             />
                             <ChallengeCategoryEditor 
                                 title="FITAS" 
                                 category="fitas"
                                 items={formData.my_fitas ?? []} 
-                                onChange={v => handleChange('my_fitas', v)} 
+                                onChange={v => handleChange('my_fitas', v)}
+                                filterText={challengeSearch}
+                                filterHideEmpty={hideEmptyInTab}
+                                mainFilter={mainFilter}
+                                armasFilter={armasFilter}
                             />
                         </div>
-
                     </div>
                 )}
 
                 {activeTab === 'imagens' && (
                     <div className={styles.imageTabContent}>
+                        <div className={styles.imageSearchBox}>
+                            <input 
+                                className={styles.imageSearchInput}
+                                placeholder="🔍 Buscar por nome do desafio ou texto do OCR (ex: 'Elite', 'Vetor'...)"
+                                value={imageSearch}
+                                onChange={e => setImageSearch(e.target.value)}
+                            />
+                            {imageSearch && (
+                                <button className={styles.clearSearchBtn} onClick={() => setImageSearch('')}>✕</button>
+                            )}
+                        </div>
                         <div className={styles.imageGridScroll}>
                             <div className={styles.imageTabs}>
                                 <div className={styles.statsImagesRow}>
@@ -620,7 +988,13 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activ
                 )}
 
                 {modalData && (
-                    <OCRModal img={modalData} onClose={() => setModalData(null)} />
+                    <OCRModal 
+                        img={modalData} 
+                        onClose={() => setModalData(null)} 
+                        onNext={displayedImages.findIndex(i => i.id === modalData.id) < displayedImages.length - 1 ? handleNextImage : undefined}
+                        onPrev={displayedImages.findIndex(i => i.id === modalData.id) > 0 ? handlePrevImage : undefined}
+                        onUpdate={setModalData}
+                    />
                 )}
 
                 {activeTab === 'warchaos' && (
@@ -772,14 +1146,202 @@ function ClassesEditor({ value, onChange }: { value: ClassEntry[]; onChange: (v:
     )
 }
 
+function InlineCorrectionSelector({ 
+    initialCategory, 
+    rawText, 
+    currentName,
+    imageId, 
+    onClose, 
+    onSuccess,
+    slot
+}: { 
+    initialCategory: string, 
+    rawText: string, 
+    currentName: string,
+    imageId: number, 
+    onClose: () => void, 
+    onSuccess: (newImage: any) => void,
+    slot: number
+}) {
+    const { data: allItems } = useItems();
+    const [category, setCategory] = useState<keyof ItemsResponse>(
+        (initialCategory === 'marcas' || initialCategory === 'insignias' || initialCategory === 'fitas') 
+        ? initialCategory as keyof ItemsResponse 
+        : 'marcas'
+    );
+    const [search, setSearch] = useState('');
+    const [visibleCount, setVisibleCount] = useState(20);
+    const observerTarget = useRef<HTMLDivElement>(null);
+    
+    // Filtro global
+    const filteredItems = useMemo(() => {
+        if (!allItems) return [];
+        const catItems = allItems[category] || [];
+        
+        if (!search) return catItems;
+        const s = search.toLowerCase();
+        return catItems.filter((i: any) => 
+            i.name.toLowerCase().includes(s) || 
+            (i.description && i.description.toLowerCase().includes(s)) ||
+            i.filename.toLowerCase().includes(s)
+        );
+    }, [allItems, category, search]);
+
+    // Paginação frontend
+    const items = useMemo(() => filteredItems.slice(0, visibleCount), [filteredItems, visibleCount]);
+    const hasMore = filteredItems.length > visibleCount;
+
+    // Infinite Scroll
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            entries => {
+                if (entries[0].isIntersecting && hasMore) {
+                    setVisibleCount(prev => prev + 40);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (observerTarget.current) {
+            observer.observe(observerTarget.current);
+        }
+
+        return () => observer.disconnect();
+    }, [hasMore]);
+
+    const handleCorrect = async (itemOrId: any | string) => {
+        try {
+            const isManualSelect = typeof itemOrId === 'string';
+            const correct_item_id = isManualSelect ? itemOrId : itemOrId.filename;
+
+            const res = await authFetch('/api/admin/ocr/correct/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    image_id: imageId,
+                    raw_text: rawText,
+                    correct_item_id: correct_item_id,
+                    category: category
+                })
+            });
+            const data = await res.json();
+            if (data.success) {
+                onSuccess(data.image);
+                onClose();
+            } else {
+                alert(data.error || 'Erro ao corrigir');
+            }
+        } catch (e) {
+            alert('Erro de conexão');
+        }
+    };
+
+    return (
+        <div className={styles.fullCorrectionView} onClick={e => e.stopPropagation()}>
+            <div className={styles.correctionHeaderRow}>
+                <button className={styles.backBtnInline} onClick={onClose}>
+                    <span className={styles.backIcon}>←</span> Voltar
+                </button>
+                <button 
+                    className={styles.notUnlockedActionBtn}
+                    onClick={() => handleCorrect('not_unlocked')}
+                >
+                    Marcar como Não Desbloqueado
+                </button>
+            </div>
+            
+            <div className={styles.correctionInfoGrid}>
+                <div className={styles.infoBlock}>
+                    <span className={styles.infoLabel}>Slot</span>
+                    <strong className={styles.infoValue}>L{((slot-1)%4)+1} C{Math.floor((slot-1)/4)+1}</strong>
+                </div>
+                <div className={styles.infoBlock}>
+                    <span className={styles.infoLabel}>Leitura OCR</span>
+                    <strong className={`${styles.infoValue} ${styles.ocrWarning}`}>"{rawText || 'vazio'}"</strong>
+                </div>
+                <div className={styles.infoBlock}>
+                    <span className={styles.infoLabel}>Atribuído</span>
+                    <strong className={`${styles.infoValue} ${currentName === 'Não encontrado' ? styles.missingVal : ''}`}>
+                        {currentName}
+                    </strong>
+                </div>
+            </div>
+
+            <div className={styles.correctionControls}>
+                <div className={styles.categoryToggle}>
+                    {(['marcas', 'insignias', 'fitas'] as const).map(cat => (
+                        <button 
+                            key={cat}
+                            className={`${styles.catBtn} ${category === cat ? styles.active : ''}`}
+                            onClick={() => {
+                                setCategory(cat);
+                                setVisibleCount(20);
+                            }}
+                        >
+                            {cat.charAt(0).toUpperCase() + cat.slice(1, -1)}
+                        </button>
+                    ))}
+                </div>
+                <input 
+                    className={styles.inlineSearch} 
+                    placeholder="Pesquisar desafio globalmente..." 
+                    value={search}
+                    onChange={e => {
+                        setSearch(e.target.value);
+                        setVisibleCount(20);
+                    }}
+                    autoFocus
+                />
+            </div>
+            
+            <div className={styles.inlineGridList}>
+                {items.map((item: any) => (
+                    <div 
+                        key={item.filename} 
+                        className={styles.gridListItem} 
+                        onClick={() => handleCorrect(item)}
+                    >
+                        <div className={styles.gridItemIcon}>
+                            <img src={item.url} alt="" />
+                        </div>
+                        <div className={styles.gridItemDetails}>
+                            <span className={styles.gridItemName}>{item.name}</span>
+                            <span className={styles.gridItemFilename}>{item.filename}</span>
+                        </div>
+                    </div>
+                ))}
+                {hasMore && (
+                    <div ref={observerTarget} style={{ height: '40px', margin: '20px 0', background: 'transparent' }} />
+                )}
+            </div>
+
+            {filteredItems.length === 0 && (
+                <div className={styles.noResultsSmall}>Nenhum desafio encontrado para "{search}"</div>
+            )}
+        </div>
+    );
+}
+
 function ImageCard({ img, active, onClick }: { img: any, active?: boolean, onClick?: () => void }) {
     const result = img.result;
     
     // Detectar falhas ou necessidades de revisão para as tags rápidas no grid
-    const hasFail = img.status === 'failed' || (result?.detected_achievements?.some((a: any) => a.match_type === 'failed') || result?.ocr_report?.some((r: any) => r.match_type === 'failed'));
+    const failedItems = result?.detected_achievements?.filter((a: any) => a.match_type === 'failed') || [];
+    const reportFails = result?.ocr_report?.filter((r: any) => r.match_type === 'failed') || [];
+    const failCount = failedItems.length + reportFails.length;
     
-    const needsReview = result?.detected_achievements?.some((a: any) => a.match_type === 'similarity' || (a.raw_ocr && a.raw_ocr !== a.name)) ||
-                         result?.ocr_report?.some((r: any) => r.match_type === 'similarity' || (r.raw_ocr && String(r.raw_ocr) !== String(r.assigned_value)));
+    const hasFail = img.status === 'failed' || failCount > 0;
+    
+    const needsReview = result?.detected_achievements?.some((a: any) => 
+        !['exact', 'not_unlocked'].includes(a.match_type) && 
+        (a.match_type === 'similarity' || a.match_type === 'failed')
+    ) || result?.ocr_report?.some((r: any) => 
+        !['exact', 'not_unlocked'].includes(r.match_type) && 
+        (r.match_type === 'similarity' || r.match_type === 'failed')
+    );
+
+    const notUnlockedItems = result?.detected_achievements?.filter((a: any) => a.match_type === 'not_unlocked') || [];
+    const unlockedCount = notUnlockedItems.length;
 
     return (
         <div 
@@ -790,7 +1352,8 @@ function ImageCard({ img, active, onClick }: { img: any, active?: boolean, onCli
             <div className={styles.thumbBox}>
                 <img src={img.image} alt={`Upload ${img.id}`} />
                 
-                {hasFail && <span className={styles.cardFailBadge}>Falha</span>}
+                {hasFail && <span className={styles.cardFailBadge}>{failCount > 0 ? failCount : '!'}</span>}
+                {unlockedCount > 0 && <span className={styles.cardUnlockedBadge}>{unlockedCount}</span>}
                 {!hasFail && needsReview && <span className={styles.cardReviewBadge}>Revisar</span>}
             </div>
             <div className={styles.imgInfo}>
@@ -798,15 +1361,29 @@ function ImageCard({ img, active, onClick }: { img: any, active?: boolean, onCli
                     {new Date(img.created_at).toLocaleDateString('pt-BR')} às {new Date(img.created_at).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}
                 </div>
                 <div className={`${styles.imgStatus} ${styles['status-' + img.status]}`}>
-                    {img.status}
+                    {img.status === 'failed' ? 'Falhou' : img.status}
                 </div>
             </div>
         </div>
     )
 }
 
-function OCRDetails({ result }: { result: any }) {
+function OCRDetails({ result, imageId, onUpdate }: { result: any, imageId: number, onUpdate?: (img: any) => void }) {
     if (!result) return <p className={styles.noImagesSmall}>Sem resultados de OCR.</p>
+    
+    const queryClient = useQueryClient();
+    const [correctingIndex, setCorrectingIndex] = useState<number | null>(null);
+
+    const handleCorrectionSuccess = (newImage: any) => {
+        // Invalida as queries do usuário para garantir que o cache traga os dados novos e as tags sumam
+        queryClient.invalidateQueries({ queryKey: ['admin-user-images', String(newImage.user)] });
+        queryClient.invalidateQueries({ queryKey: ['admin-user-detail', String(newImage.user)] });
+        
+        // Atualiza os dados da imagem sendo exibida no modal
+        if (onUpdate) onUpdate(newImage);
+        
+        setCorrectingIndex(null);
+    };
 
     return (
         <div className={styles.ocrBody}>
@@ -834,7 +1411,9 @@ function OCRDetails({ result }: { result: any }) {
                     <div className={styles.ocrDetailsList}>
                         {result.ocr_report.map((item: any, idx: number) => {
                             const isV2 = item.raw_ocr !== undefined;
-                            const needsReview = isV2 && item.raw_ocr !== String(item.assigned_value);
+                            // Se for match exato ou "não desbloqueado", não precisa de revisão
+                            const needsReview = isV2 && !['exact', 'not_unlocked'].includes(item.match_type) && 
+                                (item.match_type === 'failed' || item.match_type === 'similarity' || item.raw_ocr !== String(item.assigned_value));
                             
                             return (
                                 <div key={idx} className={styles.ocrTableRow}>
@@ -869,52 +1448,95 @@ function OCRDetails({ result }: { result: any }) {
             {/* Conquistas (v2 com Metadados e Cores) */}
             {result.detected_achievements && result.detected_achievements.length > 0 && (
                 <div className={styles.ocrSection}>
-                    <span className={styles.ocrSectionTitle}>Desafios Detectados</span>
-                    <div className={styles.ocrAchievements}>
-                        {result.detected_achievements.map((ach: any, idx: number) => {
-                            // Só mostramos "Revisar/Falha" se os novos campos existirem (v2)
-                            const isV2 = ach.match_type !== undefined;
-                            const needsReview = isV2 && ach.match_type !== 'failed' && ach.raw_ocr !== ach.name;
-                            
-                            return (
-                                <div key={idx} className={styles.ocrTableRow}>
-                                    <div className={styles.slotIndicator} style={{ backgroundColor: ach.color || '#333' }} />
-                                    <div className={styles.ocrFieldInfo}>
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                            <span className={styles.fieldName}>L{((ach.slot-1)%4)+1} C{Math.floor((ach.slot-1)/4)+1}</span>
-                                        </div>
+                    <div className={styles.ocrSectionHeader}>
+                        <span className={styles.ocrSectionTitle}>Desafios Detectados</span>
+                        {correctingIndex !== null && (
+                             <button className={styles.miniBackBtn} onClick={() => setCorrectingIndex(null)}>Voltar à lista</button>
+                        )}
+                    </div>
+
+                    <div className={styles.ocrResultsContainer}>
+                        <AnimatePresence mode="wait">
+                            {correctingIndex === null ? (
+                                <motion.div 
+                                    key="list"
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: 10 }}
+                                    className={styles.ocrAchievements}
+                                >
+                                    {result.detected_achievements.map((ach: any, idx: number) => {
+                                        const isV2 = ach.match_type !== undefined;
+                                        const isFailed = isV2 && ach.match_type === 'failed';
+                                        // Se for match exato ou "não desbloqueado", não precisa de revisão
+                                        const needsReview = isV2 && !['exact', 'not_unlocked'].includes(ach.match_type) && (isFailed || ach.match_type === 'similarity' || ach.raw_ocr !== ach.name);
                                         
-                                        <div className={styles.fieldValues}>
-                                            {/* OCR só faz sentido mostrar se tiver o dado ou se for v2 */}
-                                            {isV2 && (
-                                                <div className={styles.fieldRow}>
-                                                    <span className={styles.rowLabel}>OCR:</span>
-                                                    <span className={styles.rawVal}>{ach.raw_ocr || 'vazio'}</span>
-                                                </div>
-                                            )}
-                                            <div className={styles.fieldRow}>
-                                                <span className={styles.rowLabel}>{isV2 ? 'Atrib:' : 'Desafio:'}</span>
-                                                <span className={styles.finalVal}>{ach.name}</span>
-                                                <div className={styles.fieldBadges}>
-                                                    {isV2 && needsReview && <span className={styles.warningBadge}>Revisar</span>}
-                                                    {isV2 && (
-                                                        <span className={`${styles.matchBadge} ${styles['match' + (ach.match_type === 'exact' ? 'Exact' : ach.match_type === 'similarity' ? 'Sim' : 'Fail')]}`}>
-                                                            {ach.match_type === 'exact' ? 'Match Exato' : ach.match_type === 'similarity' ? 'Similaridade' : 'Falha'}
-                                                        </span>
-                                                    )}
-                                                    {isV2 && ach.similarity && ach.similarity < 1 && (
-                                                        <span className={styles.similarityBadge}>
-                                                            {Math.round(ach.similarity * 100)}%
-                                                        </span>
-                                                    )}
+                                        return (
+                                            <div 
+                                                key={idx} 
+                                                className={`${styles.ocrTableRow} ${needsReview ? styles.clickableFailCard : ''}`}
+                                                onClick={() => {
+                                                    if (needsReview) {
+                                                        setCorrectingIndex(idx);
+                                                    }
+                                                }}
+                                            >
+                                                <div className={styles.slotIndicator} style={{ backgroundColor: ach.color || '#333' }} />
+                                                <div className={styles.ocrFieldInfo}>
+                                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                                        <span className={styles.fieldName}>L{((ach.slot-1)%4)+1} C{Math.floor((ach.slot-1)/4)+1}</span>
+                                                    </div>
+                                                    
+                                                    <div className={styles.fieldValues}>
+                                                        {isV2 && (
+                                                            <div className={styles.fieldRow}>
+                                                                <span className={styles.rowLabel}>OCR:</span>
+                                                                <span className={styles.rawVal}>{ach.raw_ocr || 'vazio'}</span>
+                                                            </div>
+                                                        )}
+                                                        <div className={styles.fieldRow}>
+                                                            <span className={styles.rowLabel}>{isV2 ? 'Atrib:' : 'Desafio:'}</span>
+                                                            <span className={styles.finalVal}>{ach.name}</span>
+                                                            <div className={styles.fieldBadges}>
+                                                                {isV2 && needsReview && <span className={styles.warningBadge}>Revisar</span>}
+                                                                {isV2 && (
+                                                                    <span className={`${styles.matchBadge} ${styles['match' + (ach.match_type === 'exact' ? 'Exact' : ach.match_type === 'similarity' ? 'Sim' : ach.match_type === 'not_unlocked' ? 'NotUnlocked' : 'Fail')]}`}>
+                                                                        {ach.match_type === 'exact' ? 'Match Exato' : ach.match_type === 'similarity' ? 'Similaridade' : ach.match_type === 'not_unlocked' ? 'Não desbloqueado' : 'Não encontrado'}
+                                                                    </span>
+                                                                )}
+                                                                {isV2 && ach.similarity && ach.similarity < 1 && (
+                                                                    <span className={styles.similarityBadge}>
+                                                                        {(ach.similarity * 100).toFixed(0)}% Match
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            )
-                        })}
+                                        )
+                                    })}
+                                </motion.div>
+                            ) : (
+                                <motion.div 
+                                    key="correction"
+                                    initial={{ opacity: 0, x: 10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -10 }}
+                                    className={styles.correctionFullViewWrapper}
+                                >
+                                    <InlineCorrectionSelector 
+                                        initialCategory={result.detected_achievements[correctingIndex].category}
+                                        rawText={result.detected_achievements[correctingIndex].raw_ocr}
+                                        currentName={result.detected_achievements[correctingIndex].name}
+                                        slot={result.detected_achievements[correctingIndex].slot}
+                                        imageId={imageId}
+                                        onClose={() => setCorrectingIndex(null)}
+                                        onSuccess={handleCorrectionSuccess}
+                                    />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
                 </div>
             )}
@@ -931,11 +1553,21 @@ function OCRDetails({ result }: { result: any }) {
     )
 }
 
-function OCRModal({ img, onClose }: { img: any, onClose: () => void }) {
+function OCRModal({ img, onClose, onPrev, onNext, onUpdate }: { img: any, onClose: () => void, onPrev?: () => void, onNext?: () => void, onUpdate?: (img: any) => void }) {
     const result = img.result
     const report = result?.ocr_report || result?.detected_achievements || result?.roi_report || []
     const imgW = result?.image_width || 3840
     const imgH = result?.image_height || 2160
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'ArrowLeft') onPrev?.()
+            if (e.key === 'ArrowRight') onNext?.()
+            if (e.key === 'Escape') onClose()
+        }
+        window.addEventListener('keydown', handleKeyDown)
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [onPrev, onNext, onClose])
 
     // Se existir a imagem de debug (com ROI desenhado no backend), usamos ela.
     const displayImage = img.debug_image || img.image;
@@ -946,6 +1578,11 @@ function OCRModal({ img, onClose }: { img: any, onClose: () => void }) {
             <div className={styles.ocrModalContent} onClick={e => e.stopPropagation()}>
                 <button className={styles.modalClose} onClick={onClose}>✕</button>
                 
+                <div className={styles.modalNavigation}>
+                    <button className={styles.navBtn} onClick={onPrev} disabled={!onPrev}>‹</button>
+                    <button className={styles.navBtn} onClick={onNext} disabled={!onNext}>›</button>
+                </div>
+
                 <div className={styles.modalImageArea}>
                     <img src={displayImage} alt="Diagnóstico de Extração" />
                     
@@ -984,7 +1621,7 @@ function OCRModal({ img, onClose }: { img: any, onClose: () => void }) {
                         <span className={styles.userEmail}>Imagem ID: {img.id}</span>
                     </div>
                     <div className={styles.sidebarBody}>
-                        <OCRDetails result={img.result} />
+                        <OCRDetails result={img.result} imageId={img.id} onUpdate={onUpdate} />
                     </div>
                 </div>
             </div>
@@ -1124,7 +1761,25 @@ function CustomSelect({ value, onChange, options, className, disabled }: { value
 }
 
 
-function ChallengeCategoryEditor({ title, category, items, onChange }: { title: string, category: string, items: string[], onChange: (v: string[]) => void }) {
+function ChallengeCategoryEditor({ 
+    title, 
+    category, 
+    items, 
+    onChange, 
+    filterText = '', 
+    filterHideEmpty = false,
+    mainFilter = 'todos',
+    armasFilter = 'todos'
+}: { 
+    title: string, 
+    category: string, 
+    items: string[], 
+    onChange: (v: string[]) => void, 
+    filterText?: string, 
+    filterHideEmpty?: boolean,
+    mainFilter?: MainFilter,
+    armasFilter?: ArmasFilter
+}) {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [search, setSearch] = useState('')
     const [hideEmpty, setHideEmpty] = useState(true)
@@ -1157,10 +1812,22 @@ function ChallengeCategoryEditor({ title, category, items, onChange }: { title: 
         setSearch('')
     }
 
-    const currentItemsData = items.map(filename => {
-        const data = allItems.find(i => i.filename === filename)
-        return data || { name: filename, filename, url: '', description: '' }
-    })
+    const currentItemsData = useMemo(() => {
+        const baseItems = items.map(filename => {
+            const data = allItems.find(i => i.filename === filename)
+            return data || { name: filename, filename, url: '', description: '', color: 'outro' }
+        }) as Item[]
+        
+        return applyFilters(
+            baseItems,
+            category as 'marcas' | 'insignias' | 'fitas',
+            mainFilter,
+            armasFilter,
+            'todos',
+            filterText,
+            filterHideEmpty
+        )
+    }, [items, allItems, category, mainFilter, armasFilter, filterText, filterHideEmpty])
 
     const isFita = category === 'fitas'
 
