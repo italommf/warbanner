@@ -45,16 +45,17 @@ export function CreatorPage() {
   const colorFilter = useBannerStore((s) => s.colorFilter)
   const searchTerm = useBannerStore((s) => s.searchTerm)
   const hideEmpty = useBannerStore((s) => s.hideEmpty)
+  const showOnlyEmpty = useBannerStore((s) => s.showOnlyEmpty)
   const panelBg = usePanelBg()
 
-  const marcas = useMemo(() => applyFilters(rawMarcas, 'marcas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
-    [rawMarcas, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+  const marcas = useMemo(() => applyFilters(rawMarcas, 'marcas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty),
+    [rawMarcas, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty])
 
-  const insignias = useMemo(() => applyFilters(rawInsignias, 'insignias', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
-    [rawInsignias, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+  const insignias = useMemo(() => applyFilters(rawInsignias, 'insignias', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty),
+    [rawInsignias, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty])
 
-  const fitas = useMemo(() => applyFilters(rawFitas, 'fitas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
-    [rawFitas, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+  const fitas = useMemo(() => applyFilters(rawFitas, 'fitas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty),
+    [rawFitas, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty])
 
   return (
     <main className={styles.main} style={panelBg ? { background: panelBg } : undefined}>

@@ -60,6 +60,8 @@ interface BannerStore {
   setSearchTerm: (v: string) => void
   hideEmpty: boolean
   setHideEmpty: (v: boolean) => void
+  showOnlyEmpty: boolean
+  setShowOnlyEmpty: (v: boolean) => void
   rankLevel: string
   setRankLevel: (v: string) => void
 }
@@ -122,8 +124,17 @@ export const useBannerStore = create<BannerStore>((set) => ({
   searchTerm: '',
   setSearchTerm: (searchTerm) => set({ searchTerm }),
 
-  hideEmpty: true,
-  setHideEmpty: (hideEmpty) => set({ hideEmpty }),
+  hideEmpty: localStorage.getItem('hideEmpty') !== 'false',
+  setHideEmpty: (hideEmpty) => {
+    localStorage.setItem('hideEmpty', String(hideEmpty))
+    set({ hideEmpty })
+  },
+
+  showOnlyEmpty: localStorage.getItem('showOnlyEmpty') === 'true',
+  setShowOnlyEmpty: (showOnlyEmpty) => {
+    localStorage.setItem('showOnlyEmpty', String(showOnlyEmpty))
+    set({ showOnlyEmpty })
+  },
 
   rankLevel: '',
   setRankLevel: (rankLevel) => set({ rankLevel }),

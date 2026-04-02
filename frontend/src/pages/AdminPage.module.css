@@ -1517,6 +1517,28 @@
     background: rgba(255, 85, 0, 0.08);
 }
 
+.filterOptionLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 11px;
+    color: var(--text2);
+    transition: all 0.2s;
+}
+
+.filterOptionLabel:hover {
+    color: #fff;
+}
+
+.filterOptionLabel input {
+    accent-color: var(--orange);
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+}
+
 .filterDivider {
     height: 1px;
     background: var(--border);

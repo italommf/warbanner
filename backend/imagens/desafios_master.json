@@ -4319,6 +4319,20 @@
       "quantidade": "1",
       "arquivo_xml": "prorank2303_sapper_mark.xml"
     },
+    "tbd_icon": {
+      "tipo": "mark",
+      "nome": "Inimigo invisível",
+      "descrição": "Elimine 30 inimigos com claymores ou minas no modo Cooperativo ou Versus",
+      "quantidade": "30",
+      "arquivo_xml": "ps4_claymore_30.xml"
+    },
+    "challenge_mark_weapon10_25": {
+      "tipo": "mark",
+      "nome": "HaShayetet",
+      "descrição": "Elimine 5.000 inimigos com a Desert Eagle ou a versão dourada dela.",
+      "quantidade": "5000",
+      "arquivo_xml": "pt01kill.xml"
+    },
     "challenge_mark_weapon25_25": {
       "tipo": "mark",
       "nome": "HaShayetet (avançado)",
@@ -4361,6 +4375,13 @@
       "quantidade": "10000",
       "arquivo_xml": "pt02kill25.xml"
     },
+    "challenge_mark_weapon10_27": {
+      "tipo": "mark",
+      "nome": "Comando Para Matar",
+      "descrição": "Elimine 5.000 inimigos com uma H&K USP.",
+      "quantidade": "5000",
+      "arquivo_xml": "pt03kill.xml"
+    },
     "challenge_mark_weapon25_27": {
       "tipo": "mark",
       "nome": "Comando Para Matar (avançado)",
@@ -4381,6 +4402,13 @@
       "descrição": "Elimine 5.000 inimigos com uma pistola Calico M900.",
       "quantidade": "5000",
       "arquivo_xml": "pt04kill.xml"
+    },
+    "challenge_mark_weapon25_28": {
+      "tipo": "mark",
+      "nome": "Delta Force (Avançado)",
+      "descrição": "Elimine 10.000 inimigos com a Calico M900.",
+      "quantidade": "10000",
+      "arquivo_xml": "pt04kill25.xml"
     },
     "challenge_mark_weapon10_29": {
       "tipo": "mark",
@@ -4417,6 +4445,13 @@
       "quantidade": "5000",
       "arquivo_xml": "pt07kill.xml"
     },
+    "challenge_mark_weapon25_31": {
+      "tipo": "mark",
+      "nome": "Coronel dos Fuzileiros (avançado)",
+      "descrição": "Elimine 10.000 inimigos com a Beretta M9.",
+      "quantidade": "10000",
+      "arquivo_xml": "pt07kill25.xml"
+    },
     "challenge_mark_xmas_02": {
       "tipo": "mark",
       "nome": "Papai Noel Ruim",
@@ -4452,6 +4487,13 @@
       "quantidade": "10000",
       "arquivo_xml": "pt08kill25.xml"
     },
+    "challenge_mark_weapon10_33": {
+      "tipo": "mark",
+      "nome": "Stechkin",
+      "descrição": "Elimine 5.000 inimigos com uma Stechkin APS.",
+      "quantidade": "5000",
+      "arquivo_xml": "pt10kill.xml"
+    },
     "challenge_mark_weapon25_33": {
       "tipo": "mark",
       "nome": "Stechkin (avançado)",
@@ -4472,6 +4514,13 @@
       "descrição": "Elimine 10.000 inimigos com a SIG Sauer P226 ou a versão dourada dela.",
       "quantidade": "10000",
       "arquivo_xml": "pt14kill25.xml"
+    },
+    "challenge_mark_weapon10_35": {
+      "tipo": "mark",
+      "nome": "Enxurrada de Balas",
+      "descrição": "Elimine 5.000 inimigos com a M93R.",
+      "quantidade": "5000",
+      "arquivo_xml": "pt15kill.xml"
     },
     "challenge_mark_weapon25_35": {
       "tipo": "mark",
@@ -4514,6 +4563,13 @@
       "descrição": "Elimine 1.000 inimigos com a Glock 18C Elite Coroa.",
       "quantidade": "1000",
       "arquivo_xml": "pt21_crown02kill.xml"
+    },
+    "challenge_mark_101": {
+      "tipo": "mark",
+      "nome": "Codinome \"57\"",
+      "descrição": "Elimine 5.000 inimigos com a FN Five Seven.",
+      "quantidade": "5000",
+      "arquivo_xml": "pt22kill.xml"
     },
     "challenge_mark_weapon25_38": {
       "tipo": "mark",
@@ -4606,6 +4662,13 @@
       "quantidade": "10000",
       "arquivo_xml": "pt31kill25.xml"
     },
+    "challenge_mark_weapon10_51": {
+      "tipo": "mark",
+      "nome": "Tcheco Notável",
+      "descrição": "Elimine 5.000 inimigos com a CZ 75-Auto ou a versão dourada dela.",
+      "quantidade": "5000",
+      "arquivo_xml": "pt32kill.xml"
+    },
     "challenge_mark_weapon25_51": {
       "tipo": "mark",
       "nome": "Tcheco Notável (Avançado)",
@@ -4626,6 +4689,13 @@
       "descrição": "Elimine 10.000 inimigos com a S&W M&P R8 ou a versão dourada dela.",
       "quantidade": "10000",
       "arquivo_xml": "pt33kill25.xml"
+    },
+    "challenge_mark_weapon10_57": {
+      "tipo": "mark",
+      "nome": "9mmortal",
+      "descrição": "Elimine 5.000 inimigos com a MPA 930DMG.",
+      "quantidade": "5000",
+      "arquivo_xml": "pt34kill.xml"
     },
     "challenge_mark_weapon25_57": {
       "tipo": "mark",
@@ -4661,6 +4731,20 @@
       "descrição": "Elimine 10.000 inimigos com a TEC-9 ou a sua versão dourada.",
       "quantidade": "10000",
       "arquivo_xml": "pt36kill25.xml"
+    },
+    "challenge_mark_weapon10_63": {
+      "tipo": "mark",
+      "nome": "Ave perigosa",
+      "descrição": "Elimine 5.000 inimigos com CZ 75 Parrot ou sua versão dourada.",
+      "quantidade": "5000",
+      "arquivo_xml": "pt37kill.xml"
+    },
+    "challenge_mark_weapon25_63": {
+      "tipo": "mark",
+      "nome": "Ave letal",
+      "descrição": "Elimine 10.000 inimigos com CZ 75 Parrot ou sua versão dourada.",
+      "quantidade": "10000",
+      "arquivo_xml": "pt37kill25.xml"
     },
     "challenge_mark_weapon10_66": {
       "tipo": "mark",
@@ -4738,6 +4822,13 @@
       "descrição": "Atinja a patente 80.",
       "quantidade": "80",
       "arquivo_xml": "ranking5.xml"
+    },
+    "challenge_mark_rating04": {
+      "tipo": "mark",
+      "nome": "Sorriso Selvagem",
+      "descrição": "Primeira regra ao caçar animais de grande porte: nunca chegue perto demais.",
+      "quantidade": "1",
+      "arquivo_xml": "rating04_mark.xml"
     },
     "challenge_mark_rating05": {
       "tipo": "mark",
@@ -5019,6 +5110,13 @@
       "quantidade": "1",
       "arquivo_xml": "reptile2406_02_mark.xml"
     },
+    "challenge_mark_123": {
+      "tipo": "mark",
+      "nome": "Faço Muito Mais Do Que Ressuscitar",
+      "descrição": "Reanime aliados 25.000 vezes.",
+      "quantidade": "25000",
+      "arquivo_xml": "ressurector4.xml"
+    },
     "challenge_mark_bp07_04": {
       "tipo": "mark",
       "nome": "Fuzileiro berserk",
@@ -5032,6 +5130,13 @@
       "descrição": "Colete um conjunto de equipamentos de Fuzileiro no Passe de Batalha \"Blackwood\".",
       "quantidade": "1",
       "arquivo_xml": "rifleman_bp08_mark_01.xml"
+    },
+    "challenge_mark_bp09_01": {
+      "tipo": "mark",
+      "nome": "Fuzileiro Heroico",
+      "descrição": "Conquista única do Passe de Batalha \"Gorgon\": Temporada 1",
+      "quantidade": "1",
+      "arquivo_xml": "rifleman_bp09_mark_01.xml"
     },
     "challenge_mark_rifleman_01": {
       "tipo": "mark",
@@ -5054,12 +5159,33 @@
       "quantidade": "2500",
       "arquivo_xml": "rio_kills_02.xml"
     },
+    "challenge_mark_rio_03": {
+      "tipo": "mark",
+      "nome": "Espírito Esportivo Cibernético",
+      "descrição": "Elimine 10.000 inimigos com as armas Vibrante.",
+      "quantidade": "10000",
+      "arquivo_xml": "rio_kills_03.xml"
+    },
+    "challenge_mark_rm_firstplace_01": {
+      "tipo": "mark",
+      "nome": "Troféu Primeira Vítima",
+      "descrição": "Seja o melhor jogador da equipe vencedora em partidas classificatórias 10 vezes.",
+      "quantidade": "10",
+      "arquivo_xml": "rm_firstplacewin_ach01.xml"
+    },
     "challenge_mark_roccat": {
       "tipo": "mark",
       "nome": "Ryos",
       "descrição": "Elimine 50 inimigos enquanto desliza no modo versus.",
       "quantidade": "1",
       "arquivo_xml": "roccat02.xml"
+    },
+    "challenge_mark_royal01": {
+      "tipo": "mark",
+      "nome": "Coroa Real",
+      "descrição": "God Save the Queen!",
+      "quantidade": "1",
+      "arquivo_xml": "royal01_mark.xml"
     },
     "challenge_mark_bp07_05": {
       "tipo": "mark",
@@ -5096,6 +5222,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_bigbon_mark_01.xml"
     },
+    "challenge_mark_bonus_01": {
+      "tipo": "mark",
+      "nome": "Jogador regular",
+      "descrição": "Uma recompensa para os jogadores mais leais e ativos",
+      "quantidade": "1",
+      "arquivo_xml": "ru_bonus_mark_01.xml"
+    },
     "challenge_mark_brainstorm": {
       "tipo": "mark",
       "nome": "Brainstorm",
@@ -5131,12 +5264,26 @@
       "quantidade": "1",
       "arquivo_xml": "ru_ec02_mark_01.xml"
     },
+    "challenge_mark_ec02_02": {
+      "tipo": "mark",
+      "nome": "Eu sou Blackwood!",
+      "descrição": "Marque 25 gols jogando pela Blackwood durante um evento de futebol.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_ec02_mark_02.xml"
+    },
     "challenge_mark_ec02_03": {
       "tipo": "mark",
       "nome": "Eu sou Warface!",
       "descrição": "Marque 25 gols jogando pela Warface durante um evento de futebol.",
       "quantidade": "1",
       "arquivo_xml": "ru_ec02_mark_03.xml"
+    },
+    "challenge_mark_fb": {
+      "tipo": "mark",
+      "nome": "Curta Pela Coragem",
+      "descrição": "A sorte favorece os corajosos!",
+      "quantidade": "1",
+      "arquivo_xml": "ru_facebook_02.xml"
     },
     "challenge_mark_znatok": {
       "tipo": "mark",
@@ -5145,12 +5292,26 @@
       "quantidade": "1",
       "arquivo_xml": "ru_forum_expert01.xml"
     },
+    "challenge_mark_hlw_01": {
+      "tipo": "mark",
+      "nome": "Morcego dos infernos",
+      "descrição": "Receba 30 recompensas finais no evento de Dia das Bruxas",
+      "quantidade": "1",
+      "arquivo_xml": "ru_hlw18_mark_01.xml"
+    },
     "challenge_mark_hlw_02": {
       "tipo": "mark",
       "nome": "Caça às bruxas",
       "descrição": "Receba 50 recompensas finais no evento de Dia das Bruxas",
       "quantidade": "1",
       "arquivo_xml": "ru_hlw18_mark_02.xml"
+    },
+    "challenge_mark_kanobu_01": {
+      "tipo": "mark",
+      "nome": "Flor de cerejeira",
+      "descrição": "Concedida àqueles que dominaram a Sabedoria oriental.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_kanobu_mark_01.xml"
     },
     "challenge_mark_love": {
       "tipo": "mark",
@@ -5249,6 +5410,13 @@
       "descrição": "Special achievement for gum lovers!",
       "quantidade": "1",
       "arquivo_xml": "ru_mark_five_01.xml"
+    },
+    "challenge_mark_nym_marathon_02": {
+      "tipo": "mark",
+      "nome": "Snowman in the nanosuit",
+      "descrição": "Run a single job marathon New Year 2016-2017",
+      "quantidade": "1",
+      "arquivo_xml": "ru_mark_nym_marathon02.xml"
     },
     "challenge_mark_pirate01_02": {
       "tipo": "mark",
@@ -5362,6 +5530,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_mark_swarm_15.xml"
     },
+    "challenge_mark_aw_ticket": {
+      "tipo": "mark",
+      "nome": "Meu Tipo de Festa!",
+      "descrição": "Seja o orgulhoso dono de um ingresso da WarFest.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_mark_ticket.xml"
+    },
     "challenge_mark_winter_hunt01": {
       "tipo": "mark",
       "nome": "I am going on the trail",
@@ -5383,12 +5558,33 @@
       "quantidade": "1",
       "arquivo_xml": "ru_mark_winterhunt03.xml"
     },
+    "challenge_mark_winter_hunt04": {
+      "tipo": "mark",
+      "nome": "Survival Expert",
+      "descrição": "1st place in the tournament \"Winter hunting\"",
+      "quantidade": "1",
+      "arquivo_xml": "ru_mark_winterhunt04.xml"
+    },
+    "challenge_mark_peace": {
+      "tipo": "mark",
+      "nome": "Paz ao Mundo",
+      "descrição": "Colete todas as cartas de coleção da série \"Coleções de Primavera\".",
+      "quantidade": "1",
+      "arquivo_xml": "ru_may_dove01.xml"
+    },
     "challenge_mark_meetings01": {
       "tipo": "mark",
       "nome": "O Intruso",
       "descrição": "Entre na reunião dos jogadores.",
       "quantidade": "1",
       "arquivo_xml": "ru_meetings_01.xml"
+    },
+    "challenge_mark_ok": {
+      "tipo": "mark",
+      "nome": "Curte Aí!",
+      "descrição": "Apenas para os operativos de alta classe.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_odnoklassniki_02.xml"
     },
     "challenge_mark_patrick_01": {
       "tipo": "mark",
@@ -5418,6 +5614,27 @@
       "quantidade": "1",
       "arquivo_xml": "ru_play_05.xml"
     },
+    "challenge_mark_pringles_01": {
+      "tipo": "mark",
+      "nome": "Sob a proteção da batatinha",
+      "descrição": "Dê as batatinhas mais gostosas do mundo para seus amigos!",
+      "quantidade": "1",
+      "arquivo_xml": "ru_pringles_mark_01.xml"
+    },
+    "challenge_mark_pl_01": {
+      "tipo": "mark",
+      "nome": "To victory, Sluper!",
+      "descrição": "Mark of a team Sluper supporter, competitor in the Open Cup XII",
+      "quantidade": "1",
+      "arquivo_xml": "ru_proleague_mark_01.xml"
+    },
+    "challenge_mark_pl_02": {
+      "tipo": "mark",
+      "nome": "To victory, AG!",
+      "descrição": "Mark of a team AG supporter, competitor in the Open Cup XII",
+      "quantidade": "1",
+      "arquivo_xml": "ru_proleague_mark_02.xml"
+    },
     "challenge_mark_pl_03": {
       "tipo": "mark",
       "nome": "To victory, Airborne!",
@@ -5438,6 +5655,13 @@
       "descrição": "Mark of a team ArenaStars supporter, competitor in the Open Cup XII",
       "quantidade": "1",
       "arquivo_xml": "ru_proleague_mark_05.xml"
+    },
+    "challenge_mark_pl_06": {
+      "tipo": "mark",
+      "nome": "To victory, Squezzers!",
+      "descrição": "Mark of a team Squezzers supporter, competitor in the Open Cup XII",
+      "quantidade": "1",
+      "arquivo_xml": "ru_proleague_mark_06.xml"
     },
     "challenge_mark_pl_07": {
       "tipo": "mark",
@@ -5460,6 +5684,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_proleague_mark_09.xml"
     },
+    "challenge_mark_pl_10": {
+      "tipo": "mark",
+      "nome": "To victory, Young Stars!",
+      "descrição": "Mark of a team Young Stars supporter, competitor in the Open Cup XII",
+      "quantidade": "1",
+      "arquivo_xml": "ru_proleague_mark_10.xml"
+    },
     "challenge_mark_proleague_01": {
       "tipo": "mark",
       "nome": "Fã da CrowCrowd.AG",
@@ -5480,6 +5711,13 @@
       "descrição": "Acerte o resultado de uma partida.",
       "quantidade": "1",
       "arquivo_xml": "ru_rates_mark_01.xml"
+    },
+    "challenge_mark_128": {
+      "tipo": "mark",
+      "nome": "De Volta à Ação",
+      "descrição": "Participe do programa \"Amigo que Retorna\".",
+      "quantidade": "1",
+      "arquivo_xml": "ru_return_friend.xml"
     },
     "challenge_mark_rg": {
       "tipo": "mark",
@@ -5572,6 +5810,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_watcher_oc01.xml"
     },
+    "challenge_mark_watcher_01": {
+      "tipo": "mark",
+      "nome": "Triunfante",
+      "descrição": "Colete todas as cartas colecionáveis de \"Vontade de vencer\"",
+      "quantidade": "1",
+      "arquivo_xml": "ru_watcher_oc02.xml"
+    },
     "challenge_mark_gun": {
       "tipo": "mark",
       "nome": "Vitória Armada",
@@ -5593,12 +5838,26 @@
       "quantidade": "1",
       "arquivo_xml": "ru_webevent_mark_02.xml"
     },
+    "challenge_mark_web3": {
+      "tipo": "mark",
+      "nome": "Sem Limites",
+      "descrição": "Complete um objetivo de receber prêmios instantâneos em um evento especial.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_webevent_mark_03.xml"
+    },
     "challenge_mark_pro_01": {
       "tipo": "mark",
       "nome": "Objetivo Claro",
       "descrição": "Concedida aos participantes do PRO.Challengers.",
       "quantidade": "1",
       "arquivo_xml": "ru_wfpro_challgers_mark01.xml"
+    },
+    "challenge_mark_pro_02": {
+      "tipo": "mark",
+      "nome": "A Um Passo",
+      "descrição": "Concedida aos finalistas do PRO.Challengers.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_wfpro_challgers_mark02.xml"
     },
     "challenge_mark_pro_03": {
       "tipo": "mark",
@@ -5620,6 +5879,13 @@
       "descrição": "Feliz Natal e próspero Ano Novo!",
       "quantidade": "1",
       "arquivo_xml": "ru_xmas20_mark_01.xml"
+    },
+    "challenge_mark_rw_02": {
+      "tipo": "mark",
+      "nome": "Cânone em Ré Maior",
+      "descrição": "Destrua uma torre durante a missão Zênite 100 vezes.",
+      "quantidade": "100",
+      "arquivo_xml": "rw_destruction1.xml"
     },
     "challenge_mark_rw_01": {
       "tipo": "mark",
@@ -5712,6 +5978,13 @@
       "quantidade": "1",
       "arquivo_xml": "sg42_mark_01.xml"
     },
+    "challenge_mark_cookie_01": {
+      "tipo": "mark",
+      "nome": "Monstro dos biscoitos",
+      "descrição": "Elimine 100 inimigos usando ataques corpo a corpo com a Arma de Pão de Mel dourada.",
+      "quantidade": "100",
+      "arquivo_xml": "shg49kill5.xml"
+    },
     "challenge_mark_07": {
       "tipo": "mark",
       "nome": "Caçador Silencioso",
@@ -5732,6 +6005,13 @@
       "descrição": "Elimine 2500 jogadores inimigos utilizando uma arma com silenciador.",
       "quantidade": "10000",
       "arquivo_xml": "silent_shot3.xml"
+    },
+    "challenge_mark_weapon10_01": {
+      "tipo": "mark",
+      "nome": "GSG 9",
+      "descrição": "Elimine 5.000 inimigos com uma H&K MP7.",
+      "quantidade": "5000",
+      "arquivo_xml": "smg01kill.xml"
     },
     "challenge_mark_weapon25_01": {
       "tipo": "mark",
@@ -5782,12 +6062,26 @@
       "quantidade": "1000",
       "arquivo_xml": "smg03_crownkill.xml"
     },
+    "challenge_mark_weapon10_04": {
+      "tipo": "mark",
+      "nome": "Domínio da H&K MP5",
+      "descrição": "Elimine 5.000 inimigos com uma H&K MP5.",
+      "quantidade": "5000",
+      "arquivo_xml": "smg04kill.xml"
+    },
     "challenge_mark_weapon25_04": {
       "tipo": "mark",
       "nome": "Domínio da H&K MP5 (Avançado)",
       "descrição": "Elimine 10.000 inimigos com a H&K MP5.",
       "quantidade": "10000",
       "arquivo_xml": "smg04kill25.xml"
+    },
+    "challenge_mark_weapon10_05": {
+      "tipo": "mark",
+      "nome": "Domínio da Calico M960A",
+      "descrição": "Elimine 5.000 inimigos com uma Calico M960A.",
+      "quantidade": "5000",
+      "arquivo_xml": "smg05kill.xml"
     },
     "challenge_mark_weapon25_05": {
       "tipo": "mark",
@@ -5802,6 +6096,13 @@
       "descrição": "Elimine 5.000 inimigos com uma AK-9 SMG.",
       "quantidade": "5000",
       "arquivo_xml": "smg06kill.xml"
+    },
+    "challenge_mark_weapon25_06": {
+      "tipo": "mark",
+      "nome": "Spetsnaz (Avançado)",
+      "descrição": "Elimine 10.000 inimigos com a AK-9 SMG.",
+      "quantidade": "10000",
+      "arquivo_xml": "smg06kill25.xml"
     },
     "challenge_mark_weapon10_07": {
       "tipo": "mark",
@@ -5823,6 +6124,13 @@
       "descrição": "Elimine 5.000 inimigos com uma XM8 Compact.",
       "quantidade": "5000",
       "arquivo_xml": "smg08kill.xml"
+    },
+    "challenge_mark_weapon25_08": {
+      "tipo": "mark",
+      "nome": "Assassino Compacto (Avançado)",
+      "descrição": "Elimine 10.000 inimigos com a XM8 Compact.",
+      "quantidade": "10000",
+      "arquivo_xml": "smg08kill25.xml"
     },
     "challenge_mark_weapon10_smg09": {
       "tipo": "mark",
@@ -5957,6 +6265,13 @@
       "quantidade": "10000",
       "arquivo_xml": "smg16kill25.xml"
     },
+    "challenge_mark_weapon10_17": {
+      "tipo": "mark",
+      "nome": "Seals Reais Tailandeses",
+      "descrição": "Elimine 5.000 inimigos com uma H&K UMP.",
+      "quantidade": "5000",
+      "arquivo_xml": "smg17kill.xml"
+    },
     "challenge_mark_weapon25_17": {
       "tipo": "mark",
       "nome": "Seals Reais Tailandeses (Avançado)",
@@ -5998,6 +6313,13 @@
       "descrição": "Elimine 10.000 inimigos com a SIG 552.",
       "quantidade": "10000",
       "arquivo_xml": "smg23kill25.xml"
+    },
+    "challenge_mark_weapon10_20": {
+      "tipo": "mark",
+      "nome": "Igual um Relógio",
+      "descrição": "Elimine 5.000 inimigos com a B&T MP9.",
+      "quantidade": "5000",
+      "arquivo_xml": "smg24kill.xml"
     },
     "challenge_mark_weapon25_20": {
       "tipo": "mark",
@@ -6075,6 +6397,13 @@
       "descrição": "",
       "quantidade": "10000",
       "arquivo_xml": "smg32kill25.xml"
+    },
+    "challenge_mark_weapon10_48": {
+      "tipo": "mark",
+      "nome": "Calluna vulgaris",
+      "descrição": "Elimine 5.000 inimigos com a SR-2 Veresk.",
+      "quantidade": "5000",
+      "arquivo_xml": "smg32_kill.xml"
     },
     "challenge_mark_weapon25_49": {
       "tipo": "mark",
@@ -8063,6 +8392,27 @@
       "descrição": "Vença 50 partidas de Mata-mata em Equipe: Hangar Natalino.",
       "quantidade": "50",
       "arquivo_xml": "wintdmhangarupxmas3.xml"
+    },
+    "challenge_mark_hotel_01": {
+      "tipo": "mark",
+      "nome": "Casual",
+      "descrição": "Vença 10 partidas de Mata-mata em Equipe no Motel.",
+      "quantidade": "10",
+      "arquivo_xml": "wintdmmotel1.xml"
+    },
+    "challenge_mark_hotel_02": {
+      "tipo": "mark",
+      "nome": "Cliente Frequente",
+      "descrição": "Vença 25 partidas de Mata-mata em Equipe no Motel.",
+      "quantidade": "25",
+      "arquivo_xml": "wintdmmotel2.xml"
+    },
+    "challenge_mark_hotel_03": {
+      "tipo": "mark",
+      "nome": "Suíte Pessoal",
+      "descrição": "Vença 50 partidas de Mata-mata em Equipe no Motel.",
+      "quantidade": "50",
+      "arquivo_xml": "wintdmmotel3.xml"
     },
     "challenge_mark_night_farm_01": {
       "tipo": "mark",
@@ -13008,6 +13358,13 @@
       "quantidade": "1000",
       "arquivo_xml": "pt41_ww2kills.xml"
     },
+    "challenge_badge_pt66": {
+      "tipo": "badge",
+      "nome": "Trá! Trá!",
+      "descrição": "Elimine 20 inimigos humanos com a Pistola de Dedo.",
+      "quantidade": "20",
+      "arquivo_xml": "pt66kill02.xml"
+    },
     "challenge_badge_pulitzer2210": {
       "tipo": "badge",
       "nome": "Equipamento de filmagem",
@@ -13260,6 +13617,13 @@
       "quantidade": "1",
       "arquivo_xml": "realwars01_badge_01.xml"
     },
+    "challenge_badge_02_realwars01": {
+      "tipo": "badge",
+      "nome": "Temperado pelo Fogo",
+      "descrição": "A essência da apostasia está mudando de lado.",
+      "quantidade": "1",
+      "arquivo_xml": "realwars01_badge_02.xml"
+    },
     "engineer_realwars_01_badge": {
       "tipo": "badge",
       "nome": "Engenheiro Apostate",
@@ -13267,12 +13631,26 @@
       "quantidade": "1",
       "arquivo_xml": "realwars_01_engineer_badge.xml"
     },
+    "medic_realwars_01_badge": {
+      "tipo": "badge",
+      "nome": "Médico Apostate",
+      "descrição": "A essência da apostasia está mudando de lado.",
+      "quantidade": "1",
+      "arquivo_xml": "realwars_01_medic_badge.xml"
+    },
     "sniper_realwars_01_badge": {
       "tipo": "badge",
       "nome": "Franco-atirador Apostate",
       "descrição": "A essência da apostasia está mudando de lado.",
       "quantidade": "1",
       "arquivo_xml": "realwars_01_sniper_badge.xml"
+    },
+    "soldier_realwars_01_badge": {
+      "tipo": "badge",
+      "nome": "Fuzileiro Apostate",
+      "descrição": "A essência da apostasia está mudando de lado.",
+      "quantidade": "1",
+      "arquivo_xml": "realwars_01_soldier_badge.xml"
     },
     "challenge_badge_referral_wf_01": {
       "tipo": "badge",
@@ -13288,12 +13666,26 @@
       "quantidade": "1",
       "arquivo_xml": "reptile2406_01_badge.xml"
     },
+    "challenge_badge_43": {
+      "tipo": "badge",
+      "nome": "Médico de Campo",
+      "descrição": "Reanime 100 aliados.",
+      "quantidade": "100",
+      "arquivo_xml": "ressurector1.xml"
+    },
     "challenge_badge_44": {
       "tipo": "badge",
       "nome": "Reanimador",
       "descrição": "Reanime 1.000 aliados.",
       "quantidade": "1000",
       "arquivo_xml": "ressurector2.xml"
+    },
+    "challenge_badge_45": {
+      "tipo": "badge",
+      "nome": "Salvador",
+      "descrição": "Reanime 10.000 aliados.",
+      "quantidade": "10000",
+      "arquivo_xml": "ressurector3.xml"
     },
     "challenge_badge_89": {
       "tipo": "badge",
@@ -13322,6 +13714,13 @@
       "descrição": "Elimine 30 inimigos com ataques corpo a corpo na cabeça.",
       "quantidade": "1",
       "arquivo_xml": "roccat01.xml"
+    },
+    "challenge_badge_royal01": {
+      "tipo": "badge",
+      "nome": "Almofada de Veludo",
+      "descrição": "God Save the Queen!",
+      "quantidade": "1",
+      "arquivo_xml": "royal01_badge.xml"
     },
     "challenge_badge_bp07_01": {
       "tipo": "badge",
@@ -13456,6 +13855,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_badge_swarm_04.xml"
     },
+    "challenge_badge_publisher_05": {
+      "tipo": "badge",
+      "nome": "Insígnia \"Depuração\"",
+      "descrição": "Aracnídeos? Tô fora!",
+      "quantidade": "1",
+      "arquivo_xml": "ru_badge_swarm_05.xml"
+    },
     "challenge_badge_publisher_06": {
       "tipo": "badge",
       "nome": "Insígnia \"Aracnoameaça\"",
@@ -13476,6 +13882,20 @@
       "descrição": "Seja o orgulhoso dono de um ingresso VIP da WarFest.",
       "quantidade": "1",
       "arquivo_xml": "ru_badge_ticket.xml"
+    },
+    "challenge_badge_winter_hunt01": {
+      "tipo": "badge",
+      "nome": "Start lifting",
+      "descrição": "Reach level 25 in \"Winter hunt\"",
+      "quantidade": "1",
+      "arquivo_xml": "ru_badge_winterhunt01.xml"
+    },
+    "challenge_badge_winter_hunt02": {
+      "tipo": "badge",
+      "nome": "Half way",
+      "descrição": "Reach level 50 in \"Winter hunting\"",
+      "quantidade": "1",
+      "arquivo_xml": "ru_badge_winterhunt02.xml"
     },
     "challenge_badge_winter_hunt03": {
       "tipo": "badge",
@@ -13512,6 +13932,27 @@
       "quantidade": "1",
       "arquivo_xml": "ru_bc_badge_03.xml"
     },
+    "challenge_badge_bigbon_01": {
+      "tipo": "badge",
+      "nome": "Rei do lámen",
+      "descrição": "Agrade a si mesmo com o macarrão instantâneo mais delicioso que existe.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_bigbon_badge_01.xml"
+    },
+    "challenge_badge_bonus_01": {
+      "tipo": "badge",
+      "nome": "Jogador ativo",
+      "descrição": "Uma recompensa para os jogadores mais leais e ativos",
+      "quantidade": "1",
+      "arquivo_xml": "ru_bonus_badge_01.xml"
+    },
+    "challenge_badge_brainstorm": {
+      "tipo": "badge",
+      "nome": "Jogos Mentais",
+      "descrição": "Insígnia de coleção do evento \"O Cerco\".",
+      "quantidade": "1",
+      "arquivo_xml": "ru_brainstorm_badge.xml"
+    },
     "challenge_badge_anubis": {
       "tipo": "badge",
       "nome": "Membro da Temporada \"Retaliação\"",
@@ -13525,6 +13966,20 @@
       "descrição": "Uma conquista especial para os visitantes do site de eSports.",
       "quantidade": "1",
       "arquivo_xml": "ru_cybersport_badge_01.xml"
+    },
+    "challenge_badge_ec02_01": {
+      "tipo": "badge",
+      "nome": "Atacante",
+      "descrição": "Marque 10 gols por qualquer time durante um evento de futebol.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_ec02_badge_01.xml"
+    },
+    "challenge_badge_ec02_02": {
+      "tipo": "badge",
+      "nome": "Artilheiro",
+      "descrição": "Marque 40 gols por qualquer time durante um evento de futebol.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_ec02_badge_02.xml"
     },
     "challenge_badge_candidate01": {
       "tipo": "badge",
@@ -13617,6 +14072,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_mvp_badge_03.xml"
     },
+    "challenge_badge_mvp_04": {
+      "tipo": "badge",
+      "nome": "Open Cup: Melhor Franco-atirador",
+      "descrição": "Torne-se o melhor franco-atirador da Final do evento Warface Open Cup.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_mvp_badge_04.xml"
+    },
     "challenge_badge_mvp_05": {
       "tipo": "badge",
       "nome": "Open Cup: Melhor SED",
@@ -13637,6 +14099,13 @@
       "descrição": "Torne-se o melhor médico da Final do evento Warface Open Cup.",
       "quantidade": "1",
       "arquivo_xml": "ru_mvp_badge_07.xml"
+    },
+    "challenge_badge_mvp_08": {
+      "tipo": "badge",
+      "nome": "Open Cup: Melhor Engenheiro",
+      "descrição": "Torne-se o melhor engenheiro da Final do evento Warface Open Cup.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_mvp_badge_08.xml"
     },
     "challenge_badge_mvp_09": {
       "tipo": "badge",
@@ -13680,6 +14149,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_mvp_badge_14.xml"
     },
+    "challenge_badge_mvp_15": {
+      "tipo": "badge",
+      "nome": "Open Cup: Melhor SED",
+      "descrição": "Torne-se o melhor SED da Final do evento Warface Open Cup.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_mvp_badge_15.xml"
+    },
     "challenge_badge_ok": {
       "tipo": "badge",
       "nome": "Mais Divertido Com Amigos",
@@ -13694,12 +14170,33 @@
       "quantidade": "1",
       "arquivo_xml": "ru_patrick_badge_01.xml"
     },
+    "challenge_badge_patrick02": {
+      "tipo": "badge",
+      "nome": "Trevo Preto",
+      "descrição": "Surpreenda seu inimigo no Dia de São Patrício!",
+      "quantidade": "1",
+      "arquivo_xml": "ru_patrick_badge_02.xml"
+    },
+    "challenge_badge_pringles_01": {
+      "tipo": "badge",
+      "nome": "Medalhista de batatinha",
+      "descrição": "Dê as batatinhas mais gostosas do mundo para seus amigos!",
+      "quantidade": "1",
+      "arquivo_xml": "ru_pringles_badge_01.xml"
+    },
     "challenge_badge_lmsp_06": {
       "tipo": "badge",
       "nome": "Veterano de Pripyat",
       "descrição": "Colete todas as cartas colecionáveis de \"Pripyat\"",
       "quantidade": "1",
       "arquivo_xml": "ru_pripyat_badge_01.xml"
+    },
+    "challenge_badge_pl_01": {
+      "tipo": "badge",
+      "nome": "Open Cup de Warface: Temporada XII",
+      "descrição": "Insígnia da Temporada XII da Open Cup em azul.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_proleague_badge_01.xml"
     },
     "challenge_badge_pl_02": {
       "tipo": "badge",
@@ -13750,12 +14247,26 @@
       "quantidade": "1",
       "arquivo_xml": "ru_proleague_xv_badge_03.xml"
     },
+    "challenge_badge_proleague_04": {
+      "tipo": "badge",
+      "nome": "Rumo à Vitória! I",
+      "descrição": "Insígnia dourada de fã do torneio.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_proleague_xv_badge_04.xml"
+    },
     "challenge_badge_proleague_05": {
       "tipo": "badge",
       "nome": "Rumo à Vitória! II",
       "descrição": "Insígnia dourada de fã do torneio.",
       "quantidade": "1",
       "arquivo_xml": "ru_proleague_xv_badge_05.xml"
+    },
+    "challenge_badge_proleague_06": {
+      "tipo": "badge",
+      "nome": "Rumo à Vitória! III",
+      "descrição": "Insígnia dourada de fã do torneio.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_proleague_xv_badge_06.xml"
     },
     "challenge_badge_fans_01": {
       "tipo": "badge",
@@ -13834,6 +14345,20 @@
       "quantidade": "1",
       "arquivo_xml": "ru_webevent_badge_02.xml"
     },
+    "challenge_badge_web3": {
+      "tipo": "badge",
+      "nome": "Um de Cinco",
+      "descrição": "Complete um objetivo de Operações Especiais em um evento especial.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_webevent_badge_03.xml"
+    },
+    "challenge_badge_pro_12": {
+      "tipo": "badge",
+      "nome": "Toque de Bronze",
+      "descrição": "Fique em 3º lugar no PRO.Champions.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_wfpro_grdfinal_badge01.xml"
+    },
     "challenge_badge_pro_13": {
       "tipo": "badge",
       "nome": "Toque de Prata",
@@ -13868,6 +14393,13 @@
       "descrição": "Seja o grande vencedor do PRO.Legends.",
       "quantidade": "1",
       "arquivo_xml": "ru_wfpro_legend_badge03.xml"
+    },
+    "challenge_badge_pro_09": {
+      "tipo": "badge",
+      "nome": "Chance de Ouro",
+      "descrição": "Seja o vencedor do PRO.Legends duas vezes.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_wfpro_legend_badge04.xml"
     },
     "challenge_badge_pro_10": {
       "tipo": "badge",
@@ -13925,6 +14457,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_wildcard_badge_01.xml"
     },
+    "challenge_badge_xmas20_01": {
+      "tipo": "badge",
+      "nome": "Explogelo",
+      "descrição": "Feliz Natal e próspero Ano Novo!",
+      "quantidade": "1",
+      "arquivo_xml": "ru_xmas20_badge_01.xml"
+    },
     "challenge_badge_rw_07": {
       "tipo": "badge",
       "nome": "Assassino Gélido",
@@ -13932,12 +14471,33 @@
       "quantidade": "500",
       "arquivo_xml": "rw_kills1.xml"
     },
+    "challenge_badge_rw_08": {
+      "tipo": "badge",
+      "nome": "Gelo e Bala",
+      "descrição": "Elimine 2.500 inimigos nas missões do Pico Gelado.",
+      "quantidade": "2500",
+      "arquivo_xml": "rw_kills2.xml"
+    },
     "challenge_badge_rw_09": {
       "tipo": "badge",
       "nome": "Urso Polar",
       "descrição": "Elimine 5.000 inimigos nas missões do Pico Gelado.",
       "quantidade": "5000",
       "arquivo_xml": "rw_kills3.xml"
+    },
+    "challenge_badge_rw_01": {
+      "tipo": "badge",
+      "nome": "Rodinhas de Bicicleta",
+      "descrição": "Conclua a missão Ponta de Lança sem morrer.",
+      "quantidade": "1",
+      "arquivo_xml": "rw_survivor1.xml"
+    },
+    "challenge_badge_rw_02": {
+      "tipo": "badge",
+      "nome": "Sem Retirada ou Rendição!",
+      "descrição": "Conclua a missão Zênite sem morrer.",
+      "quantidade": "1",
+      "arquivo_xml": "rw_survivor3.xml"
     },
     "challenge_badge_saboteur01": {
       "tipo": "badge",
@@ -13966,6 +14526,13 @@
       "descrição": "Desafio secreto. Como obtê-lo? A única dica é o contador...",
       "quantidade": "50",
       "arquivo_xml": "secret_04.xml"
+    },
+    "challenge_badge_secret_02": {
+      "tipo": "badge",
+      "nome": "10",
+      "descrição": "Desafio secreto. Como obtê-lo? A única dica é o contador...",
+      "quantidade": "10000",
+      "arquivo_xml": "secret_05.xml"
     },
     "challenge_badge_secret_03": {
       "tipo": "badge",
@@ -14009,6 +14576,20 @@
       "quantidade": "1",
       "arquivo_xml": "sg42_badge_01.xml"
     },
+    "challenge_badge_weapon10_01": {
+      "tipo": "badge",
+      "nome": "Remington Clássica",
+      "descrição": "Elimine 5.000 inimigos com uma Remington 870.",
+      "quantidade": "5000",
+      "arquivo_xml": "shg01kill.xml"
+    },
+    "challenge_badge_weapon25_01": {
+      "tipo": "badge",
+      "nome": "Remington Clássica (Avançado)",
+      "descrição": "Elimine 10.000 inimigos com a Remington 870.",
+      "quantidade": "10000",
+      "arquivo_xml": "shg01kill25.xml"
+    },
     "challenge_badge_weapon10_02": {
       "tipo": "badge",
       "nome": "Vinte-e-um",
@@ -14022,6 +14603,13 @@
       "descrição": "Elimine 10.000 inimigos com a Piledriver.",
       "quantidade": "10000",
       "arquivo_xml": "shg02kill25.xml"
+    },
+    "challenge_badge_weapon10_03": {
+      "tipo": "badge",
+      "nome": "Javali Selvagem",
+      "descrição": "Elimine 5.000 inimigos com uma Saiga.",
+      "quantidade": "5000",
+      "arquivo_xml": "shg03kill.xml"
     },
     "challenge_badge_weapon25_03": {
       "tipo": "badge",
@@ -14043,6 +14631,13 @@
       "descrição": "Elimine 10.000 inimigos com a Vepr.",
       "quantidade": "10000",
       "arquivo_xml": "shg04kill25.xml"
+    },
+    "challenge_badge_weapon10_05": {
+      "tipo": "badge",
+      "nome": "No Fim do Cano",
+      "descrição": "Elimine 5.000 inimigos com uma USAS-12.",
+      "quantidade": "5000",
+      "arquivo_xml": "shg05kill.xml"
     },
     "challenge_badge_weapon25_05": {
       "tipo": "badge",
@@ -14072,6 +14667,13 @@
       "quantidade": "1000",
       "arquivo_xml": "shg06_crown02kill.xml"
     },
+    "challenge_badge_64": {
+      "tipo": "badge",
+      "nome": "SPAS-12 Elite",
+      "descrição": "Elimine 1.000 inimigos com a SPAS-12 Coroa.",
+      "quantidade": "1000",
+      "arquivo_xml": "shg06_crownkill.xml"
+    },
     "challenge_badge_weapon10_07": {
       "tipo": "badge",
       "nome": "Kushnapup",
@@ -14085,6 +14687,20 @@
       "descrição": "Elimine 10.000 inimigos com a Saiga Bullpup.",
       "quantidade": "10000",
       "arquivo_xml": "shg07kill25.xml"
+    },
+    "challenge_badge_crown02_04": {
+      "tipo": "badge",
+      "nome": "Saiga Bullpup Elite Coroa",
+      "descrição": "Elimine 1.000 inimigos com a Saiga Bullpup Elite Coroa.",
+      "quantidade": "1000",
+      "arquivo_xml": "shg07_crown02kill.xml"
+    },
+    "challenge_badge_65": {
+      "tipo": "badge",
+      "nome": "Saiga Bullpup Elite",
+      "descrição": "Elimine 1.000 inimigos com a Saiga Bullpup Coroa.",
+      "quantidade": "1000",
+      "arquivo_xml": "shg07_crownkill.xml"
     },
     "challenge_badge_weapon10_08": {
       "tipo": "badge",
@@ -14120,6 +14736,13 @@
       "descrição": "Elimine 10.000 inimigos com uma Remington 870 CB.",
       "quantidade": "10000",
       "arquivo_xml": "shg09kill25.xml"
+    },
+    "challenge_badge_weapon10_10": {
+      "tipo": "badge",
+      "nome": "Revólver",
+      "descrição": "Elimine 5.000 inimigos com uma MC 255 12.",
+      "quantidade": "5000",
+      "arquivo_xml": "shg10kill.xml"
     },
     "challenge_badge_weapon25_10": {
       "tipo": "badge",
@@ -14191,6 +14814,13 @@
       "quantidade": "10000",
       "arquivo_xml": "shg15kill25.xml"
     },
+    "challenge_badge_weapon10_15": {
+      "tipo": "badge",
+      "nome": "Agressão Automática",
+      "descrição": "Elimine 5.000 inimigos com uma AA-12.",
+      "quantidade": "5000",
+      "arquivo_xml": "shg21kill.xml"
+    },
     "challenge_badge_weapon25_15": {
       "tipo": "badge",
       "nome": "Agressão Automática (Avançado)",
@@ -14219,6 +14849,13 @@
       "quantidade": "5000",
       "arquivo_xml": "shg26kill.xml"
     },
+    "challenge_badge_weapon25_17": {
+      "tipo": "badge",
+      "nome": "Escopeta Tática Urbana (Avançado)",
+      "descrição": "Elimine 10.000 inimigos com a UTAS UTS-15.",
+      "quantidade": "10000",
+      "arquivo_xml": "shg26kill25.xml"
+    },
     "challenge_badge_weapon10_18": {
       "tipo": "badge",
       "nome": "Rotor Assassino",
@@ -14232,6 +14869,13 @@
       "descrição": "Elimine 10.000 inimigos com a SRM 1216.",
       "quantidade": "10000",
       "arquivo_xml": "shg27kill25.xml"
+    },
+    "challenge_badge_weapon10_19": {
+      "tipo": "badge",
+      "nome": "A Chave do Comando",
+      "descrição": "Elimine 5.000 inimigos com uma SPAS-15.",
+      "quantidade": "5000",
+      "arquivo_xml": "shg28kill.xml"
     },
     "challenge_badge_weapon25_19": {
       "tipo": "badge",
@@ -14268,6 +14912,13 @@
       "quantidade": "10000",
       "arquivo_xml": "shg31kill25.xml"
     },
+    "challenge_badge_weapon10_22": {
+      "tipo": "badge",
+      "nome": "É Perfeita, Modular, Mortal...",
+      "descrição": "Elimine 5.000 inimigos com a Crye Precision SIX12.",
+      "quantidade": "5000",
+      "arquivo_xml": "shg32kill.xml"
+    },
     "challenge_badge_weapon25_22": {
       "tipo": "badge",
       "nome": "É Perfeita, Modular, Mortal... (Avançado)",
@@ -14288,6 +14939,13 @@
       "descrição": "Elimine 10.000 inimigos com a Remington 870 RAS.",
       "quantidade": "10000",
       "arquivo_xml": "shg33kill25.xml"
+    },
+    "challenge_badge_weapon25_24": {
+      "tipo": "badge",
+      "nome": "Combate Modular (Avançado)",
+      "descrição": "Elimine 10.000 inimigos com a Fabarm S.A.T. 8 Pro ou a versão dourada dela.",
+      "quantidade": "10000",
+      "arquivo_xml": "shg35kill25.xml"
     },
     "challenge_badge_weapon10_24": {
       "tipo": "badge",
@@ -14394,6 +15052,13 @@
       "quantidade": "10000",
       "arquivo_xml": "shg42kill25.xml"
     },
+    "challenge_badge_weapon10_45": {
+      "tipo": "badge",
+      "nome": "Disparo Duplo",
+      "descrição": "",
+      "quantidade": "5000",
+      "arquivo_xml": "shg42_kill.xml"
+    },
     "challenge_badge_weapon10_46": {
       "tipo": "badge",
       "nome": "Disparo Rápido",
@@ -14450,6 +15115,13 @@
       "quantidade": "5000",
       "arquivo_xml": "shg46_kill.xml"
     },
+    "challenge_badge_weapon10_52": {
+      "tipo": "badge",
+      "nome": "One Punch",
+      "descrição": "",
+      "quantidade": "5000",
+      "arquivo_xml": "shg47kill.xml"
+    },
     "challenge_badge_weapon25_52": {
       "tipo": "badge",
       "nome": "Avançado: One Punch",
@@ -14477,6 +15149,13 @@
       "descrição": "Elimine 1.000 inimigos com a Arma de Pão de Mel",
       "quantidade": "1000",
       "arquivo_xml": "shg49kill.xml"
+    },
+    "challenge_badge_weapon25_54": {
+      "tipo": "badge",
+      "nome": "Avançado: Sob o Mar",
+      "descrição": "Elimine 10.000 inimigos com o Marlin 1894 Custom ou a versão dourada dele.",
+      "quantidade": "10000",
+      "arquivo_xml": "shg50kill25.xml"
     },
     "challenge_badge_weapon10_54": {
       "tipo": "badge",
@@ -14519,6 +15198,13 @@
       "descrição": "Elimine 10.000 inimigos com a Typhoon F12 Custom ou sua versão \"Bronze\".",
       "quantidade": "10000",
       "arquivo_xml": "shg53kill25.xml"
+    },
+    "challenge_badge_weapon10_shg53": {
+      "tipo": "badge",
+      "nome": "Um Grande Tufão",
+      "descrição": "Elimine 5.000 inimigos com a Typhoon F12 Custom ou sua versão \"Bronze\".",
+      "quantidade": "5000",
+      "arquivo_xml": "shg53_kill.xml"
     },
     "challenge_badge_weapon10_shg54": {
       "tipo": "badge",
@@ -21009,7 +21695,7 @@
       "nome": "Faca Kunai Winter Rangers",
       "descrição": "Elimine 1.500 inimigos com uma Faca Kunai Winter Rangers.",
       "quantidade": "1500",
-      "arquivo_xml": "kn00002_newyear01_kill.xml"
+      "arquivo_xml": "kn00002_newyear01_kil.xml"
     },
     "challenge_stripe_kn00002_rating2302": {
       "tipo": "stripe",
@@ -21338,7 +22024,7 @@
       "nome": "Facão KA-BAR Kukri Engine",
       "descrição": "Elimine 1.500 inimigos com um Facão KA-BAR Kukri Engine.",
       "quantidade": "1500",
-      "arquivo_xml": "kn07_rating03_kill.xml"
+      "arquivo_xml": "kn07_rating03_kil.xml"
     },
     "challenge_strip_set12_03": {
       "tipo": "stripe",
@@ -24861,6 +25547,13 @@
       "quantidade": "1",
       "arquivo_xml": "prestige2412_02_stripe.xml"
     },
+    "challenge_stripe_prisonbreak01": {
+      "tipo": "stripe",
+      "nome": "Grade de Juiz",
+      "descrição": "Uma prisão prova o valor da liberdade.",
+      "quantidade": "1",
+      "arquivo_xml": "prisonbreak01_stripe.xml"
+    },
     "challenge_stripe_profi_asgard2412": {
       "tipo": "stripe",
       "nome": "Invasor universal",
@@ -24938,6 +25631,13 @@
       "quantidade": "1",
       "arquivo_xml": "prorank2412_03_stripe.xml"
     },
+    "challenge_strip_pt00002_coldwar01": {
+      "tipo": "stripe",
+      "nome": "H&K P30 Red Dusk",
+      "descrição": "Elimine 1.500 inimigos com a H&K P30 Red Dusk.",
+      "quantidade": "1500",
+      "arquivo_xml": "pt00002_coldwar01_kill.xml"
+    },
     "challenge_stripe_pt00002_frontlines02": {
       "tipo": "stripe",
       "nome": "H&K P30 Vigilant",
@@ -24980,12 +25680,26 @@
       "quantidade": "5000",
       "arquivo_xml": "pt01_bronze01_console_kill.xml"
     },
+    "challenge_strip_cny01_04": {
+      "tipo": "stripe",
+      "nome": "Desert Eagle Imperador Amarelo",
+      "descrição": "Elimine 2.500 inimigos com a Desert Eagle Imperador Amarelo.",
+      "quantidade": "2500",
+      "arquivo_xml": "pt01_cny01kill.xml"
+    },
     "challenge_stripe_pt01_deepwater2303": {
       "tipo": "stripe",
       "nome": "Desert Eagle Caçador Marítimo",
       "descrição": "Elimine 1.500 inimigos usando uma Desert Eagle Caçador Marítimo.",
       "quantidade": "1500",
       "arquivo_xml": "pt01_deepwater2303_kill.xml"
+    },
+    "challenge_strip_51": {
+      "tipo": "stripe",
+      "nome": "Minerador",
+      "descrição": "Elimine 999 inimigos com a Desert Eagle dourada.",
+      "quantidade": "999",
+      "arquivo_xml": "pt01_gold_kill_03.xml"
     },
     "challenge_strip_pt01_meteorgold02": {
       "tipo": "stripe",
@@ -25007,6 +25721,13 @@
       "descrição": "Elimine 1.500 inimigos com uma Desert Eagle Urso Polar.",
       "quantidade": "1500",
       "arquivo_xml": "pt01_north2312_kill.xml"
+    },
+    "challenge_strip_xmas_08": {
+      "tipo": "stripe",
+      "nome": "Desert Eagle de Natal",
+      "descrição": "Elimine 200 inimigos com uma Desert Eagle de Natal.",
+      "quantidade": "200",
+      "arquivo_xml": "pt01_xmaskill.xml"
     },
     "challenge_strip_samurai02_15": {
       "tipo": "stripe",
@@ -25211,6 +25932,13 @@
       "quantidade": "999",
       "arquivo_xml": "pt21_gold01kill.xml"
     },
+    "challenge_strip_lava06": {
+      "tipo": "stripe",
+      "nome": "Glock 18C Terremoto",
+      "descrição": "Elimine 2.500 inimigos com a Glock 18C Terremoto.",
+      "quantidade": "2500",
+      "arquivo_xml": "pt21_lava01kill15.xml"
+    },
     "challenge_strip_mars02_05": {
       "tipo": "stripe",
       "nome": "Glock 18C Deimos",
@@ -25232,6 +25960,20 @@
       "quantidade": "1500",
       "arquivo_xml": "pt21_rust01_kill.xml"
     },
+    "challenge_strip_samurai02_14": {
+      "tipo": "stripe",
+      "nome": "Glock 18C Flor de Cerejeira",
+      "descrição": "Elimine 2.500 inimigos com uma Glock 18C Flor de Cerejeira.",
+      "quantidade": "2500",
+      "arquivo_xml": "pt21_samurai02kill.xml"
+    },
+    "challenge_strip_viet01_04": {
+      "tipo": "stripe",
+      "nome": "Glock 18C Lake Bird",
+      "descrição": "Elimine 2.500 inimigos com uma Glock 18C Lake Bird.",
+      "quantidade": "2500",
+      "arquivo_xml": "pt21_viet01kill.xml"
+    },
     "challenge_strip_zt_01": {
       "tipo": "stripe",
       "nome": "Glock 18C Black Shark",
@@ -25245,6 +25987,13 @@
       "descrição": "Elimine 2.500 inimigos com a FN Five Seven do Papai Noel Maligno.",
       "quantidade": "2500",
       "arquivo_xml": "pt22_xmas02kill10.xml"
+    },
+    "challenge_strip_zsd03_04": {
+      "tipo": "stripe",
+      "nome": "FN Five Seven Anticiborgue",
+      "descrição": "Elimine 2.500 inimigos com a FN Five Seven Anticiborgue.",
+      "quantidade": "2500",
+      "arquivo_xml": "pt22_zsd03kill15.xml"
     },
     "challenge_strip_bp09_15": {
       "tipo": "stripe",
@@ -25316,6 +26065,13 @@
       "quantidade": "2500",
       "arquivo_xml": "pt30_bp06kill.xml"
     },
+    "challenge_strip_108": {
+      "tipo": "stripe",
+      "nome": "Bonitinha Mas Ordinária",
+      "descrição": "Elimine 1.000 inimigos com uma Desert Eagle Pink Micro.",
+      "quantidade": "1000",
+      "arquivo_xml": "pt30_pink01_kill.xml"
+    },
     "challenge_stripe_pt30_stval01": {
       "tipo": "stripe",
       "nome": "Micro Desert Eagle Valentine",
@@ -25379,6 +26135,27 @@
       "quantidade": "1500",
       "arquivo_xml": "pt32_meteorgold02kill.xml"
     },
+    "challenge_strip_set05_05": {
+      "tipo": "stripe",
+      "nome": "CZ 75-Auto Flor de Muerto",
+      "descrição": "Elimine 2.500 inimigos com a CZ 75-Auto Flor de Muerto.",
+      "quantidade": "2500",
+      "arquivo_xml": "pt32_set05_cartelkill.xml"
+    },
+    "challenge_strip_swarm03_11": {
+      "tipo": "stripe",
+      "nome": "CZ 75-Auto Toxicity",
+      "descrição": "Elimine 2.500 inimigos com um CZ 75-Auto Toxicity.",
+      "quantidade": "2500",
+      "arquivo_xml": "pt32_swarm03kill.xml"
+    },
+    "challenge_strip_friday_10": {
+      "tipo": "stripe",
+      "nome": "S&W M&P R8 Great Gatsby",
+      "descrição": "Elimine 2.500 inimigos com um S&W M&P R8 Great Gatsby.",
+      "quantidade": "2500",
+      "arquivo_xml": "pt33_friday01kill.xml"
+    },
     "challenge_strip_143": {
       "tipo": "stripe",
       "nome": "Caubói de Ouro",
@@ -25392,6 +26169,13 @@
       "descrição": "Elimine 1.500 inimigos com um S&W M&P R8 Zombie Grinder.",
       "quantidade": "1500",
       "arquivo_xml": "pt33_gotohell01_kill.xml"
+    },
+    "challenge_strip_heist03_14": {
+      "tipo": "stripe",
+      "nome": "S&W M&P R8 Heat",
+      "descrição": "Elimine 2.500 inimigos com um S&W M&P R8 Heat.",
+      "quantidade": "2500",
+      "arquivo_xml": "pt33_heist03kill.xml"
     },
     "challenge_stripe_pt33_holo01": {
       "tipo": "stripe",
@@ -25427,6 +26211,13 @@
       "descrição": "",
       "quantidade": "2500",
       "arquivo_xml": "pt33_rad01kill15.xml"
+    },
+    "challenge_strip_pt33_realwars01": {
+      "tipo": "stripe",
+      "nome": "S&W M&P R8 Apostate",
+      "descrição": "Elimine 1.500 inimigos com um S&W M&P R8 Apostate.",
+      "quantidade": "1500",
+      "arquivo_xml": "pt33_realwars01_kill.xml"
     },
     "challenge_stripe_pt33_saboteur01": {
       "tipo": "stripe",
@@ -25497,6 +26288,13 @@
       "descrição": "Elimine 2.500 inimigos com a MPA 930DMG SuiNoel.",
       "quantidade": "2500",
       "arquivo_xml": "pt34_xmas04kill.xml"
+    },
+    "challenge_strip_xmas05_06": {
+      "tipo": "stripe",
+      "nome": "MPA 930DMG Rime",
+      "descrição": "Elimine 2.500 inimigos com a MPA 930DMG Rime.",
+      "quantidade": "2500",
+      "arquivo_xml": "pt34_xmas05kill.xml"
     },
     "challenge_stripe_pt35_25bp03pinup": {
       "tipo": "stripe",
@@ -25582,6 +26380,13 @@
       "quantidade": "1500",
       "arquivo_xml": "pt36_secret00002_kill.xml"
     },
+    "challenge_stripe_pt36_snowstorm01": {
+      "tipo": "stripe",
+      "nome": "TEC-9 Snowstorm",
+      "descrição": "Elimine 1.500 inimigos com uma TEC-9 Snowstorm.",
+      "quantidade": "1500",
+      "arquivo_xml": "pt36_snowstorm01_kill.xml"
+    },
     "challenge_strip_pt36_shadow01": {
       "tipo": "stripe",
       "nome": "TEC-9 Hidden War",
@@ -25652,6 +26457,13 @@
       "quantidade": "2500",
       "arquivo_xml": "pt38_black01kill.xml"
     },
+    "challenge_strip_black03_10": {
+      "tipo": "stripe",
+      "nome": "Maxim 9 \"Ônix\"",
+      "descrição": "Elimine 2.500 inimigos com a Maxim 9 \"Ônix\".",
+      "quantidade": "2500",
+      "arquivo_xml": "pt38_black03kill.xml"
+    },
     "challenge_strip_bp06_16": {
       "tipo": "stripe",
       "nome": "Maxim 9 Fobos",
@@ -25666,12 +26478,33 @@
       "quantidade": "1500",
       "arquivo_xml": "pt38_crafted01_kill.xml"
     },
+    "challenge_strip_pt38_shadow01": {
+      "tipo": "stripe",
+      "nome": "Maxim 9 Hidden War",
+      "descrição": "Elimine 1.500 inimigos com uma Maxim 9 Hidden War.",
+      "quantidade": "1500",
+      "arquivo_xml": "pt38_digitalcamo01_console_kill.xml"
+    },
     "challenge_strip_friday_11": {
       "tipo": "stripe",
       "nome": "Maxim 9 Great Gatsby",
       "descrição": "Elimine 2.500 inimigos com um Maxim 9 Great Gatsby.",
       "quantidade": "2500",
       "arquivo_xml": "pt38_friday01kill.xml"
+    },
+    "challenge_strip_168": {
+      "tipo": "stripe",
+      "nome": "Maxim suprema",
+      "descrição": "Elimine 999 inimigos com a Maxim 9 dourada.",
+      "quantidade": "999",
+      "arquivo_xml": "pt38_gold01kill.xml"
+    },
+    "challenge_strip_pt38_meteorgold02": {
+      "tipo": "stripe",
+      "nome": "Maxim 9 Pyrite",
+      "descrição": "Elimine 1.500 inimigos com uma Maxim 9 Pyrite.",
+      "quantidade": "1500",
+      "arquivo_xml": "pt38_meteorgold02kill.xml"
     },
     "challenge_strip_pt38_navy00003": {
       "tipo": "stripe",
@@ -25721,6 +26554,13 @@
       "descrição": "Elimine 2.500 inimigos com uma Kel-Tec SUB2000 Rogue.",
       "quantidade": "2500",
       "arquivo_xml": "pt39_brazil01kill.xml"
+    },
+    "challenge_strip_pt39_gold01": {
+      "tipo": "stripe",
+      "nome": "Regra de Ouro",
+      "descrição": "Elimine 999 inimigos com a Kel-Tec SUB2000 Dourada.",
+      "quantidade": "999",
+      "arquivo_xml": "pt39_gold_kill_01.xml"
     },
     "challenge_strip_heist02_12": {
       "tipo": "stripe",
@@ -25848,6 +26688,13 @@
       "quantidade": "1500",
       "arquivo_xml": "pt42_inoagent01_kill.xml"
     },
+    "challenge_stripe_pt42_newyear01": {
+      "tipo": "stripe",
+      "nome": "Ruger Mark IV Lite Winter Rangers",
+      "descrição": "Elimine 1.500 inimigos com uma Ruger Mark IV Lite Winter Rangers.",
+      "quantidade": "1500",
+      "arquivo_xml": "pt42_newyear01_kill.xml"
+    },
     "challenge_stripe_pt42_raven2309": {
       "tipo": "stripe",
       "nome": "Ruger Mark IV Lite Corvo",
@@ -25966,6 +26813,13 @@
       "descrição": "Elimine 1.500 inimigos com uma pistola Makarov “Risco biológico\".",
       "quantidade": "1500",
       "arquivo_xml": "pt45_pollution2403_kill.xml"
+    },
+    "challenge_stripe_pt45_royal01": {
+      "tipo": "stripe",
+      "nome": "Pistola Makarov Englishman",
+      "descrição": "Elimine 1.500 inimigos com uma Pistola Makarov Englishman.",
+      "quantidade": "1500",
+      "arquivo_xml": "pt45_royal01_kill.xml"
     },
     "challenge_stripe_pt45_saturn2312": {
       "tipo": "stripe",
@@ -26408,6 +27262,13 @@
       "quantidade": "10000",
       "arquivo_xml": "rank09_stripe_01.xml"
     },
+    "challenge_strip_rank10_01": {
+      "tipo": "stripe",
+      "nome": "Spring Smasher",
+      "descrição": "Elimine 10.000 inimigos com armas Lucky Rabbit.",
+      "quantidade": "10000",
+      "arquivo_xml": "rank10_stripe_01.xml"
+    },
     "challenge_strip_rg_01": {
       "tipo": "stripe",
       "nome": "Esquadrão das Forças de Metal Especial",
@@ -26730,12 +27591,26 @@
       "quantidade": "500",
       "arquivo_xml": "rm_firstplacewin_ach04.xml"
     },
+    "challenge_strip_roccat": {
+      "tipo": "stripe",
+      "nome": "Renga",
+      "descrição": "Elimine 1.000 inimigos com tiros na cabeça.",
+      "quantidade": "1",
+      "arquivo_xml": "roccat03.xml"
+    },
     "challenge_strip_nb_25": {
       "tipo": "stripe",
       "nome": "Bandeira da Romênia",
       "descrição": "Nihil Sine Deo",
       "quantidade": "1",
       "arquivo_xml": "romania_flag_01.xml"
+    },
+    "challenge_stripe_royal01": {
+      "tipo": "stripe",
+      "nome": "Guardas Reais",
+      "descrição": "God Save the Queen!",
+      "quantidade": "1",
+      "arquivo_xml": "royal01_stripe.xml"
     },
     "challenge_strip_bp07_01": {
       "tipo": "stripe",
@@ -26800,6 +27675,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_bigbon_stripe_01.xml"
     },
+    "challenge_stripe_bonus_01": {
+      "tipo": "stripe",
+      "nome": "Jogador experiente",
+      "descrição": "Uma recompensa para os jogadores mais leais e ativos",
+      "quantidade": "1",
+      "arquivo_xml": "ru_bonus_stripe_01.xml"
+    },
     "challenge_strip_bp06_winner_01": {
       "tipo": "stripe",
       "nome": "Vitória na Copa Armagedom",
@@ -26814,12 +27696,40 @@
       "quantidade": "1",
       "arquivo_xml": "ru_bp06_winner_stripe_02.xml"
     },
+    "challenge_strip_brainstorm": {
+      "tipo": "stripe",
+      "nome": "Linha de Vida",
+      "descrição": "Faixa de coleção do evento \"O Cerco\".",
+      "quantidade": "1",
+      "arquivo_xml": "ru_brainstorm_stripe.xml"
+    },
+    "challenge_strip_cybersport_02": {
+      "tipo": "stripe",
+      "nome": "Olho da Tempestade",
+      "descrição": "Uma conquista especial para os visitantes do site de eSports.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_cybersport_stripe_02.xml"
+    },
+    "challenge_strip_ec02_07": {
+      "tipo": "stripe",
+      "nome": "Goleador",
+      "descrição": "Marque 75 gols por qualquer time durante um evento de futebol.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_ec02_stripe_01.xml"
+    },
     "challenge_strip_ec02_08": {
       "tipo": "stripe",
       "nome": "Cheio de energia",
       "descrição": "Use o reforço de energia três vezes durante um evento de futebol.",
       "quantidade": "1",
       "arquivo_xml": "ru_ec02_stripe_02.xml"
+    },
+    "challenge_strip_elite_warface": {
+      "tipo": "stripe",
+      "nome": "WF de Elite",
+      "descrição": "Prêmio por atingir seis vezes a corrida de elite do clã.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_elite_warface_01.xml"
     },
     "challenge_strip_fb": {
       "tipo": "stripe",
@@ -26855,6 +27765,13 @@
       "descrição": "Use o energético no evento de Dia das Bruxas 3 vezes",
       "quantidade": "1",
       "arquivo_xml": "ru_hlw18_stripe_02.xml"
+    },
+    "challenge_strip_hlw_03": {
+      "tipo": "stripe",
+      "nome": "Rei das abóboras",
+      "descrição": "Receba todas as conquistas do evento de Dia das Bruxas",
+      "quantidade": "1",
+      "arquivo_xml": "ru_hlw18_stripe_03.xml"
     },
     "challenge_strip_kanobu_01": {
       "tipo": "stripe",
@@ -26954,6 +27871,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_proleague_stripe_04.xml"
     },
+    "challenge_strip_pl_05": {
+      "tipo": "stripe",
+      "nome": "Only ArenaStars!",
+      "descrição": "Stripe of a team ArenaStars supporter, competitor in the Open Cup XII",
+      "quantidade": "1",
+      "arquivo_xml": "ru_proleague_stripe_05.xml"
+    },
     "challenge_strip_pl_06": {
       "tipo": "stripe",
       "nome": "Only Squezzers!",
@@ -26975,6 +27899,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_proleague_stripe_08.xml"
     },
+    "challenge_strip_pl_09": {
+      "tipo": "stripe",
+      "nome": "Only F4F4!",
+      "descrição": "Stripe of a team F4F4 supporter, competitor in the Open Cup XII",
+      "quantidade": "1",
+      "arquivo_xml": "ru_proleague_stripe_09.xml"
+    },
     "challenge_strip_pl_10": {
       "tipo": "stripe",
       "nome": "Only Young Stars!",
@@ -26995,6 +27926,13 @@
       "descrição": "Vibre pela sua equipe favorita!",
       "quantidade": "1",
       "arquivo_xml": "ru_proleague_xv_stripe_02.xml"
+    },
+    "challenge_strip_fans_01": {
+      "tipo": "stripe",
+      "nome": "Mestre das previsões",
+      "descrição": "Mais de 95% das partidas acertadas.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_rates_stripe_01.xml"
     },
     "challenge_strip_rg_05": {
       "tipo": "stripe",
@@ -27093,6 +28031,13 @@
       "descrição": "Recharge your energy with Bite",
       "quantidade": "1",
       "arquivo_xml": "ru_stripe_bite_01.xml"
+    },
+    "challenge_strip_console_01": {
+      "tipo": "stripe",
+      "nome": "Hidden War",
+      "descrição": "É uma conquista secreta. Ninguém sabe como desbloqueá-la.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_stripe_console_01.xml"
     },
     "challenge_strip_console_02": {
       "tipo": "stripe",
@@ -27199,6 +28144,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_stripe_swarm_04.xml"
     },
+    "challenge_strip_publisher_05": {
+      "tipo": "stripe",
+      "nome": "Faixa \"Depuração\"",
+      "descrição": "Aracnídeos? Tô fora!",
+      "quantidade": "1",
+      "arquivo_xml": "ru_stripe_swarm_05.xml"
+    },
     "challenge_strip_publisher_06": {
       "tipo": "stripe",
       "nome": "Faixa \"Aracnoameaça\"",
@@ -27234,6 +28186,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_strip_winterhunt01.xml"
     },
+    "challenge_strip_winter_hunt02": {
+      "tipo": "stripe",
+      "nome": "A storm warning",
+      "descrição": "Complete the quest chain for Assault in \"Winter hunting\"",
+      "quantidade": "1",
+      "arquivo_xml": "ru_strip_winterhunt02.xml"
+    },
     "challenge_strip_winter_hunt03": {
       "tipo": "stripe",
       "nome": "Snow explosion",
@@ -27262,6 +28221,20 @@
       "quantidade": "1",
       "arquivo_xml": "ru_valkyrie_stripe_01.xml"
     },
+    "challenge_strip_vk": {
+      "tipo": "stripe",
+      "nome": "Contato",
+      "descrição": "Mantenha contato com seus amigos!",
+      "quantidade": "1",
+      "arquivo_xml": "ru_vk_03.xml"
+    },
+    "challenge_strip_warfest_01": {
+      "tipo": "stripe",
+      "nome": "Alta classe",
+      "descrição": "Concedido a proprietários de ingresso Super VIP para a WarFest 2018.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_warfest_2018_stripe_01.xml"
+    },
     "challenge_strip_web1": {
       "tipo": "stripe",
       "nome": "Multiferramenta de Dallas",
@@ -27275,6 +28248,13 @@
       "descrição": "Complete um objetivo de Médico em um evento especial.",
       "quantidade": "1",
       "arquivo_xml": "ru_webevent_stripe_02.xml"
+    },
+    "challenge_strip_web3": {
+      "tipo": "stripe",
+      "nome": "Um Monte de Munição",
+      "descrição": "Complete um objetivo de Fuzileiro em um evento especial.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_webevent_stripe_03.xml"
     },
     "challenge_strip_web4": {
       "tipo": "stripe",
@@ -27304,6 +28284,13 @@
       "quantidade": "1",
       "arquivo_xml": "ru_wfpro_lanfinal_stripe03.xml"
     },
+    "challenge_strip_pro_04": {
+      "tipo": "stripe",
+      "nome": "A Gota d'Água IV",
+      "descrição": "Participe do PRO.Champions IV.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_wfpro_lanfinal_stripe04.xml"
+    },
     "challenge_strip_pro_05": {
       "tipo": "stripe",
       "nome": "A Gota d'Água V",
@@ -27311,12 +28298,26 @@
       "quantidade": "1",
       "arquivo_xml": "ru_wfpro_lanfinal_stripe05.xml"
     },
+    "challenge_strip_pro_06": {
+      "tipo": "stripe",
+      "nome": "Competidor Lendário",
+      "descrição": "Concedida aos participantes do PRO.Legends.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_wfpro_lanfinal_stripe06.xml"
+    },
     "challenge_strip_xxxx_wlan_08": {
       "tipo": "stripe",
       "nome": "Campeão da Temporada VIII",
       "descrição": "Vença a Warface Open Cup Temporada VIII.",
       "quantidade": "1",
       "arquivo_xml": "ru_wlan_stripe_08.xml"
+    },
+    "challenge_strip_xxxx_wlan_09": {
+      "tipo": "stripe",
+      "nome": "Campeão da Temporada VII",
+      "descrição": "Vença a Warface Open Cup Temporada VII.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_wlan_stripe_09.xml"
     },
     "challenge_strip_xxxx_wlan_10": {
       "tipo": "stripe",
@@ -27353,6 +28354,20 @@
       "quantidade": "1",
       "arquivo_xml": "ru_wlan_stripe_14.xml"
     },
+    "challenge_strip_xxxx_wlan_15": {
+      "tipo": "stripe",
+      "nome": "Campeão da Temporada I",
+      "descrição": "Vença a Warface Open Cup Temporada I.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_wlan_stripe_15.xml"
+    },
+    "challenge_strip_xxxx_wlan_16": {
+      "tipo": "stripe",
+      "nome": "Campeão da Temporada X",
+      "descrição": "Vença a Warface Open Cup Temporada X.",
+      "quantidade": "1",
+      "arquivo_xml": "ru_wlan_stripe_16.xml"
+    },
     "challenge_strip_xxxx_wlan_17": {
       "tipo": "stripe",
       "nome": "Campeão da Temporada IX",
@@ -27360,12 +28375,40 @@
       "quantidade": "1",
       "arquivo_xml": "ru_wlan_stripe_17.xml"
     },
+    "challenge_strip_xmas20_01": {
+      "tipo": "stripe",
+      "nome": "Ano do Boi",
+      "descrição": "Feliz Natal e próspero Ano Novo!",
+      "quantidade": "1",
+      "arquivo_xml": "ru_xmas20_stripe_01.xml"
+    },
+    "challenge_strip_rw_01": {
+      "tipo": "stripe",
+      "nome": "Geladinho, o Pistoleiro",
+      "descrição": "Complete a operação especial 'Bastião de Neve' como assaltante. A conquista só pode ser obtida na missão 'Maratona'.",
+      "quantidade": "1",
+      "arquivo_xml": "rw_compmarathon1.xml"
+    },
+    "challenge_strip_rw_02": {
+      "tipo": "stripe",
+      "nome": "Anjo de Neve",
+      "descrição": "Complete a operação especial 'Bastião de Neve' como médico. A conquista só pode ser obtida na missão 'Maratona'.",
+      "quantidade": "1",
+      "arquivo_xml": "rw_compmarathon2.xml"
+    },
     "challenge_strip_rw_03": {
       "tipo": "stripe",
       "nome": "Você Quer Brincar na Neve?",
       "descrição": "Complete a operação especial 'Bastião de Neve' como engenheiro. A conquista só pode ser obtida na missão 'Maratona'.",
       "quantidade": "1",
       "arquivo_xml": "rw_compmarathon3.xml"
+    },
+    "challenge_strip_rw_04": {
+      "tipo": "stripe",
+      "nome": "Fogo e Gelo",
+      "descrição": "Complete a operação especial 'Bastião de Neve' como atirador de elite. A conquista só pode ser obtida na missão 'Maratona'.",
+      "quantidade": "1",
+      "arquivo_xml": "rw_compmarathon4.xml"
     },
     "challenge_strip_rw_12": {
       "tipo": "stripe",
@@ -27394,6 +28437,20 @@
       "descrição": "Nas terras da neve eterna, somente um amigo verdadeiro abrirá seu caminho.",
       "quantidade": "1",
       "arquivo_xml": "saturn2312_stripe.xml"
+    },
+    "challenge_strip_nb_75": {
+      "tipo": "stripe",
+      "nome": "Bandeira da Escócia",
+      "descrição": "Bandeira da Escócia.",
+      "quantidade": "1",
+      "arquivo_xml": "scotland_flag_01.xml"
+    },
+    "challenge_stripe_secret_00001": {
+      "tipo": "stripe",
+      "nome": "Martela o Martelão",
+      "descrição": "Algumas pessoas carinhosas podem mudar o mundo.",
+      "quantidade": "1",
+      "arquivo_xml": "secret_00001_stripe.xml"
     },
     "challenge_strip_secret_01": {
       "tipo": "stripe",
@@ -27451,6 +28508,13 @@
       "quantidade": "1",
       "arquivo_xml": "sell_stripe_07.xml"
     },
+    "challenge_stripe_sell_08": {
+      "tipo": "stripe",
+      "nome": "Risco de Disparos",
+      "descrição": "Vai explodir!",
+      "quantidade": "1",
+      "arquivo_xml": "sell_stripe_08.xml"
+    },
     "challenge_stripe_sell_09": {
       "tipo": "stripe",
       "nome": "O Imperador",
@@ -27493,6 +28557,13 @@
       "quantidade": "1",
       "arquivo_xml": "sell_stripe_14.xml"
     },
+    "challenge_stripe_sell_15": {
+      "tipo": "stripe",
+      "nome": "Toc-toc",
+      "descrição": "Tem alguém vivo?",
+      "quantidade": "1",
+      "arquivo_xml": "sell_stripe_15.xml"
+    },
     "challenge_stripe_sell_16": {
       "tipo": "stripe",
       "nome": "Por hoje chega",
@@ -27520,6 +28591,13 @@
       "descrição": "Conquista especial para jogadores ultraenergéticos.",
       "quantidade": "1",
       "arquivo_xml": "sg42_stripe_01.xml"
+    },
+    "challenge_strip_shg00001": {
+      "tipo": "stripe",
+      "nome": "Diabo com uma Espingarda",
+      "descrição": "Elimine 5.000 inimigos com a Buckled Lupara.",
+      "quantidade": "5000",
+      "arquivo_xml": "shg00001_kill.xml"
     },
     "challenge_strip_shg00002": {
       "tipo": "stripe",
@@ -27562,6 +28640,20 @@
       "descrição": "Elimine 1.500 inimigos com uma SPAS-12 Especial Bang!",
       "quantidade": "1500",
       "arquivo_xml": "shg00005_sales05_kill.xml"
+    },
+    "challenge_strip_shg01_shadow01": {
+      "tipo": "stripe",
+      "nome": "Remington Model 870 Custom Hidden War",
+      "descrição": "Elimine 1.500 inimigos com uma Remington Model 870 Custom Hidden War.",
+      "quantidade": "1500",
+      "arquivo_xml": "shg01_rope01_console_kill.xml"
+    },
+    "challenge_strip_zsd03_01": {
+      "tipo": "stripe",
+      "nome": "Vepr Anticiborgue",
+      "descrição": "Elimine 2.500 inimigos com a Vepr Anticiborgue.",
+      "quantidade": "2500",
+      "arquivo_xml": "shg04_zsd03kill15.xml"
     },
     "challenge_stripe_shg05_25bp03pinup": {
       "tipo": "stripe",
@@ -27625,6 +28717,13 @@
       "descrição": "Elimine 2.500 inimigos com a Saiga Bullpup Deimos.",
       "quantidade": "2500",
       "arquivo_xml": "shg07_mars02kill.xml"
+    },
+    "challenge_strip_viet01_02": {
+      "tipo": "stripe",
+      "nome": "Saiga Bullpup Lake Bird",
+      "descrição": "Matar 2.500 inimigos com uma Saiga Bullpup Lake Bird.",
+      "quantidade": "2500",
+      "arquivo_xml": "shg07_viet01kill.xml"
     },
     "challenge_strip_zsd01_02": {
       "tipo": "stripe",
@@ -27703,6 +28802,13 @@
       "quantidade": "2500",
       "arquivo_xml": "shg32_lava01kill15.xml"
     },
+    "challenge_strip_bp09_05": {
+      "tipo": "stripe",
+      "nome": "Remington 870 R.A.S. Particle",
+      "descrição": "Elimine 2.500 inimigos com a Remington 870 R.A.S. \"Particle\".",
+      "quantidade": "2500",
+      "arquivo_xml": "shg33_bp09kill.xml"
+    },
     "challenge_strip_bp09_06": {
       "tipo": "stripe",
       "nome": "Fabarm S.A.T. 8 Pro Particle",
@@ -27716,6 +28822,13 @@
       "descrição": "Elimine 999 inimigos com uma Fabarm S.A.T. 8 Pro dourada.",
       "quantidade": "999",
       "arquivo_xml": "shg35_gold_kill_01.xml"
+    },
+    "challenge_strip_set05_07": {
+      "tipo": "stripe",
+      "nome": "S.A.T. 8 Pro Flor de Muerto",
+      "descrição": "Elimine 2.500 inimigos com a S.A.T. 8 Pro Flor de Muerto.",
+      "quantidade": "2500",
+      "arquivo_xml": "shg35_set05_cartelkill.xml"
     },
     "challenge_strip_cny01_03": {
       "tipo": "stripe",
@@ -27828,6 +28941,13 @@
       "descrição": "Elimine 2.500 inimigos com a MAG-7 Special.",
       "quantidade": "5000",
       "arquivo_xml": "shg40_rift01_console_kill.xml"
+    },
+    "challenge_strip_shg40_rift01_meteorgold02": {
+      "tipo": "stripe",
+      "nome": "MAG-7 Especial Pyrite",
+      "descrição": "Elimine 1.500 inimigos com uma MAG-7 Especial Pyrite.",
+      "quantidade": "1500",
+      "arquivo_xml": "shg40_rift01_meteorgold02kill.xml"
     },
     "challenge_strip_swarm03_13": {
       "tipo": "stripe",
@@ -28172,12 +29292,33 @@
       "quantidade": "2500",
       "arquivo_xml": "shg50_friday01kill.xml"
     },
+    "challenge_strip_169": {
+      "tipo": "stripe",
+      "nome": "Atlântida",
+      "descrição": "Elimine 999 inimigos com o Marlin 1894 Custom dourado.",
+      "quantidade": "999",
+      "arquivo_xml": "shg50_gold_kill_01.xml"
+    },
+    "challenge_strip_heist03_06": {
+      "tipo": "stripe",
+      "nome": "Marlin 1894 Custom Heat",
+      "descrição": "Elimine 2.500 inimigos com um Marlin 1894 Custom Heat.",
+      "quantidade": "2500",
+      "arquivo_xml": "shg50_heist03kill.xml"
+    },
     "challenge_strip_samurai02_11": {
       "tipo": "stripe",
       "nome": "Marlin 1894 Custom Flor de Cerejeira",
       "descrição": "Elimine 2.500 inimigos com um Marlin 1894 Custom Flor de Cerejeira.",
       "quantidade": "2500",
       "arquivo_xml": "shg50_samurai02kill.xml"
+    },
+    "challenge_strip_swarm02_12": {
+      "tipo": "stripe",
+      "nome": "Marlin 1894 Custom Chitin",
+      "descrição": "Elimine 2.500 inimigos com um Marlin 1894 Custom Chitin.",
+      "quantidade": "2500",
+      "arquivo_xml": "shg50_swarm02kill.xml"
     },
     "challenge_strip_shg50_shadow01": {
       "tipo": "stripe",
@@ -28199,6 +29340,13 @@
       "descrição": "Elimine 1.500 inimigos usando a Typhoon F12 Sobrevivente.",
       "quantidade": "1500",
       "arquivo_xml": "shg51_biomech2303_02_kill.xml"
+    },
+    "challenge_strip_black02_04": {
+      "tipo": "stripe",
+      "nome": "Typhoon F12 \"Morion\"",
+      "descrição": "Elimine 2.500 inimigos com a Typhoon F12 \"Morion\".",
+      "quantidade": "2500",
+      "arquivo_xml": "shg51_black02kill.xml"
     },
     "challenge_strip_black03_12": {
       "tipo": "stripe",
@@ -28234,6 +29382,13 @@
       "descrição": "Elimine 999 inimigos com a Typhoon F12 dourada.",
       "quantidade": "999",
       "arquivo_xml": "shg51_gold_kill_01.xml"
+    },
+    "challenge_stripe_shg51_oko00001": {
+      "tipo": "stripe",
+      "nome": "Typhoon F12 Pharaoh",
+      "descrição": "Elimine 5.000 inimigos com a Typhoon F12 Pharaoh.",
+      "quantidade": "5000",
+      "arquivo_xml": "shg51_oko00001kill.xml"
     },
     "challenge_stripe_shg51_winter2301": {
       "tipo": "stripe",
@@ -28277,6 +29432,13 @@
       "quantidade": "2500",
       "arquivo_xml": "shg52_gorgona01kill.xml"
     },
+    "challenge_strip_xmas06_07": {
+      "tipo": "stripe",
+      "nome": "Typhoon F12 Custom Glacier",
+      "descrição": "Elimine 2.500 inimigos com uma Typhoon F12 Custom Glacier.",
+      "quantidade": "2500",
+      "arquivo_xml": "shg53_xmas06kill.xml"
+    },
     "challenge_stripe_shg54_autumn2209_02": {
       "tipo": "stripe",
       "nome": "Kel-Tec KS7 Quantum",
@@ -28312,6 +29474,13 @@
       "quantidade": "999",
       "arquivo_xml": "shg54_gold_kill_01.xml"
     },
+    "challenge_strip_gorgona01_05": {
+      "tipo": "stripe",
+      "nome": "Kel-Tec KS7 Gorgon Medusa",
+      "descrição": "Elimine 2.500 inimigos com a Kel-Tec KS7 \"Gorgon\" ou \"Medusa\".",
+      "quantidade": "2500",
+      "arquivo_xml": "shg54_gorgona01kill.xml"
+    },
     "challenge_strip_samurai01_09": {
       "tipo": "stripe",
       "nome": "Kel-Tec KS7 Dragão Dourado",
@@ -28325,6 +29494,20 @@
       "descrição": "Elimine 2.500 inimigos com um Kel-Tec KS7 Chitin.",
       "quantidade": "2500",
       "arquivo_xml": "shg54_swarm02kill.xml"
+    },
+    "challenge_strip_shg54_shadow01": {
+      "tipo": "stripe",
+      "nome": "Kel-Tec KS7 Hidden War",
+      "descrição": "Elimine 1.500 inimigos com uma Kel-Tec KS7 Hidden War.",
+      "quantidade": "1500",
+      "arquivo_xml": "shg54_tape01_console_kill.xml"
+    },
+    "challenge_strip_weapon10_shg55": {
+      "tipo": "stripe",
+      "nome": "Triple Threat",
+      "descrição": "Elimine 5.000 inimigos com uma Chiappa Triple Threat ou sua versão dourada.",
+      "quantidade": "5000",
+      "arquivo_xml": "shg55kill.xml"
     },
     "challenge_strip_weapon25_shg55": {
       "tipo": "stripe",
@@ -28403,12 +29586,26 @@
       "quantidade": "10000",
       "arquivo_xml": "shg56kill25.xml"
     },
+    "challenge_strip_shg56_gold01": {
+      "tipo": "stripe",
+      "nome": "Sem sofrimento, sem resultados",
+      "descrição": "Elimine 999 inimigos com uma Benelli M4 Custom dourada.",
+      "quantidade": "999",
+      "arquivo_xml": "shg56_gold_kill_01.xml"
+    },
     "challenge_strip_shg56_green01": {
       "tipo": "stripe",
       "nome": "Benelli M4 Custom Viridian",
       "descrição": "Elimine 1.500 inimigos com uma Benelli M4 Custom Viridian.",
       "quantidade": "1500",
       "arquivo_xml": "shg56_green01_kill.xml"
+    },
+    "challenge_strip_heist03_04": {
+      "tipo": "stripe",
+      "nome": "Benelli M4 Custom Heat",
+      "descrição": "Elimine 2.500 inimigos com uma Benelli M4 Custom Heat.",
+      "quantidade": "2500",
+      "arquivo_xml": "shg56_heist03kill.xml"
     },
     "challenge_strip_shg56_realwars01": {
       "tipo": "stripe",
@@ -28578,12 +29775,26 @@
       "quantidade": "999",
       "arquivo_xml": "shg59_gold_kill_01.xml"
     },
+    "challenge_strip_shg59": {
+      "tipo": "stripe",
+      "nome": "Kalashnikov MP-155 Ultima",
+      "descrição": "Elimine 2.500 inimigos com uma Kalashnikov MP-155 Ultima.",
+      "quantidade": "2500",
+      "arquivo_xml": "shg59_kill.xml"
+    },
     "challenge_stripe_shg59_snowstorm01": {
       "tipo": "stripe",
       "nome": "Kalashnikov MP-155 Ultima Snowstorm",
       "descrição": "Elimine 1.500 inimigos com uma Kalashnikov MP-155 Ultima Snowstorm.",
       "quantidade": "1500",
       "arquivo_xml": "shg59_snowstorm01_kill.xml"
+    },
+    "challenge_strip_shg60": {
+      "tipo": "stripe",
+      "nome": "Cobray Striker Especial Apostate",
+      "descrição": "Elimine 1.500 inimigos com a Cobray Striker Especial Apostate.",
+      "quantidade": "1500",
+      "arquivo_xml": "shg60_realwars01_kill.xml"
     },
     "challenge_stripe_shg60_sales04": {
       "tipo": "stripe",
@@ -29208,6 +30419,13 @@
       "quantidade": "2500",
       "arquivo_xml": "smg03_samurai02kill.xml"
     },
+    "challenge_strip_xmas_05": {
+      "tipo": "stripe",
+      "nome": "Kriss Super V de Natal",
+      "descrição": "Elimine 2.000 inimigos com uma Kriss Super V de Natal.",
+      "quantidade": "2000",
+      "arquivo_xml": "smg03_xmaskill.xml"
+    },
     "challenge_strip_smg04_shadow01": {
       "tipo": "stripe",
       "nome": "H&K MP5 Custom Hidden War",
@@ -29277,6 +30495,13 @@
       "descrição": "Elimine 1.500 inimigos com uma Tavor CTAR-21 Cidadela.",
       "quantidade": "1500",
       "arquivo_xml": "smg10_anniversary23_kill.xml"
+    },
+    "challenge_strip_112": {
+      "tipo": "stripe",
+      "nome": "Fúria de Bordas Douradas",
+      "descrição": "Elimine 999 inimigos com uma Tavor CTAR-21 dourada.",
+      "quantidade": "999",
+      "arquivo_xml": "smg10_gold_kill_01.xml"
     },
     "challenge_strip_viet01_01": {
       "tipo": "stripe",
@@ -29397,6 +30622,13 @@
       "quantidade": "999",
       "arquivo_xml": "smg31_gold_kill_01.xml"
     },
+    "challenge_strip_lava11": {
+      "tipo": "stripe",
+      "nome": "SCAR-L PDW Terremoto",
+      "descrição": "Elimine 2.500 inimigos com a SCAR-L PDW Terremoto.",
+      "quantidade": "2500",
+      "arquivo_xml": "smg31_lava01kill15.xml"
+    },
     "challenge_stripe_smg32_autumn2209_01": {
       "tipo": "stripe",
       "nome": "SR-2 Veresk Neutron",
@@ -29446,6 +30678,13 @@
       "quantidade": "2500",
       "arquivo_xml": "smg33_mars02kill.xml"
     },
+    "challenge_strip_rad01_05": {
+      "tipo": "stripe",
+      "nome": "Honey Badger \"Nuclear\"",
+      "descrição": "",
+      "quantidade": "2500",
+      "arquivo_xml": "smg33_rad01kill15.xml"
+    },
     "challenge_strip_bp06_06": {
       "tipo": "stripe",
       "nome": "PP2000 Fobos",
@@ -29453,12 +30692,33 @@
       "quantidade": "2500",
       "arquivo_xml": "smg35_bp06kill.xml"
     },
+    "challenge_strip_xmas03_03": {
+      "tipo": "stripe",
+      "nome": "PP2000 \"Radiance\"",
+      "descrição": "Elimine 2.500 inimigos com a PP2000 \"Radiance\".",
+      "quantidade": "2500",
+      "arquivo_xml": "smg35_xmas03kill.xml"
+    },
+    "challenge_strip_bp09_07": {
+      "tipo": "stripe",
+      "nome": "Magpul FMG-9 Particle",
+      "descrição": "Elimine 2.500 inimigos com a Magpul FMG-9 \"Particle\".",
+      "quantidade": "2500",
+      "arquivo_xml": "smg36_bp09kill.xml"
+    },
     "challenge_strip_138": {
       "tipo": "stripe",
       "nome": "Angulosidade Dourada",
       "descrição": "Elimine 999 inimigos com uma Magpul FMG 9 dourada.",
       "quantidade": "999",
       "arquivo_xml": "smg36_gold_kill_01.xml"
+    },
+    "challenge_strip_bp09_09": {
+      "tipo": "stripe",
+      "nome": "PM-84 Glauberyt Custom Particle",
+      "descrição": "Elimine 2.500 inimigos com a PM-84 Glauberyt Custom \"Particle\".",
+      "quantidade": "2500",
+      "arquivo_xml": "smg37_bp09kill.xml"
     },
     "challenge_stripe_smg38_25spring03": {
       "tipo": "stripe",
@@ -29509,6 +30769,13 @@
       "quantidade": "2500",
       "arquivo_xml": "smg38_rad01kill15.xml"
     },
+    "challenge_strip_samurai02_05": {
+      "tipo": "stripe",
+      "nome": "CZ Scorpion EVO 3 A1 Flor de Cerejeira",
+      "descrição": "Elimine 2.500 inimigos com uma CZ Scorpion EVO 3 A1 Flor de Cerejeira.",
+      "quantidade": "2500",
+      "arquivo_xml": "smg38_samurai02kill.xml"
+    },
     "challenge_strip_set05_09": {
       "tipo": "stripe",
       "nome": "CZ Scorpion EVO Flor de Muerto",
@@ -29529,6 +30796,13 @@
       "descrição": "Elimine 2.500 inimigos com a MP5A5 Custom Galáxia.",
       "quantidade": "2500",
       "arquivo_xml": "smg39_mars01kill.xml"
+    },
+    "challenge_strip_mrgtrn_02": {
+      "tipo": "stripe",
+      "nome": "H&K MP5A5 Custom Light Cycle",
+      "descrição": "Elimine 2.500 inimigos com uma H&K MP5A5 Custom Light Cycle",
+      "quantidade": "2500",
+      "arquivo_xml": "smg39_mrgtrnkill.xml"
     },
     "challenge_strip_ps4_10": {
       "tipo": "stripe",

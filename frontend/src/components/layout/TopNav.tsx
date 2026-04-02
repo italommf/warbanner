@@ -56,8 +56,19 @@ interface UserWidgetProps {
 }
 
 function UserWidget({ inline, onCloseSidebar }: UserWidgetProps) {
-  const user = useAuthStore((s) => s.user)
-  const logout = useAuthStore((s) => s.logout)
+  const { user, logout } = useAuthStore()
+  const { hideEmpty, setHideEmpty, showOnlyEmpty, setShowOnlyEmpty } = useBannerStore()
+
+  const handleToggleAll = (checked: boolean) => {
+    setHideEmpty(!checked)
+    if (checked) setShowOnlyEmpty(false)
+  }
+
+  const handleToggleOnlyEmpty = (checked: boolean) => {
+    setShowOnlyEmpty(checked)
+    if (checked) setHideEmpty(true)
+  }
+
   const navigate = useNavigate()
   const qc = useQueryClient()
   const [open, setOpen] = useState(false)
@@ -158,13 +169,32 @@ function UserWidget({ inline, onCloseSidebar }: UserWidgetProps) {
             transition={{ duration: 0.15 }}
           >
             {user.is_staff && (
-              <button
-                className={styles.dropItem}
-                onClick={() => { navigate('/admin/dashboard'); setOpen(false) }}
-                style={{ color: 'var(--primary)' }}
-              >
-                PAINEL ADMIN
-              </button>
+              <>
+                <label className={styles.hideEmptyOption}>
+                  <input
+                    type="checkbox"
+                    checked={!hideEmpty && !showOnlyEmpty}
+                    onChange={(e) => handleToggleAll(e.target.checked)}
+                  />
+                  <span className={styles.optionLabel}>Todos os desafios</span>
+                </label>
+                <label className={styles.hideEmptyOption}>
+                  <input
+                    type="checkbox"
+                    checked={showOnlyEmpty}
+                    onChange={(e) => handleToggleOnlyEmpty(e.target.checked)}
+                  />
+                  <span className={styles.optionLabel}>Apenas sem nome/desc</span>
+                </label>
+                <div style={{ height: '1px', background: 'var(--border2)', opacity: 0.5, margin: '2px 0' }} />
+                <button
+                  className={styles.dropItem}
+                  onClick={() => { navigate('/admin/dashboard'); setOpen(false) }}
+                  style={{ color: 'var(--primary)' }}
+                >
+                  PAINEL ADMIN
+                </button>
+              </>
             )}
             <button className={styles.dropItem} onClick={() => { setModalOpen(true); setOpen(false) }}>
               EDITAR PERFIL
@@ -839,10 +869,10 @@ function ProfileModal({ onClose }: { onClose: () => void }) {
               <label className={styles.hideEmptyOption} style={{ padding: '8px 0' }}>
                 <input
                   type="checkbox"
-                  checked={hideEmpty}
-                  onChange={(e) => setHideEmpty(e.target.checked)}
+                  checked={!hideEmpty}
+                  onChange={(e) => setHideEmpty(!e.target.checked)}
                 />
-                <span className={styles.optionLabel}>Ocultar desafios sem nome / descrição</span>
+                <span className={styles.optionLabel}>Desafios sem nome/desc</span>
               </label>
             </div>
           </form>

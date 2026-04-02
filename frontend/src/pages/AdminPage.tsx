@@ -1,7 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { applyFilters } from '@/utils/challenges'
-import type { MainFilter, ArmasFilter } from '@/store/bannerStore'
+import { useBannerStore, type MainFilter, type ArmasFilter } from '@/store/bannerStore'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useQueryClient } from '@tanstack/react-query'
 import { useAdminUsers, useAdminUserDetail, useAdminUserImages, useUpdateAdminUser, useAdminGlobalStats, useAdminChartData, usePatentes, useAdminQueue, useReprocessImage, useAdminUserHistory, useAdminMigrations, useItems, useTickets, useTicketDetail, useReplyTicket, useUpdateTicketStatus, authFetch, type TicketStatus, type Item } from '@/api/hooks'
@@ -411,11 +411,15 @@ function getFilterLabel(main: MainFilter, armas: ArmasFilter): string {
     return 'Todos os desafios'
 }
 
-function AdminFilterBar({ mainFilter, armasFilter, setMainFilter, setArmasFilter }: {
+function AdminFilterBar({ mainFilter, armasFilter, setMainFilter, setArmasFilter, showWithoutDescription, setShowWithoutDescription, showOnlyEmpty, setShowOnlyEmpty }: {
     mainFilter: MainFilter,
     armasFilter: ArmasFilter,
     setMainFilter: (v: MainFilter) => void,
-    setArmasFilter: (v: ArmasFilter) => void
+    setArmasFilter: (v: ArmasFilter) => void,
+    showWithoutDescription: boolean,
+    setShowWithoutDescription: (v: boolean) => void,
+    showOnlyEmpty: boolean,
+    setShowOnlyEmpty: (v: boolean) => void
 }) {
     const [open, setOpen] = useState(false)
     const ref = useRef<HTMLDivElement>(null)
@@ -498,6 +502,35 @@ function AdminFilterBar({ mainFilter, armasFilter, setMainFilter, setArmasFilter
                                 </div>
                             </>
                         )}
+
+                        <div className={styles.filterDivider} />
+                        <div className={styles.filterSection}>
+                            <span className={styles.filterSectionLabel}>Opções</span>
+                            <label className={styles.filterOptionLabel}>
+                                <input
+                                    type="checkbox"
+                                    checked={showWithoutDescription && !showOnlyEmpty}
+                                    onChange={(e) => {
+                                        setShowWithoutDescription(e.target.checked)
+                                        if (e.target.checked) setShowOnlyEmpty(false)
+                                    }}
+                                    className={styles.adminCheckbox}
+                                />
+                                <span>Todos os desafios</span>
+                            </label>
+                            <label className={styles.filterOptionLabel} style={{ marginTop: '8px' }}>
+                                <input
+                                    type="checkbox"
+                                    checked={showOnlyEmpty}
+                                    onChange={(e) => {
+                                        setShowOnlyEmpty(e.target.checked)
+                                        if (e.target.checked) setShowWithoutDescription(false)
+                                    }}
+                                    className={styles.adminCheckbox}
+                                />
+                                <span>Apenas sem nome/desc</span>
+                            </label>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -516,7 +549,7 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activ
     const [saved, setSaved] = useState(false)
     const [modalData, setModalData] = useState<any>(null)
     const [challengeSearch, setChallengeSearch] = useState('')
-    const [hideEmptyInTab, setHideEmptyInTab] = useState(false)
+    const { hideEmpty, setHideEmpty, showOnlyEmpty, setShowOnlyEmpty } = useBannerStore()
     const [mainFilter, setMainFilter] = useState<MainFilter>('todos')
     const [armasFilter, setArmasFilter] = useState<ArmasFilter>('todos')
 
@@ -856,19 +889,13 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activ
                                 armasFilter={armasFilter} 
                                 setMainFilter={setMainFilter} 
                                 setArmasFilter={setArmasFilter} 
+                                showWithoutDescription={!hideEmpty}
+                                setShowWithoutDescription={(v) => setHideEmpty(!v)}
+                                showOnlyEmpty={showOnlyEmpty}
+                                setShowOnlyEmpty={setShowOnlyEmpty}
                             />
 
 
-                            
-                            <label className={styles.adminCheckboxLabel}>
-                                <input
-                                    className={styles.adminCheckbox}
-                                    type="checkbox"
-                                    checked={hideEmptyInTab}
-                                    onChange={e => setHideEmptyInTab(e.target.checked)}
-                                />
-                                <span>Ocultar sem descrição</span>
-                            </label>
                         </div>
 
                         <div className={styles.challengeGridsContainer}>
@@ -878,7 +905,8 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activ
                                 items={formData.my_marcas ?? []} 
                                 onChange={v => handleChange('my_marcas', v)}
                                 filterText={challengeSearch}
-                                filterHideEmpty={hideEmptyInTab}
+                                filterHideEmpty={hideEmpty}
+                                filterOnlyEmpty={showOnlyEmpty}
                                 mainFilter={mainFilter}
                                 armasFilter={armasFilter}
                             />
@@ -888,7 +916,8 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activ
                                 items={formData.my_insignias ?? []} 
                                 onChange={v => handleChange('my_insignias', v)}
                                 filterText={challengeSearch}
-                                filterHideEmpty={hideEmptyInTab}
+                                filterHideEmpty={hideEmpty}
+                                filterOnlyEmpty={showOnlyEmpty}
                                 mainFilter={mainFilter}
                                 armasFilter={armasFilter}
                             />
@@ -898,7 +927,8 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activ
                                 items={formData.my_fitas ?? []} 
                                 onChange={v => handleChange('my_fitas', v)}
                                 filterText={challengeSearch}
-                                filterHideEmpty={hideEmptyInTab}
+                                filterHideEmpty={hideEmpty}
+                                filterOnlyEmpty={showOnlyEmpty}
                                 mainFilter={mainFilter}
                                 armasFilter={armasFilter}
                             />
@@ -1768,6 +1798,7 @@ function ChallengeCategoryEditor({
     onChange, 
     filterText = '', 
     filterHideEmpty = false,
+    filterOnlyEmpty = false,
     mainFilter = 'todos',
     armasFilter = 'todos'
 }: { 
@@ -1777,6 +1808,7 @@ function ChallengeCategoryEditor({
     onChange: (v: string[]) => void, 
     filterText?: string, 
     filterHideEmpty?: boolean,
+    filterOnlyEmpty?: boolean,
     mainFilter?: MainFilter,
     armasFilter?: ArmasFilter
 }) {
@@ -1825,9 +1857,10 @@ function ChallengeCategoryEditor({
             armasFilter,
             'todos',
             filterText,
-            filterHideEmpty
+            filterHideEmpty,
+            filterOnlyEmpty
         )
-    }, [items, allItems, category, mainFilter, armasFilter, filterText, filterHideEmpty])
+    }, [items, allItems, category, mainFilter, armasFilter, filterText, filterHideEmpty, filterOnlyEmpty])
 
     const isFita = category === 'fitas'
 

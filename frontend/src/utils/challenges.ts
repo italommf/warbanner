@@ -9,13 +9,21 @@ export function applyFilters(
   colorFilter: ColorFilter,
   searchTerm: string,
   hideEmpty: boolean,
+  showOnlyEmpty: boolean,
 ): Item[] {
   let result = items
 
+  // 0. Mostrar apenas vazios
+  if (showOnlyEmpty) {
+    return result.filter((i) => !i.description || i.description.trim() === '')
+  }
+
+  let resultAfterEmpty = result
   // 1. Ocultar sem descrição (se ativo)
   if (hideEmpty) {
-    result = result.filter((i) => i.description && i.description.trim() !== '')
+    resultAfterEmpty = resultAfterEmpty.filter((i) => i.description && i.description.trim() !== '')
   }
+  result = resultAfterEmpty
 
   // 2. Pesquisa de termo (Nome ou Descrição)
   if (searchTerm.trim() !== '') {
