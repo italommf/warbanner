@@ -526,11 +526,12 @@ def discord_callback(request):
 @permission_classes([IsAuthenticated])
 def ticket_list_create(request):
     if request.method == 'GET':
-        # Usuário comum vê só os seus. Staff vê todos.
-        if request.user.is_staff:
-            tickets = SupportTicket.objects.all()
-        else:
+        view = request.query_params.get('view', '')
+        # ?view=mine força filtro pelo próprio usuário (usado na página "Meus Chamados")
+        if view == 'mine' or not request.user.is_staff:
             tickets = SupportTicket.objects.filter(user=request.user)
+        else:
+            tickets = SupportTicket.objects.all()
         
         data = []
         for t in tickets:

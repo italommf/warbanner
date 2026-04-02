@@ -641,6 +641,17 @@ export function useTickets() {
   })
 }
 
+export function useMyTickets() {
+  const token = useAuthStore((s) => s.accessToken)
+  const userId = useAuthStore((s) => s.user?.id)
+  return useQuery<SupportTicket[]>({
+    queryKey: ['my-tickets', userId],
+    queryFn: () => authFetch('/api/support/tickets/?view=mine').then((r) => r.json()),
+    enabled: !!token,
+    staleTime: 30_000,
+  })
+}
+
 export function useTicketDetail(id: number | null) {
   return useQuery<SupportTicket>({
     queryKey: ['ticket', id],

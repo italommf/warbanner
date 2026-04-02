@@ -5,7 +5,7 @@ import { Navigate, useParams, useNavigate } from 'react-router'
 import { useAuthStore } from '@/store/authStore'
 import { useBannerStore } from '@/store/bannerStore'
 import { VIDEO_EXT } from '@/App'
-import { useMarcas, useInsignias, useFitas, usePatentes, useItemsLoading, useUploadImages, useUserStats, useTickets, useCreateTicket, useReplyTicket, useTicketDetail, useRequestWarchaosMigration, useUpdateFavorites } from '@/api/hooks'
+import { useMarcas, useInsignias, useFitas, usePatentes, useItemsLoading, useUploadImages, useUserStats, useMyTickets, useCreateTicket, useReplyTicket, useTicketDetail, useRequestWarchaosMigration, useUpdateFavorites } from '@/api/hooks'
 import type { Item } from '@/api/hooks'
 import { ListModal } from '@/components/lists/ListModal'
 import { ListColumn } from '@/components/lists/ListColumn'
@@ -1088,7 +1088,7 @@ function TicketCard({ ticket, active, onClick }: { ticket: any, active: boolean,
 }
 
 function MyTicketsTab() {
-  const { data: tickets = [], isLoading } = useTickets()
+  const { data: tickets = [], isLoading } = useMyTickets()
   const { mutate: createTicket, isPending: creating } = useCreateTicket()
   const [isOpeningModal, setIsOpeningModal] = useState(false)
   const [selectedTicketId, setSelectedId] = useState<number | null>(null)
