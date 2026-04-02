@@ -734,68 +734,72 @@ function FavoriteAchievements({ userStats }: { userStats: any }) {
   const [initialized, setInitialized] = useState(false)
   const [pickerOpen, setPickerOpen] = useState<number | null>(null)
 
-  // Sincroniza inicial do Banco ou LocalStorage
+  // Memoizamos os nomes dos favoritos atuais nos nossos slots (filenames)
+  const currentSlotNames = useMemo(() => slots.map(s => s.item?.filename || null), [slots])
+
+  // Hook 1: Sincroniza inicial do Banco ou LocalStorage
   useEffect(() => {
-    if (initialized || !user || !marcas.length) return
+    // Só prosseguimos se as listas de metadados estiverem carregadas
+    if (!marcas.length || !user) return
 
-    let filenames: (string | null)[] = []
+    // Se já estamos inicializados, mas o usuário atualizou no banco (ex: App.tsx fetch)
+    // Precisamos decidir se atualizamos nossos slots locais.
+    // Condição de atualização: Se nossos slots estão vazios e o banco tem dados, nós puxamos.
+    const isLocalEmpty = currentSlotNames.every(name => name === null)
+    const hasBankData = user.favorite_challenges && user.favorite_challenges.length > 0
+    const bankMatchesLocal = JSON.stringify(user.favorite_challenges) === JSON.stringify(currentSlotNames)
 
-    // 1. Tenta Banco
-    if (user.favorite_challenges && user.favorite_challenges.length > 0) {
-      filenames = user.favorite_challenges
-    } else {
-      // 2. Tenta LocalStorage (Migração)
-      filenames = loadSlotsMigration(userId)
-    }
+    // Caso A: Ainda não inicializado -> Puxamos o que tiver (Banco > Local)
+    if (!initialized) {
+      let filenames: (string | null)[] = []
+      if (hasBankData) {
+        filenames = user.favorite_challenges
+      } else {
+        filenames = loadSlotsMigration(userId)
+      }
 
-    if (filenames.length > 0) {
+      if (filenames.length > 0) {
+        const allItems = [...marcas, ...insignias, ...fitas]
+        const base = buildSlots()
+        setSlots(base.map((slot, i) => {
+          const fname = filenames[i]
+          if (!fname) return slot
+          const found = allItems.find(it => it.filename === fname)
+          return { ...slot, item: found || null }
+        }))
+      }
+      setInitialized(true)
+    } 
+    // Caso B: Já inicializado, mas o banco mudou e local está vazio (pode ser o App.tsx terminando de carregar)
+    else if (hasBankData && isLocalEmpty && !bankMatchesLocal) {
       const allItems = [...marcas, ...insignias, ...fitas]
       const base = buildSlots()
       setSlots(base.map((slot, i) => {
-        const fname = filenames[i]
+        const fname = user.favorite_challenges[i]
         if (!fname) return slot
         const found = allItems.find(it => it.filename === fname)
         return { ...slot, item: found || null }
       }))
     }
-    setInitialized(true)
-  }, [user, marcas, insignias, fitas, initialized, userId])
+  }, [user?.favorite_challenges, marcas.length, insignias.length, fitas.length, initialized, userId, currentSlotNames])
 
-  // Limpa favoritos se o usuário perder o desafio detectado no OCR (mantido do original)
-  useEffect(() => {
-    if (!userStats?.stats || !initialized) return;
-
-    setSlots((prev) => {
-      let changed = false;
-      const newSlots = prev.map((slot) => {
-        if (!slot.item) return slot;
-        const category = ACH_CATEGORY[slot.type];
-        const owned = userStats.stats[`my_${category}`] || [];
-        if (!owned.includes(slot.item.filename)) {
-          changed = true;
-          return { ...slot, item: null };
-        }
-        return slot;
-      });
-      return changed ? newSlots : prev;
-    });
-  }, [userStats, initialized]);
-
-  // Salva no Banco de Dados sempre que mudar
+  // Hook 2: Salva no Banco de Dados somente quando houver mudança REAL feita pelo usuário
   useEffect(() => {
     if (!initialized || !userId) return
 
     const timer = setTimeout(() => {
-      const filenames = slots.map(s => s.item?.filename || null)
+      // Só enviamos se houver diferença real entre o que temos e o que está no objeto user atual.
+      // E NÃO enviamos se estivermos limpando tudo logo após uma carga falha do banco (proteção extra).
+      const isDifferent = JSON.stringify(currentSlotNames) !== JSON.stringify(user?.favorite_challenges)
       
-      // Só envia se for diferente do que já está no user pra evitar loops
-      if (JSON.stringify(filenames) !== JSON.stringify(user?.favorite_challenges)) {
-        updateFavs(filenames)
+      if (isDifferent) {
+        // Se mudou, salvamos no banco
+        updateFavs(currentSlotNames)
       }
-    }, 1000) // Debounce sutil
+    }, 1500) // Debounce um pouco maior para segurança
 
     return () => clearTimeout(timer)
-  }, [slots, userId, initialized, updateFavs, user?.favorite_challenges])
+  }, [currentSlotNames, userId, initialized, updateFavs, user?.favorite_challenges])
 
   function getItems(type: AchSlotType): Item[] {
     const category = ACH_CATEGORY[type]
