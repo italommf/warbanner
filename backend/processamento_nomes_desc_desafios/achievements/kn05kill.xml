@@ -2,7 +2,8 @@
 	<UI name="@kn05Kill" desc="@kn05Kill_desc"/>
 	<Filters>
 		<Filter kind="enemy" param="1"/>
-		<Filter kind="weapon" param="kn05"/>
+		<Filter kind="weapon" param="kn05*" compare="match"/>
+		<Filter kind="weapon" param="kn44*" compare="match"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>

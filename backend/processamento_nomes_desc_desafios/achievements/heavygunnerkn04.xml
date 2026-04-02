@@ -7,14 +7,10 @@
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
-		<Filter kind="weapon" param="kn05"/>
-		<Filter kind="weapon" param="kn05_camo02"/>
-		<Filter kind="weapon" param="kn05_mars02"/>		
-		<Filter kind="weapon" param="kn05_zsd03"/>	
-		<Filter kind="weapon" param="kn05_samurai02"/>			
+		<Filter kind="weapon" param="kn05*" compare="match"/>
 		<Filter kind="difficulty" param="hard"/>		
 		<Filter kind="player" param="0"/>		
 		<Filter kind="victory_condition" param="3"/>			
-	</Filters>	
+	</Filters>
 	<BannerImage image="challenge_strip_21" type="stripe" />
-</Achievement>	
+</Achievement>

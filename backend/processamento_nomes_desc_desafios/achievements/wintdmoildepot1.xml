@@ -6,6 +6,7 @@
 		<Filter kind="mission_uid" param="0575ee9b-db2a-4a8d-a376-c2ec4b021587"/>
 		<Filter kind="mission_uid" param="24578605-b482-4dcf-af0a-7a6968732602"/>
 		<Filter kind="mission_uid" param="836c6850-5976-4912-8e3e-81c4fe187ae1"/>
+		<Filter kind="mission_uid" param="8f55532b-8db3-4073-a6e7-4ef453846ac0"/>
 	</Filters>
 	<BannerImage image="challenge_mark_oildepot_01" type="mark" />
 </Achievement>		

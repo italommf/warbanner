@@ -4,7 +4,7 @@
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="player" param="0"/>
 		<Filter kind="weapon" param="*crown*_shop" compare="match"/>
-		<Filter kind="mission_type" param="anubiseasy2"/>
+		<Filter kind="mission_type" param="anubiseasy2"/> 
 		<Filter kind="mission_type" param="anubisnormal2"/>
 		<Filter kind="mission_type" param="anubishard2"/>
 	</Filters>

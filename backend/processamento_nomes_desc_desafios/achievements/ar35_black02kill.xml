@@ -3,12 +3,15 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="ar35_black02_shop"/>
+		<Filter kind="weapon" param="ar35_gold01_shop"/>
+		<Filter kind="weapon" param="ar35_shop"/>
+		<Filter kind="weapon_skin" param="black02"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
 	</Filters>
-	<BannerImage image="challenge_strip_black02_03" type="stripe" />
+	<BannerImage image="challenge_strip_black02_03" type="stripe"/>
 </Achievement>
 
 

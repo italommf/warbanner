@@ -3,7 +3,7 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="player" param="0"/>
-		<Filter kind="weapon_slot" param="knife"/>
+		<Filter kind="melee" param="1"/>
 		<Filter kind="mission_type" param="volcanoeasy"/>
 		<Filter kind="mission_type" param="volcanonormal"/>
 		<Filter kind="mission_type" param="volcanohard"/>

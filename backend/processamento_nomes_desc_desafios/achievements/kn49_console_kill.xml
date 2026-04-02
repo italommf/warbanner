@@ -2,7 +2,10 @@
 	<UI name="@kn49_console_Kill" desc="@kn49_console_Kill_desc"/>
 	<Filters>
 		<Filter kind="enemy" param="1"/>
-		<Filter kind="weapon" param="kn49_chrome_console"/>
+		<Filter kind="weapon" param="kn49*" compare="match"/>
+		<Filter kind="weapon" param="kn47*" compare="match"/>
+		<Filter kind="weapon" param="kn48*" compare="match"/>
+		<Filter kind="weapon" param="kn53*" compare="match"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>

@@ -3,10 +3,13 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="shg47_mars02_shop"/>
+		<Filter kind="weapon" param="shg47_gold01_shop"/>
+		<Filter kind="weapon" param="shg47_shop"/>
+		<Filter kind="weapon_skin" param="mars02"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
 	</Filters>
-	<BannerImage image="challenge_strip_mars02_02" type="stripe" />
+	<BannerImage image="challenge_strip_mars02_02" type="stripe"/>
 </Achievement>

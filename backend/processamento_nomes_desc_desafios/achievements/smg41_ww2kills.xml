@@ -3,10 +3,15 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="smg41_ww2_shop"/>
-		<Filter kind="weapon" param="sr41_shop"/>			
+		<Filter kind="weapon" param="smg41_shop"/>
+		<Filter kind="weapon_skin" param="ww2"/>
+		<Filter kind="weapon" param="smg41_victory23_shop"/>
+		<Filter kind="weapon" param="smg41_shop"/>
+		<Filter kind="weapon_skin" param="victory23"/>
+		<Filter kind="weapon" param="sr41_shop"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
-		<Filter kind="melee" param="0"/>			
-	</Filters> 
-	<BannerImage image="challenge_strip_ww2" type="stripe" />
+		<Filter kind="melee" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_ww2" type="stripe"/>
 </Achievement>

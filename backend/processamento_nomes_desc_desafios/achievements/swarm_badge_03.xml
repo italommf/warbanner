@@ -3,7 +3,9 @@
 <Filters>
 <Filter kind="enemy" param="1"/>
 <Filter kind="player" param="0"/>
-<Filter kind="mission_type" param="swarm"/>
+<Filter kind="mission_type" param="swarmeasy"/>
+<Filter kind="mission_type" param="swarmnormal"/>
+<Filter kind="mission_type" param="swarmhard"/>
 </Filters>
 <BannerImage image="challenge_badge_swarm_03" type="badge" />
 </Achievement>

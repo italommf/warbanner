@@ -3,7 +3,8 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="pt10_camo05_shop"/>   
-		<Filter kind="weapon" param="kn43_vdv"/>
+		<Filter kind="weapon" param="kn43*" compare="match"/>
+		<Filter kind="weapon" param="kn64*" compare="match"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>

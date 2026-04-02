@@ -4,7 +4,9 @@
 <Filter kind="enemy" param="1"/>
 <Filter kind="player" param="0"/>
 <Filter kind="weapon" param="*_gold01_shop" compare="match"/>
-<Filter kind="mission_type" param="swarm"/>
+<Filter kind="mission_type" param="swarmeasy"/>
+<Filter kind="mission_type" param="swarmnormal"/>
+<Filter kind="mission_type" param="swarmhard"/>
 </Filters>
 <BannerImage image="challenge_badge_swarm_05" type="badge" />
 </Achievement>

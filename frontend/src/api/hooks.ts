@@ -803,3 +803,29 @@ export function useRequestWarchaosMigration() {
     }
   })
 }
+
+export function useUpdateFavorites() {
+  const updateUser = useAuthStore((s) => s.updateUser)
+  const user = useAuthStore((s) => s.user)
+
+  return useMutation({
+    mutationFn: (favorites: (string | null)[]) => 
+      authFetch('/api/auth/favorites/', { 
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ favorites })
+      }).then(async (r) => {
+        const data = await r.json()
+        if (!r.ok) throw new Error(data.error || 'Erro ao salvar favoritos')
+        return data
+      }),
+    onSuccess: (data) => {
+      if (user) {
+        updateUser({ 
+          ...user, 
+          favorite_challenges: data.favorite_challenges
+        })
+      }
+    }
+  })
+}

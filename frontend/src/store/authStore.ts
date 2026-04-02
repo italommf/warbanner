@@ -15,6 +15,7 @@ export interface AuthUser {
   warchaos_user: string | null
   warchaos_nick: string | null
   warchaos_migrado: boolean
+  favorite_challenges: string[]
 }
 
 interface AuthStore {

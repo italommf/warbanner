@@ -143,6 +143,7 @@ def _user_info(user: User) -> dict:
         'warchaos_user': profile.warchaos_user,
         'warchaos_nick': profile.warchaos_nick,
         'warchaos_migrado': profile.warchaos_migrado,
+        'favorite_challenges': profile.favorite_challenges,
     }
 
 
@@ -400,6 +401,19 @@ def auth_update_profile(request):
                 break
     profile.save()
     return Response(_user_info(request.user))
+
+
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+def auth_update_favorites(request):
+    """Atualiza a lista de desafios favoritos (filenames) no perfil do usuário."""
+    profile, _ = UserProfile.objects.get_or_create(user=request.user)
+    favs = request.data.get('favorites', [])
+    if isinstance(favs, list):
+        profile.favorite_challenges = favs
+        profile.save(update_fields=['favorite_challenges'])
+        return Response({'ok': True, 'favorite_challenges': favs})
+    return Response({'error': 'Lista de favoritos inválida.'}, status=400)
 
 
 @api_view(['POST'])

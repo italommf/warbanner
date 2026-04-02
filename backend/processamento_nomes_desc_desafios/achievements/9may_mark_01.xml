@@ -12,6 +12,7 @@
 		<Filter kind="weapon" param="ar42_gold01_shop"/>
 		<Filter kind="weapon" param="sr53_gold01_shop"/>
 		<Filter kind="weapon" param="sr53_shop"/>
+		<Filter kind="weapon" param="smg41_victory23_shop"/>
 		<Filter kind="mission_type" param="chernobyleasy"/>
 		<Filter kind="mission_type" param="chernobylnormal"/>
 		<Filter kind="mission_type" param="chernobylhard"/>

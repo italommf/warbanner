@@ -3,6 +3,9 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="ar48_snowstorm01_shop"/>
+		<Filter kind="weapon" param="ar48_gold01_shop"/>
+		<Filter kind="weapon" param="ar48_shop"/>
+		<Filter kind="weapon_skin" param="snowstorm01"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>

@@ -2,10 +2,18 @@
 	<UI name="@rw_kills3" desc="@rw_kills3_desc"/>
 	<Filters>
 		<Filter kind="player" param="0"/>
-		<Filter kind="mission_type" param="campaignsection1"/>
-		<Filter kind="mission_type" param="campaignsection2"/>
-		<Filter kind="mission_type" param="campaignsection3"/>
-		<Filter kind="mission_type" param="campaignsections"/>
+		<Filter kind="mission_type" param="snowfortress1easy"/>
+		<Filter kind="mission_type" param="snowfortress1normal"/>
+		<Filter kind="mission_type" param="snowfortress1hard"/>
+		<Filter kind="mission_type" param="snowfortress2easy"/>
+		<Filter kind="mission_type" param="snowfortress2normal"/>
+		<Filter kind="mission_type" param="snowfortress2hard"/>
+		<Filter kind="mission_type" param="snowfortress3easy"/>
+		<Filter kind="mission_type" param="snowfortress3normal"/>
+		<Filter kind="mission_type" param="snowfortress3hard"/>
+		<Filter kind="mission_type" param="snowfortressmarathoneasy"/>
+		<Filter kind="mission_type" param="snowfortressmarathonnormal"/>
+		<Filter kind="mission_type" param="snowfortressmarathonhard"/>
 	</Filters>	
 	<BannerImage image="challenge_badge_rw_09" type="badge" />
 </Achievement>	

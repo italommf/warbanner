@@ -1,0 +1,45 @@
+------------------------------------------------------------
+Categoria    | Total    | S/ Nome    | S/ Desc    | S/ Ambos  
+------------------------------------------------------------
+marcas       | 1225     | 17         | 24         | 16        
+insignias    | 1062     | 17         | 30         | 16        
+fitas        | 2721     | 10         | 59         | 9         
+------------------------------------------------------------
+
+Exemplos de desafios com XML mas SEM NOME/DESCRIÇÃO:
+
+--- MARCAS (25 total) ---
+Arquivo XML: engineer_absolute2209_mark.xml | Imagem: challenge_mark_engineer_absolute2209 | Nome: '' | Desc: ''
+Arquivo XML: medic_absolute2209_mark.xml | Imagem: challenge_mark_medic_absolute2209 | Nome: '' | Desc: ''
+Arquivo XML: ms01_01_mark.xml | Imagem: challenge_mark_ms01_01 | Nome: '' | Desc: ''
+Arquivo XML: ms01_02_mark.xml | Imagem: challenge_mark_ms01_02 | Nome: '' | Desc: ''
+Arquivo XML: prestige01_mark.xml | Imagem: challenge_mark_prestige01 | Nome: '' | Desc: ''
+Arquivo XML: rating06_01_mark.xml | Imagem: challenge_mark_rating06_01 | Nome: '' | Desc: 'Segure firme, mas com suavidade.'
+Arquivo XML: rating06_mark.xml | Imagem: challenge_mark_rating06 | Nome: '' | Desc: ''
+Arquivo XML: sak01_01_mark.xml | Imagem: challenge_mark_sak01_01 | Nome: '' | Desc: ''
+Arquivo XML: sak01_02_mark.xml | Imagem: challenge_mark_sak01_02 | Nome: '' | Desc: ''
+Arquivo XML: sap01_01_mark.xml | Imagem: challenge_mark_sap01_01 | Nome: '' | Desc: ''
+
+--- INSIGNIAS (31 total) ---
+Arquivo XML: firstplacetdmcodenamed181.xml | Imagem: challenge_badge_firstPlaceTDMCodenameD181 | Nome: 'Barão do D18' | Desc: ''
+Arquivo XML: firstplacetdmcodenamed182.xml | Imagem: challenge_badge_firstPlaceTDMCodenameD182 | Nome: 'Duque do D18' | Desc: ''
+Arquivo XML: firstplacetdmcodenamed183.xml | Imagem: challenge_badge_firstPlaceTDMCodenameD183 | Nome: 'Rei do D18' | Desc: ''
+Arquivo XML: mg23kill.xml | Imagem: challenge_badge_weapon10_47 | Nome: 'Velhote' | Desc: ''
+Arquivo XML: mg23kill25.xml | Imagem: challenge_badge_weapon25_47 | Nome: 'Velhote (Avançado)' | Desc: ''
+Arquivo XML: mg24kill.xml | Imagem: challenge_badge_weapon10_50 | Nome: 'Velha guarda' | Desc: ''
+Arquivo XML: mg24kill25.xml | Imagem: challenge_badge_weapon25_50 | Nome: 'Velha guarda (Avançado)' | Desc: ''
+Arquivo XML: mg25kill.xml | Imagem: challenge_badge_weapon10_55 | Nome: 'Chuva de balas' | Desc: ''
+Arquivo XML: mg25kill25.xml | Imagem: challenge_badge_weapon25_55 | Nome: 'Avançado: Chuva de balas' | Desc: ''
+Arquivo XML: ms01_01_badge.xml | Imagem: challenge_badge_ms01_01 | Nome: '' | Desc: ''
+
+--- FITAS (60 total) ---
+Arquivo XML: ar27_rad01kill15.xml | Imagem: challenge_strip_rad01_02 | Nome: 'Beretta ARX160 "Nuclear"' | Desc: ''
+Arquivo XML: ar30_set12kill15.xml | Imagem: challenge_strip_set12_13 | Nome: 'FN FAL DSA-58 K.I.W.I.' | Desc: ''
+Arquivo XML: ar31_set12kill15.xml | Imagem: challenge_strip_set12_12 | Nome: 'VHS-2 K.I.W.I.' | Desc: ''
+Arquivo XML: ar35kill.xml | Imagem: challenge_strip_weapon10_82 | Nome: 'Morte dolorosa' | Desc: ''
+Arquivo XML: ar35kill25.xml | Imagem: challenge_strip_weapon25_82 | Nome: 'Morte dolorosa avançado' | Desc: ''
+Arquivo XML: ar35_dragon01kill.xml | Imagem: challenge_strip_dragon01_04 | Nome: 'AK-12 Infernal' | Desc: ''
+Arquivo XML: ar36kill.xml | Imagem: challenge_strip_weapon10_86 | Nome: 'Ameaça fantasma' | Desc: ''
+Arquivo XML: ar36kill25.xml | Imagem: challenge_strip_weapon25_86 | Nome: 'Avançado: Ameaça fantasma' | Desc: ''
+Arquivo XML: ar38kill.xml | Imagem: challenge_strip_weapon10_ar38 | Nome: 'Limite do Amanhã' | Desc: ''
+Arquivo XML: ar38kill25.xml | Imagem: challenge_strip_weapon25_ar38 | Nome: 'Avançado: Limite do Amanhã' | Desc: ''

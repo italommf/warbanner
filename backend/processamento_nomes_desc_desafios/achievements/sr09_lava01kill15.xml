@@ -3,10 +3,13 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="sr09_lava01_shop"/>
+		<Filter kind="weapon" param="sr09_gold01_shop"/>
+		<Filter kind="weapon" param="sr09_shop"/>
+		<Filter kind="weapon_skin" param="lava01"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
 	</Filters>
-	<BannerImage image="challenge_strip_lava14" type="stripe" />
+	<BannerImage image="challenge_strip_lava14" type="stripe"/>
 </Achievement>

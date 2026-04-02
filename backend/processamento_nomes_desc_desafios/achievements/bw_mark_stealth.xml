@@ -9,7 +9,9 @@
         <Filter kind="kill_zone" param="0"/>
         <Filter kind="explosion" param="0"/>
         <Filter kind="melee" param="0"/>
-		<Filter kind="mission_type" param="blackwood"/>		
+		<Filter kind="mission_type" param="blackwoodeasy"/>
+		<Filter kind="mission_type" param="blackwoodnormal"/>
+		<Filter kind="mission_type" param="blackwoodhard"/>
 	</Filters>
 <BannerImage image="challenge_mark_raid_08" type="mark" />
 </Achievement>

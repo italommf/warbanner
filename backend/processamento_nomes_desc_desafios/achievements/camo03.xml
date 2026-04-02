@@ -5,6 +5,8 @@
 		<Filter kind="weapon" param="shg11_camo03_shop"/>
 		<Filter kind="weapon" param="smg01_camo03_shop"/>
 		<Filter kind="weapon" param="sr02_camo03_shop"/>
+		<Filter kind="weapon" param="kn54_jungle01"/>
+		<Filter kind="weapon" param="kn55_jungle01"/>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>

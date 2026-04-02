@@ -1,6 +1,9 @@
 <Achievement active="1" id="1205" kind="kills" MS_side="0" amount="2500">
 	<Filters>
 		<Filter kind="weapon" param="pt21_zsd02_shop"/>
+		<Filter kind="weapon" param="pt21_shop" />
+		<Filter kind="weapon" param="pt21_gold01_shop" />
+		<Filter kind="weapon_skin" param="zsd02" />
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>

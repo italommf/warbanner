@@ -2,7 +2,9 @@
 	<UI name="@kn52_console_Kill" desc="@kn52_console_Kill_desc"/>
 		<Filters>
 			<Filter kind="enemy" param="1"/>
-			<Filter kind="weapon" param="kn52_console"/>
+			<Filter kind="weapon" param="kn52*" compare="match"/>
+			<Filter kind="weapon" param="kn201*" compare="match"/>
+			<Filter kind="weapon" param="kn202*" compare="match"/>
 			<Filter kind="claymore" param="0"/>
 			<Filter kind="grenade" param="0"/>
 			<Filter kind="kill_zone" param="0"/>

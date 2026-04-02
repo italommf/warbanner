@@ -1,12 +1,15 @@
-<Achievement active="1" id="40079" kind="kills" MS_side="0" amount="5000">
-	<UI name="@sr14_egypt00001_Kill" desc="@sr14_egypt00001_desc"/>
-		<Filters>
-			<Filter kind="enemy" param="1"/>
-			<Filter kind="weapon" param="sr14_egypt00001_shop"/>
-			<Filter kind="claymore" param="0"/>
-			<Filter kind="grenade" param="0"/>
-			<Filter kind="kill_zone" param="0"/>
-			<Filter kind="explosion" param="0"/>
-		</Filters>
-		<BannerImage image="challenge_strip_sr14_egypt00001" type="stripe"/>
+<Achievement active="1" id="40079" kind="kills" MS_side="0" amount="2500">
+	<UI name="@sr14_egypt00001_Kill" desc="@sr14_egypt00001_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="sr14_egypt00001_shop"/>
+		<Filter kind="weapon" param="sr14_gold01_shop"/>
+		<Filter kind="weapon" param="sr14_shop"/>
+		<Filter kind="weapon_skin" param="egypt00001"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_sr14_egypt00001" type="stripe"/>
 </Achievement>

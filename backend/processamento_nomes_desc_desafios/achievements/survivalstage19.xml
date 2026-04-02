@@ -2,7 +2,9 @@
 	<UI name="@survivalStage19" desc="@survivalStage19_desc"/>
 	<Filters>
 		<Filter kind="stages" param="19"/>
-		<Filter kind="mission_type" param="survivalmission"/>
+		<Filter kind="mission_type" param="whitesharkeasy"/>
+		<Filter kind="mission_type" param="whitesharknormal"/>
+		<Filter kind="mission_type" param="whitesharkhard"/>
 	</Filters>
 	<BannerImage image="challenge_mark_sm_stage_19" type="mark" />
 	<Steam name="ACH_SURVIVOR" stat_name="STAT_SURVIVOR" />

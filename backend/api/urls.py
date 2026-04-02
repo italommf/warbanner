@@ -18,6 +18,7 @@ urlpatterns = [
     path("auth/recover/",          views.auth_recover),
     path("auth/me/",               views.auth_me),
     path("auth/profile/",          views.auth_update_profile),
+    path("auth/favorites/",        views.auth_update_favorites),
     path("auth/change-password/",  views.auth_change_password),
     path("auth/discord/",          views.discord_auth_url),
     path("auth/discord/callback/", views.discord_callback),

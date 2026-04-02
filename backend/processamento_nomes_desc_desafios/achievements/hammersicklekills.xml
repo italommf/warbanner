@@ -3,13 +3,14 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="player" param="1"/>			
-		<Filter kind="weapon" param="kn41_ww2"/>
-		<Filter kind="weapon" param="kn42_ww2"/>
-		<Filter kind="weapon" param="kn42_viet"/>
+		<Filter kind="weapon" param="kn41*" compare="match"/>
+		<Filter kind="weapon" param="kn42*" compare="match"/>
+		<Filter kind="weapon" param="kn23*" compare="match"/>
+		<Filter kind="weapon" param="kn200*" compare="match"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
-	</Filters>		
-	<BannerImage image="challenge_mark_ww2" type="mark" />		
+	</Filters>
+	<BannerImage image="challenge_mark_ww2" type="mark" />
 </Achievement>

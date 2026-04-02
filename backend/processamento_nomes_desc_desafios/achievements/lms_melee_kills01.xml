@@ -4,7 +4,7 @@
 	    <Filter kind="victory_condition" param="11"/>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="player" param="1"/>
-		<Filter kind="weapon_slot" param="knife"/>
+		<Filter kind="melee" param="1"/>
 	</Filters>
 	<BannerImage image="challenge_strip_LMS_02" type="stripe" />
 </Achievement>

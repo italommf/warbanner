@@ -113,8 +113,12 @@ def obter_dataframes_completos():
         print(f"Erro ao carregar TXT: {e}")
         txt_info = {}
 
-    # 2. Carregar Traduções
+    # 2. Carregar Traduções (Achievements + Weapons)
     traducoes = carregar_traducoes(trans_file)
+    weapons_file = os.path.join(base_path, "text_weapons.xml")
+    traducoes_weapons = carregar_traducoes(weapons_file)
+    # Mesclar (achievements primeiro, weapons depois - weapons pode sobrescrever ou complementar)
+    traducoes.update(traducoes_weapons)
     
     # 3. Escanear TODOS os arquivos XML na pasta achievements
     # Isso permite descobrir desafios que não estão no TXT

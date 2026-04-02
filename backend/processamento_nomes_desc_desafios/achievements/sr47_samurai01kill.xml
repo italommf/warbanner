@@ -3,10 +3,13 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="sr47_samurai01_shop"/>
+		<Filter kind="weapon" param="sr47_gold01_shop"/>
+		<Filter kind="weapon" param="sr47_shop"/>
+		<Filter kind="weapon_skin" param="samurai01"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
 	</Filters>
-	<BannerImage image="challenge_strip_samurai01_13" type="stripe" />
+	<BannerImage image="challenge_strip_samurai01_13" type="stripe"/>
 </Achievement>

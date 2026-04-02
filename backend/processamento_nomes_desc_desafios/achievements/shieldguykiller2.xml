@@ -2,6 +2,7 @@
 	<UI name="@shieldGuyKiller2" desc="@shieldGuyKiller2_desc"/>
 	<Filters>
 		<Filter kind="ai_archetype" param="ShieldBearer"/>
+		<Filter kind="ai_archetype" param="SMGShieldBearer"/>
 		<Filter kind="player" param="0"/>						
 	</Filters>	
 	<BannerImage image="challenge_strip_02" type="stripe" />

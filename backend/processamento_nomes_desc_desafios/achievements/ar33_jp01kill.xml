@@ -3,10 +3,13 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="ar33_jp01_shop"/>
+		<Filter kind="weapon" param="ar33_gold01_shop"/>
+		<Filter kind="weapon" param="ar33_shop"/>
+		<Filter kind="weapon_skin" param="jp01"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
 	</Filters>
-	<BannerImage image="challenge_strip_jp01_09" type="stripe" />
+	<BannerImage image="challenge_strip_jp01_09" type="stripe"/>
 </Achievement>

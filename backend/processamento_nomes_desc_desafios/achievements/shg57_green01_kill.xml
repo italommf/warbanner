@@ -3,6 +3,9 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="shg57_green01_shop"/>
+		<Filter kind="weapon" param="shg57_gold01_shop"/>
+		<Filter kind="weapon" param="shg57_shop"/>
+		<Filter kind="weapon_skin" param="green01"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>

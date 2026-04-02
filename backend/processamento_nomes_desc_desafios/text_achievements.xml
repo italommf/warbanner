@@ -986,7 +986,7 @@
 	</entry>
 	<entry key="brainsmasher3_desc">
 		<original value="Perform 2,500 brainsmashers." />
-		<translation value="Realize 2.500 trituradores de cérebro." />
+		<translation value="Realize 2.500 esmagamentos de cérebro." />
 	</entry>
 	<entry key="coopStreak1">
 		<original value="Serial Killer" />
@@ -3106,7 +3106,7 @@
 	</entry>
 	<entry key="rw_compmarathon1_desc">
 		<original value="Complete the &quot;Marathon&quot; mission as a Rifleman." />
-		<translation value="Conclua a missão Pico Gelado como Fuzileiro." />
+		<translation value="Complete a operação especial 'Bastião de Neve' como assaltante. A conquista só pode ser obtida na missão 'Maratona'." />
 	</entry>
 	<entry key="rw_compmarathon2">
 		<original value="Snow Angel" />
@@ -3114,7 +3114,7 @@
 	</entry>
 	<entry key="rw_compmarathon2_desc">
 		<original value="Complete the &quot;Marathon&quot; mission as a Medic." />
-		<translation value="Conclua a missão Pico Gelado como Médico." />
+		<translation value="Complete a operação especial 'Bastião de Neve' como médico. A conquista só pode ser obtida na missão 'Maratona'." />
 	</entry>
 	<entry key="rw_compmarathon3">
 		<original value="Do you wanna build a snowman?" />
@@ -3122,7 +3122,7 @@
 	</entry>
 	<entry key="rw_compmarathon3_desc">
 		<original value="Complete the &quot;Marathon&quot; mission as an Engineer." />
-		<translation value="Conclua a missão Pico Gelado como Engenheiro." />
+		<translation value="Complete a operação especial 'Bastião de Neve' como engenheiro. A conquista só pode ser obtida na missão 'Maratona'." />
 	</entry>
 	<entry key="rw_compmarathon4">
 		<original value="Fire and Ice" />
@@ -3130,7 +3130,7 @@
 	</entry>
 	<entry key="rw_compmarathon4_desc">
 		<original value="Complete the &quot;Marathon&quot; mission as a Sniper." />
-		<translation value="Conclua a missão Pico Gelado como Franco-atirador." />
+		<translation value="Complete a operação especial 'Bastião de Neve' como atirador de elite. A conquista só pode ser obtida na missão 'Maratona'." />
 	</entry>
 	<entry key="rw_survivor1">
 		<original value="Training Wheels" />
@@ -3162,7 +3162,7 @@
 	</entry>
 	<entry key="rw_survivor4_desc">
 		<original value="Complete the &quot;Marathon&quot; mission without dying." />
-		<translation value="Conclua a missão Pico Gelado sem morrer." />
+		<translation value="Conclua a missão Pico Gelado sem morrer. A conquista só pode ser obtida na missão 'Maratona'." />
 	</entry>
 	<entry key="rw_destruction1">
 		<original value="Canon in D Major" />
@@ -8962,7 +8962,7 @@
 	</entry>
 	<entry key="BrainSmasher01_desc">
 		<original value="Perform 5,000 brain smashers." />
-		<translation value="Realize 5.000 esmagamentos de cérebro." />
+		<translation value="Realize 5.000 estouros de cérebro." />
 	</entry>
 	<entry key="hnt_1th_place_02">
 		<original value="The Best Hunter" />
@@ -17334,7 +17334,7 @@
 	</entry>
 	<entry key="rw_compmarathon5_desc">
 		<original value="Complete &quot;Marathon&quot; mission as a SED." />
-		<translation value="Conclua a missão &quot;Pico Gelado&quot; como SED." />
+		<translation value="Conclua a missão &quot;Pico Gelado&quot; como SED. A conquista só pode ser obtida na missão 'Maratona'." />
 	</entry>
 	<entry key="mars_stripe_heavy">
 		<original value="Red Planet SED" />
@@ -25440,6 +25440,30 @@
 		<original value="From the Shadows" />
 		<translation value="Das Sombras" />
 	</entry>
+	<entry key="cartel_00001_badge">
+		<original value="La ruleta de la fortuna" />
+		<translation value="La ruleta de la fortuna" />
+	</entry>
+	<entry key="cartel_00001_badge_desc">
+		<original value="Remember, strangers are not welcome here." />
+		<translation value="Lembre-se, estranhos não são bem-vindos aqui." />
+	</entry>
+	<entry key="cartel_00001_mark">
+		<original value="Carnival of Death" />
+		<translation value="Carnaval da morte" />
+	</entry>
+	<entry key="cartel_00001_mark_desc">
+		<original value="Remember, strangers are not welcome here." />
+		<translation value="Lembre-se, estranhos não são bem-vindos aqui." />
+	</entry>
+	<entry key="cartel_00001_stripe">
+		<original value="El Día de Muertos" />
+		<translation value="El Día de Muertos" />
+	</entry>
+	<entry key="cartel_00001_stripe_desc">
+		<original value="Remember, strangers are not welcome here." />
+		<translation value="Lembre-se, estranhos não são bem-vindos aqui." />
+	</entry>
 	<entry key="cartel_fbs_00001_mark">
 		<original value="Glow of Death" />
 		<translation value="Brilho da morte" />
@@ -31066,7 +31090,7 @@
 	</entry>
 	<entry key="mastery01_kn22_stripe_desc">
 		<original value="Fully master weapon: HX Outdoors Trident" />
-		<translation value="Domine a arma: HX Outdoors Trident" />
+		<translation value="Domine completamente a arma: HX Outdoors Trident" />
 	</entry>
 	<entry key="mastery01_kn22_stripe_name">
 		<original value="HX Outdoors Trident Master" />
@@ -31250,7 +31274,7 @@
 	</entry>
 	<entry key="smg67_Kill_desc">
 		<original value="Eliminate 1,500 enemies with a SIG MPX Copperhead." />
-		<translation value="Elimine 1.500 inimigos com uma SIG MPX Copperhead." />
+		<translation value="Elimine 2.500 inimigos com a SIG MPX Copperhead." />
 	</entry>
 	<entry key="smg67_Kill_name">
 		<original value="SIG MPX Copperhead" />
@@ -41592,38 +41616,6 @@
 		<original value="Feline Force M1911A1" />
 		<translation value="Puma M1911A1" />
 	</entry>
-	<entry key="cartel_00001_badge">
-		<original value="La Ruleta de la Fortuna" />
-		<translation value="La ruleta de la fortuna" />
-	</entry>
-	<entry key="cartel_00001_badge_desc">
-		<original value="Remember, strangers are not welcome here." />
-		<translation value="Lembre-se, estranhos não são bem-vindos aqui." />
-	</entry>
-	<entry key="cartel_00001_mark">
-		<original value="Carnival of Death" />
-		<translation value="Carnaval da morte" />
-	</entry>
-	<entry key="cartel_00001_mark_desc">
-		<original value="Remember, strangers are not welcome here." />
-		<translation value="Lembre-se, estranhos não são bem-vindos aqui." />
-	</entry>
-	<entry key="cartel_00001_stripe">
-		<original value="El Día de Muertos" />
-		<translation value="El Día de Muertos" />
-	</entry>
-	<entry key="cartel_00001_stripe_desc">
-		<original value="Remember, strangers are not welcome here." />
-		<translation value="Lembre-se, estranhos não são bem-vindos aqui." />
-	</entry>
-	<entry key="kn65_25rating03_Kill_desc">
-		<original value="Eliminate 1,500 enemies with a &quot;Football&quot; Scout Knife." />
-		<translation value="Elimine 1.500 inimigos com um Faca SCAR-H Patrulheiro." />
-	</entry>
-	<entry key="kn65_25rating03_Kill_name">
-		<original value="&quot;Football&quot; Scout Knife" />
-		<translation value="Faca de Batedor Patrulheiro" />
-	</entry>
 	<entry key="25fool04_badge_desc">
 		<original value="Fear my Fun." />
 		<translation value="Tema enquanto me divirto." />
@@ -41647,6 +41639,38 @@
 	<entry key="25fool04_stripe_name">
 		<original value="Master of Cards" />
 		<translation value="Mestre das cartas" />
+	</entry>
+	<entry key="kn65_25rating03_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Football&quot; Scout Knife." />
+		<translation value="Elimine 1.500 inimigos com um Faca SCAR-H Patrulheiro." />
+	</entry>
+	<entry key="kn65_25rating03_Kill_name">
+		<original value="&quot;Football&quot; Scout Knife" />
+		<translation value="Faca de Batedor Patrulheiro" />
+	</entry>
+	<entry key="kn66_25bp03pinup_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Copacabana&quot; Army Knife." />
+		<translation value="Elimine 1.500 inimigos com uma Faca Militar Copacabana." />
+	</entry>
+	<entry key="kn66_25bp03pinup_Kill_name">
+		<original value="&quot;Copacabana&quot; Army Knife" />
+		<translation value="Faca Militar Copacabana" />
+	</entry>
+	<entry key="shg07_25fool04_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Joker&quot; Saiga Bullpup." />
+		<translation value="Elimine 1.500 inimigos com uma Saiga Bullpup Curinga." />
+	</entry>
+	<entry key="shg07_25fool04_Kill_name">
+		<original value="&quot;Joker&quot; Saiga Bullpup" />
+		<translation value="Saiga Bullpup Curinga" />
+	</entry>
+	<entry key="smg72_25bp03pinup_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Copacabana&quot; Magpul PDR-C." />
+		<translation value="Elimine 1.500 inimigos com uma Magpul PDR-C Copacabana." />
+	</entry>
+	<entry key="smg72_25bp03pinup_Kill_name">
+		<original value="&quot;Copacabana&quot; Magpul PDR-C" />
+		<translation value="Magpul PDR-C Copacabana" />
 	</entry>
 	<entry key="25story01_badge_desc">
 		<original value="A long story of irreconcilable enemies." />
@@ -41672,29 +41696,29 @@
 		<original value="Eternal Enemies" />
 		<translation value="Inimigos eternos" />
 	</entry>
-	<entry key="kn66_25bp03pinup_Kill_desc">
-		<original value="Eliminate 1,500 enemies with a &quot;Copacabana&quot; Army Knife." />
-		<translation value="Elimine 1.500 inimigos com uma Faca Militar Copacabana." />
+	<entry key="25heist04_badge_desc">
+		<original value="In and out, in few seconds." />
+		<translation value="Entrar e sair em poucos segundos." />
 	</entry>
-	<entry key="kn66_25bp03pinup_Kill_name">
-		<original value="&quot;Copacabana&quot; Army Knife" />
-		<translation value="Faca Militar Copacabana" />
+	<entry key="25heist04_badge_name">
+		<original value="Secured Stash" />
+		<translation value="Carregamento seguro" />
 	</entry>
-	<entry key="shg07_25fool04_Kill_desc">
-		<original value="Eliminate 1,500 enemies with a &quot;Joker&quot; Saiga Bullpup." />
-		<translation value="Elimine 1.500 inimigos com uma Saiga Bullpup Curinga." />
+	<entry key="25heist04_mark_desc">
+		<original value="In and out, in few seconds." />
+		<translation value="Entrar e sair em poucos segundos." />
 	</entry>
-	<entry key="shg07_25fool04_Kill_name">
-		<original value="&quot;Joker&quot; Saiga Bullpup" />
-		<translation value="Saiga Bullpup Curinga" />
+	<entry key="25heist04_mark_name">
+		<original value="Ticking Time" />
+		<translation value="O tempo está passando" />
 	</entry>
-	<entry key="smg72_25bp03pinup_Kill_desc">
-		<original value="Eliminate 1,500 enemies with a &quot;Copacabana&quot; Magpul PDR-C." />
-		<translation value="Elimine 1.500 inimigos com uma Magpul PDR-C Copacabana." />
+	<entry key="25heist04_stripe_desc">
+		<original value="In and out, in few seconds." />
+		<translation value="Entrar e sair em poucos segundos." />
 	</entry>
-	<entry key="smg72_25bp03pinup_Kill_name">
-		<original value="&quot;Copacabana&quot; Magpul PDR-C" />
-		<translation value="Magpul PDR-C Copacabana" />
+	<entry key="25heist04_stripe_name">
+		<original value="Brutal Heist" />
+		<translation value="Assalto brutal" />
 	</entry>
 	<entry key="25pvp03_01_mark_desc">
 		<original value="Take the 1st place of the winning team on the Promenade map %1 times." />
@@ -41736,6 +41760,14 @@
 		<original value="Gold Northern Star" />
 		<translation value="Estrela do norte de ouro" />
 	</entry>
+	<entry key="ar23_25spring04_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Riff&quot; AS Val." />
+		<translation value="Elimine 1.500 inimigos com um AS Val Refrão." />
+	</entry>
+	<entry key="ar23_25spring04_Kill_name">
+		<original value="&quot;Riff&quot; AS Val" />
+		<translation value="AS Val Refrão" />
+	</entry>
 	<entry key="ar62_25na04bope_Kill_desc">
 		<original value="Eliminate 1,500 enemies with a &quot;Caipora&quot; A-545." />
 		<translation value="Elimine 1.500 inimigos com um A-545 Caipora." />
@@ -41760,37 +41792,29 @@
 		<original value="A-545" />
 		<translation value="A-545" />
 	</entry>
-	<entry key="25heist04_badge_desc">
-		<original value="In and out, in few seconds." />
-		<translation value="Entrar e sair em poucos segundos." />
+	<entry key="inx25spring04_badge_desc">
+		<original value="Let's bring the crushing noise." />
+		<translation value="Vamos ouvir o som da destruição." />
 	</entry>
-	<entry key="25heist04_badge_name">
-		<original value="Secured Stash" />
-		<translation value="Carregamento seguro" />
+	<entry key="inx25spring04_badge_name">
+		<original value="Max Gain" />
+		<translation value="Ganho máximo" />
 	</entry>
-	<entry key="25heist04_mark_desc">
-		<original value="In and out, in few seconds." />
-		<translation value="Entrar e sair em poucos segundos." />
+	<entry key="inx25spring04_mark_desc">
+		<original value="Let's bring the crushing noise." />
+		<translation value="Vamos ouvir o som da destruição." />
 	</entry>
-	<entry key="25heist04_mark_name">
-		<original value="Ticking Time" />
-		<translation value="O tempo está passando" />
+	<entry key="inx25spring04_mark_name">
+		<original value="Rocking Night" />
+		<translation value="Noite de rock" />
 	</entry>
-	<entry key="25heist04_stripe_desc">
-		<original value="In and out, in few seconds." />
-		<translation value="Entrar e sair em poucos segundos." />
+	<entry key="inx25spring04_stripe_desc">
+		<original value="Let's bring the crushing noise." />
+		<translation value="Vamos ouvir o som da destruição." />
 	</entry>
-	<entry key="25heist04_stripe_name">
-		<original value="Brutal Heist" />
-		<translation value="Assalto brutal" />
-	</entry>
-	<entry key="ar23_25spring04_Kill_desc">
-		<original value="Eliminate 1,500 enemies with a &quot;Riff&quot; AS Val." />
-		<translation value="Elimine 1.500 inimigos com um AS Val Refrão." />
-	</entry>
-	<entry key="ar23_25spring04_Kill_name">
-		<original value="&quot;Riff&quot; AS Val" />
-		<translation value="AS Val Refrão" />
+	<entry key="inx25spring04_stripe_name">
+		<original value="Headliner" />
+		<translation value="Atração principal" />
 	</entry>
 	<entry key="shg07_25spring04_Kill_desc">
 		<original value="Eliminate 1,500 enemies with a &quot;Riff&quot; Saiga Bullpup." />
@@ -41823,6 +41847,30 @@
 	<entry key="ar35_25spring05_Kill_name">
 		<original value="&quot;Luminix&quot; AK-12" />
 		<translation value="AK-12 Luminix" />
+	</entry>
+	<entry key="inx25spring05_badge_desc">
+		<original value="Glowing glory." />
+		<translation value="Vitória cibernética" />
+	</entry>
+	<entry key="inx25spring05_badge_name">
+		<original value="Neon smile" />
+		<translation value="Sorriso de neon" />
+	</entry>
+	<entry key="inx25spring05_mark_desc">
+		<original value="Glowing glory." />
+		<translation value="Vitória cibernética" />
+	</entry>
+	<entry key="inx25spring05_mark_name">
+		<original value="Winged win" />
+		<translation value="Vitória alada" />
+	</entry>
+	<entry key="inx25spring05_stripe_desc">
+		<original value="Glowing glory." />
+		<translation value="Vitória cibernética" />
+	</entry>
+	<entry key="inx25spring05_stripe_name">
+		<original value="Cybergirl" />
+		<translation value="Garota cibernética" />
 	</entry>
 	<entry key="shg59_25spring05_Kill_desc">
 		<original value="Eliminate 1,500 enemies with a &quot;Luminix&quot; Kalashnikov MP-155 Ultima." />
@@ -41872,52 +41920,2716 @@
 		<original value="&quot;Luminix&quot; SKS FAB" />
 		<translation value="Caixa do SKS FAB Luminix" />
 	</entry>
-	<entry key="inx25spring04_badge_desc">
-		<original value="Let's bring the crushing noise." />
-		<translation value="Vamos ouvir o som da destruição." />
+	<entry key="25newbie01_badge_desc">
+		<original value="A symbol of new beginnings - where your legacy is born." />
+		<translation value="O símbolo de um novo começo - onde nasce o teu legado." />
 	</entry>
-	<entry key="inx25spring04_badge_name">
-		<original value="Max Gain" />
-		<translation value="Ganho máximo" />
+	<entry key="25newbie01_badge_name">
+		<original value="The first badge" />
+		<translation value="A primeira insígnia" />
 	</entry>
-	<entry key="inx25spring04_mark_desc">
-		<original value="Let's bring the crushing noise." />
-		<translation value="Vamos ouvir o som da destruição." />
+	<entry key="25newbie01_stripe_desc">
+		<original value="The journey begins - every legend begins with a single step." />
+		<translation value="Começa a jornada, toda lenda começa com um primeiro passo." />
 	</entry>
-	<entry key="inx25spring04_mark_name">
-		<original value="Rocking Night" />
-		<translation value="Noite de rock" />
+	<entry key="25newbie01_stripe_name">
+		<original value="The first stripe" />
+		<translation value="A primeira faixa" />
 	</entry>
-	<entry key="inx25spring04_stripe_desc">
-		<original value="Let's bring the crushing noise." />
-		<translation value="Vamos ouvir o som da destruição." />
+	<entry key="25bp06shark_01_badge_desc">
+		<original value="Step Right In, Meet the Predator." />
+		<translation value="Pode entrar, venha conhecer o Predador." />
 	</entry>
-	<entry key="inx25spring04_stripe_name">
-		<original value="Headliner" />
-		<translation value="Atração principal" />
+	<entry key="25bp06shark_01_badge_name">
+		<original value="Ticket to Bite" />
+		<translation value="Entrada para mordida" />
 	</entry>
-	<entry key="inx25spring05_badge_desc">
-		<original value="Glowing glory." />
-		<translation value="Vitória cibernética" />
+	<entry key="25bp06shark_01_mark_desc">
+		<original value="Step Right In, Meet the Predator." />
+		<translation value="Pode entrar, venha conhecer o Predador." />
 	</entry>
-	<entry key="inx25spring05_badge_name">
-		<original value="Neon smile" />
-		<translation value="Sorriso de neon" />
+	<entry key="25bp06shark_01_mark_name">
+		<original value="Jaws Blast" />
+		<translation value="Mega mordida" />
 	</entry>
-	<entry key="inx25spring05_mark_desc">
-		<original value="Glowing glory." />
-		<translation value="Vitória cibernética" />
+	<entry key="25bp06shark_01_stripe_desc">
+		<original value="Step Right In, Meet the Predator." />
+		<translation value="Pode entrar, venha conhecer o Predador." />
 	</entry>
-	<entry key="inx25spring05_mark_name">
-		<original value="Winged win" />
-		<translation value="Vitória alada" />
+	<entry key="25bp06shark_01_stripe_name">
+		<original value="Shark Ride" />
+		<translation value="Brinquedo do Tubarão" />
 	</entry>
-	<entry key="inx25spring05_stripe_desc">
-		<original value="Glowing glory." />
-		<translation value="Vitória cibernética" />
+	<entry key="25bp06shark_02_badge_desc">
+		<original value="Deepn In the Pixels, It Follows." />
+		<translation value="Nas profundezas dos pixels, ele persegue." />
 	</entry>
-	<entry key="inx25spring05_stripe_name">
-		<original value="Cybergirl" />
-		<translation value="Garota cibernética" />
+	<entry key="25bp06shark_02_badge_name">
+		<original value="Start the Hunt" />
+		<translation value="Comece a caçada" />
+	</entry>
+	<entry key="25bp06shark_02_mark_desc">
+		<original value="Deepn In the Pixels, It Follows." />
+		<translation value="Nas profundezas dos pixels, ele persegue." />
+	</entry>
+	<entry key="25bp06shark_02_mark_name">
+		<original value="Jaws Master" />
+		<translation value="Mestre das mandíbulas" />
+	</entry>
+	<entry key="25bp06shark_02_stripe_desc">
+		<original value="Deepn In the Pixels, It Follows." />
+		<translation value="Nas profundezas dos pixels, ele persegue." />
+	</entry>
+	<entry key="25bp06shark_02_stripe_name">
+		<original value="Hunting Game" />
+		<translation value="Caça ao tubarão" />
+	</entry>
+	<entry key="25prestige06_01_badge_desc">
+		<original value="The Fortune You Cannot Refund." />
+		<translation value="A sorte que não pode ser devolvida." />
+	</entry>
+	<entry key="25prestige06_01_badge_name">
+		<original value="Tarot Deck" />
+		<translation value="Cartas de tarô" />
+	</entry>
+	<entry key="25prestige06_01_mark_desc">
+		<original value="The Fortune You Cannot Refund." />
+		<translation value="A sorte que não pode ser devolvida." />
+	</entry>
+	<entry key="25prestige06_01_mark_name">
+		<original value="Crystal Ball" />
+		<translation value="Bola de cristal" />
+	</entry>
+	<entry key="25prestige06_01_stripe_desc">
+		<original value="The Fortune You Cannot Refund." />
+		<translation value="A sorte que não pode ser devolvida." />
+	</entry>
+	<entry key="25prestige06_01_stripe_name">
+		<original value="Fate's Whisper" />
+		<translation value="Sussurro do destino" />
+	</entry>
+	<entry key="25prestige06_02_badge_desc">
+		<original value="Your Destiny Painted in Light and Dark." />
+		<translation value="O seu destino desvendado." />
+	</entry>
+	<entry key="25prestige06_02_badge_name">
+		<original value="Mystical Tarot" />
+		<translation value="Tarô místico" />
+	</entry>
+	<entry key="25prestige06_02_mark_desc">
+		<original value="Your Destiny Painted in Light and Dark." />
+		<translation value="O seu destino desvendado." />
+	</entry>
+	<entry key="25prestige06_02_mark_name">
+		<original value="Magical Ball" />
+		<translation value="Esfera da vidência" />
+	</entry>
+	<entry key="25prestige06_02_stripe_desc">
+		<original value="Your Destiny Painted in Light and Dark." />
+		<translation value="O seu destino desvendado." />
+	</entry>
+	<entry key="25prestige06_02_stripe_name">
+		<original value="Fortune Teller's Booth" />
+		<translation value="Barraca da cartomante" />
+	</entry>
+	<entry key="ar11_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; FN SCAR-H." />
+		<translation value="Elimine 1.500 inimigos com um FN SCAR-H Tubarão Assassino." />
+	</entry>
+	<entry key="ar11_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; FN SCAR-H" />
+		<translation value="FN SCAR-H Tubarão Assassino" />
+	</entry>
+	<entry key="ar12_25summer06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;East Tech&quot; M16A3." />
+		<translation value="Elimine 1.500 inimigos com um M16A3 Tecnologia oriental." />
+	</entry>
+	<entry key="ar12_25summer06_Kill_name">
+		<original value="&quot;East Tech&quot; M16A3" />
+		<translation value="M16A3 Tecnologia oriental" />
+	</entry>
+	<entry key="ar23_25rating06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Quack Fury&quot; AS Val." />
+		<translation value="Elimine 1.500 inimigos com um AS Val Fúria do pato." />
+	</entry>
+	<entry key="ar23_25rating06_Kill_name">
+		<original value="&quot;Quack Fury&quot; AS Val" />
+		<translation value="AS Val Fúria do pato" />
+	</entry>
+	<entry key="ar43_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; AN-94 Abakan." />
+		<translation value="Elimine 1.500 inimigos com um AN-94 Abakan Tubarão Assassino." />
+	</entry>
+	<entry key="ar43_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; AN-94 Abakan" />
+		<translation value="AN-94 Abakan Tubarão Assassino." />
+	</entry>
+	<entry key="ar58_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; HK433." />
+		<translation value="Elimine 1.500 inimigos com um HK433 Tubarão Assassino." />
+	</entry>
+	<entry key="ar58_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; HK433" />
+		<translation value="HK433 Tubarão Assassino" />
+	</entry>
+	<entry key="ar59_25pve06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Bug Force&quot; STK CMCR." />
+		<translation value="Elimine 1.500 inimigos com um STK CMCR Tropa de insetos." />
+	</entry>
+	<entry key="ar59_25pve06_Kill_name">
+		<original value="&quot;Bug Force&quot; STK CMCR" />
+		<translation value="STK CMCR Tropa de insetos" />
+	</entry>
+	<entry key="engineer_25bp06shark_badge_desc">
+		<original value="Welcome to the Shark attraction." />
+		<translation value="Bem-vindo à atração de tubarão." />
+	</entry>
+	<entry key="engineer_25bp06shark_badge_name">
+		<original value="Engineer's Entrance Ticket" />
+		<translation value="Entrada do Engenheiro" />
+	</entry>
+	<entry key="kn202_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; Chainsaw Machete." />
+		<translation value="Elimine 1.500 inimigos com uma Machete Motosserra Tubarão Assassino." />
+	</entry>
+	<entry key="kn202_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; Chainsaw Machete" />
+		<translation value="Machete Motosserra Tubarão Assassino" />
+	</entry>
+	<entry key="kn61_25pve06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Bug Force&quot; Balisong Knife." />
+		<translation value="Elimine 1.500 inimigos com uma Faca Balisong Tropa de insetos." />
+	</entry>
+	<entry key="kn61_25pve06_Kill_name">
+		<original value="&quot;Bug Force&quot; Balisong Knife" />
+		<translation value="Faca Balisong Tropa de insetos" />
+	</entry>
+	<entry key="kn65_25rating06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Quack Fury&quot; Scout Knife." />
+		<translation value="Elimine 1.500 inimigos com um Faca de Batedor Fúria do pato." />
+	</entry>
+	<entry key="kn65_25rating06_Kill_name">
+		<original value="&quot;Quack Fury&quot; Scout Knife" />
+		<translation value="Faca de Batedor Fúria do pato" />
+	</entry>
+	<entry key="medic_25bp06shark_badge_desc">
+		<original value="Welcome to the Shark attraction." />
+		<translation value="Bem-vindo à atração do tubarão." />
+	</entry>
+	<entry key="medic_25bp06shark_badge_name">
+		<original value="Medic's Entrance Ticket" />
+		<translation value="Entrada do Médico" />
+	</entry>
+	<entry key="pt01_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; Desert Eagle." />
+		<translation value="Elimine 1.500 inimigos com uma Águia do deserto Tubarão Assassino." />
+	</entry>
+	<entry key="pt01_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; Desert Eagle" />
+		<translation value="Águia do deserto Tubarão Assassino." />
+	</entry>
+	<entry key="pt35_25pve06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Bug Force&quot; Taurus Judge." />
+		<translation value="Elimine 1.500 inimigos com um Taurus Judge Tropa de insetos." />
+	</entry>
+	<entry key="pt35_25pve06_Kill_name">
+		<original value="&quot;Bug Force&quot; Taurus Judge" />
+		<translation value="Taurus Judge Tropa de insetos" />
+	</entry>
+	<entry key="pt35_25rating06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Quack Fury&quot; Taurus Judge." />
+		<translation value="Elimine 1.500 inimigos com um Taurus Judge Fúria do pato." />
+	</entry>
+	<entry key="pt35_25rating06_Kill_name">
+		<original value="&quot;Quack Fury&quot; Taurus Judge" />
+		<translation value="Taurus Judge &quot;Fúria do pato”" />
+	</entry>
+	<entry key="pt53_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; Sulun Arms SR 410700." />
+		<translation value="Elimine 1.500 inimigos com uma Sulun Arms SR 410700 Tubarão Assassino." />
+	</entry>
+	<entry key="pt53_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; Sulun Arms SR 410700" />
+		<translation value="Sulun Arms SR 410700 Tubarão Assassino." />
+	</entry>
+	<entry key="shg05_25summer06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;East Tech&quot; USAS-12." />
+		<translation value="Elimine 1.500 inimigos com uma USAS-12 Tecnologia oriental." />
+	</entry>
+	<entry key="shg05_25summer06_Kill_name">
+		<original value="&quot;East Tech&quot; USAS-12" />
+		<translation value="USAS-12 Tecnologia oriental" />
+	</entry>
+	<entry key="shg40_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; MAG-7." />
+		<translation value="Elimine 1.500 inimigos com uma MAG-7 Tubarão Assassino." />
+	</entry>
+	<entry key="shg40_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; MAG-7" />
+		<translation value="MAG-7 Tubarão Assassino" />
+	</entry>
+	<entry key="shg50_25rating06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Quack Fury&quot; Marlin 1894 Custom." />
+		<translation value="Elimine 1.500 inimigos com um Marlin 1894 Custom Fúria do pato." />
+	</entry>
+	<entry key="shg50_25rating06_Kill_name">
+		<original value="&quot;Quack Fury&quot; Marlin 1894 Custom" />
+		<translation value="Marlin 1894 Custom Fúria do pato" />
+	</entry>
+	<entry key="shg55_25pve06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Bug Force&quot; Chiappa Triple Threat." />
+		<translation value="Elimine 1.500 inimigos com uma Chiappa Triple Threat Tropa de insetos." />
+	</entry>
+	<entry key="shg55_25pve06_Kill_name">
+		<original value="&quot;Bug Force&quot; Chiappa Triple Threat" />
+		<translation value="Chiappa Triple Threat Tropa de insetos" />
+	</entry>
+	<entry key="shg59_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; Kalashnikov MP-155 Ultima." />
+		<translation value="Elimine 1.500 inimigos com uma Kalashnikov MP-155 Ultima Abakan Tubarão Assassino." />
+	</entry>
+	<entry key="shg59_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; Kalashnikov MP-155 Ultima" />
+		<translation value="Kalashnikov MP-155 Ultima Tubarão Assassino" />
+	</entry>
+	<entry key="shg72_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; Browning Cynergy CX." />
+		<translation value="Elimine 1.500 inimigos com uma Browning Cynergy CX Tubarão Assassino." />
+	</entry>
+	<entry key="shg72_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; Browning Cynergy CX" />
+		<translation value="Browning Cynergy CX Tubarão Assassino" />
+	</entry>
+	<entry key="shg75_25na06warland_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;FunGun&quot; Kral Arms Compact." />
+		<translation value="Elimine 1.500 inimigos com uma Kral Arms Compact Oeste selvagem." />
+	</entry>
+	<entry key="shg75_25na06warland_Kill_name">
+		<original value="&quot;FunGun&quot; Kral Arms Compact" />
+		<translation value="Kral Arms Compact Oeste selvagem" />
+	</entry>
+	<entry key="shg75_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden Kral Arms Compact." />
+		<translation value="Elimine 999 inimigos com uma Kral Arms Compact dourado." />
+	</entry>
+	<entry key="shg75_gold01_Kill_name">
+		<original value="Golden Kral Arms Compact" />
+		<translation value="Kral Arms Compact Dourada" />
+	</entry>
+	<entry key="shg75_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a Kral Arms Compact." />
+		<translation value="Elimine 2.500 inimigos com uma Kral Arms Compact." />
+	</entry>
+	<entry key="shg75_Kill_name">
+		<original value="Kral Arms Compact" />
+		<translation value="Kral Arms Compact" />
+	</entry>
+	<entry key="smg31_25summer06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;East Tech&quot; SCAR-L PDW." />
+		<translation value="Elimine 1.500 inimigos com um SCAR-L PDW Tecnologia oriental." />
+	</entry>
+	<entry key="smg31_25summer06_Kill_name">
+		<original value="&quot;East Tech&quot; SCAR-L PDW" />
+		<translation value="SCAR-L PDW Tecnologia oriental" />
+	</entry>
+	<entry key="smg33_25pve06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Bug Force&quot; Honey Badger." />
+		<translation value="Elimine 1.500 inimigos com um Honey Badger Tropa de insetos." />
+	</entry>
+	<entry key="smg33_25pve06_Kill_name">
+		<original value="&quot;Bug Force&quot; Honey Badger" />
+		<translation value="Honey Badger Tropa de insetos" />
+	</entry>
+	<entry key="smg53_25rating06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Quack Fury&quot; AMB-17." />
+		<translation value="Elimine 1.500 inimigos com um AMB-17 Fúria do pato." />
+	</entry>
+	<entry key="smg53_25rating06_Kill_name">
+		<original value="&quot;Quack Fury&quot; AMB-17" />
+		<translation value="AMB-17 Fúria do pato" />
+	</entry>
+	<entry key="smg69_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; Taurus CT9 G2." />
+		<translation value="Elimine 1.500 inimigos com uma Taurus CT9 G2 Tubarão Assassino." />
+	</entry>
+	<entry key="smg69_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; Taurus CT9 G2" />
+		<translation value="Taurus CT9 G2 Tubarão Assassino" />
+	</entry>
+	<entry key="smg73_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; CSV-9." />
+		<translation value="Elimine 1.500 inimigos com uma CSV-9 Tubarão Assassino." />
+	</entry>
+	<entry key="smg73_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; CSV-9" />
+		<translation value="CSV-9 Tubarão Assassino" />
+	</entry>
+	<entry key="smg76_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; PPSh-41 Modern." />
+		<translation value="Elimine 1.500 inimigos com uma PPSh-41 Modern Tubarão Assassino." />
+	</entry>
+	<entry key="smg76_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; PPSh-41 Modern" />
+		<translation value="PPSh-41 Modern Tubarão Assassino" />
+	</entry>
+	<entry key="sniper_25bp06shark_badge_desc">
+		<original value="Welcome to the Shark attraction." />
+		<translation value="Bem-vindo à atração do tubarão." />
+	</entry>
+	<entry key="sniper_25bp06shark_badge_name">
+		<original value="Sniper's Entrance Ticket" />
+		<translation value="Entrada do Franco-atirador" />
+	</entry>
+	<entry key="soldier_25bp06shark_badge_desc">
+		<original value="Welcome to the Shark attraction." />
+		<translation value="Bem-vindo à atração do tubarão." />
+	</entry>
+	<entry key="soldier_25bp06shark_badge_name">
+		<original value="Rifleman's Entrance Ticket" />
+		<translation value="Entrada do Fuzileiro" />
+	</entry>
+	<entry key="sr08_25summer06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;East Tech&quot; CheyTac M200." />
+		<translation value="Elimine 1.500 inimigos com um CheyTac M200 Tecnologia oriental." />
+	</entry>
+	<entry key="sr08_25summer06_Kill_name">
+		<original value="&quot;East Tech&quot; CheyTac M200" />
+		<translation value="CheyTac M200 Tecnologia oriental" />
+	</entry>
+	<entry key="sr09_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; McMillan CS5." />
+		<translation value="Elimine 1.500 inimigos com um McMillan CS5 Tubarão Assassino." />
+	</entry>
+	<entry key="sr09_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; McMillan CS5" />
+		<translation value="McMillan CS5 Tubarão Assassino" />
+	</entry>
+	<entry key="sr09_25rating06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Quack Fury&quot; McMillan CS5." />
+		<translation value="Elimine 1.500 inimigos com um McMillan CS5 Fúria do pato." />
+	</entry>
+	<entry key="sr09_25rating06_Kill_name">
+		<original value="&quot;Quack Fury&quot; McMillan CS5" />
+		<translation value="McMillan CS5 Fúria do pato" />
+	</entry>
+	<entry key="sr62_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; OTs-48K MK2." />
+		<translation value="Elimine 1.500 inimigos com um OTs-48K MK2 Tubarão Assassino." />
+	</entry>
+	<entry key="sr62_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; OTs-48K MK2" />
+		<translation value="OTs-48K MK2 Tubarão Assassino" />
+	</entry>
+	<entry key="sr64_25pve06_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Bug Force&quot; SVCh-54." />
+		<translation value="Elimine 1.500 inimigos com um SVCh-54 Tropa de insetos." />
+	</entry>
+	<entry key="sr64_25pve06_Kill_name">
+		<original value="&quot;Bug Force&quot; SVCh-54" />
+		<translation value="SVCh-54 Tropa de insetos" />
+	</entry>
+	<entry key="sr67_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; SKS FAB." />
+		<translation value="Elimine 1.500 inimigos com um SKS FAB Tubarão Assassino." />
+	</entry>
+	<entry key="sr67_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; SKS FAB" />
+		<translation value="SKS FAB Tubarão Assassino" />
+	</entry>
+	<entry key="25op06_01_badge_desc">
+		<original value="Can be obtained as a reward for collecting the complete &quot;Night City&quot; card series." />
+		<translation value="Pode ser obtido como uma recompensa por juntar todas as cartas Cidade Noturna." />
+	</entry>
+	<entry key="25op06_01_badge_name">
+		<original value="Conqueror of the City" />
+		<translation value="Conquistador da cidade" />
+	</entry>
+	<entry key="25op06_02_badge_desc">
+		<original value="Can be obtained as a reward for collecting the complete &quot;Fjord&quot; card series." />
+		<translation value="Pode ser obtido como uma recompensa por juntar todas as cartas Fiorde." />
+	</entry>
+	<entry key="25op06_02_badge_name">
+		<original value="Fjord Veteran" />
+		<translation value="Veterano do Fiorde" />
+	</entry>
+	<entry key="25op06_03_badge_desc">
+		<original value="Can be obtained as a reward for collecting the complete &quot;Summer Gatherings&quot; card series." />
+		<translation value="Pode ser obtido como uma recompensa por juntar todas as cartas Encontro de Verão." />
+	</entry>
+	<entry key="25op06_03_badge_name">
+		<original value="Time to Rest" />
+		<translation value="Hora de descansar" />
+	</entry>
+	<entry key="25pvp06_01_mark_desc">
+		<original value="Take the 1st place of the winning team on the Warland Park map %1 times." />
+		<translation value="Conquiste o 1º lugar do time vencedor no mapa Parque Warland %1 vezes." />
+	</entry>
+	<entry key="25pvp06_01_mark_name">
+		<original value="Bronze Star Wheel" />
+		<translation value="Roda da estrela de Bronze" />
+	</entry>
+	<entry key="25pvp06_01_stripe_desc">
+		<original value="Hidden trophies await the marksman in the Heart of the Desert!" />
+		<translation value="Você está vendo os patos? Estão escondidos no deserto!" />
+	</entry>
+	<entry key="25pvp06_01_stripe_name">
+		<original value="Quack Shot" />
+		<translation value="Disparo do Pato" />
+	</entry>
+	<entry key="25pvp06_02_mark_desc">
+		<original value="Take the 1st place of the winning team on the Warland Park map %1 times." />
+		<translation value="Conquiste o 1º lugar do time vencedor no mapa Parque Warland %1 vezes." />
+	</entry>
+	<entry key="25pvp06_02_mark_name">
+		<original value="Silver Star Wheel" />
+		<translation value="Roda da estrela de prata" />
+	</entry>
+	<entry key="25pvp06_02_stripe_desc">
+		<original value="Wrest your luck from the steel claws in the Land of Loony Adventures!" />
+		<translation value="Agarre sua sorte com a tenazes garras de aço na Terra das Aventuras Insanas!" />
+	</entry>
+	<entry key="25pvp06_02_stripe_name">
+		<original value="Lucky Quacker" />
+		<translation value="Pato da Sorte" />
+	</entry>
+	<entry key="25pvp06_03_mark_desc">
+		<original value="Take the 1st place of the winning team on the Warland Park map %1 times." />
+		<translation value="Conquiste o 1º lugar do time vencedor no mapa Parque Warland %1 vezes." />
+	</entry>
+	<entry key="25pvp06_03_mark_name">
+		<original value="Golden Star Wheel" />
+		<translation value="Roda da estrela de ouro" />
+	</entry>
+	<entry key="kn68_25bp06shark_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Shark Slayer&quot; Chainsaw Machete." />
+		<translation value="Elimine 1.500 inimigos com uma Machete Motosserra Tubarão Assassino." />
+	</entry>
+	<entry key="kn68_25bp06shark_Kill_name">
+		<original value="&quot;Shark Slayer&quot; Chainsaw Machete" />
+		<translation value="Machete Motosserra Tubarão Assassino" />
+	</entry>
+	<entry key="sr70_25na07warland_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;FunGun&quot; FN SCAR Creedmoor." />
+		<translation value="Elimine 1.500 inimigos com um FN SCAR Creedmoor Arma Oeste selvagem." />
+	</entry>
+	<entry key="sr70_25na07warland_Kill_name">
+		<original value="&quot;FunGun&quot; FN SCAR Creedmoor" />
+		<translation value="FN SCAR Creedmoor Oeste selvagem" />
+	</entry>
+	<entry key="sr70_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden FN SCAR Creedmoor." />
+		<translation value="Elimine 999 inimigos com um FN SCAR Creedmoor dourado." />
+	</entry>
+	<entry key="sr70_gold01_Kill_name">
+		<original value="Golden FN SCAR Creedmoor" />
+		<translation value="FN SCAR Creedmoor dourado" />
+	</entry>
+	<entry key="sr70_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a FN SCAR Creedmoor." />
+		<translation value="Elimine 2.500 inimigos com um FN SCAR Creedmoor." />
+	</entry>
+	<entry key="sr70_Kill_name">
+		<original value="FN SCAR Creedmoor" />
+		<translation value="FN SCAR Creedmoor" />
+	</entry>
+	<entry key="ar27_25summer07_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Pharaoh's Rage&quot; Beretta ARX160." />
+		<translation value="Elimine 1.500 inimigos com um Beretta ARX160 Ira do Faraó." />
+	</entry>
+	<entry key="ar27_25summer07_Kill_name">
+		<original value="&quot;Pharaoh's Rage&quot; Beretta ARX160" />
+		<translation value="Beretta ARX160 Ira do Faraó" />
+	</entry>
+	<entry key="shg13_25summer07_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Pharaoh's Rage&quot; Kel-Tec Shotgun." />
+		<translation value="Elimine 1.500 inimigos com a espingarda Kel-Tec Ira do Faraó." />
+	</entry>
+	<entry key="shg13_25summer07_Kill_name">
+		<original value="&quot;Pharaoh's Rage&quot; Kel-Tec Shotgun" />
+		<translation value="Espingarda Kel-Tec Ira do Faraó" />
+	</entry>
+	<entry key="smg74_25summer07_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Pharaoh's Rage&quot; FAMAE SAF-200." />
+		<translation value="Elimine 1.500 inimigos com a FAMAE SAF-200 Ira do Faraó." />
+	</entry>
+	<entry key="smg74_25summer07_Kill_name">
+		<original value="&quot;Pharaoh's Rage&quot; FAMAE SAF-200" />
+		<translation value="FAMAE SAF-200 Ira do Faraó" />
+	</entry>
+	<entry key="sr69_25summer07_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Pharaoh's Rage&quot; ATA Arms Turqua." />
+		<translation value="Elimine 1.500 inimigos com o ATA Arms Turqua Ira do Faraó." />
+	</entry>
+	<entry key="sr69_25summer07_Kill_name">
+		<original value="&quot;Pharaoh's Rage&quot; ATA Arms Turqua" />
+		<translation value="ATA Arms Turqua Ira do Faraó" />
+	</entry>
+	<entry key="mg31_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden FN Evolys." />
+		<translation value="Elimine 999 inimigos com FN Evolys dourado" />
+	</entry>
+	<entry key="mg31_gold01_Kill_name">
+		<original value="Golden FN Evolys" />
+		<translation value="FN Evolys Dourado" />
+	</entry>
+	<entry key="mg31_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a FN Evolys." />
+		<translation value="Elimine 2.500 inimigos com FN Evolys" />
+	</entry>
+	<entry key="mg31_Kill_name">
+		<original value="FN Evolys" />
+		<translation value="FN Evolys" />
+	</entry>
+	<entry key="25op08faceit_01_badge_desc">
+		<original value="Scraped symbols of gilded victory." />
+		<translation value="Símbolo de bravura impecável" />
+	</entry>
+	<entry key="25op08faceit_01_badge_name">
+		<original value="Molten Plate" />
+		<translation value="Paixões em alta" />
+	</entry>
+	<entry key="25op08faceit_01_mark_desc">
+		<original value="Scraped symbols of gilded victory." />
+		<translation value="Símbolo de bravura impecável" />
+	</entry>
+	<entry key="25op08faceit_01_mark_name">
+		<original value="Molten Win" />
+		<translation value="Chama do triunfo" />
+	</entry>
+	<entry key="25op08faceit_01_stripe_desc">
+		<original value="Scraped symbols of gilded victory." />
+		<translation value="Símbolo de bravura impecável" />
+	</entry>
+	<entry key="25op08faceit_01_stripe_name">
+		<original value="Metal Shard Triumph" />
+		<translation value="Sucesso esmagador" />
+	</entry>
+	<entry key="25op08faceit_02_badge_desc">
+		<original value="Glory shaped by bronze and blood." />
+		<translation value="Uma recompensa que encontrou seu herói" />
+	</entry>
+	<entry key="25op08faceit_02_badge_name">
+		<original value="Blazing Star" />
+		<translation value="Estrela flamejante" />
+	</entry>
+	<entry key="25op08faceit_02_mark_desc">
+		<original value="Glory shaped by bronze and blood." />
+		<translation value="Uma recompensa que encontrou seu herói" />
+	</entry>
+	<entry key="25op08faceit_02_mark_name">
+		<original value="Starborne Ultimate" />
+		<translation value="Estrela do campeão" />
+	</entry>
+	<entry key="25op08faceit_02_stripe_desc">
+		<original value="Glory shaped by bronze and blood." />
+		<translation value="Uma recompensa que encontrou seu herói" />
+	</entry>
+	<entry key="25op08faceit_02_stripe_name">
+		<original value="Flameforged Honour" />
+		<translation value="Forjado em batalha" />
+	</entry>
+	<entry key="ar62_25summer08_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Dead Man’s Hand&quot; A-545." />
+		<translation value="Elimine 1.500 inimigos com a A-545 'Tortuga'" />
+	</entry>
+	<entry key="ar62_25summer08_Kill_name">
+		<original value="&quot;Dead Man’s Hand&quot; A-545" />
+		<translation value="Tortuga: A-545" />
+	</entry>
+	<entry key="engineer_25op08faceit_mark_desc">
+		<original value="Glory shaped by bronze and blood." />
+		<translation value="Uma recompensa que encontrou seu herói" />
+	</entry>
+	<entry key="engineer_25op08faceit_mark_name">
+		<original value="Starborne Engineer" />
+		<translation value="Engenheiro invencível" />
+	</entry>
+	<entry key="medic_25op08faceit_mark_desc">
+		<original value="Glory shaped by bronze and blood." />
+		<translation value="A recompensa encontrou seu herói" />
+	</entry>
+	<entry key="medic_25op08faceit_mark_name">
+		<original value="Starborne Medic" />
+		<translation value="Médico Invencível" />
+	</entry>
+	<entry key="mg31_25na08warland_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;FunGun&quot; FN Evolys." />
+		<translation value="Elimine 1.500 inimigos com FN Evolys 'Oeste selvagem'" />
+	</entry>
+	<entry key="mg31_25na08warland_Kill_name">
+		<original value="&quot;FunGun&quot; FN Evolys" />
+		<translation value="Oeste selvagem: FN Evolys" />
+	</entry>
+	<entry key="shg73_25summer08_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Dead Man’s Hand&quot; Panzer Arms BP-12." />
+		<translation value="Elimine 1.500 inimigos com a Panzer Arms BP-12 'Tortuga'" />
+	</entry>
+	<entry key="shg73_25summer08_Kill_name">
+		<original value="&quot;Dead Man’s Hand&quot; Panzer Arms BP-12" />
+		<translation value="Tortuga: Panzer Arms BP-12" />
+	</entry>
+	<entry key="smg38_25summer08_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Dead Man’s Hand&quot; CZ Scorpion EVO." />
+		<translation value="Elimine 1.500 inimigos com a CZ Scorpion EVO 3 'Tortuga'" />
+	</entry>
+	<entry key="smg38_25summer08_Kill_name">
+		<original value="&quot;Dead Man’s Hand&quot; CZ Scorpion EVO" />
+		<translation value="Tortuga: CZ Scorpion EVO 3" />
+	</entry>
+	<entry key="sniper_25op08faceit_mark_desc">
+		<original value="Glory shaped by bronze and blood." />
+		<translation value="Uma recompensa que encontrou seu herói" />
+	</entry>
+	<entry key="sniper_25op08faceit_mark_name">
+		<original value="Starborne Sniper" />
+		<translation value="Atirador Invencível" />
+	</entry>
+	<entry key="soldier_25op08faceit_mark_desc">
+		<original value="Glory shaped by bronze and blood." />
+		<translation value="Uma recompensa que encontrou seu herói" />
+	</entry>
+	<entry key="soldier_25op08faceit_mark_name">
+		<original value="Starborne Rifleman" />
+		<translation value="Fuzileiro Invencível" />
+	</entry>
+	<entry key="sr31_25summer08_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Dead Man’s Hand&quot; AX308." />
+		<translation value="Elimine 1.500 inimigos com a AX308 'Tortuga'" />
+	</entry>
+	<entry key="sr31_25summer08_Kill_name">
+		<original value="&quot;Dead Man’s Hand&quot; AX308" />
+		<translation value="Tortuga: AX308" />
+	</entry>
+	<entry key="throwing_claymore_01">
+		<original value="Time to Boom!" />
+		<translation value="Um, dois, bum!" />
+	</entry>
+	<entry key="throwing_claymore_01_desc">
+		<original value="Perform 10 Demolitionists." />
+		<translation value="Conquiste a mini-conquista 'Mineiro' 10 vezes" />
+	</entry>
+	<entry key="throwing_claymore_02">
+		<original value="Tick… tick… detonate!" />
+		<translation value="O tempo está passando!" />
+	</entry>
+	<entry key="throwing_claymore_02_desc">
+		<original value="Perform 100 Demolitionists." />
+		<translation value="Conquiste a mini-conquista 'Mineiro' 100 vezes" />
+	</entry>
+	<entry key="throwing_claymore_03">
+		<original value="No smoke, no joke!" />
+		<translation value="Pegue o presente!" />
+	</entry>
+	<entry key="throwing_claymore_03_desc">
+		<original value="Perform 1,000 Demolitionists." />
+		<translation value="Conquiste a mini-conquista 'Mineiro' 1.000 vezes" />
+	</entry>
+	<entry key="throwing_claymore_04">
+		<original value="Silence… then oblivion" />
+		<translation value="E não sobrou ninguém" />
+	</entry>
+	<entry key="throwing_claymore_04_desc">
+		<original value="Perform 10,000 Demolitionists." />
+		<translation value="Conquiste a mini-conquista 'Mineiro' 10.000 vezes" />
+	</entry>
+	<entry key="throwing_claymore_mastery_1k">
+		<original value="Throwing claymore mastery" />
+		<translation value="Claymore Arremessável I" />
+	</entry>
+	<entry key="throwing_claymore_mastery_1k_desc">
+		<original value="Eliminate 1,000 enemies with throwing claymore." />
+		<translation value="Elimine 1.000 inimigos com a Claymore Arremessável" />
+	</entry>
+	<entry key="throwing_claymore_mastery_5k">
+		<original value="Advanced:Throwing claymore mastery." />
+		<translation value="Claymore Arremessável II" />
+	</entry>
+	<entry key="throwing_claymore_mastery_5k_desc">
+		<original value="Eliminate 5,000 enemies with throwing claymore." />
+		<translation value="Elimine 5.000 inimigos com a Claymore Arremessável" />
+	</entry>
+	<entry key="throwing_claymore_stripe_10k">
+		<original value="Ordnance Master." />
+		<translation value="Ao pó" />
+	</entry>
+	<entry key="throwing_claymore_stripe_10k_desc">
+		<original value="Deal 10000 damage with a throwing claymore." />
+		<translation value="Mate 10.000 inimigos com uma mina arremessável." />
+	</entry>
+	<entry key="throwing_claymore_stripe_5k">
+		<original value="Fuse Hand." />
+		<translation value="Em pedaços" />
+	</entry>
+	<entry key="throwing_claymore_stripe_5k_desc">
+		<original value="Deal 5000 damage with a throwing claymore." />
+		<translation value="Mate 5.000 inimigos com uma granada." />
+	</entry>
+	<entry key="25autumn09_badge_desc">
+		<original value="Pearl's Glow On A Sharp Blade." />
+		<translation value="A beleza é verdadeiramente impecável" />
+	</entry>
+	<entry key="25autumn09_badge_name">
+		<original value="Pearl Shimmer" />
+		<translation value="Uma verdadeira joia" />
+	</entry>
+	<entry key="25autumn09_mark_desc">
+		<original value="Pearl's Glow On A Sharp Blade." />
+		<translation value="A beleza é verdadeiramente impecável" />
+	</entry>
+	<entry key="25autumn09_mark_name">
+		<original value="Nacred Symbol" />
+		<translation value="Vislumbres de significado" />
+	</entry>
+	<entry key="25autumn09_stripe_desc">
+		<original value="Pearl's Glow On A Sharp Blade." />
+		<translation value="A beleza é verdadeiramente impecável" />
+	</entry>
+	<entry key="25autumn09_stripe_name">
+		<original value="Nacred Plate" />
+		<translation value="Em tons perolados" />
+	</entry>
+	<entry key="25bp09asia_01_badge_desc">
+		<original value="Gilded Tide, Jade Core." />
+		<translation value="Uma relíquia inestimável dos tempos antigos" />
+	</entry>
+	<entry key="25bp09asia_01_badge_name">
+		<original value="Qian" />
+		<translation value="Tesouro antigo" />
+	</entry>
+	<entry key="25bp09asia_01_mark_desc">
+		<original value="Gilded Tide, Jade Core." />
+		<translation value="Uma relíquia inestimável dos tempos antigos" />
+	</entry>
+	<entry key="25bp09asia_01_mark_name">
+		<original value="Dragon Head" />
+		<translation value="Garganta do Dragão" />
+	</entry>
+	<entry key="25bp09asia_01_stripe_desc">
+		<original value="Gilded Tide, Jade Core." />
+		<translation value="Uma relíquia inestimável dos tempos antigos" />
+	</entry>
+	<entry key="25bp09asia_01_stripe_name">
+		<original value="The Great Jade" />
+		<translation value="Elemento Congelado" />
+	</entry>
+	<entry key="25bp09asia_02_badge_desc">
+		<original value="No Ripple Can Disturb the Flow." />
+		<translation value="Um símbolo de paz e serenidade" />
+	</entry>
+	<entry key="25bp09asia_02_badge_name">
+		<original value="Lily Pad" />
+		<translation value="Deslizando sobre a água" />
+	</entry>
+	<entry key="25bp09asia_02_mark_desc">
+		<original value="No Ripple Can Disturb the Flow." />
+		<translation value="Um símbolo de paz e serenidade" />
+	</entry>
+	<entry key="25bp09asia_02_mark_name">
+		<original value="White Lotus" />
+		<translation value="Uma flor florescendo" />
+	</entry>
+	<entry key="25bp09asia_02_stripe_desc">
+		<original value="No Ripple Can Disturb the Flow." />
+		<translation value="Um símbolo de paz e serenidade" />
+	</entry>
+	<entry key="25bp09asia_02_stripe_name">
+		<original value="Koi Pond" />
+		<translation value="Harmonia da Natureza" />
+	</entry>
+	<entry key="25prestige09_01_badge_desc">
+		<original value="Strokes Filled With Life." />
+		<translation value="Fonte de sabedoria eterna" />
+	</entry>
+	<entry key="25prestige09_01_badge_name">
+		<original value="Stamp" />
+		<translation value="Selo Antigo" />
+	</entry>
+	<entry key="25prestige09_01_mark_desc">
+		<original value="Strokes Filled With Life." />
+		<translation value="Fonte de sabedoria eterna" />
+	</entry>
+	<entry key="25prestige09_01_mark_name">
+		<original value="Qi" />
+		<translation value="Energia Qi" />
+	</entry>
+	<entry key="25prestige09_01_stripe_desc">
+		<original value="Strokes Filled With Life." />
+		<translation value="Fonte de sabedoria eterna" />
+	</entry>
+	<entry key="25prestige09_01_stripe_name">
+		<original value="Hanzi Strip" />
+		<translation value="Mensagem antiga" />
+	</entry>
+	<entry key="25prestige09_02_badge_desc">
+		<original value="The Might Painted in White." />
+		<translation value="A presa não escapará do caçador" />
+	</entry>
+	<entry key="25prestige09_02_badge_name">
+		<original value="Tiger Eye" />
+		<translation value="Olhar atento" />
+	</entry>
+	<entry key="25prestige09_02_mark_desc">
+		<original value="The Might Painted in White." />
+		<translation value="A presa não escapará do caçador" />
+	</entry>
+	<entry key="25prestige09_02_mark_name">
+		<original value="Power" />
+		<translation value="Força indomável" />
+	</entry>
+	<entry key="25prestige09_02_stripe_desc">
+		<original value="The Might Painted in White." />
+		<translation value="A presa não escapará do caçador" />
+	</entry>
+	<entry key="25prestige09_02_stripe_name">
+		<original value="White Tiger" />
+		<translation value="Passo do Tigre" />
+	</entry>
+	<entry key="ar12_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Golden Reign&quot; M16A3." />
+		<translation value="Mate 1.500 inimigos com M16A3 Custom | 'Grande Dragão'" />
+	</entry>
+	<entry key="ar12_25bp09asia_Kill_name">
+		<original value="&quot;Golden Reign&quot; M16A3" />
+		<translation value="Grande Dragão: M16A3 Custom" />
+	</entry>
+	<entry key="ar23_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Jade Wave&quot; AS-&quot;VAL&quot;." />
+		<translation value="Mate 1.500 inimigos com AS 'Val' | 'Tempestade'" />
+	</entry>
+	<entry key="ar23_25bp09asia_Kill_name">
+		<original value="&quot;Jade Wave&quot; AS-&quot;VAL&quot;" />
+		<translation value="Tempestade: AS 'Val'" />
+	</entry>
+	<entry key="ar43_25rating09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;K.O. Fist&quot; AN-94 Abakan." />
+		<translation value="Mate 1.500 inimigos com AN-94 'Abakan' | 'Knockout'" />
+	</entry>
+	<entry key="ar43_25rating09_Kill_name">
+		<original value="&quot;K.O. Fist&quot; AN-94 Abakan" />
+		<translation value="Knockout: AN-94 'Abakan'" />
+	</entry>
+	<entry key="ar58_25pve09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Panda Style&quot; HK433." />
+		<translation value="Mate 1.500 inimigos com HK433 | 'Panda'" />
+	</entry>
+	<entry key="ar58_25pve09_Kill_name">
+		<original value="&quot;Panda Style&quot; HK433" />
+		<translation value="Panda: HK433" />
+	</entry>
+	<entry key="ar62_25autumn09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Pearl Luxury&quot; A-545." />
+		<translation value="Mate 1.500 inimigos com A-545 | 'Luxury'" />
+	</entry>
+	<entry key="ar62_25autumn09_Kill_name">
+		<original value="&quot;Pearl Luxury&quot; A-545" />
+		<translation value="Luxo: A-545" />
+	</entry>
+	<entry key="engineer_25bp09asia_badge_desc">
+		<original value="Jade Token of Excellence." />
+		<translation value="Trabalho impecável de um verdadeiro mestre" />
+	</entry>
+	<entry key="engineer_25bp09asia_badge_name">
+		<original value="Jade Engineer" />
+		<translation value="Relíquia do Engenheiro" />
+	</entry>
+	<entry key="kn61_25pve09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Panda Style&quot; Balisong Knife." />
+		<translation value="Mate 1.500 inimigos com uma faca borboleta | 'Panda'" />
+	</entry>
+	<entry key="kn61_25pve09_Kill_name">
+		<original value="&quot;Panda Style&quot; Balisong Knife" />
+		<translation value="Panda: faca borboleta" />
+	</entry>
+	<entry key="kn65_25rating09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;K.O. Fist&quot; Scout Knife." />
+		<translation value="Mate 1.500 inimigos com a faca do sabotador | 'Knockout'" />
+	</entry>
+	<entry key="kn65_25rating09_Kill_name">
+		<original value="&quot;K.O. Fist&quot; Scout Knife" />
+		<translation value="Faca do sabotador: Nocaute" />
+	</entry>
+	<entry key="kn71_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Golden Reign&quot; Kiridashi Knife." />
+		<translation value="Mate 1.500 inimigos com uma faca kiridashi | 'Grande Dragão'" />
+	</entry>
+	<entry key="kn71_25bp09asia_Kill_name">
+		<original value="&quot;Golden Reign&quot; Kiridashi Knife" />
+		<translation value="Grande Dragão: kiridashi" />
+	</entry>
+	<entry key="medic_25bp09asia_badge_desc">
+		<original value="Jade Token of Excellence." />
+		<translation value="Trabalho impecável de um verdadeiro mestre" />
+	</entry>
+	<entry key="medic_25bp09asia_badge_name">
+		<original value="Jade Medic" />
+		<translation value="Relíquia do Médico" />
+	</entry>
+	<entry key="mg31_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Crimson Koi&quot; FN Evolys." />
+		<translation value="Mate 1.500 inimigos com FN Evolys | 'Harmony'" />
+	</entry>
+	<entry key="mg31_25bp09asia_Kill_name">
+		<original value="&quot;Crimson Koi&quot; FN Evolys" />
+		<translation value="Harmonia: FN Evolys" />
+	</entry>
+	<entry key="pt01_25pve09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Panda Style&quot; Desert Eagle." />
+		<translation value="Mate 1.500 inimigos com Desert Eagle | 'Panda'" />
+	</entry>
+	<entry key="pt01_25pve09_Kill_name">
+		<original value="&quot;Panda Style&quot; Desert Eagle" />
+		<translation value="Panda: Desert Eagle" />
+	</entry>
+	<entry key="pt14_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Crimson Koi&quot; SIG Sauer P226." />
+		<translation value="Mate 1.500 inimigos com SIG Sauer P226 | 'Harmonia'" />
+	</entry>
+	<entry key="pt14_25bp09asia_Kill_name">
+		<original value="&quot;Crimson Koi&quot; SIG Sauer P226" />
+		<translation value="Harmonia: SIG Sauer P226" />
+	</entry>
+	<entry key="pt16_25rating09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;K.O. Fist&quot; M1911A1." />
+		<translation value="Mate 1.500 inimigos com Colt M1911A1 | 'Knockout'" />
+	</entry>
+	<entry key="pt16_25rating09_Kill_name">
+		<original value="&quot;K.O. Fist&quot; M1911A1" />
+		<translation value="Nocaute: Colt M1911A1" />
+	</entry>
+	<entry key="pt54_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden China Lake." />
+		<translation value="Mate 999 inimigos com a China Lake dourada" />
+	</entry>
+	<entry key="pt54_gold01_Kill_name">
+		<original value="Golden China Lake" />
+		<translation value="Golden China Lake" />
+	</entry>
+	<entry key="pt54_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a China Lake." />
+		<translation value="Mate 2.500 inimigos com a China Lake" />
+	</entry>
+	<entry key="pt54_Kill_name">
+		<original value="China Lake" />
+		<translation value="China Lake" />
+	</entry>
+	<entry key="shg05_25pve09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Panda Style&quot; USAS-12." />
+		<translation value="Mate 1.500 inimigos com USAS-12 | 'Panda'" />
+	</entry>
+	<entry key="shg05_25pve09_Kill_name">
+		<original value="&quot;Panda Style&quot; USAS-12" />
+		<translation value="Panda: USAS-12" />
+	</entry>
+	<entry key="shg13_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Golden Reign&quot; Kel-Tec Shotgun." />
+		<translation value="Mate 1.500 inimigos com Kel-Tec KSG | 'Grande Dragão'" />
+	</entry>
+	<entry key="shg13_25bp09asia_Kill_name">
+		<original value="&quot;Golden Reign&quot; Kel-Tec Shotgun" />
+		<translation value="Grande Dragão: Kel-Tec KSG" />
+	</entry>
+	<entry key="shg44_25autumn09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Pearl Luxury&quot; Winchester 1887." />
+		<translation value="Mate 1.500 inimigos com Winchester 1887 | 'Luxo'" />
+	</entry>
+	<entry key="shg44_25autumn09_Kill_name">
+		<original value="&quot;Pearl Luxury&quot; Winchester 1887" />
+		<translation value="Luxo: Winchester 1887" />
+	</entry>
+	<entry key="shg50_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Crimson Koi&quot; Marlin 1894 Custom." />
+		<translation value="Mate 1.500 inimigos com Marlin 1894 Custom | 'Harmony'" />
+	</entry>
+	<entry key="shg50_25bp09asia_Kill_name">
+		<original value="&quot;Crimson Koi&quot; Marlin 1894 Custom" />
+		<translation value="Harmony: Marlin 1894 Custom" />
+	</entry>
+	<entry key="shg50_25rating09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;K.O. Fist&quot; Marlin 1894 Custom." />
+		<translation value="Mate 1.500 inimigos com Marlin 1894 Custom | 'Knockout'" />
+	</entry>
+	<entry key="shg50_25rating09_Kill_name">
+		<original value="&quot;K.O. Fist&quot; Marlin 1894 Custom" />
+		<translation value="Nocaute: Marlin 1894 Custom" />
+	</entry>
+	<entry key="shg59_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Jade Wave&quot; Kalashnikov MP-155 Ultima." />
+		<translation value="Mate 1.500 inimigos com a Kalashnikov MP-155 Ultima | 'Storm'" />
+	</entry>
+	<entry key="shg59_25bp09asia_Kill_name">
+		<original value="&quot;Jade Wave&quot; Kalashnikov MP-155 Ultima" />
+		<translation value="Tempestade: Kalashnikov MP-155 Ultima" />
+	</entry>
+	<entry key="shg76_25na09sof_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Short Circuit&quot; PA EG240." />
+		<translation value="Mate 1.500 inimigos com PA EG240 | 'Melhoria'" />
+	</entry>
+	<entry key="shg76_25na09sof_Kill_name">
+		<original value="&quot;Short Circuit&quot; PA EG240" />
+		<translation value="Aprimoramento: PA EG240" />
+	</entry>
+	<entry key="shg76_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden PA EG240." />
+		<translation value="Mate 999 inimigos com a PA EG240 dourada" />
+	</entry>
+	<entry key="shg76_gold01_Kill_name">
+		<original value="Golden PA EG240" />
+		<translation value="Golden PA EG240" />
+	</entry>
+	<entry key="shg76_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a PA EG240." />
+		<translation value="Mate 2.500 inimigos com PA EG240" />
+	</entry>
+	<entry key="shg76_Kill_name">
+		<original value="PA EG240" />
+		<translation value="PA EG240" />
+	</entry>
+	<entry key="smg08_25autumn09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Pearl Luxury&quot; XM8 Compact." />
+		<translation value="Mate 1.500 inimigos com XM8 Compact | 'Luxo'" />
+	</entry>
+	<entry key="smg08_25autumn09_Kill_name">
+		<original value="&quot;Pearl Luxury&quot; XM8 Compact" />
+		<translation value="Luxo: XM8 Compact" />
+	</entry>
+	<entry key="smg08_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden XM8 Compact." />
+		<translation value="Mate 999 inimigos com o XM8 Compact dourado" />
+	</entry>
+	<entry key="smg08_gold01_Kill_name">
+		<original value="Golden XM8 Compact" />
+		<translation value="XM8 Compact Dourado" />
+	</entry>
+	<entry key="smg31_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Golden Reign&quot; SCAR-L PDW." />
+		<translation value="Mate 1.500 inimigos com FN SCAR-L PDW | 'Grande Dragão'" />
+	</entry>
+	<entry key="smg31_25bp09asia_Kill_name">
+		<original value="&quot;Golden Reign&quot; SCAR-L PDW" />
+		<translation value="Grande Dragão: FN SCAR-L PDW" />
+	</entry>
+	<entry key="smg33_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Crimson Koi&quot; Honey Badger." />
+		<translation value="Mate 1.500 inimigos com a Honey Badger | 'Harmonia'" />
+	</entry>
+	<entry key="smg33_25bp09asia_Kill_name">
+		<original value="&quot;Crimson Koi&quot; Honey Badger" />
+		<translation value="Harmonia: Honey Badger" />
+	</entry>
+	<entry key="smg71_25pve09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Panda Style&quot; PP-2011 Kedr-Para." />
+		<translation value="Mate 1.500 inimigos com a PP-2011 'Kedr-Para' | 'Panda'" />
+	</entry>
+	<entry key="smg71_25pve09_Kill_name">
+		<original value="&quot;Panda Style&quot; PP-2011 Kedr-Para" />
+		<translation value="Panda: PP-2011 'Cedar-Para'" />
+	</entry>
+	<entry key="smg75_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Jade Wave&quot; SR-3M Vikhr." />
+		<translation value="Mate 1.500 inimigos com SR-3M 'Whirlwind' | 'Storm'" />
+	</entry>
+	<entry key="smg75_25bp09asia_Kill_name">
+		<original value="&quot;Jade Wave&quot; SR-3M Vikhr" />
+		<translation value="Tempestade: SR-3M 'Whirlwind'" />
+	</entry>
+	<entry key="smg76_25rating09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;K.O. Fist&quot; PPSh-41 Modern." />
+		<translation value="Mate 1.500 inimigos com PPSh-41 Modern | 'Knockout'" />
+	</entry>
+	<entry key="smg76_25rating09_Kill_name">
+		<original value="&quot;K.O. Fist&quot; PPSh-41 Modern" />
+		<translation value="Nocaute: PPSh-41 Moderno" />
+	</entry>
+	<entry key="sniper_25bp09asia_badge_desc">
+		<original value="Jade Token of Excellence." />
+		<translation value="Trabalho impecável de um verdadeiro mestre" />
+	</entry>
+	<entry key="sniper_25bp09asia_badge_name">
+		<original value="Jade Sniper" />
+		<translation value="Relíquia do Franco-atirador" />
+	</entry>
+	<entry key="soldier_25bp09asia_badge_desc">
+		<original value="Jade Token of Excellence." />
+		<translation value="Trabalho impecável de um verdadeiro mestre" />
+	</entry>
+	<entry key="soldier_25bp09asia_badge_name">
+		<original value="Jade Assault" />
+		<translation value="Relíquia do Stormtrooper" />
+	</entry>
+	<entry key="sr31_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Golden Reign&quot; AX308." />
+		<translation value="Mate 1.500 inimigos com AX308 | 'Grande Dragão'" />
+	</entry>
+	<entry key="sr31_25bp09asia_Kill_name">
+		<original value="&quot;Golden Reign&quot; AX308" />
+		<translation value="Grande Dragão: AX308" />
+	</entry>
+	<entry key="sr67_25pve09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Panda Style&quot; SKS FAB." />
+		<translation value="Mate 1.500 inimigos com SKS FAB | 'Panda'" />
+	</entry>
+	<entry key="sr67_25pve09_Kill_name">
+		<original value="&quot;Panda Style&quot; SKS FAB" />
+		<translation value="Panda: SKS FAB" />
+	</entry>
+	<entry key="sr68_25autumn09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Pearl Luxury&quot; PGM Ultima Ratio." />
+		<translation value="Error: Error from your provider OpenAI with gpt-4o: 503 - 500&#xA;Execution id: 61f8ac8c-37fb-43ee-9e09-92d566cb89c3&#xA;Please try again. If this issue persists, contact our support team https://gptforwork.com/support" />
+	</entry>
+	<entry key="sr68_25autumn09_Kill_name">
+		<original value="&quot;Pearl Luxury&quot; PGM Ultima Ratio" />
+		<translation value="Luxo: PGM Ultima Ratio" />
+	</entry>
+	<entry key="sr69_25rating09_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;K.O. Fist&quot; ATA Arms Turqua." />
+		<translation value="Mate 1.500 inimigos com ATA Arms Turqua | 'Knockout'" />
+	</entry>
+	<entry key="sr69_25rating09_Kill_name">
+		<original value="&quot;K.O. Fist&quot; ATA Arms Turqua" />
+		<translation value="Knockout: ATA Arms Turqua" />
+	</entry>
+	<entry key="sr70_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Crimson Koi&quot; FN SCAR Creedmoor." />
+		<translation value="Mate 1.500 inimigos com FN SCAR Creedmoor | 'Harmony'" />
+	</entry>
+	<entry key="sr70_25bp09asia_Kill_name">
+		<original value="&quot;Crimson Koi&quot; FN SCAR Creedmoor" />
+		<translation value="Harmonia: FN SCAR Creedmoor" />
+	</entry>
+	<entry key="smg77_25na10sof_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Short Circuit&quot; MSMC." />
+		<translation value="Elimine 1.500 inimigos com uma MSMC | 'Atualização'." />
+	</entry>
+	<entry key="smg77_25na10sof_Kill_name">
+		<original value="&quot;Short Circuit&quot; MSMC" />
+		<translation value="Atualização: MSMC." />
+	</entry>
+	<entry key="smg77_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden MSMC." />
+		<translation value="Elimine 999 inimigos com uma MSMC dourada." />
+	</entry>
+	<entry key="smg77_gold01_Kill_name">
+		<original value="Golden MSMC" />
+		<translation value="MSMC dourada" />
+	</entry>
+	<entry key="smg77_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a MSMC." />
+		<translation value="Elimine 2.500 inimigos com uma MSMC." />
+	</entry>
+	<entry key="smg77_Kill_name">
+		<original value="MSMC" />
+		<translation value="MSMC" />
+	</entry>
+	<entry key="sr04_25bp09asia_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Jade Wave&quot; AS50." />
+		<translation value="Elimine 1.500 inimigos com um AS50 | 'Onda Jade'." />
+	</entry>
+	<entry key="sr04_25bp09asia_Kill_name">
+		<original value="&quot;Jade Wave&quot; AS50" />
+		<translation value="Onda Jade: AS50" />
+	</entry>
+	<entry key="ar11_belt01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Beast&quot; FN SCAR-H." />
+		<translation value="Mate 1.500 inimigos com FN SCAR-H | 'Outcast'" />
+	</entry>
+	<entry key="ar11_belt01_Kill_name">
+		<original value="&quot;Beast&quot; FN SCAR-H" />
+		<translation value="Pária: FN SCAR-H" />
+	</entry>
+	<entry key="ar12_tooth01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Bloody Bones&quot; M16A3." />
+		<translation value="Mate 1.500 inimigos com M16A3 Custom | 'Outcast'" />
+	</entry>
+	<entry key="ar12_tooth01_Kill_name">
+		<original value="&quot;Bloody Bones&quot; M16A3" />
+		<translation value="Outcast: M16A3 Custom" />
+	</entry>
+	<entry key="ar16_hlw25_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Demon Armory&quot; Type 97." />
+		<translation value="Mate 1.500 inimigos com Tipo 97 | 'Demônios'" />
+	</entry>
+	<entry key="ar16_hlw25_Kill_name">
+		<original value="&quot;Demon Armory&quot; Type 97" />
+		<translation value="Demônios: Tipo 97" />
+	</entry>
+	<entry key="hlw25_badge_desc">
+		<original value="Dare to Walk In The Demon's Night." />
+		<translation value="Ouse andar na Noite do Demônio." />
+	</entry>
+	<entry key="hlw25_badge_name">
+		<original value="Demon Blood" />
+		<translation value="Sangue Demoníaco" />
+	</entry>
+	<entry key="hlw25_mark_desc">
+		<original value="Dare to Walk In The Demon's Night." />
+		<translation value="Ouse andar na Noite do Demônio." />
+	</entry>
+	<entry key="hlw25_mark_name">
+		<original value="Cursed Eye" />
+		<translation value="Olho amaldiçoado" />
+	</entry>
+	<entry key="hlw25_stripe_desc">
+		<original value="Dare to Walk In The Demon's Night." />
+		<translation value="Ouse andar na Noite do Demônio." />
+	</entry>
+	<entry key="hlw25_stripe_name">
+		<original value="Night Spirits" />
+		<translation value="Espíritos noturnos" />
+	</entry>
+	<entry key="kn10_red01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Rule Breaker&quot; S&amp;W Survival Tanto Blade." />
+		<translation value="Mate 1.500 inimigos com a faca S&amp;W Survival Tanto | 'Outcast'" />
+	</entry>
+	<entry key="kn10_red01_Kill_name">
+		<original value="&quot;Rule Breaker&quot; S&amp;W Survival Tanto Blade" />
+		<translation value="Outcast: нож S&amp;W Survival Tanto" />
+	</entry>
+	<entry key="pt21_rust01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Rust and Smoke&quot; Glock 18C." />
+		<translation value="Mate 1.500 inimigos com Glock 18C | 'Outcast'" />
+	</entry>
+	<entry key="pt21_rust01_Kill_name">
+		<original value="&quot;Rust and Smoke&quot; Glock 18C" />
+		<translation value="Outcast: Glock 18C" />
+	</entry>
+	<entry key="pt33_poison01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Poison&quot; S&amp;W M&amp;P R8." />
+		<translation value="Mate 1.500 inimigos com S&amp;W M&amp;P R8 | 'Outcast'" />
+	</entry>
+	<entry key="pt33_poison01_Kill_name">
+		<original value="&quot;Poison&quot; S&amp;W M&amp;P R8" />
+		<translation value="Outcast: S&amp;W M&amp;P R8" />
+	</entry>
+	<entry key="shg51_colors01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Message&quot; Typhoon F12." />
+		<translation value="Mate 1.500 inimigos com o Typhoon F12 | 'Outcast'" />
+	</entry>
+	<entry key="shg51_colors01_Kill_name">
+		<original value="&quot;Message&quot; Typhoon F12" />
+		<translation value="Outcast: Tufão F12" />
+	</entry>
+	<entry key="shg55_hlw25_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Demon Armory&quot; Chiappa Triple Threat." />
+		<translation value="Mate 1.500 inimigos com a Chiappa Triple Threat | 'Demônios'" />
+	</entry>
+	<entry key="shg55_hlw25_Kill_name">
+		<original value="&quot;Demon Armory&quot; Chiappa Triple Threat" />
+		<translation value="Demônios: Chiappa Triple Threat" />
+	</entry>
+	<entry key="smg74_hlw25_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Demon Armory&quot; FAMAE SAF-200." />
+		<translation value="Mate 1.500 inimigos com FAMAE SAF-200 | 'Demônios'" />
+	</entry>
+	<entry key="smg74_hlw25_Kill_name">
+		<original value="&quot;Demon Armory&quot; FAMAE SAF-200" />
+		<translation value="Demônios: FAMAE SAF-200" />
+	</entry>
+	<entry key="sr09_graffitos01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Graffiti&quot; McMillan CS5." />
+		<translation value="Mate 1.500 inimigos com McMillan CS5 | 'Outcast'" />
+	</entry>
+	<entry key="sr09_graffitos01_Kill_name">
+		<original value="&quot;Graffiti&quot; McMillan CS5" />
+		<translation value="Outcast: McMillan CS5" />
+	</entry>
+	<entry key="sr38_frost01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;Ice Blast&quot; M14 Crazy horse." />
+		<translation value="Mate 1.500 inimigos com o M14 Crazy Horse | 'Outcast'" />
+	</entry>
+	<entry key="sr38_frost01_Kill_name">
+		<original value="&quot;Ice Blast&quot; M14 Crazy horse" />
+		<translation value="Outcast: M14 Cavalo Louco" />
+	</entry>
+	<entry key="sr38_hlw25_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Demon Armory&quot; M14 Crazy horse." />
+		<translation value="Mate 1.500 inimigos com o M14 Crazy Horse | 'Demônios'" />
+	</entry>
+	<entry key="sr38_hlw25_Kill_name">
+		<original value="&quot;Demon Armory&quot; M14 Crazy horse" />
+		<translation value="Demônios: M14 Cavalo Louco" />
+	</entry>
+	<entry key="ar15_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden Type 97B." />
+		<translation value="Elimine 999 inimigos com um Type 97B dourado." />
+	</entry>
+	<entry key="ar15_gold01_Kill_name">
+		<original value="Golden Type 97B" />
+		<translation value="Type 97B dourado" />
+	</entry>
+	<entry key="ar16_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden Type 97." />
+		<translation value="Elimine 999 inimigos com um Type 97 dourado." />
+	</entry>
+	<entry key="ar16_gold01_Kill_name">
+		<original value="Golden Type 97" />
+		<translation value="Type 97 Dourado" />
+	</entry>
+	<entry key="25operator10_01_01_mark_desc">
+		<original value="Social Network Achievement." />
+		<translation value="Conquista para a galera das redes sociais." />
+	</entry>
+	<entry key="25operator10_01_01_mark_name">
+		<original value="Our Favourite" />
+		<translation value="Nosso favorito" />
+	</entry>
+	<entry key="25operator10_01_02_mark_desc">
+		<original value="Social Network Achievement." />
+		<translation value="Conquista para a galera das redes sociais." />
+	</entry>
+	<entry key="25operator10_01_02_mark_name">
+		<original value="Mail Lover" />
+		<translation value="Louco por email" />
+	</entry>
+	<entry key="25operator10_01_03_mark_desc">
+		<original value="Social Network Achievement." />
+		<translation value="Conquista para a galera das redes sociais." />
+	</entry>
+	<entry key="25operator10_01_03_mark_name">
+		<original value="Thumbs Up" />
+		<translation value="Curtir" />
+	</entry>
+	<entry key="25operator10_01_04_mark_desc">
+		<original value="Social Network Achievement." />
+		<translation value="Conquista para a galera das redes sociais." />
+	</entry>
+	<entry key="25operator10_01_04_mark_name">
+		<original value="Moving Up" />
+		<translation value="Pra cima" />
+	</entry>
+	<entry key="25operator10_01_05_mark_desc">
+		<original value="Social Network Achievement." />
+		<translation value="Conquista para a galera das redes sociais." />
+	</entry>
+	<entry key="25operator10_01_05_mark_name">
+		<original value="Neverending" />
+		<translation value="Interminável" />
+	</entry>
+	<entry key="25operator10_01_badge_desc">
+		<original value="Social Network Achievement." />
+		<translation value="Conquista para a galera das redes sociais." />
+	</entry>
+	<entry key="25operator10_01_badge_name">
+		<original value="Community Active" />
+		<translation value="Comunidade ativa" />
+	</entry>
+	<entry key="25operator10_01_stripe_desc">
+		<original value="Social Network Achievement." />
+		<translation value="Conquista para a galera das redes sociais." />
+	</entry>
+	<entry key="25operator10_01_stripe_name">
+		<original value="Community Member" />
+		<translation value="Membro da Comunidade" />
+	</entry>
+	<entry key="25operator10_02_badge_desc">
+		<original value="Blogger Achievement." />
+		<translation value="Conquista para blogueiros." />
+	</entry>
+	<entry key="25operator10_02_badge_name">
+		<original value="Blogging Star" />
+		<translation value="Estrela dos Blogs" />
+	</entry>
+	<entry key="25operator10_02_mark_desc">
+		<original value="Blogger Achievement." />
+		<translation value="Conquista para blogueiros." />
+	</entry>
+	<entry key="25operator10_02_mark_name">
+		<original value="Golden Review" />
+		<translation value="Review de ouro" />
+	</entry>
+	<entry key="25operator10_02_stripe_desc">
+		<original value="Blogger Achievement." />
+		<translation value="Conquista para blogueiros." />
+	</entry>
+	<entry key="25operator10_02_stripe_name">
+		<original value="Popular Opinion" />
+		<translation value="Opinião popular" />
+	</entry>
+	<entry key="25operator10_03_badge_desc">
+		<original value="Moderator Achievement." />
+		<translation value="Conquista para moderadores." />
+	</entry>
+	<entry key="25operator10_03_badge_name">
+		<original value="Community Shield" />
+		<translation value="Escudo da Comunidade" />
+	</entry>
+	<entry key="25operator10_03_mark_desc">
+		<original value="Moderator Achievement." />
+		<translation value="Conquista para moderadores." />
+	</entry>
+	<entry key="25operator10_03_mark_name">
+		<original value="Top Moderator" />
+		<translation value="Moderador top" />
+	</entry>
+	<entry key="25operator10_03_stripe_desc">
+		<original value="Moderator Achievement." />
+		<translation value="Conquista para moderadores." />
+	</entry>
+	<entry key="25operator10_03_stripe_name">
+		<original value="Helping Hand" />
+		<translation value="Mão amiga" />
+	</entry>
+	<entry key="25operator10_04_badge_desc">
+		<original value="Poll Achievement." />
+		<translation value="Conquista por participar em pesquisas." />
+	</entry>
+	<entry key="25operator10_04_badge_name">
+		<original value="Golden Vote" />
+		<translation value="Voto de Ouro" />
+	</entry>
+	<entry key="25operator10_04_mark_desc">
+		<original value="Poll Achievement." />
+		<translation value="Conquista por participar em pesquisas." />
+	</entry>
+	<entry key="25operator10_04_mark_name">
+		<original value="Voice That Matters" />
+		<translation value="Uma voz que importa" />
+	</entry>
+	<entry key="25operator10_04_stripe_desc">
+		<original value="Poll Achievement." />
+		<translation value="Conquista por participar em pesquisas." />
+	</entry>
+	<entry key="25operator10_04_stripe_name">
+		<original value="Opinion Strike" />
+		<translation value="Ataque de opnião" />
+	</entry>
+	<entry key="25ares12_01_badge_desc">
+		<original value="Complete mission Ares on the Hard difficulty quickly and efficiently without losing the Mech." />
+		<translation value="Complete rapidamente e com eficiência a Operação Especial 'Citadela' na dificuldade 'Pro', sem permitir que 'Trovão' seja destruído." />
+	</entry>
+	<entry key="25ares12_01_badge_name">
+		<original value="Striking Delta" />
+		<translation value="Ataque Rápido" />
+	</entry>
+	<entry key="25ares12_01_mark_desc">
+		<original value="Complete mission Ares without teammates on the Hard difficulty." />
+		<translation value="Complete a Operação Especial 'Citadela' sozinho na dificuldade 'Pro'." />
+	</entry>
+	<entry key="25ares12_01_mark_name">
+		<original value="Lone Striker" />
+		<translation value="Ninguém precisa de ajuda" />
+	</entry>
+	<entry key="25ares12_01_stripe_desc">
+		<original value="Find traces of special agents from spring, summer, and winter seasons." />
+		<translation value="Encontre evidências da presença dos agentes da primavera, do verão e do inverno" />
+	</entry>
+	<entry key="25ares12_01_stripe_name">
+		<original value="Agent Intel" />
+		<translation value="Trabalho de espionagem" />
+	</entry>
+	<entry key="25ares12_02_badge_desc">
+		<original value="Collect all files on the Labyrinth's involvement in Blackwood operations during the solo mission." />
+		<translation value="Durante a Operação Especial 'Citadela: Resgate', encontre todos os documentos que indiquem a aliança entre 'Labirinto' e Blackwood." />
+	</entry>
+	<entry key="25ares12_02_badge_name">
+		<original value="Labyrinth Intel" />
+		<translation value="Fio condutor" />
+	</entry>
+	<entry key="25ares12_02_mark_desc">
+		<original value="Complete mission Ares on the Hard difficulty without being killed." />
+		<translation value="Complete a Operação Especial 'Citadela' na dificuldade 'Pro' sem morrer nenhuma vez." />
+	</entry>
+	<entry key="25ares12_02_mark_name">
+		<original value="Surviving Striker" />
+		<translation value="No fio da navalha" />
+	</entry>
+	<entry key="25ares12_02_stripe_desc">
+		<original value="Complete mission Ares as an Assault on the Hard difficulty." />
+		<translation value="Complete a Operação Especial 'Citadela' como Fuzileiro na dificuldade 'Pro'." />
+	</entry>
+	<entry key="25ares12_02_stripe_name">
+		<original value="Striking Assault" />
+		<translation value="Trabalho de Fuzileiro" />
+	</entry>
+	<entry key="25ares12_03_mark_desc">
+		<original value="Complete solo mission Ares quickly, efficiently, and with minimal resources." />
+		<translation value="Complete todas as tarefas rapidamente e com eficiência durante a Operação Especial 'Citadela: Resgate'." />
+	</entry>
+	<entry key="25ares12_03_mark_name">
+		<original value="One Man Army" />
+		<translation value="A-Parabéns" />
+	</entry>
+	<entry key="25ares12_03_stripe_desc">
+		<original value="Complete mission Ares as a Medic on the Hard difficulty." />
+		<translation value="Complete a Operação Especial 'Citadela' como Médico na dificuldade 'Pro'." />
+	</entry>
+	<entry key="25ares12_03_stripe_name">
+		<original value="Striking Medic" />
+		<translation value="Trabalhe para um Médico" />
+	</entry>
+	<entry key="25ares12_04_stripe_desc">
+		<original value="Complete mission Ares as a Sniper on the Hard difficulty." />
+		<translation value="Complete a Operação Especial 'Citadela' como Franco-atirador na dificuldade 'Pro'." />
+	</entry>
+	<entry key="25ares12_04_stripe_name">
+		<original value="Striking Sniper" />
+		<translation value="Um trabalho para franco-atiradores" />
+	</entry>
+	<entry key="25ares12_05_stripe_desc">
+		<original value="Complete mission Ares as an Engineer on the Hard difficulty." />
+		<translation value="Complete a Operação Especial 'Citadela' como Engenheiro na dificuldade 'Pro'." />
+	</entry>
+	<entry key="25ares12_05_stripe_name">
+		<original value="Striking Engineer" />
+		<translation value="Trabalhe para um Engenheiro." />
+	</entry>
+	<entry key="25ares12_06_stripe_desc">
+		<original value="Complete mission Ares by all four classes on the Hard difficulty." />
+		<translation value="Complete a Operação Especial 'Citadela' com as 4 classes na dificuldade 'Pro'." />
+	</entry>
+	<entry key="25ares12_06_stripe_name">
+		<original value="Universal Striker" />
+		<translation value="Trabalho em equipe" />
+	</entry>
+	<entry key="25ares12_07_stripe_desc">
+		<original value="Collect all achievements in mission Ares (both team and solo mission)." />
+		<translation value="Conquiste todas as conquistas das Operações Especiais 'Citadela' e 'Citadela: Resgate'." />
+	</entry>
+	<entry key="25ares12_07_stripe_name">
+		<original value="Labyrinth Breaker" />
+		<translation value="Saia do Labirinto" />
+	</entry>
+	<entry key="25autumn11_badge_desc">
+		<original value="Light Up The Night." />
+		<translation value="Hora de brilhar" />
+	</entry>
+	<entry key="25autumn11_badge_name">
+		<original value="Disco Ball" />
+		<translation value="Ritmo da noite" />
+	</entry>
+	<entry key="25autumn11_mark_desc">
+		<original value="Light Up The Night." />
+		<translation value="Hora de brilhar" />
+	</entry>
+	<entry key="25autumn11_mark_name">
+		<original value="Neon Symbols" />
+		<translation value="Luzes de néon" />
+	</entry>
+	<entry key="25autumn11_stripe_desc">
+		<original value="Light Up The Night." />
+		<translation value="Hora de brilhar" />
+	</entry>
+	<entry key="25autumn11_stripe_name">
+		<original value="Pixel Lights" />
+		<translation value="Luz sedutora" />
+	</entry>
+	<entry key="ar35_25autumn11_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;Asian Glow&quot; AK-12." />
+		<translation value="Elimine 1.500 inimigos com o AK-12 | Disco" />
+	</entry>
+	<entry key="ar35_25autumn11_Kill_name">
+		<original value="&quot;Asian Glow&quot; AK-12" />
+		<translation value="Disco: AK-12" />
+	</entry>
+	<entry key="shg07_25autumn11_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;Asian Glow&quot; Saiga Bullpup." />
+		<translation value="Elimine 1.500 inimigos com a Saiga Bullpup | Disco" />
+	</entry>
+	<entry key="shg07_25autumn11_Kill_name">
+		<original value="&quot;Asian Glow&quot; Saiga Bullpup" />
+		<translation value="Saiga Bullpup Disco" />
+	</entry>
+	<entry key="smg53_25autumn11_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;Asian Glow&quot; AMB-17." />
+		<translation value="Elimine 1.500 inimigos com o AMB-17 | Disco" />
+	</entry>
+	<entry key="smg53_25autumn11_Kill_name">
+		<original value="&quot;Asian Glow&quot; AMB-17" />
+		<translation value="Disco: AMB-17" />
+	</entry>
+	<entry key="sr62_25autumn11_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;Asian Glow&quot; OTs-48K MK2." />
+		<translation value="Elimine 1.500 inimigos com o OTs-48K MK2 | Disco" />
+	</entry>
+	<entry key="sr62_25autumn11_Kill_name">
+		<original value="&quot;Asian Glow&quot; OTs-48K MK2" />
+		<translation value="Disco: OTs-48K MK2" />
+	</entry>
+	<entry key="sr71_25na11sof_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Short Circuit&quot; Bergara MG." />
+		<translation value="Elimine 1.500 inimigos com o Bergara MG | Upgrade" />
+	</entry>
+	<entry key="sr71_25na11sof_Kill_name">
+		<original value="&quot;Short Circuit&quot; Bergara MG" />
+		<translation value="Upgrade: Bergara MG" />
+	</entry>
+	<entry key="sr71_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden Bergara MG." />
+		<translation value="Elimine 999 inimigos com um Bergara MG dourado" />
+	</entry>
+	<entry key="sr71_gold01_Kill_name">
+		<original value="Golden Bergara MG" />
+		<translation value="Bergara MG dourado" />
+	</entry>
+	<entry key="sr71_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a Bergara MG." />
+		<translation value="Elimine 2.500 inimigos com o Bergara MG" />
+	</entry>
+	<entry key="sr71_Kill_name">
+		<original value="Bergara MG" />
+		<translation value="Bergara MG" />
+	</entry>
+	<entry key="ar11_mash01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Golden Card&quot; FN SCAR-H." />
+		<translation value="Mate 1.500 inimigos com FN SCAR-H | 'Grunge'" />
+	</entry>
+	<entry key="ar11_mash01_Kill_name">
+		<original value="&quot;Golden Card&quot; FN SCAR-H" />
+		<translation value="Grunge: FN SCAR-H" />
+	</entry>
+	<entry key="ar11_red01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Rouge&quot; FN SCAR-H." />
+		<translation value="Elimine 1.500 inimigos com FN SCAR-H | Cardeal" />
+	</entry>
+	<entry key="ar11_red01_Kill_name">
+		<original value="&quot;Rouge&quot; FN SCAR-H" />
+		<translation value="Cardeal: FN SCAR-H" />
+	</entry>
+	<entry key="ar12_cyber01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Digital&quot; M16A3." />
+		<translation value="Mate 1.500 inimigos com M16A3 Custom | Rede" />
+	</entry>
+	<entry key="ar12_cyber01_Kill_name">
+		<original value="&quot;Digital&quot; M16A3" />
+		<translation value="Rede: M16A3 Custom" />
+	</entry>
+	<entry key="ar12_graffiti01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Street Symbol&quot; M16A3." />
+		<translation value="Elimine 1.500 inimigos com M16A3 Custom | 'Quadrinho'" />
+	</entry>
+	<entry key="ar12_graffiti01_Kill_name">
+		<original value="&quot;Street Symbol&quot; M16A3" />
+		<translation value="Quadrinho: M16A3 Custom" />
+	</entry>
+	<entry key="ar12_paint01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Bright Strokes&quot; M16A3." />
+		<translation value="Mate 1.500 inimigos com M16A3 Custom | 'Grunge'" />
+	</entry>
+	<entry key="ar12_paint01_Kill_name">
+		<original value="&quot;Bright Strokes&quot; M16A3" />
+		<translation value="Grunge: M16A3 Custom" />
+	</entry>
+	<entry key="kn02_blueskull01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Blue Blood&quot; Ultra Marine." />
+		<translation value="Mate 1.500 inimigos com a faca Ultra Marine | Rede" />
+	</entry>
+	<entry key="kn02_blueskull01_Kill_name">
+		<original value="&quot;Blue Blood&quot; Ultra Marine" />
+		<translation value="Rede: Ultra Marine" />
+	</entry>
+	<entry key="kn02_blueskull02_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Silver Blood&quot; Ultra Marine." />
+		<translation value="Mate 1.500 inimigos com a faca Ultra Marine | Paria" />
+	</entry>
+	<entry key="kn02_blueskull02_Kill_name">
+		<original value="&quot;Silver Blood&quot; Ultra Marine" />
+		<translation value="Paria: Ultra Marine" />
+	</entry>
+	<entry key="kn06_cyber01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Digital&quot; KA-BAR Utility Knife." />
+		<translation value="Mate 1.500 inimigos com uma faca KA-BAR | 'Rede'" />
+	</entry>
+	<entry key="kn06_cyber01_Kill_name">
+		<original value="&quot;Digital&quot; KA-BAR Utility Knife" />
+		<translation value="Rede: KA-BAR" />
+	</entry>
+	<entry key="kn06_flower01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Blue Blossom&quot; KA-BAR Utility Knife." />
+		<translation value="Mate 1.500 inimigos com uma faca KA-BAR | Paria" />
+	</entry>
+	<entry key="kn06_flower01_Kill_name">
+		<original value="&quot;Blue Blossom&quot; KA-BAR Utility Knife" />
+		<translation value="Paria: KA-BAR" />
+	</entry>
+	<entry key="kn19_goldhex01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Gold and Silver&quot; Balisong Knife." />
+		<translation value="Mate 1.500 inimigos com uma butterfly knife | Paria" />
+	</entry>
+	<entry key="kn19_goldhex01_Kill_name">
+		<original value="&quot;Gold and Silver&quot; Balisong Knife" />
+		<translation value="Paria: butterfly knife" />
+	</entry>
+	<entry key="pt01_cyber01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Digital&quot; Desert Eagle." />
+		<translation value="Mate 1.500 inimigos com a Desert Eagle | 'Rede'" />
+	</entry>
+	<entry key="pt01_cyber01_Kill_name">
+		<original value="&quot;Digital&quot; Desert Eagle" />
+		<translation value="Rede: Desert Eagle" />
+	</entry>
+	<entry key="pt01_pinup01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Retro Girl&quot; Desert Eagle." />
+		<translation value="Mate 1.500 inimigos com a Desert Eagle | 'Quadrinho'" />
+	</entry>
+	<entry key="pt01_pinup01_Kill_name">
+		<original value="&quot;Retro Girl&quot; Desert Eagle" />
+		<translation value="Quadrinho: Desert Eagle" />
+	</entry>
+	<entry key="pt01_vinylafrost01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Jeans&quot; Desert Eagle." />
+		<translation value="Mate 1.500 inimigos com a Desert Eagle | 'Grunge'" />
+	</entry>
+	<entry key="pt01_vinylafrost01_Kill_name">
+		<original value="&quot;Jeans&quot; Desert Eagle" />
+		<translation value="Grunge: Águia do Deserto" />
+	</entry>
+	<entry key="pt01_yellowacid01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;Acid Wave&quot; Desert Eagle." />
+		<translation value="Mate 1.500 inimigos com a Desert Eagle | 'Paria'" />
+	</entry>
+	<entry key="pt01_yellowacid01_Kill_name">
+		<original value="&quot;Acid Wave&quot; Desert Eagle" />
+		<translation value="Paria: Desert Eagle" />
+	</entry>
+	<entry key="pt14_abstractlines01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Squares&quot; SIG Sauer P226." />
+		<translation value="Mate 1.500 inimigos com a SIG Sauer P226 | Grunge" />
+	</entry>
+	<entry key="pt14_abstractlines01_Kill_name">
+		<original value="&quot;Squares&quot; SIG Sauer P226" />
+		<translation value="Grunge: SIG Sauer P226" />
+	</entry>
+	<entry key="pt14_mosaic01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Lilac Stroke&quot; SIG Sauer P226." />
+		<translation value="Mate 1.500 inimigos com a SIG Sauer P226 | Paria" />
+	</entry>
+	<entry key="pt14_mosaic01_Kill_name">
+		<original value="&quot;Lilac Stroke&quot; SIG Sauer P226" />
+		<translation value="Paria: SIG Sauer P226" />
+	</entry>
+	<entry key="pt14_red01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Rouge&quot; SIG Sauer P226." />
+		<translation value="Mate 1.500 inimigos com a SIG Sauer P226 | Cardeal" />
+	</entry>
+	<entry key="pt14_red01_Kill_name">
+		<original value="&quot;Rouge&quot; SIG Sauer P226" />
+		<translation value="Cardeal: SIG Sauer P226" />
+	</entry>
+	<entry key="pt16_graffitos01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Graffiti&quot; M1911A1." />
+		<translation value="Mate 1.500 inimigos com a Colt M1911A1 | Paria" />
+	</entry>
+	<entry key="pt16_graffitos01_Kill_name">
+		<original value="&quot;Graffiti&quot; M1911A1" />
+		<translation value="Paria: Colt M1911A1" />
+	</entry>
+	<entry key="pt21_purpleemiss01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Purple Shock&quot; Glock 18C." />
+		<translation value="Mate 1.500 inimigos com a Glock 18C | 'Quadrinho'" />
+	</entry>
+	<entry key="pt21_purpleemiss01_Kill_name">
+		<original value="&quot;Purple Shock&quot; Glock 18C" />
+		<translation value="Quadrinho: Glock 18C" />
+	</entry>
+	<entry key="pt26_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden Mateba Autorevolver." />
+		<translation value="Elimine 999 inimigos com uma Mateba Autorevolver dourada." />
+	</entry>
+	<entry key="pt26_gold01_Kill_name">
+		<original value="Golden Mateba Autorevolver" />
+		<translation value="Mateba Autorevolver dourada" />
+	</entry>
+	<entry key="pt33_cyber01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Digital&quot; S&amp;W M&amp;P R8." />
+		<translation value="Mate 1.500 inimigos com S&amp;W M&amp;P R8 | Rede" />
+	</entry>
+	<entry key="pt33_cyber01_Kill_name">
+		<original value="&quot;Digital&quot; S&amp;W M&amp;P R8" />
+		<translation value="Rede: S&amp;W M&amp;P R8" />
+	</entry>
+	<entry key="pt38_blot01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Neon Stains&quot; Maxim 9." />
+		<translation value="Mate 1.500 inimigos com Maxim 9 | Paria" />
+	</entry>
+	<entry key="pt38_blot01_Kill_name">
+		<original value="&quot;Neon Stains&quot; Maxim 9" />
+		<translation value="Paria: Maxim 9" />
+	</entry>
+	<entry key="pt38_red01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Rouge&quot; Maxim 9." />
+		<translation value="Mate 1.500 inimigos com Maxim 9 | 'Cardeal'" />
+	</entry>
+	<entry key="pt38_red01_Kill_name">
+		<original value="&quot;Rouge&quot; Maxim 9" />
+		<translation value="Cardeal: Maxim 9" />
+	</entry>
+	<entry key="pt38_waves01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Scales&quot; Maxim 9." />
+		<translation value="Mate 1.500 inimigos com a Maxim 9 | Quadrinho" />
+	</entry>
+	<entry key="pt38_waves01_Kill_name">
+		<original value="&quot;Scales&quot; Maxim 9" />
+		<translation value="Quadrinho: Maxim 9" />
+	</entry>
+	<entry key="shg44_waves01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Scales&quot; Winchester 1887." />
+		<translation value="Mate 1.500 inimigos com a Winchester 1887 | Quadrinho" />
+	</entry>
+	<entry key="shg44_waves01_Kill_name">
+		<original value="&quot;Scales&quot; Winchester 1887" />
+		<translation value="Quadrinho: Winchester 1887" />
+	</entry>
+	<entry key="smg44_acid01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Toxic Blast&quot; Kriss Super V Custom." />
+		<translation value="Mate 1.500 inimigos com a Kriss Super V Custom | Paria" />
+	</entry>
+	<entry key="smg44_acid01_Kill_name">
+		<original value="&quot;Toxic Blast&quot; Kriss Super V Custom" />
+		<translation value="Paria: Kriss Super V Custom" />
+	</entry>
+	<entry key="sr13_red01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Rouge&quot; MK 14 EBR." />
+		<translation value="Mate 1.500 inimigos com a Mk14 EBR | Cardeal" />
+	</entry>
+	<entry key="sr13_red01_Kill_name">
+		<original value="&quot;Rouge&quot; MK 14 EBR" />
+		<translation value="Cardeal: Mk14 EBR" />
+	</entry>
+	<entry key="sr13_sakura01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Blue Sakura&quot; MK 14 EBR." />
+		<translation value="Mate 1.500 inimigos com a Mk14 EBR | 'Paria'" />
+	</entry>
+	<entry key="sr13_sakura01_Kill_name">
+		<original value="&quot;Blue Sakura&quot; MK 14 EBR" />
+		<translation value="Paria: Mk14 EBR" />
+	</entry>
+	<entry key="sr38_red01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Rouge&quot; M14 Crazy horse." />
+		<translation value="Mate 1.500 inimigos com a M14 Crazy Horse | Cardeal" />
+	</entry>
+	<entry key="sr38_red01_Kill_name">
+		<original value="&quot;Rouge&quot; M14 Crazy horse" />
+		<translation value="Cardeal: M14 Crazy Horse" />
+	</entry>
+	<entry key="25ares12_03_badge_desc">
+		<original value="Stone Walls Breakthrough." />
+		<translation value="Avanço da muralha de pedra." />
+	</entry>
+	<entry key="25ares12_03_badge_name">
+		<original value="Loyal Guard" />
+		<translation value="Guarda leal" />
+	</entry>
+	<entry key="25ares12_04_mark_desc">
+		<original value="Stone Walls Breakthrough." />
+		<translation value="Avanço da muralha de pedra." />
+	</entry>
+	<entry key="25ares12_04_mark_name">
+		<original value="Clash of Wills" />
+		<translation value="Choque de vontades" />
+	</entry>
+	<entry key="25ares12_08_stripe_desc">
+		<original value="Stone Walls Breakthrough." />
+		<translation value="Avanço da muralha de pedra." />
+	</entry>
+	<entry key="25ares12_08_stripe_name">
+		<original value="Ghost City Escape" />
+		<translation value="Fuga da cidade fantasma" />
+	</entry>
+	<entry key="25bp12gothic_01_badge_desc">
+		<original value="Sanctuary Of Light and Grace." />
+		<translation value="Santuario de luz e graça." />
+	</entry>
+	<entry key="25bp12gothic_01_badge_name">
+		<original value="Marine Glass" />
+		<translation value="Vidro Marinho" />
+	</entry>
+	<entry key="25bp12gothic_01_mark_desc">
+		<original value="Sanctuary Of Light and Grace." />
+		<translation value="Santuario de luz e graça." />
+	</entry>
+	<entry key="25bp12gothic_01_mark_name">
+		<original value="Flower Glass" />
+		<translation value="Vidro Floral" />
+	</entry>
+	<entry key="25bp12gothic_01_stripe_desc">
+		<original value="Sanctuary Of Light and Grace." />
+		<translation value="Santuario de luz e graça." />
+	</entry>
+	<entry key="25bp12gothic_01_stripe_name">
+		<original value="Sacred Walls" />
+		<translation value="Muralhas sagradas" />
+	</entry>
+	<entry key="25bp12gothic_02_badge_desc">
+		<original value="Guardian Made Of Shadow And Stone." />
+		<translation value="Guardião feito de sombra e pedra." />
+	</entry>
+	<entry key="25bp12gothic_02_badge_name">
+		<original value="Glass and Stone" />
+		<translation value="Vidro e pedra" />
+	</entry>
+	<entry key="25bp12gothic_02_mark_desc">
+		<original value="Guardian Made Of Shadow And Stone." />
+		<translation value="Guardião feito de sombra e pedra." />
+	</entry>
+	<entry key="25bp12gothic_02_mark_name">
+		<original value="Gargoyle" />
+		<translation value="Gárgula" />
+	</entry>
+	<entry key="25bp12gothic_02_stripe_desc">
+		<original value="Guardian Made Of Shadow And Stone." />
+		<translation value="Guardião feito de sombra e pedra." />
+	</entry>
+	<entry key="25bp12gothic_02_stripe_name">
+		<original value="Gloomy Night" />
+		<translation value="Noite sombria" />
+	</entry>
+	<entry key="25prestige12_01_badge_desc">
+		<original value="A Vivid Painting of Dream and Damnation." />
+		<translation value="Pintura real de sonho e maldição." />
+	</entry>
+	<entry key="25prestige12_01_badge_name">
+		<original value="Cloaked Menace" />
+		<translation value="Ameaça oculta" />
+	</entry>
+	<entry key="25prestige12_01_mark_desc">
+		<original value="A Vivid Painting of Dream and Damnation." />
+		<translation value="Pintura real de sonho e maldição." />
+	</entry>
+	<entry key="25prestige12_01_mark_name">
+		<original value="Piercing Eye" />
+		<translation value="Olhar penetrante" />
+	</entry>
+	<entry key="25prestige12_01_stripe_desc">
+		<original value="A Vivid Painting of Dream and Damnation." />
+		<translation value="Pintura real de sonho e maldição." />
+	</entry>
+	<entry key="25prestige12_01_stripe_name">
+		<original value="Carnival of Sin" />
+		<translation value="Festa do pecado" />
+	</entry>
+	<entry key="25prestige12_02_badge_desc">
+		<original value="First Step Into Sinful Chaos." />
+		<translation value="Primeiro passo para o caos pecaminoso." />
+	</entry>
+	<entry key="25prestige12_02_badge_name">
+		<original value="Fountain of Sin" />
+		<translation value="Fonte do pecado" />
+	</entry>
+	<entry key="25prestige12_02_mark_desc">
+		<original value="First Step Into Sinful Chaos." />
+		<translation value="Primeiro passo para o caos pecaminoso." />
+	</entry>
+	<entry key="25prestige12_02_mark_name">
+		<original value="Chimera" />
+		<translation value="Quimera" />
+	</entry>
+	<entry key="25prestige12_02_stripe_desc">
+		<original value="First Step Into Sinful Chaos." />
+		<translation value="Primeiro passo para o caos pecaminoso." />
+	</entry>
+	<entry key="25prestige12_02_stripe_name">
+		<original value="Hellscape Awakening" />
+		<translation value="Despertar do inferno" />
+	</entry>
+	<entry key="25winter12_badge_desc">
+		<original value="The Cold Won't Extinguish Your Fire." />
+		<translation value="O frio não apagará seu fogo." />
+	</entry>
+	<entry key="25winter12_badge_name">
+		<original value="Frozen Heart" />
+		<translation value="Coração de gelo" />
+	</entry>
+	<entry key="25winter12_mark_desc">
+		<original value="The Cold Won't Extinguish Your Fire." />
+		<translation value="O frio não apagará seu fogo." />
+	</entry>
+	<entry key="25winter12_mark_name">
+		<original value="Flaming Heart" />
+		<translation value="Coração em chamas" />
+	</entry>
+	<entry key="25winter12_stripe_desc">
+		<original value="The Cold Won't Extinguish Your Fire." />
+		<translation value="O frio não apagará seu fogo." />
+	</entry>
+	<entry key="25winter12_stripe_name">
+		<original value="Ice Queen" />
+		<translation value="Rainha de gelo" />
+	</entry>
+	<entry key="ar11_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Stained Glass FN SCAR-H." />
+		<translation value="Elimine 1.500 inimigos com um FN SCAR-H Vitral." />
+	</entry>
+	<entry key="ar11_25bp12gothic_Kill_name">
+		<original value="Stained Glass FN SCAR-H" />
+		<translation value="FN SCAR-H Vitral" />
+	</entry>
+	<entry key="ar16_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Noble Carving Type 97." />
+		<translation value="Elimine 1.500 inimigos com um Type 97 Entalhe Nobre." />
+	</entry>
+	<entry key="ar16_25bp12gothic_Kill_name">
+		<original value="Noble Carving Type 97" />
+		<translation value="Type 97 Entalhe Nobre" />
+	</entry>
+	<entry key="ar59_25rating12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Nobility STK CMCR." />
+		<translation value="Elimine 1.500 inimigos com o STK CMCR Nobreza." />
+	</entry>
+	<entry key="ar59_25rating12_Kill_name">
+		<original value="Nobility STK CMCR" />
+		<translation value="STK CMCR Nobreza" />
+	</entry>
+	<entry key="ar62_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Gothic Stone A-545." />
+		<translation value="Elimine 1.500 inimigos com um A-545 Pedra Gótica." />
+	</entry>
+	<entry key="ar62_25bp12gothic_Kill_name">
+		<original value="Gothic Stone A-545" />
+		<translation value="A-545 Pedra Gótica" />
+	</entry>
+	<entry key="ar63_25na12crow_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Strike of Loyalty&quot; ShAK-12." />
+		<translation value="Elimine 1.500 inimigos com um ShAK-12 Ataque de Lealdade." />
+	</entry>
+	<entry key="ar63_25na12crow_Kill_name">
+		<original value="&quot;Strike of Loyalty&quot; ShAK-12" />
+		<translation value="Ataque de Lealdade: ShAK-12" />
+	</entry>
+	<entry key="ar63_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden ShAK-12." />
+		<translation value="Elimine 999 inimigos com um ShAK-12 dourado." />
+	</entry>
+	<entry key="ar63_gold01_Kill_name">
+		<original value="Golden ShAK-12" />
+		<translation value="ShAK-12 dourado" />
+	</entry>
+	<entry key="ar63_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a ShAK-12." />
+		<translation value="Elimine 2.500 inimigos com um ShAK-12." />
+	</entry>
+	<entry key="ar63_Kill_name">
+		<original value="ShAK-12" />
+		<translation value="ShAK-12" />
+	</entry>
+	<entry key="engineer_25bp12gothic_badge_desc">
+		<original value="Sturdy Yet Exquisite." />
+		<translation value="Robusto, porém requintado." />
+	</entry>
+	<entry key="engineer_25bp12gothic_badge_name">
+		<original value="Engineer Rosette" />
+		<translation value="Roseta do engenheiro" />
+	</entry>
+	<entry key="kn02_25winter12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Ice Power Ultra Marine." />
+		<translation value="Eliminate 1,500 enemies with an Ice Power Ultra Marine." />
+	</entry>
+	<entry key="kn02_25winter12_Kill_name">
+		<original value="Ice Power Ultra Marine" />
+		<translation value="Ice Power Ultra Marine" />
+	</entry>
+	<entry key="kn61_25pve12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;Unbreakable Guard&quot; Balisong Knife." />
+		<translation value="Elimine 1.500 inimigos com o Faca Balisong Guarda Impenetrável" />
+	</entry>
+	<entry key="kn61_25pve12_Kill_name">
+		<original value="&quot;Unbreakable Guard&quot; Balisong Knife" />
+		<translation value="Faca Balisong Guarda Impenetrável" />
+	</entry>
+	<entry key="kn62_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Gothic Stone&quot; Balisong Knife." />
+		<translation value="Elimine 1.500 inimigos com uma Switchblade." />
+	</entry>
+	<entry key="kn62_25bp12gothic_Kill_name">
+		<original value="&quot;Gothic Stone&quot; Balisong Knife" />
+		<translation value="Switchblade Pedra Gótica" />
+	</entry>
+	<entry key="kn65_25rating12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Nobility&quot; Balisong Knife." />
+		<translation value="Elimine 1.500 inimigos com a Faca de Batedor Nobreza." />
+	</entry>
+	<entry key="kn65_25rating12_Kill_name">
+		<original value="&quot;Nobility&quot; Balisong Knife" />
+		<translation value="Faca de Batedor Nobreza" />
+	</entry>
+	<entry key="medic_25bp12gothic_badge_desc">
+		<original value="Sturdy Yet Exquisite." />
+		<translation value="Robusta, porém requintada." />
+	</entry>
+	<entry key="medic_25bp12gothic_badge_name">
+		<original value="Medic Rosette" />
+		<translation value="Roseta do Médico" />
+	</entry>
+	<entry key="mg07_25winter12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Ice Power M249 Para." />
+		<translation value="Elimine 1.500 inimigos com a M249 Para | 'Poder do Gelo'." />
+	</entry>
+	<entry key="mg07_25winter12_Kill_name">
+		<original value="Ice Power M249 Para" />
+		<translation value="Poder do Gelo: M249 Para" />
+	</entry>
+	<entry key="mg30_25pve12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Unbreakable Guard Kord 5.45." />
+		<translation value="Elimine 1.500 inimigos com uma Kord 5.45 Guarda Impenetrável" />
+	</entry>
+	<entry key="mg30_25pve12_Kill_name">
+		<original value="Unbreakable Guard Kord 5.45" />
+		<translation value="Kord 5.45 Guarda Impenetrável" />
+	</entry>
+	<entry key="pt21_25pve12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Unbreakable Guard Glock 18C." />
+		<translation value="Elimine 1.500 inimigos com uma Glock 18C Guarda Impenetrável" />
+	</entry>
+	<entry key="pt21_25pve12_Kill_name">
+		<original value="Unbreakable Guard Glock 18C" />
+		<translation value="Glock 18C Guarda Impenetrável" />
+	</entry>
+	<entry key="pt26_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Gothic Stone Mateba Autorevolver." />
+		<translation value="Elimine 1.500 inimigos com o Autorevólver Mateba Pedra Gótica" />
+	</entry>
+	<entry key="pt26_25bp12gothic_Kill_name">
+		<original value="Gothic Stone Mateba Autorevolver" />
+		<translation value="Autorevólver Mateba Pedra Gótica" />
+	</entry>
+	<entry key="pt35_25rating12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Nobility Taurus Judge." />
+		<translation value="Elimine 1.500 inimigos com o Taurus Judge Nobreza" />
+	</entry>
+	<entry key="pt35_25rating12_Kill_name">
+		<original value="Nobility Taurus Judge" />
+		<translation value="Taurus Judge Nobreza" />
+	</entry>
+	<entry key="shg07_25pve12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Unbreakable Guard Saiga Bullpup." />
+		<translation value="Elimine 1.500 inimigos com a Saiga Bullpup Guarda Impenetrável." />
+	</entry>
+	<entry key="shg07_25pve12_Kill_name">
+		<original value="Unbreakable Guard Saiga Bullpup" />
+		<translation value="Saiga Bullpup Guarda Impenetrável" />
+	</entry>
+	<entry key="shg13_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden Kel-Tec Shotgun." />
+		<translation value="Elimine 999 inimigos com um Kel-Tec dourado." />
+	</entry>
+	<entry key="shg13_gold01_Kill_name">
+		<original value="Golden Kel-Tec Shotgun" />
+		<translation value="Kel-Tec dourado" />
+	</entry>
+	<entry key="shg38_25winter12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Ice Power Fabarm XLR 5 Prestige." />
+		<translation value="Elimine 1.500 inimigos com a Fabarm XLR 5 Prestige | 'Poder do Gelo'." />
+	</entry>
+	<entry key="shg38_25winter12_Kill_name">
+		<original value="Ice Power Fabarm XLR 5 Prestige" />
+		<translation value="Poder do Gelo: Fabarm XLR 5 Prestige" />
+	</entry>
+	<entry key="shg40_25rating12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Nobility MAG-7." />
+		<translation value="Elimine 1.500 inimigos com a MAG-7 Nobreza." />
+	</entry>
+	<entry key="shg40_25rating12_Kill_name">
+		<original value="Nobility MAG-7" />
+		<translation value="MAG-7 Nobreza" />
+	</entry>
+	<entry key="shg44_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Noble Carving Winchester 1887." />
+		<translation value="Elimine 1.500 inimigos com a Winchester 1887 Entalhe Nobre." />
+	</entry>
+	<entry key="shg44_25bp12gothic_Kill_name">
+		<original value="Noble Carving Winchester 1887" />
+		<translation value="Winchester 1887 Entalhe Nobre" />
+	</entry>
+	<entry key="shg75_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Stained Glass Kral Arms Compact." />
+		<translation value="Elimine 1.500 inimigos com a Kral Arms Compact Vitral" />
+	</entry>
+	<entry key="shg75_25bp12gothic_Kill_name">
+		<original value="Stained Glass Kral Arms Compact" />
+		<translation value="Kral Arms Compact Vitral" />
+	</entry>
+	<entry key="shg76_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Gothic Stone PA EG240." />
+		<translation value="Elimine 1.500 inimigos com a PA EG240 Pedra Gótica." />
+	</entry>
+	<entry key="shg76_25bp12gothic_Kill_name">
+		<original value="Gothic Stone PA EG240" />
+		<translation value="PA EG240 Pedra Gótica" />
+	</entry>
+	<entry key="smg08_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Stained Glass XM8 Compact." />
+		<translation value="Elimine 1.500 inimigos com o XM8 Compact Vitral." />
+	</entry>
+	<entry key="smg08_25bp12gothic_Kill_name">
+		<original value="Stained Glass XM8 Compact" />
+		<translation value="XM8 Compact Vitral" />
+	</entry>
+	<entry key="smg10_25pve12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Unbreakable Guard Tavor CTAR-21." />
+		<translation value="Elimine 1.500 inimigos com o Tavor CTAR-21 Guarda Impenetrável." />
+	</entry>
+	<entry key="smg10_25pve12_Kill_name">
+		<original value="Unbreakable Guard Tavor CTAR-21" />
+		<translation value="Tavor CTAR-21 Guarda Impenetrável" />
+	</entry>
+	<entry key="smg31_25rating12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Nobility SCAR-L PDW." />
+		<translation value="Elimine 1.500 inimigos com o SCAR-L PDW Nobreza." />
+	</entry>
+	<entry key="smg31_25rating12_Kill_name">
+		<original value="Nobility SCAR-L PDW" />
+		<translation value="SCAR-L PDW Nobreza" />
+	</entry>
+	<entry key="smg43_25winter12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Ice Power Micro-Roni CAA." />
+		<translation value="Elimine 1.500 inimigos com a Micro-Roni CAA | 'Poder do Gelo'." />
+	</entry>
+	<entry key="smg43_25winter12_Kill_name">
+		<original value="Ice Power Micro-Roni CAA" />
+		<translation value="Poder do Gelo: Micro-Roni CAA" />
+	</entry>
+	<entry key="smg72_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Noble Carving Magpul PDR-C." />
+		<translation value="Elimine 1.500 inimigos com o Magpul PDR-C Entalhe Nobre." />
+	</entry>
+	<entry key="smg72_25bp12gothic_Kill_name">
+		<original value="Noble Carving Magpul PDR-C" />
+		<translation value="Magpul PDR-C Entalhe Nobre" />
+	</entry>
+	<entry key="smg76_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Gothic Stone PPSh-41 Modern." />
+		<translation value="Elimine 1.500 inimigos com a PPSh-41 Modern Pedra Gótica" />
+	</entry>
+	<entry key="smg76_25bp12gothic_Kill_name">
+		<original value="Gothic Stone PPSh-41 Modern" />
+		<translation value="PPSh-41 Modern Pedra Gótica" />
+	</entry>
+	<entry key="sniper_25bp12gothic_badge_desc">
+		<original value="Sturdy Yet Exquisite." />
+		<translation value="Robusta, porém requintada." />
+	</entry>
+	<entry key="sniper_25bp12gothic_badge_name">
+		<original value="Sniper Rosette" />
+		<translation value="Roseta do Franco-atirador" />
+	</entry>
+	<entry key="soldier_25bp12gothic_badge_desc">
+		<original value="Sturdy Yet Exquisite." />
+		<translation value="Robusta, porém requintada." />
+	</entry>
+	<entry key="soldier_25bp12gothic_badge_name">
+		<original value="Assault Rosette" />
+		<translation value="Roseta do Fuzileiro" />
+	</entry>
+	<entry key="sr08_25winter12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Ice Power CheyTac M200." />
+		<translation value="Elimine 1.500 inimigos com o CheyTac M200 | 'Poder do Gelo'." />
+	</entry>
+	<entry key="sr08_25winter12_Kill_name">
+		<original value="Ice Power CheyTac M200" />
+		<translation value="Poder do Gelo: CheyTac M200" />
+	</entry>
+	<entry key="sr38_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Noble Carving M14 Crazy horse." />
+		<translation value="Elimine 1.500 inimigos com o M14 Crazy horse Entalhe Nobre." />
+	</entry>
+	<entry key="sr38_25bp12gothic_Kill_name">
+		<original value="Noble Carving M14 Crazy horse" />
+		<translation value="M14 Crazy horse Entalhe Nobre" />
+	</entry>
+	<entry key="sr62_25rating12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Nobility OTs-48K MK2." />
+		<translation value="Elimine 1.500 inimigos com o OTs-48K MK2 Nobreza." />
+	</entry>
+	<entry key="sr62_25rating12_Kill_name">
+		<original value="Nobility OTs-48K MK2" />
+		<translation value="OTs-48K MK2 Nobreza" />
+	</entry>
+	<entry key="sr64_25pve12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Unbreakable Guard SVCh-54." />
+		<translation value="Elimine 1.500 inimigos com o SVCh-54 Guarda Impenetrável." />
+	</entry>
+	<entry key="sr64_25pve12_Kill_name">
+		<original value="Unbreakable Guard SVCh-54" />
+		<translation value="SVCh-54 Guarda Impenetrável" />
+	</entry>
+	<entry key="sr67_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Stained Glass SKS DAB." />
+		<translation value="Elimine 1.500 inimigos com o SKS FAB Vitral" />
+	</entry>
+	<entry key="sr67_25bp12gothic_Kill_name">
+		<original value="Stained Glass SKS DAB" />
+		<translation value="SKS FAB Vitral" />
+	</entry>
+	<entry key="sr71_25bp12gothic_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Gothic Stone Bergara MG." />
+		<translation value="Elimine 1.500 inimigos com o Bergara MG Pedra Gótica." />
+	</entry>
+	<entry key="sr71_25bp12gothic_Kill_name">
+		<original value="Gothic Stone Bergara MG" />
+		<translation value="Bergara MG Pedra Gótica" />
+	</entry>
+	<entry key="shg44_honeycomb01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Bandage&quot; Winchester 1887." />
+		<translation value="Mate 1.500 inimigos com a Winchester 1887 | Excluído" />
+	</entry>
+	<entry key="shg44_honeycomb01_Kill_name">
+		<original value="&quot;Bandage&quot; Winchester 1887" />
+		<translation value="Excluído: Winchester 1887" />
+	</entry>
+	<entry key="kn72_25winter12_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Ice Power Ultra Marine." />
+		<translation value="Elimine 1.500 inimigos com a Ultramarine | 'Poder do Gelo'." />
+	</entry>
+	<entry key="kn72_25winter12_Kill_name">
+		<original value="Ice Power Ultra Marine" />
+		<translation value="Poder do Gelo: нож Ultramarine" />
+	</entry>
+	<entry key="25xmas12_01_stripe_desc">
+		<original value="Feel the touch of eternal frost." />
+		<translation value="Sinta o toque do frio eterno." />
+	</entry>
+	<entry key="25xmas12_01_stripe_name">
+		<original value="Ice Razor" />
+		<translation value="Lâmina de Gelo" />
+	</entry>
+	<entry key="25xmas12_02_stripe_desc">
+		<original value="Feel the touch of eternal frost." />
+		<translation value="Sinta o toque do frio eterno." />
+	</entry>
+	<entry key="25xmas12_02_stripe_name">
+		<original value="Ice Katanas" />
+		<translation value="Katana de Gelo" />
+	</entry>
+	<entry key="25xmas12_03_stripe_desc">
+		<original value="Feel the touch of eternal frost." />
+		<translation value="Sinta o toque do frio eterno." />
+	</entry>
+	<entry key="25xmas12_03_stripe_name">
+		<original value="Ice Ninja" />
+		<translation value="Ninja de Gelo" />
+	</entry>
+	<entry key="25xmas12_04_stripe_desc">
+		<original value="Feel the touch of eternal frost." />
+		<translation value="Sinta o toque do frio eterno." />
+	</entry>
+	<entry key="25xmas12_04_stripe_name">
+		<original value="Ice Wolf" />
+		<translation value="Lobo de Gelo" />
+	</entry>
+	<entry key="25xmas12_05_stripe_desc">
+		<original value="Feel the touch of eternal frost." />
+		<translation value="Sinta o toque do frio eterno." />
+	</entry>
+	<entry key="25xmas12_05_stripe_name">
+		<original value="Ice Dragon" />
+		<translation value="Dragão de Gelo" />
+	</entry>
+	<entry key="25xmas12_06_stripe_desc">
+		<original value="Victory is ours." />
+		<translation value="A vitória será nossa." />
+	</entry>
+	<entry key="25xmas12_06_stripe_name">
+		<original value="Good Team" />
+		<translation value="Boa Equipe" />
+	</entry>
+	<entry key="25xmas12_07_stripe_desc">
+		<original value="Victory is ours... Forever!" />
+		<translation value="A vitória será nossa... Sempre!" />
+	</entry>
+	<entry key="25xmas12_07_stripe_name">
+		<original value="Great Team" />
+		<translation value="Grande Equipe" />
+	</entry>
+	<entry key="25xmas12_08_stripe_desc">
+		<original value="Human fighter jet!" />
+		<translation value="Quando você nunca sabe de onde virá." />
+	</entry>
+	<entry key="25xmas12_08_stripe_name">
+		<original value="Danger From Above" />
+		<translation value="Fique Alerta!" />
+	</entry>
+	<entry key="25xmas12_09_stripe_desc">
+		<original value="25 shots - 25 kills." />
+		<translation value="Adeus, cenoura." />
+	</entry>
+	<entry key="25xmas12_09_stripe_name">
+		<original value="Eat This" />
+		<translation value="Toma essa!" />
+	</entry>
+	<entry key="25xmas12_10_stripe_desc">
+		<original value="Explosive character." />
+		<translation value="Não há lugar para bonecos de neve aqui." />
+	</entry>
+	<entry key="25xmas12_10_stripe_name">
+		<original value="Meltdown" />
+		<translation value="Esquenta Tudo" />
+	</entry>
+	<entry key="ar32_26winter01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Solar Sign&quot; Hera Arms CQR." />
+		<translation value="Elimine 1.500 inimigos com uma Hera Arms CQR | 'Observador de estrelas'." />
+	</entry>
+	<entry key="ar32_26winter01_Kill_name">
+		<original value="&quot;Solar Sign&quot; Hera Arms CQR" />
+		<translation value="Observador de estrelas: Hera Arms CQR" />
+	</entry>
+	<entry key="cny26_stripe_desc">
+		<original value="Strength And Speed For The Bright New Year." />
+		<translation value="Símbolo do Ano Novo segundo o calendário oriental." />
+	</entry>
+	<entry key="cny26_stripe_name">
+		<original value="New Year Stallion" />
+		<translation value="A Todo Vapor" />
+	</entry>
+	<entry key="pt54_cny26_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Golden Warhorse&quot; China Lake." />
+		<translation value="Elimine 1.500 inimigos com uma China Lake | 'Cavalo de Guerra Dourado'." />
+	</entry>
+	<entry key="pt54_cny26_Kill_name">
+		<original value="&quot;Golden Warhorse&quot; China Lake" />
+		<translation value="Cavalo de Guerra Dourado: China Lake" />
+	</entry>
+	<entry key="shg73_26winter01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Solar Sign&quot; Panzer Arms BP-12." />
+		<translation value="Elimine 1.500 inimigos com uma Panzer Arms BP-12 | 'Astrônomo'." />
+	</entry>
+	<entry key="shg73_26winter01_Kill_name">
+		<original value="&quot;Solar Sign&quot; Panzer Arms BP-12" />
+		<translation value="Astrônomo: Panzer Arms BP-12" />
+	</entry>
+	<entry key="shg77_26na01crow_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Strike of Loyalty&quot; Federation SPM-12." />
+		<translation value="Elimine 1.500 inimigos com uma Federation SPM-12 | 'Ataque de Lealdade'." />
+	</entry>
+	<entry key="shg77_26na01crow_Kill_name">
+		<original value="&quot;Strike of Loyalty&quot; Federation SPM-12" />
+		<translation value="Ataque de Lealdade: Federation SPM-12" />
+	</entry>
+	<entry key="smg38_26winter01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Solar Sign&quot; CZ Scorpion EVO." />
+		<translation value="Elimine 1.500 inimigos com uma CZ Scorpion EVO 3 | 'Astrônomo'." />
+	</entry>
+	<entry key="smg38_26winter01_Kill_name">
+		<original value="&quot;Solar Sign&quot; CZ Scorpion EVO" />
+		<translation value="Astrônomo: CZ Scorpion EVO 3" />
+	</entry>
+	<entry key="sr42_26winter01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Solar Sign&quot; Bushmaster BA50." />
+		<translation value="Elimine 1.500 inimigos com uma Bushmaster BA50 | 'Astrônomo'." />
+	</entry>
+	<entry key="sr42_26winter01_Kill_name">
+		<original value="&quot;Solar Sign&quot; Bushmaster BA50" />
+		<translation value="Astrônomo: Bushmaster BA50" />
+	</entry>
+	<entry key="shg77_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden Federation SPM-12." />
+		<translation value="Elimine 999 inimigos com uma Federation SPM-12 dourada." />
+	</entry>
+	<entry key="shg77_gold01_Kill_name">
+		<original value="Golden Federation SPM-12" />
+		<translation value="Federation SPM-12 dourada" />
+	</entry>
+	<entry key="shg77_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a Federation SPM-12." />
+		<translation value="Elimine 2.500 inimigos com uma Federation SPM-12." />
+	</entry>
+	<entry key="shg77_Kill_name">
+		<original value="Federation SPM-12" />
+		<translation value="Federation SPM-12" />
+	</entry>
+	<entry key="26winter01_badge_desc">
+		<original value="A Mosaic Foreshadowing of Solar Eclipse" />
+		<translation value="A misteriosa dança dos corpos celestiais" />
+	</entry>
+	<entry key="26winter01_badge_name">
+		<original value="Black Sun" />
+		<translation value="Um eclipse total" />
+	</entry>
+	<entry key="26winter01_mark_desc">
+		<original value="A Mosaic Foreshadowing of Solar Eclipse" />
+		<translation value="A misteriosa dança dos corpos celestiais" />
+	</entry>
+	<entry key="26winter01_mark_name">
+		<original value="Shining Sun" />
+		<translation value="Um mosaico solar" />
+	</entry>
+	<entry key="26winter01_stripe_desc">
+		<original value="A Mosaic Foreshadowing of Solar Eclipse" />
+		<translation value="A misteriosa dança dos corpos celestiais" />
+	</entry>
+	<entry key="26winter01_stripe_name">
+		<original value="Solar Patterns" />
+		<translation value="As leis do universo" />
+	</entry>
+	<entry key="26stval02_stripe_desc">
+		<original value="Staying True To Your Gaming Passion" />
+		<translation value="…nossa paixão compartilhada!" />
+	</entry>
+	<entry key="26stval02_stripe_name">
+		<original value="Love Is Warface" />
+		<translation value="O Warface é…" />
+	</entry>
+	<entry key="26winter02_badge_desc">
+		<original value="Unlock Medieval Power, Defy Mortality Forever" />
+		<translation value="A busca pelo segredo da vida eterna" />
+	</entry>
+	<entry key="26winter02_badge_name">
+		<original value="Pentagram" />
+		<translation value="Um manuscrito proibido" />
+	</entry>
+	<entry key="26winter02_mark_desc">
+		<original value="Unlock Medieval Power, Defy Mortality Forever" />
+		<translation value="A busca pelo segredo da vida eterna" />
+	</entry>
+	<entry key="26winter02_mark_name">
+		<original value="Philosopher's Stone" />
+		<translation value="A pedra filosofal" />
+	</entry>
+	<entry key="26winter02_stripe_desc">
+		<original value="Unlock Medieval Power, Defy Mortality Forever" />
+		<translation value="A busca pelo segredo da vida eterna" />
+	</entry>
+	<entry key="26winter02_stripe_name">
+		<original value="Deadly Knowledge" />
+		<translation value="Conhecimento secreto" />
+	</entry>
+	<entry key="ar27_26winter02_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Alchemist Beretta ARX160." />
+		<translation value="Elimine 1.500 inimigos com um Beretta ARX160 | Alquimista" />
+	</entry>
+	<entry key="ar27_26winter02_Kill_name">
+		<original value="Alchemist Beretta ARX160" />
+		<translation value="Alquimista: Beretta ARX160" />
+	</entry>
+	<entry key="ar63_26stval02_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Love Sticker ShAK-12." />
+		<translation value="Elimine 1.500 inimigos com um ShAK-12 | Confissão" />
+	</entry>
+	<entry key="ar63_26stval02_Kill_name">
+		<original value="Love Sticker ShAK-12" />
+		<translation value="Confissão: ShAK-12" />
+	</entry>
+	<entry key="mastery01_smg67_R_stripe_desc">
+		<original value="Fully master weapon: SIG MPX Copperhead (Dual)." />
+		<translation value="Domine completamente a arma: SIG MPX Copperhead" />
+	</entry>
+	<entry key="mastery01_smg67_R_stripe_name">
+		<original value="SIG MPX Copperhead (Dual) Master" />
+		<translation value="[Expert] SIG MPX Copperhead (dupla)" />
+	</entry>
+	<entry key="shg71_26winter02_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Alchemist PA Garibaldi 12GA." />
+		<translation value="Elimine 1.500 inimigos com uma PA Garibaldi 12GA | Alquimista" />
+	</entry>
+	<entry key="shg71_26winter02_Kill_name">
+		<original value="Alchemist PA Garibaldi 12GA" />
+		<translation value="Alquimista: PA Garibaldi 12GA" />
+	</entry>
+	<entry key="smg67_26winter02_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Alchemist SIG MPX Copperheads." />
+		<translation value="Elimine 1.500 inimigos com uma SIG MPX Copperhead | Alquimista" />
+	</entry>
+	<entry key="smg67_26winter02_Kill_name">
+		<original value="Alchemist SIG MPX Copperheads" />
+		<translation value="Alquimista: SIG MPX Copperhead" />
+	</entry>
+	<entry key="smg67_R_26winter02_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Alchemist SIG MPX Copperheads (Dual)." />
+		<translation value="Elimine 1.500 inimigos com uma SIG MPX Copperhead | Alquimista (dupla)" />
+	</entry>
+	<entry key="smg67_R_26winter02_Kill_name">
+		<original value="Alchemist SIG MPX Copperheads (Dual)" />
+		<translation value="Alquimista: SIG MPX Copperhead (dupla)" />
+	</entry>
+	<entry key="smg67_R_bikerclub2302_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Motor Shop&quot; SIG MPX Copperhead (Dual)." />
+		<translation value="Elimine 1.500 inimigos com uma SIG MPX Copperhead | Techie (dupla)" />
+	</entry>
+	<entry key="smg67_R_bikerclub2302_Kill_name">
+		<original value="&quot;Motor Shop&quot; SIG MPX Copperhead (Dual)" />
+		<translation value="Techie: SIG MPX Copperhead (dupla)" />
+	</entry>
+	<entry key="smg67_R_dpass2212_01_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Strider&quot; SIG MPX Copperhead (Dual)." />
+		<translation value="Elimine 1.500 inimigos com uma SIG MPX Copperhead | Strider (dupla)" />
+	</entry>
+	<entry key="smg67_R_dpass2212_01_Kill_name">
+		<original value="&quot;Strider&quot; SIG MPX Copperhead (Dual)" />
+		<translation value="Strider: SIG MPX Copperhead (dupla)" />
+	</entry>
+	<entry key="smg67_R_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden SIG MPX Copperhead (Dual)." />
+		<translation value="Elimine 999 inimigos com uma SIG MPX Copperhead dourada (dupla)" />
+	</entry>
+	<entry key="smg67_R_gold01_Kill_name">
+		<original value="Golden SIG MPX Copperhead (Dual)" />
+		<translation value="SIG MPX Copperhead dourada (dupla)" />
+	</entry>
+	<entry key="smg67_R_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a SIG MPX Copperhead (Dual)." />
+		<translation value="Elimine 2.500 inimigos com uma SIG MPX Copperhead (dupla)" />
+	</entry>
+	<entry key="smg67_R_Kill_name">
+		<original value="SIG MPX Copperhead (Dual)" />
+		<translation value="SIG MPX Copperhead (dupla)" />
+	</entry>
+	<entry key="smg67_R_pollution2403_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Biohazard&quot; SIG MPX Copperhead (Dual)." />
+		<translation value="Elimine 1.500 inimigos com uma SIG MPX Copperhead | Risco Biológico (dupla)" />
+	</entry>
+	<entry key="smg67_R_pollution2403_Kill_name">
+		<original value="&quot;Biohazard&quot; SIG MPX Copperhead (Dual)" />
+		<translation value="Risco Biológico: SIG MPX Copperhead (dupla)" />
+	</entry>
+	<entry key="smg67_R_sales2211_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Modern Pirate&quot; SIG MPX Copperhead (Dual)." />
+		<translation value="Elimine 1.500 inimigos com uma SIG MPX Copperhead | Aviador (dupla)" />
+	</entry>
+	<entry key="smg67_R_sales2211_Kill_name">
+		<original value="&quot;Modern Pirate&quot; SIG MPX Copperhead (Dual)" />
+		<translation value="Aviador: SIG MPX Copperhead (dupla)" />
+	</entry>
+	<entry key="smg67_R_sales2307_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an &quot;AI&quot; SIG MPX Copperhead (Dual)." />
+		<translation value="Elimine 1.500 inimigos com uma SIG MPX Copperhead | Anime (dupla)" />
+	</entry>
+	<entry key="smg67_R_sales2307_Kill_name">
+		<original value="&quot;AI&quot; SIG MPX Copperhead (Dual)" />
+		<translation value="Anime: SIG MPX Copperhead (dupla)" />
+	</entry>
+	<entry key="smg67_R_winter22_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a &quot;Present&quot; SIG MPX Copperhead (Dual)." />
+		<translation value="Elimine 1.500 inimigos com uma SIG MPX Copperhead | Presente (dupla)" />
+	</entry>
+	<entry key="smg67_R_winter22_Kill_name">
+		<original value="&quot;Present&quot; SIG MPX Copperhead (Dual)" />
+		<translation value="Presente: SIG MPX Copperhead (dupla)" />
+	</entry>
+	<entry key="smg78_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden PPK-20." />
+		<translation value="Elimine 999 inimigos com uma PPK-20 dourada" />
+	</entry>
+	<entry key="smg78_gold01_Kill_name">
+		<original value="Golden PPK-20" />
+		<translation value="PPK-20 dourada" />
+	</entry>
+	<entry key="smg78_Kill_desc">
+		<original value="Eliminate 2,500 enemies with a PPK-20." />
+		<translation value="Elimine 2.500 inimigos com uma PPK-20" />
+	</entry>
+	<entry key="smg78_Kill_name">
+		<original value="PPK-20" />
+		<translation value="PPK-20" />
+	</entry>
+	<entry key="sr65_26winter02_Kill_desc">
+		<original value="Eliminate 1,500 enemies with an Alchemist Sabatti STR." />
+		<translation value="Elimine 1.500 inimigos com uma Sabatti STR | Alquimista" />
+	</entry>
+	<entry key="sr65_26winter02_Kill_name">
+		<original value="Alchemist Sabatti STR" />
+		<translation value="Alquimista: Sabatti STR" />
+	</entry>
+	<entry key="smg78_26na02crow_Kill_desc">
+		<original value="Eliminate 1,500 enemies with a Strike of Loyalty PPK-20." />
+		<translation value="Elimine 1.500 inimigos com uma PPK-20 | Ataque de Lealdade" />
+	</entry>
+	<entry key="smg78_26na02crow_Kill_name">
+		<original value="Strike of Loyalty PPK-20" />
+		<translation value="Ataque de lealdade: PPK-20" />
+	</entry>
+	<entry key="smg67_gold01_Kill_desc">
+		<original value="Eliminate 999 enemies with a golden SIG MPX Copperhead." />
+		<translation value="Elimine 999 inimigos com um SIG MPX Copperhead dourado." />
+	</entry>
+	<entry key="smg67_gold01_Kill_name">
+		<original value="Golden SIG MPX Copperhead" />
+		<translation value="SIG MPX Copperhead dourado" />
 	</entry>
 </localization>

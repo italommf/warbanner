@@ -4,7 +4,8 @@
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
-		<Filter kind="weapon" param="kn22"/>
+		<Filter kind="weapon" param="kn22*" compare="match"/>
+		<Filter kind="weapon" param="kn63*" compare="match"/>
 	</Filters>
 	<BannerImage image="challenge_strip_weapon10_kn22" type="stripe"/>
 </Achievement>

@@ -4,7 +4,9 @@
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="player" param="0"/>
 		<Filter kind="ai_tag" param="swarmboss" compare="==" />
-		<Filter kind="mission_type" param="swarm"/>
+		<Filter kind="mission_type" param="swarmeasy"/>
+		<Filter kind="mission_type" param="swarmnormal"/>
+		<Filter kind="mission_type" param="swarmhard"/>
 	</Filters>
 <BannerImage image="challenge_mark_swarm_03" type="mark" />
 </Achievement>

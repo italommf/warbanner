@@ -11,6 +11,9 @@
 		<Filter kind="weapon" param="kn13_zsd01"/>
 		<Filter kind="weapon" param="kn13_zsd02"/>
 		<Filter kind="weapon" param="kn13_samurai02"/>
+		<Filter kind="weapon" param="kn13_hlw01"/>
+		<Filter kind="weapon" param="kn13_friday01"/>
+		<Filter kind="weapon" param="kn13_esport2203"/>
 		<Filter kind="mission_type" param="japaneasy"/>
 		<Filter kind="mission_type" param="japannormal"/>
 		<Filter kind="mission_type" param="japanhard"/>

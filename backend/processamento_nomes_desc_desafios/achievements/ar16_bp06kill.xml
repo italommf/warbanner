@@ -3,10 +3,13 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="ar16_bp06_shop"/>
+		<Filter kind="weapon" param="ar16_shop"/>
+		<Filter kind="weapon" param="ar16_gold01_shop"/>
+		<Filter kind="weapon_skin" param="bp06"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
 	</Filters>
-	<BannerImage image="challenge_strip_bp06_01" type="stripe" />
+	<BannerImage image="challenge_strip_bp06_01" type="stripe"/>
 </Achievement>

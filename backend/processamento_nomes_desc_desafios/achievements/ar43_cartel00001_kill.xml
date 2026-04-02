@@ -1,8 +1,11 @@
-<Achievement active="1" id="40129" kind="kills" MS_side="0" amount="1500" >
+<Achievement active="1" id="40129" kind="kills" MS_side="0" amount="1500">
 	<UI name="@ar43_cartel00001_Kill" desc="@ar43_cartel00001_Kill_desc"/>
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="ar43_cartel00001_shop"/>
+		<Filter kind="weapon" param="ar43_gold01_shop"/>
+		<Filter kind="weapon" param="ar43_shop"/>
+		<Filter kind="weapon_skin" param="cartel00001"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>

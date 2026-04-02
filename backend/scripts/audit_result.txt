@@ -1,0 +1,92 @@
+======================================================================
+AUDITORIA COMPLETA DO PROCESSAMENTO DE DESAFIOS
+======================================================================
+
+--- MARCAS ---
+  Imagens na pasta:      1334
+  Com XML (mapeadas):    1201
+  Sem XML:               133
+  ---
+  Das mapeadas (1201):
+    Com Nome:            1200
+    Com Descri??o:       1193
+    Com Nome+Desc:       1192
+    Sem Nome:            17
+    Sem Descri??o:       24
+    Sem Nome NEM Desc:   16
+
+--- INSIGNIAS ---
+  Imagens na pasta:      1159
+  Com XML (mapeadas):    1022
+  Sem XML:               137
+  ---
+  Das mapeadas (1022):
+    Com Nome:            1028
+    Com Descri??o:       1015
+    Com Nome+Desc:       1014
+    Sem Nome:            17
+    Sem Descri??o:       30
+    Sem Nome NEM Desc:   16
+
+--- FITAS ---
+  Imagens na pasta:      3053
+  Com XML (mapeadas):    2695
+  Sem XML:               358
+  ---
+  Das mapeadas (2695):
+    Com Nome:            2695
+    Com Descri??o:       2646
+    Com Nome+Desc:       2645
+    Sem Nome:            8
+    Sem Descri??o:       57
+    Sem Nome NEM Desc:   7
+
+======================================================================
+RESUMO GERAL
+======================================================================
+  Total de imagens na pasta:         5546
+  Mapeadas com XML:                  4918
+  Sem XML:                           628
+  ---
+  Das mapeadas (4918):
+    Com Nome:                        4923
+    Com Descri??o:                   4854
+    Com Nome E Descri??o:            4851
+    Sem Nome:                        42
+    Sem Descri??o:                   111
+    Sem Nome NEM Descri??o:          39
+
+======================================================================
+COMPARA??O COM PROCESSAMENTO ANTERIOR
+======================================================================
+  M?trica                             | Anterior   | Atual      | Mudou?
+  ------------------------------------+------------+------------+-----------
+  Total Imagens                       | 5546       | 5546       | NAO [OK]
+  Mapeadas (com XML)                  | 4918       | 4918       | NAO [OK]
+  Sem XML                             | 628        | 628        | NAO [OK]
+
+  [OK] RESULTADO: Nenhuma mudanca. O reprocessamento confirmou os mesmos dados.
+
+======================================================================
+EXEMPLOS DE DESAFIOS MAPEADOS MAS SEM NOME (primeiros 20)
+======================================================================
+    1. engineer_absolute2209_mark.xml                | tipo: mark   | img: challenge_mark_engineer_absolute2209
+    2. medic_absolute2209_mark.xml                   | tipo: mark   | img: challenge_mark_medic_absolute2209
+    3. ms01_01_mark.xml                              | tipo: mark   | img: challenge_mark_ms01_01
+    4. ms01_02_mark.xml                              | tipo: mark   | img: challenge_mark_ms01_02
+    5. prestige01_mark.xml                           | tipo: mark   | img: challenge_mark_prestige01
+    6. rating06_01_mark.xml                          | tipo: mark   | img: challenge_mark_rating06_01
+    7. rating06_mark.xml                             | tipo: mark   | img: challenge_mark_rating06
+    8. sak01_01_mark.xml                             | tipo: mark   | img: challenge_mark_sak01_01
+    9. sak01_02_mark.xml                             | tipo: mark   | img: challenge_mark_sak01_02
+   10. sap01_01_mark.xml                             | tipo: mark   | img: challenge_mark_sap01_01
+   11. sap01_02_mark.xml                             | tipo: mark   | img: challenge_mark_sap01_02
+   12. smk01_01_mark.xml                             | tipo: mark   | img: challenge_mark_smk01_01
+   13. smk01_02_mark.xml                             | tipo: mark   | img: challenge_mark_smk01_02
+   14. sniper_absolute2209_mark.xml                  | tipo: mark   | img: challenge_mark_sniper_absolute2209
+   15. soldier_absolute2209_mark.xml                 | tipo: mark   | img: challenge_mark_soldier_absolute2209
+   16. tm01_01_mark.xml                              | tipo: mark   | img: challenge_mark_tm01_01
+   17. tm01_02_mark.xml                              | tipo: mark   | img: challenge_mark_tm01_02
+   18. ms01_01_badge.xml                             | tipo: badge  | img: challenge_badge_ms01_01
+   19. ms01_02_badge.xml                             | tipo: badge  | img: challenge_badge_ms01_02
+   20. ms01_03_badge.xml                             | tipo: badge  | img: challenge_badge_ms01_03

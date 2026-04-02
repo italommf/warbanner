@@ -3,7 +3,8 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="kn07_lava01"/>
-		<Filter kind="weapon" param="kn13_lava01"/>		
+		<Filter kind="weapon" param="kn13_lava01"/>
+		<Filter kind="weapon" param="kn45_lava01"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>

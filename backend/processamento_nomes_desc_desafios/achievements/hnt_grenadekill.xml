@@ -2,11 +2,11 @@
 	<UI name="@hnt_grenadeKill" desc="@hnt_grenadeKill_desc"/>
 	<Filters>
 		<Filter kind="player" param="1"/>
- 		<Filter kind="enemy" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="ammo_kind" param="explosivegrenade"/>
+		<Filter kind="weapon_slot" param="bag"/>
 		<Filter kind="claymore" param="0"/>
-		<Filter kind="grenade" param="1"/>
-		<Filter kind="kill_zone" param="0"/>
-		<Filter kind="explosion" param="0"/>
+		<Filter kind="kill_zone" param="0"/>		
 		<Filter kind="victory_condition" param="9"/>
 		<Filter kind="mission_uid" param="959ddc2d-9bb4-4eab-9be8-8e04e76d94aa"/>
 		<Filter kind="mission_uid" param="2124463b-0612-4882-a5de-b222b21bf0e6"/>

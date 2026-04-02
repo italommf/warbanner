@@ -2,7 +2,9 @@
 <UI name="@swarm_mark_02" desc="@swarm_mark_02_desc"/>
 <Filters>
 <Filter kind="target_self" param="0"/>
-<Filter kind="mission_type" param="swarm"/>
+<Filter kind="mission_type" param="swarmeasy"/>
+<Filter kind="mission_type" param="swarmnormal"/>
+<Filter kind="mission_type" param="swarmhard"/>
 </Filters>
 <BannerImage image="challenge_mark_swarm_02" type="mark" />
 </Achievement>

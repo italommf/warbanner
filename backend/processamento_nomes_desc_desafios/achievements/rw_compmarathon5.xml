@@ -2,7 +2,9 @@
 	<UI name="@rw_compmarathon5" desc="@rw_compmarathon5_desc"/>
 	<Filters>
 		<Filter kind="mission_result" param="win"/>
-		<Filter kind="mission_type" param="campaignsections"/>
+		<Filter kind="mission_type" param="snowfortressmarathoneasy"/>
+		<Filter kind="mission_type" param="snowfortressmarathonnormal"/>
+		<Filter kind="mission_type" param="snowfortressmarathonhard"/>
 		<Filter kind="my_class" param="Heavy"/>
 	</Filters>
 	<BannerImage image="challenge_strip_rw_12" type="stripe" />

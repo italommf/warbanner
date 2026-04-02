@@ -2,7 +2,9 @@
 	<UI name="@arena_mark_heal" desc="@arena_mark_heal_desc"/>
 	<Filters>
 		<Filter kind="target_self" param="0"/>
-		<Filter kind="mission_type" param="pve_arena"/>
+		<Filter kind="mission_type" param="pve_arenaeasy"/>
+		<Filter kind="mission_type" param="pve_arenanormal"/>
+		<Filter kind="mission_type" param="pve_arenahard"/>
 	</Filters>
 	<BannerImage image="challenge_mark_pve_arena_03" type="mark" />
 </Achievement>

@@ -1,6 +1,9 @@
 <Achievement active="1" id="6300" kind="kills" MS_side="0" amount="2500">
 	<Filters>
 		<Filter kind="weapon" param="ar27_ice01_shop"/>
+		<Filter kind="weapon" param="ar27_gold01_shop"/>
+		<Filter kind="weapon" param="ar27_shop"/>
+		<Filter kind="weapon_skin" param="ice01"/>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>

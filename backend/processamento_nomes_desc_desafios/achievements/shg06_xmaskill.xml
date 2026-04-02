@@ -1,4 +1,4 @@
-<Achievement active="1" id="13095" kind="kills" MS_side="0" amount="2000"> 
+<Achievement active="1" id="13095" kind="kills" MS_side="0" amount="2000">
 	<UI name="@shg06_xmasKill" desc="@shg06_xmasKill_desc"/>
 	<Filters>
 		<Filter kind="enemy" param="1"/>

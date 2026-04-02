@@ -8,7 +8,9 @@
 	<Filter kind="grenade" param="0"/> 
 	<Filter kind="kill_zone" param="0"/> 
 	<Filter kind="explosion" param="0"/> 
-	<Filter kind="mission_type" param="pve_arena"/>
+	<Filter kind="mission_type" param="pve_arenaeasy"/>
+	<Filter kind="mission_type" param="pve_arenanormal"/>
+	<Filter kind="mission_type" param="pve_arenahard"/>
 	</Filters>
 	<BannerImage image="challenge_mark_pve_arena_04" type="mark" />
 </Achievement>

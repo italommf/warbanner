@@ -3,6 +3,9 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="sr50_redstripes01_shop"/>
+		<Filter kind="weapon" param="sr50_gold01_shop"/>
+		<Filter kind="weapon" param="sr50_shop"/>
+		<Filter kind="weapon_skin" param="redstripes01"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>

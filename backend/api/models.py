@@ -87,6 +87,9 @@ class UserProfile(models.Model):
     my_insignias = models.JSONField(default=list, blank=True)
     my_fitas = models.JSONField(default=list, blank=True)
 
+    # Favoritos (Nomes dos arquivos/filenames dos desafios favoritos)
+    favorite_challenges = models.JSONField(default=list, blank=True)
+
     # Migração Warchaos
     warchaos_solicitou = models.BooleanField(default=False)
     warchaos_solicitou_at = models.DateTimeField(null=True, blank=True)

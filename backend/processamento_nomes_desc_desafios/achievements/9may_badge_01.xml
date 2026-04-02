@@ -12,6 +12,7 @@
 		<Filter kind="weapon" param="mg24_shop"/>
 		<Filter kind="weapon" param="mg24_gold01_shop"/>
 		<Filter kind="weapon" param="pt24_shop"/>
+		<Filter kind="weapon" param="smg41_victory23_shop"/>
 	</Filters> 
 	<BannerImage image="challenge_badge_9May" type="badge" />
 </Achievement>

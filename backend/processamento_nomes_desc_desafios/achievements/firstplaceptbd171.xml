@@ -3,6 +3,8 @@
 	<Filters>
 		<Filter kind="place_taken" param="1"/>
 		<Filter kind="mission_uid" param="cdb2fe18-c99e-56b0-9e7f-ffc1d7733f53"/>
+		<Filter kind="mission_uid" param="f7427531-f176-4611-9729-8d7985357f48"/>
+		<Filter kind="mission_uid" param="2cd85e00-8dc9-11ee-b9d1-0242ac120002"/>
 	</Filters>
 	<BannerImage image="challenge_badge_d17_01" type="badge" />
 </Achievement>		

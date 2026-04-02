@@ -1,4 +1,4 @@
-<Achievement active="1" id="40106" kind="kills" MS_side="0" amount="5000">
+<Achievement active="1" id="40106" kind="kills" MS_side="0" amount="2500">
 	<UI name="@ar00002_Kill" desc="@ar00002_Kill_desc"/>
 	<Filters>
 		<Filter kind="enemy" param="1"/>

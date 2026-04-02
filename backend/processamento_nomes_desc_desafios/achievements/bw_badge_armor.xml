@@ -1,8 +1,10 @@
 <Achievement active="1" id="372019" kind="repair" MS_side="0" amount="5000" tags="bw_so_meta">
-<UI name="@bw_badge_armor" desc="@bw_badge_armor_desc"/>
-<Filters>
-<Filter kind="target_self" param="0"/>
-<Filter kind="mission_type" param="blackwood"/>
-</Filters>
-<BannerImage image="challenge_badge_raid_05" type="badge" />
+	<UI name="@bw_badge_armor" desc="@bw_badge_armor_desc"/>
+	<Filters>
+		<Filter kind="target_self" param="0"/>
+		<Filter kind="mission_type" param="blackwoodeasy"/>
+		<Filter kind="mission_type" param="blackwoodnormal"/>
+		<Filter kind="mission_type" param="blackwoodhard"/>
+	</Filters>
+	<BannerImage image="challenge_badge_raid_05" type="badge" />
 </Achievement>

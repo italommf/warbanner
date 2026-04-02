@@ -3,7 +3,9 @@
 	<Filters>
     <Filter kind="enemy" param="1"/>
     <Filter kind="player" param="0"/>
-	<Filter kind="mission_type" param="pve_arena"/>
+	<Filter kind="mission_type" param="pve_arenaeasy"/>
+	<Filter kind="mission_type" param="pve_arenanormal"/>
+	<Filter kind="mission_type" param="pve_arenahard"/>
 	</Filters>
 	<BannerImage image="challenge_badge_pve_arena_01" type="badge" />
 </Achievement>

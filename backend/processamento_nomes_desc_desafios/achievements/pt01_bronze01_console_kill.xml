@@ -1,4 +1,4 @@
-<Achievement active="1" id="40004" kind="kills" MS_side="0" amount="5000">
+<Achievement active="1" id="40004" kind="kills" MS_side="0" amount="1000">
 	<UI name="@pt01_bronze01_console_Kill" desc="@pt01_bronze01_console_Kill_desc"/>
 	<Filters>
 		<Filter kind="enemy" param="1"/>

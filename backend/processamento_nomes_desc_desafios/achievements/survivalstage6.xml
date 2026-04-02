@@ -2,7 +2,9 @@
 	<UI name="@survivalStage6" desc="@survivalStage6_desc"/>
 	<Filters>
 		<Filter kind="stages" param="6"/>
-		<Filter kind="mission_type" param="survivalmission"/>
+		<Filter kind="mission_type" param="whitesharkeasy"/>
+		<Filter kind="mission_type" param="whitesharknormal"/>
+		<Filter kind="mission_type" param="whitesharkhard"/>
 	</Filters>
 	<BannerImage image="challenge_mark_sm_stage_06" type="mark" />
 </Achievement>

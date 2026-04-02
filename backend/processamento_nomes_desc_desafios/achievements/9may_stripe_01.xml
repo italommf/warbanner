@@ -16,6 +16,7 @@
 		<Filter kind="weapon" param="ar42_gold01_shop"/>
 		<Filter kind="weapon" param="sr53_gold01_shop"/>
 		<Filter kind="weapon" param="sr53_shop"/>
+		<Filter kind="weapon" param="smg41_victory23_shop"/>
 	</Filters>
 	<BannerImage image="challenge_strip_9May" type="stripe" />
 </Achievement>

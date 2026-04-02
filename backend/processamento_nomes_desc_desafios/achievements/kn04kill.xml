@@ -6,7 +6,8 @@
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
-		<Filter kind="weapon" param="kn04"/>
+		<Filter kind="weapon" param="kn04*" compare="match"/>
+		<Filter kind="weapon" param="kn66*" compare="match"/>
 	</Filters>
 	<BannerImage image="challenge_strip_weapon10_45" type="stripe"/>
 </Achievement>

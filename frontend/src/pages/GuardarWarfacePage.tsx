@@ -5,7 +5,7 @@ import { Navigate, useParams, useNavigate } from 'react-router'
 import { useAuthStore } from '@/store/authStore'
 import { useBannerStore } from '@/store/bannerStore'
 import { VIDEO_EXT } from '@/App'
-import { useMarcas, useInsignias, useFitas, usePatentes, useItemsLoading, useUploadImages, useUserStats, useTickets, useCreateTicket, useReplyTicket, useTicketDetail, useRequestWarchaosMigration } from '@/api/hooks'
+import { useMarcas, useInsignias, useFitas, usePatentes, useItemsLoading, useUploadImages, useUserStats, useTickets, useCreateTicket, useReplyTicket, useTicketDetail, useRequestWarchaosMigration, useUpdateFavorites } from '@/api/hooks'
 import type { Item } from '@/api/hooks'
 import { ListModal } from '@/components/lists/ListModal'
 import { ListColumn } from '@/components/lists/ListColumn'
@@ -702,16 +702,15 @@ function buildSlots(): AchSlot[] {
   return slots
 }
 
-function loadSlots(userId: string | number): AchSlot[] {
-  const base = buildSlots()
-  if (!userId) return base
+function loadSlotsMigration(userId: string | number): (string | null)[] {
   try {
     const raw = localStorage.getItem(`${FAV_STORAGE_KEY}_${userId}`)
-    if (!raw) return base
-    const saved: (Item | null)[] = JSON.parse(raw)
-    return base.map((slot, i) => ({ ...slot, item: saved[i] ?? null }))
+    if (!raw) return []
+    const saved: any[] = JSON.parse(raw)
+    // Converte de Item para filename se for o formato antigo
+    return saved.map((s) => (s?.filename || null))
   } catch {
-    return base
+    return []
   }
 }
 
@@ -728,12 +727,43 @@ function FavoriteAchievements({ userStats }: { userStats: any }) {
   const marcas = useMarcas()
   const insignias = useInsignias()
   const fitas = useFitas()
+
+  const { mutate: updateFavs } = useUpdateFavorites()
   
-  const [slots, setSlots] = useState<AchSlot[]>(() => loadSlots(userId))
+  const [slots, setSlots] = useState<AchSlot[]>(buildSlots)
+  const [initialized, setInitialized] = useState(false)
   const [pickerOpen, setPickerOpen] = useState<number | null>(null)
 
+  // Sincroniza inicial do Banco ou LocalStorage
   useEffect(() => {
-    if (!userStats?.stats) return;
+    if (initialized || !user || !marcas.length) return
+
+    let filenames: (string | null)[] = []
+
+    // 1. Tenta Banco
+    if (user.favorite_challenges && user.favorite_challenges.length > 0) {
+      filenames = user.favorite_challenges
+    } else {
+      // 2. Tenta LocalStorage (Migração)
+      filenames = loadSlotsMigration(userId)
+    }
+
+    if (filenames.length > 0) {
+      const allItems = [...marcas, ...insignias, ...fitas]
+      const base = buildSlots()
+      setSlots(base.map((slot, i) => {
+        const fname = filenames[i]
+        if (!fname) return slot
+        const found = allItems.find(it => it.filename === fname)
+        return { ...slot, item: found || null }
+      }))
+    }
+    setInitialized(true)
+  }, [user, marcas, insignias, fitas, initialized, userId])
+
+  // Limpa favoritos se o usuário perder o desafio detectado no OCR (mantido do original)
+  useEffect(() => {
+    if (!userStats?.stats || !initialized) return;
 
     setSlots((prev) => {
       let changed = false;
@@ -749,13 +779,23 @@ function FavoriteAchievements({ userStats }: { userStats: any }) {
       });
       return changed ? newSlots : prev;
     });
-  }, [userStats]);
+  }, [userStats, initialized]);
 
+  // Salva no Banco de Dados sempre que mudar
   useEffect(() => {
-    if (userId) {
-      localStorage.setItem(`${FAV_STORAGE_KEY}_${userId}`, JSON.stringify(slots.map((s) => s.item)))
-    }
-  }, [slots, userId])
+    if (!initialized || !userId) return
+
+    const timer = setTimeout(() => {
+      const filenames = slots.map(s => s.item?.filename || null)
+      
+      // Só envia se for diferente do que já está no user pra evitar loops
+      if (JSON.stringify(filenames) !== JSON.stringify(user?.favorite_challenges)) {
+        updateFavs(filenames)
+      }
+    }, 1000) // Debounce sutil
+
+    return () => clearTimeout(timer)
+  }, [slots, userId, initialized, updateFavs, user?.favorite_challenges])
 
   function getItems(type: AchSlotType): Item[] {
     const category = ACH_CATEGORY[type]

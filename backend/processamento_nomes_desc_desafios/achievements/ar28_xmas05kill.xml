@@ -3,10 +3,12 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="ar28_xmas05_shop"/>
+		<Filter kind="weapon" param="ar28_shop"/>
+		<Filter kind="weapon_skin" param="xmas05"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
 	</Filters>
-	<BannerImage image="challenge_strip_xmas05_03" type="stripe" />
+	<BannerImage image="challenge_strip_xmas05_03" type="stripe"/>
 </Achievement>

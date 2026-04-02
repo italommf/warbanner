@@ -3,6 +3,8 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="smg61_snowman01_shop"/>
+		<Filter kind="weapon" param="smg61_shop"/>
+		<Filter kind="weapon_skin" param="snowman01"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>

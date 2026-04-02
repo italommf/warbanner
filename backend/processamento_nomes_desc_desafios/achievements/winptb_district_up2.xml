@@ -3,6 +3,7 @@
 	<Filters>
 		<Filter kind="mission_result" param="win"/>
 		<Filter kind="mission_uid" param="a83872cc-e79b-4d7a-800b-7162384ef4a0"/>
+		<Filter kind="mission_uid" param="8a0f1f90-c1b5-4235-baef-81318bb6e519"/>
 	</Filters>
 	<BannerImage image="challenge_mark_winPTB_DISTRICT_UP2" type="mark" />
 </Achievement>

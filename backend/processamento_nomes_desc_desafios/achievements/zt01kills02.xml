@@ -10,6 +10,7 @@
 		<Filter kind="weapon" param="pt21_zsd02_shop"/>
 		<Filter kind="weapon" param="kn16_zsd02"/>
 		<Filter kind="weapon" param="shg37_zsd02_shop"/>
+		<Filter kind="weapon" param="kn13_zsd02"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>

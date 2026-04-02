@@ -1,6 +1,7 @@
 <Achievement active="1" id="30105" kind="kills" MS_side="0" amount="10000" tags="weapons_E">
 	<Filters>
 		<Filter kind="weapon" param="smg48_shop"/>
+		<Filter kind="weapon" param="smg48_gold01_shop"/>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>

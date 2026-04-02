@@ -3,10 +3,12 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="weapon" param="pt34_set12_shop"/>
+		<Filter kind="weapon" param="pt34_shop"/>
+		<Filter kind="weapon_skin" param="set12"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
 		<Filter kind="kill_zone" param="0"/>
 		<Filter kind="explosion" param="0"/>
 	</Filters>
-	<BannerImage image="challenge_strip_set12_01" type="stripe" />
+	<BannerImage image="challenge_strip_set12_01" type="stripe"/>
 </Achievement>

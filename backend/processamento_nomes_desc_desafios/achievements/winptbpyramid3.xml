@@ -3,6 +3,7 @@
 	<Filters>
 		<Filter kind="mission_result" param="win"/>
 		<Filter kind="mission_uid" param="b1594650-15ad-43c0-850f-863f5ab85ef5"/>
+		<Filter kind="mission_uid" param="3e6f10c7-cd95-437b-8a02-9ce941afd818"/>
 	</Filters>
 	<BannerImage image="challenge_mark_firstPlacePTBPyramid3" type="mark" />
 </Achievement>

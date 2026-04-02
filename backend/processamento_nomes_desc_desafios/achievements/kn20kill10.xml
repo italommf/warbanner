@@ -3,7 +3,8 @@
 	<Filters>
 		<Filter kind="enemy" param="1"/>
 		<Filter kind="player" param="0"/>
-		<Filter kind="weapon" param="kn20"/>
+		<Filter kind="weapon" param="kn20" compare="match"/>
+		<Filter kind="weapon" param="kn20_*" compare="match"/>
 		<Filter kind="ai_archetype" param="Turret"/>
 		<Filter kind="claymore" param="0"/>
 		<Filter kind="grenade" param="0"/>
