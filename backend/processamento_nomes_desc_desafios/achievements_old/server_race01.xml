@@ -1,0 +1,4 @@
+<Achievement active="1" id="1065" kind="hidden" MS_side="1" amount="1">
+        <UI name="@server_race01" desc="@server_race01_desc"/>
+        <BannerImage image="challenge_badge_race" type="badge" />
+    </Achievement>

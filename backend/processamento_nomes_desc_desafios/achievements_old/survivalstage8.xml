@@ -1,0 +1,8 @@
+<Achievement active="1" id="513" kind="stages_completed_in_a_row" MS_side="0" amount="1">
+	<UI name="@survivalStage8" desc="@survivalStage8_desc"/>
+	<Filters>
+		<Filter kind="stages" param="8"/>
+		<Filter kind="mission_type" param="survivalmission"/>
+	</Filters>
+	<BannerImage image="challenge_mark_sm_stage_08" type="mark" />
+</Achievement>

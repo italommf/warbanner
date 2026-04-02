@@ -1,0 +1,13 @@
+<Achievement active="1" id="10516" kind="kills" MS_side="0" amount="5000">
+	<UI name="@lava01Kills02" desc="@lava01Kills02_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt14_lava01_shop"/>
+		<Filter kind="weapon" param="pt21_lava01_shop"/>   
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_lava01" type="mark" />
+</Achievement>

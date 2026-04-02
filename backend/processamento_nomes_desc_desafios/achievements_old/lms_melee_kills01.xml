@@ -1,0 +1,10 @@
+<Achievement active="1" id="3010" kind="kills" MS_side="0" amount="100">
+	<UI name="@lms_melee_kills01" desc="@lms_melee_kills01_desc"/>
+	<Filters>
+	    <Filter kind="victory_condition" param="11"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="weapon_slot" param="knife"/>
+	</Filters>
+	<BannerImage image="challenge_strip_LMS_02" type="stripe" />
+</Achievement>

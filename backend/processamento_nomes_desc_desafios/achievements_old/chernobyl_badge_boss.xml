@@ -1,0 +1,9 @@
+<Achievement active="1" id="2638" kind="kills" MS_side="0" amount="1">
+	<UI name="@chernobyl_badge_boss" desc="@chernobyl_badge_boss_desc"/>
+	<Filters>
+		<Filter kind="by_flowgraph" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+	</Filters>
+	<BannerImage image="challenge_badge_chernobil_03" type="badge" />
+</Achievement>

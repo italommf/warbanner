@@ -1,0 +1,9 @@
+<Achievement active="1" id="8022" kind="kills" MS_side="0" amount="1">
+	<Filters>
+	    <Filter kind="weapon" param="ar03_test_locked_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+	</Filters>
+	<UI name="@fastcup_02" desc="@fastcup_02_desc"/>
+	<BannerImage image="challenge_mark_fastcup" type="mark" />
+</Achievement>	

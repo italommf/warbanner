@@ -1,0 +1,7 @@
+<Achievement active="1" id="429" kind="instant_award" MS_side="0" amount="10">
+	<UI name="@mine_doublekill1" desc="@mine_doublekill1_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="14"/>
+	</Filters>
+	<BannerImage image="challenge_badge_49" type="badge" />
+</Achievement>	

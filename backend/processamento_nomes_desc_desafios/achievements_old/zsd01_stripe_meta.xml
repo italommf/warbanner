@@ -1,0 +1,7 @@
+<Achievement active="1" id="7595" kind="achievement_awarded" MS_side="1" amount="4">
+	<UI name="@zsd01_stripe_meta" desc="@zsd01_stripe_meta_desc"/>
+	<Filters>
+		<Filter kind="tag" param="zsd01_meta"/>
+	</Filters>
+	<BannerImage image="challenge_strip_zsd01_05" type="stripe" />
+</Achievement>

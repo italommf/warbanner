@@ -1,0 +1,12 @@
+<Achievement active="1" id="2310" kind="kills" MS_side="0" amount="10000">
+	<UI name="@pt15Kill25" desc="@pt15Kill25_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="weapon" param="pt15_shop"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_weapon25_35" type="mark"/>
+</Achievement>

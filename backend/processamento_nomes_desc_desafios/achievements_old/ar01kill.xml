@@ -1,0 +1,10 @@
+<Achievement active="1" id="276" kind="kills" MS_side="0" amount="5000" tags="weapons_R">
+	<UI name="@ar01Kill" desc="@ar01Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_strip_weapon10_01" type="stripe"/>
+</Achievement>

@@ -1,0 +1,8 @@
+<Achievement active="1" id="714" kind="game_end" MS_side="0" amount="50" tags="ptb">
+	<UI name="@winPTBPalace3" desc="@winPTBPalace3_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="afcf6636-b5a8-4eec-ac24-fa0915695a15"/>
+	</Filters>
+	<BannerImage image="challenge_mark_palace_03" type="mark" />
+</Achievement>

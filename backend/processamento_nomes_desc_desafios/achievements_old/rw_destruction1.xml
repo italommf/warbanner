@@ -1,0 +1,9 @@
+<Achievement active="1" id="10009" kind="kills" MS_side="0" amount="100">
+	<UI name="@rw_destruction1" desc="@rw_destruction1_desc"/>
+	<Filters>
+		<Filter kind="by_flowgraph" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+	</Filters>	
+	<BannerImage image="challenge_mark_rw_02" type="mark" />
+</Achievement>

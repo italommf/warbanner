@@ -1,0 +1,8 @@
+<Achievement active="1" id="13117" kind="game_end" MS_side="0" amount="25">
+	<UI name="@winTDMSwarm2" desc="@winTDMSwarm2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="dda8254d-616f-412c-aeba-7ca0c20b7655"/>
+	</Filters>
+	<BannerImage image="challenge_mark_tdm_swarm_02" type="mark" />
+</Achievement>

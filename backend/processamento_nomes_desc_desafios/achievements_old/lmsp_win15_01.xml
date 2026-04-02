@@ -1,0 +1,14 @@
+<Achievement active="1" id="6069" kind="instant_award" MS_side="0" amount="1">
+	<UI name="@lmsp_win15_01" desc="@lmsp_win15_01_desc"/>
+	<Filters>
+	    <Filter kind="victory_condition" param="11"/>
+		<Filter kind="mission_uid" param="e246660c-52cb-4a56-8d25-c0f040d03793"/>
+		<Filter kind="instant_award_id" param="2"/> 
+		<Filter kind="enemy" param="1"/> 
+		<Filter kind="claymore" param="0"/> 
+		<Filter kind="grenade" param="0"/>  
+		<Filter kind="kill_zone" param="0"/>  
+		<Filter kind="explosion" param="0"/>  
+	</Filters>
+	<BannerImage image="challenge_strip_LMSP_01" type="stripe" />
+</Achievement>

@@ -1,0 +1,6 @@
+<Achievement active="1" id="113" kind="crown_collected" MS_side="1" amount="10000">
+	<UI name="@crown3" desc="@crown3_desc"/>
+	<BannerImage image="challenge_badge_21" type="badge" />
+	<Steam name="ACH_HOARDER" stat_name="STAT_HOARDER" />
+	<Epic name="ACH_HOARDER" stat_name="STAT_HOARDER" />
+</Achievement>

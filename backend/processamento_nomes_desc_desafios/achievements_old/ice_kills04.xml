@@ -1,0 +1,13 @@
+<Achievement active="1" id="2380" kind="kills" MS_side="0" amount="100">
+	<UI name="@ice_kills04" desc="@ice_kills04_desc"/>
+		<Filters>
+			<Filter kind="player" param="0"/>
+			<Filter kind="weapon" param="arl02"/>
+			<Filter kind="weapon" param="arl02_shop"/>
+			<Filter kind="mission_type" param="icebreakereasy"/>
+			<Filter kind="mission_type" param="icebreakernormal"/>
+			<Filter kind="mission_type" param="icebreakerhard"/>
+			<Filter kind="mission_type" param="icebreakersurvival"/>
+		</Filters>
+	<BannerImage image="challenge_mark_ice_05" type="mark" />
+</Achievement>

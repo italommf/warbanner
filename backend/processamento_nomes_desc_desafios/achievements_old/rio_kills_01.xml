@@ -1,0 +1,13 @@
+<Achievement active="1" id="2100" kind="kills" MS_side="0" amount="500">
+	<UI name="@rio_kils_01" desc="@rio_kils_01_desc"/>
+	<Filters>
+		<Filter kind="weapon" param="ar24_bra04_shop"/>
+		<Filter kind="weapon" param="smg32_bra04_shop"/>
+		<Filter kind="weapon" param="shg13_bra04_shop"/>
+		<Filter kind="weapon" param="sr08_bra04_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_rio_01" type="mark" />
+</Achievement>

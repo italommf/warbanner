@@ -1,0 +1,9 @@
+<Achievement active="1" id="430" kind="instant_award" MS_side="0" amount="100">
+	<UI name="@mine_doublekill2" desc="@mine_doublekill2_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="14"/>
+	</Filters>
+	<BannerImage image="challenge_badge_50" type="badge" />
+	<Steam name="ACH_GENEROSITY_TO_THE_ENEMY" stat_name="STAT_GENEROSITY_TO_THE_ENEMY" />
+	<Epic name="ACH_GENEROSITY_TO_THE_ENEMY" stat_name="STAT_GENEROSITY_TO_THE_ENEMY" />
+</Achievement>	

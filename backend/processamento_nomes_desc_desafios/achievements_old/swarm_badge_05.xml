@@ -1,0 +1,10 @@
+<Achievement active="1" id="10180" kind="kills" MS_side="0" amount="5000" tags="swarm_so_meta">
+<UI name="@swarm_badge_05" desc="@swarm_badge_05_desc"/>
+<Filters>
+<Filter kind="enemy" param="1"/>
+<Filter kind="player" param="0"/>
+<Filter kind="weapon" param="*_gold01_shop" compare="match"/>
+<Filter kind="mission_type" param="swarm"/>
+</Filters>
+<BannerImage image="challenge_badge_swarm_05" type="badge" />
+</Achievement>

@@ -1,0 +1,4 @@
+<Achievement active="1" id="40150" kind="hidden" MS_side="1" amount="1">
+        <UI name="@navy_00001_badge" desc="@navy_00001_badge_desc"/>
+        <BannerImage image="challenge_badge_navy_00001" type="badge" />
+    </Achievement>

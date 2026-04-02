@@ -1,0 +1,8 @@
+<Achievement active="1" id="2062" kind="game_end" MS_side="0" amount="10" tags="ptb">
+	<UI name="@winPTBD171" desc="@winPTBD171_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="cdb2fe18-c99e-56b0-9e7f-ffc1d7733f53"/>
+	</Filters>
+	<BannerImage image="challenge_mark_d17_01" type="mark" />
+</Achievement>		

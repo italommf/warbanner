@@ -1,0 +1,8 @@
+<Achievement active="1" id="2135" kind="game_end" MS_side="0" amount="10" tags="tdm">
+	<UI name="@winTDMAul1" desc="@winTDMAul1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="bbb33b77-98db-463c-9a1a-d27655d90690"/>
+	</Filters>
+	<BannerImage image="challenge_mark_aul_01" type="mark" />
+</Achievement>		

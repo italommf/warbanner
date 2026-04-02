@@ -1,0 +1,9 @@
+<Achievement active="1" id="371013" kind="kills" MS_side="0" amount="1" tags="arena_so_meta">
+	<UI name="@arena_mark_santa" desc="@arena_mark_santa_desc"/>
+	<Filters>
+	<Filter kind="by_flowgraph" param="1"/>
+	<Filter kind="player" param="0"/>
+	<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+	</Filters>
+	<BannerImage image="challenge_mark_pve_arena_01" type="mark" />
+</Achievement>

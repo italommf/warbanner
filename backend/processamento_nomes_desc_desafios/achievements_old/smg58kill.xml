@@ -1,0 +1,13 @@
+<Achievement active="1" id="373091" kind="kills" MS_side="0" amount="2500" tags="weapons_E">
+	<UI name="@smg58_Kill" desc="@smg58_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg58_shop"/>
+		<Filter kind="weapon" param="smg58_gold01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon25_smg58" type="stripe"/>
+</Achievement>

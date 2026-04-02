@@ -1,0 +1,10 @@
+<Achievement active="1" id="72" kind="game_end" MS_side="0" amount="100" tags="stm">
+	<UI name="@winSTM2" desc="@winSTM2_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="5"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_31" type="mark" />
+	<Steam name="ACH_HURRICANE" stat_name="STAT_HURRICANE" />
+	<Epic name="ACH_HURRICANE" stat_name="STAT_HURRICANE" />
+</Achievement>

@@ -1,0 +1,13 @@
+<Achievement active="1" id="371016" kind="kills" MS_side="0" amount="2500">
+	<UI name="@ar35_gorgona01Kill" desc="@ar35_gorgona01Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar35_gorgona01_shop"/>
+		<Filter kind="weapon" param="ar35_gorgona02_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_gorgona01_06" type="stripe" />
+</Achievement>

@@ -1,0 +1,9 @@
+<Achievement active="1" id="13022" kind="game_end" MS_side="0" amount="1" tags="hnt">
+	<UI name="@firstPlaceHNT_Pripyat1" desc="@firstPlaceHNT_Pripyat1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="place_taken" param="2"/>
+		<Filter kind="mission_uid" param="371d3e9b-290a-4c79-9cad-207b6d4fd57b"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_HNT_Pripyat_01" type="stripe" />
+</Achievement>		

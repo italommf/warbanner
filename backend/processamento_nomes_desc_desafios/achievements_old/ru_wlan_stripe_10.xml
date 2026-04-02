@@ -1,0 +1,4 @@
+<Achievement active="1" id="13047" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_wlan_stripe_10" desc="@ru_wlan_stripe_10_desc"/>
+        <BannerImage image="challenge_strip_xxxx_wlan_10" type="stripe" />
+    </Achievement>

@@ -1,0 +1,14 @@
+<Achievement active="1" id="414" kind="kills" MS_side="0" amount="10000">
+	<UI name="@silent_shot3" desc="@silent_shot3_desc"/>
+	<Filters>
+		<Filter kind="silenced" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="melee" param="0"/>			
+	</Filters>
+	<BannerImage image="challenge_mark_82" type="mark" />
+</Achievement>

@@ -1,0 +1,8 @@
+<Achievement active="1" id="30110" kind="kills" MS_side="0" amount="250">
+	<UI name="@killFFADistrictUp1" desc="@killFFADistrictUp1_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="mission_uid" param="6fd32af8-c732-4085-8d1d-bacd5e1d83ad"/>
+	</Filters>
+	<BannerImage image="challenge_mark_ffa_district_up_01" type="mark" />
+</Achievement>

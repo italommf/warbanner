@@ -1,0 +1,10 @@
+<Achievement active="1" id="372017" kind="kills" MS_side="0" amount="5000" tags="bw_so_meta">
+<UI name="@bw_badge_gold" desc="@bw_badge_gold_desc"/>
+<Filters>
+<Filter kind="enemy" param="1"/>
+<Filter kind="player" param="0"/>
+<Filter kind="weapon" param="*_gold01_shop" compare="match"/>
+<Filter kind="mission_type" param="blackwood"/>
+</Filters>
+<BannerImage image="challenge_badge_raid_03" type="badge" />
+</Achievement>

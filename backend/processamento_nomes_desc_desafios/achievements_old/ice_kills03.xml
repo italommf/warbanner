@@ -1,0 +1,17 @@
+<Achievement active="1" id="2379" kind="kills" MS_side="0" amount="500">
+	<UI name="@ice_kills03" desc="@ice_kills03_desc"/>
+	<Filters>
+		<Filter kind="zoomed" param="1"/>
+ 		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="mission_type" param="icebreakereasy"/>
+		<Filter kind="mission_type" param="icebreakernormal"/>
+		<Filter kind="mission_type" param="icebreakerhard"/>
+	</Filters>
+	<BannerImage image="challenge_mark_ice_04" type="mark"/>
+</Achievement>

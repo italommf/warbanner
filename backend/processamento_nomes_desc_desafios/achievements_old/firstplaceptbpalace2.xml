@@ -1,0 +1,8 @@
+<Achievement active="1" id="763" kind="game_end" MS_side="0" amount="50" tags="ptb">
+	<UI name="@firstPlacePTBPalace2" desc="@firstPlacePTBPalace2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="afcf6636-b5a8-4eec-ac24-fa0915695a15"/>
+	</Filters>
+	<BannerImage image="challenge_badge_palace_02" type="badge" />
+</Achievement>	

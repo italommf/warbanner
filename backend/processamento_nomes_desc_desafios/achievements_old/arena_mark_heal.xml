@@ -1,0 +1,8 @@
+<Achievement active="1" id="371001" kind="heal" MS_side="0" amount="5000" tags="arena_so_meta">
+	<UI name="@arena_mark_heal" desc="@arena_mark_heal_desc"/>
+	<Filters>
+		<Filter kind="target_self" param="0"/>
+		<Filter kind="mission_type" param="pve_arena"/>
+	</Filters>
+	<BannerImage image="challenge_mark_pve_arena_03" type="mark" />
+</Achievement>

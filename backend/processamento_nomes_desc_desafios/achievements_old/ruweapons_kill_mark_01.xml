@@ -1,0 +1,8 @@
+<Achievement active="1" id="5015" kind="kills" MS_side="0" amount="1990">
+	<UI name="@ruweapons_kill_mark_01" desc="@ruweapons_kill_mark_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon_tag" param="russian" compare="in"/>
+	</Filters>
+	<BannerImage image="challenge_mark_129" type="mark" />
+</Achievement>

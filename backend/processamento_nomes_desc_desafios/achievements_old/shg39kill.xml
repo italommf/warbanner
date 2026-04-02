@@ -1,0 +1,12 @@
+<Achievement active="1" id="2089" kind="kills" MS_side="0" amount="5000" tags="weapons_M">
+	<Filters>
+		<Filter kind="weapon" param="shg39_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@shg39_kill" desc="@shg39_kill_desc"/>
+	<BannerImage image="challenge_badge_weapon10_41" type="badge"/>
+</Achievement>

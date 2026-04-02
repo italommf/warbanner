@@ -1,0 +1,12 @@
+<Achievement active="1" id="6512" kind="kills" MS_side="0" amount="5000" tags="weapons_R">
+	<Filters>
+		<Filter kind="weapon" param="ar45_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@ar45kill" desc="@ar45kill_desc"/>
+	<BannerImage image="challenge_strip_weapon10_ar45" type="stripe"/>
+</Achievement>

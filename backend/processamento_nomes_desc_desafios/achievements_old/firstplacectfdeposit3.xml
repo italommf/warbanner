@@ -1,0 +1,8 @@
+<Achievement active="1" id="767" kind="game_end" MS_side="0" amount="100" tags="ctf">
+	<UI name="@firstPlaceCTFDeposit3" desc="@firstPlaceCTFDeposit3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="d5da06ce-a425-4013-abd8-6f9bfbe9f763"/>
+	</Filters>
+	<BannerImage image="challenge_badge_bank_03" type="badge" />
+</Achievement>

@@ -1,0 +1,12 @@
+<Achievement active="1" id="5055" kind="kills" MS_side="0" amount="5000">
+	<Filters>
+		<Filter kind="weapon" param="pt35_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@pt35kill" desc="@pt35kill_desc"/>
+	<BannerImage image="challenge_mark_weapon10_60" type="mark"/>
+</Achievement>

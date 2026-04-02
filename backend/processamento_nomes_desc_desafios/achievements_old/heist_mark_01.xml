@@ -1,0 +1,11 @@
+<Achievement active="1" id="937" kind="game_end" MS_side="0" amount="1" tags="heist_so_meta,king_pve">
+<UI name="@heist_mark_01" desc="@heist_mark_01_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="heist"/>
+		<Filter kind="without_death" param="1"/>
+		<Filter kind="stages" compare=">=" param="15"/>
+	</Filters>
+<BannerImage image="challenge_mark_so_heist_01" type="mark" />
+</Achievement>

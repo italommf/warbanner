@@ -1,0 +1,13 @@
+<Achievement active="1" id="5116" kind="kills" MS_side="0" amount="10000">
+	<UI name="@kn19Kill25" desc="@kn19Kill25_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="kn19"/>
+		<Filter kind="weapon" param="kn19_gold01"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon25_77" type="stripe"/>
+</Achievement>

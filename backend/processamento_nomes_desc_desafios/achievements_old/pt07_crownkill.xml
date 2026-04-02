@@ -1,0 +1,12 @@
+<Achievement active="1" id="287" kind="kills" MS_side="0" amount="1000">
+	<UI name="@pt07_crownKill" desc="@pt07_crownKill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt07_crown_shop"/>			
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_mark_66" type="mark" />
+</Achievement>

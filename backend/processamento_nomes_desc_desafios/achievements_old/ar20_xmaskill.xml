@@ -1,0 +1,12 @@
+<Achievement active="1" id="13093" kind="kills" MS_side="0" amount="2000">
+	<UI name="@ar20_xmasKill" desc="@ar20_xmasKill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar20_xmas_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_xmas_04" type="stripe"/>
+</Achievement>

@@ -1,0 +1,10 @@
+<Achievement active="1" id="510" kind="stages_completed_in_a_row" MS_side="0" amount="1">
+	<UI name="@survivalStage5" desc="@survivalStage5_desc"/>
+	<Filters>
+		<Filter kind="stages" param="5"/>
+		<Filter kind="mission_type" param="survivalmission"/>
+	</Filters>
+	<BannerImage image="challenge_mark_sm_stage_05" type="mark" />
+	<Steam name="ACH_GIMME_A_FIVE" stat_name="STAT_GIMME_A_FIVE" />
+	<Epic name="ACH_GIMME_A_FIVE" stat_name="STAT_GIMME_A_FIVE" />
+</Achievement>

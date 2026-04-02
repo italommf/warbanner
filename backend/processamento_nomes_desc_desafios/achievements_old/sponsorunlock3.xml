@@ -1,0 +1,4 @@
+<Achievement active="1" id="138" kind="sponsor_progress" MS_side="1" amount="3">
+	<UI name="@sponsorUnlock3" desc="@sponsorUnlock3_desc"/>
+	<BannerImage image="challenge_badge_16" type="badge" />
+</Achievement>		

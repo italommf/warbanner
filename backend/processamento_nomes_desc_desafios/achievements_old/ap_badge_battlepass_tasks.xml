@@ -1,0 +1,4 @@
+<Achievement active="1" id="1093" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ap_badge_battlepass_tasks" desc="@ap_badge_battlepass_tasks_desc"/>
+        <BannerImage image="challenge_badge_comp02_tasks" type="badge" />
+    </Achievement>

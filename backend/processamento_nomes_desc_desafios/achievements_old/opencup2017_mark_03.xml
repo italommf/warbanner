@@ -1,0 +1,4 @@
+<Achievement active="1" id="2264" kind="hidden" MS_side="1" amount="1">
+	<UI name="@opencup2017_mark_03" desc="@opencup2017_mark_03_desc"/>
+	<BannerImage image="challenge_mark_opencup2017_03" type="mark" />
+</Achievement>

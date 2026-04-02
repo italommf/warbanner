@@ -1,0 +1,9 @@
+<Achievement active="1" id="7502" kind="kills" MS_side="0" amount="200">
+	<Filters>
+		<Filter kind="weapon" param="sr14_bra01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="to_head" param="1"/>
+	</Filters>
+	<UI name="@brazil_worldcup_3" desc="@brazil_worldcup_3_desc"/>
+	<BannerImage image="challenge_strip_bra_01" type="stripe" />
+</Achievement>	

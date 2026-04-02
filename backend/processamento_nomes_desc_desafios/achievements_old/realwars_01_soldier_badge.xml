@@ -1,0 +1,4 @@
+<Achievement active="1" id="373108" kind="hidden" MS_side="1" amount="1">
+        <UI name="@soldier_realwars_01_badge" desc="@soldier_realwars_01_badge_desc"/>
+        <BannerImage image="soldier_realwars_01_badge" type="badge" />
+    </Achievement>

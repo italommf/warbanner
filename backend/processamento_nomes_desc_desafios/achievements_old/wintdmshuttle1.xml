@@ -1,0 +1,8 @@
+<Achievement active="1" id="709" kind="game_end" MS_side="0" amount="10" tags="tdm">
+	<UI name="@winTDMShuttle1" desc="@winTDMShuttle1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="8702f1ee-bac1-4bea-a92b-d5b76c5cd5af"/>
+	</Filters>
+	<BannerImage image="challenge_mark_shuttle_01" type="mark" />
+</Achievement>

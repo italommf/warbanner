@@ -1,0 +1,12 @@
+<Achievement active="1" id="10108" kind="kills" MS_side="0" amount="1923">
+	<Filters>
+		<Filter kind="weapon" param="shg30_shop"/>
+		<Filter kind="weapon" param="ar11_shop"/>
+		<Filter kind="weapon" param="ar11_gold01_shop"/>
+		<Filter kind="weapon" param="ar01_shop"/>
+		<Filter kind="weapon" param="mg04_shop"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<UI name="@turkish_republic_day_01" desc="@iturkish_republic_day_01_desc"/>
+	<BannerImage image="challenge_mark_nb_04" type="mark" />
+</Achievement>

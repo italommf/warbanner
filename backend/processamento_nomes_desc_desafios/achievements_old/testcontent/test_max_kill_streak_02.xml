@@ -1,0 +1,8 @@
+<Achievement active="0" id="44" kind="game_end" MS_side="0" amount="1">
+	<UI name="@max_kill_streak_02" desc="@max_kill_streak_desc_02"/>
+	<Filters>
+		<Filter kind="mission_type" param="trainingmission"/> <!-- INITIATION MISSION -->
+		<Filter kind="max_kill_streak" compare=">=" param="10"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="stripe"/>
+</Achievement>

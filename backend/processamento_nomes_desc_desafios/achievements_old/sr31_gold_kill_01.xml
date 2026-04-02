@@ -1,0 +1,12 @@
+<Achievement active="1" id="1026" kind="kills" MS_side="0" amount="999" tags="gold">
+	<Filters>
+		<Filter kind="weapon" param="sr31_gold01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@sr31_gold_kill_01" desc="@sr31_gold_kill_01_desc"/>
+	<BannerImage image="challenge_strip_111" type="stripe" />
+</Achievement>

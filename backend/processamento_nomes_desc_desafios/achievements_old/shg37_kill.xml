@@ -1,0 +1,13 @@
+<Achievement active="1" id="1038" kind="kills" MS_side="0" amount="5000" tags="weapons_M">
+	<Filters>
+		<Filter kind="weapon" param="shg37_shop"/>
+		<Filter kind="weapon" param="shg37_gold01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@shg37_kill" desc="@shg37_kill_desc"/>
+	<BannerImage image="challenge_badge_weapon10_26" type="badge"/>
+</Achievement>

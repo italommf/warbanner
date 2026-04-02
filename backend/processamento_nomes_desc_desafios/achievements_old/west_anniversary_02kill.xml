@@ -1,0 +1,4 @@
+<Achievement active="1" id="10010" kind="hidden" MS_side="1" amount="1">
+	<UI name="@west_anniversary_02kill" desc="@west_anniversary_02kill_desc"/>
+	<BannerImage image="challenge_badge_anniversary_2" type="badge" />
+</Achievement>

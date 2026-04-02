@@ -1,0 +1,10 @@
+<Achievement active="1" id="1262" kind="kills" MS_side="0" amount="50">
+	<UI name="@Mech_Kill03" desc="@Mech_Kill03_desc"/>
+	<Filters>
+		<Filter kind="ai_archetype" param="Robot"/>
+		<Filter kind="difficulty" param="hard"/>
+		<Filter kind="player" param="0"/>				
+		<Filter kind="victory_condition" param="3"/>			
+	</Filters>
+	<BannerImage image="challenge_strip_140" type="stripe" />
+</Achievement>

@@ -1,0 +1,10 @@
+<Achievement active="1" id="947" kind="kills" MS_side="0" amount="5000" tags="heist_so_meta">
+<UI name="@heist_badge_04" desc="@heist_badge_04_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="weapon" param="*_gold01_shop" compare="match"/>
+		<Filter kind="mission_type" param="heist"/>
+	</Filters>
+<BannerImage image="challenge_badge_so_heist_04" type="badge" />
+</Achievement>

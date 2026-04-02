@@ -1,0 +1,4 @@
+<Achievement active="1" id="6102" kind="hidden" MS_side="1" amount="1">
+        <UI name="@kiwi_stripe_01" desc="@kiwi_stripe_01_desc"/>
+        <BannerImage image="challenge_strip_kiwi_01" type="stripe" />
+    </Achievement>

@@ -1,0 +1,14 @@
+<Achievement active="1" id="30107" kind="kills" MS_side="0" amount="500">
+	<UI name="@hlw02Kill_01" desc="@hlw02Kill_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>	
+		<Filter kind="weapon" param="kn19_hlw02"/>
+		<Filter kind="weapon" param="pt38_hlw02_shop"/>	
+		<Filter kind="weapon" param="smg46_hlw02_shop"/>		
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>	
+	<BannerImage image="challenge_mark_hlw02_01" type="mark" />
+</Achievement>	

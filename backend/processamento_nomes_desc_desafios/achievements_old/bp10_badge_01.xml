@@ -1,0 +1,28 @@
+<Achievement active="1" id="4150" kind="kills" MS_side="0" amount="1000">
+	<UI name="@bp10_badge_01" desc="@bp10_badge_01_desc"/>
+	<Filters>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+ 		<Filter kind="weapon" param="ar30_samurai02_shop"/>		
+		<Filter kind="weapon" param="ar36_samurai02_shop"/>	
+		<Filter kind="weapon" param="ar04_samurai02_shop"/>
+		<Filter kind="weapon" param="smg38_samurai02_shop"/>
+		<Filter kind="weapon" param="smg47_samurai02_shop"/>
+		<Filter kind="weapon" param="smg03_samurai02_shop"/>
+		<Filter kind="weapon" param="shg45_samurai02_shop"/>
+		<Filter kind="weapon" param="shg50_samurai02_shop"/>
+		<Filter kind="weapon" param="shg22_samurai02_shop"/>		
+		<Filter kind="weapon" param="sr09_samurai02_shop"/>
+ 		<Filter kind="weapon" param="sr47_samurai02_shop"/>	
+		<Filter kind="weapon" param="sr03_samurai02_shop"/>
+		<Filter kind="weapon" param="pt21_samurai02_shop"/>		
+		<Filter kind="weapon" param="pt02_samurai02_shop"/>
+		<Filter kind="weapon" param="kn13_samurai02"/>
+ 		<Filter kind="weapon" param="kn05_samurai02"/>		
+	</Filters> 
+	<BannerImage image="challenge_badge_samurai02_01" type="badge" />
+</Achievement>

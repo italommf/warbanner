@@ -1,0 +1,9 @@
+<Achievement active="1" id="2073" kind="game_end" MS_side="0" amount="50" tags="tdm">
+	<UI name="@winTDMStreetwars3" desc="@winTDMStreetwars3_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="d2cc9728-2a3f-4387-a0ea-ea1e0f967495"/>
+		<Filter kind="mission_uid" param="155193c2-0e54-46b3-8fc8-030016dfd185"/>
+	</Filters>
+	<BannerImage image="challenge_mark_streetwars_03" type="mark" />
+</Achievement>		

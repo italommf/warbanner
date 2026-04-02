@@ -1,0 +1,4 @@
+<Achievement active="1" id="1396" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_wfpro_lanfinal_stripe05" desc="@ru_wfpro_lanfinal_stripe05_desc"/>
+        <BannerImage image="challenge_strip_pro_05" type="stripe" />
+    </Achievement>

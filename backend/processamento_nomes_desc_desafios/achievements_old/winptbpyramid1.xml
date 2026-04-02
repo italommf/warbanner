@@ -1,0 +1,8 @@
+<Achievement active="1" id="5063" kind="game_end" MS_side="0" amount="10" tags="ptb">
+	<UI name="@winPTBPyramid1" desc="@winPTBPyramid1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="b1594650-15ad-43c0-850f-863f5ab85ef5"/>
+	</Filters>
+	<BannerImage image="challenge_mark_firstPlacePTBPyramid1" type="mark" />
+</Achievement>

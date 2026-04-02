@@ -1,0 +1,9 @@
+<Achievement active="1" id="402" kind="PPES_up" MS_side="0" amount="250">
+	<UI name="@ppes_more2" desc="@ppes_more2_desc"/>
+	<Filters>
+		<Filter kind="difficulty" param="normal"/>
+		<Filter kind="PPES_mult" param="5"/>	
+		<Filter kind="victory_condition" param="3"/>			
+	</Filters>	
+	<BannerImage image="challenge_strip_07" type="stripe" />
+</Achievement>

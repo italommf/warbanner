@@ -1,0 +1,7 @@
+<Achievement active="1" id="372026" kind="achievement_awarded" MS_side="1" amount="3" tags="bw_so_meta">
+<UI name="@bw_badge_bosses" desc="@bw_badge_bosses_desc"/>
+<Filters>
+<Filter kind="tag" param="bw_so_boss"/>
+</Filters>
+<BannerImage image="challenge_badge_raid_01" type="badge" />
+</Achievement>

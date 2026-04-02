@@ -1,0 +1,4 @@
+<Achievement active="1" id="20077" kind="hidden" MS_side="1" amount="1">
+        <UI name="@latvia_flag_01" desc="@latvia_flag_01_desc"/>
+        <BannerImage image="challenge_strip_nb_63" type="stripe" />
+    </Achievement>

@@ -1,0 +1,19 @@
+<Achievement active="1" id="12163" kind="kills" MS_side="0" amount="1000">
+	<UI name="@hlw03_badge_01" desc="@hlw03_badge_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="weapon" param="ar39_hlw03_shop"/>
+		<Filter kind="weapon" param="shg55_hlw03_shop"/>
+		<Filter kind="weapon" param="smg47_hlw03_shop"/>
+		<Filter kind="weapon" param="pt39_hlw03_shop"/>
+		<Filter kind="weapon" param="kn22_hlw03"/>
+		<Filter kind="weapon" param="hmg02_hlw03_shop"/>
+		<Filter kind="weapon" param="sr51_hlw03_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_hlw03_01" type="badge"/>
+</Achievement>

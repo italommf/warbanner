@@ -1,0 +1,9 @@
+<Achievement active="1" id="6553" kind="core_captured" MS_side="0" amount="5000">
+	<UI name="@heavyCoreCaptured1" desc="@heavyCoreCaptured1_desc"/>
+	<Filters>
+		<Filter kind="player_class" param="Heavy"/>
+		<Filter kind="victory_condition" param="5"/>
+		<Filter kind="victory_condition" param="8"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_dm_05" type="stripe" />
+</Achievement>

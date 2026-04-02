@@ -1,0 +1,7 @@
+<Achievement active="1" id="6371" kind="achievement_awarded" MS_side="1" amount="5">
+	<UI name="@mars_stripe_meta" desc="@mars_stripe_meta_desc"/>
+	<Filters>
+		<Filter kind="tag" param="mars_so_class"/>
+	</Filters>
+	<BannerImage image="challenge_strip_marsop_02" type="stripe" />
+</Achievement>

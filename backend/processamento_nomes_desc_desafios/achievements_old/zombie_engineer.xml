@@ -1,0 +1,10 @@
+<Achievement active="1" id="624" kind="game_end" MS_side="0" amount="5" tags="king_pve">
+	<UI name="@zombie_engineer" desc="@zombie_engineer_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_type" param="zombiehard"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="my_class" param="Engineer"/>
+	</Filters>
+	<BannerImage image="challenge_strip_zsd_07" type="stripe" />
+</Achievement>

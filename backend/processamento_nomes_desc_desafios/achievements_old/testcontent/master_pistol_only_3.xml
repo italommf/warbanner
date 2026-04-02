@@ -1,0 +1,7 @@
+<Achievement active="0" id="42" kind="achievement_awarded" MS_side="1" amount="5">
+	<UI name="@test_master_03" desc="@test_master_03_desc"/>
+	<Filters>
+		<Filter kind="tag" param="test1"/>
+	</Filters>		
+	<BannerImage image="test_item_icon" type="mark" />
+</Achievement>

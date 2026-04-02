@@ -1,0 +1,4 @@
+<Achievement active="1" id="13002" kind="hidden" MS_side="1" amount="1">
+	<UI name="@ru_hydra_badge_01" desc="@ru_hydra_badge_01_desc"/>
+	<BannerImage image="challenge_badge_pve_arena_05" type="badge" />
+</Achievement>

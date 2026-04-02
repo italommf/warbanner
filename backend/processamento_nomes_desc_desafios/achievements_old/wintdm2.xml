@@ -1,0 +1,10 @@
+<Achievement active="1" id="74" kind="game_end" MS_side="0" amount="100" tags="tdm">
+	<UI name="@winTDM2" desc="@winTDM2_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="1"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_32" type="mark" />
+	<Steam name="ACH_UNITED_WE_STAND" stat_name="STAT_UNITED_WE_STAND" />
+	<Epic name="ACH_UNITED_WE_STAND" stat_name="STAT_UNITED_WE_STAND" />
+</Achievement>

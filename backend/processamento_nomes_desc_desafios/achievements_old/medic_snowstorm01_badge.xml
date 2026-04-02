@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<Achievement active="1" id="373290" kind="hidden" MS_side="1" amount="1">
+	<UI name="@medic_snowstorm01_badge" desc="@medic_snowstorm01_badge_desc"/>
+	<BannerImage image="challenge_badge_medic_snowstorm01" type="badge"/>
+</Achievement>

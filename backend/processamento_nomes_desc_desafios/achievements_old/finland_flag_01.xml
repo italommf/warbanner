@@ -1,0 +1,4 @@
+<Achievement active="1" id="20036" kind="hidden" MS_side="1" amount="1">
+        <UI name="@finland_flag_01" desc="@finland_flag_01_desc"/>
+        <BannerImage image="challenge_strip_nb_37" type="stripe" />
+    </Achievement>

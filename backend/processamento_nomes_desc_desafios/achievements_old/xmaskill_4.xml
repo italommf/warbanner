@@ -1,0 +1,14 @@
+<Achievement active="1" id="1010" kind="kills" MS_side="0" amount="250">
+	<UI name="@xmasKill_4" desc="@xmasKill_4_desc"/>
+	<Filters>
+		<Filter kind="player" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="to_head" param="1"/>			
+		<Filter kind="weapon" param="pt28_shop"/>			
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_xmas_03"  type="stripe" />
+</Achievement>

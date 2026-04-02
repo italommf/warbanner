@@ -1,0 +1,10 @@
+<Achievement active="1" id="68" kind="game_end" MS_side="0" amount="100" tags="dst">
+	<UI name="@winDST2" desc="@winDST2_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="7"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_28" type="mark" />
+	<Steam name="ACH_DESTRUCTION_MARATHON" stat_name="STAT_DESTRUCTION_MARATHON" />
+	<Epic name="ACH_DESTRUCTION_MARATHON" stat_name="STAT_DESTRUCTION_MARATHON" />
+</Achievement>

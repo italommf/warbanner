@@ -1,0 +1,15 @@
+<Achievement active="1" id="10104" kind="kills" MS_side="0" amount="1990">
+	<Filters>
+	    <Filter kind="weapon" param="smg01_shop"/>
+		<Filter kind="weapon" param="smg04_shop"/>
+		<Filter kind="weapon" param="smg17_shop"/>
+		<Filter kind="weapon" param="smg39_shop"/>
+		<Filter kind="weapon" param="ar06_shop"/>
+		<Filter kind="weapon" param="mg06_shop"/>
+		<Filter kind="weapon" param="sr06_shop"/>
+		<Filter kind="weapon" param="pt03_shop"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<UI name="@german_unification_day_01" desc="@german_unification_day_01_desc"/>
+	<BannerImage image="challenge_mark_nb_03" type="mark" />
+</Achievement>

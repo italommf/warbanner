@@ -1,0 +1,10 @@
+<Achievement active="1" id="10102" kind="kills" MS_side="0" amount="1789">
+	<Filters>
+		<Filter kind="weapon" param="ar13_shop"/>	
+		<Filter kind="weapon" param="pt04_shop"/>
+		<Filter kind="weapon" param="pt15_shop"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<UI name="@french_bastille_day_01" desc="@french_bastille_day_01_desc"/>
+	<BannerImage image="challenge_mark_nb_02" type="mark" />
+</Achievement>

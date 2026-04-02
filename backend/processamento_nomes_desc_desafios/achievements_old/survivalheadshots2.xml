@@ -1,0 +1,9 @@
+<Achievement active="1" id="508" kind="kills" MS_side="0" amount="1000">
+	<UI name="@survivalHeadshots2" desc="@survivalHeadshots2_desc"/>
+	<Filters>
+		<Filter kind="mission_type" param="survivalmission"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="to_head" param="1"/>
+	</Filters>
+	<BannerImage image="challenge_badge_sm_02" type="badge" />
+</Achievement>

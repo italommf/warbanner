@@ -1,0 +1,10 @@
+<Achievement active="1" id="905" kind="game_end" MS_side="0" amount="1">
+	<UI name="@rw_survivor1" desc="@rw_survivor1_desc"/>
+	<Filters>
+		<Filter kind="without_death" param="1"/>
+		<Filter kind="mission_result" param="win"/>	
+		<Filter kind="mission_type" param="campaignsection1"/>
+		<Filter kind="victory_condition" param="3"/>			
+	</Filters>	
+	<BannerImage image="challenge_badge_rw_01" type="badge" />
+</Achievement>	

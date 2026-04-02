@@ -1,0 +1,13 @@
+<Achievement active="1" id="7085" kind="kills" MS_side="0" amount="2500">
+	<UI name="@shg52_black02Kill" desc="@shg52_black02Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="shg52_black02_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_black02_09" type="stripe" />
+</Achievement>
+

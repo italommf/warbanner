@@ -1,0 +1,7 @@
+<Achievement active="1" id="371015" kind="achievement_awarded" MS_side="1" amount="9">
+	<UI name="@arena_stripe_collection" desc="@arena_stripe_collection_desc"/>
+	<Filters>
+ <Filter kind="tag" param="arena_so_meta"/>
+	</Filters>
+	<BannerImage image="challenge_strip_pve_arena_01" type="stripe" />
+</Achievement>

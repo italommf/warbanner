@@ -1,0 +1,9 @@
+<Achievement active="1" id="600" kind="kills" MS_side="0" amount="10">
+	<UI name="@zombie_boss_kills_1" desc="@zombie_boss_kills_1_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_archetype" param="CyborgCrusher"/>	
+	</Filters>
+	<BannerImage image="challenge_strip_zsd_06" type="stripe" />
+</Achievement>

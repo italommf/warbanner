@@ -1,0 +1,13 @@
+<Achievement active="1" id="30079" kind="kills" MS_side="0" amount="10000" tags="weapons_R">
+	<Filters>
+		<Filter kind="weapon" param="mg26_shop"/>
+		<Filter kind="weapon" param="mg26_gold01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@mg26kill25" desc="@mg26kill25_desc"/>
+	<BannerImage image="challenge_strip_weapon25_mg26" type="stripe"/>
+</Achievement>

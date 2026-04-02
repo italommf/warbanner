@@ -1,0 +1,12 @@
+<Achievement active="1" id="2205" kind="kills" MS_side="0" amount="10000">
+	<UI name="@kn06Kill25" desc="@kn06Kill25_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="kn06"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon25_47" type="stripe"/>
+</Achievement>

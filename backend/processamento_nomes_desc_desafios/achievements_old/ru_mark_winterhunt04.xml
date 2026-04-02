@@ -1,0 +1,4 @@
+<Achievement active="1" id="8427" kind="hidden" MS_side="1" amount="1">
+	<UI name="@ru_mark_winterhunt04" desc="@ru_mark_winterhunt04_desc"/>
+	<BannerImage image="challenge_mark_winter_hunt04" type="mark" />
+</Achievement>

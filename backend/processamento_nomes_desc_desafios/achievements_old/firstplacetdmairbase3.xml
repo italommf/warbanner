@@ -1,0 +1,9 @@
+<Achievement active="1" id="2155" kind="game_end" MS_side="0" amount="100" tags="tdm">
+	<UI name="@firstPlaceTDMAirbase3" desc="@firstPlaceTDMAirbase3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="e4f56e59-97fb-4451-a137-7b44026d96b0"/>
+		<Filter kind="mission_uid" param="309c5c0c-0ec2-438a-a18b-26efb45caf7e"/>
+	</Filters>
+	<BannerImage image="challenge_badge_airbase_03" type="badge"/>
+</Achievement>		

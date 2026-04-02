@@ -1,0 +1,11 @@
+<Achievement active="1" id="10507" kind="kills" MS_side="0" amount="500">
+	<UI name="@vol_turret7" desc="@vol_turret7_desc"/>
+	<Filters>
+		<Filter kind="ai_archetype" param="Turret"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="volcanoeasy"/>
+		<Filter kind="mission_type" param="volcanonormal"/>
+		<Filter kind="mission_type" param="volcanohard"/>
+	</Filters>
+	<BannerImage image="challenge_mark_vol_02" type="mark" />
+</Achievement>

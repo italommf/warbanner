@@ -1,0 +1,13 @@
+<Achievement active="1" id="10106" kind="kills" MS_side="0" amount="1492">
+	<Filters>
+		<Filter kind="weapon" param="sr16_shop"/>
+		<Filter kind="weapon" param="sr16_bundle_shop"/>
+		<Filter kind="weapon" param="mg02_default"/>
+		<Filter kind="weapon" param="mg08_shop"/>
+		<Filter kind="weapon" param="ar20_shop"/>
+		<Filter kind="weapon" param="ar20_gold01_shop"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<UI name="@spain_day_01" desc="@spain_day_01_desc"/>
+	<BannerImage image="challenge_mark_nb_07" type="mark" />
+</Achievement>

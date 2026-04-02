@@ -1,0 +1,9 @@
+<Achievement active="1" id="527" kind="kills" MS_side="0" amount="25">
+	<UI name="@survivalHeavyGunner03" desc="@survivalHeavyGunner03_desc"/>
+	<Filters>
+		<Filter kind="ai_archetype" param="HeavyGunner"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="survivalmission"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_sm_05" type="stripe" />
+</Achievement>	

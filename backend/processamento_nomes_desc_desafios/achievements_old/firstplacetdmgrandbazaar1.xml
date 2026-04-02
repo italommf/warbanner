@@ -1,0 +1,8 @@
+<Achievement active="1" id="5123" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@firstPlaceTDMGrandbazaar1" desc="@firstPlaceTDMGrandbazaar1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="3347d361-ef36-4c57-8bca-4f8051fc97e6"/>
+	</Filters>
+	<BannerImage image="challenge_badge_firstPlaceTDMBazar1" type="badge" />
+</Achievement>

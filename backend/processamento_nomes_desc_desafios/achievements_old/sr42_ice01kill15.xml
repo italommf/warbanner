@@ -1,0 +1,12 @@
+<Achievement active="1" id="6304" kind="kills" MS_side="0" amount="2500">
+	<Filters>
+		<Filter kind="weapon" param="sr42_ice01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@sr42_ice01kill15" desc="@sr42_ice01kill15_desc"/>
+	<BannerImage image="challenge_strip_ice_15" type="stripe"/>
+</Achievement>

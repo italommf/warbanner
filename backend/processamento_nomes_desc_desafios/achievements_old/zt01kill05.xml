@@ -1,0 +1,15 @@
+<Achievement active="1" id="2173" kind="kills" MS_side="0" amount="5000">
+	<UI name="@zt01Kill05" desc="@zt01Kill05_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="zombietowerhard"/>	
+		<Filter kind="mission_type" param="zombietowernormal"/>	
+		<Filter kind="mission_type" param="zombietowereasy"/>
+		<Filter kind="ai_archetype" param="Cyborg"/>
+		<Filter kind="ai_archetype" param="CyborgScreamer"/>
+		<Filter kind="ai_archetype" param="CyborgBarrelman"/>
+		<Filter kind="ai_archetype" param="CyborgTurtle"/>			
+	</Filters>	
+	<BannerImage image="challenge_strip_zsd02_06" type="stripe" />
+</Achievement>

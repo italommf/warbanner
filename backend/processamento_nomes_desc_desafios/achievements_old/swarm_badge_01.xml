@@ -1,0 +1,10 @@
+<Achievement active="1" id="10176" kind="kills" MS_side="0" amount="50" tags="swarm_so_meta">
+<UI name="@swarm_badge_01" desc="@swarm_badge_01_desc"/>
+<Filters>
+	<Filter kind="by_flowgraph" param="1"/>
+	<Filter kind="enemy" param="0"/>
+	<Filter kind="player" param="0"/>
+	<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+</Filters>
+<BannerImage image="challenge_badge_swarm_01" type="badge" />
+</Achievement>

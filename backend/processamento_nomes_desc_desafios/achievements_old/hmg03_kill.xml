@@ -1,0 +1,12 @@
+<Achievement active="1" id="7094" kind="kills" MS_side="0" amount="5000" tags="weapons_H">
+	<UI name="@hmg03_Kill" desc="@hmg03_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="hmg03_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_weapon10_hmg03" type="badge"/>
+</Achievement>

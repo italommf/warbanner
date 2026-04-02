@@ -1,0 +1,16 @@
+<Achievement active="1" id="56" kind="kills" MS_side="0" amount="100">
+	<UI name="@silent_shot1" desc="@silent_shot1_desc"/>
+	<Filters>
+		<Filter kind="silenced" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="melee" param="0"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_07" type="mark" />
+	<Steam name="ACH_SILENT_HUNTER" stat_name="STAT_SILENT_HUNTER" />
+	<Epic name="ACH_SILENT_HUNTER" stat_name="STAT_SILENT_HUNTER" />
+</Achievement>

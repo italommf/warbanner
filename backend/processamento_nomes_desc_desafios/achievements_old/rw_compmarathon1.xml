@@ -1,0 +1,9 @@
+<Achievement active="1" id="901" kind="game_end" MS_side="0" amount="1" tags="king_pve">
+	<UI name="@rw_compmarathon1" desc="@rw_compmarathon1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_type" param="campaignsections"/>
+		<Filter kind="my_class" param="Rifleman"/>
+	</Filters>
+	<BannerImage image="challenge_strip_rw_01" type="stripe" />
+</Achievement>

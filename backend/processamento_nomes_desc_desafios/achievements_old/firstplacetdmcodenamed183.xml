@@ -1,0 +1,8 @@
+<Achievement active="1" id="5089" kind="game_end" MS_side="0" amount="100" tags="tdm">
+	<UI name="@firstPlaceTDMCodenamed183" desc="@firstPlaceTDMCodenamed183_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="f405283f-42f9-4d5e-b02a-618cacd10cf4"/>
+	</Filters>
+	<BannerImage image="challenge_badge_firstPlaceTDMCodenameD183" type="badge" />
+</Achievement>

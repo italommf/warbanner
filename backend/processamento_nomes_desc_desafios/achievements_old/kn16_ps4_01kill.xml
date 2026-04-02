@@ -1,0 +1,12 @@
+<Achievement active="1" id="3022" kind="kills" MS_side="0" amount="2500">
+	<UI name="@kn16_ps4_01Kill" desc="@kn16_ps4_01Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="kn16_ps4_01"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_ps4_02" type="stripe" />
+</Achievement>

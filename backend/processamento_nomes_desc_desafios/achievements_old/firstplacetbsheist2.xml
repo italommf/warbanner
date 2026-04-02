@@ -1,0 +1,8 @@
+<Achievement active="1" id="20175" kind="game_end" MS_side="0" amount="50" tags="tbs">
+	<UI name="@firstPlaceTBSHeist2" desc="@firstPlaceTBSHeist2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="6ffe20a8-cee1-4a80-8556-915118ee6d91"/>
+	</Filters>
+	<BannerImage image="challenge_badge_tbs_heist_02" type="badge" />
+</Achievement>		

@@ -1,0 +1,9 @@
+<Achievement active="1" id="453" kind="kills" MS_side="0" amount="100">
+	<UI name="@medicHunter1" desc="@medicHunter1_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="player_class" param="Medic"/>	
+	</Filters>
+	<BannerImage image="challenge_badge_87" type="badge" />
+</Achievement>	

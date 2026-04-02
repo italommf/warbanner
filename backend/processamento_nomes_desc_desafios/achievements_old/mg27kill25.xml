@@ -1,0 +1,12 @@
+<Achievement active="1" id="60089" kind="kills" MS_side="0" amount="10000" tags="weapons_R">
+	<Filters>
+		<Filter kind="weapon" param="mg27_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@mg27kill25" desc="@mg27kill25_desc"/>
+	<BannerImage image="challenge_strip_weapon25_mg27" type="stripe"/>
+</Achievement>

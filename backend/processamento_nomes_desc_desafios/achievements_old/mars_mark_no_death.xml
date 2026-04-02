@@ -1,0 +1,12 @@
+<Achievement active="1" id="6380" kind="game_end" MS_side="0" amount="1">
+	<UI name="@mars_mark_no_death" desc="@mars_mark_no_death_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="hard"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="marshard"/>
+		<Filter kind="without_death" param="1"/>
+		<Filter kind="stages" compare=">=" param="14"/>
+	</Filters>
+	<BannerImage image="challenge_mark_marsop_05" type="mark" />
+</Achievement>

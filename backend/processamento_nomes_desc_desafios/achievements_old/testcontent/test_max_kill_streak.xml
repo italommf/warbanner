@@ -1,0 +1,10 @@
+<Achievement active="0" id="43" kind="game_end" MS_side="0" amount="1">
+	<UI name="@max_kill_streak" desc="@max_kill_streak_desc"/>
+	<Filters>
+		<Filter kind="mission_uid" param="45e182f3-d45c-4e5d-8054-fc4bbbfc2782"/> <!-- FFA WIDESTREET -->
+		<Filter kind="max_kill_streak" compare=">=" param="5"/>
+		<Filter kind="victory_condition" compare="=" param="6"/> <!-- VICTORY CONDITION FFA -->
+		<Filter kind="without_death" param="1"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="stripe"/>
+</Achievement>

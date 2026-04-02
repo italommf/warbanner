@@ -1,0 +1,10 @@
+<Achievement active="1" id="372031" kind="game_end" MS_side="0" amount="1" tags="bw_so_class,king_pve,bw_so_meta">
+<UI name="@bw_stripe_medic" desc="@bw_stripe_medic_desc"/>
+<Filters>
+<Filter kind="mission_result" param="win"/>
+<Filter kind="victory_condition" param="3"/>
+<Filter kind="mission_type" param="blackwood"/>
+<Filter kind="my_class" param="Medic"/>
+</Filters>
+<BannerImage image="challenge_strip_raid_01" type="stripe" />
+</Achievement>

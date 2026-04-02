@@ -1,0 +1,4 @@
+<Achievement active="1" id="373134" kind="hidden" MS_side="1" amount="1">
+        <UI name="@coldwar01_stripe" desc="@coldwar01_stripe_desc"/>
+        <BannerImage image="challenge_stripe_coldwar01" type="stripe" />
+    </Achievement>

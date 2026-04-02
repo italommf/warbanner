@@ -1,0 +1,6 @@
+<Achievement active="1" id="115" kind="money" MS_side="1" amount="500000">
+	<UI name="@money2" desc="@money2_desc"/>
+	<BannerImage image="challenge_badge_18" type="badge" />
+	<Steam name="ACH_MONEY_BAGS" stat_name="STAT_MONEY_BAGS" />
+	<Epic name="ACH_MONEY_BAGS" stat_name="STAT_MONEY_BAGS" />
+</Achievement>

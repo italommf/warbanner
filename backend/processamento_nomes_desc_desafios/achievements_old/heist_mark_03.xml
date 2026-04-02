@@ -1,0 +1,10 @@
+<Achievement active="1" id="939" kind="kills" MS_side="0" amount="10" tags="heist_so_meta,king_pve">
+<UI name="@heist_mark_03" desc="@heist_mark_03_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_tag" param="jugger_roof_heist" compare="==" />
+		<Filter kind="mission_type" param="heist"/>
+	</Filters>
+<BannerImage image="challenge_mark_so_heist_03" type="mark" />
+</Achievement>

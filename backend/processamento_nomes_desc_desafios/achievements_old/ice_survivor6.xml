@@ -1,0 +1,11 @@
+<Achievement active="1" id="2375" kind="game_end" MS_side="0" amount="1" tags="king_pve">
+	<UI name="@ice_survivor6" desc="@ice_survivor6_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="hard"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="icebreakerhard"/>
+		<Filter kind="my_class" param="Recon"/>
+	</Filters>
+	<BannerImage image="challenge_strip_ice_05" type="stripe" />
+</Achievement>

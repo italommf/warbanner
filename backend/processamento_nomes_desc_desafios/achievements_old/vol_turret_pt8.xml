@@ -1,0 +1,12 @@
+<Achievement active="1" id="10508" kind="kills" MS_side="0" amount="100">
+	<UI name="@vol_turret_pt8" desc="@vol_turret_pt8_desc"/>
+	<Filters>
+		<Filter kind="ai_archetype" param="Turret"/>
+		<Filter kind="weapon_slot" param="pistol"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="volcanoeasy"/>
+		<Filter kind="mission_type" param="volcanonormal"/>
+		<Filter kind="mission_type" param="volcanohard"/>
+	</Filters>
+	<BannerImage image="challenge_badge_vol_02" type="badge" />
+</Achievement>

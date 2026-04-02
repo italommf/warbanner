@@ -1,0 +1,23 @@
+<Achievement active="1" id="10515" kind="kills" MS_side="0" amount="10000">
+	<UI name="@lava01Kills01" desc="@lava01Kills01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar16_lava01_shop"/>
+		<Filter kind="weapon" param="ar20_lava01_shop"/>
+		<Filter kind="weapon" param="shg08_lava01_shop"/>
+		<Filter kind="weapon" param="shg32_lava01_shop"/>
+		<Filter kind="weapon" param="smg25_lava01_shop"/>
+		<Filter kind="weapon" param="smg31_lava01_shop"/>
+		<Filter kind="weapon" param="sr09_lava01_shop"/>
+		<Filter kind="weapon" param="sr31_lava01_shop"/>
+		<Filter kind="weapon" param="pt21_lava01_shop"/>
+		<Filter kind="weapon" param="pt14_lava01_shop"/>
+		<Filter kind="weapon" param="kn07_lava01"/>
+		<Filter kind="weapon" param="kn13_lava01"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_lava01" type="stripe" />
+</Achievement>

@@ -1,0 +1,7 @@
+<Achievement active="1" id="2091" kind="instant_award" MS_side="0" amount="5000">
+	<UI name="@BrainSmasher01" desc="@BrainSmasher01_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="1"/>
+	</Filters>
+	<BannerImage image="challenge_mark_124" type="mark" />
+</Achievement>	

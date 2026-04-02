@@ -1,0 +1,17 @@
+<Achievement active="1" id="6329" kind="kills" MS_side="0" amount="500">
+	<UI name="@mars_kills03" desc="@mars_kills03_desc"/>
+	<Filters>
+		<Filter kind="zoomed" param="1"/>
+ 		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="mission_type" param="marseasy"/>
+		<Filter kind="mission_type" param="marsnormal"/>
+		<Filter kind="mission_type" param="marshard"/>
+	</Filters>
+	<BannerImage image="challenge_mark_marsop_01" type="mark"/>
+</Achievement>

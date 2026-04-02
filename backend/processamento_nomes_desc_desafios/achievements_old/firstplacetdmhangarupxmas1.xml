@@ -1,0 +1,8 @@
+<Achievement active="1" id="2435" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@firstPlaceTDMHangarUpXmas1" desc="@firstPlaceTDMHangarUpXmas1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="7863a04a-5e3b-40c5-8a51-c12f6511d84e"/>		
+	</Filters>
+	<BannerImage image="challenge_badge_hangar_xmas_01" type="badge" />
+</Achievement>		

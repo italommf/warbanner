@@ -1,0 +1,9 @@
+<Achievement active="0" id="60505" kind="kills" MS_side="0" amount="300">
+	<Filters>
+		<Filter kind="weapon" param="shg21_bra01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="in_special_move" param="slide"/>
+	</Filters>
+	<UI name="@brazil_worldcup_2_test" desc="@brazil_worldcup_2_test_desc"/>
+	<BannerImage image="test_item_icon" type="badge" />
+</Achievement>

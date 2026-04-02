@@ -1,0 +1,4 @@
+<Achievement active="1" id="373105" kind="hidden" MS_side="1" amount="1">
+        <UI name="@engineer_realwars_01_badge" desc="@engineer_realwars_01_badge_desc"/>
+        <BannerImage image="engineer_realwars_01_badge" type="badge" />
+    </Achievement>

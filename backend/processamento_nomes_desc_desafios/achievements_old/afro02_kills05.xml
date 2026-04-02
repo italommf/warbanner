@@ -1,0 +1,12 @@
+<Achievement active="1" id="2298" kind="kills" MS_side="0" amount="2000">
+	<UI name="@afro02_kills05" desc="@afro02_kills05_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="weapon" param="*crown*_shop" compare="match"/>
+		<Filter kind="mission_type" param="anubiseasy2"/>
+		<Filter kind="mission_type" param="anubisnormal2"/>
+		<Filter kind="mission_type" param="anubishard2"/>
+	</Filters>
+	<BannerImage image="challenge_mark_afro_06" type="mark" />
+</Achievement>

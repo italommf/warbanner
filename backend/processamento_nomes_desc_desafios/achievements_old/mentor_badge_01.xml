@@ -1,0 +1,4 @@
+<Achievement active="1" id="6389" kind="hidden" MS_side="1" amount="1">
+        <UI name="@mentor_badge_01" desc="@mentor_badge_01_desc"/>
+        <BannerImage image="challenge_badge_mentor" type="badge" />
+    </Achievement>

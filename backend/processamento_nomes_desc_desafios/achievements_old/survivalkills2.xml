@@ -1,0 +1,8 @@
+<Achievement active="1" id="505" kind="kills" MS_side="0" amount="2500">
+	<UI name="@survivalKills2" desc="@survivalKills2_desc"/>
+	<Filters>
+		<Filter kind="mission_type" param="survivalmission"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<BannerImage image="challenge_badge_sm_05" type="badge" />
+</Achievement>

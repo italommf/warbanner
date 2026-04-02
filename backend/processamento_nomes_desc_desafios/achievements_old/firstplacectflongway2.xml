@@ -1,0 +1,8 @@
+<Achievement active="1" id="5100" kind="game_end" MS_side="0" amount="50" tags="ctf">
+	<UI name="@firstPlaceCTFLongway2" desc="@firstPlaceCTFLongway2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="7684fdcf-f6aa-431e-9616-608eccd3a847"/>
+	</Filters>
+	<BannerImage image="challenge_badge_firstPlaceCTFLongway2" type="badge" />
+</Achievement>

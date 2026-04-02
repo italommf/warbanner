@@ -1,0 +1,12 @@
+<Achievement active="1" id="1058" kind="instant_award" MS_side="0" amount="2500">
+	<UI name="@comboKill3" desc="@comboKill3_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="17"/>
+ 		<Filter kind="enemy" param="1"/> 
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_mark_46" type="mark" />
+</Achievement>

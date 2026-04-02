@@ -1,0 +1,12 @@
+<Achievement active="1" id="373273" kind="kills" MS_side="0" amount="1500">
+	<UI name="@kn52_snowstorm02_Kill" desc="@kn52_snowstorm02_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="kn52_snowstorm02"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_kn52_snowstorm02" type="stripe" />
+</Achievement>

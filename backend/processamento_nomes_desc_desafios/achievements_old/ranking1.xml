@@ -1,0 +1,6 @@
+<Achievement active="1" id="54" kind="rank" MS_side="1" amount="10">
+	<UI name="@ranking1" desc="@ranking1_desc" starts_from_one="1"/>
+	<BannerImage image="challenge_mark_01" type="mark" />
+	<Steam name="ACH_HIGH_ROLLER" stat_name="STAT_HIGH_ROLLER" />
+	<Epic name="ACH_HIGH_ROLLER" stat_name="STAT_HIGH_ROLLER" />
+</Achievement>

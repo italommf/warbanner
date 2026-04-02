@@ -1,0 +1,12 @@
+<Achievement active="1" id="30072" kind="kills" MS_side="0" amount="2500">
+	<UI name="@shg42_hlw04Kill" desc="@shg42_hlw04Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="shg42_hlw04_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_hlw04_03" type="stripe" />
+</Achievement>

@@ -1,0 +1,4 @@
+<Achievement active="1" id="8410" kind="hidden" MS_side="1" amount="1">
+	<UI name="@ru_arcade_hero01" desc="@ru_arcade_hero01_desc"/>
+	<BannerImage image="challenge_badge_hero" type="badge" />
+</Achievement>	

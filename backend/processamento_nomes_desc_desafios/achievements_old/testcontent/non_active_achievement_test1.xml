@@ -1,0 +1,4 @@
+<Achievement active="0" id="9" kind="kill" MS_side="1" amount="1">
+	<UI name="@non_active_achievement_test1" desc="@non_active_achievement_test1_desc"/>
+	<BannerImage image="test_item_icon" type="stripe" />
+</Achievement>

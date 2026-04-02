@@ -1,0 +1,12 @@
+<Achievement active="1" id="2633" kind="kills" MS_side="0" amount="2500">
+	<UI name="@smg38_rad01Kill15" desc="@smg38_rad01Kill15_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg38_rad01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_rad01_11" type="stripe" />
+</Achievement>

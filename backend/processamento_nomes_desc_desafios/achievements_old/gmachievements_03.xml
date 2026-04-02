@@ -1,0 +1,9 @@
+<Achievement active="0" id="7506" kind="kills" MS_side="0" amount="1">
+	<Filters>
+	    <Filter kind="weapon" param="ar03_test_locked_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+	</Filters>
+	<UI name="@GMachievements_03" desc="@GMachievements_03_desc"/>
+	<BannerImage image="challenge_badge_GMachievements_03" type="badge" />
+</Achievement>

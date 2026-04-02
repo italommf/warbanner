@@ -1,0 +1,13 @@
+<Achievement active="1" id="2081" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@winTDMHangar2" desc="@winTDMHangar2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="d42df33c-bbaa-49d9-bed2-8db61ef5b233"/>
+		<Filter kind="mission_uid" param="e5981b6a-325d-42eb-a3fe-e6eed0bc4bf2"/>
+		<Filter kind="mission_uid" param="953740a3-022e-4243-9044-eb1c07a2f680"/>
+		<Filter kind="mission_uid" param="bf506d56-21cd-49e3-b57a-4b1e6f66ba8d"/>
+		<Filter kind="mission_uid" param="7863a04a-5e3b-40c5-8a51-c12f6511d84e"/>
+		<Filter kind="mission_uid" param="071716d6-c1ff-4247-9f69-d0bf76d9b0f7"/>
+	</Filters>
+	<BannerImage image="challenge_mark_hangar_02" type="mark" />
+</Achievement>		

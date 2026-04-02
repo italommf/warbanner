@@ -1,0 +1,10 @@
+<Achievement active="1" id="372022" kind="kills" MS_side="0" amount="1000" tags="bw_so_meta">
+<UI name="@bw_mark_blaster" desc="@bw_mark_blaster_desc"/>
+<Filters>
+<Filter kind="enemy" param="1"/>
+<Filter kind="player" param="0"/>
+<Filter kind="weapon" param="*_mars01_clean*_shop" compare="match"/>
+<Filter kind="mission_type" param="blackwood"/>
+</Filters>
+<BannerImage image="challenge_mark_raid_04" type="mark" />
+</Achievement>

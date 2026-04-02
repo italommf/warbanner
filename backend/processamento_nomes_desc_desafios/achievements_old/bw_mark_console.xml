@@ -1,0 +1,9 @@
+<Achievement active="1" id="372027" kind="game_end" MS_side="0" amount="15" tags="bw_so_meta,king_pve">
+<UI name="@bw_mark_console" desc="@bw_mark_console_desc"/>
+<Filters>
+<Filter kind="mission_result" param="win"/>
+<Filter kind="victory_condition" param="3"/>
+<Filter kind="mission_type" param="blackwood"/>
+</Filters>
+<BannerImage image="challenge_mark_raid_06" type="mark" />
+</Achievement>

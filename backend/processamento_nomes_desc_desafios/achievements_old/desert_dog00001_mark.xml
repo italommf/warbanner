@@ -1,0 +1,4 @@
+<Achievement active="1" id="40113" kind="hidden" MS_side="1" amount="1">
+        <UI name="@desert_dog00001_mark" desc="@desert_dog00001_mark_desc"/>
+        <BannerImage image="challenge_mark_desert_dog00001" type="mark" />
+    </Achievement>

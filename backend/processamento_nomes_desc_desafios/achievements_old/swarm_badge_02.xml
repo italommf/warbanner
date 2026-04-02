@@ -1,0 +1,8 @@
+<Achievement active="1" id="10177" kind="repair" MS_side="0" amount="5000" tags="swarm_so_meta">
+<UI name="@swarm_badge_02" desc="@swarm_badge_02_desc"/>
+<Filters>
+<Filter kind="target_self" param="0"/>
+<Filter kind="mission_type" param="swarm"/>
+</Filters>
+<BannerImage image="challenge_badge_swarm_02" type="badge" />
+</Achievement>

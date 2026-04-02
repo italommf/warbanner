@@ -1,0 +1,14 @@
+<Achievement active="1" id="410" kind="kills" MS_side="0" amount="500">
+	<UI name="@heavyGunnerPt3" desc="@heavyGunnerPt3_desc"/>
+	<Filters>
+		<Filter kind="ai_archetype" param="HeavyGunner"/>
+		<Filter kind="weapon_slot" param="pistol"/>
+		<Filter kind="player" param="0"/>			
+		<Filter kind="victory_condition" param="3"/>			
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>	
+	<BannerImage image="challenge_mark_42" type="mark" />
+</Achievement>	

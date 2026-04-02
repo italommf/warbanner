@@ -1,0 +1,7 @@
+<Achievement active="1" id="95" kind="leader_board_update" MS_side="1" amount="1">
+	<UI name="@kingOfTheMission3" desc="@kingOfTheMission3_desc"/>
+	<Filters>
+		<Filter kind="leaderboard_position" param="1"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_33" type="mark" />		
+</Achievement>

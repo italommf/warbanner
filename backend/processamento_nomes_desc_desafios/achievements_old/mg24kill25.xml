@@ -1,0 +1,13 @@
+<Achievement active="1" id="5118" kind="kills" MS_side="0" amount="10000" tags="weapons_R">
+	<Filters>
+		<Filter kind="weapon" param="mg24_shop"/>
+		<Filter kind="weapon" param="mg24_gold01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@mg24kill25" desc="@mg24kill25_desc"/>
+	<BannerImage image="challenge_badge_weapon25_50" type="badge"/>
+</Achievement>

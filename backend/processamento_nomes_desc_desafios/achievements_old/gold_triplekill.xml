@@ -1,0 +1,12 @@
+<Achievement active="1" id="1045" kind="instant_award" MS_side="0" amount="2500">
+	<UI name="@gold_tripleKill" desc="@gold_tripleKill_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="18"/>
+ 		<Filter kind="enemy" param="1"/> 
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_badge_gold_02" type="badge" />
+</Achievement>

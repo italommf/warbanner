@@ -1,0 +1,11 @@
+<Achievement active="0" id="17" kind="kills" MS_side="0" amount="50">
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="weapon" param="ar04_default"/>
+		<Filter kind="ai_tag" param="cqb" />   
+		<Filter kind="ai_tag" param="shieldbearer" />   
+	</Filters>
+	<UI name="@tags_ai_or_ar04" desc="@tags_ai_or_ar04_desc"/>
+	<BannerImage image="test_item_icon" type="stripe" />
+</Achievement>

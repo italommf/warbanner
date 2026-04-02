@@ -1,0 +1,11 @@
+<Achievement active="0" id="30040" kind="kills" MS_side="0" amount="30" tags="ps4_achiev">
+	<UI name="@ps4_claymore_30" desc="@ps4_claymore_30_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="1"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

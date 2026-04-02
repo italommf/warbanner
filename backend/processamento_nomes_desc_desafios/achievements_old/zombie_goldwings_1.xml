@@ -1,0 +1,7 @@
+<Achievement active="1" id="633" kind="instant_award" MS_side="0" amount="1000">
+	<UI name="@zombie_goldwings_1" desc="@zombie_goldwings_1_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="109"/>
+	</Filters>
+	<BannerImage image="challenge_mark_zsd_09" type="mark" />
+</Achievement>		

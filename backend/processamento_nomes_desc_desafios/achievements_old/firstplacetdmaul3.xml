@@ -1,0 +1,8 @@
+<Achievement active="1" id="2138" kind="game_end" MS_side="0" amount="100" tags="tdm">
+	<UI name="@firstPlaceTDMAul3" desc="@firstPlaceTDMAul3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="bbb33b77-98db-463c-9a1a-d27655d90690"/>
+	</Filters>
+	<BannerImage image="challenge_badge_aul_03" type="badge"/>
+</Achievement>		

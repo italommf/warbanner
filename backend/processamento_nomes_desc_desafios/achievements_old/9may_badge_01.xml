@@ -1,0 +1,17 @@
+<Achievement active="1" id="12103" kind="kills" MS_side="0" amount="1000">
+	<UI name="@9may_badge_01" desc="@9may_badge_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>	
+		<Filter kind="player" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="weapon" param="sr41_shop"/>
+		<Filter kind="weapon" param="smg41_ww2_shop"/>	
+		<Filter kind="weapon" param="mg24_shop"/>
+		<Filter kind="weapon" param="mg24_gold01_shop"/>
+		<Filter kind="weapon" param="pt24_shop"/>
+	</Filters> 
+	<BannerImage image="challenge_badge_9May" type="badge" />
+</Achievement>

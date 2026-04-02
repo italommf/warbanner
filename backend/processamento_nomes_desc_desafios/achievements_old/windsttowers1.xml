@@ -1,0 +1,8 @@
+<Achievement active="1" id="2132" kind="game_end" MS_side="0" amount="10" tags="dst">
+	<UI name="@winDSTTowers1" desc="@winDSTTowers1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="d1f15bf2-1db4-42f4-b335-097a57b83ed4"/>
+	</Filters>
+	<BannerImage image="challenge_mark_towers_01" type="mark" />
+</Achievement>		

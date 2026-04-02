@@ -1,0 +1,8 @@
+<Achievement active="1" id="449" kind="game_end" MS_side="0" amount="1000" tags="ctf">
+	<UI name="@winCTF3" desc="@winCTF3_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="2"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_92" type="mark" />
+</Achievement>

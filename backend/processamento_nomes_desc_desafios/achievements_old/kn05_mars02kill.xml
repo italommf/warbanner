@@ -1,0 +1,12 @@
+<Achievement active="1" id="7589" kind="kills" MS_side="0" amount="2500" tags="mars02">
+	<UI name="@kn05_mars02Kill" desc="@kn05_mars02Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="kn05_mars02"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_mars02_17" type="stripe" />
+</Achievement>

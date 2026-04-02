@@ -1,0 +1,8 @@
+<Achievement active="1" id="2535" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@firstPlaceTDMNightFarm1" desc="@firstPlaceTDMNightFarm1_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="90c7e3c1-6432-4745-8abc-40cbccaa4d25"/>
+	</Filters>
+	<BannerImage image="challenge_badge_night_farm_01" type="badge"/>
+</Achievement>		

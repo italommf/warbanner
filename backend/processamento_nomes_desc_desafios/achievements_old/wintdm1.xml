@@ -1,0 +1,10 @@
+<Achievement active="1" id="73" kind="game_end" MS_side="0" amount="10" tags="tdm">
+	<UI name="@winTDM1" desc="@winTDM1_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="1"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_43" type="mark" />
+	<Steam name="ACH_TEAM_PLAYER" stat_name="STAT_TEAM_PLAYER" />
+	<Epic name="ACH_TEAM_PLAYER" stat_name="STAT_TEAM_PLAYER" />
+</Achievement>

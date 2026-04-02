@@ -1,0 +1,16 @@
+<Achievement active="1" id="2184" kind="kills" MS_side="0" amount="10000">
+	<UI name="@zt01HeadKill03" desc="@zt01HeadKill03_desc"/>
+	<Filters>
+		<Filter kind="mission_type" param="zombietowerhard"/>	
+		<Filter kind="mission_type" param="zombietowernormal"/>	
+		<Filter kind="mission_type" param="zombietowereasy"/>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="player" param="0"/>				
+	</Filters>	
+	<BannerImage image="challenge_mark_zsd02_06" type="mark" />
+</Achievement>

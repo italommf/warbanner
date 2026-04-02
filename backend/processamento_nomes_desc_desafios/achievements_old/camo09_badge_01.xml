@@ -1,0 +1,28 @@
+<Achievement active="1" id="7006" kind="kills" MS_side="0" amount="1000">
+	<UI name="@camo09_badge_01" desc="@camo09_badge_01_desc"/>
+	<Filters>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+ 		<Filter kind="weapon" param="ar24_camo09_shop"/>		
+		<Filter kind="weapon" param="ar27_camo09_shop"/>	
+		<Filter kind="weapon" param="mg22_camo09_shop"/>
+		<Filter kind="weapon" param="kn17_camo09"/>
+		<Filter kind="weapon" param="pt26_camo09_shop"/>
+		<Filter kind="weapon" param="pt32_camo09_shop"/>
+		<Filter kind="weapon" param="shg43_camo09_shop"/>
+		<Filter kind="weapon" param="shg40_camo09_shop"/>
+		<Filter kind="weapon" param="shg35_camo09_shop"/>
+ 		<Filter kind="weapon" param="smg10_camo09_shop"/>	
+		<Filter kind="weapon" param="smg18_camo09_shop"/>
+		<Filter kind="weapon" param="smg38_camo09_shop"/>
+		<Filter kind="weapon" param="sr07_camo09_shop"/>
+ 		<Filter kind="weapon" param="sr35_camo09_shop"/>	
+ 		<Filter kind="weapon" param="sr31_camo09_shop"/>	
+ 		<Filter kind="weapon" param="smg40_camo09_shop"/>
+	</Filters> 
+	<BannerImage image="challenge_badge_camo09" type="badge" />
+</Achievement>

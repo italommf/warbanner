@@ -1,0 +1,10 @@
+<Achievement active="1" id="6363" kind="game_end" MS_side="0" amount="1">
+	<UI name="@mars_badge_easy" desc="@mars_badge_easy_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="easy"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="marseasy"/>
+	</Filters>
+	<BannerImage image="challenge_badge_marsop_04" type="badge" />
+</Achievement>

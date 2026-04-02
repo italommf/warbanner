@@ -1,0 +1,34 @@
+<Achievement active="1" id="8210" kind="kills" MS_side="0" amount="1990">
+	<UI name="@germanunity" desc="@germanunity_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="mg26_shop"/>
+		<Filter kind="weapon" param="ar05_shop"/>
+		<Filter kind="weapon" param="ar06_shop"/>
+		<Filter kind="weapon" param="mg02_default"/>
+		<Filter kind="weapon" param="mg05_shop"/>
+		<Filter kind="weapon" param="mg06_shop"/>
+		<Filter kind="weapon" param="mg09_shop"/>
+		<Filter kind="weapon" param="pt03_shop"/>
+		<Filter kind="weapon" param="pt21_shop"/>
+		<Filter kind="weapon" param="pt21_camo01_shop"/>
+		<Filter kind="weapon" param="pt21_gold01_shop"/>
+		<Filter kind="weapon" param="smg01_shop"/>
+		<Filter kind="weapon" param="smg04_shop"/>
+		<Filter kind="weapon" param="smg07_shop"/>
+		<Filter kind="weapon" param="smg08_shop"/>
+		<Filter kind="weapon" param="smg17_shop"/>
+		<Filter kind="weapon" param="smg39_shop"/>
+		<Filter kind="weapon" param="sr03_shop"/>
+		<Filter kind="weapon" param="sr05_shop"/>
+		<Filter kind="weapon" param="sr06_shop"/>
+		<Filter kind="weapon" param="sr26_shop"/>
+		<Filter kind="weapon" param="sr45_shop"/>
+		<Filter kind="weapon" param="sr45_gold01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_DE_01" type="mark" />
+</Achievement>

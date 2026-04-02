@@ -1,0 +1,17 @@
+<Achievement active="1" id="631" kind="kills" MS_side="0" amount="3000">
+	<UI name="@zombie_melee_2" desc="@zombie_melee_2_desc"/>
+	<Filters>
+		<Filter kind="melee" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="ai_archetype" param="Cyborg"/>
+		<Filter kind="ai_archetype" param="CyborgScreamer"/>
+		<Filter kind="ai_archetype" param="CyborgBarrelman"/>
+		<Filter kind="ai_archetype" param="CyborgTurtle"/>
+	</Filters>
+	<BannerImage image="challenge_badge_zsd_02" type="badge" />
+</Achievement>

@@ -1,0 +1,4 @@
+<Achievement active="1" id="8211" kind="hidden" MS_side="1" amount="1">	
+	<UI name="@wf_veteran" desc="@wf_veteran_desc"/>
+	<BannerImage image="challenge_strip_wf_veteran" type="stripe" />
+</Achievement>

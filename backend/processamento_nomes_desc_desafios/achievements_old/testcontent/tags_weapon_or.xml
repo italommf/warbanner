@@ -1,0 +1,11 @@
+<Achievement active="0" id="26" kind="kills" MS_side="0" amount="50">	
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="weapon_tag" param="italian"/>
+		<Filter kind="weapon_tag" param="Gold"/>
+		<Filter kind="ai_tag" param="cqb" />   
+	</Filters>
+	<UI name="@tags_weapon_or" desc="@tags_weapon_or_desc"/>
+	<BannerImage image="test_item_icon" type="stripe" />
+</Achievement>

@@ -1,0 +1,10 @@
+<Achievement active="1" id="524" kind="stages_completed_in_a_row" MS_side="0" amount="1">
+	<UI name="@survivalStage19" desc="@survivalStage19_desc"/>
+	<Filters>
+		<Filter kind="stages" param="19"/>
+		<Filter kind="mission_type" param="survivalmission"/>
+	</Filters>
+	<BannerImage image="challenge_mark_sm_stage_19" type="mark" />
+	<Steam name="ACH_SURVIVOR" stat_name="STAT_SURVIVOR" />
+	<Epic name="ACH_SURVIVOR" stat_name="STAT_SURVIVOR" />
+</Achievement>

@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<Achievement active="1" id="373346" kind="hidden" MS_side="1" amount="1">
+	<UI name="@cny02_badge" desc="@cny02_badge_desc"/>
+	<BannerImage image="challenge_badge_cny02" type="badge"/>
+</Achievement>

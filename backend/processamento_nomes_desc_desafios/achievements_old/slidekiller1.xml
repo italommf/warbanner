@@ -1,0 +1,13 @@
+<Achievement active="1" id="216" kind="kills" MS_side="0" amount="50">
+	<UI name="@slideKiller1" desc="@slideKiller1_desc"/>
+	<Filters>
+		<Filter kind="in_special_move" param="slide"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>	
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>			
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_08" type="stripe" />
+</Achievement>

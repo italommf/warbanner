@@ -1,0 +1,8 @@
+<Achievement active="1" id="5061" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@winTDMCodenamed182" desc="@winTDMCodenamed182_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="f405283f-42f9-4d5e-b02a-618cacd10cf4"/>
+	</Filters>
+	<BannerImage image="challenge_mark_firstPlaceTDMCodenameD182" type="mark" />
+</Achievement>

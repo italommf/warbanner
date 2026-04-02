@@ -1,0 +1,12 @@
+<Achievement active="1" id="2735" kind="kills" MS_side="0" amount="2500">
+	<UI name="@smg48_xmas06Kill" desc="@smg48_xmas06Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg48_xmas06_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_xmas06_06" type="stripe" />
+</Achievement>

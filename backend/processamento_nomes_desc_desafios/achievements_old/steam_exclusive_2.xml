@@ -1,0 +1,9 @@
+<Achievement active="1" id="9001" kind="kills" MS_side="0" amount="250">
+	<Filters>
+		<Filter kind="weapon" param="shg09_steam01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="in_special_move" param="slide"/>
+	</Filters>
+	<UI name="@steam_exclusive_2" desc="@steam_exclusive_2_desc"/>
+	<BannerImage image="challenge_badge_steam01" type="badge" />
+</Achievement>

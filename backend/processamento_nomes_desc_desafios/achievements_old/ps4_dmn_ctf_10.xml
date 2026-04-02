@@ -1,0 +1,9 @@
+<Achievement active="0" id="30023" kind="game_end" MS_side="0" amount="10" tags="ps4_achiev">
+	<UI name="@ps4_dmn_ctf_10" desc="@ps4_dmn_ctf_10_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="2"/>
+		<Filter kind="victory_condition" param="8"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>		
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

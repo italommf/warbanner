@@ -1,0 +1,8 @@
+<Achievement active="1" id="757" kind="game_end" MS_side="0" amount="50" tags="dst">
+	<UI name="@firstPlaceDSTLighthouse2" desc="@firstPlaceDSTLighthouse2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="ea0cbac2-5891-4d37-bb42-09e790730b34"/>
+	</Filters>
+	<BannerImage image="challenge_badge_lhouse_02" type="badge" />
+</Achievement>		

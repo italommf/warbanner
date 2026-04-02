@@ -1,0 +1,10 @@
+<Achievement active="1" id="467" kind="kills" MS_side="0" amount="5000" tags="weapons_E">
+	<UI name="@smg15Kill" desc="@smg15Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="weapon" param="smg15_shop"/>
+	</Filters>
+	<BannerImage image="challenge_mark_weapon10_15" type="mark"/>
+</Achievement>

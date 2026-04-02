@@ -1,0 +1,4 @@
+<Achievement active="1" id="13098" kind="hidden" MS_side="1" amount="1">
+        <UI name="@belarus_flag_02" desc="@belarus_flag_02_desc"/>
+        <BannerImage image="challenge_strip_flag_belarus02" type="stripe" />
+    </Achievement>

@@ -1,0 +1,7 @@
+<Achievement active="0" id="6517" kind="achievement_awarded" MS_side="1" amount="2">
+	<UI name="@meta_class_weapons" desc="@meta_class_weapons_desc"/>
+	<Filters>
+		<Filter kind="tag" param="classweapons"/>
+	</Filters>
+	<BannerImage image="challenge_strip_progression_01" type="stripe" />
+</Achievement>

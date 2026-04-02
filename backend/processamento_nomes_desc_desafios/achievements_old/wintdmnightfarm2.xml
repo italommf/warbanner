@@ -1,0 +1,8 @@
+<Achievement active="1" id="2491" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@winTDMNightFarm2" desc="@winTDMNightFarm2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="90c7e3c1-6432-4745-8abc-40cbccaa4d25"/>
+	</Filters>
+	<BannerImage image="challenge_mark_night_farm_02" type="mark" />
+</Achievement>

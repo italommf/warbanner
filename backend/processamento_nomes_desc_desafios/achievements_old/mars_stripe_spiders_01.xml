@@ -1,0 +1,10 @@
+<Achievement active="1" id="6379" kind="kills" hidden="1" MS_side="0" amount="100">
+	<UI name="@mars_stripe_spiders_01" desc="@mars_stripe_spiders_01_desc"/>
+		<Filters>
+			<Filter kind="difficulty" param="normal"/>
+			<Filter kind="by_flowgraph" param="1"/>
+			<Filter kind="player" param="0"/>
+			<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+		</Filters>
+	<BannerImage image="challenge_strip_marsop_03" type="stripe" />
+</Achievement>

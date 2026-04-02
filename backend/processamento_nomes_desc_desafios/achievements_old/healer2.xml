@@ -1,0 +1,7 @@
+<Achievement active="1" id="117" kind="heal" MS_side="0" amount="100000">
+	<UI name="@healer2" desc="@healer2_desc"/>
+	<Filters>
+		<Filter kind="target_self" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_41" type="badge" />
+</Achievement>

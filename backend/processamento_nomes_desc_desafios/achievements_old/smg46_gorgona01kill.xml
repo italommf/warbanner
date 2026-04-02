@@ -1,0 +1,13 @@
+<Achievement active="1" id="371022" kind="kills" MS_side="0" amount="2500">
+	<UI name="@smg46_gorgona01Kill" desc="@smg46_gorgona01Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg46_gorgona01_shop"/>
+		<Filter kind="weapon" param="smg46_gorgona02_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_gorgona01_09" type="stripe" />
+</Achievement>

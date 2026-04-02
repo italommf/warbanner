@@ -1,0 +1,12 @@
+<Achievement active="1" id="10109" kind="kills" MS_side="0" amount="1415">
+	<Filters>
+		<Filter kind="weapon" param="smg16_shop"/>
+		<Filter kind="weapon" param="pt32_shop"/>
+		<Filter kind="weapon" param="pt32_gold01_shop"/>
+		<Filter kind="weapon" param="smg38_shop"/>
+		<Filter kind="weapon" param="smg38_gold01_shop"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<UI name="@czechia_jan_hus_day_01" desc="@czechia_jan_hus_day_01_desc"/>
+	<BannerImage image="challenge_mark_nb_09" type="mark" />
+</Achievement>

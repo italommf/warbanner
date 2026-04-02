@@ -1,0 +1,4 @@
+<Achievement active="1" id="13012" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_proleague_xv_badge_06" desc="@ru_proleague_xv_badge_06_desc"/>
+        <BannerImage image="challenge_badge_proleague_06" type="badge" />
+    </Achievement>

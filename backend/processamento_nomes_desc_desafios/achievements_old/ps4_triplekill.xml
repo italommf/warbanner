@@ -1,0 +1,7 @@
+<Achievement active="0"  id="30030" kind="instant_award" MS_side="0" amount="1" tags="ps4_achiev">
+	<UI name="@ps4_triplekill" desc="@ps4_triplekill_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="18"/>
+	</Filters>	
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

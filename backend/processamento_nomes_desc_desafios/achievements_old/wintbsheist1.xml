@@ -1,0 +1,8 @@
+<Achievement active="1" id="20171" kind="game_end" MS_side="0" amount="10" tags="tbs">
+	<UI name="@winTBSHeist1" desc="@winTBSHeist1_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="6ffe20a8-cee1-4a80-8556-915118ee6d91"/>
+	</Filters>
+	<BannerImage image="challenge_mark_tbs_heist_01" type="mark" />
+</Achievement>

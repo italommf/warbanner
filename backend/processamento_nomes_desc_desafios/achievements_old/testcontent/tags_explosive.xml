@@ -1,0 +1,8 @@
+<Achievement active="0" id="25" kind="kills" MS_side="0" amount="50">
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon_tag" param="explosive"/>
+	</Filters>
+	<UI name="@tags_explosive" desc="@tags_explosive_desc"/>
+	<BannerImage image="test_item_icon" type="stripe" />
+</Achievement>

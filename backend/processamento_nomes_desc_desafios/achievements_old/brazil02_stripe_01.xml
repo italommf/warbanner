@@ -1,0 +1,27 @@
+<Achievement active="1" id="60310" kind="kills" MS_side="0" amount="10000">
+	<UI name="@brazil02_stripe_01" desc="@brazil02_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar29_brazil02_shop"/>
+		<Filter kind="weapon" param="ar33_brazil02_shop"/>
+		<Filter kind="weapon" param="ar38_brazil02_shop"/>
+		<Filter kind="weapon" param="shg53_brazil02_shop"/>			
+		<Filter kind="weapon" param="shg51_brazil02_shop"/>
+		<Filter kind="weapon" param="shg32_brazil02_shop"/>
+		<Filter kind="weapon" param="smg10_brazil02_shop"/>				
+		<Filter kind="weapon" param="smg48_brazil02_shop"/>
+		<Filter kind="weapon" param="smg44_brazil02_shop"/>
+		<Filter kind="weapon" param="sr49_brazil02_shop"/>
+		<Filter kind="weapon" param="sr46_brazil02_shop"/>
+		<Filter kind="weapon" param="sr36_brazil02_shop"/>
+		<Filter kind="weapon" param="hmg03_brazil02_shop"/>
+		<Filter kind="weapon" param="pt36_brazil02_shop"/>
+		<Filter kind="weapon" param="pt21_brazil02_shop"/>
+		<Filter kind="weapon" param="kn17_brazil02"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_brazil02_01" type="stripe"/>
+</Achievement>

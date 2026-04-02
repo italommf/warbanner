@@ -1,0 +1,8 @@
+<Achievement active="1" id="13099" kind="game_end" MS_side="0" amount="25">
+	<UI name="@firstPlaceFFAAfghanUp2" desc="@firstPlaceFFAAfghanUp2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="79c67294-07ed-44d7-b4e2-780b7ef1890b"/>
+	</Filters>
+	<BannerImage image="challenge_badge_ffa_afghan_02" type="badge" />
+</Achievement>

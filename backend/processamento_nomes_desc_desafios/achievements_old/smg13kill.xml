@@ -1,0 +1,12 @@
+<Achievement active="1" id="254" kind="kills" MS_side="0" amount="5000" tags="weapons_E">
+	<UI name="@smg13Kill" desc="@smg13Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg13_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_weapon10_13" type="mark"/>
+</Achievement>

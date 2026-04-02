@@ -1,0 +1,12 @@
+<Achievement active="1" id="13109" kind="kills" MS_side="0" amount="2500">
+	<UI name="@smg46_friday01Kill" desc="@smg46_friday01Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg46_friday01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_friday_09" type="stripe" />
+</Achievement>

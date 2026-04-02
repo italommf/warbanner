@@ -1,0 +1,19 @@
+<Achievement active="0" id="60515" kind="damage_done" MS_side="0" amount="20000">
+	<UI name="@gold_damageDealer_test" desc="@gold_damageDealer_test_desc"/>
+	<Filters>
+		<Filter kind="without_death" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="weapon" param="ar*_gold01_shop" compare="match"/>
+		<Filter kind="weapon" param="mg*_gold01_shop" compare="match"/>
+		<Filter kind="weapon" param="smg*_gold01_shop" compare="match"/>
+		<Filter kind="weapon" param="shg*_gold01_shop" compare="match"/>
+		<Filter kind="weapon" param="sr*_gold01_shop" compare="match"/>
+		<Filter kind="weapon" param="kn*_gold01" compare="match"/>
+		<Filter kind="weapon" param="pt*_gold01_shop" compare="match"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="badge" />
+</Achievement>

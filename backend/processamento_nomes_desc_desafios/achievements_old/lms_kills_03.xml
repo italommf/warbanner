@@ -1,0 +1,9 @@
+<Achievement active="1" id="3009" kind="kills" MS_side="0" amount="1000">
+	<UI name="@lms_kills_03" desc="@lms_kills_03_desc"/>
+	<Filters>
+	     <Filter kind="victory_condition" param="11"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="mission_uid" param="3889f29a-fe06-425b-9ff8-f94ffbd5307c"/>
+	</Filters>	
+	<BannerImage image="challenge_strip_LMS_01" type="stripe" />
+</Achievement>

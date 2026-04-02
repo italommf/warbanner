@@ -1,0 +1,7 @@
+<Achievement active="1" id="372036" kind="achievement_awarded" MS_side="1" amount="20" >
+<UI name="@bw_stripe_achievements" desc="@bw_stripe_achievements_desc"/>
+<Filters>
+<Filter kind="tag" param="bw_so_meta"/>
+</Filters>
+<BannerImage image="challenge_strip_raid_02" type="stripe" />
+</Achievement>

@@ -1,0 +1,13 @@
+<Achievement active="1" id="60206" kind="kills" MS_side="0" amount="10000">
+	<UI name="@pt44Kill25" desc="@pt44Kill25_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt44_shop"/>
+		<Filter kind="weapon" param="pt44_gold01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon25_pt44" type="stripe"/>
+</Achievement>

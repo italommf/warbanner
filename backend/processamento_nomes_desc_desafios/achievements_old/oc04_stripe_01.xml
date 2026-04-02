@@ -1,0 +1,17 @@
+<Achievement active="1" id="867" kind="kills" MS_side="0" amount="10000">
+	<UI name="@oc04_stripe_01" desc="@oc04_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar29_oc04_shop"/>
+		<Filter kind="weapon" param="shg51_oc04_shop"/>
+		<Filter kind="weapon" param="smg44_oc04_shop"/>
+		<Filter kind="weapon" param="sr46_oc04_shop"/>
+		<Filter kind="weapon" param="pt38_oc04_shop"/>
+		<Filter kind="weapon" param="kn19_oc04"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_opencup2019_01" type="stripe"/>
+</Achievement>

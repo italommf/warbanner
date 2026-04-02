@@ -1,0 +1,4 @@
+<Achievement active="1" id="1023" kind="hidden" MS_side="1" amount="1">	
+	<UI name="@gamescom01_kill" desc="@gamescom01_kill_desc"/>
+	<BannerImage image="challenge_badge_gamescom" type="badge" />
+</Achievement>

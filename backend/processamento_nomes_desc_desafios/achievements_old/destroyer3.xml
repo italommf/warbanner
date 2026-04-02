@@ -1,0 +1,7 @@
+<Achievement active="1" id="53" kind="damage_done" MS_side="0" amount="20000000">
+	<UI name="@destroyer3" desc="@destroyer3_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<BannerImage image="challenge_mark_05" type="mark" />
+</Achievement>

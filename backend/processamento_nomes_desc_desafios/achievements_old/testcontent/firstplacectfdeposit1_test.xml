@@ -1,0 +1,8 @@
+<Achievement active="0" id="60514" kind="game_end" MS_side="0" amount="25" tags="ctf">
+	<UI name="@firstPlaceCTFDeposit1_test" desc="@firstPlaceCTFDeposit1_test"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="d5da06ce-a425-4013-abd8-6f9bfbe9f763"/>
+	</Filters>
+	<BannerImage image="test_item_icon" type="badge" />
+</Achievement>

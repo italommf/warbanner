@@ -1,0 +1,17 @@
+<Achievement active="0" id="60523" kind="kills" MS_side="0" amount="1000">
+	<UI name="@xmasKill_test" desc="@xmasKill_test_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="*_xmas_shop" compare="match"/>
+		<Filter kind="weapon" param="*_xmas03_shop" compare="match"/>
+		<Filter kind="weapon" param="pt28_shop"/>
+		<Filter kind="weapon" param="*_xmas04_shop" compare="match"/>
+		<Filter kind="weapon" param="kn18_xmas*" compare="match"/>
+		<Filter kind="weapon" param="*_xmas05_shop" compare="match"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters> 
+	<BannerImage image="test_item_icon" type="mark" />
+</Achievement>

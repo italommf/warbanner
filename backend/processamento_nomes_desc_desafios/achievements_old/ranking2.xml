@@ -1,0 +1,4 @@
+<Achievement active="1" id="55" kind="rank" MS_side="1" amount="30">
+	<UI name="@ranking2" desc="@ranking2_desc" starts_from_one="1"/>
+	<BannerImage image="challenge_mark_02" type="mark" />
+</Achievement>

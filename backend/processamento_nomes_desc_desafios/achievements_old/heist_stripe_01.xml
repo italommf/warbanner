@@ -1,0 +1,7 @@
+<Achievement active="1" id="949" kind="achievement_awarded" MS_side="1" amount="4" tags="heist_so_meta">
+<UI name="@heist_stripe_01" desc="@heist_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="tag" param="heist_so_class"/>
+	</Filters>
+<BannerImage image="challenge_strip_so_heist_01" type="stripe" />
+</Achievement>

@@ -1,0 +1,11 @@
+<Achievement active="1" id="13152" kind="kills" MS_side="0" amount="10000">
+	<UI name="@kn45Kill25" desc="@kn45Kill25_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="weapon" param="kn45"/>
+		<Filter kind="weapon" param="kn45_gold01"/>		
+	</Filters>
+	<BannerImage image="challenge_strip_weapon25_kn45" type="stripe"/>
+</Achievement>

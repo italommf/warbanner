@@ -1,0 +1,16 @@
+<Achievement active="0" id="30041" kind="game_end" MS_side="0" amount="1" tags="ps4_achiev">
+	<UI name="@ps4_survivor_easy" desc="@ps4_survivor_easy_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="easy"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="anubiseasy"/>
+		<Filter kind="mission_type" param="anubiseasy2"/>
+		<Filter kind="mission_type" param="chernobyleasy"/>
+		<Filter kind="mission_type" param="icebreakereasy"/>
+		<Filter kind="mission_type" param="volcanoeasy"/>
+		<Filter kind="mission_type" param="zombieeasy"/>
+		<Filter kind="mission_type" param="zombietowereasy"/>
+	</Filters>
+		<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

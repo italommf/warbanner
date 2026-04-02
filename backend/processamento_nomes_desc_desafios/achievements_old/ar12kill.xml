@@ -1,0 +1,13 @@
+<Achievement active="1" id="281" kind="kills" MS_side="0" amount="5000" tags="weapons_R">
+	<UI name="@ar12Kill" desc="@ar12Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+ 		<Filter kind="weapon" param="ar12_shop"/>
+		<Filter kind="weapon" param="ar12_gold01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon10_12" type="stripe"/>
+</Achievement>

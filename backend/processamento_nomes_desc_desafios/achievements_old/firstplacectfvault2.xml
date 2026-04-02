@@ -1,0 +1,8 @@
+<Achievement active="1" id="5097" kind="game_end" MS_side="0" amount="50" tags="ctf">
+	<UI name="@firstPlaceCTFVault2" desc="@firstPlaceCTFVault2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="60c04653-a419-433f-a43b-63278d8bd339"/>
+	</Filters>
+	<BannerImage image="challenge_badge_firstPlaceCTFVault2" type="badge" />
+</Achievement>

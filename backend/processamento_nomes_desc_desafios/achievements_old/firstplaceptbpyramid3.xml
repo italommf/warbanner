@@ -1,0 +1,8 @@
+<Achievement active="1" id="5092" kind="game_end" MS_side="0" amount="100" tags="ptb">
+	<UI name="@firstPlacePTBPyramid3" desc="@firstPlacePTBPyramid3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="b1594650-15ad-43c0-850f-863f5ab85ef5"/>
+	</Filters>
+	<BannerImage image="challenge_badge_firstPlacePTBPyramid3" type="badge" />
+</Achievement>

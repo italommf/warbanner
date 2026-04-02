@@ -1,0 +1,9 @@
+<Achievement active="1" id="2539" kind="game_end" MS_side="0" amount="50" tags="tdm">
+	<UI name="@firstPlaceTDMDock2" desc="@firstPlaceTDMDock2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="51a9ebbc-8519-4f5e-b83e-0e9911c6995c"/>
+		<Filter kind="mission_uid" param="615412f4-94de-48b5-b4d4-902b1d322de1"/>
+	</Filters>
+	<BannerImage image="challenge_badge_dock_02" type="badge"/>
+</Achievement>		

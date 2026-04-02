@@ -1,0 +1,12 @@
+<Achievement active="1" id="1201" kind="kills" MS_side="0" amount="2500">
+	<Filters>
+		<Filter kind="weapon" param="ar11_zsd02_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@ar11_zsd02kill15" desc="@ar11_zsd02kill15_desc"/>
+	<BannerImage image="challenge_strip_zt_04" type="stripe"/>
+</Achievement>

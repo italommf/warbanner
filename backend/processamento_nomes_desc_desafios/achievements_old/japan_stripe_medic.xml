@@ -1,0 +1,10 @@
+<Achievement active="1" id="6174" kind="kills" MS_side="0" amount="5000" tags="japan_so_class, king_pve">
+	<UI name="@japan_stripe_medic" desc="@japan_stripe_medic_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="japanhard"/>
+		<Filter kind="my_class" param="Medic"/>
+	</Filters>
+	<BannerImage image="challenge_strip_japan_05" type="stripe" />
+</Achievement>

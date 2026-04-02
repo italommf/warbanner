@@ -1,0 +1,12 @@
+<Achievement active="1" id="373073" kind="kills" MS_side="0" amount="1500" tags="weapons_E">
+	<UI name="@smg53_redstripes01_Kill" desc="@smg53_redstripes01_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg53_redstripes01_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_smg53_redstripes01" type="stripe"/>
+</Achievement>

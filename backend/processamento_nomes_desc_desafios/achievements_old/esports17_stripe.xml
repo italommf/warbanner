@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<Achievement active="1" id="373297" kind="hidden" MS_side="1" amount="1">
+	<UI name="@esports17_stripe" desc="@esports17_stripe_desc"/>
+	<BannerImage image="challenge_stripe_esports17" type="stripe"/>
+</Achievement>

@@ -1,0 +1,4 @@
+<Achievement active="1" id="8103" kind="hidden" MS_side="1" amount="1">
+        <UI name="@NY_marathon_01" desc="@NY_marathon_01_desc"/>
+        <BannerImage image="challenge_badge_NY_marathon_01" type="badge" />
+    </Achievement>

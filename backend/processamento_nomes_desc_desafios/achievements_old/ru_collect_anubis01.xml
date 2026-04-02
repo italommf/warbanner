@@ -1,0 +1,4 @@
+<Achievement active="1" id="8414" kind="hidden" MS_side="1" amount="1">
+	<UI name="@ru_collect_anubis01" desc="@ru_collect_anubis01_desc"/>
+	<BannerImage image="challenge_badge_anubis" type="badge" />
+</Achievement>

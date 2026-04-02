@@ -1,0 +1,4 @@
+<Achievement active="1" id="203" kind="add_friend" MS_side="1" amount="20">
+	<UI name="@friesndship1" desc="@friesndship1_desc"/>
+	<BannerImage image="challenge_strip_22" type="stripe" />
+</Achievement>

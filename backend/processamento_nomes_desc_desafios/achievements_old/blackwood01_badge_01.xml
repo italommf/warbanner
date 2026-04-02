@@ -1,0 +1,22 @@
+<Achievement active="1" id="300100" kind="kills" MS_side="0" amount="1000">
+	<UI name="@black01_badge_01" desc="@black01_badge_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="weapon" param="ar32_black01_shop"/>
+	    <Filter kind="weapon" param="mg25_black01_shop"/>
+		<Filter kind="weapon" param="smg45_black01_shop"/>
+		<Filter kind="weapon" param="smg46_black01_shop"/>
+		<Filter kind="weapon" param="sr46_black01_shop"/>
+		<Filter kind="weapon" param="sr42_black01_shop"/>
+		<Filter kind="weapon" param="shg50_black01_shop"/>
+		<Filter kind="weapon" param="shg44_black01_shop"/>
+		<Filter kind="weapon" param="pt38_black01_shop"/>
+		<Filter kind="weapon" param="kn17_black01"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_black01_01" type="badge"/>
+</Achievement>

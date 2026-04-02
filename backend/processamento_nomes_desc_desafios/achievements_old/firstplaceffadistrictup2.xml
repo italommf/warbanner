@@ -1,0 +1,8 @@
+<Achievement active="1" id="30114" kind="game_end" MS_side="0" amount="25">
+	<UI name="@firstPlaceFFADistrictUp2" desc="@firstPlaceFFADistrictUp2_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="6fd32af8-c732-4085-8d1d-bacd5e1d83ad"/>
+	</Filters>
+	<BannerImage image="challenge_badge_ffa_district_up_02" type="badge" />
+</Achievement>

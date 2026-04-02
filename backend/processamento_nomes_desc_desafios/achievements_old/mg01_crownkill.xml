@@ -1,0 +1,13 @@
+<Achievement active="1" id="294" kind="kills" MS_side="0" amount="1000">
+	<UI name="@mg01_crownKill" desc="@mg01_crownKill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="mg01_crown_shop"/>			
+		<Filter kind="weapon" param="mg18_shop"/>			
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_badge_74" type="badge" />
+</Achievement>

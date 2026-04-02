@@ -1,0 +1,4 @@
+<Achievement active="1" id="5005" kind="hidden" MS_side="1" amount="1" tags="rmleague_01_meta">
+        <UI name="@ru_rmleague_stripe_03" desc="@ru_rmleague_stripe_03_desc"/>
+        <BannerImage image="challenge_strip_rg_07" type="stripe" />
+    </Achievement>

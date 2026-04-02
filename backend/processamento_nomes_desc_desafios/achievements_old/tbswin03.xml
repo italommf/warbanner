@@ -1,0 +1,9 @@
+<Achievement active="1" id="11024" kind="game_end" MS_side="0" amount="50" tags="tbs">
+	<UI name="@tbsWin03" desc="@tbsWin03_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<!-- <Filter kind="mission_uid" param="791f8fd3-41de-4a94-a5d0-945b461f691e"/> -->
+		<Filter kind="victory_condition" param="10"/>
+	</Filters>
+	<BannerImage image="challenge_badge_hawkrock_03" type="badge" />
+</Achievement>

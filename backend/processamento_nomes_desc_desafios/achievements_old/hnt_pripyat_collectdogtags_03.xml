@@ -1,0 +1,7 @@
+<Achievement active="1" id="13027" kind="dogtags_pickup" MS_side="0" amount="1000">
+	<UI name="@hnt_Pripyat_collectDogtags_03" desc="@hnt_Pripyat_collectDogtags_03_desc"/>
+	<Filters>
+		<Filter kind="mission_uid" param="371d3e9b-290a-4c79-9cad-207b6d4fd57b"/>
+	</Filters>	
+	<BannerImage image="challenge_mark_hnt_Pripyat_collectDogtags_03" type="mark" />
+</Achievement>

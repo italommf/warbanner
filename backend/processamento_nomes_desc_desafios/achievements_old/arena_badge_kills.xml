@@ -1,0 +1,9 @@
+<Achievement active="1" id="371004" kind="kills" MS_side="0" amount="1000" tags="arena_so_meta">
+	<UI name="@arena_badge_kills" desc="@arena_badge_kills_desc"/>
+	<Filters>
+    <Filter kind="enemy" param="1"/>
+    <Filter kind="player" param="0"/>
+	<Filter kind="mission_type" param="pve_arena"/>
+	</Filters>
+	<BannerImage image="challenge_badge_pve_arena_01" type="badge" />
+</Achievement>

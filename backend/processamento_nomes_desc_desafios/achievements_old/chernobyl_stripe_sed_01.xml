@@ -1,0 +1,10 @@
+<Achievement active="1" id="2487" kind="kills" MS_side="0" amount="20">
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_tag" param="sed" compare="in" />
+		<Filter kind="mission_type" param="chernobylhard"/>
+	</Filters>
+	<UI name="@chernobyl_stripe_sed_01" desc="@chernobyl_stripe_sed_01_desc"/>
+	<BannerImage image="challenge_strip_chernobil_08" type="stripe" />
+</Achievement>

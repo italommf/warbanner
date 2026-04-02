@@ -1,0 +1,8 @@
+<Achievement active="0" id="24" kind="kills" MS_side="0" amount="50">
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon_tag" param="sr, bolt"/>
+	</Filters>
+	<UI name="@tags_sr" desc="@tags_sr_desc"/>
+	<BannerImage image="test_item_icon" type="stripe" />
+</Achievement>

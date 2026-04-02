@@ -1,0 +1,8 @@
+<Achievement active="1" id="6166" kind="game_end" MS_side="0" amount="100" tags="tbs">
+	<UI name="@firstPlaceTBSDeepwater3" desc="@firstPlaceTBSDeepwater3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="a8ee23a0-da5a-4a25-823f-23dcf98198c2"/>
+	</Filters>
+	<BannerImage image="challenge_badge_firstPlaceDeepWater3" type="badge" />
+</Achievement>

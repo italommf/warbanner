@@ -1,0 +1,9 @@
+<Achievement active="1" id="755" kind="game_end" MS_side="0" amount="100" tags="ptb">
+	<UI name="@firstPlacePTBFactory3" desc="@firstPlacePTBFactory3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="77e4f737-431c-4359-b27f-4800c5a5b780"/>
+		<Filter kind="mission_uid" param="5de80781-f065-4454-bc23-84a334b2d8f6"/>
+	</Filters>
+	<BannerImage image="challenge_badge_factory_03" type="badge" />
+</Achievement>		

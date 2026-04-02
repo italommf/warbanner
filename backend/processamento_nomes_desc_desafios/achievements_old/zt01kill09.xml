@@ -1,0 +1,12 @@
+<Achievement active="1" id="2177" kind="kills" MS_side="0" amount="1000">
+	<UI name="@zt01Kill09" desc="@zt01Kill09_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>	
+		<Filter kind="mission_type" param="zombietowerhard"/>	
+		<Filter kind="mission_type" param="zombietowernormal"/>	
+		<Filter kind="mission_type" param="zombietowereasy"/>
+		<Filter kind="ai_archetype" param="Turret"/>
+	</Filters>	
+	<BannerImage image="challenge_badge_zsd02_03" type="badge" />
+</Achievement>

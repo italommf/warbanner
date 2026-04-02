@@ -1,0 +1,11 @@
+<Achievement active="1" id="11021" kind="game_end" MS_side="0" amount="1" tags="tbs">
+	<UI name="@tbsHawkrockWinnerNoDeath01" desc="@tbsHawkrockWinnerNoDeath01_desc"/>
+	<Filters>
+		<Filter kind="place_taken" compare="&lt;" param="4"/>
+		<Filter kind="mission_uid" param="791f8fd3-41de-4a94-a5d0-945b461f691e"/>
+		<Filter kind="mission_uid" param="223f1d1a-64b1-40b2-b0e6-23df37a5dfbf"/>
+		<Filter kind="without_death" param="1"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>
+	<BannerImage image="challenge_strip_hawkrock_03" type="stripe" />
+</Achievement>		

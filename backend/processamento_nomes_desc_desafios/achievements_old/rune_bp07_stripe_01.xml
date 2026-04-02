@@ -1,0 +1,26 @@
+<Achievement active="1" id="1246" kind="kills" MS_side="0" amount="10000">
+	<UI name="@rune_bp07_stripe_01" desc="@rune_bp07_stripe_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+ 		<Filter kind="weapon" param="ar12_bp07_shop"/>		
+		<Filter kind="weapon" param="ar20_bp07_shop"/>	
+		<Filter kind="weapon" param="ar35_bp07_shop"/>
+		<Filter kind="weapon" param="smg40_bp07_shop"/>
+		<Filter kind="weapon" param="smg08_bp07_shop"/>
+		<Filter kind="weapon" param="smg47_bp07_shop"/>
+		<Filter kind="weapon" param="shg32_bp07_shop"/>
+		<Filter kind="weapon" param="shg52_bp07_shop"/>
+		<Filter kind="weapon" param="sr37_bp07_shop"/>
+ 		<Filter kind="weapon" param="sr47_bp07_shop"/>	
+		<Filter kind="weapon" param="pt36_bp07_shop"/>
+		<Filter kind="weapon" param="pt35_bp07_shop"/>
+		<Filter kind="weapon" param="kn21_bp07"/>
+ 		<Filter kind="weapon" param="kn10_bp07"/>	
+	</Filters> 
+	<BannerImage image="challenge_strip_bp07_01" type="stripe" />
+</Achievement>
+

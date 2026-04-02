@@ -1,0 +1,4 @@
+<Achievement active="1" id="1071" kind="hidden" MS_side="1" amount="1">
+	<UI name="@ec_win_01" desc="@ec_win_01_desc"/>
+	<BannerImage image="challenge_mark_euro2016" type="mark"/>
+</Achievement>

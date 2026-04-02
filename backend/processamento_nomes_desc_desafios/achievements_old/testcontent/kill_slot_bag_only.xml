@@ -1,0 +1,11 @@
+<Achievement active="0" id="15" kind="game_end" MS_side="0" amount="2">
+	<UI name="@kill_slot_bag_only" desc="@kill_slot_bag_only_desc"/>
+	<Filters>
+		<Filter kind="kill_by_primary" param="0"/>
+		<Filter kind="kill_by_secondary" param="0"/>
+		<Filter kind="kill_by_pistol" param="0"/>
+		<Filter kind="kill_by_knife" param="0"/>
+		<Filter kind="kill_by_bag" param="1"/>
+	</Filters>		
+	<BannerImage image="test_item_icon" type="mark" />
+</Achievement>

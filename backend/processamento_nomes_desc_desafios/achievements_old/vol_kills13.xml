@@ -1,0 +1,11 @@
+<Achievement active="1" id="10513" kind="kills" MS_side="0" amount="10000">
+	<UI name="@vol_kills13" desc="@vol_kills13_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="volcanoeasy"/>
+		<Filter kind="mission_type" param="volcanonormal"/>
+		<Filter kind="mission_type" param="volcanohard"/>
+	</Filters>
+	<BannerImage image="challenge_strip_vol_06" type="stripe" />
+</Achievement>

@@ -1,0 +1,4 @@
+<Achievement active="1" id="7272" kind="hidden" MS_side="1" amount="1">
+	<UI name="@esports_mark_03" desc="@esports_mark_03_desc"/>	
+	<BannerImage image="challenge_mark_esports_03" type="mark" />
+</Achievement>

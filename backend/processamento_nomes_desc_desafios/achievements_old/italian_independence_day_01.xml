@@ -1,0 +1,15 @@
+<Achievement active="1" id="10107" kind="kills" MS_side="0" amount="1946">
+	<Filters>
+		<Filter kind="weapon" param="ar27_shop"/>
+		<Filter kind="weapon" param="ar27_gold01_shop"/>
+		<Filter kind="weapon" param="shg28_shop"/>
+		<Filter kind="weapon" param="shg28_bundle_shop"/>
+		<Filter kind="weapon" param="shg35_shop"/>
+		<Filter kind="weapon" param="shg35_gold01_shop"/>
+		<Filter kind="weapon" param="shg22_shop"/>
+		<Filter kind="weapon" param="smg26_shop"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<UI name="@italian_independence_day_01" desc="@italian_independence_day_01_desc"/>
+	<BannerImage image="challenge_mark_nb_08" type="mark" />
+</Achievement>

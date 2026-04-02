@@ -1,0 +1,12 @@
+<Achievement active="1" id="373367" kind="kills" MS_side="0" amount="1500">
+        <UI name="@smg58_vikings01_Kill" desc="@smg58_vikings01_Kill_desc"/>
+        <Filters>
+            <Filter kind="enemy" param="1"/>
+            <Filter kind="weapon" param="smg58_vikings01_shop"/>
+            <Filter kind="claymore" param="0"/>
+            <Filter kind="grenade" param="0"/>
+            <Filter kind="kill_zone" param="0"/>
+            <Filter kind="explosion" param="0"/>
+        </Filters>
+        <BannerImage image="challenge_stripe_smg58_vikings01" type="stripe"/>
+</Achievement>

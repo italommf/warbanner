@@ -1,0 +1,12 @@
+<Achievement active="1" id="6375" kind="kills" MS_side="0" amount="50">
+	<UI name="@mars_badge_lightdroid" desc="@mars_badge_lightdroid_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_tag" param="sed_assault" compare="==" />
+		<Filter kind="ai_tag" param="sed_sniper" compare="==" />
+		<Filter kind="ai_tag" param="sed_elite" compare="==" />
+		<Filter kind="mission_type" param="marshard"/>
+	</Filters>
+	<BannerImage image="challenge_badge_marsop_01" type="badge" />
+</Achievement>

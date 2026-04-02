@@ -1,0 +1,9 @@
+<Achievement active="1" id="701" kind="game_end" MS_side="0" amount="25" tags="tdm">
+	<UI name="@winTDMDowntown2" desc="@winTDMDowntown2_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="0726fb17-1d35-4a43-97d1-4e0563794cd8"/>
+		<Filter kind="mission_uid" param="af0a358e-1bab-11ec-9621-0242ac130002"/>
+	</Filters>
+	<BannerImage image="challenge_mark_dtown_02" type="mark" />
+</Achievement>		

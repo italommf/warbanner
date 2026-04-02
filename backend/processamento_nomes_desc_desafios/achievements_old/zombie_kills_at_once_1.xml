@@ -1,0 +1,14 @@
+<Achievement active="1" id="603" kind="kills" MS_side="0" amount="11">
+	<UI name="@zombie_kills_at_once_1" desc="@zombie_kills_at_once_1_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="grenade" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="at_once" param="5"/>
+            <Filter kind="ai_archetype" param="Cyborg"/>
+		<Filter kind="ai_archetype" param="CyborgScreamer"/>
+		<Filter kind="ai_archetype" param="CyborgBarrelman"/>
+		<Filter kind="ai_archetype" param="CyborgTurtle"/>	
+	</Filters>
+	<BannerImage image="challenge_badge_zsd_04" type="badge" />
+</Achievement>

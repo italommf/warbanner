@@ -1,0 +1,5 @@
+<Achievement active="1" id="20164" kind="hidden" MS_side="1" amount="1">
+        <UI name="@pacifist_flag_01" desc="@pacifist_flag_01_desc"/>
+        <BannerImage image="challenge_strip_nb_70" type="stripe" />
+    </Achievement>
+

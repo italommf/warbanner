@@ -1,0 +1,13 @@
+<Achievement active="1" id="490" kind="kills" MS_side="0" amount="1000">
+	<UI name="@snow2Kill" desc="@snow2Kill_desc"/>
+	<Filters>
+ 		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar07_camo02_shop"/>
+		<Filter kind="weapon" param="smg11_camo02_shop"/>
+		<Filter kind="weapon" param="shg10_camo02_shop"/>
+		<Filter kind="weapon" param="sr08_camo02_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>		
+	</Filters> 
+	<BannerImage image="challenge_strip_camo02_01" type="stripe" />
+</Achievement>

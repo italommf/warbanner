@@ -1,0 +1,8 @@
+<Achievement active="1" id="227" kind="kills" MS_side="0" amount="500">
+	<UI name="@shieldGuyKiller2" desc="@shieldGuyKiller2_desc"/>
+	<Filters>
+		<Filter kind="ai_archetype" param="ShieldBearer"/>
+		<Filter kind="player" param="0"/>						
+	</Filters>	
+	<BannerImage image="challenge_strip_02" type="stripe" />
+</Achievement>			

@@ -1,0 +1,7 @@
+<Achievement active="0" id="6526" kind="achievement_awarded" MS_side="1" amount="6" tags="classweapons">
+	<UI name="@meta_weapon_h_kills" desc="@meta_weapon_h_kills_desc"/>
+	<Filters>
+		<Filter kind="tag" param="weapons_H"/>
+	</Filters>
+	<BannerImage image="challenge_mark_kills_05" type="mark" />
+</Achievement>

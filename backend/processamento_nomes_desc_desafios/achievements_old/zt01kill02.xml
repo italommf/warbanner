@@ -1,0 +1,17 @@
+<Achievement active="1" id="2170" kind="kills" MS_side="0" amount="5000">
+	<UI name="@zt01Kill02" desc="@zt01Kill02_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="zombietowerhard"/>	
+		<Filter kind="mission_type" param="zombietowernormal"/>	
+		<Filter kind="mission_type" param="zombietowereasy"/>
+		<Filter kind="ai_archetype" param="TacticalAssault"/>
+		<Filter kind="ai_archetype" param="Stormtrooper"/>
+		<Filter kind="ai_archetype" param="CQB"/>
+		<Filter kind="ai_archetype" param="Sniper"/>
+		<Filter kind="ai_archetype" param="Demoman"/>
+		<Filter kind="ai_archetype" param="Specop"/>					
+	</Filters>	
+	<BannerImage image="challenge_mark_zsd02_02" type="mark" />
+</Achievement>

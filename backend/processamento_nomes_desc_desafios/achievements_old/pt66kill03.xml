@@ -1,0 +1,13 @@
+<Achievement active="1" id="933" kind="kills" MS_side="0" amount="30">
+	<UI name="@pt66kill03" desc="@pt66kill03_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="weapon" param="pt66_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_strip_pt66" type="stripe" />
+</Achievement>

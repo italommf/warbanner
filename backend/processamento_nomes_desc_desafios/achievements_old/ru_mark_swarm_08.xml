@@ -1,0 +1,4 @@
+<Achievement active="1" id="13136" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_mark_swarm_08" desc="@ru_mark_swarm_08_desc"/>
+        <BannerImage image="challenge_mark_publisher_08" type="mark" />
+    </Achievement>

@@ -1,0 +1,12 @@
+<Achievement active="1" id="2708" kind="kills" MS_side="0" amount="10000" tags="weapons_R">
+	<UI name="@mg09Kill25" desc="@mg09Kill25_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="mg09_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_weapon25_35" type="badge"/>
+</Achievement>

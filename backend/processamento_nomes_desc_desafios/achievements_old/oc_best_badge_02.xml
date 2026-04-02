@@ -1,0 +1,4 @@
+<Achievement active="1" id="6130" kind="hidden" MS_side="1" amount="1">
+        <UI name="@oc_best_badge_02" desc="@oc_best_badge_02_desc"/>
+        <BannerImage image="challenge_badge_oc_best_02" type="badge" />
+    </Achievement>

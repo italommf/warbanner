@@ -1,0 +1,12 @@
+<Achievement active="1" id="2646" kind="kills" MS_side="0" amount="5000">
+	<UI name="@chernobyl_stripe_gold_kills" desc="@chernobyl_stripe_gold_kills_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="weapon" param="*_gold01_shop" compare="match"/>
+		<Filter kind="mission_type" param="chernobyleasy"/>
+		<Filter kind="mission_type" param="chernobylnormal"/>
+		<Filter kind="mission_type" param="chernobylhard"/>
+	</Filters>
+	<BannerImage image="challenge_strip_chernobil_06" type="stripe" />
+</Achievement>

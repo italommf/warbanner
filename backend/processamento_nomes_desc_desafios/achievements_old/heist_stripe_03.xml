@@ -1,0 +1,11 @@
+<Achievement active="1" id="951" kind="game_end" MS_side="0" amount="1" tags="heist_so_class,king_pve,heist_so_meta">
+<UI name="@heist_stripe_03" desc="@heist_stripe_03_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="heist"/>
+		<Filter kind="my_class" param="Medic"/>
+	</Filters>
+<BannerImage image="challenge_strip_so_heist_04" type="stripe" />
+</Achievement>
+

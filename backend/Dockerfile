@@ -6,10 +6,13 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-# Instalar dependências de sistema mínimas (Postgres driver)
+# Instalar dependências de sistema mínimas (Postgres driver + OpenCV basic libs)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libpq-dev \
     build-essential \
+    libgl1 \
+    libglib2.0-0 \
+    libxcb1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copiar requirements primeiro para cache
@@ -31,10 +34,8 @@ CMD ["gunicorn", "warface.wsgi:application", "--bind", "0.0.0.0:8000", "--worker
 # ── Worker & Image Processing (Pesado: ML / OCR) ───────────────────────────
 FROM base AS worker_ml
 
-# Instalar dependências para OpenCV, Tesseract e Torch
+# Instalar dependências para Tesseract e OCR (Pesado)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgl1 \
-    libglib2.0-0 \
     tesseract-ocr \
     tesseract-ocr-eng \
     tesseract-ocr-por \

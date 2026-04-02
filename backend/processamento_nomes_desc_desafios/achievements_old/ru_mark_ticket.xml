@@ -1,0 +1,4 @@
+<Achievement active="1" id="8447" kind="hidden" MS_side="1" amount="1">
+	<UI name="@ru_mark_ticket" desc="@ru_mark_ticket_desc"/>
+	<BannerImage image="challenge_mark_AW_ticket" type="mark" />
+</Achievement>	

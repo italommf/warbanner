@@ -1,0 +1,13 @@
+<Achievement active="1" id="1080" kind="kills" MS_side="0" amount="5000" tags="weapons_S">
+	<UI name="@sr35Kill" desc="@sr35Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="sr35_shop"/>
+		<Filter kind="weapon" param="sr35_bundle_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_weapon10_59" type="stripe"/>
+</Achievement>

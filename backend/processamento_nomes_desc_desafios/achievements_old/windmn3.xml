@@ -1,0 +1,8 @@
+<Achievement active="1" id="802" kind="game_end" MS_side="0" amount="1500" tags="dmn">
+	<UI name="@winDMN3" desc="@winDMN3_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="8"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_dm_06" type="mark" />
+</Achievement>

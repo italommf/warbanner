@@ -1,0 +1,8 @@
+<Achievement active="1" id="5107" kind="game_end" MS_side="0" amount="100" tags="stm">
+	<UI name="@firstPlaceSTMBlackmamba3" desc="@firstPlaceSTMBlackmamba3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="ee01cd3a-d214-48fa-843b-788427a6161c"/>
+	</Filters>
+	<BannerImage image="challenge_badge_winSTMBlackmamba3" type="badge" />
+</Achievement>

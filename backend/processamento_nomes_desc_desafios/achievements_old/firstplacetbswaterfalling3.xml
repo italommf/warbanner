@@ -1,0 +1,9 @@
+<Achievement active="1" id="5104" kind="game_end" MS_side="0" amount="100" tags="tbs">
+	<UI name="@firstPlaceTBSWaterfalling3" desc="@firstPlaceTBSWaterfalling3_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="da20dcc4-9672-4077-b877-1b04c6772b75"/>
+		<Filter kind="mission_uid" param="8fa3688a-75c9-44d8-ff92-90ac38c56b4c"/>
+	</Filters>
+	<BannerImage image="challenge_badge_winTBSWaterfalling3" type="badge" />
+</Achievement>

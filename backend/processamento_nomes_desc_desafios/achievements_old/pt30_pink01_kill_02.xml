@@ -1,0 +1,12 @@
+<Achievement active="1" id="1021" kind="damage_done" MS_side="0" amount="10000">
+	<Filters>
+		<Filter kind="weapon" param="pt30_pink01_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@pt30_pink01_kill_02" desc="@pt30_pink01_kill_02_desc"/>
+	<BannerImage image="challenge_badge_115" type="badge" />
+</Achievement>

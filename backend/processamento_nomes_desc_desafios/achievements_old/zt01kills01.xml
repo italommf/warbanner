@@ -1,0 +1,18 @@
+<Achievement active="1" id="2162" kind="kills" MS_side="0" amount="5000">
+	<UI name="@zt01Kills01" desc="@zt01Kills01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar11_zsd02_shop"/>
+		<Filter kind="weapon" param="shg07_zsd02_shop"/>
+		<Filter kind="weapon" param="smg08_zsd02_shop"/>
+		<Filter kind="weapon" param="sr34_zsd02_shop"/>
+		<Filter kind="weapon" param="pt21_zsd02_shop"/>
+		<Filter kind="weapon" param="kn16_zsd02"/>
+		<Filter kind="weapon" param="shg37_zsd02_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_zsd02" type="stripe" />
+</Achievement>

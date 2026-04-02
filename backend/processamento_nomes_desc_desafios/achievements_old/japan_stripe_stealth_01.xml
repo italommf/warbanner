@@ -1,0 +1,11 @@
+<Achievement active="1" id="6182" kind="game_end" MS_side="0" amount="1">
+	<UI name="@japan_stripe_stealth_01" desc="@japan_stripe_stealth_01_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="difficulty" param="normal"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="japannormal"/>
+		<Filter kind="stages" compare=">=" param="18"/>
+	</Filters>
+	<BannerImage image="challenge_strip_japan_06" type="stripe" />
+</Achievement>

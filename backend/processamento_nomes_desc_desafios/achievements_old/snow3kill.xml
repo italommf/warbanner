@@ -1,0 +1,15 @@
+<Achievement active="1" id="491" kind="kills" MS_side="0" amount="1000">
+	<UI name="@snow3Kill" desc="@snow3Kill_desc"/>
+	<Filters>
+ 		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="mg08_camo02_shop"/>
+		<Filter kind="weapon" param="smg09_camo02_shop"/>
+		<Filter kind="weapon" param="shg15_camo02_shop"/>
+		<Filter kind="weapon" param="sr05_camo02_shop"/>
+		<Filter kind="weapon" param="pt06_camo02_shop"/>
+		<Filter kind="weapon" param="kn05_camo02"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>		
+	</Filters> 
+	<BannerImage image="challenge_strip_camo02_02" type="stripe" />
+</Achievement>

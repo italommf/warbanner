@@ -1,0 +1,4 @@
+<Achievement active="1" id="8423" kind="hidden" MS_side="1" amount="1">
+	<UI name="@esports_03" desc="@esports_03_desc"/>
+	<BannerImage image="challenge_strip_cybersport" type="stripe" />
+</Achievement>

@@ -1,0 +1,12 @@
+<Achievement active="1" id="6257" kind="kills" MS_side="0" amount="10000" tags="weapons_M">
+	<UI name="@shg48Kill25" desc="@shg48Kill25_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="shg48_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_badge_weapon25_53" type="badge"/>
+</Achievement>

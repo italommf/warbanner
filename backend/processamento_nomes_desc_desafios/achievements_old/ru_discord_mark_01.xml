@@ -1,0 +1,4 @@
+<Achievement active="1" id="8526" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ru_discord_mark_01" desc="@ru_discord_mark_01_desc"/>
+        <BannerImage image="challenge_mark_discord_01" type="mark" />
+    </Achievement>

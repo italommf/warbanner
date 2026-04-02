@@ -1,0 +1,15 @@
+<Achievement active="1" id="77" kind="game_end" MS_side="0" amount="100">
+	<UI name="@firstInPVP" desc="@firstInPVP_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="1"/>
+		<Filter kind="victory_condition" param="2"/>
+		<Filter kind="victory_condition" param="4"/>
+		<Filter kind="victory_condition" param="5"/>
+		<Filter kind="victory_condition" param="7"/>
+		<Filter kind="victory_condition" param="8"/>
+		<Filter kind="victory_condition" param="10"/>
+	</Filters>		
+	<BannerImage image="challenge_mark_26" type="mark" />
+</Achievement>

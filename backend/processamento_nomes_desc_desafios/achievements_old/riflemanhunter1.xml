@@ -1,0 +1,9 @@
+<Achievement active="1" id="457" kind="kills" MS_side="0" amount="100">
+	<UI name="@riflemanHunter1" desc="@riflemanHunter1_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="1"/>
+		<Filter kind="player_class" param="Rifleman"/>	
+	</Filters>
+	<BannerImage image="challenge_badge_89" type="badge" />
+</Achievement>
