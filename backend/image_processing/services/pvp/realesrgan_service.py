@@ -1,11 +1,8 @@
 import cv2
-import torch
 import os
 import logging
 import numpy as np
 import urllib.request
-from realesrgan import RealESRGANer
-from basicsr.archs.rrdbnet_arch import RRDBNet
 
 logger = logging.getLogger(__name__)
 
@@ -16,6 +13,10 @@ class RealESRGANUpscaler:
         """
         Configura o modelo Real-ESRGAN para rodar em CPU.
         """
+        import torch
+        from realesrgan import RealESRGANer
+        from basicsr.archs.rrdbnet_arch import RRDBNet
+
         # Caminho absoluto para a pasta de pesos no backend
         base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
         model_path = os.path.join(base_dir, "weights", "RealESRGAN_x4plus.pth")
