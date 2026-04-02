@@ -1,0 +1,15 @@
+<Achievement active="1" id="375058" kind="kills" MS_side="0" amount="1500">
+  <UI name="@pt14_rat2412_Kill_name" desc="@pt14_rat2412_Kill_desc" />
+  <Filters>
+    <Filter kind="enemy" param="1" />
+    <Filter kind="weapon" param="pt14_shop" />
+    <Filter kind="weapon" param="pt14_rat2412_shop" />
+    <Filter kind="weapon_skin" param="rat2412" />
+    <Filter kind="claymore" param="0" />
+    <Filter kind="grenade" param="0" />
+    <Filter kind="kill_zone" param="0" />
+    <Filter kind="explosion" param="0" />
+    <Filter kind="weapon" param="pt14_gold01_shop" />
+  </Filters>
+  <BannerImage image="challenge_stripe_pt14_rat2412" type="stripe" />
+</Achievement>

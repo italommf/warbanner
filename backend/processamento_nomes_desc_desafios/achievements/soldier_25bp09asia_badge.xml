@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="375383" kind="hidden" MS_side="1" amount="1">
+  <UI name="@soldier_25bp09asia_badge_name" desc="@soldier_25bp09asia_badge_desc" />
+  <BannerImage image="challenge_badge_soldier_25bp09asia" type="badge" />
+</Achievement>

@@ -1,0 +1,9 @@
+<Achievement active="1" id="1130" kind="instant_award" MS_side="0" amount="1000">
+	<UI name="@stimboost3" desc="@stimboost3_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="135"/>
+		<Filter kind="instant_award_id" param="136"/>
+		<Filter kind="instant_award_id" param="137"/>
+	</Filters>
+	<BannerImage image="challenge_badge_sb01_03" type="badge" />
+</Achievement>		

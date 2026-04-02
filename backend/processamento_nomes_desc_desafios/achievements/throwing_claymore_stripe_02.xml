@@ -1,0 +1,10 @@
+<Achievement active="1" id="1174" kind="kills" MS_side="0" amount="10000">
+	<UI name="@throwing_claymore_stripe_10k" desc="@throwing_claymore_stripe_10k_desc"/>
+	<Filters>
+ 			<Filter kind="enemy" param="1"/>
+			<Filter kind="weapon_tag" param="throwing_claymore"/>
+			<Filter kind="kill_zone" param="0"/>
+			<Filter kind="melee" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_tm01_02" type="stripe" />
+</Achievement>

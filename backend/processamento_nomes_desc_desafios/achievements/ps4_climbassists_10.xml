@@ -1,0 +1,4 @@
+<Achievement active="0" id="30027" kind="climb_assist" MS_side="0" amount="10" tags="ps4_achiev">
+	<UI name="@ps4_climbassists_10" desc="@ps4_climbassists_10_desc"/>
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

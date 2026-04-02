@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="374050" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ranked_kills_01_name" desc="@ranked_kills_01_desc"/>
+        <BannerImage image="challenge_mark_prorank2303_killer" type="mark"/>
+    </Achievement>

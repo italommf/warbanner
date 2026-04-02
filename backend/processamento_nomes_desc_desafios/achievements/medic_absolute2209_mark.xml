@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="373792" kind="hidden" MS_side="1" amount="1">
+        <UI name="@medic_absolute2209_mark_name" desc="@medic_absolute2209_mark_desc"/>
+        <BannerImage image="challenge_mark_medic_absolute2209" type="mark"/>
+    </Achievement>

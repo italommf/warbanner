@@ -1,0 +1,14 @@
+<Achievement active="1" id="374083" kind="kills" MS_side="0" amount="1500">
+	<UI name="@pt48_ursula2304_Kill_name" desc="@pt48_ursula2304_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt48_ursula2304_shop"/>
+		<Filter kind="weapon" param="pt48_shop"/>
+		<Filter kind="weapon_skin" param="ursula2304"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_pt48_ursula2304" type="stripe"/>
+</Achievement>

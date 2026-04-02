@@ -1,0 +1,15 @@
+<Achievement active="1" id="375408" kind="kills" MS_side="0" amount="1500">
+  <UI name="@sr38_hlw25_Kill_name" desc="@sr38_hlw25_Kill_desc" />
+  <Filters>
+    <Filter kind="enemy" param="1" />
+    <Filter kind="weapon" param="sr38_shop" />
+    <Filter kind="weapon" param="sr38_hlw25_shop" />
+    <Filter kind="weapon_skin" param="hlw25" />
+    <Filter kind="claymore" param="0" />
+    <Filter kind="grenade" param="0" />
+    <Filter kind="kill_zone" param="0" />
+    <Filter kind="explosion" param="0" />
+    <Filter kind="weapon" param="sr38_gold01_shop" />
+  </Filters>
+  <BannerImage image="challenge_stripe_sr38_hlw25" type="stripe" />
+</Achievement>

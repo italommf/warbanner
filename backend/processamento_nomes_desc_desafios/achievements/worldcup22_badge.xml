@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="373805" kind="hidden" MS_side="1" amount="1">
+        <UI name="@worldcup22_badge_name" desc="@worldcup22_badge_desc"/>
+        <BannerImage image="challenge_badge_worldcup22" type="badge"/>
+    </Achievement>

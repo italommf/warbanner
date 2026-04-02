@@ -1,0 +1,8 @@
+<Achievement active="1" id="1132" kind="kills" MS_side="0" amount="5000">
+	<UI name="@stimboost_mastery_5k" desc="@stimboost_mastery_5k_desc"/>
+	<Filters>
+		<Filter kind="has_effect" param="sb01"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<BannerImage image="challenge_mark_sb01_01" type="mark"/>
+</Achievement>

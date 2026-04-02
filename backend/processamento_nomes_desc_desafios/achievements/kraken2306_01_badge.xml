@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374114" kind="hidden" MS_side="1" amount="1">
+  <UI name="@kraken2306_01_badge_name" desc="@kraken2306_01_badge_desc" />
+  <BannerImage image="challenge_badge_kraken2306_01" type="badge" />
+</Achievement>

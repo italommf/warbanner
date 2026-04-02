@@ -1,0 +1,9 @@
+<Achievement active="1" id="374484" kind="kills" MS_side="0" amount="5">
+	<UI name="@hardpoint_attacker_01" desc="@hardpoint_attacker_01_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="target_in_active_area" param="1"/>
+		<Filter kind="victory_condition" param="18"/>
+	</Filters>
+	<BannerImage image="challenge_mark_winter2312_02" type="mark" />
+</Achievement>

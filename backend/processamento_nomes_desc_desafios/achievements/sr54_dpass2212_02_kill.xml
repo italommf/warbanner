@@ -1,0 +1,15 @@
+<Achievement active="1" id="373863" kind="kills" MS_side="0" amount="1500">
+	<UI name="@sr54_dpass2212_02_Kill_name" desc="@sr54_dpass2212_02_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="sr54_dpass2212_02_shop"/>
+		<Filter kind="weapon" param="sr54_gold01_shop"/>
+		<Filter kind="weapon" param="sr54_shop"/>
+		<Filter kind="weapon_skin" param="dpass2212_02"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_sr54_dpass2212_02" type="stripe"/>
+</Achievement>

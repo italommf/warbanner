@@ -1,0 +1,7 @@
+<Achievement active="1" id="41008" kind="bomb_defused" MS_side="0" amount="200" tags="ranked_new_achieve">
+	<UI name="@ranked_sapper_02_name" desc="@ranked_sapper_02_desc"/>
+	<Filters>
+		<Filter kind="game_room_type" param="pvp_rating"/>
+	</Filters>
+	<BannerImage image="challenge_badge_prorank2303_sapper" type="badge" /><!-- to replace with actual-->
+</Achievement>

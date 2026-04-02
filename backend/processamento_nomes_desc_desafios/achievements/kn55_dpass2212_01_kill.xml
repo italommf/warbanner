@@ -1,0 +1,12 @@
+<Achievement active="1" id="373881" kind="kills" MS_side="0" amount="1500">
+    <UI name="@kn55_dpass2212_01_Kill_name" desc="@kn55_dpass2212_01_Kill_desc"/>
+    <Filters>
+        <Filter kind="enemy" param="1"/>
+        <Filter kind="weapon" param="kn55_dpass2212_01"/>
+        <Filter kind="claymore" param="0"/>
+        <Filter kind="grenade" param="0"/>
+        <Filter kind="kill_zone" param="0"/>
+        <Filter kind="explosion" param="0"/>
+    </Filters>
+    <BannerImage image="challenge_stripe_kn55_dpass2212_01" type="stripe"/>
+</Achievement>

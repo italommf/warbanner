@@ -1,0 +1,4 @@
+<Achievement active="1" id="6075" kind="hidden" MS_side="1" amount="1">
+    <UI name="@ru_warfest_2018_stripe_01" desc="@ru_warfest_2018_stripe_01_desc"/>
+	<BannerImage image="challenge_strip_warfest_01" type="stripe" />
+    </Achievement>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="375106" kind="hidden" MS_side="1" amount="1">
+  <UI name="@cat2502_badge_name" desc="@cat2502_badge_desc" />
+  <BannerImage image="challenge_badge_cat2502" type="badge" />
+</Achievement>

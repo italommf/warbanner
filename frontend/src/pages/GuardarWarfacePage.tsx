@@ -1014,6 +1014,7 @@ function MeusDesafiosTab({ onGoToGuardar: _ }: { onGoToGuardar: () => void }) {
   const colorFilter = useBannerStore((s) => s.colorFilter)
   const searchTerm = useBannerStore((s) => s.searchTerm)
   const hideEmpty = useBannerStore((s) => s.hideEmpty)
+  const showOnlyEmpty = useBannerStore((s) => s.showOnlyEmpty)
 
   // Filtrar as listas globais baseadas no que o usuário possui no perfil
   const myMarcasRaw = useMemo(() => {
@@ -1035,14 +1036,14 @@ function MeusDesafiosTab({ onGoToGuardar: _ }: { onGoToGuardar: () => void }) {
   }, [rawFitas, userStats])
 
   // Aplicar filtros de busca/categoria/cor
-  const myMarcas = useMemo(() => applyFilters(myMarcasRaw, 'marcas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
-    [myMarcasRaw, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+  const myMarcas = useMemo(() => applyFilters(myMarcasRaw, 'marcas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty),
+    [myMarcasRaw, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty])
 
-  const myInsignias = useMemo(() => applyFilters(myInsigniasRaw, 'insignias', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
-    [myInsigniasRaw, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+  const myInsignias = useMemo(() => applyFilters(myInsigniasRaw, 'insignias', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty),
+    [myInsigniasRaw, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty])
 
-  const myFitas = useMemo(() => applyFilters(myFitasRaw, 'fitas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty),
-    [myFitasRaw, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+  const myFitas = useMemo(() => applyFilters(myFitasRaw, 'fitas', mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty),
+    [myFitasRaw, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty])
 
   return (
     <div className={styles.desafiosTab}>

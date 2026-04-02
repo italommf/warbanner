@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="373834" kind="hidden" MS_side="1" amount="1">
+        <UI name="@mastery01_smg44_stripe_name" desc="@mastery01_smg44_stripe_desc"/>
+        <BannerImage image="challenge_stripe_smg44_mastery01" type="stripe"/>
+    </Achievement>

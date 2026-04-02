@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374602" kind="kills" MS_side="0" amount="1000">
+	<UI name="@midgard2403_02_mark_name" desc="@midgard2403_02_mark_desc"/>
+	<Filters>
+		<Filter kind="to_head" param="1"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="midgardeasy"/>
+		<Filter kind="mission_type" param="midgardnormal"/>
+		<Filter kind="mission_type" param="midgardhard"/>
+	</Filters>
+	<BannerImage image="challenge_mark_midgard2403_02" type="mark"/>
+</Achievement>

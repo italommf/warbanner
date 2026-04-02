@@ -1,0 +1,15 @@
+<Achievement active="1" id="373663" kind="kills" MS_side="0" amount="1500">
+	<UI name="@ar55_autumn2209_01_Kill_name" desc="@ar55_autumn2209_01_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar55_autumn2209_01_shop"/>
+		<Filter kind="weapon" param="ar55_gold01_shop"/>
+		<Filter kind="weapon" param="ar55_shop"/>
+		<Filter kind="weapon_skin" param="autumn2209_01"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_ar55_autumn2209_01" type="stripe"/>
+</Achievement>

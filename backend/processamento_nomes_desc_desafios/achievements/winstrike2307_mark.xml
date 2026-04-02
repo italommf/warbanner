@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374209" kind="hidden" MS_side="1" amount="1">
+  <UI name="@winstrike2307_mark_name" desc="@winstrike2307_mark_desc" />
+  <BannerImage image="challenge_mark_winstrike2307" type="mark" />
+</Achievement>

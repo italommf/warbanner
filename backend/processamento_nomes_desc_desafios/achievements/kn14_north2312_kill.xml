@@ -1,0 +1,12 @@
+<Achievement active="1" id="374382" kind="kills" MS_side="0" amount="1500">
+  <UI name="@kn14_north2312_Kill_name" desc="@kn14_north2312_Kill_desc" />
+  <Filters>
+    <Filter kind="enemy" param="1" />
+    <Filter kind="weapon" param="kn14_north2312" />
+    <Filter kind="claymore" param="0" />
+    <Filter kind="grenade" param="0" />
+    <Filter kind="kill_zone" param="0" />
+    <Filter kind="explosion" param="0" />
+  </Filters>
+  <BannerImage image="challenge_stripe_kn14_north2312" type="stripe" />
+</Achievement>

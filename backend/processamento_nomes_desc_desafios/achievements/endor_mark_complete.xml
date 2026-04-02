@@ -1,0 +1,7 @@
+<Achievement active="1" id="1508" kind="achievement_awarded" MS_side="1" amount="3" >
+<UI name="@endor_mark_complete_name" desc="@endor_mark_complete_desc"/>
+	<Filters>
+		<Filter kind="tag" param="endor_so_meta"/>
+	</Filters>
+	<BannerImage image="challenge_mark_endor01" type="mark" />
+</Achievement>

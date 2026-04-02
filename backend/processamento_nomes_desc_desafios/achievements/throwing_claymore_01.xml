@@ -1,0 +1,9 @@
+<Achievement active="1" id="1167" kind="instant_award" MS_side="0" amount="10">
+	<UI name="@throwing_claymore_01" desc="@throwing_claymore_01_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="166"/>
+		<Filter kind="instant_award_id" param="167"/>
+		<Filter kind="instant_award_id" param="168"/>
+	</Filters>
+	<BannerImage image="challenge_badge_tm01_01" type="badge" />
+</Achievement>

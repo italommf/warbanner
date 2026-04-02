@@ -1,0 +1,4 @@
+<Achievement active="0" id="30013" kind="rank" MS_side="1" amount="90" tags="ps4_achiev">
+	<UI name="@ps4_rank_90" desc="@ps4_rank_90_desc" starts_from_one="1"/>
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="375159" kind="hidden" MS_side="1" amount="1">
+  <UI name="@medic_25bp03pinup_badge_name" desc="@medic_25bp03pinup_badge_desc" />
+  <BannerImage image="challenge_badge_medic_25bp03pinup" type="badge" />
+</Achievement>

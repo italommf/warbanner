@@ -1,0 +1,7 @@
+<Achievement active="1" id="1507" kind="achievement_awarded" MS_side="1" amount="4" tags="endor_so_meta">
+<UI name="@endor_stripe_ee_name" desc="@endor_stripe_ee_desc"/>
+	<Filters>
+		<Filter kind="tag" param="endor_ee_meta"/>
+	</Filters>
+<BannerImage image="challenge_stripe_endor01_05" type="stripe" />
+</Achievement>

@@ -1,0 +1,9 @@
+<Achievement active="1" id="41006" kind="resurrects_done" MS_side="0" amount="2000" tags="ranked_new_achieve">
+	<UI name="@ranked_resurrections_03_name" desc="@ranked_resurrections_03_desc"/>
+	<Filters>
+		<Filter kind="game_room_type" param="pvp_rating"/>
+		<Filter kind="enemy" param="0"/>
+		<Filter kind="target_self" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_prorank2303_reanimator" type="stripe" />
+</Achievement>

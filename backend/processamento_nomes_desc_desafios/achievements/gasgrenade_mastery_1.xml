@@ -1,0 +1,7 @@
+<Achievement active="1" id="1144" kind="player_in_gas_cloud" MS_side="0" amount="100">
+	<UI name="@gasgrenade_mastery_1" desc="@gasgrenade_mastery_1_desc"/>
+	<Filters>
+			<Filter kind="enemy" param="1"/>
+	</Filters> 
+	<BannerImage image="challenge_mark_gg01_02" type="mark"/>
+</Achievement>

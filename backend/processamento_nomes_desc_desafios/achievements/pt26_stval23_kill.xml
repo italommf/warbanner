@@ -1,0 +1,14 @@
+<Achievement active="1" id="373906" kind="kills" MS_side="0" amount="1500">
+	<UI name="@pt26_stval23_Kill_name" desc="@pt26_stval23_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt26_stval23_shop"/>
+		<Filter kind="weapon" param="pt26_shop"/>
+		<Filter kind="weapon_skin" param="stval23"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_pt26_stval23" type="stripe"/>
+</Achievement>

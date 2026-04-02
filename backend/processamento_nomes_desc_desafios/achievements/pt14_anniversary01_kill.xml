@@ -1,0 +1,15 @@
+<Achievement active="1" id="373453" kind="kills" MS_side="0" amount="1500">
+	<UI name="@pt14_anniversary01_Kill" desc="@pt14_anniversary01_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt14_anniversary01_shop"/>
+		<Filter kind="weapon" param="pt14_gold01_shop"/>
+		<Filter kind="weapon" param="pt14_shop"/>
+		<Filter kind="weapon_skin" param="anniversary01"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_pt14_anniversary01" type="stripe"/>
+</Achievement>

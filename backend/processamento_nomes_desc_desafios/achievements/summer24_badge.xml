@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374745" kind="hidden" MS_side="1" amount="1">
+  <UI name="@summer24_badge_name" desc="@summer24_badge_desc" />
+  <BannerImage image="challenge_badge_summer24" type="badge" />
+</Achievement>

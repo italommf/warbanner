@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374601" kind="game_end" MS_side="0" amount="1">
+	<UI name="@midgard2403_01_mark_name" desc="@midgard2403_01_mark_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="midgardhard"/>
+		<Filter kind="without_death" param="1"/>
+		<Filter kind="stages" compare=">=" param="13"/>
+	</Filters>
+	<BannerImage image="challenge_mark_midgard2403_01" type="mark"/>
+</Achievement>

@@ -1,0 +1,12 @@
+<Achievement active="1" id="373189" kind="kills" MS_side="0" amount="1500">
+	<UI name="@shg40_rift01_meteorgold02_Kill" desc="@shg40_rift01_meteorgold02_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="shg40_rift01_meteorgold02_shop"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_strip_shg40_rift01_meteorgold02" type="stripe" />
+</Achievement>

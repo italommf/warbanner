@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<Achievement active="1" id="373407" kind="hidden" MS_side="1" amount="1">
+	<UI name="@frontlines01_01_mark" desc="@frontlines01_01_mark_desc"/>
+	<BannerImage image="challenge_mark_frontlines01_01" type="mark"/>
+</Achievement>

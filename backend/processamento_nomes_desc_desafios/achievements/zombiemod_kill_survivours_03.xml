@@ -1,0 +1,9 @@
+<Achievement active="0" id="6" kind="kills" MS_side="0" amount="1000">
+	<UI name="@zombiemod_kill_survivours_03" desc="@zombiemod_kill_survivours_0x_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="team" param="2"/>
+		<Filter kind="victory_condition" param="17"/>
+	</Filters>	
+	<BannerImage image="tbd_icon" type="badge" />
+</Achievement>

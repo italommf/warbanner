@@ -1,0 +1,9 @@
+<Achievement active="1" id="1134" kind="instant_award" MS_side="0" amount="10">
+	<UI name="@sticky1" desc="@sticky1_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="141"/>
+		<Filter kind="instant_award_id" param="142"/>
+		<Filter kind="instant_award_id" param="143"/>
+	</Filters>
+	<BannerImage image="challenge_badge_stg01_01" type="badge" />
+</Achievement>

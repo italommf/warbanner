@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<Achievement active="1" id="373397" kind="hidden" MS_side="1" amount="1">
+	<UI name="@engineer_frontlines01_badge" desc="@engineer_frontlines01_badge_desc"/>
+	<BannerImage image="challenge_badge_engineer_frontlines01" type="badge"/>
+</Achievement>

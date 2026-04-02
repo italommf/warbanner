@@ -1,0 +1,8 @@
+<Achievement active="1" id="406" kind="resurrects_done" MS_side="0" amount="10000">
+	<UI name="@ressurector3" desc="@ressurector3_desc"/>
+	<Filter kind="player" param="1"/>
+	<Filter kind="enemy" param="0"/>		
+	<BannerImage image="challenge_badge_45" type="badge" />
+	<Steam name="ACH_SAVIOUR" stat_name="STAT_SAVIOUR" />
+	<Epic name="ACH_SAVIOUR" stat_name="STAT_SAVIOUR" />
+</Achievement>

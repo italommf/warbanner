@@ -6394,7 +6394,7 @@
     "challenge_mark_weapon25_48": {
       "tipo": "mark",
       "nome": "Calluna Vulgaris (Avançado)",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com a SR-2 Veresk.",
       "quantidade": "10000",
       "arquivo_xml": "smg32kill25.xml"
     },
@@ -6415,49 +6415,49 @@
     "challenge_mark_weapon10_49": {
       "tipo": "mark",
       "nome": "Caçador de Cobras",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a Honey Badger ou a versão dourada dela.",
       "quantidade": "5000",
       "arquivo_xml": "smg33_kill.xml"
     },
     "challenge_mark_weapon25_50": {
       "tipo": "mark",
       "nome": "Autodefesa Russa (Avançado)",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com a PP2000.",
       "quantidade": "10000",
       "arquivo_xml": "smg35kill25.xml"
     },
     "challenge_mark_weapon10_50": {
       "tipo": "mark",
       "nome": "Autodefesa Russa",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a PP2000.",
       "quantidade": "5000",
       "arquivo_xml": "smg35_kill.xml"
     },
     "challenge_mark_weapon25_52": {
       "tipo": "mark",
       "nome": "Angulosidade (Avançado)",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com a Magpul FMG 9 ou a versão dourada dela.",
       "quantidade": "10000",
       "arquivo_xml": "smg36kill25.xml"
     },
     "challenge_mark_weapon10_52": {
       "tipo": "mark",
       "nome": "Angulosidade",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a Magpul FMG 9 ou a versão dourada dela.",
       "quantidade": "5000",
       "arquivo_xml": "smg36_kill.xml"
     },
     "challenge_mark_weapon25_53": {
       "tipo": "mark",
       "nome": "Autodefesa Polonesa (Avançado)",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com a PM-84 Glauberyt Personalizada.",
       "quantidade": "10000",
       "arquivo_xml": "smg37kill25.xml"
     },
     "challenge_mark_weapon10_53": {
       "tipo": "mark",
       "nome": "Autodefesa Polonesa",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a PM-84 Glauberyt Personalizada.",
       "quantidade": "5000",
       "arquivo_xml": "smg37_kill.xml"
     },
@@ -11261,21 +11261,21 @@
     "challenge_badge_firstplacetdmcodenamed181": {
       "tipo": "badge",
       "nome": "Barão do D18",
-      "descrição": "",
+      "descrição": "Terminar em 1º lugar 25 vezes no modo Mata-mata em Equipe: D18.",
       "quantidade": "25",
       "arquivo_xml": "firstplacetdmcodenamed181.xml"
     },
     "challenge_badge_firstplacetdmcodenamed182": {
       "tipo": "badge",
       "nome": "Duque do D18",
-      "descrição": "",
+      "descrição": "Terminar em 1º lugar 50 vezes no modo Mata-mata em Equipe: D18.",
       "quantidade": "50",
       "arquivo_xml": "firstplacetdmcodenamed182.xml"
     },
     "challenge_badge_firstplacetdmcodenamed183": {
       "tipo": "badge",
       "nome": "Rei do D18",
-      "descrição": "",
+      "descrição": "Terminar em 1º lugar 100 vezes no modo Mata-mata em Equipe: D18.",
       "quantidade": "100",
       "arquivo_xml": "firstplacetdmcodenamed183.xml"
     },
@@ -12696,42 +12696,42 @@
     "challenge_badge_weapon10_47": {
       "tipo": "badge",
       "nome": "Velhote",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a RPD Personalizada ou a versão dourada dela.",
       "quantidade": "5000",
       "arquivo_xml": "mg23kill.xml"
     },
     "challenge_badge_weapon25_47": {
       "tipo": "badge",
       "nome": "Velhote (Avançado)",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com a RPD Personalizada ou a versão dourada dela.",
       "quantidade": "10000",
       "arquivo_xml": "mg23kill25.xml"
     },
     "challenge_badge_weapon10_50": {
       "tipo": "badge",
       "nome": "Velha guarda",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a DP-27 ou a versão dourada dela.",
       "quantidade": "5000",
       "arquivo_xml": "mg24kill.xml"
     },
     "challenge_badge_weapon25_50": {
       "tipo": "badge",
       "nome": "Velha guarda (Avançado)",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com a DP-27 ou a versão dourada dela.",
       "quantidade": "10000",
       "arquivo_xml": "mg24kill25.xml"
     },
     "challenge_badge_weapon10_55": {
       "tipo": "badge",
       "nome": "Chuva de balas",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a Stoner LMG A1 ou a versão dourada dela.",
       "quantidade": "5000",
       "arquivo_xml": "mg25kill.xml"
     },
     "challenge_badge_weapon25_55": {
       "tipo": "badge",
       "nome": "Avançado: Chuva de balas",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com a Stoner LMG A1 ou a versão dourada dela.",
       "quantidade": "10000",
       "arquivo_xml": "mg25kill25.xml"
     },
@@ -14957,7 +14957,7 @@
     "challenge_badge_weapon10_25": {
       "tipo": "badge",
       "nome": "Saraivada Inclemente",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com uma Derya MK-10 VR 102.",
       "quantidade": "5000",
       "arquivo_xml": "shg36kill.xml"
     },
@@ -14971,7 +14971,7 @@
     "challenge_badge_weapon25_26": {
       "tipo": "badge",
       "nome": "Futuro do Campo de Batalha (Avançado)",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com a Fabarm STF 12 Compact Pro ou a versão dourada dela.",
       "quantidade": "10000",
       "arquivo_xml": "shg37kill25.xml"
     },
@@ -15027,7 +15027,7 @@
     "challenge_badge_weapon10_43": {
       "tipo": "badge",
       "nome": "PEG Poderosa",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a MAG-7 ou a versão dourada dela.",
       "quantidade": "5000",
       "arquivo_xml": "shg40_kill.xml"
     },
@@ -15041,7 +15041,7 @@
     "challenge_badge_weapon10_44": {
       "tipo": "badge",
       "nome": "Fuzil de Caça?",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a Saiga H.G.C. Custom.",
       "quantidade": "5000",
       "arquivo_xml": "shg41_kill.xml"
     },
@@ -15055,7 +15055,7 @@
     "challenge_badge_weapon10_45": {
       "tipo": "badge",
       "nome": "Disparo Duplo",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a DP-12 ou a versão dourada dela.",
       "quantidade": "5000",
       "arquivo_xml": "shg42_kill.xml"
     },
@@ -15090,7 +15090,7 @@
     "challenge_badge_weapon10_49": {
       "tipo": "badge",
       "nome": "Coma chumbo!",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a Fostech Origin-12 ou a versão dourada dela.",
       "quantidade": "5000",
       "arquivo_xml": "shg45kill.xml"
     },
@@ -15118,7 +15118,7 @@
     "challenge_badge_weapon10_52": {
       "tipo": "badge",
       "nome": "One Punch",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a Uzkon UNG-12 ou sua versão dourada",
       "quantidade": "5000",
       "arquivo_xml": "shg47kill.xml"
     },
@@ -17731,7 +17731,7 @@
     "challenge_strip_rad01_02": {
       "tipo": "stripe",
       "nome": "Beretta ARX160 \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com o Beretta ARX160 \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "ar27_rad01kill15.xml"
     },
@@ -17906,7 +17906,7 @@
     "challenge_strip_set12_13": {
       "tipo": "stripe",
       "nome": "FN FAL DSA-58 K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a FN FAL DSA-58 K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "ar30_set12kill15.xml"
     },
@@ -17934,7 +17934,7 @@
     "challenge_strip_set12_12": {
       "tipo": "stripe",
       "nome": "VHS-2 K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a VHS-2 K.I.W.I",
       "quantidade": "2500",
       "arquivo_xml": "ar31_set12kill15.xml"
     },
@@ -18046,14 +18046,14 @@
     "challenge_strip_weapon10_82": {
       "tipo": "stripe",
       "nome": "Morte dolorosa",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com o AK-12 ou sua versão dourada.",
       "quantidade": "5000",
       "arquivo_xml": "ar35kill.xml"
     },
     "challenge_strip_weapon25_82": {
       "tipo": "stripe",
       "nome": "Morte dolorosa avançado",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com o AK-12 ou sua versão dourada.",
       "quantidade": "10000",
       "arquivo_xml": "ar35kill25.xml"
     },
@@ -18081,7 +18081,7 @@
     "challenge_strip_dragon01_04": {
       "tipo": "stripe",
       "nome": "AK-12 Infernal",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com o AK-12 Infernal.",
       "quantidade": "5000",
       "arquivo_xml": "ar35_dragon01kill.xml"
     },
@@ -18130,14 +18130,14 @@
     "challenge_strip_weapon10_86": {
       "tipo": "stripe",
       "nome": "Ameaça fantasma",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com o F90 MBR ou a versão dourada dele.",
       "quantidade": "5000",
       "arquivo_xml": "ar36kill.xml"
     },
     "challenge_strip_weapon25_86": {
       "tipo": "stripe",
       "nome": "Avançado: Ameaça fantasma",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com o F90 MBR ou a versão dourada dele.",
       "quantidade": "10000",
       "arquivo_xml": "ar36kill25.xml"
     },
@@ -18228,14 +18228,14 @@
     "challenge_strip_weapon10_ar38": {
       "tipo": "stripe",
       "nome": "Limite do Amanhã",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com o Cobalt Kinetics EDGE Rifle.",
       "quantidade": "5000",
       "arquivo_xml": "ar38kill.xml"
     },
     "challenge_strip_weapon25_ar38": {
       "tipo": "stripe",
       "nome": "Avançado: Limite do Amanhã",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com o Cobalt Kinetics EDGE Rifle.",
       "quantidade": "10000",
       "arquivo_xml": "ar38kill25.xml"
     },
@@ -18459,14 +18459,14 @@
     "challenge_strip_weapon10_ar44": {
       "tipo": "stripe",
       "nome": "A Cavalaria Chegou",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com um HCAR Auto.",
       "quantidade": "5000",
       "arquivo_xml": "ar44kill.xml"
     },
     "challenge_strip_weapon25_ar44": {
       "tipo": "stripe",
       "nome": "Avançado: A Cavalaria Chegou",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com um HCAR Auto.",
       "quantidade": "10000",
       "arquivo_xml": "ar44kill25.xml"
     },
@@ -18480,14 +18480,14 @@
     "challenge_strip_weapon10_ar45": {
       "tipo": "stripe",
       "nome": "Guerreiro do Deserto",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com um IWI Carmel.",
       "quantidade": "5000",
       "arquivo_xml": "ar45kill.xml"
     },
     "challenge_strip_weapon25_ar45": {
       "tipo": "stripe",
       "nome": "Avançado: Guerreiro do Deserto",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com um IWI Carmel.",
       "quantidade": "10000",
       "arquivo_xml": "ar45kill25.xml"
     },
@@ -18627,7 +18627,7 @@
     "challenge_strip_ar47_gold01": {
       "tipo": "stripe",
       "nome": "M4A1 Custom Dourado",
-      "descrição": "",
+      "descrição": "Elimine 999 inimigos com a versão dourada do M4A1 Custom.",
       "quantidade": "999",
       "arquivo_xml": "ar47_gold_kill_01.xml"
     },
@@ -18641,7 +18641,7 @@
     "challenge_strip_ar48_gold01": {
       "tipo": "stripe",
       "nome": "PDW KAC Dourada",
-      "descrição": "",
+      "descrição": "Elimine 999 inimigos com uma versão dourada da PDW Knight's Armament Company.",
       "quantidade": "999",
       "arquivo_xml": "ar48_gold_kill_01.xml"
     },
@@ -22029,7 +22029,7 @@
     "challenge_strip_set12_03": {
       "tipo": "stripe",
       "nome": "Machete Kukri KA-BAR K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com o Machete Kukri KA-BAR K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "kn07_set12kill15.xml"
     },
@@ -22162,7 +22162,7 @@
     "challenge_strip_rad01_09": {
       "tipo": "stripe",
       "nome": "Katana \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a Katana \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "kn13_rad01kill15.xml"
     },
@@ -22337,7 +22337,7 @@
     "challenge_strip_rad01_10": {
       "tipo": "stripe",
       "nome": "Machado Tático \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com o Machado Tático \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "kn16_rad01kill15.xml"
     },
@@ -22351,7 +22351,7 @@
     "challenge_strip_set12_05": {
       "tipo": "stripe",
       "nome": "Machado Tático K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com o Machado Tático K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "kn16_set12kill15.xml"
     },
@@ -22498,7 +22498,7 @@
     "challenge_strip_set12_04": {
       "tipo": "stripe",
       "nome": "Faca Bowie M48 K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a Faca Bowie M48 K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "kn18_set12kill15.xml"
     },
@@ -22645,7 +22645,7 @@
     "challenge_strip_158": {
       "tipo": "stripe",
       "nome": "Voa como uma borboleta",
-      "descrição": "",
+      "descrição": "Elimine 999 inimigos com o Canivete Butterfly Dourado.",
       "quantidade": "999",
       "arquivo_xml": "kn19_gold01kill.xml"
     },
@@ -24598,7 +24598,7 @@
     "challenge_strip_rad01_04": {
       "tipo": "stripe",
       "nome": "PKP Pecheneg \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a PKP Pecheneg \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "mg22_rad01kill15.xml"
     },
@@ -24612,7 +24612,7 @@
     "challenge_strip_149": {
       "tipo": "stripe",
       "nome": "Velhote Dourado",
-      "descrição": "",
+      "descrição": "Elimine 999 inimigos com a RPD Personalizada dourada.",
       "quantidade": "999",
       "arquivo_xml": "mg23_gold01kill.xml"
     },
@@ -24626,7 +24626,7 @@
     "challenge_strip_155": {
       "tipo": "stripe",
       "nome": "Urso Russo",
-      "descrição": "",
+      "descrição": "Elimine 999 inimigos com a DP-27 dourada.",
       "quantidade": "999",
       "arquivo_xml": "mg24_gold01kill.xml"
     },
@@ -24717,14 +24717,14 @@
     "challenge_strip_weapon10_mg27": {
       "tipo": "stripe",
       "nome": "Bolas de Aço",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com um SAI GRY LMG.",
       "quantidade": "5000",
       "arquivo_xml": "mg27kill.xml"
     },
     "challenge_strip_weapon25_mg27": {
       "tipo": "stripe",
       "nome": "Bolas de Aço (Avançado)",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com um SAI GRY LMG.",
       "quantidade": "10000",
       "arquivo_xml": "mg27kill25.xml"
     },
@@ -25872,7 +25872,7 @@
     "challenge_strip_rad01_07": {
       "tipo": "stripe",
       "nome": "M1911A1 \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a M1911A1 \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "pt16_rad01kill15.xml"
     },
@@ -26208,7 +26208,7 @@
     "challenge_strip_rad01_06": {
       "tipo": "stripe",
       "nome": "S&W M&P R8 \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com o S&W M&P R8 \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "pt33_rad01kill15.xml"
     },
@@ -26236,7 +26236,7 @@
     "challenge_strip_set12_02": {
       "tipo": "stripe",
       "nome": "S&W M&P R8 K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a S&W M&P R8 K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "pt33_set12kill15.xml"
     },
@@ -26278,7 +26278,7 @@
     "challenge_strip_set12_01": {
       "tipo": "stripe",
       "nome": "MPA 930DMG K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a MPA 930DMG K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "pt34_set12kill15.xml"
     },
@@ -28931,7 +28931,7 @@
     "challenge_strip_rad01_08": {
       "tipo": "stripe",
       "nome": "MAG-7 \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a MAG-7 \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "shg40_rad01kill15.xml"
     },
@@ -28973,7 +28973,7 @@
     "challenge_strip_set12_11": {
       "tipo": "stripe",
       "nome": "Saiga Custom K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a Saiga Custom K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "shg41_set12kill15.xml"
     },
@@ -29008,7 +29008,7 @@
     "challenge_strip_rad01_03": {
       "tipo": "stripe",
       "nome": "DP-12 \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a DP-12 \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "shg42_rad01kill15.xml"
     },
@@ -29120,7 +29120,7 @@
     "challenge_strip_set12_10": {
       "tipo": "stripe",
       "nome": "Fostech Origin-12 K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a Fostech Origin-12 K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "shg45_set12kill15.xml"
     },
@@ -29680,14 +29680,14 @@
     "challenge_strip_weapon10_shg58": {
       "tipo": "stripe",
       "nome": "Grande Irmão",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com uma Kalashnikov USA Komrad 12.",
       "quantidade": "5000",
       "arquivo_xml": "shg58kill.xml"
     },
     "challenge_strip_weapon25_shg58": {
       "tipo": "stripe",
       "nome": "Avançado: Grande Irmão",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com uma Kalashnikov USA Komrad 12.",
       "quantidade": "10000",
       "arquivo_xml": "shg58kill25.xml"
     },
@@ -30681,7 +30681,7 @@
     "challenge_strip_rad01_05": {
       "tipo": "stripe",
       "nome": "Honey Badger \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a Honey Badger \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "smg33_rad01kill15.xml"
     },
@@ -30765,7 +30765,7 @@
     "challenge_strip_rad01_11": {
       "tipo": "stripe",
       "nome": "CZ Scorpion EVO \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a CZ Scorpion EVO \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "smg38_rad01kill15.xml"
     },
@@ -30821,7 +30821,7 @@
     "challenge_strip_set12_09": {
       "tipo": "stripe",
       "nome": "Desert Tech MDR-C K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a Desert Tech MDR-C K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "smg40_set12kill15.xml"
     },
@@ -30863,7 +30863,7 @@
     "challenge_strip_set12_08": {
       "tipo": "stripe",
       "nome": "Uzi Pro K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a Uzi Pro K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "smg42_set12kill15.xml"
     },
@@ -30975,7 +30975,7 @@
     "challenge_strip_set12_14": {
       "tipo": "stripe",
       "nome": "Kriss Super V Custom K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a Kriss Super V Custom K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "smg44_set12kill15.xml"
     },
@@ -33138,7 +33138,7 @@
     "challenge_strip_rad01_12": {
       "tipo": "stripe",
       "nome": "AX308 \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com o AX308 \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "sr31_rad01kill15.xml"
     },
@@ -33152,7 +33152,7 @@
     "challenge_strip_set12_06": {
       "tipo": "stripe",
       "nome": "AX308 K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a AX308 K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "sr31_set12kill15.xml"
     },
@@ -33215,7 +33215,7 @@
     "challenge_strip_rad01_01": {
       "tipo": "stripe",
       "nome": "Remington R11 RSASS \"Nuclear\"",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com o Remington R11 RSASS \"Nuclear\".",
       "quantidade": "2500",
       "arquivo_xml": "sr33_rad01kill15.xml"
     },
@@ -33502,7 +33502,7 @@
     "challenge_strip_weapon10_71": {
       "tipo": "stripe",
       "nome": "Felino de Alto Calibre",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com a Gepard GM6 Lynx.",
       "quantidade": "5000",
       "arquivo_xml": "sr43kill.xml"
     },
@@ -33516,7 +33516,7 @@
     "challenge_strip_set12_07": {
       "tipo": "stripe",
       "nome": "Gepard GM6 Lynx K.I.W.I.",
-      "descrição": "",
+      "descrição": "Elimine 2.500 inimigos com a Gepard GM6 Lynx K.I.W.I.",
       "quantidade": "2500",
       "arquivo_xml": "sr43_set12kill15.xml"
     },
@@ -33922,14 +33922,14 @@
     "challenge_strip_weapon10_sr49": {
       "tipo": "stripe",
       "nome": "Inovação Mortal",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com o Cobalt Kinetics Twenty-Seven ou sua versão de bronze.",
       "quantidade": "5000",
       "arquivo_xml": "sr49_kill.xml"
     },
     "challenge_strip_weapon25_sr49": {
       "tipo": "stripe",
       "nome": "Avançado: Inovação Mortal",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com o Cobalt Kinetics Twenty-Seven ou sua versão de bronze.",
       "quantidade": "10000",
       "arquivo_xml": "sr49_kill25.xml"
     },
@@ -34118,14 +34118,14 @@
     "challenge_strip_weapon10_sr52": {
       "tipo": "stripe",
       "nome": "Franco-atirador Profissional: Custom",
-      "descrição": "",
+      "descrição": "Elimine 5.000 inimigos com uma M4 Marksman Custom.",
       "quantidade": "5000",
       "arquivo_xml": "sr52_kill.xml"
     },
     "challenge_strip_weapon25_sr52": {
       "tipo": "stripe",
       "nome": "Franco-atirador Mestre: Custom",
-      "descrição": "",
+      "descrição": "Elimine 10.000 inimigos com uma M4 Marksman Custom.",
       "quantidade": "10000",
       "arquivo_xml": "sr52_kill25.xml"
     },

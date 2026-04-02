@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374939" kind="game_end" MS_side="0" amount="50" tags="tdm">
+	<UI name="@brain2409_02_mark_name" desc="@brain2409_02_mark_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="3cea215e-a727-4f30-b2f9-424f40ecf296"/>
+	</Filters>
+	<BannerImage image="challenge_mark_brain2409_02" type="mark"/>
+</Achievement>

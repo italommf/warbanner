@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="373784" kind="hidden" MS_side="1" amount="1">
+        <UI name="@vkplaycup2211_04_mark_name" desc="@vkplaycup2211_04_mark_desc"/>
+        <BannerImage image="challenge_mark_vkplaycup2211_04" type="mark"/>
+    </Achievement>

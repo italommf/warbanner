@@ -1,0 +1,15 @@
+<Achievement active="1" id="374238" kind="kills" MS_side="0" amount="1500">
+	<UI name="@ar58_somalia2308_Kill_name" desc="@ar58_somalia2308_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar58_somalia2308_shop"/>
+		<Filter kind="weapon" param="ar58_gold01_shop"/>
+		<Filter kind="weapon" param="ar58_shop"/>
+		<Filter kind="weapon_skin" param="somalia2308"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_ar58_somalia2308" type="stripe"/>
+</Achievement>

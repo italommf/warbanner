@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374585" kind="hidden" MS_side="1" amount="1">
+  <UI name="@ferret2403_mark_name" desc="@ferret2403_mark_desc" />
+  <BannerImage image="challenge_mark_ferret2403" type="mark" />
+</Achievement>

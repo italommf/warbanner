@@ -1,0 +1,8 @@
+<Achievement active="1" id="41011" kind="kills" MS_side="0" amount="1000" tags="ranked_new_achieve">
+	<UI name="@ranked_kills_02_name" desc="@ranked_kills_02_desc"/>
+	<Filters>
+		<Filter kind="game_room_type" param="pvp_rating"/>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<BannerImage image="challenge_badge_prorank2303_killer" type="badge" />
+</Achievement>

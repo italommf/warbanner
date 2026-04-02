@@ -1,0 +1,12 @@
+<Achievement active="1" id="374204" kind="kills" MS_side="0" amount="1500">
+  <UI name="@kn200_esport2307_Kill_name" desc="@kn200_esport2307_Kill_desc" />
+  <Filters>
+    <Filter kind="enemy" param="1" />
+    <Filter kind="weapon" param="kn200_esport2307" />
+    <Filter kind="claymore" param="0" />
+    <Filter kind="grenade" param="0" />
+    <Filter kind="kill_zone" param="0" />
+    <Filter kind="explosion" param="0" />
+  </Filters>
+  <BannerImage image="challenge_stripe_kn200_esport2307" type="stripe" />
+</Achievement>

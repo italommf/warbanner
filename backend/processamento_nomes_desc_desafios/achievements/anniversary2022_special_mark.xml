@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<Achievement active="1" id="373493" kind="hidden" MS_side="1" amount="1">
+	<UI name="@Anniversary2022_Special_mark" desc="@Anniversary2022_Special_mark_desc"/>
+	<BannerImage image="challenge_mark_WarFace_X" type="mark"/>
+</Achievement>

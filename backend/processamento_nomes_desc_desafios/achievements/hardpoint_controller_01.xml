@@ -1,0 +1,8 @@
+<Achievement active="1" id="374486" kind="game_end" MS_side="0" amount="5">
+	<UI name="@hardpoint_controller_01" desc="@hardpoint_controller_01_desc"/>
+	<Filters>
+		<Filter kind="time_in_active_area" param="120"/>
+		<Filter kind="victory_condition" param="18"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_winter2312_02" type="stripe" />
+</Achievement>

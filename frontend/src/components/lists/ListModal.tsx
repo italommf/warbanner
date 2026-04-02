@@ -38,11 +38,12 @@ export function ListModal({ category, items, onClose, onSelect, selectedFilename
   const colorFilter = useBannerStore((s) => s.colorFilter)
   const searchTerm = useBannerStore((s) => s.searchTerm)
   const hideEmpty = useBannerStore((s) => s.hideEmpty)
+  const showOnlyEmpty = useBannerStore((s) => s.showOnlyEmpty)
 
   const filteredItems = useMemo(() => {
     if (!showFilters) return items
-    return applyFilters(items, category, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty)
-  }, [showFilters, items, category, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty])
+    return applyFilters(items, category, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty)
+  }, [showFilters, items, category, mainFilter, armasFilter, colorFilter, searchTerm, hideEmpty, showOnlyEmpty])
 
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
   const sentinelRef = useRef<HTMLDivElement>(null)

@@ -1,0 +1,9 @@
+<Achievement active="1" id="1125" kind="instant_award" MS_side="0" amount="10000">
+	<UI name="@molotov4" desc="@molotov4_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="125"/>
+		<Filter kind="instant_award_id" param="126"/>
+		<Filter kind="instant_award_id" param="127"/>
+	</Filters>
+	<BannerImage image="challenge_badge_mcg01_04" type="badge" />
+</Achievement>

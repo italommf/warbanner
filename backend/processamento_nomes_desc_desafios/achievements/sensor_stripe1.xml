@@ -1,0 +1,7 @@
+<Achievement active="1" id="1165" kind="instant_award" MS_side="0" amount="1000">
+	<UI name="@sensor_stripe1" desc="@sensor_stripe1_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="156"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_ms01_01" type="stripe" />
+</Achievement>

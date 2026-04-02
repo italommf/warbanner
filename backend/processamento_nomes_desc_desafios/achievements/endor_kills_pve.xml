@@ -1,0 +1,10 @@
+<Achievement active="1" id="1501" kind="kills" MS_side="0" amount="1000" tags="endor_so_meta">
+	<UI name="@endor_kills_pve_name" desc="@endor_kills_pve_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="mission_type" param="endorsurvival"/>
+		<Filter kind="mission_type" param="endorfinal"/>
+	</Filters>
+	<BannerImage image="challenge_badge_endor01_01" type="badge" /> <!-- replace with actual image-->
+</Achievement>

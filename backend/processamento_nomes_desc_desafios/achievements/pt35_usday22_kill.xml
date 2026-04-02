@@ -1,0 +1,15 @@
+<Achievement active="1" id="373568" kind="kills" MS_side="0" amount="1500">
+	<UI name="@pt35_usday22_Kill_name" desc="@pt35_usday22_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt35_usday22_shop"/>
+		<Filter kind="weapon" param="pt35_gold01_shop"/>
+		<Filter kind="weapon" param="pt35_shop"/>
+		<Filter kind="weapon_skin" param="usday22"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_pt35_usday22" type="stripe"/>
+</Achievement>

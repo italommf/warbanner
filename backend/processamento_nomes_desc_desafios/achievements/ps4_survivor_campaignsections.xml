@@ -1,0 +1,9 @@
+<Achievement active="0" id="30050" kind="game_end" MS_side="0" amount="1" tags="ps4_achiev">
+	<UI name="@ps4_survivor_campaignsections" desc="@ps4_survivor_campaignsections_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>	
+		<Filter kind="mission_type" param="campaignsections"/>
+		<Filter kind="victory_condition" param="3"/>			
+	</Filters>	
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

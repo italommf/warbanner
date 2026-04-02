@@ -1,0 +1,15 @@
+<Achievement active="1" id="374165" kind="kills" MS_side="0" amount="1500">
+	<UI name="@shg69_summer23_01_Kill_name" desc="@shg69_summer23_01_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="shg69_summer23_01_shop"/>
+		<Filter kind="weapon" param="shg69_gold01_shop"/>
+		<Filter kind="weapon" param="shg69_shop"/>
+		<Filter kind="weapon_skin" param="summer23_01"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_shg69_summer23_01" type="stripe"/>
+</Achievement>

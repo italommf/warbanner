@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374712" kind="game_end" MS_side="0" amount="25">
+	<UI name="@firstPlaceFFABagheera02_name" desc="@firstPlaceFFABagheera02_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="4616a852-e5c7-48f1-99cc-fb442c8db084"/>
+	</Filters>
+	<BannerImage image="challenge_mark_jungle2406_02" type="mark"/>
+</Achievement>

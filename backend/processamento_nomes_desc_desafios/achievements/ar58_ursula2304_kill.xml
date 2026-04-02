@@ -1,0 +1,15 @@
+<Achievement active="1" id="374081" kind="kills" MS_side="0" amount="1500">
+	<UI name="@ar58_ursula2304_Kill_name" desc="@ar58_ursula2304_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar58_ursula2304_shop"/>
+		<Filter kind="weapon" param="ar58_gold01_shop"/>
+		<Filter kind="weapon" param="ar58_shop"/>
+		<Filter kind="weapon_skin" param="ursula2304"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_ar58_ursula2304" type="stripe"/>
+</Achievement>

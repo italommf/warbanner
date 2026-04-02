@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="374046" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ranked_clutch_02_name" desc="@ranked_clutch_02_desc"/>
+        <BannerImage image="challenge_badge_prorank2303_clutch" type="badge"/>
+    </Achievement>

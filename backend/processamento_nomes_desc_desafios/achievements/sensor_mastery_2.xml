@@ -1,0 +1,7 @@
+<Achievement active="1" id="1164" kind="instant_award" MS_side="0" amount="500">
+	<UI name="@sensor_mastery_2" desc="@sensor_mastery_2_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="156"/>
+	</Filters>
+	<BannerImage image="challenge_mark_ms01_02" type="mark" />
+</Achievement>

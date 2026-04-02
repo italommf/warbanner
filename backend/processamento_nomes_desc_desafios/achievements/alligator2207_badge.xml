@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="373589" kind="hidden" MS_side="1" amount="1">
+        <UI name="@alligator2207_badge_name" desc="@alligator2207_badge_desc"/>
+        <BannerImage image="challenge_badge_alligator2207" type="badge"/>
+    </Achievement>

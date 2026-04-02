@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="374060" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ranked_sapper_03_name" desc="@ranked_sapper_03_desc"/>
+        <BannerImage image="challenge_stripe_prorank2303_sapper" type="stripe"/>
+    </Achievement>

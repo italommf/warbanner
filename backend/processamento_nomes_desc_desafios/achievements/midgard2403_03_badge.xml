@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374600" kind="damage_done" MS_side="0" amount="100000">
+	<UI name="@midgard2403_03_badge_name" desc="@midgard2403_03_badge_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="mission_type" param="midgardeasy"/>
+		<Filter kind="mission_type" param="midgardnormal"/>
+		<Filter kind="mission_type" param="midgardhard"/>
+	</Filters>
+	<BannerImage image="challenge_badge_midgard2403_03" type="badge"/>
+</Achievement>

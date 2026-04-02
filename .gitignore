@@ -43,6 +43,10 @@ backend/imagens/uploads_ocr/
 tmp_*.py
 test_*.py
 
-# Challenge Processing
-backend/processamento_nomes_desc_desafios/
+# Challenge Processing (Included for metadata)
+# backend/processamento_nomes_desc_desafios/ (unignored)
+backend/processamento_nomes_desc_desafios/__pycache__/
+backend/processamento_nomes_desc_desafios/achievements_old/
+backend/processamento_nomes_desc_desafios/text_achievements_old.xml
+backend/processamento_nomes_desc_desafios/text_weapons_old.xml
 desafios_faltantes.txt

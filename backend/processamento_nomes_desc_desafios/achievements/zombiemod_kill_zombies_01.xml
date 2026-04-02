@@ -1,0 +1,9 @@
+<Achievement active="1" id="1" kind="kills" MS_side="0" amount="30">
+	<UI name="@zombiemod_kill_zombies_01" desc="@zombiemod_kill_zombies_0x_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="team" param="1"/>
+		<Filter kind="victory_condition" param="17"/>
+	</Filters>
+	<BannerImage image="challenge_badge_pvpevent2310" type="badge" />
+</Achievement>

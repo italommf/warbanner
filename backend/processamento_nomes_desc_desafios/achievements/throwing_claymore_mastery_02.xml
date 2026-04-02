@@ -1,0 +1,10 @@
+<Achievement active="1" id="1172" kind="kills" MS_side="0" amount="5000">
+	<UI name="@throwing_claymore_mastery_5k" desc="@throwing_claymore_mastery_5k_desc"/>
+	<Filters>
+ 			<Filter kind="enemy" param="1"/>
+			<Filter kind="weapon_tag" param="throwing_claymore"/>
+			<Filter kind="kill_zone" param="0"/>
+			<Filter kind="melee" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_tm01_02" type="mark"/>
+</Achievement>

@@ -1,0 +1,10 @@
+<Achievement active="0" id="30020" kind="game_end" MS_side="0" amount="10" tags="ps4_achiev">
+	<UI name="@ps4_lms_top03" desc="@ps4_lms_top03_desc"/>
+	<Filters>
+		<Filter kind="victory_condition" param="11"/>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="place_taken" param="2"/>
+		<Filter kind="place_taken" param="3"/>
+	</Filters>		
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

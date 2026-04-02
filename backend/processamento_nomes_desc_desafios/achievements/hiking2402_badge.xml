@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374514" kind="hidden" MS_side="1" amount="1">
+  <UI name="@hiking2402_badge_name" desc="@hiking2402_badge_desc" />
+  <BannerImage image="challenge_badge_hiking2402" type="badge" />
+</Achievement>

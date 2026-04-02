@@ -1,0 +1,9 @@
+<Achievement active="0" id="374370" kind="game_end" MS_side="0" amount="500">
+	<UI name="@zombiemod_win_as_zombie_03" desc="@zombiemod_win_as_zombie_0x_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="17"/>
+		<Filter kind="team" param="2"/>
+	</Filters>
+	<BannerImage image="tbd_icon" type="badge" />
+</Achievement>

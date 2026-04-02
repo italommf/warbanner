@@ -3,6 +3,11 @@ import os
 import xml.etree.ElementTree as ET
 from leitor_desafios import carregar_desafios
 
+def get_translation(key, traducoes):
+    if not key:
+        return ""
+    return traducoes.get(key.lower(), {}).get('translation', "") or traducoes.get(key.lower(), {}).get('original', "")
+
 def carregar_traducoes(file_path):
     """
     Lê o arquivo text_achievements.xml e cria um dicionário de mapeamento.
@@ -29,7 +34,7 @@ def carregar_traducoes(file_path):
                 if trans_elem is not None:
                     translation = trans_elem.get('value', "")
                 
-                traducoes[key] = {
+                traducoes[key.lower()] = {
                     'original': original,
                     'translation': translation
                 }
@@ -66,12 +71,10 @@ def processar_arquivos_xml(df, tipo, base_path, traducoes):
                     desc_key = ui_elem.get('desc', "").replace('@', '')
                     
                     # Nome (extraído usando a chave de 'name' sem o @)
-                    if name_key in traducoes:
-                        nome_traduzido = traducoes[name_key]['translation'] or traducoes[name_key]['original']
+                    nome_traduzido = get_translation(name_key, traducoes)
                     
                     # Descrição (extraída usando a chave de 'desc' sem o @)
-                    if desc_key in traducoes:
-                        desc_traduzida = traducoes[desc_key]['translation'] or traducoes[desc_key]['original']
+                    desc_traduzida = get_translation(desc_key, traducoes)
                 
                 # Pegar BannerImage
                 banner_elem = root.find('BannerImage')
@@ -146,10 +149,8 @@ def obter_dataframes_completos():
                     name_key = ui_elem.get('name', "").replace('@', '')
                     desc_key = ui_elem.get('desc', "").replace('@', '')
                     
-                    if name_key in traducoes:
-                        nome_traduzido = traducoes[name_key]['translation'] or traducoes[name_key]['original']
-                    if desc_key in traducoes:
-                        desc_traduzida = traducoes[desc_key]['translation'] or traducoes[desc_key]['original']
+                    nome_traduzido = get_translation(name_key, traducoes)
+                    desc_traduzida = get_translation(desc_key, traducoes)
                 
                 # Pegar BannerImage
                 banner_elem = root.find('BannerImage')

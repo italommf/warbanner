@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="375182" kind="game_end" MS_side="0" amount="25">
+  <UI name="@25pvp03_02_mark_name" desc="@25pvp03_02_mark_desc" />
+  <Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_uid" param="8d88f90e-6bf9-4106-b314-ad48091045c6"/>
+  </Filters>
+  <BannerImage image="challenge_mark_25pvp03_02" type="mark" />
+</Achievement>

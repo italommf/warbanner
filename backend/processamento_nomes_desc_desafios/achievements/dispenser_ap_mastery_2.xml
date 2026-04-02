@@ -1,0 +1,8 @@
+<Achievement active="1" id="1153" kind="dispenser_ap_amount" MS_side="0" amount="10000">
+	<UI name="@dispenser_ap_mastery_2" desc="@dispenser_ap_mastery_2_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="0"/>
+		<Filter kind="player" param="0"/>
+	</Filters> 
+	<BannerImage image="challenge_mark_sak01_02" type="mark"/>
+</Achievement>

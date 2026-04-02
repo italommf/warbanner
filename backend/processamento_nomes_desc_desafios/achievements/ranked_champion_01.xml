@@ -1,0 +1,9 @@
+<Achievement active="1" id="41016" kind="game_end" MS_side="0" amount="250" tags="ranked_new_achieve">
+	<UI name="@ranked_champion_01_name" desc="@ranked_champion_01_desc"/>
+	<Filters>
+		<Filter kind="place_taken" param="1"/>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="game_room_type" param="pvp_rating"/>
+	</Filters>
+	<BannerImage image="challenge_mark_prorank2303_legend" type="mark" /><!-- to replace with actual-->
+</Achievement>

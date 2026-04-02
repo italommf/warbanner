@@ -1,0 +1,14 @@
+<Achievement active="1" id="373888" kind="kills" MS_side="0" amount="1500">
+	<UI name="@ar56_loner2211_Kill_name" desc="@ar56_loner2211_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar56_loner2211_shop"/>
+		<Filter kind="weapon" param="ar56_shop"/>
+		<Filter kind="weapon_skin" param="loner2211"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_ar56_loner2211" type="stripe"/>
+</Achievement>

@@ -1,0 +1,14 @@
+<Achievement active="1" id="373534" kind="kills" MS_side="0" amount="1500">
+	<UI name="@sr61_sales06_Kill" desc="@sr61_sales06_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="sr61_sales06_shop"/>
+		<Filter kind="weapon" param="sr61_shop"/>
+		<Filter kind="weapon_skin" param="sales06"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_sr61_sales06" type="stripe"/>
+</Achievement>

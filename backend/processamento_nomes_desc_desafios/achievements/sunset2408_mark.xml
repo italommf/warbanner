@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374766" kind="hidden" MS_side="1" amount="1">
+  <UI name="@sunset2408_mark_name" desc="@sunset2408_mark_desc" />
+  <BannerImage image="challenge_mark_sunset2408" type="mark" />
+</Achievement>

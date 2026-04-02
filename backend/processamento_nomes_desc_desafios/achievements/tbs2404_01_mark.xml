@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374642" kind="game_end" MS_side="0" amount="10" tags="tbs">
+	<UI name="@tbs2404_01_mark_name" desc="@tbs2404_01_mark_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="mission_uid" param="c5747061-f04e-48ec-9018-97527f1f6c07"/>
+	</Filters>
+	<BannerImage image="challenge_mark_tbs2404_01" type="mark"/>
+</Achievement>

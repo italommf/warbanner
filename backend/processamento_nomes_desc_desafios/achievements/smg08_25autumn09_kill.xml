@@ -1,0 +1,15 @@
+<Achievement active="1" id="375365" kind="kills" MS_side="0" amount="1500">
+  <UI name="@smg08_25autumn09_Kill_name" desc="@smg08_25autumn09_Kill_desc" />
+  <Filters>
+    <Filter kind="enemy" param="1" />
+    <Filter kind="weapon" param="smg08_shop" />
+		<Filter kind="weapon" param="smg08_gold01_shop" />
+    <Filter kind="weapon" param="smg08_25autumn09_shop" />
+    <Filter kind="weapon_skin" param="25autumn09" />
+    <Filter kind="claymore" param="0" />
+    <Filter kind="grenade" param="0" />
+    <Filter kind="kill_zone" param="0" />
+    <Filter kind="explosion" param="0" />
+  </Filters>
+  <BannerImage image="challenge_stripe_smg08_25autumn09" type="stripe" />
+</Achievement>

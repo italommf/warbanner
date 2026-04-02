@@ -1,0 +1,7 @@
+<Achievement active="1" id="1142" kind="instant_award" MS_side="0" amount="10">
+	<UI name="@gasgrenade1" desc="@gasgrenade1_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="149"/>
+	</Filters>
+	<BannerImage image="challenge_badge_gg01_01" type="badge" />
+</Achievement>

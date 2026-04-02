@@ -1,0 +1,13 @@
+<Achievement active="1" id="373787" kind="kills" MS_side="0" amount="2500">
+    <UI name="@kn56_Kill_name" desc="@kn56_Kill_desc"/>
+    <Filters>
+        <Filter kind="enemy" param="1"/>
+        <Filter kind="weapon" param="kn56*" compare="match"/>
+        <Filter kind="weapon" param="kn65*" compare="match"/>
+        <Filter kind="claymore" param="0"/>
+        <Filter kind="grenade" param="0"/>
+        <Filter kind="kill_zone" param="0"/>
+        <Filter kind="explosion" param="0"/>
+    </Filters>
+    <BannerImage image="challenge_stripe_kn56" type="stripe"/>
+</Achievement>

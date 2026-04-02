@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374593" kind="hidden" MS_side="1" amount="1">
+  <UI name="@prestige2403_02_badge_name" desc="@prestige2403_02_badge_desc" />
+  <BannerImage image="challenge_badge_prestige2403_02" type="badge" />
+</Achievement>

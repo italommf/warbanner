@@ -1,0 +1,12 @@
+<Achievement active="1" id="373355" kind="kills" MS_side="0" amount="1500">
+	<UI name="@kn18_rating05_Kill" desc="@kn18_rating05_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="kn18_rating05"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_kn18_rating05" type="stripe" />
+</Achievement>

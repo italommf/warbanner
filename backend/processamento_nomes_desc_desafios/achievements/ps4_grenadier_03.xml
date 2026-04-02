@@ -1,0 +1,7 @@
+<Achievement active="0" id="30028" kind="instant_award" MS_side="0" amount="1" tags="ps4_achiev">
+	<UI name="@ps4_grenadier_03" desc="@ps4_grenadier_03_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="6"/>
+	</Filters>
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

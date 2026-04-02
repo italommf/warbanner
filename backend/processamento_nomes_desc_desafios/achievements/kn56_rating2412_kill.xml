@@ -1,0 +1,14 @@
+<Achievement active="1" id="374981" kind="kills" MS_side="0" amount="1500">
+  <UI name="@kn56_rating2412_Kill_name" desc="@kn56_rating2412_Kill_desc" />
+  <Filters>
+    <Filter kind="enemy" param="1" />
+    <Filter kind="weapon" param="kn56" />
+    <Filter kind="weapon" param="kn56_rating2412" />
+    <Filter kind="weapon_skin" param="rating2412" />
+    <Filter kind="claymore" param="0" />
+    <Filter kind="grenade" param="0" />
+    <Filter kind="kill_zone" param="0" />
+    <Filter kind="explosion" param="0" />
+  </Filters>
+  <BannerImage image="challenge_stripe_kn56_rating2412" type="stripe" />
+</Achievement>

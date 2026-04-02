@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="373952" kind="hidden" MS_side="1" amount="1">
+        <UI name="@sniper_snowstorm2301_mark_name" desc="@sniper_snowstorm2301_mark_desc"/>
+        <BannerImage image="challenge_mark_sniper_snowstorm2301" type="mark"/>
+    </Achievement>

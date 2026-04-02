@@ -1,0 +1,8 @@
+<Achievement active="1" id="374683" kind="instant_award" MS_side="0" amount="5">
+	<UI name="@oddball_flagbearer_kills" desc="@oddball_flagbearer_kills_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="158"/>
+		<Filter kind="victory_condition" param="19"/>
+	</Filters>
+	<BannerImage image="challenge_mark_oddball_01" type="mark" />
+</Achievement>

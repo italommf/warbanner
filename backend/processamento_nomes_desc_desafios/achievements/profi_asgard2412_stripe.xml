@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374998" kind="achievement_awarded" MS_side="1" amount="4" tags="asgard_ultimate">
+	<UI name="@profi_asgard2412_stripe_name" desc="@profi_asgard2412_stripe_desc"/>
+	<Filters>
+		<Filter kind="tag" param="asgard_so_class"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_profi_asgard2412" type="stripe"/>
+</Achievement>

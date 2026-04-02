@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="375213" kind="heist_gold_pickup" MS_side="0" amount="1">
+  <UI name="@25heist04_mark_name" desc="@25heist04_mark_desc" />
+  	<Filters>
+		<Filter kind="heist_gold_owned" param="10"/>
+	</Filters>
+  <BannerImage image="challenge_mark_25heist04" type="mark" />
+</Achievement>

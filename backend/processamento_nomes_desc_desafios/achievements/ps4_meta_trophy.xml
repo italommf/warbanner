@@ -1,0 +1,8 @@
+<Achievement active="0" id="30000" kind="achievement_awarded" MS_side="1" amount="27">
+	<UI name="@ps4_meta_trophy" desc="@ps4_meta_trophy_desc"/>
+	<Filters>
+		<Filter kind="tag" param="ps4_achiev"/>
+	</Filters>
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>
+

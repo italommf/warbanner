@@ -1,0 +1,15 @@
+<Achievement active="1" id="375140" kind="kills" MS_side="0" amount="1500">
+  <UI name="@pt52_25pve03_Kill_name" desc="@pt52_25pve03_Kill_desc" />
+  <Filters>
+    <Filter kind="enemy" param="1" />
+    <Filter kind="weapon" param="pt52_shop" />
+    <Filter kind="weapon" param="pt52_25pve03_shop" />
+    <Filter kind="weapon_skin" param="25pve03" />
+    <Filter kind="claymore" param="0" />
+    <Filter kind="grenade" param="0" />
+    <Filter kind="kill_zone" param="0" />
+    <Filter kind="explosion" param="0" />
+    <Filter kind="weapon" param="pt52_gold01_shop" />
+  </Filters>
+  <BannerImage image="challenge_stripe_pt52_25pve03" type="stripe" />
+</Achievement>

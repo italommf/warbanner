@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="375007" kind="game_end" MS_side="0" amount="1" tags="asgard_so_class,asgard_ultimate">
+	<UI name="@sniper_asgard2412_stripe_name" desc="@sniper_asgard2412_stripe_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="3"/>
+		<Filter kind="mission_type" param="asgardhard"/>
+		<Filter kind="my_class" param="Recon"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_sniper_asgard2412" type="stripe"/>
+</Achievement>

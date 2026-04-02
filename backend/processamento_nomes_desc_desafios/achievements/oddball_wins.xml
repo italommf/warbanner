@@ -1,0 +1,8 @@
+<Achievement active="1" id="374685" kind="game_end" MS_side="0" amount="3">
+	<UI name="@oddball_wins" desc="@oddball_wins_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="19"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_oddball_01" type="stripe" />
+</Achievement>

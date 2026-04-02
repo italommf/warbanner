@@ -1,0 +1,8 @@
+<Achievement active="1" id="374684" kind="kills" MS_side="0" amount="100">
+	<UI name="@oddball_general_kills" desc="@oddball_general_kills_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="victory_condition" param="19"/>
+	</Filters>
+	<BannerImage image="challenge_badge_oddball_01" type="badge" />
+</Achievement>

@@ -1,0 +1,8 @@
+<Achievement active="1" id="1502" kind="game_end" MS_side="0" amount="50" tags="endor_so_meta">
+	<UI name="@endor_play_pvp_name" desc="@endor_play_pvp_desc"/>
+	<Filters>
+		<Filter kind="mission_uid" param="face44c2-d147-11ec-9d64-0242ac120002"/>
+		<Filter kind="mission_uid" param="8993f099-180d-4929-8ad5-3f52aa0e1850"/>
+	</Filters>
+	<BannerImage image="challenge_badge_endor01_02" type="badge" /> <!-- replace with actual image-->
+</Achievement>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374217" kind="hidden" MS_side="1" amount="1">
+  <UI name="@viper2307_stripe_name" desc="@viper2307_stripe_desc" />
+  <BannerImage image="challenge_stripe_viper2307" type="stripe" />
+</Achievement>

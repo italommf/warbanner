@@ -1,0 +1,10 @@
+<Achievement active="1" id="1139" kind="kills" MS_side="0" amount="10000">
+	<UI name="@sticky_mastery_10k" desc="@sticky_mastery_10k_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="explosion" param="1"/>
+		<Filter kind="weapon" param="bullet_sticky"/> 
+		<Filter kind="melee" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_stg01_02" type="mark"/>
+</Achievement>

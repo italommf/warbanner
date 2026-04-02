@@ -1,0 +1,4 @@
+<Achievement active="0" id="30015" kind="crown_collected" MS_side="1" amount="100" tags="ps4_achiev">
+	<UI name="@ps4_crowns" desc="@ps4_crowns_desc"/>
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

@@ -1,0 +1,7 @@
+<Achievement active="1" id="1151" kind="instant_award" MS_side="0" amount="50">
+	<UI name="@dispenser_ap_2" desc="@dispenser_ap_2_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="155"/>
+	</Filters>
+	<BannerImage image="challenge_badge_sak01_02" type="badge" />
+</Achievement>

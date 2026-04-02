@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="374039" kind="hidden" MS_side="1" amount="1">
+        <UI name="@fbs_deepwater2303_mark_name" desc="@fbs_deepwater2303_mark_desc"/>
+        <BannerImage image="challenge_mark_fbs_deepwater2303" type="mark"/>
+    </Achievement>

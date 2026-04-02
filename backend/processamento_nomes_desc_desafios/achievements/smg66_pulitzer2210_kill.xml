@@ -1,0 +1,15 @@
+<Achievement active="1" id="373776" kind="kills" MS_side="0" amount="1500">
+	<UI name="@smg66_pulitzer2210_Kill_name" desc="@smg66_pulitzer2210_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg66_pulitzer2210_shop"/>
+		<Filter kind="weapon" param="smg66_gold01_shop"/>
+		<Filter kind="weapon" param="smg66_shop"/>
+		<Filter kind="weapon_skin" param="pulitzer2210"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_smg66_pulitzer2210" type="stripe"/>
+</Achievement>

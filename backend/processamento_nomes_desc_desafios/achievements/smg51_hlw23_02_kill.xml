@@ -1,0 +1,14 @@
+<Achievement active="1" id="374326" kind="kills" MS_side="0" amount="1500">
+	<UI name="@smg51_hlw23_02_Kill_name" desc="@smg51_hlw23_02_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg51_hlw23_02_shop"/>
+		<Filter kind="weapon" param="smg51_shop"/>
+		<Filter kind="weapon_skin" param="hlw23_02"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_smg51_hlw23_02" type="stripe"/>
+</Achievement>

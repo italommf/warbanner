@@ -1,0 +1,11 @@
+<Achievement active="1" id="1121" kind="kills" MS_side="0" amount="10000">
+	<UI name="@tomahawk_mastery_10k" desc="@tomahawk_mastery_10k_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon_tag" param="throwing_tomahawk"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+		<Filter kind="melee" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_tw01_02" type="mark"/>
+</Achievement>

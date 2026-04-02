@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="375185" kind="kills" MS_side="0" amount="9">
+  <UI name="@25pvp03_02_stripe_name" desc="@25pvp03_02_stripe_desc" />
+   <Filters>
+		<Filter kind="by_flowgraph" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+  </Filters>
+  <BannerImage image="challenge_stripe_25pvp03_02" type="stripe" />
+</Achievement>

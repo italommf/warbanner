@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374617" kind="hidden" MS_side="1" amount="1">
+  <UI name="@fool24_badge_name" desc="@fool24_badge_desc" />
+  <BannerImage image="challenge_badge_fool24" type="badge" />
+</Achievement>

@@ -1,0 +1,8 @@
+<Achievement active="1" id="41013" kind="instant_award" MS_side="0" amount="10" tags="ranked_new_achieve">
+	<UI name="@ranked_clutch_01_name" desc="@ranked_clutch_01_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="132"/>
+		<Filter kind="game_room_type" param="pvp_rating"/>
+	</Filters>
+	<BannerImage image="challenge_mark_prorank2303_clutch" type="mark" />
+</Achievement>

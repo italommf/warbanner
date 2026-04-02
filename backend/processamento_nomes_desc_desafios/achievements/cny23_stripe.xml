@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="373912" kind="hidden" MS_side="1" amount="1">
+  <UI name="@cny23_stripe_name" desc="@cny23_stripe_desc" />
+  <BannerImage image="challenge_stripe_cny23" type="stripe" />
+</Achievement>

@@ -1,0 +1,14 @@
+<Achievement active="1" id="373466" kind="kills" MS_side="0" amount="1500">
+	<UI name="@pt47_fool22_Kill" desc="@pt47_fool22_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="pt47_fool22_shop"/>
+		<Filter kind="weapon" param="pt47_shop"/>
+		<Filter kind="weapon_skin" param="fool22"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_pt47_fool22" type="stripe"/>
+</Achievement>

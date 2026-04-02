@@ -1,0 +1,14 @@
+<Achievement active="1" id="373894" kind="kills" MS_side="0" amount="1500">
+	<UI name="@smg67_winter22_Kill_name" desc="@smg67_winter22_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg67_winter22_shop"/>
+		<Filter kind="weapon" param="smg67_shop"/>
+		<Filter kind="weapon_skin" param="winter22"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_smg67_winter22" type="stripe"/>
+</Achievement>

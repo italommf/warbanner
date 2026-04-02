@@ -1,0 +1,9 @@
+<Achievement active="1" id="1506" kind="kills" MS_side="0" amount="1" tags="endor_ee_meta">
+	<UI name="@endor_antenna_ee_name" desc="@endor_antenna_ee_desc"/>
+	<Filters>
+		<Filter kind="by_flowgraph" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_endor01_01" type="stripe" />
+</Achievement>

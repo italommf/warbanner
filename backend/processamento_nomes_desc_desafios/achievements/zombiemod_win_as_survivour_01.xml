@@ -1,0 +1,9 @@
+<Achievement active="1" id="374365" kind="game_end" MS_side="0" amount="1">
+	<UI name="@zombiemod_win_as_survivour_01" desc="@zombiemod_win_as_survivour_0x_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>
+		<Filter kind="victory_condition" param="17"/>
+		<Filter kind="team" param="1"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_pvpevent2310_02" type="stripe" />
+</Achievement>

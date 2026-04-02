@@ -1,0 +1,13 @@
+<Achievement active="1" id="6327" kind="kills" MS_side="0" amount="100">
+	<Filters>
+		<Filter kind="weapon" param="shg49_xmas_shop"/>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="melee" param="1"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<UI name="@shg49Kill5" desc="@shg49Kill5_desc"/>
+	<BannerImage image="challenge_mark_cookie_01" type="mark"/>
+</Achievement>

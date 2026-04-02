@@ -1,0 +1,15 @@
+<Achievement active="1" id="373933" kind="kills" MS_side="0" amount="1500">
+	<UI name="@smg68_sales2301_Kill_name" desc="@smg68_sales2301_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="smg68_sales2301_shop"/>
+		<Filter kind="weapon" param="smg68_gold01_shop"/>
+		<Filter kind="weapon" param="smg68_shop"/>
+		<Filter kind="weapon_skin" param="sales2301"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_smg68_sales2301" type="stripe"/>
+</Achievement>

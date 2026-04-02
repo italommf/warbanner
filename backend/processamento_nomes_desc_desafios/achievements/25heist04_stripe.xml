@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="375214" kind="kills" MS_side="0" amount="10">
+  <UI name="@25heist04_stripe_name" desc="@25heist04_stripe_desc" />
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="heist_gold_owned" param="5" compare=">="/>
+		<Filter kind="victory_condition" param="20"/>
+	</Filters>
+  <BannerImage image="challenge_stripe_25heist04" type="stripe" />
+</Achievement>

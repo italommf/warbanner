@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="375003" kind="kills" MS_side="0" amount="1" tags="asgard_ultimate">
+	<UI name="@asgard2412_01_mark_name" desc="@asgard2412_01_mark_desc"/>
+	<Filters>
+		<Filter kind="by_flowgraph" param="1"/>
+		<Filter kind="player" param="0"/>
+		<Filter kind="ai_archetype" compare="=" param="__NOBODY__"/>
+		<Filter kind="mission_type" param="asgardhard"/>
+		<Filter kind="mission_result" param="win"/>
+	</Filters>
+	<BannerImage image="challenge_mark_asgard2412_01" type="mark"/>
+</Achievement>

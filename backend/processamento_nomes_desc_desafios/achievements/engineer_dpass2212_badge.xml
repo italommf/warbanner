@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="373842" kind="hidden" MS_side="1" amount="1">
+        <UI name="@engineer_dpass2212_badge_name" desc="@engineer_dpass2212_badge_desc"/>
+        <BannerImage image="challenge_badge_engineer_dpass2212" type="badge"/>
+    </Achievement>

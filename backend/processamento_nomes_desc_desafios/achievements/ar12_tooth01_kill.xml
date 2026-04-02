@@ -1,0 +1,15 @@
+<Achievement active="1" id="375410" kind="kills" MS_side="0" amount="1500">
+  <UI name="@ar12_tooth01_Kill_name" desc="@ar12_tooth01_Kill_desc" />
+  <Filters>
+    <Filter kind="enemy" param="1" />
+    <Filter kind="weapon" param="ar12_shop" />
+    <Filter kind="weapon" param="ar12_tooth01_shop" />
+    <Filter kind="weapon_skin" param="tooth01" />
+    <Filter kind="claymore" param="0" />
+    <Filter kind="grenade" param="0" />
+    <Filter kind="kill_zone" param="0" />
+    <Filter kind="explosion" param="0" />
+    <Filter kind="weapon" param="ar12_gold01_shop" />
+  </Filters>
+  <BannerImage image="challenge_stripe_ar12_tooth01" type="stripe" />
+</Achievement>

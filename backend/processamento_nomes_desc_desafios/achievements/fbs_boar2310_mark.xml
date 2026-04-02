@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374345" kind="hidden" MS_side="1" amount="1">
+  <UI name="@fbs_boar2310_mark_name" desc="@fbs_boar2310_mark_desc" />
+  <BannerImage image="challenge_mark_fbs_boar2310" type="mark" />
+</Achievement>

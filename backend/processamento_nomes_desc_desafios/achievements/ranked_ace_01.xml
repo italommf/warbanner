@@ -1,0 +1,8 @@
+<Achievement active="1" id="41001" kind="instant_award" MS_side="0" amount="1" tags="ranked_new_achieve">
+	<UI name="@ranked_ace_01_name" desc="@ranked_ace_01_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="129"/>
+		<Filter kind="game_room_type" param="pvp_rating"/>
+	</Filters>
+	<BannerImage image="challenge_badge_prorank2303_ace" type="badge" />
+</Achievement>

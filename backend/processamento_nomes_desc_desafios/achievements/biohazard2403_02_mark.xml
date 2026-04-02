@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374552" kind="hidden" MS_side="1" amount="1">
+  <UI name="@biohazard2403_02_mark_name" desc="@biohazard2403_02_mark_desc" />
+  <BannerImage image="challenge_mark_biohazard2403_02" type="mark" />
+</Achievement>

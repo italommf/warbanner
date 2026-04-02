@@ -1,0 +1,7 @@
+<Achievement active="1" id="1140" kind="semtex_sticked_to_player" MS_side="0" amount="100">
+	<UI name="@sticky_stripe1" desc="@sticky_stripe1_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_stg01_01" type="stripe" />
+</Achievement>

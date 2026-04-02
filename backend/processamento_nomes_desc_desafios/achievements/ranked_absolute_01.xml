@@ -1,0 +1,7 @@
+<Achievement active="1" id="41017" kind="achievement_awarded" MS_side="1" amount="17">
+	<UI name="@ranked_absolute_01_name" desc="@ranked_absolute_01_desc"/>
+	<Filters>
+		<Filter kind="tag" param="ranked_new_achieve"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_prorank2303_legend" type="stripe" /><!-- to replace with actual-->
+</Achievement>

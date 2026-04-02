@@ -1,0 +1,15 @@
+<Achievement active="1" id="374921" kind="kills" MS_side="0" amount="1500">
+	<UI name="@shg73_bavaria2409_Kill_name" desc="@shg73_bavaria2409_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="shg73_bavaria2409_shop"/>
+		<Filter kind="weapon" param="shg73_gold01_shop"/>
+		<Filter kind="weapon" param="shg73_shop"/>
+		<Filter kind="weapon_skin" param="bavaria2409"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_shg73_bavaria2409" type="stripe"/>
+</Achievement>

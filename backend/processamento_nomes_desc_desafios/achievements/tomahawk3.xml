@@ -1,0 +1,9 @@
+<Achievement active="1" id="1118" kind="instant_award" MS_side="0" amount="1000">
+	<UI name="@tomahawk3" desc="@tomahawk3_desc"/>
+	<Filters>
+		<Filter kind="instant_award_id" param="122"/>
+		<Filter kind="instant_award_id" param="123"/>
+		<Filter kind="instant_award_id" param="124"/>
+	</Filters>
+	<BannerImage image="challenge_badge_tw01_03" type="badge" />
+</Achievement>		

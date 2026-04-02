@@ -1,0 +1,9 @@
+<Achievement active="1" id="1126" kind="kills" MS_side="0" amount="5000">
+	<UI name="@molotov_mastery_5k" desc="@molotov_mastery_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon_tag" param="molotov"/>
+		<Filter kind="melee" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_mark_mcg01_01" type="mark"/>
+</Achievement>

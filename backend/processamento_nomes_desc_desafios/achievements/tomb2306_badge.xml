@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374149" kind="hidden" MS_side="1" amount="1">
+  <UI name="@tomb2306_badge_name" desc="@tomb2306_badge_desc" />
+  <BannerImage image="challenge_badge_tomb2306" type="badge" />
+</Achievement>

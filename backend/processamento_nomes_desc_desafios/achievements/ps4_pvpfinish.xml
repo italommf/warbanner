@@ -1,0 +1,18 @@
+<Achievement active="0" id="30002" kind="game_end" MS_side="0" amount="1" tags="ps4_achiev">
+	<UI name="@ps4_pvpfinish" desc="@ps4_pvpfinish_desc"/>
+	<Filters>
+		<Filter kind="mission_result" param="win"/>	
+		<Filter kind="mission_result" param="draw"/>	
+		<Filter kind="mission_result" param="lose"/>	
+		<Filter kind="victory_condition" param="1"/>			
+		<Filter kind="victory_condition" param="2"/>			
+		<Filter kind="victory_condition" param="4"/>			
+		<Filter kind="victory_condition" param="5"/>			
+		<Filter kind="victory_condition" param="6"/>			
+		<Filter kind="victory_condition" param="7"/>			
+		<Filter kind="victory_condition" param="8"/>			
+		<Filter kind="victory_condition" param="9"/>			
+		<Filter kind="victory_condition" param="10"/>					
+	</Filters>	
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>	

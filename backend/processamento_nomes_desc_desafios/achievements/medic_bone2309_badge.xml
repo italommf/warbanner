@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374307" kind="hidden" MS_side="1" amount="1">
+  <UI name="@medic_bone2309_badge_name" desc="@medic_bone2309_badge_desc" />
+  <BannerImage image="challenge_badge_medic_bone2309" type="badge" />
+</Achievement>

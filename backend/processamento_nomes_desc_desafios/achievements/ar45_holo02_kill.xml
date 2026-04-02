@@ -1,0 +1,14 @@
+<Achievement active="1" id="373561" kind="kills" MS_side="0" amount="1500">
+	<UI name="@ar45_holo02_Kill" desc="@ar45_holo02_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar45_holo02_shop"/>
+		<Filter kind="weapon" param="ar45_shop"/>
+		<Filter kind="weapon_skin" param="holo02"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_ar45_holo02" type="stripe"/>
+</Achievement>

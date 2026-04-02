@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+    <Achievement active="1" id="374057" kind="hidden" MS_side="1" amount="1">
+        <UI name="@ranked_resurrections_03_name" desc="@ranked_resurrections_03_desc"/>
+        <BannerImage image="challenge_stripe_prorank2303_reanimator" type="stripe"/>
+    </Achievement>

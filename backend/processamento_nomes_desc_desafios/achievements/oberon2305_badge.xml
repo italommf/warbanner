@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Achievement active="1" id="374109" kind="hidden" MS_side="1" amount="1">
+  <UI name="@oberon2305_badge_name" desc="@oberon2305_badge_desc" />
+  <BannerImage image="challenge_badge_oberon2305" type="badge" />
+</Achievement>

@@ -1,0 +1,12 @@
+<Achievement active="1" id="374420" kind="kills" MS_side="0" amount="1500">
+  <UI name="@kn54_newyear23_Kill_name" desc="@kn54_newyear23_Kill_desc" />
+  <Filters>
+    <Filter kind="enemy" param="1" />
+    <Filter kind="weapon" param="kn54_newyear23" />
+    <Filter kind="claymore" param="0" />
+    <Filter kind="grenade" param="0" />
+    <Filter kind="kill_zone" param="0" />
+    <Filter kind="explosion" param="0" />
+  </Filters>
+  <BannerImage image="challenge_stripe_kn54_newyear23" type="stripe" />
+</Achievement>

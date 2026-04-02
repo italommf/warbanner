@@ -1,0 +1,6 @@
+<Achievement active="0" id="30036" kind="resurrects_done" MS_side="0" amount="10" tags="ps4_achiev">
+	<UI name="@ps4_ressurector_10" desc="@ps4_ressurector_10_desc"/>		
+	<Filter kind="player" param="1"/>
+	<Filter kind="enemy" param="0"/>
+	<BannerImage image="tbd_icon" type="mark" />
+</Achievement>

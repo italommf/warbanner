@@ -1,0 +1,15 @@
+<Achievement active="1" id="374384" kind="kills" MS_side="0" amount="1500">
+	<UI name="@ar58_north2312_Kill_name" desc="@ar58_north2312_Kill_desc"/>
+	<Filters>
+		<Filter kind="enemy" param="1"/>
+		<Filter kind="weapon" param="ar58_north2312_shop"/>
+		<Filter kind="weapon" param="ar58_gold01_shop"/>
+		<Filter kind="weapon" param="ar58_shop"/>
+		<Filter kind="weapon_skin" param="north2312"/>
+		<Filter kind="claymore" param="0"/>
+		<Filter kind="grenade" param="0"/>
+		<Filter kind="kill_zone" param="0"/>
+		<Filter kind="explosion" param="0"/>
+	</Filters>
+	<BannerImage image="challenge_stripe_ar58_north2312" type="stripe"/>
+</Achievement>
