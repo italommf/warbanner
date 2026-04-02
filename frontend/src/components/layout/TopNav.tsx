@@ -539,6 +539,12 @@ export function TopNav() {
           >
             APOIE O PROJETO
           </NavLink>
+          <NavLink
+            to="/faq"
+            className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+          >
+            F.A.Q
+          </NavLink>
         </nav>
 
         <div className={styles.player}>
@@ -644,6 +650,13 @@ export function TopNav() {
                     onClick={() => setSidebarOpen(false)}
                   >
                     APOIE O PROJETO
+                  </NavLink>
+                  <NavLink
+                    to="/faq"
+                    className={({ isActive }) => `${styles.sideNavItem} ${isActive ? styles.sideActive : ''}`}
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    F.A.Q
                   </NavLink>
                 </nav>
 

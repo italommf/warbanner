@@ -11,6 +11,7 @@ import { GuardarWarfacePage } from '@/pages/GuardarWarfacePage'
 import { ApoiePage } from '@/pages/ApoiePage'
 import { AuthPage } from '@/pages/AuthPage'
 import { AdminPage } from '@/pages/AdminPage'
+import { FAQPage } from '@/pages/FAQPage'
 import { LogoRenderer } from '@/pages/LogoRenderer'
 import { useBannerStore } from '@/store/bannerStore'
 import { useAuthStore } from '@/store/authStore'
@@ -161,6 +162,7 @@ export function App() {
             <Route path="/mywf" element={<GuardarWarfacePage />} />
             <Route path="/mywf/:section" element={<GuardarWarfacePage />} />
             <Route path="/apoie" element={<ApoiePage />} />
+            <Route path="/faq" element={<FAQPage />} />
             <Route path="/login" element={<AuthPage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/:tab" element={<AdminPage />} />
