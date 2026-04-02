@@ -632,8 +632,9 @@ export interface SupportTicket {
 
 export function useTickets() {
   const token = useAuthStore((s) => s.accessToken)
+  const userId = useAuthStore((s) => s.user?.id)
   return useQuery<SupportTicket[]>({
-    queryKey: ['tickets', !!token],
+    queryKey: ['tickets', userId],
     queryFn: () => authFetch('/api/support/tickets/').then((r) => r.json()),
     enabled: !!token,
     staleTime: 30_000,
