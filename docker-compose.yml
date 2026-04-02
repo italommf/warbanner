@@ -14,7 +14,9 @@ services:
     restart: always
 
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+      target: api_server
     environment:
       DEBUG: "False"
       DATABASE_URL: postgres://wb_db_user:WB_db_P4ss_9k2M5p8Q4z6@db:5432/warface_db
@@ -31,7 +33,9 @@ services:
     restart: always
 
   worker:
-    build: ./backend
+    build:
+      context: ./backend
+      target: worker_ml
     command: celery -A warface worker --loglevel=info -P solo
     environment:
       DATABASE_URL: postgres://wb_db_user:WB_db_P4ss_9k2M5p8Q4z6@db:5432/warface_db
@@ -39,13 +43,16 @@ services:
     volumes:
       - ./backend/imagens:/app/imagens
       - ./backend/music:/app/music
+      - ./backend/weights:/app/weights
     depends_on:
       - db
       - redis
     restart: always
 
   beat:
-    build: ./backend
+    build:
+      context: ./backend
+      target: api_server
     command: celery -A warface beat --loglevel=info
     environment:
       DEBUG: "False"
@@ -58,6 +65,7 @@ services:
       - db
       - redis
     restart: always
+
 
   frontend:
     build: ./frontend

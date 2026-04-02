@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+
+# Data and Persistence (Managed by volumes)
+imagens/
+music/
+weights/
+debug_outputs/
+tmp/
+db.sqlite3
+
+# Git
+.git
+.gitignore
+
+# Logs and OS
+*.log
+.DS_Store
+Thumbs.db

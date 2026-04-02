@@ -1,14 +1,38 @@
-# Usar uma imagem Python leve
-FROM python:3.10-slim
+# ── Base (Comum a todos) ───────────────────────────────────────────────────
+FROM python:3.10-slim AS base
 
-# Evitar que o Python gere arquivos .pyc e permitir log em tempo real
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Instalar dependências do sistema para OpenCV, Torch e Postgres
+WORKDIR /app
+
+# Instalar dependências de sistema mínimas (Postgres driver)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
     libpq-dev \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copiar requirements primeiro para cache
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Copiar o código (Com o .dockerignore, as pastas pesadas são ignoradas)
+COPY . .
+
+# Criar pastas básicas
+RUN mkdir -p imagens/marcas imagens/insignias imagens/fitas staticflakes
+
+# ── Backend & Beat (Leves) ─────────────────────────────────────────────────
+FROM base AS api_server
+EXPOSE 8000
+CMD ["gunicorn", "warface.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "120"]
+
+# ── Worker & Image Processing (Pesado: ML / OCR) ───────────────────────────
+FROM base AS worker_ml
+
+# Instalar dependências para OpenCV, Tesseract e Torch
+RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1 \
     libglib2.0-0 \
     tesseract-ocr \
@@ -16,36 +40,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     tesseract-ocr-por \
     && rm -rf /var/lib/apt/lists/*
 
-# Definir diretório de trabalho
-WORKDIR /app
-
-# Copiar requirements primeiro para aproveitar o cache do Docker
-COPY requirements.txt .
-
-# 1. Upgrade de ferramentas de build para evitar erros no egg_info do basicsr
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel
-
-# 2. Instalar Torch e componentes críticos em separado para assegurar indexação CPU
+# Instalar Torch (Apenas CPU) e componentes pesados
 RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
-
-# 3. Instalar basicsr e realesrgan antes do restante (pacotes "frágeis")
 RUN pip install --no-cache-dir basicsr==1.4.2 realesrgan
 
-# 4. Instalar o restante das dependências
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Corrigir bug de compatibilidade do basicsr com versões novas do torchvision
+# Bugfix basicsr
 RUN sed -i 's/from torchvision.transforms.functional_tensor import rgb_to_grayscale/from torchvision.transforms.functional import rgb_to_grayscale/g' /usr/local/lib/python3.10/site-packages/basicsr/data/degradations.py
 
+CMD ["celery", "-A", "warface", "worker", "--loglevel=info", "-P", "solo"]
 
-# Copiar o restante do código
-COPY . .
-
-# Criar pastas necessárias para persistência
-RUN mkdir -p imagens/marcas imagens/insignias imagens/fitas staticflakes
-
-# Expor a porta que o Gunicorn vai rodar
-EXPOSE 8000
-
-# Apenas inicia o servidor. Migrações e setup são feitos no deploy.sh
-CMD ["gunicorn", "warface.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "120"]

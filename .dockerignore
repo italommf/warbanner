@@ -1,0 +1,31 @@
+# Version control
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+
+# Massive assets (must be handled as volumes)
+backend/imagens/
+backend/music/
+backend/weights/
+backend/debug_outputs/
+backend/tmp/
+backend/db.sqlite3
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.next/
+
+# Logs and OS
+*.log
+.DS_Store
+Thumbs.db
