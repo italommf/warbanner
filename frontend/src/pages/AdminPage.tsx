@@ -552,6 +552,40 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activ
     const { hideEmpty, setHideEmpty, showOnlyEmpty, setShowOnlyEmpty } = useBannerStore()
     const [mainFilter, setMainFilter] = useState<MainFilter>('todos')
     const [armasFilter, setArmasFilter] = useState<ArmasFilter>('todos')
+    const { data: allItemsData } = useItems()
+
+    function handleExportDesafios() {
+        if (!formData || !allItemsData) return
+
+        function buildSection(label: string, ownedFilenames: string[], itemPool: Item[]): string {
+            const rows = ownedFilenames
+                .map((filename: string) => {
+                    const item = itemPool.find(i => i.filename.toLowerCase() === filename.toLowerCase())
+                    return {
+                        id: parseInt(item?.challenge_id ?? '0', 10),
+                        line: `| ${item?.challenge_id ?? ''} | ${item?.name ?? filename} | ${item?.amount ?? ''} | ${item?.xml_file ?? ''} |`,
+                    }
+                })
+                .sort((a, b) => a.id - b.id)
+                .map(r => r.line)
+            return `=== ${label} ===\n${rows.join('\n')}`
+        }
+
+        const sections = [
+            buildSection('Marcas', formData.my_marcas ?? [], allItemsData.marcas ?? []),
+            buildSection('Insígnias', formData.my_insignias ?? [], allItemsData.insignias ?? []),
+            buildSection('Fitas', formData.my_fitas ?? [], allItemsData.fitas ?? []),
+        ]
+
+        const content = sections.join('\n\n')
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' })
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = `desafios_${user?.username ?? userId}.txt`
+        a.click()
+        URL.revokeObjectURL(url)
+    }
 
     const displayedImages = useMemo(() => {
         if (!images) return []
@@ -884,17 +918,20 @@ function UserEditor({ userId, activeTab, setActiveTab }: { userId: string, activ
                                 </div>
                             </div>
 
-                            <AdminFilterBar 
-                                mainFilter={mainFilter} 
-                                armasFilter={armasFilter} 
-                                setMainFilter={setMainFilter} 
-                                setArmasFilter={setArmasFilter} 
+                            <AdminFilterBar
+                                mainFilter={mainFilter}
+                                armasFilter={armasFilter}
+                                setMainFilter={setMainFilter}
+                                setArmasFilter={setArmasFilter}
                                 showWithoutDescription={!hideEmpty}
                                 setShowWithoutDescription={(v) => setHideEmpty(!v)}
                                 showOnlyEmpty={showOnlyEmpty}
                                 setShowOnlyEmpty={setShowOnlyEmpty}
                             />
 
+                            <button className={styles.exportBtn} onClick={handleExportDesafios} title="Exportar desafios em .txt">
+                                EXPORTAR .TXT
+                            </button>
 
                         </div>
 

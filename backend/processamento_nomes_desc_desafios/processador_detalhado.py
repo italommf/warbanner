@@ -138,6 +138,7 @@ def obter_dataframes_completos():
                 root = tree.getroot()
                 
                 # Dados do XML
+                achievement_id = root.get('id', "")
                 amount_xml = root.get('amount', "")
                 
                 # Pegar UI name e desc
@@ -173,7 +174,8 @@ def obter_dataframes_completos():
                             'nome': nome_traduzido,
                             'descrição': desc_traduzida,
                             'quantidade': quantidade,
-                            'arquivo_xml': xml_file
+                            'arquivo_xml': xml_file,
+                            'id': achievement_id,
                         })
             except Exception:
                 continue

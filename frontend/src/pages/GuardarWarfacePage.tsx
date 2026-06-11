@@ -1563,6 +1563,7 @@ function WarchaosTab() {
 const WARFACE_TABS: { id: WarfaceTab; label: string }[] = [
   { id: 'perfil', label: 'PERFIL' },
   { id: 'desafios', label: 'MEUS DESAFIOS' },
+  { id: 'guardar', label: 'GUARDAR DADOS' },
   { id: 'chamados', label: 'MEUS CHAMADOS' },
 ]
 
@@ -1591,16 +1592,23 @@ function WarfaceSection({ activeTab, setActiveTab }: WarfaceSectionProps) {
             : 'Os servidores oficiais foram encerrados. Esta é a Central de Suporte do WarBanner.'
           }
         </p>
-        <button className={styles.guardarAlertBtn} onClick={() => setActiveTab(daysLeft > 0 ? 'guardar' : 'chamados')}>
-          {daysLeft > 0 ? 'GUARDAR MEUS DADOS' : 'ABRIR CHAMADO'}
-        </button>
+        <div className={styles.alertBtns}>
+          {daysLeft <= 0 && (
+            <button className={styles.guardarAlertBtn} onClick={() => setActiveTab('guardar')}>
+              GUARDAR DADOS
+            </button>
+          )}
+          <button className={styles.guardarAlertBtn} onClick={() => setActiveTab(daysLeft > 0 ? 'guardar' : 'chamados')}>
+            {daysLeft > 0 ? 'GUARDAR MEUS DADOS' : 'ABRIR CHAMADO'}
+          </button>
+        </div>
       </div>
 
       <div className={styles.subTabBar}>
         {WARFACE_TABS.map((tab) => (
           <button
             key={tab.id}
-            className={`${styles.subTab} ${activeTab !== 'guardar' && activeTab === tab.id ? styles.subTabActive : ''}`}
+            className={`${styles.subTab} ${activeTab === tab.id ? styles.subTabActive : ''}`}
             onClick={() => setActiveTab(tab.id)}
           >
             {tab.label}

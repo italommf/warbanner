@@ -409,6 +409,27 @@
     margin-top: 8px;
 }
 
+.exportBtn {
+    background: rgba(255, 165, 0, 0.08);
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    color: #ffa500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.exportBtn:hover {
+    background: rgba(255, 165, 0, 0.18);
+    border-color: #ffa500;
+    box-shadow: 0 0 16px rgba(255, 165, 0, 0.15);
+}
+
 .resetBtn {
     background: rgba(255, 0, 0, 0.08);
     border: 1px solid rgba(255, 0, 0, 0.2);

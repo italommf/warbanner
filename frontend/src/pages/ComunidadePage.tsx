@@ -78,13 +78,14 @@ function PreviewModal({ banner, onClose }: { banner: CommunityBanner; onClose: (
 
 function Carousel() {
   const { data: banners = [] } = useCommunityLatest()
+  const filteredBanners = applyFilters(banners)
   const [preview, setPreview] = useState<CommunityBanner | null>(null)
 
   return (
     <div className={styles.carouselWrap}>
       <div className={styles.carouselTrack}>
         <AnimatePresence initial={false} mode="popLayout">
-          {banners.map((b) => (
+          {filteredBanners.map((b) => (
             <motion.button
               key={b.id}
               layout
@@ -147,7 +148,13 @@ function CommunityCard({ banner }: { banner: CommunityBanner }) {
 type SortOrder = 'newest' | 'oldest'
 
 function applyFilters(banners: CommunityBanner[]): CommunityBanner[] {
-  return banners
+  const result: CommunityBanner[] = []
+  for (const b of banners) {
+    if (result.length === 0 || result[result.length - 1].username !== b.username) {
+      result.push(b)
+    }
+  }
+  return result
 }
 
 function WarbannersTab() {

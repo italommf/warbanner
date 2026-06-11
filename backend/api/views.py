@@ -115,6 +115,8 @@ def scan_category(category: str) -> list:
                 'filename': f.name,
                 'url': f'/media/{subfolder}/{f.name}',
                 'color': color_index.get(f'{category}/{f.name}', 'outro'),
+                'xml_file': info.get('arquivo_xml', ''),
+                'challenge_id': info.get('id', ''),
             })
     return items
 

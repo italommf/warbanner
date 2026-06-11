@@ -63,9 +63,15 @@
   flex: 1;
 }
 
-.guardarAlertBtn {
+.alertBtns {
+  display: flex;
   flex-shrink: 0;
   margin-left: auto;
+  gap: 8px;
+}
+
+.guardarAlertBtn {
+  flex-shrink: 0;
   background: rgba(255, 85, 0, 0.10);
   border: 1px solid var(--orange, #ff5500);
   border-radius: 4px;

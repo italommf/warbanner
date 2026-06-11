@@ -22,6 +22,8 @@ export interface Item {
   color?: string
   description?: string
   amount?: string
+  xml_file?: string
+  challenge_id?: string
 }
 
 
